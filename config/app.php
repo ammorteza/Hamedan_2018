@@ -65,7 +65,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'Asia/Tehran',
 
     /*
     |--------------------------------------------------------------------------
@@ -171,11 +171,11 @@ return [
         /*
          * Application Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
+        Hamedan_2018\Providers\AppServiceProvider::class,
+        Hamedan_2018\Providers\AuthServiceProvider::class,
+        // Hamedan_2018\Providers\BroadcastServiceProvider::class,
+        Hamedan_2018\Providers\EventServiceProvider::class,
+        Hamedan_2018\Providers\RouteServiceProvider::class,
 
     ],
 
