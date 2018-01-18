@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMainMenuTable extends Migration
+class CreateSectionTypeTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,11 @@ class CreateMainMenuTable extends Migration
      */
     public function up()
     {
-        if (!Schema::hasTable('tbl_main_menus')) {
-            Schema::create('tbl_main_menus', function (Blueprint $table) {
+        if (!Schema::hasTable('tbl_section_types')) {
+            Schema::create('tbl_section_types', function (Blueprint $table) {
                 $table->increments('id');
-                $table->unsignedTinyInteger('mmOrder')->default(1);
-                $table->string('mmFaSubject');
-                $table->string('mmEnSubject');
-                $table->string('mmArSubject');
-                $table->string('mmPageLink')->nullable();
-                $table->boolean('mmState')->default(true);
+                $table->string('stType')->unique();
+                $table->string('stSubject');
                 $table->timestamps();
             });
         }
@@ -35,7 +31,7 @@ class CreateMainMenuTable extends Migration
     public function down()
     {
         DB::statement('SET FOREIGN_KEY_CHECKS = 0');
-        Schema::dropIfExists('tbl_main_menus');
+        Schema::dropIfExists('tbl_section_types');
         DB::statement('SET FOREIGN_KEY_CHECKS = 1');
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMainMenuTable extends Migration
+class CreateImageGalleryTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,10 @@ class CreateMainMenuTable extends Migration
      */
     public function up()
     {
-        if (!Schema::hasTable('tbl_main_menus')) {
-            Schema::create('tbl_main_menus', function (Blueprint $table) {
+        if (!Schema::hasTable('tbl_image_gallery')) {
+            Schema::create('tbl_image_gallery', function (Blueprint $table) {
                 $table->increments('id');
-                $table->unsignedTinyInteger('mmOrder')->default(1);
-                $table->string('mmFaSubject');
-                $table->string('mmEnSubject');
-                $table->string('mmArSubject');
-                $table->string('mmPageLink')->nullable();
-                $table->boolean('mmState')->default(true);
+                $table->string('gPath')->unique();
                 $table->timestamps();
             });
         }
@@ -35,7 +30,7 @@ class CreateMainMenuTable extends Migration
     public function down()
     {
         DB::statement('SET FOREIGN_KEY_CHECKS = 0');
-        Schema::dropIfExists('tbl_main_menus');
+        Schema::dropIfExists('tbl_image_gallery');
         DB::statement('SET FOREIGN_KEY_CHECKS = 1');
     }
 }
