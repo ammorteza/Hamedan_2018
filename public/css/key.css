@@ -39,6 +39,9 @@ body{
     background-color: #2ba6cb;
     color: #FFFFFF;
 }
+.top-menu-bg{
+    background: linear-gradient(180deg,rgba(0,0,0,.4),transparent);
+}
 .top-menu{
     margin-top: 30px;
     position: relative;
@@ -47,6 +50,16 @@ body{
     font-weight: bold;
     color: #FFFFFF;
     background-color: transparent;
+}
+.top-menu .is-active{
+    border-bottom:.5rem solid #fff;
+    height: 9rem;
+    margin-right: -.5rem;
+}
+.top-menu-btm-border{
+    padding-left: 45px;
+    padding-right: 45px;
+    position: relative;
 }
 .top-menu a{
     color: #FFFFFF;
@@ -61,6 +74,11 @@ body{
     margin-top: 30px;
     position: relative;
     font-size: small;
+}
+.middle-menu .is-active{
+    border-bottom:.5rem solid #2ba6cb;
+    height: 7rem;
+    margin-right: -.5rem;
 }
 .middle-menu a{
     text-decoration: none;

@@ -26,19 +26,23 @@
                                     <div class="title-bar-title">منو</div>
                                 </div>
                                 <div class="grid-x">
-                                    <div class="large-12 medium-12" style="position: absolute;border-bottom:.1rem solid hsla(0,0%,100%,.3);z-index: 15;">
-                                        <div style="padding-top: 20px;padding-right: 35px;" class="top-bar top-menu" id="responsive-menu">
-                                            <div class="top-bar-left">
-                                                <ul style="background: none" class="dropdown menu element-dir" data-dropdown-menu>
-                                                    <li><a href="#0">همدان</a></li>
-                                                    <li><a href="#0">اخبار</a></li>
-                                                    <li><a href="#0">رویدادها</a></li>
-                                                </ul>
+                                    <div style="position: absolute" class="medium-12 medium-12 top-menu-btm-border">
+                                        <div class="grid-x grid-padding-x">
+                                            <div class="large-12 medium-12" style="height: 14rem;border-bottom:.1rem solid hsla(0,0%,100%,.3);z-index: 15;">
+                                                <div style="padding-top: 10px;" class="top-bar top-menu" id="responsive-menu">
+                                                    <div class="top-bar-left">
+                                                        <ul style="background: none;margin-top: 10px;" class="dropdown menu element-dir" data-dropdown-menu>
+                                                            <li><a href="#0" class="is-active">همدان</a></li>
+                                                            <li><a href="#0">اخبار</a></li>
+                                                            <li><a href="#0">رویدادها</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <center>
+                                                    <img style="z-index:15;margin-right: 15px;margin-top: -190px;" src="{{ asset('pic/hamedan2018.png') }}" alt="Hamedan-2018" width="82px" height="82px">
+                                                </center>
                                             </div>
                                         </div>
-                                        <center>
-                                            <img style="z-index:15;margin-right: 15px;margin-top: -100px;" src="{{ asset('pic/hamedan2018.png') }}" alt="Hamedan-2018" width="82px" height="82px">
-                                        </center>
                                     </div>
                                 </div>
                                 <button class="orbit-previous" aria-label="previous"><span class="show-for-sr">Previous Slide</span>&#9664;</button>
@@ -97,7 +101,7 @@
             <div class="grid-x grid-padding-x" data-sticky-container>
                 <div style="border-bottom:.1rem solid hsla(0,15%,80%,.3);height: 100px;background-color: #FFFFFF;" class="large-12 medium-12" data-sticky data-top-anchor="650" data-margin-top="0">
                     <ul class="menu align-center top-menu middle-menu element-dir">
-                        <li><a href="#">جاذبه ها</a></li>
+                        <li><a href="#" class="is-active">جاذبه ها</a></li>
                         <li><a href="#">صنایع دستی</a></li>
                         <li><a href="#">تورهای گردشگری</a></li>
                         <li><a href="#">مراکز اقامتی</a></li>
