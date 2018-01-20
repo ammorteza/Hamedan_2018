@@ -11,7 +11,7 @@
 |
 */
 Route::get('/', function () {
-    return view('welcome');
+    return view('pages.section');
 });
 
 Route::get('/page/{slug}', [
