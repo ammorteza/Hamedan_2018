@@ -15,4 +15,9 @@ class PageController extends Controller
     {
         echo $slug;
     }
+
+    public function getPageWithId($pageId , $slug = null)
+    {
+        echo $pageId . ' - ' . $slug;
+    }
 }
