@@ -15,10 +15,9 @@ class Controller extends BaseController
     public function __construct()
     {
         $this->middleware(function ($request, $next) {
-            $mainMenus = MainMenu::where('mmState' , '=' , true)->get();
+            $mainMenus = MainMenu::with('subMenu')->where('mmState' , '=' , true)->get();
             view()->share('mainMenus', $mainMenus);
             return $next($request);
         });
-
     }
 }

@@ -16,6 +16,8 @@ class CreatePageTable extends Migration
         if (!Schema::hasTable('tbl_pages')) {
             Schema::create('tbl_pages', function (Blueprint $table) {
                 $table->increments('id');
+                $table->integer('pMmId')->length(10)->unsigned()->nullable();
+                $table->integer('pSmId')->length(10)->unsigned()->nullable();
                 $table->string('pFaSubject');
                 $table->string('pEnSubject');
                 $table->string('pArSubject');
@@ -30,6 +32,16 @@ class CreatePageTable extends Migration
                 $table->longText('pEnDescription')->nullable();
                 $table->longText('pArDescription')->nullable();
                 $table->timestamps();
+
+                $table->foreign('pMmId')
+                    ->references('id')->on('tbl_main_menus')
+                    ->onDelete('restrict')
+                    ->onUpdate('cascade');
+
+                $table->foreign('pSmId')
+                    ->references('id')->on('tbl_sub_menus')
+                    ->onDelete('restrict')
+                    ->onUpdate('cascade');
             });
         }
     }

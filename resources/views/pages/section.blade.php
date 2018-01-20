@@ -1,19 +1,5 @@
 @extends('layouts.mainLayout')
 @section('content')
-    <!--Middle Menu Start-->
-    <div class="grid-x grid-padding-x" data-sticky-container>
-        <div style="border-bottom:.1rem solid hsla(0,15%,80%,.3);height: 100px;background-color: #FFFFFF;" class="large-12 medium-12" data-sticky data-top-anchor="650" data-margin-top="0">
-            <ul class="menu align-center top-menu middle-menu element-dir">
-                <li><a href="#">جاذبه ها</a></li>
-                <li><a href="#">صنایع دستی</a></li>
-                <li><a href="#">تورهای گردشگری</a></li>
-                <li><a href="#">مراکز اقامتی</a></li>
-                <li><a href="#">مراکز پذیرایی</a></li>
-            </ul>
-        </div>
-    </div>
-
-    <!--Middle Menu End-->
     <!--Content Start-->
     <div class="container">
         <div class="grid-x grid-padding-x">

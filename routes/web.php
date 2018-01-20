@@ -10,13 +10,13 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', 'PageController@index');
+Route::get('/', ['uses' => 'HomeController@index' , 'lan' => 'fa']);
 Route::get('/page/{slug}', [
     'uses' => 'PageController@getPage'
 ])->where('slug', '([A-Za-z0-9\-\/]+)');
 
 Route::prefix('en')->group(function () {
-    Route::get('/', 'PageController@index');
+    Route::get('/', 'HomeController@index_en');
 
     Route::get('page/{slug}', [
         'uses' => 'PageController@getPage'
@@ -24,7 +24,7 @@ Route::prefix('en')->group(function () {
 });
 
 Route::prefix('ar')->group(function () {
-    Route::get('/', 'PageController@index');
+    Route::get('/', 'HomeController@index_ar');
 
     Route::get('page/{slug}', [
         'uses' => 'PageController@getPage'

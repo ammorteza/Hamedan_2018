@@ -6,11 +6,6 @@ use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
-    public function index($lan = 'Fa')
-    {
-        return view('pages.section');
-    }
-
     public function getPage($slug = null)
     {
         echo $slug;

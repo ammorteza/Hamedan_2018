@@ -31,7 +31,13 @@
                                             <div class="top-bar-left">
                                                 <ul style="background: none" class="dropdown menu element-dir" data-dropdown-menu>
                                                     @foreach($mainMenus as $mainMenu)
-                                                        <li><a href="">{{ $mainMenu->mmFaSubject }}</a></li>
+                                                        @if($lan == 'Fa')
+                                                            <li><a href="">{{ $mainMenu->mmFaSubject }}</a></li>
+                                                        @elseif($lan == 'En')
+                                                            <li><a href="">{{ $mainMenu->mmEnSubject }}</a></li>
+                                                        @elseif($lan == 'Ar')
+                                                            <li><a href="">{{ $mainMenu->mmArSubject }}</a></li>
+                                                        @endif
                                                     @endforeach
                                                 </ul>
                                             </div>
@@ -41,63 +47,56 @@
                                         </center>
                                     </div>
                                 </div>
-                                <button class="orbit-previous" aria-label="previous"><span class="show-for-sr">Previous Slide</span>&#9664;</button>
-                                <button class="orbit-next" aria-label="next"><span class="show-for-sr">Next Slide</span>&#9654;</button>
-                                <li class="is-active orbit-slide">
-                                    <img class="orbit-image top-slider" src="{{ asset('pic/top_slider/1.jpg') }}" alt="Space">
-                                    <figcaption class="orbit-caption align-center">
-                                        <p style="text-align: center;" class="top-slider-header">همدان</p>
-                                        <p style="text-align: center;" class="top-slider-description">پایتخت تاریخ و تمدن ایران زمین</p>
-                                        <center>
-                                            <button style="margin-top: 15px;" class="button primary large white-color">اطلاعات بیشتر</button>
-                                        </center>
-                                    </figcaption>
-                                </li>
-                                <li class="orbit-slide">
-                                    <img class="orbit-image top-slider top-slider" src="{{ asset('pic/top_slider/2.jpg') }}" alt="Space">
-                                    <figcaption class="orbit-caption align-center">
-                                        <p style="text-align: center;" class="top-slider-header">صنایع دستی</p>
-                                        <p style="text-align: center;" class="top-slider-description">آثار هنرمندان ایران زمین</p>
-                                        <center>
-                                            <button style="margin-top: 15px;" class="button primary large white-color">اطلاعات بیشتر</button>
-                                        </center>
-
-                                    </figcaption>
-                                </li>
-                                <li class="orbit-slide">
-                                    <img class="orbit-image top-slider top-slider" src="{{ asset('pic/top_slider/3.jpg') }}" alt="Space">
-                                    <figcaption class="orbit-caption align-center">
-                                        <p style="text-align: center;" class="top-slider-header">همدان</p>
-                                        <p style="text-align: center;" class="top-slider-description">پایتخت تاریخ و تمدن ایران زمین</p>
-                                        <center>
-                                            <button style="margin-top: 15px;" class="button primary large white-color">اطلاعات بیشتر</button>
-                                        </center>
-
-                                    </figcaption>
-                                </li>
-                                <li class="orbit-slide">
-                                    <img class="orbit-image top-slider top-slider" src="{{ asset('pic/top_slider/4.jpg') }}" alt="Space">
-                                    <figcaption class="orbit-caption align-center">
-                                        <p style="text-align: center;" class="top-slider-header">همدان</p>
-                                        <p style="text-align: center;" class="top-slider-description">پایتخت تاریخ و تمدن ایران زمین</p>
-                                        <center>
-                                            <button style="margin-top: 15px;" class="button primary large white-color">اطلاعات بیشتر</button>
-                                        </center>
-
-                                    </figcaption>
-                                </li>
-
+                                @foreach($pageInfo->pageHeaderImg as $pageImg)
+                                    <li class="is-active orbit-slide">
+                                        <img class="orbit-image top-slider" src="{{ asset($pageImg->image->gPath) }}" alt="Space">
+                                        <figcaption class="orbit-caption align-center">
+                                            @if($lan == 'Fa')
+                                                <p style="text-align: center;" class="top-slider-header">{{ $pageInfo->pFaSubject }}</p>
+                                                <p style="text-align: center;" class="top-slider-description">{{ $pageInfo->pFaDescription }}</p>
+                                                <center>
+                                                    <button style="margin-top: 15px;" class="button primary large white-color">اطلاعات بیشتر</button>
+                                                </center>
+                                            @elseif($lan == 'En')
+                                                <p style="text-align: center;" class="top-slider-header">{{ $pageInfo->pEnSubject }}</p>
+                                                <p style="text-align: center;" class="top-slider-description">{{ $pageInfo->pEnDescription }}</p>
+                                                <center>
+                                                    <button style="margin-top: 15px;" class="button primary large white-color">More</button>
+                                                </center>
+                                            @elseif($lan == 'Ar')
+                                                <p style="text-align: center;" class="top-slider-header">{{ $pageInfo->pArSubject }}</p>
+                                                <p style="text-align: center;" class="top-slider-description">{{ $pageInfo->pArDescription }}</p>
+                                                <center>
+                                                    <button style="margin-top: 15px;" class="button primary large white-color">اطلاعات بیشتر</button>
+                                                </center>
+                                            @endif
+                                        </figcaption>
+                                    </li>
+                                @endforeach
                             </ul>
                         </div>
                     </div>
                 <!--Top Slider End-->
-
             </div>
+            @if(count($subMenu) > 0)
+            <!--Middle Menu Start-->
+            <div class="grid-x grid-padding-x" data-sticky-container>
+                <div style="border-bottom:.1rem solid hsla(0,15%,80%,.3);height: 100px;background-color: #FFFFFF;" class="large-12 medium-12" data-sticky data-top-anchor="650" data-margin-top="0">
+                    <ul class="menu align-center top-menu middle-menu element-dir">
+                        <li><a href="#">جاذبه ها</a></li>
+                        <li><a href="#">صنایع دستی</a></li>
+                        <li><a href="#">تورهای گردشگری</a></li>
+                        <li><a href="#">مراکز اقامتی</a></li>
+                        <li><a href="#">مراکز پذیرایی</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!--Middle Menu End-->
+            @endif
             @yield('content')
-
-        <script src="{{ asset('js/vendor/jquery.js') }}"></script>
-        <script src="{{ asset('js/vendor/foundation.js') }}"></script>
-        <script src="{{ asset('js/scripts/bundle.js') }}"></script>
-        <script src="{{ asset('js/app.js') }}"></script>
+            <script src="{{ asset('js/vendor/jquery.js') }}"></script>
+            <script src="{{ asset('js/vendor/foundation.js') }}"></script>
+            <script src="{{ asset('js/scripts/bundle.js') }}"></script>
+            <script src="{{ asset('js/app.js') }}"></script>
     </body>
 </html>
