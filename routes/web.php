@@ -18,4 +18,8 @@ Route::get('/page/{slug}', [
     'uses' => 'PageController@getPage'
 ])->where('slug', '([A-Za-z0-9\-\/]+)');
 
+Route::get('{pageId}/page/{slug}', [
+    'uses' => 'PageController@getPageWithId'
+])->where('slug', '([A-Za-z0-9\-\/]+)');
+
 
