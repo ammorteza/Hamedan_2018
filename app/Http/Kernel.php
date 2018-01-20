@@ -2,6 +2,7 @@
 
 namespace Hamedan_2018\Http;
 
+use Hamedan_2018\Http\Middleware\mainLayoutParams;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel

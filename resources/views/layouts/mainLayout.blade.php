@@ -30,9 +30,9 @@
                                         <div style="padding-top: 20px;padding-right: 35px;" class="top-bar top-menu" id="responsive-menu">
                                             <div class="top-bar-left">
                                                 <ul style="background: none" class="dropdown menu element-dir" data-dropdown-menu>
-                                                    <li><a href="#0">همدان</a></li>
-                                                    <li><a href="#0">اخبار</a></li>
-                                                    <li><a href="#0">رویدادها</a></li>
+                                                    @foreach($mainMenus as $mainMenu)
+                                                        <li><a href="">{{ $mainMenu->mmFaSubject }}</a></li>
+                                                    @endforeach
                                                 </ul>
                                             </div>
                                         </div>

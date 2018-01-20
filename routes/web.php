@@ -10,16 +10,32 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', function () {
-    return view('pages.section');
-});
-
+Route::get('/', 'PageController@index');
 Route::get('/page/{slug}', [
     'uses' => 'PageController@getPage'
 ])->where('slug', '([A-Za-z0-9\-\/]+)');
 
-Route::get('{pageId}/page/{slug}', [
+Route::prefix('en')->group(function () {
+    Route::get('/', 'PageController@index');
+
+    Route::get('page/{slug}', [
+        'uses' => 'PageController@getPage'
+    ])->where('slug', '([A-Za-z0-9\-\/]+)');
+});
+
+Route::prefix('ar')->group(function () {
+    Route::get('/', 'PageController@index');
+
+    Route::get('page/{slug}', [
+        'uses' => 'PageController@getPage'
+    ])->where('slug', '([A-Za-z0-9\-\/]+)');
+});
+
+
+
+
+/*Route::get('{pageId}/page/{slug}', [
     'uses' => 'PageController@getPageWithId'
-])->where('slug', '([A-Za-z0-9\-\/]+)');
+])->where('slug', '([A-Za-z0-9\-\/]+)');*/
 
 
