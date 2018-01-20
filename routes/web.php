@@ -10,7 +10,9 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', ['uses' => 'HomeController@index' , 'lan' => 'fa']);
+
+Route::get('/temp/sections', 'PageController@tempSections');
+Route::get('/', 'PageController@index');
 Route::get('/page/{slug}', [
     'uses' => 'PageController@getPage'
 ])->where('slug', '([A-Za-z0-9\-\/]+)');
