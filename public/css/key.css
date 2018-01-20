@@ -11,7 +11,7 @@ body{
 .orbit-caption {
     position: absolute;
     width: 100%;
-    margin-bottom: 11%;
+    margin-bottom: 14%;
     padding: 1rem;
     background-color: transparent;
     color: #fefefe;
@@ -59,7 +59,10 @@ body{
 .top-menu-btm-border{
     padding-left: 45px;
     padding-right: 45px;
-    position: relative;
+}
+.top-menu-border{
+    border-bottom:.1rem solid hsla(0,0%,100%,.3);
+    z-index: 15;
 }
 .top-menu a{
     color: #FFFFFF;
@@ -118,3 +121,51 @@ body{
     white-space: nowrap;
 }
 
+/*Content Image Slider*/
+.header h1{
+    margin-bottom: 0;
+    font-size: 45px;
+}
+
+.header .menu {
+    padding-bottom: 10px;
+}
+
+.benefits {
+    color: black;
+    height: 100px;
+    background: #FFF;
+    position: relative;
+    width: 100%;
+    padding: 25px;
+    font-size: 40px;
+    font-weight: 100;
+    float: left;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.benefits .page_container{
+    margin-bottom: 50px;
+    margin-top: 0;
+}
+
+.immersive_slider .is-slide .content h2{
+    line-height: 140%;
+    font-weight: 100;
+    color: white;
+    font-weight: 100;
+}
+.immersive_slider .is-slide .content a {
+    color: white;
+}
+
+.immersive_slider .is-slide .content p{
+    float: left;
+    font-weight: 100;
+    width: 100%;
+    font-size: 17px;
+    margin-top: 5px;
+}
+/*Content Image Slider*/

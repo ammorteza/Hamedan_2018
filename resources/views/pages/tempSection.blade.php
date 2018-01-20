@@ -118,7 +118,62 @@
             </div>
         </div>
     <!--Content left End-->
+    <!--Content image slider End-->
+        <div class="grid-x grid-padding-x">
+            <div style="margin-top: 80px;" class="large-12 medium-12 center-el">
+                <h1 class="BYekan">هنر دست ایرانی</h1>
+            </div>
+        </div>
+        <div class="grid-x grid-padding-x">
+            <div style="margin-top: 20px;" class="large-12 medium-12 center-el">
+                <p>
+                    نخستین باری که اسم این شهر برده شد، در حدود ۱۱۰۰ سال پیش از میلاد بود که نام همدان را اَمدانه ذکر شده‌است. این شهر تحت نام‌های دیگری از قبیل هگمتانه، هگمتان، اکباتان، اکباتانا، آمدانه، آنادانا نیز نوشته شده‌است. در کتیبه‌های آشوری نام آن شهر آمدانه آمده، این اسم بایستی مشتق از کلمهٔ ماد باشد چنان‌که آشوریان قوم ماد را آمادای ذکر کرده‌اند. از این رو آمادانه به معنی محل مادها و جایی‌است که مادها زندگی می‌کردند.[۱۸] در دوران مادها به زبان پارسی باستان این شهر هگمتانه یا هگمتانه به معنی «جای تجمع» خوانده می‌شد. اکباتان نیز همان تلفظ هگمتانه به زبان یونانی است.[۱]
 
+                    نام هگمتانه به مرور زمان در دوران ساسانیان به اَهمتان، اَهمدان و سپس به همدان دگرگون شده‌است.
+                </p>
+            </div>
+        </div>
+        <div class="grid-x">
+            <div class="large-12 medium-12">
+                <div id="immersive_slider">
+                    <div class="slide" data-blurred="{{ asset('pic/top_slider/3.jpg') }}">
+                        <div class="content">
+                            <h2><a href="http://www.bucketlistly.com" target="_blank">BucketListly</a></h2>
+                            <p>It’s never been easier to watch YouTube on the big screen
+                                Send your favorite YouTube videos from your Android phone or tablet to TV with the touch of a button. It’s easy. No wires, no setup, no nothing. Find out more here.</p>
+                        </div>
+                        <div class="image">
+                            <a href="http://www.bucketlistly.com" target="_blank">
+                                <img src="{{ asset('pic/top_slider/1.jpg') }}" alt="Slider 1">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="slide" data-blurred="{{ asset('pic/top_slider/3.jpg') }}">
+                        <div class="content">
+                            <h2><a href="http://www.bucketlistly.com/apps" target="_blank">BucketListly Apps</a></h2>
+                            <p>It’s never been easier to watch YouTube on the big screen
+                                Send your favorite YouTube videos from your Android phone or tablet to TV with the touch of a button. It’s easy. No wires, no setup, no nothing. Find out more here.</p>
+                        </div>
+                        <div class="image">
+                            <a href="http://www.bucketlistly.com/apps" target="_blank"> <img src="{{ asset('pic/top_slider/2.jpg') }}" alt="Slider 1"></a>
+                        </div>
+                    </div>
+                    <div class="slide" data-blurred="{{ asset('pic/top_slider/3.jpg') }}">
+                        <div class="content">
+                            <h2><a href="http://www.thepetedesign.com" target="_blank">The Pete Design</a></h2>
+                            <p>It’s never been easier to watch YouTube on the big screen
+                                Send your favorite YouTube videos from your Android phone or tablet to TV with the touch of a button. It’s easy. No wires, no setup, no nothing. Find out more here.</p>
+                        </div>
+                        <div class="image">
+                            <a href="http://www.thepetedesign.com" target="_blank"><img src="{{ asset('pic/top_slider/3.jpg') }}" alt="Slider 1"></a>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+        <!--Content image slider End-->
 
     </div><!--*****End master container in Page*****-->
 

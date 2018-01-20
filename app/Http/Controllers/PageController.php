@@ -20,4 +20,9 @@ class PageController extends Controller
     {
         echo $pageId . ' - ' . $slug;
     }
+
+    public function tempSections()
+    {
+        return view('pages.tempSection');
+    }
 }
