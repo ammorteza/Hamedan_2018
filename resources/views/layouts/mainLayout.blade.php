@@ -15,6 +15,7 @@
         <link rel="stylesheet" href="{{ asset('fontawesome-free-5.0.0/web-fonts-with-css/css/fontawesome-all.min.css') }}">
         <link rel="stylesheet" href="{{ asset('css/direction-reveal.css') }}">
         <link rel="stylesheet" href="{{ asset('css/immersive-slider.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/pgwslider.css') }}">
         <link rel="stylesheet" href="{{ asset('css/key.css') }}">
     </head>
     <body class="BYekan">
@@ -104,19 +105,28 @@
         <script src="{{ asset('js/vendor/foundation.js') }}"></script>
         <script src="{{ asset('js/scripts/bundle.js') }}"></script> <!--Content left-->
         <script src="{{ asset('js/jquery.immersive-slider.js') }}"></script><!--Content Image slider-->
+        <script src="{{ asset('js/pgwslider.js') }}"></script><!--Content Image slider-->
         <script src="{{ asset('js/app.js') }}"></script>
-            <script type="text/javascript">
-                $(document).ready( function() {
-                    $("#immersive_slider").immersive_slider({
-                        container: ".main"
-                    });
+        <script type="text/javascript">
+            $(document).ready( function() {
+                $("#immersive_slider").immersive_slider({
+                    container: ".main"
                 });
-            </script>
+            });
+        </script>
         <script>
             var _gaq=[['_setAccount','UA-11278966-1'],['_trackPageview']]; // Change UA-XXXXX-X to be your site's ID
             (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
                 g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
                 s.parentNode.insertBefore(g,s)}(document,'script'));
         </script>
+
+        <!--pgwslider-->
+        <script>
+            $(document).ready(function() {
+                $('.pgwSlider').pgwSlider();
+            });
+        </script>
+        <!--pgwslider-->
     </body>
 </html>

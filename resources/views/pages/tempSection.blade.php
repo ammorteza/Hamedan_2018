@@ -36,7 +36,7 @@
                 <div class="grid-x">
                     <div class="large-6 medium-6">
                         <div class="grid-x grid-padding-x">
-                            <div class="large-6 medium-6 padding-lr direction-reveal">
+                            <div class="large-6 medium-6 padding-lr">
                                 <a href="#" class="direction-reveal__card">
                                     <img src="{{ asset('pic/top_slider/1.jpg') }}" alt="Image" class="img-fluid">
 
@@ -134,46 +134,65 @@
             </div>
         </div>
         <div class="grid-x">
-            <div class="large-12 medium-12">
-                <div id="immersive_slider">
+            <div class="large-12 medium-12 element-distanse">
+                {{--<div id="immersive_slider">
                     <div class="slide" data-blurred="{{ asset('pic/top_slider/3.jpg') }}">
-                        <div class="content">
-                            <h2><a href="http://www.bucketlistly.com" target="_blank">BucketListly</a></h2>
-                            <p>It’s never been easier to watch YouTube on the big screen
-                                Send your favorite YouTube videos from your Android phone or tablet to TV with the touch of a button. It’s easy. No wires, no setup, no nothing. Find out more here.</p>
-                        </div>
-                        <div class="image">
-                            <a href="http://www.bucketlistly.com" target="_blank">
-                                <img src="{{ asset('pic/top_slider/1.jpg') }}" alt="Slider 1">
-                            </a>
+                        <div class="grid-x">
+                            <div class="large-6 medium-6">
+                                <h2><a href="#" target="_blank">شهر جهانی لالجین</a></h2>
+                                <p>به اعتقاد برخی از محققان، نام کنونی شهر لالجین تغییریافتهٔ واژهٔ «لاچین» است که نام پرنده‌ای شکاری و عنوان یکی از قبیله‌های ترک بوده‌است. از همین روی به احتمال زیاد در گذشته قبیلهٔ مذکور این منطقه را برای سکونت برگزیده و ساکن آن شده‌است.</p>
+                            </div>
+                            <div class="image large-6 medium-6">
+                                <a href="http://www.bucketlistly.com" target="_blank">
+                                    <img src="{{ asset('pic/top_slider/1.jpg') }}" alt="Slider 1">
+                                </a>
+                            </div>
                         </div>
                     </div>
                     <div class="slide" data-blurred="{{ asset('pic/top_slider/3.jpg') }}">
-                        <div class="content">
-                            <h2><a href="http://www.bucketlistly.com/apps" target="_blank">BucketListly Apps</a></h2>
-                            <p>It’s never been easier to watch YouTube on the big screen
-                                Send your favorite YouTube videos from your Android phone or tablet to TV with the touch of a button. It’s easy. No wires, no setup, no nothing. Find out more here.</p>
-                        </div>
-                        <div class="image">
-                            <a href="http://www.bucketlistly.com/apps" target="_blank"> <img src="{{ asset('pic/top_slider/2.jpg') }}" alt="Slider 1"></a>
+                        <div class="grid-x">
+                            <div class="large-6 medium-6">
+                                <h2><a href="#" target="_blank">شهر جهانی لالجین</a></h2>
+                                <p>به اعتقاد برخی از محققان، نام کنونی شهر لالجین تغییریافتهٔ واژهٔ «لاچین» است که نام پرنده‌ای شکاری و عنوان یکی از قبیله‌های ترک بوده‌است. از همین روی به احتمال زیاد در گذشته قبیلهٔ مذکور این منطقه را برای سکونت برگزیده و ساکن آن شده‌است.</p>
+                            </div>
+                            <div class="image large-6 medium-6">
+                                <a href="http://www.bucketlistly.com" target="_blank">
+                                    <img src="{{ asset('pic/top_slider/1.jpg') }}" alt="Slider 1">
+                                </a>
+                            </div>
                         </div>
                     </div>
                     <div class="slide" data-blurred="{{ asset('pic/top_slider/3.jpg') }}">
-                        <div class="content">
-                            <h2><a href="http://www.thepetedesign.com" target="_blank">The Pete Design</a></h2>
-                            <p>It’s never been easier to watch YouTube on the big screen
-                                Send your favorite YouTube videos from your Android phone or tablet to TV with the touch of a button. It’s easy. No wires, no setup, no nothing. Find out more here.</p>
-                        </div>
-                        <div class="image">
-                            <a href="http://www.thepetedesign.com" target="_blank"><img src="{{ asset('pic/top_slider/3.jpg') }}" alt="Slider 1"></a>
+                        <div class="grid-x">
+                            <div class="large-6 medium-6">
+                                <h2><a href="#" target="_blank">شهر جهانی لالجین</a></h2>
+                                <p>به اعتقاد برخی از محققان، نام کنونی شهر لالجین تغییریافتهٔ واژهٔ «لاچین» است که نام پرنده‌ای شکاری و عنوان یکی از قبیله‌های ترک بوده‌است. از همین روی به احتمال زیاد در گذشته قبیلهٔ مذکور این منطقه را برای سکونت برگزیده و ساکن آن شده‌است.</p>
+                            </div>
+                            <div class="image large-6 medium-6">
+                                <a href="http://www.bucketlistly.com" target="_blank">
+                                    <img src="{{ asset('pic/top_slider/1.jpg') }}" alt="Slider 1">
+                                </a>
+                            </div>
                         </div>
                     </div>
 
 
-                </div>
+                </div>--}}
+                <ul class="pgwSlider">
+                    <li><img src="{{ asset('pic/top_slider/1.jpg') }}" alt="سفال" data-description="لالجین شهر جهانی سفال"></li>
+                    <li><img src="{{ asset('pic/top_slider/2.jpg') }}" alt="Montréal, QC, Canada" data-large-src="{{ asset('pic/top_slider/2.jpg') }}"></li>
+                    <li><img src="{{ asset('pic/top_slider/3.jpg') }}" alt="Montréal, QC, Canada" data-large-src="{{ asset('pic/top_slider/3.jpg') }}"></li>
+                    <li>
+                        <img src="{{ asset('pic/top_slider/4.jpg') }}">
+                        <span>Shanghai, China</span>
+                    </li>
+                </ul>
             </div>
         </div>
         <!--Content image slider End-->
+
+        <!--Video Gallery Start-->
+
 
     </div><!--*****End master container in Page*****-->
 
