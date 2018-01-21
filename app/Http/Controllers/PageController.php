@@ -3,6 +3,7 @@
 namespace Hamedan_2018\Http\Controllers;
 
 use Hamedan_2018\Page;
+use Hamedan_2018\Section;
 use Hamedan_2018\SubMenu;
 use Illuminate\Http\Request;
 
@@ -10,13 +11,23 @@ class PageController extends Controller
 {
     public function getPage($slug = null)
     {
-        echo $slug;
+        return $this->renderPage($slug , 'fa');
     }
 
-    public function getPageWithId($pageId , $slug = null)
+    public function getPage_en($slug = null)
+    {
+        return $this->renderPage($slug , 'en');
+    }
+
+    public function getPage_ar($slug = null)
+    {
+        return $this->renderPage($slug , 'ar');
+    }
+
+/*    public function getPageWithId($pageId , $slug = null)
     {
         echo $pageId . ' - ' . $slug;
-    }
+    }*/
 
     public function tempSections()
     {
@@ -25,8 +36,26 @@ class PageController extends Controller
             ->where('pLinkUrl' , '=' , '/index')
             ->first();
 
+        $sections = Section::with('sectionType')
+            ->with('sectionImg.gallery')
+            ->where('sPId' , '=' , $pageInfo->id)
+            ->where('sState' , '=' , true)
+            ->get();
+        return view('pages.tempSection' , ['lan' => 'fa' , 'pageInfo' => $pageInfo , 'sections' => $sections]);
+    }
 
-        $subMenu = SubMenu::where('smMmId' , '=' , $pageInfo->pMmId)->get();
-        return view('pages.tempSection' , ['lan' => 'Fa' , 'pageInfo' => $pageInfo , 'subMenu' => $subMenu]);
+    private function renderPage($slug , $lan)
+    {
+        $pageInfo = Page::with('pageHeaderImg.image')
+            ->with('section')
+            ->where('pLinkUrl' , '=' , '/' . $slug)
+            ->first();
+
+        $sections = Section::with('sectionType')
+            ->with('sectionImg.gallery')
+            ->where('sPId' , '=' , $pageInfo->id)
+            ->where('sState' , '=' , true)
+            ->get();
+        return view('pages.section' , ['lan' => $lan , 'pageInfo' => $pageInfo , 'sections' => $sections]);
     }
 }

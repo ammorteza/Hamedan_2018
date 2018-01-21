@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="en" dir="rtl" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<html class="no-js" lang="en" dir="{{ $lan != 'en' ? 'rtl' : '' }}" xmlns:v-on="http://www.w3.org/1999/xhtml">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -36,12 +36,12 @@
                                                     <div class="top-bar-left">
                                                         <ul style="background: none" class="dropdown menu element-dir" data-dropdown-menu>
                                                             @foreach($mainMenus as $mainMenu)
-                                                                @if($lan == 'Fa')
-                                                                    <li><a href="">{{ $mainMenu->mmFaSubject }}</a></li>
-                                                                @elseif($lan == 'En')
-                                                                    <li><a href="">{{ $mainMenu->mmEnSubject }}</a></li>
-                                                                @elseif($lan == 'Ar')
-                                                                    <li><a href="">{{ $mainMenu->mmArSubject }}</a></li>
+                                                                @if($lan == 'fa')
+                                                                    <li><a href="{{ url($mainMenu->mmPageLink . '') }}">{{ $mainMenu->mmFaSubject }}</a></li>
+                                                                @elseif($lan == 'en')
+                                                                    <li><a href="{{ url($lan . $mainMenu->mmPageLink) }}">{{ $mainMenu->mmEnSubject }}</a></li>
+                                                                @elseif($lan == 'ar')
+                                                                    <li><a href="{{ url($lan . $mainMenu->mmPageLink) }}">{{ $mainMenu->mmArSubject }}</a></li>
                                                                 @endif
                                                             @endforeach
                                                         </ul>
@@ -58,19 +58,19 @@
                                     <li class="is-active orbit-slide">
                                         <img class="orbit-image top-slider" src="{{ asset($pageImg->image->gPath) }}" alt="Space">
                                         <figcaption class="orbit-caption align-center">
-                                            @if($lan == 'Fa')
+                                            @if($lan == 'fa')
                                                 <p style="text-align: center;" class="top-slider-header">{{ $pageInfo->pFaSubject }}</p>
                                                 <p style="text-align: center;" class="top-slider-description">{{ $pageInfo->pFaDescription }}</p>
                                                 <center>
                                                     <button style="margin-top: 15px;" class="button primary large white-color">اطلاعات بیشتر</button>
                                                 </center>
-                                            @elseif($lan == 'En')
+                                            @elseif($lan == 'en')
                                                 <p style="text-align: center;" class="top-slider-header">{{ $pageInfo->pEnSubject }}</p>
                                                 <p style="text-align: center;" class="top-slider-description">{{ $pageInfo->pEnDescription }}</p>
                                                 <center>
                                                     <button style="margin-top: 15px;" class="button primary large white-color">More</button>
                                                 </center>
-                                            @elseif($lan == 'Ar')
+                                            @elseif($lan == 'ar')
                                                 <p style="text-align: center;" class="top-slider-header">{{ $pageInfo->pArSubject }}</p>
                                                 <p style="text-align: center;" class="top-slider-description">{{ $pageInfo->pArDescription }}</p>
                                                 <center>
@@ -85,21 +85,6 @@
                     </div>
                 <!--Top Slider End-->
             </div>
-            @if(count($subMenu) > 0)
-            <!--Middle Menu Start-->
-            <div class="grid-x grid-padding-x" data-sticky-container>
-                <div style="border-bottom:.1rem solid hsla(0,15%,80%,.3);height: 100px;background-color: #FFFFFF;" class="large-12 medium-12" data-sticky data-top-anchor="650" data-margin-top="0">
-                    <ul class="menu align-center top-menu middle-menu element-dir">
-                        <li><a href="#">جاذبه ها</a></li>
-                        <li><a href="#">صنایع دستی</a></li>
-                        <li><a href="#">تورهای گردشگری</a></li>
-                        <li><a href="#">مراکز اقامتی</a></li>
-                        <li><a href="#">مراکز پذیرایی</a></li>
-                    </ul>
-                </div>
-            </div>
-            <!--Middle Menu End-->
-            @endif
             @yield('content')
         <script src="{{ asset('js/vendor/jquery.js') }}"></script>
         <script src="{{ asset('js/vendor/foundation.js') }}"></script>
