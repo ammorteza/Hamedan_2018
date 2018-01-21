@@ -18,6 +18,7 @@ class CreateSectionTable extends Migration
                 $table->increments('id');
                 $table->integer('sPId')->length(10)->unsigned();
                 $table->integer('sStId')->length(10)->unsigned();
+                $table->integer('sMmId')->length(10)->unsigned()->nullable(); //use for create SUB_MENU sections
                 $table->unsignedTinyInteger('sOrder')->default(1);
                 $table->boolean('sState')->default(true);
 
@@ -40,6 +41,11 @@ class CreateSectionTable extends Migration
 
                 $table->foreign('sStId')
                     ->references('id')->on('tbl_section_types')
+                    ->onDelete('restrict')
+                    ->onUpdate('cascade');
+
+                $table->foreign('sMmId')
+                    ->references('id')->on('tbl_main_menus')
                     ->onDelete('restrict')
                     ->onUpdate('cascade');
             });
