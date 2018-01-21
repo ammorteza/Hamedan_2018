@@ -21,7 +21,7 @@ Route::prefix('en')->group(function () {
     Route::get('/', 'HomeController@index_en');
 
     Route::get('page/{slug}', [
-        'uses' => 'PageController@getPage'
+        'uses' => 'PageController@getPage_en'
     ])->where('slug', '([A-Za-z0-9\-\/]+)');
 });
 
@@ -29,7 +29,7 @@ Route::prefix('ar')->group(function () {
     Route::get('/', 'HomeController@index_ar');
 
     Route::get('page/{slug}', [
-        'uses' => 'PageController@getPage'
+        'uses' => 'PageController@getPage_ar'
     ])->where('slug', '([A-Za-z0-9\-\/]+)');
 });
 

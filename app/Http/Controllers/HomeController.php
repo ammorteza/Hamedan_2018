@@ -3,6 +3,7 @@
 namespace Hamedan_2018\Http\Controllers;
 
 use Hamedan_2018\Page;
+use Hamedan_2018\Section;
 use Hamedan_2018\SubMenu;
 use Illuminate\Http\Request;
 
@@ -10,17 +11,17 @@ class HomeController extends Controller
 {
     public function index()
     {
-        return $this->renderPage('Fa');
+        return $this->renderPage('fa');
     }
 
     public function index_en()
     {
-        return $this->renderPage('En');
+        return $this->renderPage('en');
     }
 
     public function index_ar()
     {
-        return $this->renderPage('Ar');
+        return $this->renderPage('ar');
     }
 
     private function renderPage($lan)
@@ -30,8 +31,11 @@ class HomeController extends Controller
             ->where('pLinkUrl' , '=' , '/index')
             ->first();
 
-
-        $subMenu = SubMenu::where('smMmId' , '=' , $pageInfo->pMmId)->get();
-        return view('pages.section' , ['lan' => $lan , 'pageInfo' => $pageInfo , 'subMenu' => $subMenu]);
+        $sections = Section::with('sectionType')
+            ->with('sectionImg.gallery')
+            ->where('sPId' , '=' , $pageInfo->id)
+            ->where('sState' , '=' , true)
+            ->get();
+        return view('pages.section' , ['lan' => $lan , 'pageInfo' => $pageInfo , 'sections' => $sections]);
     }
 }
