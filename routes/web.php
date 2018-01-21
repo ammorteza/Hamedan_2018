@@ -12,7 +12,7 @@
 */
 
 Route::get('/temp/sections', 'PageController@tempSections');
-Route::get('/', 'PageController@index');
+Route::get('/', 'HomeController@index');
 Route::get('/page/{slug}', [
     'uses' => 'PageController@getPage'
 ])->where('slug', '([A-Za-z0-9\-\/]+)');
