@@ -9,13 +9,15 @@
         <link rel="icon" type="image/png" href="{{ asset('pic/hamedan2018.jpg') }}">
         <!-- Fonts -->
 
-        <link rel="stylesheet" href="{{ asset('css/foundation.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/font.css') }}">
+
         <link rel="stylesheet" href="{{ asset('fontawesome-free-5.0.0/web-fonts-with-css/css/fontawesome-all.min.css') }}">
         <link rel="stylesheet" href="{{ asset('css/direction-reveal.css') }}">
         <link rel="stylesheet" href="{{ asset('css/immersive-slider.css') }}">
         <link rel="stylesheet" href="{{ asset('css/pgwslider.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/foundation.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/font.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}">
         <link rel="stylesheet" href="{{ asset('css/key.css') }}">
     </head>
     <body class="BYekan">
@@ -62,19 +64,19 @@
                                                 <p style="text-align: center;" class="top-slider-header">{{ $pageInfo->pFaSubject }}</p>
                                                 <p style="text-align: center;" class="top-slider-description">{{ $pageInfo->pFaDescription }}</p>
                                                 <center>
-                                                    <button style="margin-top: 15px;" class="button primary large white-color">اطلاعات بیشتر</button>
+                                                    <button style="margin-top: 15px;" class="button primary white-color">اطلاعات بیشتر</button>
                                                 </center>
                                             @elseif($lan == 'en')
                                                 <p style="text-align: center;" class="top-slider-header">{{ $pageInfo->pEnSubject }}</p>
                                                 <p style="text-align: center;" class="top-slider-description">{{ $pageInfo->pEnDescription }}</p>
                                                 <center>
-                                                    <button style="margin-top: 15px;" class="button primary large white-color">More</button>
+                                                    <button style="margin-top: 15px;" class="button primary white-color">More</button>
                                                 </center>
                                             @elseif($lan == 'ar')
                                                 <p style="text-align: center;" class="top-slider-header">{{ $pageInfo->pArSubject }}</p>
                                                 <p style="text-align: center;" class="top-slider-description">{{ $pageInfo->pArDescription }}</p>
                                                 <center>
-                                                    <button style="margin-top: 15px;" class="button primary large white-color">اطلاعات بیشتر</button>
+                                                    <button style="margin-top: 15px;" class="button primary white-color">اطلاعات بیشتر</button>
                                                 </center>
                                             @endif
                                         </figcaption>
@@ -86,6 +88,93 @@
                 <!--Top Slider End-->
             </div>
             @yield('content')
+            <footer class="footer">
+                <div class="grid-x">
+                    <div class="large-12 medium-12">
+                        <div class="grid-x">
+                            <div class="large-4 medium-12 small-12">
+                                <label class="withe-color">از رویداد ها، جشنواره ها، تورها، خبر ها و... با خبر شوید!</label>
+                                <div class="input-group">
+                                    <input class="input-group-field" type="text">
+                                    <div class="input-group-button">
+                                        <input type="submit" class="button" value="عضویت ">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="large-7 medium-12 small-12">
+                                <div class="footer-social-icons">
+                                    <h6 class="_14 withe-color BYekan center-el">رویداد همدان 2018 را در شبکه های اجتماعی دنبال کنید</h6>
+                                    <ul class="social-icons center-el">
+                                        <li><a href="" class="social-icon"> <i class="fab fa-facebook-f"></i></a></li>
+                                        <li><a href="" class="social-icon"> <i class="fab fa-twitter"></i></a></li>
+                                        <li><a href="" class="social-icon"> <i class="fab fa-linkedin-in"></i></a></li>
+                                        <li><a href="" class="social-icon"> <i class="fab fa-google-plus-g"></i></a></li>
+                                        <li><a href="" class="social-icon"> <i class="fab fa-instagram"></i></a></li>
+                                        <li><a href="" class="social-icon"> <i class="fab fa-telegram-plane"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div style="text-align: center" class="large-1 medium-12 small-12">
+                                <img style=";margin-top: -50px;" src="{{ asset('pic/hamedan2018.png') }}" alt="Hamedan-2018" width="90px" height="90px">
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-x">
+                    <div class="large-12 medium-12 element-distanse">
+                        <div class="grid-x">
+                            <div class="large-3 medium-3 small-12 footer-menu">
+                                <h6 class="menu-header">تاریخچه</h6>
+                                <ul>
+                                    <li><a href="#">همدان</a></li>
+                                    <li><a href="#">مشاهیر</a></li>
+                                    <li><a href="#">آداب و رسوم</a></li>
+                                </ul>
+                            </div>
+                            <div class="large-3 medium-3 small-12 footer-menu">
+                                <h6 class="menu-header">جاذبه ها</h6>
+                                <ul>
+                                    <li><a href="#">گردشگری</a></li>
+                                    <li><a href="#">تفریحی</a></li>
+                                    <li><a href="#">طبیعی</a></li>
+                                    <li><a href="#">مذهبی</a></li>
+                                </ul>
+                            </div>
+                            <div class="large-3 medium-3 small-12 footer-menu">
+                                <h6 class="menu-header">مراکز اقامتی</h6>
+                                <ul>
+                                    <li><a href="#">گردشگری</a></li>
+                                    <li><a href="#">تفریحی</a></li>
+                                    <li><a href="#">طبیعی</a></li>
+                                    <li><a href="#">مذهبی</a></li>
+                                </ul>
+                            </div>
+                            <div class="large-3 medium-3 small-12 footer-menu">
+                                <h6 class="menu-header">مراکز پذیرایی</h6>
+                                <ul>
+                                    <li><a href="#">گردشگری</a></li>
+                                    <li><a href="#">تفریحی</a></li>
+                                    <li><a href="#">طبیعی</a></li>
+                                    <li><a href="#">مذهبی</a></li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!--Copy Right Bar Start-->
+            <div class="">
+                <div class="copyright-bar">
+                    <div class="grid-x">
+                        <div class="large-12 medium-12">
+                            <span>Copyright ©  2018 Key Design and Development Team</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Copy Right Bar End-->
         <script src="{{ asset('js/vendor/jquery.js') }}"></script>
         <script src="{{ asset('js/vendor/foundation.js') }}"></script>
         <script src="{{ asset('js/scripts/bundle.js') }}"></script> <!--Content left-->
@@ -113,5 +202,9 @@
             });
         </script>
         <!--pgwslider-->
+
+        <!--Logo Slider Script-->
+
+        <!--Logo Slider Script-->
     </body>
 </html>

@@ -15,7 +15,7 @@
 
     <!--Middle Menu End-->
     <!--Content left Start-->
-    <div class="container">
+    <div class="grid-container">
         <div class="grid-x grid-padding-x">
             <div style="margin-top: 80px;" class="large-12 medium-12 center-el">
                 <h1 class="BYekan">همدان پایتخت تاریخ و تمدن ایران زمین</h1>
@@ -41,12 +41,12 @@
                                     <img src="{{ asset('pic/top_slider/1.jpg') }}" alt="Image" class="img-fluid">
 
                                     <div class="direction-reveal__overlay">
-                                        <h3 class="direction-reveal__title">غار علیصدر</h3>
+                                        <h4 class="direction-reveal__title">غار علیصدر</h4>
                                         <p class="direction-reveal__text one-line">
                                             مردم روستای علی صدر و روستاهای اطراف، از قدیم‌الایام به وجود این غار پی برده بودند و از آب آن بهره‌برداری می‌کردند. علاوه بر این، در صد سال گذشته
                                         </p>
                                         <center>
-                                            <button style="margin-top: 30px;" class="button primary large white-color">اطلاعات بیشتر</button>
+                                            <button style="margin-top: 20px;" class="button primary white-color">اطلاعات بیشتر</button>
                                         </center>
                                     </div>
                                 </a>
@@ -61,7 +61,7 @@
                                             مردم روستای علی صدر و روستاهای اطراف، از قدیم‌الایام به وجود این غار پی برده بودند و از آب آن بهره‌برداری می‌کردند. علاوه بر این، در صد سال گذشته
                                         </p>
                                         <center>
-                                            <button style="margin-top: 30px;" class="button primary large white-color">اطلاعات بیشتر</button>
+                                            <button style="margin-top: 30px;" class="button primary white-color">اطلاعات بیشتر</button>
                                         </center>
                                     </div>
                                 </a>
@@ -76,7 +76,7 @@
                                             مردم روستای علی صدر و روستاهای اطراف، از قدیم‌الایام به وجود این غار پی برده بودند و از آب آن بهره‌برداری می‌کردند. علاوه بر این، در صد سال گذشته
                                         </p>
                                         <center>
-                                            <button style="margin-top: 30px;" class="button primary large white-color">اطلاعات بیشتر</button>
+                                            <button style="margin-top: 30px;" class="button primary white-color">اطلاعات بیشتر</button>
                                         </center>
                                     </div>
                                 </a>
@@ -91,7 +91,7 @@
                                             مردم روستای علی صدر و روستاهای اطراف، از قدیم‌الایام به وجود این غار پی برده بودند و از آب آن بهره‌برداری می‌کردند. علاوه بر این، در صد سال گذشته
                                         </p>
                                         <center>
-                                            <button style="margin-top: 30px;" class="button primary large white-color">اطلاعات بیشتر</button>
+                                            <button style="margin-top: 30px;" class="button primary white-color">اطلاعات بیشتر</button>
                                         </center>
                                     </div>
                                 </a>
@@ -191,7 +191,14 @@
         </div>
         <!--Content image slider End-->
 
-        <!--Video Gallery Start-->
+        <!--logo Slider Section Start-->
+        <div class="grid-x">
+            <div class="large-12 element-distanse">
+
+
+            </div>
+        </div>
+        <!--logo Slider Section End-->
 
 
     </div><!--*****End master container in Page*****-->

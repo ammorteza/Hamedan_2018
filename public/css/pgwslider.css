@@ -23,7 +23,7 @@
     overflow: hidden;
     height: inherit;
     position: relative;
-    font-size: 1.9rem;
+    font-size: 1.5rem;
 }
 
 .pgwSlider.listOnTheLeft .ps-current {
@@ -83,7 +83,7 @@ ul.pgwSlider > li,
     position: relative;
     opacity: 0.6;
     filter: alpha(opacity=60);
-    font-size: 1.6rem;
+    font-size: 1.2rem;
     transition: opacity 200ms linear;
 }
 
