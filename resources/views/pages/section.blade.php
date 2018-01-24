@@ -21,7 +21,7 @@
             <!--END SUB MENU SECTION-->
         @elseif($section->sectionType->stType == 'CONTENT_LEFT')
             <!--CONTENT_LEFT SECTION-->
-            <div class="container">
+            <div class="grid-container">
                 <div class="grid-x grid-padding-x">
                     <div style="margin-top: 80px;" class="large-12 medium-12 center-el">
                         @if($lan == 'fa')
@@ -103,7 +103,7 @@
             <!--END CONTENT_LEFT SECTION-->
         @elseif($section->sectionType->stType == 'CONTENT_IMAGE_SLIDER')
             <!--CONTENT_IMAGE_SLIDER SECTION-->
-            <div class="container">
+            <div class="grid-container">
                 <div class="grid-x grid-padding-x">
                     <div style="margin-top: 80px;" class="large-12 medium-12 center-el">
                         @if($lan == 'fa')
