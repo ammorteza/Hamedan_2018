@@ -17,7 +17,6 @@
         <link rel="stylesheet" href="{{ asset('css/foundation.css') }}">
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
         <link rel="stylesheet" href="{{ asset('css/font.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/style.css') }}">
         <link rel="stylesheet" href="{{ asset('css/key.css') }}">
     </head>
     <body class="BYekan">
@@ -174,8 +173,8 @@
                     </div>
                 </div>
             </div>
-            <!--Copy Right Bar End-->
-        <script src="{{ asset('js/vendor/jquery.js') }}"></script>
+        <!--Copy Right Bar End-->
+        <script src="{{ asset('js/vendor/jquery.js') }}"  type="text/javascript"></script>
         <script src="{{ asset('js/vendor/foundation.js') }}"></script>
         <script src="{{ asset('js/scripts/bundle.js') }}"></script> <!--Content left-->
         <script src="{{ asset('js/jquery.immersive-slider.js') }}"></script><!--Content Image slider-->
@@ -203,8 +202,8 @@
         </script>
         <!--pgwslider-->
 
-        <!--Logo Slider Script-->
+        <!--slick Slider Script-->
 
-        <!--Logo Slider Script-->
+        <!--slick Slider Script-->
     </body>
 </html>

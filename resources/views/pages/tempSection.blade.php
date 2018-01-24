@@ -192,10 +192,57 @@
         <!--Content image slider End-->
 
         <!--logo Slider Section Start-->
+        <div class="grid-x grid-padding-x">
+            <div style="margin-top: 80px;" class="large-12 medium-12 center-el">
+                <h1 class="BYekan">هنر دست ایرانی</h1>
+            </div>
+        </div>
         <div class="grid-x">
             <div class="large-12 element-distanse">
+                <div class="orbit" role="region" aria-label="Favorite Text Ever" data-orbit>
+                    <ul class="orbit-container">
+                        <button class="orbit-previous" aria-label="previous"><span class="show-for-sr">Previous Slide</span>&#9664;</button>
+                        <button class="orbit-next" aria-label="next"><span class="show-for-sr">Next Slide</span>&#9654;</button>
+                        <li style="padding: 50px;" class="orbit-slide">
+                            <div class="docs-example-orbit-slide">
+                                <div class="grid-x">
+                                    <div class="medium-3 style_prevu_kit">
+                                        <img style="background-image: linear-gradient(-180deg, rgba(0,0,0, 0) 53%, #000 100%)" class="img-size bg-effect" src="{{ asset('pic//hand/1.jpg') }}">
+                                        <p style="margin-top:-50px;margin-right: 100px;color: #FFFFFF;font-weight: bold;z-index: 9;">سفال لالجین</p>
+                                    </div>
+                                    <div class="medium-3 style_prevu_kit">
+                                        <img class="img-size" src="{{ asset('pic/hand/2.jpg') }}">
+                                    </div>
+                                    <div class="medium-3 style_prevu_kit">
+                                        <img class="img-size" src="{{ asset('pic/hand/3.jpg') }}">
+                                    </div>
+                                    <div class="medium-3 style_prevu_kit">
+                                        <img class="img-size" src="{{ asset('pic/hand/4.jpg') }}">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li style="padding: 50px;" class="orbit-slide">
+                            <div class="docs-example-orbit-slide">
+                                <div class="grid-x">
+                                    <div class="medium-3 style_prevu_kit">
+                                        <img  class="img-size" src="{{ asset('pic/hand/5.jpg') }}">
+                                    </div>
+                                    <div class="medium-3 style_prevu_kit">
+                                        <img class="img-size" src="{{ asset('pic/hand/6.jpg') }}">
+                                    </div>
+                                    <div class="medium-3 style_prevu_kit">
+                                        <img class="img-size" src="{{ asset('pic/hand/7.jpg') }}">
+                                    </div>
+                                    <div class="medium-3 style_prevu_kit">
+                                        <img class="img-size" src="{{ asset('pic/hand/8.jpg') }}">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
 
-
+                </div>
             </div>
         </div>
         <!--logo Slider Section End-->
@@ -204,3 +251,4 @@
     </div><!--*****End master container in Page*****-->
 
 @stop
+
