@@ -182,10 +182,7 @@
                     <li><img src="{{ asset('pic/top_slider/1.jpg') }}" alt="سفال" data-description="لالجین شهر جهانی سفال"></li>
                     <li><img src="{{ asset('pic/top_slider/2.jpg') }}" alt="Montréal, QC, Canada" data-large-src="{{ asset('pic/top_slider/2.jpg') }}"></li>
                     <li><img src="{{ asset('pic/top_slider/3.jpg') }}" alt="Montréal, QC, Canada" data-large-src="{{ asset('pic/top_slider/3.jpg') }}"></li>
-                    <li>
-                        <img src="{{ asset('pic/top_slider/4.jpg') }}">
-                        <span>Shanghai, China</span>
-                    </li>
+                    <li><img src="{{ asset('pic/top_slider/3.jpg') }}" alt="Montréal, QC, Canada" data-large-src="{{ asset('pic/top_slider/3.jpg') }}"></li>
                 </ul>
             </div>
         </div>
