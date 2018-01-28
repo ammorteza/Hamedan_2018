@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
         $this->call(MainMenuTableSeeder::class);
         $this->call(SubMenuTableSeeder::class);
         $this->call(SectionTypeTableSeeder::class);
+        $this->call(PageHeaderTypeTableSeeder::class);
         $this->call(PageTableSeeder::class);
         $this->call(PageHeaderImgTableSeeder::class);
     }

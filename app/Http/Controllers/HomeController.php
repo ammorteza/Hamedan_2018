@@ -26,10 +26,9 @@ class HomeController extends Controller
 
     private function renderPage($lan)
     {
-        $pageInfo = Page::with('pageHeaderImg.image')
+        $pageInfo = Page::with('pageHeaderImg.image' , 'headerType')
             ->where('pLinkUrl' , '=' , '/index')
             ->first();
-
         $sections = Section::with('sectionType')
             ->with('sectionImg.gallery')
             ->where('sPId' , '=' , $pageInfo->id)

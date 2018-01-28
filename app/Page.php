@@ -10,11 +10,16 @@ class Page extends Model
 
     public function pageHeaderImg()
     {
-        return $this->hasMany(PageHeaderImg::class , 'phiPId' , 'id')->where('phiState' , '=' , true)->orderBy('phiOrder' , 'ASC');
+        return $this->hasMany(PageHeaderImg::class , 'phiPId' , 'id')->where('phiState' , '=' , true)->orderBy('phiOrder' , 'ASC')->take(4);
     }
 
     public function section()
     {
         return $this->hasMany(Section::class , 'sPId' , 'id')->where('sState' , '=' , true)->orderBy('sOrder' , 'ASC');
+    }
+
+    public function headerType()
+    {
+        return $this->belongsTo(PageHeaderType::class , 'pPhtId' , 'id');
     }
 }

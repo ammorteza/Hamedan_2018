@@ -12,6 +12,7 @@
         <link rel="stylesheet" href="{{ asset('css/immersive-slider.css') }}">
         <link rel="stylesheet" href="{{ asset('css/pgwslider.css') }}">
         <link rel="stylesheet" href="{{ asset('css/foundation.css') }}">
+        <link href="https://fonts.googleapis.com/css?family=Satisfy|Poiret+One|Cabin|Wire+One|Merienda|Roboto" rel="stylesheet">
         <link rel="stylesheet" href="{{ asset('css/font.css') }}">
         <link rel="stylesheet" href="{{ asset('css/key.css') }}">
     </head>
@@ -29,9 +30,9 @@
                                 <div class="large-12 medium-12 top-menu-btm-border" style="position: absolute;">
                                     <div class="grid-x">
                                         <div class="large-12 medium-12 top-menu-border">
-                                            <div style="padding-top: 20px;" class="top-bar top-menu" id="responsive-menu">
+                                            <div class="top-menu" id="responsive-menu">
                                                 <div class="top-bar-left">
-                                                    <ul style="background: none" class="dropdown menu element-dir" data-dropdown-menu>
+                                                    <ul style="background: none" class="dropdown menu element-dir Roboto" data-dropdown-menu>
                                                         @foreach($mainMenus as $mainMenu)
                                                             @if($lan == 'fa')
                                                                 <li><a class="{{ $mainMenu->id == $pageInfo->pMmId ? 'is-active' : '' }}" href="{{ url($mainMenu->mmPageLink . '') }}">{{ $mainMenu->mmFaSubject }}</a></li>
@@ -44,36 +45,54 @@
                                                     </ul>
                                                 </div>
                                             </div>
-                                            <center>
-                                                <img style="z-index:15;margin-right: 15px;margin-top: -100px;" src="{{ asset('pic/hamedan2018.png') }}" alt="Hamedan-2018" width="82px" height="82px">
-                                            </center>
                                         </div>
                                     </div>
                                 </div>
                                 @foreach($pageInfo->pageHeaderImg as $pageImg)
                                     <li class="is-active orbit-slide">
-                                        <img class="orbit-image top-slider" src="{{ asset($pageImg->image->gPath) }}" alt="Space">
-                                        <figcaption class="orbit-caption align-center">
-                                            @if($lan == 'fa')
-                                                <p style="text-align: center;" class="top-slider-header">{{ $pageInfo->pFaSubject }}</p>
-                                                <p style="text-align: center;" class="top-slider-description">{{ $pageInfo->pFaDescription }}</p>
-                                                <center>
-                                                    <button style="margin-top: 15px;" class="button primary white-color">اطلاعات بیشتر</button>
-                                                </center>
-                                            @elseif($lan == 'en')
-                                                <p style="text-align: center;" class="top-slider-header">{{ $pageInfo->pEnSubject }}</p>
-                                                <p style="text-align: center;" class="top-slider-description">{{ $pageInfo->pEnDescription }}</p>
-                                                <center>
-                                                    <button style="margin-top: 15px;" class="button primary white-color">More</button>
-                                                </center>
-                                            @elseif($lan == 'ar')
-                                                <p style="text-align: center;" class="top-slider-header">{{ $pageInfo->pArSubject }}</p>
-                                                <p style="text-align: center;" class="top-slider-description">{{ $pageInfo->pArDescription }}</p>
-                                                <center>
-                                                    <button style="margin-top: 15px;" class="button primary white-color">اطلاعات بیشتر</button>
-                                                </center>
-                                            @endif
-                                        </figcaption>
+                                        <img class="orbit-image {{ $pageInfo->headerType->phtType == 'SIMPLE' ? 'top-slider-simple' : 'top-slider' }}" src="{{ asset($pageImg->image->gPath) }}" alt="Space">
+                                        @if ($pageInfo->headerType->phtType == 'SIMPLE')
+                                            <figcaption class="orbit-caption align-center">
+                                                @if($lan == 'fa')
+                                                    <p style="text-align: center;" class="top-slider-header">{{ $pageInfo->pFaSubject }}</p>
+                                                    <p style="text-align: center;" class="top-slider-description">{{ $pageInfo->pFaDescription }}</p>
+                                                    <center>
+                                                        <button style="margin-top: 15px;" class="button primary white-color">اطلاعات بیشتر</button>
+                                                    </center>
+                                                @elseif($lan == 'en')
+                                                    <p style="text-align: center;" class="top-slider-header Roboto-Bold">{{ $pageInfo->pEnSubject }}</p>
+                                                    <p style="text-align: center;" class="top-slider-description merienda">{{ $pageInfo->pEnDescription }}</p>
+                                                    <center>
+                                                        <button style="margin-top: 15px;" class="button primary white-color">More</button>
+                                                    </center>
+                                                @elseif($lan == 'ar')
+                                                    <p style="text-align: center;" class="top-slider-header">{{ $pageInfo->pArSubject }}</p>
+                                                    <p style="text-align: center;" class="top-slider-description">{{ $pageInfo->pArDescription }}</p>
+                                                    <center>
+                                                        <button style="margin-top: 15px;" class="button primary white-color">اطلاعات بیشتر</button>
+                                                    </center>
+                                                @endif
+                                            </figcaption>
+                                        @elseif($pageInfo->headerType->phtType == 'ADVANCE')
+                                            <figcaption class="orbit-caption">
+                                                <div class="grid-container">
+                                                    <div class="grid-x">
+                                                        <div style="padding-right: 180px;text-shadow: 1px 1px 2px black" class="large-12 medium-12 small-12">
+                                                            @if($lan == 'fa')
+                                                                <p class="top-slider-header">{{ $pageInfo->pFaSubject }}</p>
+                                                                <p class="top-slider-description">{{ $pageInfo->pFaDescription }}</p>
+                                                            @elseif($lan == 'en')
+                                                                <p  class="top-slider-header Roboto-Bold">{{ $pageInfo->pEnSubject }}</p>
+                                                                <p  class="top-slider-description merienda">{{ $pageInfo->pEnDescription }}</p>
+                                                            @elseif($lan == 'ar')
+                                                                <p style="text-align: center;" class="top-slider-header">{{ $pageInfo->pArSubject }}</p>
+                                                                <p style="text-align: center;" class="top-slider-description">{{ $pageInfo->pArDescription }}</p>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </figcaption>
+                                        @endif
                                     </li>
                                 @endforeach
                             </div>
@@ -88,18 +107,36 @@
                 <div class="grid-x">
                     <div class="large-12 medium-12">
                         <div class="grid-x">
-                            <div class="large-4 medium-12 small-12">
-                                <label class="withe-color">از رویداد ها، جشنواره ها، تورها، خبر ها و... با خبر شوید!</label>
+                            <div class="large-4 medium-12 small-12 element-dir">
+                                @if($lan == 'fa')
+                                    <label class="withe-color">از رویداد ها، جشنواره ها، تورها، خبر ها و... با خبر شوید!</label>
+                                @elseif($lan == 'en')
+                                    <label class="withe-color cabin">Watch events, festivals, tours, news and more!</label>
+                                @elseif($lan == 'ar')
+                                    <label class="withe-color">مشاهدة الأحداث والمهرجانات والجولات والأخبار وأكثر!</label>
+                                @endif
                                 <div class="input-group">
                                     <input class="input-group-field" type="text">
                                     <div class="input-group-button">
-                                        <input type="submit" class="button" value="عضویت ">
+                                        @if($lan == 'fa')
+                                            <input type="submit" class="button" value="عضویت ">
+                                        @elseif($lan == 'en')
+                                            <input type="submit" class="button cabin" value="Join ">
+                                        @elseif($lan == 'ar')
+                                            <input type="submit" class="button" value="عضوية ">
+                                        @endif
                                     </div>
                                 </div>
                             </div>
                             <div class="large-7 medium-12 small-12">
                                 <div class="footer-social-icons">
-                                    <h6 class="_14 withe-color BYekan center-el">رویداد همدان 2018 را در شبکه های اجتماعی دنبال کنید</h6>
+                                    @if($lan == 'fa')
+                                        <h6 class="_14 withe-color BYekan center-el">رویداد همدان 2018 را در شبکه های اجتماعی دنبال کنید</h6>
+                                    @elseif($lan == 'en')
+                                        <h6 class="_14 withe-color BYekan center-el cabin">Follow the 2018 Hamadan event on social networks</h6>
+                                    @elseif($lan == 'ar')
+                                        <h6 class="_14 withe-color BYekan center-el">متابعة الحدث هامادان 2018 على الشبكات الاجتماعية</h6>
+                                    @endif
                                     <ul class="social-icons center-el">
                                         <li><a href="" class="social-icon"> <i class="fab fa-facebook-f"></i></a></li>
                                         <li><a href="" class="social-icon"> <i class="fab fa-twitter"></i></a></li>
@@ -120,43 +157,38 @@
                 <div class="grid-x">
                     <div class="large-12 medium-12 element-distanse">
                         <div class="grid-x">
+                            @foreach($mainMenus as $mainMenu)
                             <div class="large-3 medium-3 small-12 footer-menu">
-                                <h6 class="menu-header">تاریخچه</h6>
-                                <ul>
-                                    <li><a href="#">همدان</a></li>
-                                    <li><a href="#">مشاهیر</a></li>
-                                    <li><a href="#">آداب و رسوم</a></li>
-                                </ul>
+                                @if($lan == 'fa')
+                                    <a href=""><h6 class="menu-header">{{ $mainMenu->mmFaSubject }}</h6></a>
+                                    <ul>
+                                        @foreach(\Hamedan_2018\SubMenu::getAllSubMenuWithMainMenuId($mainMenu->id) as $subMenu)
+                                            <li><a href="{{ url($lan . $subMenu->smPageLink) }}">{{ $subMenu->smFaSubject }}</a></li>
+                                        @endforeach
+                                    </ul>
+                                @elseif($lan == 'en')
+                                    <a href=""><h6 class="menu-header cabin">{{ $mainMenu->mmEnSubject }}</h6></a>
+                                    <ul>
+                                        @foreach(\Hamedan_2018\SubMenu::getAllSubMenuWithMainMenuId($mainMenu->id) as $subMenu)
+                                            <li><a class="cabin" href="{{ url($lan . $subMenu->smPageLink) }}">{{ $subMenu->smEnSubject }}</a></li>
+                                        @endforeach
+                                    </ul>
+                                @elseif($lan == 'ar')
+                                    <a href=""><h6 class="menu-header">{{ $mainMenu->mmArSubject }}</h6></a>
+                                    <ul>
+                                        @foreach(\Hamedan_2018\SubMenu::getAllSubMenuWithMainMenuId($mainMenu->id) as $subMenu)
+                                            <li><a href="{{ url($lan . $subMenu->smPageLink) }}">{{ $subMenu->smArSubject }}</a></li>
+                                        @endforeach
+                                    </ul>
+                                @endif
                             </div>
-                            <div class="large-3 medium-3 small-12 footer-menu">
-                                <h6 class="menu-header">جاذبه ها</h6>
-                                <ul>
-                                    <li><a href="#">گردشگری</a></li>
-                                    <li><a href="#">تفریحی</a></li>
-                                    <li><a href="#">طبیعی</a></li>
-                                    <li><a href="#">مذهبی</a></li>
-                                </ul>
-                            </div>
-                            <div class="large-3 medium-3 small-12 footer-menu">
-                                <h6 class="menu-header">مراکز اقامتی</h6>
-                                <ul>
-                                    <li><a href="#">گردشگری</a></li>
-                                    <li><a href="#">تفریحی</a></li>
-                                    <li><a href="#">طبیعی</a></li>
-                                    <li><a href="#">مذهبی</a></li>
-                                </ul>
-                            </div>
-                            <div class="large-3 medium-3 small-12 footer-menu">
-                                <h6 class="menu-header">مراکز پذیرایی</h6>
-                                <ul>
-                                    <li><a href="#">گردشگری</a></li>
-                                    <li><a href="#">تفریحی</a></li>
-                                    <li><a href="#">طبیعی</a></li>
-                                    <li><a href="#">مذهبی</a></li>
-                                </ul>
-                            </div>
-
+                            @endforeach
                         </div>
+                    </div>
+                </div>
+                <div class="grid-x">
+                    <div class="large-12 medium-12 small-12">
+                        <img style="margin-top: 60px;" class="float-center" src="{{ asset('pic/Iran-miras-logo.jpg') }}" alt="میراث فرهنگی صنایع دستی و گردشگری" width="90px" height="90px">
                     </div>
                 </div>
             </footer>

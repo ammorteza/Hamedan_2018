@@ -18,6 +18,7 @@ class CreatePageTable extends Migration
                 $table->increments('id');
                 $table->integer('pMmId')->length(10)->unsigned()->nullable();
                 $table->integer('pSmId')->length(10)->unsigned()->nullable();
+                $table->integer('pPhtId')->length(10)->unsigned();
                 $table->string('pFaSubject');
                 $table->string('pEnSubject');
                 $table->string('pArSubject');
@@ -40,6 +41,11 @@ class CreatePageTable extends Migration
 
                 $table->foreign('pSmId')
                     ->references('id')->on('tbl_sub_menus')
+                    ->onDelete('restrict')
+                    ->onUpdate('cascade');
+
+                $table->foreign('pPhtId')
+                    ->references('id')->on('tbl_page_header_types')
                     ->onDelete('restrict')
                     ->onUpdate('cascade');
             });

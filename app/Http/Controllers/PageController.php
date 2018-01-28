@@ -45,7 +45,7 @@ class PageController extends Controller
 
     private function renderPage($slug , $lan)
     {
-        $pageInfo = Page::with('pageHeaderImg.image')
+        $pageInfo = Page::with('pageHeaderImg.image' , 'headerType')
             ->where('pLinkUrl' , '=' , '/' . $slug)
             ->first();
 
