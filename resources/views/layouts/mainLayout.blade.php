@@ -27,15 +27,15 @@
                                 <div class="title-bar-title">منو</div>
                             </div>
                             <div class="grid-x">
-                                <div class="large-12 medium-12 top-menu-btm-border" style="position: absolute;">
+                                <div class="large-12 medium-12 top-menu-btm-border" style="position: absolute;" >
                                     <div class="grid-x">
                                         <div class="large-12 medium-12 top-menu-border">
                                             <div class="top-menu" id="responsive-menu">
                                                 <div class="top-bar-left">
-                                                    <ul style="background: none" class="dropdown menu element-dir Roboto" data-dropdown-menu>
+                                                    <ul style="background: none;height: 4.7rem;" class="dropdown menu element-dir Roboto" data-dropdown-menu>
                                                         @foreach($mainMenus as $mainMenu)
                                                             @if($lan == 'fa')
-                                                                <li><a class="{{ $mainMenu->id == $pageInfo->pMmId ? 'is-active' : '' }}" href="{{ url($mainMenu->mmPageLink . '') }}">{{ $mainMenu->mmFaSubject }}</a></li>
+                                                                <li class="BYekan"><a class="{{ $mainMenu->id == $pageInfo->pMmId ? 'is-active' : '' }}" href="{{ url($mainMenu->mmPageLink . '') }}">{{ $mainMenu->mmFaSubject }}</a></li>
                                                             @elseif($lan == 'en')
                                                                 <li><a class="{{ $mainMenu->id == $pageInfo->pMmId ? 'is-active' : '' }}" href="{{ url($lan . $mainMenu->mmPageLink) }}">{{ $mainMenu->mmEnSubject }}</a></li>
                                                             @elseif($lan == 'ar')
@@ -75,13 +75,68 @@
                                         <figcaption class="orbit-caption">
                                             <div class="grid-container">
                                                 <div class="grid-x">
-                                                    <div style="padding-right: 180px;text-shadow: 1px 1px 2px black" class="large-12 medium-12 small-12">
+                                                    <div class="large-12 medium-12 small-12 my-text-shadow-effect">
                                                         @if($lan == 'fa')
-                                                            <p class="top-slider-header">{{ $pageInfo->pFaSubject }}</p>
-                                                            <p class="top-slider-description">{{ $pageInfo->pFaDescription }}</p>
+                                                            <div class="BYekan">
+                                                                <p class="top-slider-header">{{ $pageInfo->pFaSubject }}</p>
+                                                                <p class="top-slider-description">{{ $pageInfo->pFaDescription }}</p>
+                                                                <div class="grid-x">
+                                                                    <div class="large-4 medium-6 small-12">
+                                                                        <p>همدان پایتخ گردشگری آسیا در سال 2018</p>
+                                                                    </div>
+                                                                    <div class="grid-container">
+                                                                        <div style="padding-top:20vh;" class="grid-x">
+                                                                            <div class="large-3 medium-6 small-12 padding-lr top-slider-description-active">
+                                                                                <p>Hamedan is the capital of Iranian history and civilization2018</p>
+                                                                            </div>
+                                                                            <div class="large-3 medium-6 small-12 padding-lr">
+                                                                                <p>Hamedan is the capital of Iranian history and civilization2018</p>
+                                                                            </div>
+                                                                            <div class="large-3 medium-6 small-12 padding-lr">
+                                                                                <p>Hamedan is the capital of Iranian history and civilization2018</p>
+                                                                            </div>
+                                                                            <div class="large-3 medium-6 small-12 padding-lr">
+                                                                                <p>Hamedan is the capital of Iranian history and civilization2018</p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
                                                         @elseif($lan == 'en')
-                                                            <p  class="top-slider-header Roboto-Bold">{{ $pageInfo->pEnSubject }}</p>
-                                                            <p  class="top-slider-description merienda">{{ $pageInfo->pEnDescription }}</p>
+                                                            <div class="cabin">
+                                                                <p  class="top-slider-header Roboto-Bold">{{ $pageInfo->pEnSubject }}</p>
+                                                                <p  class="top-slider-description merienda">{{ $pageInfo->pEnDescription }}</p>
+                                                                <div class="grid-container">
+                                                                    <nav class="orbit-bullets">
+                                                                        <div style="padding-top:20vh;" class="grid-x">
+                                                                            <div class="large-3 medium-6 small-12 padding-lr">
+                                                                                <button class="is-active" data-slide="0">
+                                                                                    <p>Hamedan is the capital of Iranian history and civilization2018</p>
+                                                                                    <span class="show-for-sr">First slide details.</span><span class="show-for-sr">Current Slide</span>
+                                                                                </button>
+                                                                            </div>
+                                                                            <div class="large-3 medium-6 small-12 padding-lr">
+                                                                                <button data-slide="1">
+                                                                                    <p>Hamedan is the capital of Iranian history and civilization2018</p>
+                                                                                    <span class="show-for-sr">Second slide details.</span></button>
+                                                                                </button>
+                                                                            </div>
+                                                                            <div class="large-3 medium-6 small-12 padding-lr">
+                                                                                <button data-slide="2">
+                                                                                    <p>Hamedan is the capital of Iranian history and civilization2018</p>
+                                                                                    <span class="show-for-sr">Third slide details.</span>
+                                                                                </button>
+                                                                            </div>
+                                                                            <div class="large-3 medium-6 small-12 padding-lr">
+                                                                                <button data-slide="3">
+                                                                                    <p>Hamedan is the capital of Iranian history and civilization2018</p>
+                                                                                    <span class="show-for-sr">Fourth slide details.</span>
+                                                                                </button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </nav>
+                                                                </div>
+                                                            </div>
                                                         @elseif($lan == 'ar')
                                                             <p style="text-align: center;" class="top-slider-header">{{ $pageInfo->pArSubject }}</p>
                                                             <p style="text-align: center;" class="top-slider-description">{{ $pageInfo->pArDescription }}</p>

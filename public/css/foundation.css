@@ -3644,7 +3644,7 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
   position: relative;
   margin-top: 0.8rem;
   margin-bottom: 0.8rem;
-  text-align: center; }
+   }
   [data-whatinput='mouse'] .orbit-bullets {
     outline: 0; }
   .orbit-bullets button {
