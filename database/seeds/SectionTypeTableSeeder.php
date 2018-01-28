@@ -17,8 +17,23 @@ class SectionTypeTableSeeder extends Seeder
         $sType->save();
 
         $sType = new \Hamedan_2018\SectionType;
-        $sType->stType = 'CONTENT_SECTION_LEFT';
+        $sType->stType = 'CONTENT_LEFT';
         $sType->stSubject = 'بخش محتوای دارای تصویر - تصویر بزرگتر سمت چپ';
+        $sType->save();
+
+        $sType = new \Hamedan_2018\SectionType;
+        $sType->stType = 'CONTENT_IMAGE_SLIDER';
+        $sType->stSubject = 'گالری تصاویر';
+        $sType->save();
+
+        $sType = new \Hamedan_2018\SectionType;
+        $sType->stType = 'CONTENT_WIDE_SLIDER';
+        $sType->stSubject = 'گالری تصاویر تصاویر تمام صفحه';
+        $sType->save();
+
+        $sType = new \Hamedan_2018\SectionType;
+        $sType->stType = 'SECTION_SPLITTER';
+        $sType->stSubject = 'جدا کننده بخش ها';
         $sType->save();
     }
 }

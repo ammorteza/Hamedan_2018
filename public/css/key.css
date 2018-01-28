@@ -31,7 +31,7 @@ h1,h2,h3,h4,h5,h6{
     text-align: center;
 }
 .top-slider{
-    max-height:  87vh;
+    max-height:  100vh;
 }
 .orbit-caption {
     position: absolute;

@@ -27,7 +27,6 @@ class HomeController extends Controller
     private function renderPage($lan)
     {
         $pageInfo = Page::with('pageHeaderImg.image')
-            ->with('section')
             ->where('pLinkUrl' , '=' , '/index')
             ->first();
 
@@ -35,6 +34,7 @@ class HomeController extends Controller
             ->with('sectionImg.gallery')
             ->where('sPId' , '=' , $pageInfo->id)
             ->where('sState' , '=' , true)
+            ->orderBy('sOrder' , 'ASC')
             ->get();
         return view('pages.section' , ['lan' => $lan , 'pageInfo' => $pageInfo , 'sections' => $sections]);
     }
