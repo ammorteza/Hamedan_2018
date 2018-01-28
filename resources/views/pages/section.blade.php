@@ -27,7 +27,7 @@
                         @if($lan == 'fa')
                             <h1 class="BYekan">{{ $section->sFaSubject }}</h1>
                         @elseif($lan == 'en')
-                            <h1 class="BYekan">{{ $section->sEnSubject }}</h1>
+                            <h1 style="font-size: 4em" class="wire-one">{{ $section->sEnSubject }}</h1>
                         @elseif($lan == 'ar')
                             <h1 class="BYekan">{{ $section->sArSubject }}</h1>
                         @endif
@@ -38,7 +38,9 @@
                         @if($lan == 'fa')
                             <p class="">{!! $section->sFaDescription !!}</p>
                         @elseif($lan == 'en')
-                            <p class="">{!! $section->sEnDescription !!}</p>
+                            <div style="font-size: 0.9em;color: #8a8a8a" class="Roboto-Regular">
+                                <p>{!! $section->sEnDescription !!}</p>
+                            </div>
                         @elseif($lan == 'ar')
                             <p class="">{!! $section->sArDescription !!}</p>
                         @endif
@@ -61,7 +63,7 @@
                                                                     <h4 class="direction-reveal__title">{{ $sectionImg->siFaSubject }}</h4>
                                                                     <p class="direction-reveal__text one-line">{{ $sectionImg->siFaDescription }}</p>
                                                                 @elseif($lan == 'en')
-                                                                    <h4 class="direction-reveal__title">{{ $sectionImg->siEnSubject }}</h4>
+                                                                    <h6 class="direction-reveal__title cabin">{{ $sectionImg->siEnSubject }}</h6>
                                                                     <p class="direction-reveal__text one-line">{{ $sectionImg->siEnDescription }}</p>
                                                                 @elseif($lan == 'ar')
                                                                     <h4 class="direction-reveal__title">{{ $sectionImg->siArSubject }}</h4>
@@ -101,15 +103,22 @@
                 </div>
             </div>
             <!--END CONTENT_LEFT SECTION-->
+            <!--Section Spliter Start-->
+            <div class="grid-x">
+                <div class="large-12 medium-12 small-12">
+                    <img class="float-center section-spliter-margin" src="{{ asset('pic/section-spliter.png') }}">
+                </div>
+            </div>
+            <!--Section Spliter Start-->
         @elseif($section->sectionType->stType == 'CONTENT_IMAGE_SLIDER')
             <!--CONTENT_IMAGE_SLIDER SECTION-->
             <div class="grid-container">
                 <div class="grid-x grid-padding-x">
-                    <div style="margin-top: 80px;" class="large-12 medium-12 center-el">
+                    <div style="margin-top: 50px;" class="large-12 medium-12 center-el">
                         @if($lan == 'fa')
                             <h1 class="BYekan">{{ $section->sFaSubject }}</h1>
                         @elseif($lan == 'en')
-                            <h1 class="BYekan">{{ $section->sEnSubject }}</h1>
+                            <h1 style="font-size: 4em" class="wire-one">{{ $section->sEnSubject }}</h1>
                         @elseif($lan == 'ar')
                             <h1 class="BYekan">{{ $section->sArSubject }}</h1>
                         @endif
@@ -120,7 +129,9 @@
                         @if($lan == 'fa')
                             <p class="">{!! $section->sFaDescription !!}</p>
                         @elseif($lan == 'en')
-                            <p class="">{!! $section->sEnDescription !!}</p>
+                            <div style="font-size: 0.9em;color: #8a8a8a" class="Roboto-Regular">
+                                <p>{!! $section->sEnDescription !!}</p>
+                            </div>
                         @elseif($lan == 'ar')
                             <p class="">{!! $section->sArDescription !!}</p>
                         @endif
@@ -147,6 +158,62 @@
             </div>
             <!--END CONTENT_IMAGE_SLIDER SECTION-->
         @endif
+
     @endforeach
+    <!--logo Slider Section Start-->
+    <div class="grid-x grid-padding-x">
+        <div style="margin-top: 80px;" class="large-12 medium-12 center-el">
+            <h1 class="BYekan">هنر دست ایرانی</h1>
+        </div>
+    </div>
+    <div class="grid-x">
+        <div class="large-12 element-distanse">
+            <div class="orbit" role="region" aria-label="Favorite Text Ever" data-orbit>
+                <ul class="orbit-container">
+                    <button class="orbit-previous" aria-label="previous"><span class="show-for-sr">Previous Slide</span>&#9664;</button>
+                    <button class="orbit-next" aria-label="next"><span class="show-for-sr">Next Slide</span>&#9654;</button>
+                    <li style="padding: 50px;" class="orbit-slide">
+                        <div class="docs-example-orbit-slide">
+                            <div class="grid-x">
+                                <div class="medium-3 style_prevu_kit">
+                                    <img style="background-image: linear-gradient(-180deg, rgba(0,0,0, 0) 53%, #000 100%)" class="img-size bg-effect" src="{{ asset('pic//hand/1.jpg') }}">
+                                    <p style="margin-top:-50px;margin-right: 100px;color: #FFFFFF;font-weight: bold;z-index: 9;">سفال لالجین</p>
+                                </div>
+                                <div class="medium-3 style_prevu_kit">
+                                    <img class="img-size" src="{{ asset('pic/hand/2.jpg') }}">
+                                </div>
+                                <div class="medium-3 style_prevu_kit">
+                                    <img class="img-size" src="{{ asset('pic/hand/3.jpg') }}">
+                                </div>
+                                <div class="medium-3 style_prevu_kit">
+                                    <img class="img-size" src="{{ asset('pic/hand/4.jpg') }}">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li style="padding: 50px;" class="orbit-slide">
+                        <div class="docs-example-orbit-slide">
+                            <div class="grid-x">
+                                <div class="medium-3 style_prevu_kit">
+                                    <img  class="img-size" src="{{ asset('pic/hand/5.jpg') }}">
+                                </div>
+                                <div class="medium-3 style_prevu_kit">
+                                    <img class="img-size" src="{{ asset('pic/hand/6.jpg') }}">
+                                </div>
+                                <div class="medium-3 style_prevu_kit">
+                                    <img class="img-size" src="{{ asset('pic/hand/7.jpg') }}">
+                                </div>
+                                <div class="medium-3 style_prevu_kit">
+                                    <img class="img-size" src="{{ asset('pic/hand/8.jpg') }}">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+    <!--logo Slider Section End-->
 
 @stop

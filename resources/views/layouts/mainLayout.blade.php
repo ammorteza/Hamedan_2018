@@ -12,6 +12,7 @@
         <link rel="stylesheet" href="{{ asset('css/immersive-slider.css') }}">
         <link rel="stylesheet" href="{{ asset('css/pgwslider.css') }}">
         <link rel="stylesheet" href="{{ asset('css/foundation.css') }}">
+        <link href="https://fonts.googleapis.com/css?family=Satisfy|Poiret+One|Cabin|Wire+One|Merienda|Roboto" rel="stylesheet">
         <link rel="stylesheet" href="{{ asset('css/font.css') }}">
         <link rel="stylesheet" href="{{ asset('css/key.css') }}">
     </head>
@@ -29,9 +30,9 @@
                                 <div class="large-12 medium-12 top-menu-btm-border" style="position: absolute;">
                                     <div class="grid-x">
                                         <div class="large-12 medium-12 top-menu-border">
-                                            <div style="padding-top: 20px;" class="top-bar top-menu" id="responsive-menu">
+                                            <div class="top-menu" id="responsive-menu">
                                                 <div class="top-bar-left">
-                                                    <ul style="background: none" class="dropdown menu element-dir" data-dropdown-menu>
+                                                    <ul style="background: none" class="dropdown menu element-dir Roboto" data-dropdown-menu>
                                                         @foreach($mainMenus as $mainMenu)
                                                             @if($lan == 'fa')
                                                                 <li><a class="{{ $mainMenu->id == $pageInfo->pMmId ? 'is-active' : '' }}" href="{{ url($mainMenu->mmPageLink . '') }}">{{ $mainMenu->mmFaSubject }}</a></li>
@@ -44,16 +45,13 @@
                                                     </ul>
                                                 </div>
                                             </div>
-                                            <center>
-                                                <img style="z-index:15;margin-right: 15px;margin-top: -100px;" src="{{ asset('pic/hamedan2018.png') }}" alt="Hamedan-2018" width="82px" height="82px">
-                                            </center>
                                         </div>
                                     </div>
                                 </div>
                                 @foreach($pageInfo->pageHeaderImg as $pageImg)
                                     <li class="is-active orbit-slide">
                                         <img class="orbit-image top-slider" src="{{ asset($pageImg->image->gPath) }}" alt="Space">
-                                        <figcaption class="orbit-caption align-center">
+                                        {{--<figcaption class="orbit-caption align-center">
                                             @if($lan == 'fa')
                                                 <p style="text-align: center;" class="top-slider-header">{{ $pageInfo->pFaSubject }}</p>
                                                 <p style="text-align: center;" class="top-slider-description">{{ $pageInfo->pFaDescription }}</p>
@@ -61,8 +59,8 @@
                                                     <button style="margin-top: 15px;" class="button primary white-color">اطلاعات بیشتر</button>
                                                 </center>
                                             @elseif($lan == 'en')
-                                                <p style="text-align: center;" class="top-slider-header">{{ $pageInfo->pEnSubject }}</p>
-                                                <p style="text-align: center;" class="top-slider-description">{{ $pageInfo->pEnDescription }}</p>
+                                                <p style="text-align: center;" class="top-slider-header Roboto-Bold">{{ $pageInfo->pEnSubject }}</p>
+                                                <p style="text-align: center;" class="top-slider-description merienda">{{ $pageInfo->pEnDescription }}</p>
                                                 <center>
                                                     <button style="margin-top: 15px;" class="button primary white-color">More</button>
                                                 </center>
@@ -73,6 +71,24 @@
                                                     <button style="margin-top: 15px;" class="button primary white-color">اطلاعات بیشتر</button>
                                                 </center>
                                             @endif
+                                        </figcaption>--}}
+                                        <figcaption class="orbit-caption">
+                                            <div class="grid-container">
+                                                <div class="grid-x">
+                                                    <div style="padding-right: 180px;text-shadow: 1px 1px 2px black" class="large-12 medium-12 small-12">
+                                                        @if($lan == 'fa')
+                                                            <p class="top-slider-header">{{ $pageInfo->pFaSubject }}</p>
+                                                            <p class="top-slider-description">{{ $pageInfo->pFaDescription }}</p>
+                                                        @elseif($lan == 'en')
+                                                            <p  class="top-slider-header Roboto-Bold">{{ $pageInfo->pEnSubject }}</p>
+                                                            <p  class="top-slider-description merienda">{{ $pageInfo->pEnDescription }}</p>
+                                                        @elseif($lan == 'ar')
+                                                            <p style="text-align: center;" class="top-slider-header">{{ $pageInfo->pArSubject }}</p>
+                                                            <p style="text-align: center;" class="top-slider-description">{{ $pageInfo->pArDescription }}</p>
+                                                        @endif
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </figcaption>
                                     </li>
                                 @endforeach
@@ -88,7 +104,7 @@
                 <div class="grid-x">
                     <div class="large-12 medium-12">
                         <div class="grid-x">
-                            <div class="large-4 medium-12 small-12">
+                            <div class="large-4 medium-12 small-12 element-dir">
                                 <label class="withe-color">از رویداد ها، جشنواره ها، تورها، خبر ها و... با خبر شوید!</label>
                                 <div class="input-group">
                                     <input class="input-group-field" type="text">
@@ -157,6 +173,11 @@
                             </div>
 
                         </div>
+                    </div>
+                </div>
+                <div class="grid-x">
+                    <div class="large-12 medium-12 small-12">
+                        <img style="margin-top: 60px;" class="float-center" src="{{ asset('pic/Iran-miras-logo.jpg') }}" alt="میراث فرهنگی صنایع دستی و گردشگری" width="90px" height="90px">
                     </div>
                 </div>
             </footer>

@@ -21,6 +21,26 @@
     url('../fonts/BNazanin.ttf') format('truetype');  /* Saf3—5, Chrome4+, FF3.5, Opera 10+ */
 }
 
+@font-face {
+    font-family: 'Roboto-Thin';
+    src: url('../fonts/Roboto-Thin.ttf') format('truetype'); /* IE6–8 */
+}
+
+@font-face {
+    font-family: 'Roboto-Bold';
+    src: url('../fonts/Roboto-Bold.ttf') format('truetype'); /* IE6–8 */
+}
+@font-face {
+    font-family: 'Lato-Light';
+    src: url('../fonts/Lato-Light.ttf') format('truetype'); /* IE6–8 */
+}
+@font-face {
+    font-family: 'Roboto-Regular';
+    src: url('../fonts/Roboto-Regular.ttf') format('truetype'); /* IE6–8 */
+}
+
+
+
 .BYekan {
     font-family: BYekan, Arial, Helvetica, sans-serif;
 }
@@ -36,3 +56,38 @@
 .BNazanin {
     font-family: BNazanin, Arial, Helvetica, sans-serif;
 }
+.RobotoLight {
+    font-family: Roboto-Thin, Arial, Helvetica, sans-serif;
+}
+.Roboto-Bold {
+    font-family: Roboto-Bold, Arial, Helvetica, sans-serif;
+}
+
+.Lato-Light {
+    font-family: Lato-Light, Arial, Helvetica, sans-serif;
+}
+
+.Roboto-Regular {
+    font-family: Roboto-Regular, Arial, Helvetica, sans-serif;
+}
+
+
+.satisfy {
+    font-family: 'Satisfy', cursive;
+}
+.poiret-one {
+    font-family: 'Poiret One', cursive;
+}
+.cabin {
+    font-family: 'Cabin', cursive;
+}
+.wire-one {
+    font-family: 'Wire One', sans-serif;
+}
+.merienda {
+    font-family: 'Merienda', cursive;
+}
+.Roboto {
+    font-family: 'Roboto', cursive;
+}
+

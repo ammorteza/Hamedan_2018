@@ -31,12 +31,12 @@ h1,h2,h3,h4,h5,h6{
     text-align: center;
 }
 .top-slider{
-    max-height:  87vh;
+    max-height:  100vh;
 }
 .orbit-caption {
     position: absolute;
     width: 100%;
-    margin-bottom: 14%;
+    margin-bottom: 22%;
     padding: 1rem;
     background-color: transparent;
     color: #fefefe;
@@ -55,6 +55,7 @@ h1,h2,h3,h4,h5,h6{
 }
 .top-slider-header{
     font-size: 4.5em;
+    margin-bottom: 0px;
 }
 .top-slider-description{
     font-size: 1.5em;
@@ -83,8 +84,8 @@ h1,h2,h3,h4,h5,h6{
     background-color: transparent;
 }
 .top-menu .is-active{
-    border-bottom:.5rem solid #fff;
-    height: 9rem;
+    border-bottom:.4rem solid #fff;
+    height: 4.7rem;
     margin-right: -.5rem;
 }
 .top-menu-btm-border{
@@ -110,8 +111,8 @@ h1,h2,h3,h4,h5,h6{
     font-size: small;
 }
 .middle-menu .is-active{
-    border-bottom:.5rem solid #2ba6cb;
-    height: 7rem;
+    border-bottom:.4rem solid #2ba6cb;
+    height: 4.4rem;
     margin-right: -.5rem;
 }
 .middle-menu a{
@@ -418,7 +419,7 @@ ul.social-icons {
     background-image: linear-gradient(-180deg, rgba(0,0,0, 0) 53%, #000 100%);
 
 }
-.orbit-previous, .orbit-next {
+.orbit-previous {
     position: absolute;
     margin-right: 96%;
     top: 10%;
@@ -474,3 +475,7 @@ ul.social-icons {
 /*///////////////////////////////////////////////////////////////////*/
 /* Logo Slider Section End*/
 /*///////////////////////////////////////////////////////////////////*/
+
+.section-spliter-margin{
+    margin-top: 60px;
+}
