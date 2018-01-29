@@ -13,6 +13,7 @@
         <link rel="stylesheet" href="{{ asset('css/pgwslider.css') }}">
         <link rel="stylesheet" href="{{ asset('css/foundation.css') }}">
         <link href="https://fonts.googleapis.com/css?family=Satisfy|Poiret+One|Cabin|Wire+One|Merienda|Roboto" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/motion-ui/1.2.2/motion-ui.css" rel="stylesheet">
         <link rel="stylesheet" href="{{ asset('css/font.css') }}">
         <link rel="stylesheet" href="{{ asset('css/key.css') }}">
     </head>
@@ -27,15 +28,15 @@
                                 <div class="title-bar-title">منو</div>
                             </div>
                             <div class="grid-x">
-                                <div class="large-12 medium-12 top-menu-btm-border" style="position: absolute;">
+                                <div class="large-12 medium-12 top-menu-btm-border" style="position: absolute;" >
                                     <div class="grid-x">
                                         <div class="large-12 medium-12 top-menu-border">
                                             <div class="top-menu" id="responsive-menu">
                                                 <div class="top-bar-left">
-                                                    <ul style="background: none" class="dropdown menu element-dir Roboto" data-dropdown-menu>
+                                                    <ul style="background: none;height: 4.7rem;" class="dropdown menu element-dir Roboto my-text-shadow-effect" data-dropdown-menu>
                                                         @foreach($mainMenus as $mainMenu)
                                                             @if($lan == 'fa')
-                                                                <li><a class="{{ $mainMenu->id == $pageInfo->pMmId ? 'is-active' : '' }}" href="{{ url($mainMenu->mmPageLink . '') }}">{{ $mainMenu->mmFaSubject }}</a></li>
+                                                                <li class="BYekan"><a class="{{ $mainMenu->id == $pageInfo->pMmId ? 'is-active' : '' }}" href="{{ url($mainMenu->mmPageLink . '') }}">{{ $mainMenu->mmFaSubject }}</a></li>
                                                             @elseif($lan == 'en')
                                                                 <li><a class="{{ $mainMenu->id == $pageInfo->pMmId ? 'is-active' : '' }}" href="{{ url($lan . $mainMenu->mmPageLink) }}">{{ $mainMenu->mmEnSubject }}</a></li>
                                                             @elseif($lan == 'ar')
@@ -77,13 +78,16 @@
                                             <figcaption class="orbit-caption">
                                                 <div class="grid-container">
                                                     <div class="grid-x">
-                                                        <div style="padding-right: 180px;text-shadow: 1px 1px 2px black" class="large-12 medium-12 small-12">
+                                                        <div style="text-shadow: 1px 1px 2px black" class="large-12 medium-12 small-12">
                                                             @if($lan == 'fa')
                                                                 <p class="top-slider-header">{{ $pageInfo->pFaSubject }}</p>
                                                                 <p class="top-slider-description">{{ $pageInfo->pFaDescription }}</p>
                                                             @elseif($lan == 'en')
-                                                                <p  class="top-slider-header Roboto-Bold">{{ $pageInfo->pEnSubject }}</p>
-                                                                <p  class="top-slider-description merienda">{{ $pageInfo->pEnDescription }}</p>
+                                                                <div class="cabin">
+                                                                    <p  class="top-slider-header Roboto-Bold">{{ $pageInfo->pEnSubject }}</p>
+                                                                    <p  class="top-slider-description merienda">{{ $pageInfo->pEnDescription }}</p>
+                                                                    <a href="#" class="top-slider-description-btn">Read More</a>
+                                                                </div>
                                                             @elseif($lan == 'ar')
                                                                 <p style="text-align: center;" class="top-slider-header">{{ $pageInfo->pArSubject }}</p>
                                                                 <p style="text-align: center;" class="top-slider-description">{{ $pageInfo->pArDescription }}</p>
@@ -97,11 +101,45 @@
                                 @endforeach
                             </div>
                         </ul>
+                        <div style="margin-top: -250px;" class="grid-container">
+                            <nav class="orbit-bullets">
+                                <div style="padding-top:20vh;" class="grid-x">
+                                    <div class="large-3 medium-6 small-12 padding-lr">
+                                        <button class="is-active" data-slide="0">
+                                            <p>Hamedan is the capital of Iranian history and civilization2018</p>
+                                            <span class="show-for-sr">First slide details.</span><span class="show-for-sr">Current Slide</span>
+                                        </button>
+                                    </div>
+                                    <div class="large-3 medium-6 small-12 padding-lr">
+                                        <button data-slide="1">
+                                            <p>Hamedan is the capital of Iranian history and civilization2018</p>
+                                            <span class="show-for-sr">Second slide details.</span></button>
+                                        </button>
+                                    </div>
+                                    <div class="large-3 medium-6 small-12 padding-lr">
+                                        <button data-slide="2">
+                                            <p>Hamedan is the capital of Iranian history and civilization2018</p>
+                                            <span class="show-for-sr">Third slide details.</span>
+                                        </button>
+                                    </div>
+                                    <div class="large-3 medium-6 small-12 padding-lr">
+                                        <button data-slide="3">
+                                            <p>Hamedan is the capital of Iranian history and civilization2018</p>
+                                            <span class="show-for-sr">Fourth slide details.</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
                         </div>
                     </div>
                 </div>
                 <!--Top Slider End-->
             </div>
+
+
+
             @yield('content')
             <footer class="footer">
                 <div class="grid-x">
@@ -204,10 +242,10 @@
             </div>
         <!--Copy Right Bar End-->
         <script src="{{ asset('js/vendor/jquery.js') }}"  type="text/javascript"></script>
-        <script src="{{ asset('js/vendor/foundation.js') }}"></script>
         <script src="{{ asset('js/scripts/bundle.js') }}"></script> <!--Content left-->
         <script src="{{ asset('js/jquery.immersive-slider.js') }}"></script><!--Content Image slider-->
         <script src="{{ asset('js/pgwslider.js') }}"></script><!--Content Image slider-->
+        <script src="{{ asset('js/vendor/foundation.js') }}"></script>
         <script src="{{ asset('js/app.js') }}"></script>
         <script type="text/javascript">
             $(document).ready( function() {
