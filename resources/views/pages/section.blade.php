@@ -50,53 +50,53 @@
                     <div style="margin-top: 15px;" class="large-12 medium-12 element-dir">
                         <div class="direction-reveal direction-reveal--grid-bootstrap direction-reveal--demo-bootstrap">
                             <div class="grid-x">
-                                    <div class="large-6 medium-6">
-                                        <div class="grid-x grid-padding-x">
-                                            @foreach($section->sectionImg as $sectionImg)
-                                                @if ($sectionImg->siOrder != 5)
-                                                    <div class="large-6 medium-6 padding-lr">
-                                                        <a href="#" class="direction-reveal__card">
-                                                            <img src="{{ asset($sectionImg->gallery->gPath) }}" alt="Image" class="img-fluid">
-
-                                                            <div class="direction-reveal__overlay">
-                                                                @if($lan == 'fa')
-                                                                    <h4 class="direction-reveal__title">{{ $sectionImg->siFaSubject }}</h4>
-                                                                    <p class="direction-reveal__text one-line">{{ $sectionImg->siFaDescription }}</p>
-                                                                @elseif($lan == 'en')
-                                                                    <h6 class="direction-reveal__title cabin">{{ $sectionImg->siEnSubject }}</h6>
-                                                                    <p class="direction-reveal__text one-line">{{ $sectionImg->siEnDescription }}</p>
-                                                                @elseif($lan == 'ar')
-                                                                    <h4 class="direction-reveal__title">{{ $sectionImg->siArSubject }}</h4>
-                                                                    <p class="direction-reveal__text one-line">{{ $sectionImg->siArDescription }}</p>
-                                                                @endif
-                                                            </div>
-                                                        </a>
-                                                    </div>
-                                                @endif
-                                            @endforeach
-                                        </div>
-                                    </div>
-                                    <div class="large-6 medium-6 padding-lr">
+                                <div class="large-6 medium-6">
+                                    <div class="grid-x grid-padding-x">
                                         @foreach($section->sectionImg as $sectionImg)
-                                            @if ($sectionImg->siOrder == 5)
-                                                <a href="#" class="direction-reveal__card">
-                                                    <img src="{{ asset($sectionImg->gallery->gPath) }}" alt="Image" class="img-fluid">
-                                                    <div class="direction-reveal__overlay">
-                                                        @if($lan == 'fa')
-                                                            <h3 class="direction-reveal__title">{{ $sectionImg->siFaSubject }}</h3>
-                                                            <p class="direction-reveal__text one-line">{{ $sectionImg->siFaDescription }}</p>
-                                                        @elseif($lan == 'en')
-                                                            <h3 class="direction-reveal__title">{{ $sectionImg->siEnSubject }}</h3>
-                                                            <p class="direction-reveal__text one-line">{{ $sectionImg->siEnDescription }}</p>
-                                                        @elseif($lan == 'ar')
-                                                            <h3 class="direction-reveal__title">{{ $sectionImg->siArSubject }}</h3>
-                                                            <p class="direction-reveal__text one-line">{{ $sectionImg->siArDescription }}</p>
-                                                        @endif
-                                                    </div>
-                                                </a>
+                                            @if ($sectionImg->siOrder != 5)
+                                                <div class="large-6 medium-6 padding-lr">
+                                                    <a href="#" class="direction-reveal__card">
+                                                        <img src="{{ asset($sectionImg->gallery->gPath) }}" alt="Image" class="img-fluid">
+
+                                                        <div class="direction-reveal__overlay">
+                                                            @if($lan == 'fa')
+                                                                <h4 class="direction-reveal__title">{{ $sectionImg->siFaSubject }}</h4>
+                                                                <p class="direction-reveal__text one-line">{{ $sectionImg->siFaDescription }}</p>
+                                                            @elseif($lan == 'en')
+                                                                <h6 class="direction-reveal__title cabin">{{ $sectionImg->siEnSubject }}</h6>
+                                                                <p class="direction-reveal__text one-line">{{ $sectionImg->siEnDescription }}</p>
+                                                            @elseif($lan == 'ar')
+                                                                <h4 class="direction-reveal__title">{{ $sectionImg->siArSubject }}</h4>
+                                                                <p class="direction-reveal__text one-line">{{ $sectionImg->siArDescription }}</p>
+                                                            @endif
+                                                        </div>
+                                                    </a>
+                                                </div>
                                             @endif
                                         @endforeach
                                     </div>
+                                </div>
+                                <div class="large-6 medium-6 padding-lr">
+                                    @foreach($section->sectionImg as $sectionImg)
+                                        @if ($sectionImg->siOrder == 5)
+                                            <a href="#" class="direction-reveal__card">
+                                                <img src="{{ asset($sectionImg->gallery->gPath) }}" alt="Image" class="img-fluid">
+                                                <div class="direction-reveal__overlay">
+                                                    @if($lan == 'fa')
+                                                        <h3 class="direction-reveal__title">{{ $sectionImg->siFaSubject }}</h3>
+                                                        <p class="direction-reveal__text one-line">{{ $sectionImg->siFaDescription }}</p>
+                                                    @elseif($lan == 'en')
+                                                        <h3 class="direction-reveal__title">{{ $sectionImg->siEnSubject }}</h3>
+                                                        <p class="direction-reveal__text one-line">{{ $sectionImg->siEnDescription }}</p>
+                                                    @elseif($lan == 'ar')
+                                                        <h3 class="direction-reveal__title">{{ $sectionImg->siArSubject }}</h3>
+                                                        <p class="direction-reveal__text one-line">{{ $sectionImg->siArDescription }}</p>
+                                                    @endif
+                                                </div>
+                                            </a>
+                                        @endif
+                                    @endforeach
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -160,7 +160,7 @@
         @elseif($section->sectionType->stType == 'CONTENT_WIDE_SLIDER')
             <div>
                 <div class="grid-x grid-padding-x">
-                    <div style="margin-top: 80px;" class="large-12 medium-12 center-el">
+                    <div style="margin-top: 50px;" class="large-12 medium-12 center-el">
                         @if($lan == 'fa')
                             <h1 class="BYekan">{{ $section->sFaSubject }}</h1>
                         @elseif($lan == 'en')
@@ -176,24 +176,23 @@
                             <ul class="orbit-container">
                                 <button class="orbit-previous" aria-label="previous"><span class="show-for-sr">Previous Slide</span>&#9664;</button>
                                 <button class="orbit-next" aria-label="next"><span class="show-for-sr">Next Slide</span>&#9654;</button>
-                                <li style="padding: 50px;" class="orbit-slide">
-                                    <div class="docs-example-orbit-slide">
-                                        <div class="grid-x">
-                                            <div class="medium-3 style_prevu_kit">
-                                                <img  class="img-size" src="{{ asset('pic/hand/5.jpg') }}">
-                                            </div>
-                                            <div class="medium-3 style_prevu_kit">
-                                                <img class="img-size" src="{{ asset('pic/hand/6.jpg') }}">
-                                            </div>
-                                            <div class="medium-3 style_prevu_kit">
-                                                <img class="img-size" src="{{ asset('pic/hand/7.jpg') }}">
-                                            </div>
-                                            <div class="medium-3 style_prevu_kit">
-                                                <img class="img-size" src="{{ asset('pic/hand/8.jpg') }}">
+                                <?php
+                                    $item = 0;
+                                    $itemCount = count($section->sectionImg);
+                                ?>
+                                @for($i = 0 ; $i < $itemCount / 4 ; $i++)
+                                    <li style="padding: 50px" class="orbit-slide">
+                                        <div class="docs-example-orbit-slide">
+                                            <div class="grid-x">
+                                                @for( ; $item < (($i + 1) * 4);$item++)
+                                                    <div class="medium-3 style_prevu_kit">
+                                                        <img  class="img-size" src="{{ asset($section->sectionImg[$item]['gallery']['gPath']) }}">
+                                                    </div>
+                                                @endfor
                                             </div>
                                         </div>
-                                    </div>
-                                </li>
+                                    </li>
+                                @endfor
                             </ul>
                         </div>
                     </div>

@@ -41,9 +41,24 @@ class SectionTableSeeder extends Seeder
         $section = new \Hamedan_2018\Section;
         $section->sPId = 1;
         $section->sStId = 4;
+        $section->sOrder = 5;
+        $section->sFaSubject = 'سوغات همدان';
+        $section->sEnSubject = 'Hamedan Souvenir';
+        $section->sArSubject = 'الهدايا التذكارية همدان';
+        $section->save();
+
+        $section = new \Hamedan_2018\Section;
+        $section->sPId = 1;
+        $section->sStId = 5;
         $section->sOrder = 4;
         $section->save();
 
+        $section = new \Hamedan_2018\Section;
+        $section->sPId = 2;
+        $section->sStId = 1;
+        $section->sOrder = 1;
+        $section->sMmId = 1;
+        $section->save();
 
     }
 }
