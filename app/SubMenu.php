@@ -11,7 +11,7 @@ class SubMenu extends Model
     public static function getAllSubMenuWithMainMenuId($mId)
     {
 
-        $subMenu = SubMenu::where('smMmId' , '=' , $mId)->where('smState' , '=' , true)->get();
+        $subMenu = SubMenu::where('smMmId' , '=' , $mId)->where('smState' , '=' , true)->orderBy('smOrder' , 'ASC')->get();
         return$subMenu;
     }
 }

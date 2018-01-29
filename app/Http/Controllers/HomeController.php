@@ -26,15 +26,14 @@ class HomeController extends Controller
 
     private function renderPage($lan)
     {
-        $pageInfo = Page::with('pageHeaderImg.image')
-            ->with('section')
+        $pageInfo = Page::with('pageHeaderImg.image' , 'headerType')
             ->where('pLinkUrl' , '=' , '/index')
             ->first();
-
         $sections = Section::with('sectionType')
             ->with('sectionImg.gallery')
             ->where('sPId' , '=' , $pageInfo->id)
             ->where('sState' , '=' , true)
+            ->orderBy('sOrder' , 'ASC')
             ->get();
         return view('pages.section' , ['lan' => $lan , 'pageInfo' => $pageInfo , 'sections' => $sections]);
     }

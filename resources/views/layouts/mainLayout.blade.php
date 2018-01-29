@@ -13,6 +13,7 @@
         <link rel="stylesheet" href="{{ asset('css/pgwslider.css') }}">
         <link rel="stylesheet" href="{{ asset('css/foundation.css') }}">
         <link href="https://fonts.googleapis.com/css?family=Satisfy|Poiret+One|Cabin|Wire+One|Merienda|Roboto" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/motion-ui/1.2.2/motion-ui.css" rel="stylesheet">
         <link rel="stylesheet" href="{{ asset('css/font.css') }}">
         <link rel="stylesheet" href="{{ asset('css/key.css') }}">
     </head>
@@ -32,7 +33,7 @@
                                         <div class="large-12 medium-12 top-menu-border">
                                             <div class="top-menu" id="responsive-menu">
                                                 <div class="top-bar-left">
-                                                    <ul style="background: none;height: 4.7rem;" class="dropdown menu element-dir Roboto" data-dropdown-menu>
+                                                    <ul style="background: none;height: 4.7rem;" class="dropdown menu element-dir Roboto my-text-shadow-effect" data-dropdown-menu>
                                                         @foreach($mainMenus as $mainMenu)
                                                             @if($lan == 'fa')
                                                                 <li class="BYekan"><a class="{{ $mainMenu->id == $pageInfo->pMmId ? 'is-active' : '' }}" href="{{ url($mainMenu->mmPageLink . '') }}">{{ $mainMenu->mmFaSubject }}</a></li>
@@ -50,127 +51,130 @@
                                 </div>
                                 @foreach($pageInfo->pageHeaderImg as $pageImg)
                                     <li class="is-active orbit-slide">
-                                        <img class="orbit-image top-slider" src="{{ asset($pageImg->image->gPath) }}" alt="Space">
-                                        {{--<figcaption class="orbit-caption align-center">
-                                            @if($lan == 'fa')
-                                                <p style="text-align: center;" class="top-slider-header">{{ $pageInfo->pFaSubject }}</p>
-                                                <p style="text-align: center;" class="top-slider-description">{{ $pageInfo->pFaDescription }}</p>
-                                                <center>
-                                                    <button style="margin-top: 15px;" class="button primary white-color">اطلاعات بیشتر</button>
-                                                </center>
-                                            @elseif($lan == 'en')
-                                                <p style="text-align: center;" class="top-slider-header Roboto-Bold">{{ $pageInfo->pEnSubject }}</p>
-                                                <p style="text-align: center;" class="top-slider-description merienda">{{ $pageInfo->pEnDescription }}</p>
-                                                <center>
-                                                    <button style="margin-top: 15px;" class="button primary white-color">More</button>
-                                                </center>
-                                            @elseif($lan == 'ar')
-                                                <p style="text-align: center;" class="top-slider-header">{{ $pageInfo->pArSubject }}</p>
-                                                <p style="text-align: center;" class="top-slider-description">{{ $pageInfo->pArDescription }}</p>
-                                                <center>
-                                                    <button style="margin-top: 15px;" class="button primary white-color">اطلاعات بیشتر</button>
-                                                </center>
-                                            @endif
-                                        </figcaption>--}}
-                                        <figcaption class="orbit-caption">
-                                            <div class="grid-container">
-                                                <div class="grid-x">
-                                                    <div class="large-12 medium-12 small-12 my-text-shadow-effect">
-                                                        @if($lan == 'fa')
-                                                            <div class="BYekan">
+                                        <img class="orbit-image {{ $pageInfo->headerType->phtType == 'SIMPLE' ? 'top-slider-simple' : 'top-slider' }}" src="{{ asset($pageImg->image->gPath) }}" alt="Space">
+                                        @if ($pageInfo->headerType->phtType == 'SIMPLE')
+                                            <figcaption class="orbit-caption align-center">
+                                                @if($lan == 'fa')
+                                                    <p style="text-align: center;" class="top-slider-header">{{ $pageInfo->pFaSubject }}</p>
+                                                    <p style="text-align: center;" class="top-slider-description">{{ $pageInfo->pFaDescription }}</p>
+                                                    <center>
+                                                        <button style="margin-top: 15px;" class="button primary white-color">اطلاعات بیشتر</button>
+                                                    </center>
+                                                @elseif($lan == 'en')
+                                                    <p style="text-align: center;" class="top-slider-header Roboto-Bold">{{ $pageInfo->pEnSubject }}</p>
+                                                    <p style="text-align: center;" class="top-slider-description merienda">{{ $pageInfo->pEnDescription }}</p>
+                                                    <center>
+                                                        <button style="margin-top: 15px;" class="button primary white-color">More</button>
+                                                    </center>
+                                                @elseif($lan == 'ar')
+                                                    <p style="text-align: center;" class="top-slider-header">{{ $pageInfo->pArSubject }}</p>
+                                                    <p style="text-align: center;" class="top-slider-description">{{ $pageInfo->pArDescription }}</p>
+                                                    <center>
+                                                        <button style="margin-top: 15px;" class="button primary white-color">اطلاعات بیشتر</button>
+                                                    </center>
+                                                @endif
+                                            </figcaption>
+                                        @elseif($pageInfo->headerType->phtType == 'ADVANCE')
+                                            <figcaption class="orbit-caption">
+                                                <div class="grid-container">
+                                                    <div class="grid-x">
+                                                        <div style="text-shadow: 1px 1px 2px black" class="large-12 medium-12 small-12">
+                                                            @if($lan == 'fa')
                                                                 <p class="top-slider-header">{{ $pageInfo->pFaSubject }}</p>
                                                                 <p class="top-slider-description">{{ $pageInfo->pFaDescription }}</p>
-                                                                <div class="grid-x">
-                                                                    <div class="large-4 medium-6 small-12">
-                                                                        <p>همدان پایتخ گردشگری آسیا در سال 2018</p>
-                                                                    </div>
-                                                                    <div class="grid-container">
-                                                                        <div style="padding-top:20vh;" class="grid-x">
-                                                                            <div class="large-3 medium-6 small-12 padding-lr top-slider-description-active">
-                                                                                <p>Hamedan is the capital of Iranian history and civilization2018</p>
-                                                                            </div>
-                                                                            <div class="large-3 medium-6 small-12 padding-lr">
-                                                                                <p>Hamedan is the capital of Iranian history and civilization2018</p>
-                                                                            </div>
-                                                                            <div class="large-3 medium-6 small-12 padding-lr">
-                                                                                <p>Hamedan is the capital of Iranian history and civilization2018</p>
-                                                                            </div>
-                                                                            <div class="large-3 medium-6 small-12 padding-lr">
-                                                                                <p>Hamedan is the capital of Iranian history and civilization2018</p>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
+                                                            @elseif($lan == 'en')
+                                                                <div class="cabin">
+                                                                    <p  class="top-slider-header Roboto-Bold">{{ $pageInfo->pEnSubject }}</p>
+                                                                    <p  class="top-slider-description merienda">{{ $pageInfo->pEnDescription }}</p>
+                                                                    <a href="#" class="top-slider-description-btn">Read More</a>
                                                                 </div>
-                                                            </div>
-                                                        @elseif($lan == 'en')
-                                                            <div class="cabin">
-                                                                <p  class="top-slider-header Roboto-Bold">{{ $pageInfo->pEnSubject }}</p>
-                                                                <p  class="top-slider-description merienda">{{ $pageInfo->pEnDescription }}</p>
-                                                                <div class="grid-container">
-                                                                    <nav class="orbit-bullets">
-                                                                        <div style="padding-top:20vh;" class="grid-x">
-                                                                            <div class="large-3 medium-6 small-12 padding-lr">
-                                                                                <button class="is-active" data-slide="0">
-                                                                                    <p>Hamedan is the capital of Iranian history and civilization2018</p>
-                                                                                    <span class="show-for-sr">First slide details.</span><span class="show-for-sr">Current Slide</span>
-                                                                                </button>
-                                                                            </div>
-                                                                            <div class="large-3 medium-6 small-12 padding-lr">
-                                                                                <button data-slide="1">
-                                                                                    <p>Hamedan is the capital of Iranian history and civilization2018</p>
-                                                                                    <span class="show-for-sr">Second slide details.</span></button>
-                                                                                </button>
-                                                                            </div>
-                                                                            <div class="large-3 medium-6 small-12 padding-lr">
-                                                                                <button data-slide="2">
-                                                                                    <p>Hamedan is the capital of Iranian history and civilization2018</p>
-                                                                                    <span class="show-for-sr">Third slide details.</span>
-                                                                                </button>
-                                                                            </div>
-                                                                            <div class="large-3 medium-6 small-12 padding-lr">
-                                                                                <button data-slide="3">
-                                                                                    <p>Hamedan is the capital of Iranian history and civilization2018</p>
-                                                                                    <span class="show-for-sr">Fourth slide details.</span>
-                                                                                </button>
-                                                                            </div>
-                                                                        </div>
-                                                                    </nav>
-                                                                </div>
-                                                            </div>
-                                                        @elseif($lan == 'ar')
-                                                            <p style="text-align: center;" class="top-slider-header">{{ $pageInfo->pArSubject }}</p>
-                                                            <p style="text-align: center;" class="top-slider-description">{{ $pageInfo->pArDescription }}</p>
-                                                        @endif
+                                                            @elseif($lan == 'ar')
+                                                                <p style="text-align: center;" class="top-slider-header">{{ $pageInfo->pArSubject }}</p>
+                                                                <p style="text-align: center;" class="top-slider-description">{{ $pageInfo->pArDescription }}</p>
+                                                            @endif
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </figcaption>
+                                            </figcaption>
+                                        @endif
                                     </li>
                                 @endforeach
                             </div>
                         </ul>
+                        <div style="margin-top: -250px;" class="grid-container">
+                            <nav class="orbit-bullets">
+                                <div style="padding-top:20vh;" class="grid-x">
+                                    <div class="large-3 medium-6 small-12 padding-lr">
+                                        <button class="is-active" data-slide="0">
+                                            <p>Hamedan is the capital of Iranian history and civilization2018</p>
+                                            <span class="show-for-sr">First slide details.</span><span class="show-for-sr">Current Slide</span>
+                                        </button>
+                                    </div>
+                                    <div class="large-3 medium-6 small-12 padding-lr">
+                                        <button data-slide="1">
+                                            <p>Hamedan is the capital of Iranian history and civilization2018</p>
+                                            <span class="show-for-sr">Second slide details.</span></button>
+                                        </button>
+                                    </div>
+                                    <div class="large-3 medium-6 small-12 padding-lr">
+                                        <button data-slide="2">
+                                            <p>Hamedan is the capital of Iranian history and civilization2018</p>
+                                            <span class="show-for-sr">Third slide details.</span>
+                                        </button>
+                                    </div>
+                                    <div class="large-3 medium-6 small-12 padding-lr">
+                                        <button data-slide="3">
+                                            <p>Hamedan is the capital of Iranian history and civilization2018</p>
+                                            <span class="show-for-sr">Fourth slide details.</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
                         </div>
                     </div>
                 </div>
                 <!--Top Slider End-->
             </div>
+
+
+
             @yield('content')
             <footer class="footer">
                 <div class="grid-x">
                     <div class="large-12 medium-12">
                         <div class="grid-x">
                             <div class="large-4 medium-12 small-12 element-dir">
-                                <label class="withe-color">از رویداد ها، جشنواره ها، تورها، خبر ها و... با خبر شوید!</label>
+                                @if($lan == 'fa')
+                                    <label class="withe-color">از رویداد ها، جشنواره ها، تورها، خبر ها و... با خبر شوید!</label>
+                                @elseif($lan == 'en')
+                                    <label class="withe-color cabin">Watch events, festivals, tours, news and more!</label>
+                                @elseif($lan == 'ar')
+                                    <label class="withe-color">مشاهدة الأحداث والمهرجانات والجولات والأخبار وأكثر!</label>
+                                @endif
                                 <div class="input-group">
                                     <input class="input-group-field" type="text">
                                     <div class="input-group-button">
-                                        <input type="submit" class="button" value="عضویت ">
+                                        @if($lan == 'fa')
+                                            <input type="submit" class="button" value="عضویت ">
+                                        @elseif($lan == 'en')
+                                            <input type="submit" class="button cabin" value="Join ">
+                                        @elseif($lan == 'ar')
+                                            <input type="submit" class="button" value="عضوية ">
+                                        @endif
                                     </div>
                                 </div>
                             </div>
                             <div class="large-7 medium-12 small-12">
                                 <div class="footer-social-icons">
-                                    <h6 class="_14 withe-color BYekan center-el">رویداد همدان 2018 را در شبکه های اجتماعی دنبال کنید</h6>
+                                    @if($lan == 'fa')
+                                        <h6 class="_14 withe-color BYekan center-el">رویداد همدان 2018 را در شبکه های اجتماعی دنبال کنید</h6>
+                                    @elseif($lan == 'en')
+                                        <h6 class="_14 withe-color BYekan center-el cabin">Follow the 2018 Hamadan event on social networks</h6>
+                                    @elseif($lan == 'ar')
+                                        <h6 class="_14 withe-color BYekan center-el">متابعة الحدث هامادان 2018 على الشبكات الاجتماعية</h6>
+                                    @endif
                                     <ul class="social-icons center-el">
                                         <li><a href="" class="social-icon"> <i class="fab fa-facebook-f"></i></a></li>
                                         <li><a href="" class="social-icon"> <i class="fab fa-twitter"></i></a></li>
@@ -191,42 +195,32 @@
                 <div class="grid-x">
                     <div class="large-12 medium-12 element-distanse">
                         <div class="grid-x">
+                            @foreach($mainMenus as $mainMenu)
                             <div class="large-3 medium-3 small-12 footer-menu">
-                                <h6 class="menu-header">تاریخچه</h6>
-                                <ul>
-                                    <li><a href="#">همدان</a></li>
-                                    <li><a href="#">مشاهیر</a></li>
-                                    <li><a href="#">آداب و رسوم</a></li>
-                                </ul>
+                                @if($lan == 'fa')
+                                    <a href=""><h6 class="menu-header">{{ $mainMenu->mmFaSubject }}</h6></a>
+                                    <ul>
+                                        @foreach(\Hamedan_2018\SubMenu::getAllSubMenuWithMainMenuId($mainMenu->id) as $subMenu)
+                                            <li><a href="{{ url($lan . $subMenu->smPageLink) }}">{{ $subMenu->smFaSubject }}</a></li>
+                                        @endforeach
+                                    </ul>
+                                @elseif($lan == 'en')
+                                    <a href=""><h6 class="menu-header cabin">{{ $mainMenu->mmEnSubject }}</h6></a>
+                                    <ul>
+                                        @foreach(\Hamedan_2018\SubMenu::getAllSubMenuWithMainMenuId($mainMenu->id) as $subMenu)
+                                            <li><a class="cabin" href="{{ url($lan . $subMenu->smPageLink) }}">{{ $subMenu->smEnSubject }}</a></li>
+                                        @endforeach
+                                    </ul>
+                                @elseif($lan == 'ar')
+                                    <a href=""><h6 class="menu-header">{{ $mainMenu->mmArSubject }}</h6></a>
+                                    <ul>
+                                        @foreach(\Hamedan_2018\SubMenu::getAllSubMenuWithMainMenuId($mainMenu->id) as $subMenu)
+                                            <li><a href="{{ url($lan . $subMenu->smPageLink) }}">{{ $subMenu->smArSubject }}</a></li>
+                                        @endforeach
+                                    </ul>
+                                @endif
                             </div>
-                            <div class="large-3 medium-3 small-12 footer-menu">
-                                <h6 class="menu-header">جاذبه ها</h6>
-                                <ul>
-                                    <li><a href="#">گردشگری</a></li>
-                                    <li><a href="#">تفریحی</a></li>
-                                    <li><a href="#">طبیعی</a></li>
-                                    <li><a href="#">مذهبی</a></li>
-                                </ul>
-                            </div>
-                            <div class="large-3 medium-3 small-12 footer-menu">
-                                <h6 class="menu-header">مراکز اقامتی</h6>
-                                <ul>
-                                    <li><a href="#">گردشگری</a></li>
-                                    <li><a href="#">تفریحی</a></li>
-                                    <li><a href="#">طبیعی</a></li>
-                                    <li><a href="#">مذهبی</a></li>
-                                </ul>
-                            </div>
-                            <div class="large-3 medium-3 small-12 footer-menu">
-                                <h6 class="menu-header">مراکز پذیرایی</h6>
-                                <ul>
-                                    <li><a href="#">گردشگری</a></li>
-                                    <li><a href="#">تفریحی</a></li>
-                                    <li><a href="#">طبیعی</a></li>
-                                    <li><a href="#">مذهبی</a></li>
-                                </ul>
-                            </div>
-
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -248,10 +242,10 @@
             </div>
         <!--Copy Right Bar End-->
         <script src="{{ asset('js/vendor/jquery.js') }}"  type="text/javascript"></script>
-        <script src="{{ asset('js/vendor/foundation.js') }}"></script>
         <script src="{{ asset('js/scripts/bundle.js') }}"></script> <!--Content left-->
         <script src="{{ asset('js/jquery.immersive-slider.js') }}"></script><!--Content Image slider-->
         <script src="{{ asset('js/pgwslider.js') }}"></script><!--Content Image slider-->
+        <script src="{{ asset('js/vendor/foundation.js') }}"></script>
         <script src="{{ asset('js/app.js') }}"></script>
         <script type="text/javascript">
             $(document).ready( function() {

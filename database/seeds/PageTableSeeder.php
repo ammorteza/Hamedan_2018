@@ -12,6 +12,7 @@ class PageTableSeeder extends Seeder
     public function run()
     {
         $page = new \Hamedan_2018\Page;
+        $page->pPhtId = 1;
         $page->pFaSubject = 'همدان';
         $page->pEnSubject = 'Hamedan';
         $page->pArSubject = 'همدان';

@@ -32,7 +32,6 @@ class PageController extends Controller
     public function tempSections()
     {
         $pageInfo = Page::with('pageHeaderImg.image')
-            ->with('section')
             ->where('pLinkUrl' , '=' , '/index')
             ->first();
 
@@ -46,8 +45,7 @@ class PageController extends Controller
 
     private function renderPage($slug , $lan)
     {
-        $pageInfo = Page::with('pageHeaderImg.image')
-            ->with('section')
+        $pageInfo = Page::with('pageHeaderImg.image' , 'headerType')
             ->where('pLinkUrl' , '=' , '/' . $slug)
             ->first();
 
@@ -55,6 +53,7 @@ class PageController extends Controller
             ->with('sectionImg.gallery')
             ->where('sPId' , '=' , $pageInfo->id)
             ->where('sState' , '=' , true)
+            ->orderBy('sOrder' , 'ASC')
             ->get();
         return view('pages.section' , ['lan' => $lan , 'pageInfo' => $pageInfo , 'sections' => $sections]);
     }

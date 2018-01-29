@@ -58,18 +58,22 @@ h1,h2,h3,h4,h5,h6{
     text-shadow: 1px 1px 2px black;
 }
 .orbit-bullets button.is-active {
-    border-bottom:.2rem solid #fff;
+    border-bottom: .2rem solid #fff;
+    margin-top: 10px;
     height: 4.7rem;
     background-color: transparent;
     color: #FFFFFF;
     text-shadow: 1px 1px 2px black;
+}
+.top-slider-simple{
+    max-height:  87vh;
 }
 
 .orbit-caption {
     position: absolute;
     bottom: 0;
     width: 100%;
-    margin-bottom: 0;
+    margin-bottom: 17%;
     padding: 1rem;
     background-color: transparent;
     color: #FFFFFF; }
@@ -135,7 +139,7 @@ h1,h2,h3,h4,h5,h6{
 
 /***********Fade in Effect***************/
 /* make keyframes that tell the start state and the end state of our object */
-@-webkit-keyframes fadeIn {
+@-webkit-keyframes my-fadeIn {
     from {
         opacity: 0;
     }
@@ -143,7 +147,7 @@ h1,h2,h3,h4,h5,h6{
         opacity: 1;
     }
 }
-@-moz-keyframes fadeIn {
+@-moz-keyframes my-fadeIn {
     from {
         opacity: 0;
     }
@@ -151,7 +155,7 @@ h1,h2,h3,h4,h5,h6{
         opacity: 1;
     }
 }
-@keyframes fadeIn {
+@keyframes my-fadeIn {
     from {
         opacity: 0;
     }
@@ -160,7 +164,7 @@ h1,h2,h3,h4,h5,h6{
     }
 }
 
-.fade-in {
+.my-fadeIn {
     opacity: 0; /* make things invisible upon start */
     -webkit-animation: fadeIn ease-in 1; /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
     -moz-animation: fadeIn ease-in 1;
@@ -175,7 +179,7 @@ h1,h2,h3,h4,h5,h6{
     animation-duration: 1s;
 }
 
-.fade-in.one {
+.my-fadeIn.one {
     -webkit-animation-delay: 0.4s;
     -moz-animation-delay: 0.4s;
     animation-delay: 0.4s;
@@ -184,8 +188,16 @@ h1,h2,h3,h4,h5,h6{
 .top-slider-description-active{
     border-bottom:.2rem solid #fff;
 }
-.top-slider-description-number{
-
+.top-slider-description-btn{
+    color: rgba(255, 255, 255, 0.87);
+    font-size: 14px;
+    font-weight: 700; letter-spacing: 0.06px;
+    text-transform: uppercase;
+    transition: color 200ms ease-out 0s;
+}
+.top-slider-description-btn:hover{
+    text-decoration: solid;
+    transition: color 200ms ease-out 0s;
 }
 .middle-menu{
     margin-top: 30px;
