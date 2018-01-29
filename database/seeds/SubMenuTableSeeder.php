@@ -13,6 +13,14 @@ class SubMenuTableSeeder extends Seeder
     {
         $subMenu = new \Hamedan_2018\SubMenu;
         $subMenu->smMmId = 1;
+        $subMenu->smFaSubject = 'جاذبه ها';
+        $subMenu->smEnSubject = 'Attraction';
+        $subMenu->smPageLink = '/page/hamadan/history';
+        $subMenu->smArSubject = 'جاذبیه';
+        $subMenu->save();
+
+        $subMenu = new \Hamedan_2018\SubMenu;
+        $subMenu->smMmId = 1;
         $subMenu->smFaSubject = 'تاریخچه';
         $subMenu->smEnSubject = 'History';
         $subMenu->smArSubject = 'تاریخ';
@@ -30,6 +38,21 @@ class SubMenuTableSeeder extends Seeder
         $subMenu->smFaSubject = 'آداب و رسوم';
         $subMenu->smEnSubject = 'Culture';
         $subMenu->smArSubject = 'ثقافة';
+        $subMenu->save();
+
+        /////////////////////////////////////////////////////
+        $subMenu = new \Hamedan_2018\SubMenu;
+        $subMenu->smMmId = 2;
+        $subMenu->smFaSubject = 'همدان ۲۰۱۸';
+        $subMenu->smEnSubject = 'Hamadan 2018';
+        $subMenu->smArSubject = 'همدان ۲۰۱۸';
+        $subMenu->save();
+
+        $subMenu = new \Hamedan_2018\SubMenu;
+        $subMenu->smMmId = 2;
+        $subMenu->smFaSubject = 'UNWTO';
+        $subMenu->smEnSubject = 'UNWTO';
+        $subMenu->smArSubject = 'UNWTO';
         $subMenu->save();
 
         /////////////////////////////////////////////////////

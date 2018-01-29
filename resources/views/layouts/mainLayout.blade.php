@@ -107,7 +107,7 @@
                 <div class="grid-x">
                     <div class="large-12 medium-12">
                         <div class="grid-x">
-                            <div class="large-4 medium-12 small-12 element-dir">
+                            <div class="large-4 medium-12 small-12">
                                 @if($lan == 'fa')
                                     <label class="withe-color">از رویداد ها، جشنواره ها، تورها، خبر ها و... با خبر شوید!</label>
                                 @elseif($lan == 'en')
@@ -115,7 +115,7 @@
                                 @elseif($lan == 'ar')
                                     <label class="withe-color">مشاهدة الأحداث والمهرجانات والجولات والأخبار وأكثر!</label>
                                 @endif
-                                <div class="input-group">
+                                <div class="input-group element-dir">
                                     <input class="input-group-field" type="text">
                                     <div class="input-group-button">
                                         @if($lan == 'fa')

@@ -18,5 +18,7 @@ class DatabaseSeeder extends Seeder
         $this->call(PageHeaderTypeTableSeeder::class);
         $this->call(PageTableSeeder::class);
         $this->call(PageHeaderImgTableSeeder::class);
+        $this->call(SectionTableSeeder::class);
+        $this->call(SectionImgTableSeeder::class);
     }
 }

@@ -58,5 +58,6 @@ class CreateSectionImgTable extends Migration
     {
         DB::statement('SET FOREIGN_KEY_CHECKS = 0');
         Schema::dropIfExists('tbl_section_imgs');
-        DB::statement('SET FOREIGN_KEY_CHECKS = 1');}
+        DB::statement('SET FOREIGN_KEY_CHECKS = 1');
+    }
 }

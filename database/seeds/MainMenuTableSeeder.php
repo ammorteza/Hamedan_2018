@@ -15,6 +15,7 @@ class MainMenuTableSeeder extends Seeder
         $mainMenu->mmFaSubject = 'همدان';
         $mainMenu->mmEnSubject = 'Hamedan';
         $mainMenu->mmArSubject = 'همدان';
+        $mainMenu->mmPageLink = '/page/hamadan/history';
         $mainMenu->save();
 
         $mainMenu = new \Hamedan_2018\MainMenu;
