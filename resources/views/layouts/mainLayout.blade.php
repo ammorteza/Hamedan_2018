@@ -56,7 +56,7 @@
                                             <figcaption class="orbit-caption align-center">
                                                 @if($lan == 'fa')
                                                     <p style="text-align: center;" class="top-slider-header">{{ $pageInfo->pFaSubject }}</p>
-                                                    <p style="text-align: center;" class="top-slider-description">{{ $pageInfo->pFaDescription }}</p>
+                                                    <p style="text-align: center;" class="top-slider-description Duel-Regular">{{ $pageInfo->pFaDescription }}</p>
                                                     <center>
                                                         <button style="margin-top: 15px;" class="button primary white-color">اطلاعات بیشتر</button>
                                                     </center>
@@ -80,8 +80,8 @@
                                                     <div class="grid-x">
                                                         <div style="text-shadow: 1px 1px 2px black" class="large-12 medium-12 small-12">
                                                             @if($lan == 'fa')
-                                                                <p class="top-slider-header">{{ $pageInfo->pFaSubject }}</p>
-                                                                <p class="top-slider-description">{{ $pageInfo->pFaDescription }}</p>
+                                                                <p class="top-slider-header BTitrBold">{{ $pageInfo->pFaSubject }}</p>
+                                                                <p class="top-slider-description Duel-Regular">{{ $pageInfo->pFaDescription }}</p>
                                                             @elseif($lan == 'en')
                                                                 <div class="cabin">
                                                                     <p  class="top-slider-header Roboto-Bold">{{ $pageInfo->pEnSubject }}</p>
