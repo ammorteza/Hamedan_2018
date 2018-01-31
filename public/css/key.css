@@ -79,7 +79,7 @@ h1,h2,h3,h4,h5,h6{
     position: absolute;
     bottom: 0;
     width: 100%;
-    margin-bottom: 17%;
+    margin-bottom: 16%;
     padding: 1rem;
     background-color: transparent;
     color: #FFFFFF; }
@@ -87,13 +87,16 @@ h1,h2,h3,h4,h5,h6{
 .element-distanse{
     margin-top: 30px;
 }
+
 .font-large{
     font-size: 9em;
 }
+
 .top-slider-header{
-    font-size: 4.5em;
+    font-size: 3.5em;
     margin-bottom: 0px;
 }
+
 .top-slider-description{
     font-size: 1.5em;
 }
@@ -311,7 +314,7 @@ h1,h2,h3,h4,h5,h6{
     color: #FFFFFF;
 }
 .my-text-shadow-effect{
-    text-shadow: 1px 1px 2px black;
+    text-shadow: 1px 1px 3px black;
 }
 .logo-slider{
     font-size: xx-small;

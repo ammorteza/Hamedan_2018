@@ -23,26 +23,26 @@
             <!--CONTENT_LEFT SECTION-->
             <div id="ploop" class="grid-container">
                 <div class="grid-x grid-padding-x">
-                    <div style="margin-top: 80px;" class="large-12 medium-12 center-el">
+                    <div style="margin-top: 80px;color: #37474F;" class="large-12 medium-12 center-el">
                         @if($lan == 'fa')
-                            <h1 class="Mj-Flow-Reqular" style="color: #37474F;">{{ $section->sFaSubject }}</h1>
+                            <h1 class="Mj-Flow-Reqular">{{ $section->sFaSubject }}</h1>
                         @elseif($lan == 'en')
-                            <h1 style="font-size: 4em;color: #37474F;" class="wire-one">{{ $section->sEnSubject }}</h1>
+                            <h1 style="font-size: 4em;" class="wire-one">{{ $section->sEnSubject }}</h1>
                         @elseif($lan == 'ar')
-                            <h1 class="BYekan" style="color: #37474F;">{{ $section->sArSubject }}</h1>
+                            <h2 class="Al-Jazeera-Arabic-Regular">{{ $section->sArSubject }}</h2>
                         @endif
                     </div>
                 </div>
                 <div class="grid-x grid-padding-x">
-                    <div class="large-12 medium-12">
+                    <div class="large-12 medium-12" style="color: #8a8a8a;">
                         @if($lan == 'fa')
-                            <p class="" style="color: #8a8a8a">{!! $section->sFaDescription !!}</p>
+                            <p class="">{!! $section->sFaDescription !!}</p>
                         @elseif($lan == 'en')
-                            <div style="font-size: 0.9em;color: #8a8a8a" class="Roboto-Regular">
+                            <div style="font-size: 0.9em" class="Raleway-Regular">
                                 <p>{!! $section->sEnDescription !!}</p>
                             </div>
                         @elseif($lan == 'ar')
-                            <p class="">{!! $section->sArDescription !!}</p>
+                            <p class="Al-Jazeera-Arabic-Regular">{!! $section->sArDescription !!}</p>
                         @endif
                     </div>
                 </div>
@@ -107,26 +107,26 @@
             <!--CONTENT_IMAGE_SLIDER SECTION-->
             <div class="grid-container">
                 <div class="grid-x grid-padding-x">
-                    <div style="margin-top: 50px;" class="large-12 medium-12 center-el">
+                    <div style="margin-top: 50px;color: #37474F;" class="large-12 medium-12 center-el">
                         @if($lan == 'fa')
                             <h1 class="Mj-Flow-Reqular">{{ $section->sFaSubject }}</h1>
                         @elseif($lan == 'en')
                             <h1 style="font-size: 4em" class="wire-one">{{ $section->sEnSubject }}</h1>
                         @elseif($lan == 'ar')
-                            <h1 class="BYekan">{{ $section->sArSubject }}</h1>
+                            <h2 class="Al-Jazeera-Arabic-Regular">{{ $section->sArSubject }}</h2>
                         @endif
                     </div>
                 </div>
                 <div class="grid-x grid-padding-x">
-                    <div class="large-12 medium-12 center-el">
+                    <div class="large-12 medium-12 center-el" style="color: #8a8a8a">
                         @if($lan == 'fa')
                             <p class="">{!! $section->sFaDescription !!}</p>
                         @elseif($lan == 'en')
-                            <div style="font-size: 0.9em;color: #8a8a8a" class="Roboto-Regular">
+                            <div style="font-size: 0.9em;" class="Roboto-Regular">
                                 <p>{!! $section->sEnDescription !!}</p>
                             </div>
                         @elseif($lan == 'ar')
-                            <p class="">{!! $section->sArDescription !!}</p>
+                            <p class="Al-Jazeera-Arabic-Regular">{!! $section->sArDescription !!}</p>
                         @endif
                     </div>
                 </div>
@@ -160,13 +160,13 @@
         @elseif($section->sectionType->stType == 'CONTENT_WIDE_SLIDER')
             <div>
                 <div class="grid-x grid-padding-x">
-                    <div style="margin-top: 50px;" class="large-12 medium-12 center-el">
+                    <div style="margin-top: 50px;color: #37474F;" class="large-12 medium-12 center-el">
                         @if($lan == 'fa')
-                            <h1 class="BYekan">{{ $section->sFaSubject }}</h1>
+                            <h1 class="">{{ $section->sFaSubject }}</h1>
                         @elseif($lan == 'en')
                             <h1 style="font-size: 4em" class="wire-one">{{ $section->sEnSubject }}</h1>
                         @elseif($lan == 'ar')
-                            <h1 class="BYekan">{{ $section->sArSubject }}</h1>
+                            <h2 class="Al-Jazeera-Arabic-Regular">{{ $section->sArSubject }}</h2>
                         @endif
                     </div>
                 </div>

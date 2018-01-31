@@ -40,7 +40,7 @@
                                                             @elseif($lan == 'en')
                                                                 <li><a class="{{ $mainMenu->id == $pageInfo->pMmId ? 'is-active' : '' }}" href="{{ url($lan . $mainMenu->mmPageLink) }}">{{ $mainMenu->mmEnSubject }}</a></li>
                                                             @elseif($lan == 'ar')
-                                                                <li><a class="{{ $mainMenu->id == $pageInfo->pMmId ? 'is-active' : '' }}" href="{{ url($lan . $mainMenu->mmPageLink) }}">{{ $mainMenu->mmArSubject }}</a></li>
+                                                                <li><a class="Al-Jazeera-Arabic-Bold {{ $mainMenu->id == $pageInfo->pMmId ? 'is-active' : '' }}" href="{{ url($lan . $mainMenu->mmPageLink) }}">{{ $mainMenu->mmArSubject }}</a></li>
                                                             @endif
                                                         @endforeach
                                                     </ul>
@@ -58,7 +58,7 @@
                                     <li class="is-active orbit-slide">
                                         <img class="orbit-image {{ $pageInfo->headerType->phtType == 'SIMPLE' ? 'top-slider-simple' : 'top-slider' }}" src="{{ asset($pageImg->image->gPath) }}" alt="Space">
                                         @if ($pageInfo->headerType->phtType == 'SIMPLE')
-                                            <figcaption class="orbit-caption align-center">
+                                            <figcaption class="orbit-caption align-center my-text-shadow-effect">
                                                 @if($lan == 'fa')
                                                     <p style="text-align: center;" class="top-slider-header">{{ $pageInfo->pFaSubject }}</p>
                                                     <p style="text-align: center;" class="top-slider-description Duel-Regular">{{ $pageInfo->pFaDescription }}</p>
@@ -83,19 +83,19 @@
                                             <figcaption class="orbit-caption">
                                                 <div class="top-slider-grid-container">
                                                     <div class="grid-x">
-                                                        <div style="text-shadow: 1px 1px 2px black" class="large-12 medium-12 small-12 padding-lr">
+                                                        <div class="large-12 medium-12 small-12 my-text-shadow-effect">
                                                             @if($lan == 'fa')
-                                                                <p class="top-slider-header BTitrBold">{{ $pageInfo->pFaSubject }}</p>
-                                                                <p class="top-slider-description Duel-Regular">{{ $pageInfo->pFaDescription }}</p>
+                                                                <p class="top-slider-header BTitrBold">{{ $pageImg->phiFaSubject }}</p>
+                                                                <p class="top-slider-description Duel-Regular">{{ $pageImg->phiFaDescription }}</p>
                                                             @elseif($lan == 'en')
                                                                 <div class="cabin">
-                                                                    <p  class="top-slider-header Roboto-Bold">{{ $pageInfo->pEnSubject }}</p>
-                                                                    <p  class="top-slider-description merienda">{{ $pageInfo->pEnDescription }}</p>
+                                                                    <p  class="top-slider-header Roboto-Bold">{{ $pageImg->phiEnSubject }}</p>
+                                                                    <p  class="top-slider-description merienda">{{ $pageImg->phiEnDescription }}</p>
                                                                     <a href="#" class="top-slider-description-btn">Read More</a>
                                                                 </div>
                                                             @elseif($lan == 'ar')
-                                                                <p style="text-align: center;" class="top-slider-header">{{ $pageInfo->pArSubject }}</p>
-                                                                <p style="text-align: center;" class="top-slider-description">{{ $pageInfo->pArDescription }}</p>
+                                                                <p class="top-slider-header Al-Jazeera-Arabic-Bold">{{ $pageImg->phiArSubject }}</p>
+                                                                <p class="top-slider-description Emad-Nora-Arabic">{{ $pageImg->phiArDescription }}</p>
                                                             @endif
                                                         </div>
                                                     </div>
@@ -106,34 +106,27 @@
                                 @endforeach
                             </div>
                         </ul>
-                        <div style="margin-top: -19%;" class="top-slider-grid-container">
-                            <nav class="orbit-bullets">
-                                <div style="padding-top:15vh;" class="grid-x">
-                                    <div class="large-3 medium-6 small-12 padding-lr">
-                                        <button class="is-active" data-slide="0">
-                                            <p>Hamedan is the capital of Iranian history and civilization2018</p>
-                                            <span class="show-for-sr">First slide details.</span><span class="show-for-sr">Current Slide</span>
-                                        </button>
+                        @if($pageInfo->headerType->phtType == 'ADVANCE')
+                            <div style="margin-top: -19%;" class="top-slider-grid-container">
+                                <nav class="orbit-bullets">
+                                    <div style="padding-top:15vh;" class="grid-x">
+                                        <?php $i = 0; ?>
+                                        @foreach($pageInfo->pageHeaderImg as $pageImg)
+                                            <div class="large-3 medium-6 small-12 padding-lr">
+                                                <button class="{{ $i == 0 ? 'is-active' : '' }}" data-slide="{{ $i }}">
+                                                    @if($lan == 'fa')
+                                                        <p class="">{{ $pageImg->phiFaSubject }}</p>
+                                                    @elseif($lan == 'en')
+                                                        <p class="Roboto">{{ $pageImg->phiEnSubject }}</p>
+                                                    @elseif($lan == 'ar')
+                                                        <p class="Al-Jazeera-Arabic-Regular">{{ $pageImg->phiArSubject }}</p>
+                                                    @endif
+                                                    <span class="show-for-sr">First slide details.</span><span class="show-for-sr">Current Slide</span>
+                                                </button>
+                                            </div>
+                                            <?php $i++; ?>
+                                        @endforeach
                                     </div>
-                                    <div class="large-3 medium-6 small-12 padding-lr">
-                                        <button data-slide="1">
-                                            <p>Hamedan is the capital of Iranian history and civilization2018</p>
-                                            <span class="show-for-sr">Second slide details.</span></button>
-                                        </button>
-                                    </div>
-                                    <div class="large-3 medium-6 small-12 padding-lr">
-                                        <button data-slide="2">
-                                            <p>Hamedan is the capital of Iranian history and civilization2018</p>
-                                            <span class="show-for-sr">Third slide details.</span>
-                                        </button>
-                                    </div>
-                                    <div class="large-3 medium-6 small-12 padding-lr">
-                                        <button data-slide="3">
-                                            <p>Hamedan is the capital of Iranian history and civilization2018</p>
-                                            <span class="show-for-sr">Fourth slide details.</span>
-                                        </button>
-                                    </div>
-                                </div>
                             </nav>
                         </div>
                         <div class="grid-container">
@@ -145,16 +138,12 @@
                                     </a>
                                 </div>
                             </div>
-                        </div>
-                    </div>
+                        @endif
                         </div>
                     </div>
                 </div>
                 <!--Top Slider End-->
             </div>
-
-
-
             @yield('content')
             <div class="grid-container">
                 <div class="grid-x">
