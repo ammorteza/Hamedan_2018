@@ -139,9 +139,10 @@
                         <div class="grid-container">
                             <div class="grid-x">
                                 <div class="large-12 medium-12 small-12">
-                                    <div style="margin-top: -1px;" class="arrow bounce my-text-shadow-effect align-center">
-
-                                    </div>
+                                    <a class="jumper" href="#ploop">
+                                        <div style="margin-top: -1px;" class="arrow bounce my-text-shadow-effect align-center">
+                                        </div>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -355,9 +356,21 @@
         </script>
         <!--pgwslider-->
 
-        <!--slick Slider Script-->
+        <!--jump to section Script-->
+        <script>
+            $(document).ready(function() {
+                $(".jumper").on("click", function( e ) {
 
-        <!--slick Slider Script-->
+                    e.preventDefault();
+
+                    $("body, html").animate({
+                        scrollTop: $( $(this).attr('href') ).offset().top
+                    }, 600);
+
+                });
+            });
+        </script>
+        <!--jump to section Script-->
 
     </body>
 </html>

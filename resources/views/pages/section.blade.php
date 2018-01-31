@@ -21,7 +21,7 @@
             <!--END SUB MENU SECTION-->
         @elseif($section->sectionType->stType == 'CONTENT_LEFT')
             <!--CONTENT_LEFT SECTION-->
-            <div class="grid-container">
+            <div id="ploop" class="grid-container">
                 <div class="grid-x grid-padding-x">
                     <div style="margin-top: 80px;" class="large-12 medium-12 center-el">
                         @if($lan == 'fa')
@@ -186,7 +186,7 @@
                                             <div class="grid-x">
                                                 @for( ; $item < (($i + 1) * 4);$item++)
                                                     <div class="medium-3 style_prevu_kit">
-                                                        <img  class="img-size" src="{{ asset($section->sectionImg[$item]['gallery']['gPath']) }}">
+                                                        <img style="background-size: cover;" class="img-size" src="{{ asset($section->sectionImg[$item]['gallery']['gPath']) }}">
                                                     </div>
                                                 @endfor
                                             </div>
