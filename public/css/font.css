@@ -39,11 +39,28 @@
     src: url('../fonts/Roboto-Regular.ttf') format('truetype'); /* IE6–8 */
 }
 
+@font-face {
+    font-family: 'Mj-Flow-Reqular';
+    src: url('../fonts/mj-flow-regular.ttf') format('truetype'); /* IE6–8 */
+}
 
+@font-face {
+    font-family: 'Duel-Regular';
+    src: url('../fonts/duel-regular.ttf') format('truetype'); /* IE6–8 */
+}
+
+.Duel-Regular {
+    font-family: Duel-Regular, Arial, Helvetica, sans-serif;
+}
+
+.Mj-Flow-Reqular {
+    font-family: Mj-Flow-Reqular, Arial, Helvetica, sans-serif;
+}
 
 .BYekan {
     font-family: BYekan, Arial, Helvetica, sans-serif;
 }
+
 .BNazanin {
     font-family: BNazanin, Arial, Helvetica, sans-serif;
 }

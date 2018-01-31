@@ -4,7 +4,7 @@ namespace Hamedan_2018;
 
 use Illuminate\Database\Eloquent\Model;
 
-class BageBreadCrump extends Model
+class PageBreadCrump extends Model
 {
     protected $table = 'tbl_page_breadcrumps';
 }

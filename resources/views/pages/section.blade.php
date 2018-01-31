@@ -25,18 +25,18 @@
                 <div class="grid-x grid-padding-x">
                     <div style="margin-top: 80px;" class="large-12 medium-12 center-el">
                         @if($lan == 'fa')
-                            <h1 class="BYekan">{{ $section->sFaSubject }}</h1>
+                            <h1 class="Mj-Flow-Reqular" style="color: #37474F;">{{ $section->sFaSubject }}</h1>
                         @elseif($lan == 'en')
-                            <h1 style="font-size: 4em" class="wire-one">{{ $section->sEnSubject }}</h1>
+                            <h1 style="font-size: 4em;color: #37474F;" class="wire-one">{{ $section->sEnSubject }}</h1>
                         @elseif($lan == 'ar')
-                            <h1 class="BYekan">{{ $section->sArSubject }}</h1>
+                            <h1 class="BYekan" style="color: #37474F;">{{ $section->sArSubject }}</h1>
                         @endif
                     </div>
                 </div>
                 <div class="grid-x grid-padding-x">
                     <div class="large-12 medium-12">
                         @if($lan == 'fa')
-                            <p class="">{!! $section->sFaDescription !!}</p>
+                            <p class="" style="color: #8a8a8a">{!! $section->sFaDescription !!}</p>
                         @elseif($lan == 'en')
                             <div style="font-size: 0.9em;color: #8a8a8a" class="Roboto-Regular">
                                 <p>{!! $section->sEnDescription !!}</p>
@@ -109,7 +109,7 @@
                 <div class="grid-x grid-padding-x">
                     <div style="margin-top: 50px;" class="large-12 medium-12 center-el">
                         @if($lan == 'fa')
-                            <h1 class="BYekan">{{ $section->sFaSubject }}</h1>
+                            <h1 class="Mj-Flow-Reqular">{{ $section->sFaSubject }}</h1>
                         @elseif($lan == 'en')
                             <h1 style="font-size: 4em" class="wire-one">{{ $section->sEnSubject }}</h1>
                         @elseif($lan == 'ar')
