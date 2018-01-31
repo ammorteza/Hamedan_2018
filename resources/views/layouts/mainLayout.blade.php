@@ -45,6 +45,11 @@
                                                         @endforeach
                                                     </ul>
                                                 </div>
+                                                <div class="grid-x">
+                                                    <div class="large-12">
+                                                        <img style="position: absolute;border-top:.2rem solid #2ba6cb;direction: ltr;" src="{{ asset('pic/logo2018.svg') }}" alt="Hamedan-2018" width="150px" height="100px">
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -76,9 +81,9 @@
                                             </figcaption>
                                         @elseif($pageInfo->headerType->phtType == 'ADVANCE')
                                             <figcaption class="orbit-caption">
-                                                <div class="grid-container">
+                                                <div class="top-slider-grid-container">
                                                     <div class="grid-x">
-                                                        <div style="text-shadow: 1px 1px 2px black" class="large-12 medium-12 small-12">
+                                                        <div style="text-shadow: 1px 1px 2px black" class="large-12 medium-12 small-12 padding-lr">
                                                             @if($lan == 'fa')
                                                                 <p class="top-slider-header">{{ $pageInfo->pFaSubject }}</p>
                                                                 <p class="top-slider-description">{{ $pageInfo->pFaDescription }}</p>
@@ -101,9 +106,9 @@
                                 @endforeach
                             </div>
                         </ul>
-                        <div style="margin-top: -250px;" class="grid-container">
+                        <div style="margin-top: -19%;" class="top-slider-grid-container">
                             <nav class="orbit-bullets">
-                                <div style="padding-top:20vh;" class="grid-x">
+                                <div style="padding-top:15vh;" class="grid-x">
                                     <div class="large-3 medium-6 small-12 padding-lr">
                                         <button class="is-active" data-slide="0">
                                             <p>Hamedan is the capital of Iranian history and civilization2018</p>
@@ -130,6 +135,15 @@
                                     </div>
                                 </div>
                             </nav>
+                        </div>
+                        <div class="grid-container">
+                            <div class="grid-x">
+                                <div class="large-12 medium-12 small-12">
+                                    <div class="arrow bounce my-text-shadow-effect align-center">
+
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                         </div>
