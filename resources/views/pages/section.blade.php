@@ -158,7 +158,7 @@
             </div>
             <!--Section Spliter Start-->
         @elseif($section->sectionType->stType == 'CONTENT_WIDE_SLIDER')
-            <div>
+            <div class="grid-container">
                 <div class="grid-x grid-padding-x">
                     <div style="margin-top: 50px;color: #37474F;" class="large-12 medium-12 center-el">
                         @if($lan == 'fa')
@@ -186,7 +186,7 @@
                                             <div class="grid-x">
                                                 @for( ; $item < (($i + 1) * 4);$item++)
                                                     <div class="medium-3 style_prevu_kit">
-                                                        <img style="background-size: cover;" class="img-size" src="{{ asset($section->sectionImg[$item]['gallery']['gPath']) }}">
+                                                        <img class="img-size" src="{{ asset($section->sectionImg[$item]['gallery']['gPath']) }}">
                                                     </div>
                                                 @endfor
                                             </div>

@@ -21,7 +21,7 @@
             <div class="grid-x">
                 <!--Top Slider Start-->
                 <div class="large-12 medium-12">
-                    <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit data-options="animInFromLeft:fade-in; animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight:fade-out;">
+                    <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit data-options="animInFromLeft:fade-in; animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight:fade-out;" data-timer-delay="10000">
                         <ul class="orbit-container">
                             <div class="title-bar" data-responsive-toggle="responsive-menu" data-hide-for="medium">
                                 <button class="menu-icon" type="button" data-toggle="responsive-menu"></button>
@@ -45,18 +45,19 @@
                                                         @endforeach
                                                     </ul>
                                                 </div>
-                                                <div class="grid-x">
-                                                    <div class="large-12">
-                                                        <img style="position: absolute;border-top:.2rem solid #2ba6cb;direction: ltr;" src="{{ asset('pic/logo2018.svg') }}" alt="Hamedan-2018" width="150px" height="100px">
-                                                    </div>
-                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                                <div class="grid-x">
+                                    <div class="large-12">
+                                        <img style="top:105px;left:85px;z-index: 16;position: absolute;border-top:.2rem solid #2ba6cb;direction: ltr;" src="{{ asset('pic/logo2018.svg') }}" alt="Hamedan-2018" width="150px" height="100px">
+                                    </div>
+                                </div>
+
                                 @foreach($pageInfo->pageHeaderImg as $pageImg)
                                     <li class="is-active orbit-slide">
-                                        <img class="orbit-image {{ $pageInfo->headerType->phtType == 'SIMPLE' ? 'top-slider-simple' : 'top-slider' }}" src="{{ asset($pageImg->image->gPath) }}" alt="Space">
+                                        <img class="orbit-image my-zoom-out one {{ $pageInfo->headerType->phtType == 'SIMPLE' ? 'top-slider-simple' : 'top-slider' }}" src="{{ asset($pageImg->image->gPath) }}" alt="Space">
                                         @if ($pageInfo->headerType->phtType == 'SIMPLE')
                                             <figcaption class="orbit-caption align-center my-text-shadow-effect">
                                                 @if($lan == 'fa')
@@ -323,6 +324,15 @@
         <script src="{{ asset('js/pgwslider.js') }}"></script><!--Content Image slider-->
         <script src="{{ asset('js/vendor/foundation.js') }}"></script>
         <script src="{{ asset('js/app.js') }}"></script>
+
+        <!--Remove zoom out class-->
+        <script>
+            setTimeout(function(){
+                $('.my-zoom-out').removeClass('my-zoom-out');
+            },10000);
+        </script>
+
+        <!--Remove zoom out class-->
         <script type="text/javascript">
             $(document).ready( function() {
                 $("#immersive_slider").immersive_slider({

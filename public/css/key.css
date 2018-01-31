@@ -8,7 +8,7 @@
 .top-slider-grid-container {
     padding-right: 0.9375rem;
     padding-left: 0.9375rem;
-    max-width: 83.2rem;
+    max-width: 72.5rem;
     margin: 0 auto;
 }
 
@@ -193,6 +193,54 @@ h1,h2,h3,h4,h5,h6{
     -moz-animation-delay: 0.4s;
     animation-delay: 0.4s;
 }
+
+/***************Top header Image Zoom Out Transition*****************/
+@-webkit-keyframes my-zoom-out {
+    from {
+        transform: scale(1.3);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+@-moz-keyframes my-zoom-out {
+    from {
+        transform: scale(1.3);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+@keyframes my-zoom-out {
+    from {
+        transform: scale(1.3);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+.my-zoom-out {
+    transform: scale(1.2); /* make things invisible upon start */
+    -webkit-animation: my-zoom-out ease-in 1; /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+    -moz-animation: my-zoom-out ease-in 1;
+    animation: my-zoom-out ease-in 1;
+
+    -webkit-animation-fill-mode: forwards; /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+    -moz-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+
+    -webkit-animation-duration: 10s;
+    -moz-animation-duration: 10s;
+    animation-duration: 10s;
+}
+
+.my-zoom-out.one {
+    -webkit-animation-delay: 0.4s;
+    -moz-animation-delay: 0.4s;
+    animation-delay: 0.4s;
+}
+/***************Top header Image Zoom Out Transition*****************/
 
 /***************Arrow Transition*****************/
 @-moz-keyframes bounce {
