@@ -34,7 +34,7 @@
                     </div>
                 </div>
                 <div class="grid-x grid-padding-x">
-                    <div class="large-12 medium-12" style="color: #8a8a8a;padding-right: ">
+                    <div class="large-12 medium-12" style="color: #8a8a8a;">
                         @if($lan == 'fa')
                             <p class="">{!! $section->sFaDescription !!}</p>
                         @elseif($lan == 'en')

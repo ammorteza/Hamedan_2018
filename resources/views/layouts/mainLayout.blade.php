@@ -45,6 +45,11 @@
                                                         @endforeach
                                                     </ul>
                                                 </div>
+                                                <div class="grid-x">
+                                                    <div class="large-12">
+                                                        <img style="position: absolute;border-top:.2rem solid #2ba6cb;direction: ltr;" src="{{ asset('pic/logo2018.svg') }}" alt="Hamedan-2018" width="150px" height="100px">
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -76,7 +81,7 @@
                                             </figcaption>
                                         @elseif($pageInfo->headerType->phtType == 'ADVANCE')
                                             <figcaption class="orbit-caption">
-                                                <div class="grid-container">
+                                                <div class="top-slider-grid-container">
                                                     <div class="grid-x">
                                                         <div class="large-12 medium-12 small-12 my-text-shadow-effect">
                                                             @if($lan == 'fa')
@@ -89,8 +94,8 @@
                                                                     <a href="#" class="top-slider-description-btn">Read More</a>
                                                                 </div>
                                                             @elseif($lan == 'ar')
-                                                                <p style="text-align: center;" class="top-slider-header Al-Jazeera-Arabic-Bold">{{ $pageImg->phiArSubject }}</p>
-                                                                <p style="text-align: center;" class="top-slider-description Emad-Nora-Arabic">{{ $pageImg->phiArDescription }}</p>
+                                                                <p class="top-slider-header Al-Jazeera-Arabic-Bold">{{ $pageImg->phiArSubject }}</p>
+                                                                <p class="top-slider-description Emad-Nora-Arabic">{{ $pageImg->phiArDescription }}</p>
                                                             @endif
                                                         </div>
                                                     </div>
@@ -102,19 +107,19 @@
                             </div>
                         </ul>
                         @if($pageInfo->headerType->phtType == 'ADVANCE')
-                            <div style="margin-top: -250px;" class="grid-container">
+                            <div style="margin-top: -19%;" class="top-slider-grid-container">
                                 <nav class="orbit-bullets">
-                                    <div style="padding-top:20vh;" class="grid-x">
+                                    <div style="padding-top:15vh;" class="grid-x">
                                         <?php $i = 0; ?>
                                         @foreach($pageInfo->pageHeaderImg as $pageImg)
                                             <div class="large-3 medium-6 small-12 padding-lr">
                                                 <button class="{{ $i == 0 ? 'is-active' : '' }}" data-slide="{{ $i }}">
                                                     @if($lan == 'fa')
-                                                        <p>{{ $pageImg->phiFaSubject }}</p>
+                                                        <p class="">{{ $pageImg->phiFaSubject }}</p>
                                                     @elseif($lan == 'en')
-                                                        <p>{{ $pageImg->phiEnSubject }}</p>
+                                                        <p class="Roboto">{{ $pageImg->phiEnSubject }}</p>
                                                     @elseif($lan == 'ar')
-                                                        <p>{{ $pageImg->phiArSubject }}</p>
+                                                        <p class="Al-Jazeera-Arabic-Regular">{{ $pageImg->phiArSubject }}</p>
                                                     @endif
                                                     <span class="show-for-sr">First slide details.</span><span class="show-for-sr">Current Slide</span>
                                                 </button>
@@ -124,17 +129,94 @@
                                     </div>
                                 </nav>
                             </div>
+                            <div class="grid-container">
+                                <div class="grid-x">
+                                    <div class="large-12 medium-12 small-12">
+                                        <div style="margin-top: -1px;" class="arrow bounce my-text-shadow-effect align-center">
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         @endif
-                    </div>
                         </div>
                     </div>
                 </div>
                 <!--Top Slider End-->
             </div>
-
-
-
             @yield('content')
+            <div class="grid-container">
+                <div class="grid-x">
+                    <div class="large-12">
+                        <div class="orbit" role="region" aria-label="Favorite Text Ever" data-orbit data-timer-delay="8000">
+                            <ul class="orbit-container">
+                                <li class="is-active orbit-slide">
+                                    <div class="docs-example-orbit-slide">
+                                       <div class="grid-x logo-slider">
+                                           <div class="large-2 medium-6 small-12 logo-slider-padd">
+                                              <img  src="{{ asset('pic/logo-slider/Iran-miras-logo.jpg') }}" width="72px" height="72px">
+                                               <p class="element-distanse">سازمان میراث فرهنگی و گردشگری</p>
+                                           </div>
+                                           <div class="large-2 medium-6 small-12 logo-slider-padd">
+                                               <img  src="{{ asset('pic/logo-slider/5.png') }}" width="72px" height="72px">
+                                               <p class="element-distanse">سازمان میراث فرهنگی و گردشگری</p>
+                                           </div>
+                                           <div class="large-2 medium-6 small-12 logo-slider-padd">
+                                               <img  src="{{ asset('pic/logo-slider/2.jpg') }}" width="72px" height="72px">
+                                           </div>
+                                           <div class="large-2 medium-6 small-12 logo-slider-padd">
+                                               <img  src="{{ asset('pic/logo-slider/3.png') }}" width="72px" height="72px">
+                                           </div>
+                                           <div class="large-2 medium-6 small-12 logo-slider-padd">
+                                               <img  src="{{ asset('pic/logo-slider/4.jpg') }}" width="72px" height="72px">
+                                           </div>
+                                           <div class="large-2 medium-6 small-12 logo-slider-padd">
+                                               <img  src="{{ asset('pic/logo-slider/Iran-miras-logo.jpg') }}" width="72px" height="72px">
+                                           </div>
+
+                                       </div>
+                                    </div>
+                                </li>
+                                <li class="orbit-slide">
+                                    <div class="docs-example-orbit-slide">
+                                        <div class="grid-x">
+                                            <div class="large-2 medium-6 small-12 logo-slider-padd">
+                                                <img  src="{{ asset('pic/logo-slider/Iran-miras-logo.jpg') }}" width="72px" height="72px">
+                                            </div>
+                                            <div class="large-2 medium-6 small-12 logo-slider-padd">
+                                                <img  src="{{ asset('pic/logo-slider/5.png') }}" width="72px" height="72px">
+                                            </div>
+                                            <div class="large-2 medium-6 small-12 logo-slider-padd">
+                                                <img  src="{{ asset('pic/logo-slider/2.jpg') }}" width="72px" height="72px">
+                                            </div>
+                                            <div class="large-2 medium-6 small-12 logo-slider-padd">
+                                                <img  src="{{ asset('pic/logo-slider/3.png') }}" width="72px" height="72px">
+                                            </div>
+                                            <div class="large-2 medium-6 small-12 logo-slider-padd">
+                                                <img  src="{{ asset('pic/logo-slider/4.jpg') }}" width="72px" height="72px">
+                                            </div>
+                                            <div class="large-2 medium-6 small-12 logo-slider-padd">
+                                                <img  src="{{ asset('pic/logo-slider/Iran-miras-logo.jpg') }}" width="72px" height="72px">
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="orbit-slide">
+                                    <div class="docs-example-orbit-slide">
+                                        <p><strong>This is darkgoldenrod.</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                    </div>
+                                </li>
+                                <li class="orbit-slide">
+                                    <div class="docs-example-orbit-slide">
+                                        <p><strong>This is lightseagreen.</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <footer class="footer">
                 <div class="grid-x">
                     <div class="large-12 medium-12">
