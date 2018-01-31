@@ -49,6 +49,42 @@
     src: url('../fonts/duel-regular.ttf') format('truetype'); /* IE6–8 */
 }
 
+@font-face {
+    font-family: 'Emad-Nora-Arabic';
+    src: url('../fonts/emad-nora-arabic.ttf') format('truetype'); /* IE6–8 */
+}
+
+@font-face {
+    font-family: 'Al-Jazeera-Arabic-Bold';
+    src: url('../fonts/Al-Jazeera-Arabic-Bold.ttf') format('truetype'); /* IE6–8 */
+}
+
+@font-face {
+    font-family: 'Al-Jazeera-Arabic-Regular';
+    src: url('../fonts/Al-Jazeera-Arabic-Regular.ttf') format('truetype'); /* IE6–8 */
+}
+
+@font-face {
+    font-family: 'Raleway-Regular';
+    src: url('../fonts/Raleway-Regular.ttf') format('truetype'); /* IE6–8 */
+}
+
+.Raleway-Regular {
+    font-family: Raleway-Regular, Arial, Helvetica, sans-serif;
+}
+
+.Al-Jazeera-Arabic-Regular {
+    font-family: Al-Jazeera-Arabic-Regular, Arial, Helvetica, sans-serif;
+}
+
+.Al-Jazeera-Arabic-Bold {
+    font-family: Al-Jazeera-Arabic-Bold, Arial, Helvetica, sans-serif;
+}
+
+.Emad-Nora-Arabic {
+    font-family: Emad-Nora-Arabic, Arial, Helvetica, sans-serif;
+}
+
 .Duel-Regular {
     font-family: Duel-Regular, Arial, Helvetica, sans-serif;
 }
