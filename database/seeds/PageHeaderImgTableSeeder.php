@@ -18,6 +18,12 @@ class PageHeaderImgTableSeeder extends Seeder
         $pageHeaderImg->phiFaAlt = 'همدان ۲۰۱۸';
         $pageHeaderImg->phiEnAlt = 'hamedan 2018';
         $pageHeaderImg->phiArAlt = 'همدان ۲۰۱۸';
+        $pageHeaderImg->phiFaSubject = 'همدان ۲۰۱۸';
+        $pageHeaderImg->phiEnSubject = 'hamadan 2018';
+        $pageHeaderImg->phiArSubject = 'همدان ۲۰۱۸';
+        $pageHeaderImg->phiFaDescription = 'همدان پایتخت تاریخ تمدن ایران';
+        $pageHeaderImg->phiEnDescription = 'Hamedan is the capital of Iranian history and civilization';
+        $pageHeaderImg->phiArDescription = 'حمدان كابيتال للحضارة الإيرانية';
         $pageHeaderImg->save();
 
         $pageHeaderImg = new \Hamedan_2018\PageHeaderImg;
@@ -27,6 +33,12 @@ class PageHeaderImgTableSeeder extends Seeder
         $pageHeaderImg->phiFaAlt = 'جشنواره های بومی';
         $pageHeaderImg->phiEnAlt = 'Native festivals';
         $pageHeaderImg->phiArAlt = 'المهرجانات المحلية';
+        $pageHeaderImg->phiFaSubject = 'جشنواره های بومی';
+        $pageHeaderImg->phiEnSubject = 'Native festivals';
+        $pageHeaderImg->phiArSubject = 'المهرجانات المحلية';
+        $pageHeaderImg->phiFaDescription = 'جشنواره شیره پزی مانیزان ملایر';
+        $pageHeaderImg->phiEnDescription = 'Manizan Malayer Soup Festival';
+        $pageHeaderImg->phiArDescription = 'مانيزان مالير حساء المهرجان';
         $pageHeaderImg->save();
 
         $pageHeaderImg = new \Hamedan_2018\PageHeaderImg;
@@ -36,6 +48,12 @@ class PageHeaderImgTableSeeder extends Seeder
         $pageHeaderImg->phiFaAlt = 'ورزش های زمستانی';
         $pageHeaderImg->phiEnAlt = 'winter sports';
         $pageHeaderImg->phiArAlt = 'الرياضات الشتوية';
+        $pageHeaderImg->phiFaSubject = 'ورزش های زمستانی';
+        $pageHeaderImg->phiEnSubject = 'winter sports';
+        $pageHeaderImg->phiArSubject = 'الرياضات الشتوية';
+        $pageHeaderImg->phiFaDescription = 'پیست اسکی تاریک دره';
+        $pageHeaderImg->phiEnDescription = 'Dark Ski Resort Valley';
+        $pageHeaderImg->phiArDescription = 'الظلام منتجع التزلج وادي';
         $pageHeaderImg->save();
 
         $pageHeaderImg = new \Hamedan_2018\PageHeaderImg;
@@ -45,6 +63,12 @@ class PageHeaderImgTableSeeder extends Seeder
         $pageHeaderImg->phiFaAlt = 'طعم غذاهای سنتی در همدان';
         $pageHeaderImg->phiEnAlt = 'Taste traditional dishes in Hamadan';
         $pageHeaderImg->phiArAlt = 'تذوق الأطباق التقليدية في همدان';
+        $pageHeaderImg->phiFaSubject = 'طعم غذاهای سنتی در همدان';
+        $pageHeaderImg->phiEnSubject = 'Taste traditional dishes in Hamadan';
+        $pageHeaderImg->phiArSubject = 'تذوق الأطباق التقليدية في همدان';
+        $pageHeaderImg->phiFaDescription = 'همدان پایتخت تاریخ تمدن ایران';
+        $pageHeaderImg->phiEnDescription = 'Hamedan is the capital of Iranian history and civilization';
+        $pageHeaderImg->phiArDescription = 'حمدان كابيتال للحضارة الإيرانية';
         $pageHeaderImg->save();
 ////////////////////////////////////////////////////////////////////////////
         $pageHeaderImg = new \Hamedan_2018\PageHeaderImg;
