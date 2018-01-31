@@ -364,6 +364,9 @@ h1,h2,h3,h4,h5,h6{
 .my-text-shadow-effect{
     text-shadow: 1px 1px 3px black;
 }
+.my-text-shadow-effect-blue{
+    text-shadow:1px 1px 3px black, 5px 1px 5px  #2ba6cb;
+}
 .logo-slider{
     font-size: xx-small;
     text-align: center;
@@ -652,7 +655,7 @@ ul.social-icons {
 }
 .orbit-previous {
     position: absolute;
-    margin-right: 96%;
+    margin-right: 100%;
     top: 10%;
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
@@ -677,8 +680,8 @@ ul.social-icons {
 }
 .orbit-next {
     position: absolute;
-    margin-right: 48px;
     top: 10%;
+    direction: rtl;
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
     z-index: 10;

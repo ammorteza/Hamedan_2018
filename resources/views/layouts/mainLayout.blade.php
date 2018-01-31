@@ -116,11 +116,11 @@
                                             <div class="large-3 medium-6 small-12 padding-lr">
                                                 <button class="{{ $i == 0 ? 'is-active' : '' }}" data-slide="{{ $i }}">
                                                     @if($lan == 'fa')
-                                                        <p class="">{{ $pageImg->phiFaSubject }}</p>
+                                                        <p class="element-dir float-right">{{ $pageImg->phiFaSubject }}</p>
                                                     @elseif($lan == 'en')
-                                                        <p class="Roboto">{{ $pageImg->phiEnSubject }}</p>
+                                                        <p class="Roboto element-dir-l float-left">{{ $pageImg->phiEnSubject }}</p>
                                                     @elseif($lan == 'ar')
-                                                        <p class="Al-Jazeera-Arabic-Regular">{{ $pageImg->phiArSubject }}</p>
+                                                        <p class="Al-Jazeera-Arabic-Regular element-dir float-right">{{ $pageImg->phiArSubject }}</p>
                                                     @endif
                                                     <span class="show-for-sr">First slide details.</span><span class="show-for-sr">Current Slide</span>
                                                 </button>
@@ -132,9 +132,9 @@
                         </div>
                         <div class="grid-container">
                             <div class="grid-x">
-                                <div class="large-12 medium-12 small-12">
+                                <div style="margin-top: 2px;"  class="large-12 medium-12 small-12">
                                     <a class="jumper" href="#ploop">
-                                        <div style="margin-top: -1px;" class="arrow bounce my-text-shadow-effect align-center">
+                                        <div class="arrow bounce my-text-shadow-effect align-center">
                                         </div>
                                     </a>
                                 </div>
