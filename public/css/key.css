@@ -313,9 +313,12 @@ h1,h2,h3,h4,h5,h6{
 .my-text-shadow-effect{
     text-shadow: 1px 1px 2px black;
 }
-.svg-shadow{
-    -webkit-filter: drop-shadow(12px 12px 7px rgba(0,0,0,0.5));
-    filter: drop-shadow(12px 12px 7px rgba(0,0,0,0.5));
+.logo-slider{
+    font-size: xx-small;
+    text-align: center;
+}
+.logo-slider-padd{
+    padding: 25px;
 }
 .direction-reveal--grid-bootstrap .direction-reveal__card {
     margin-top: 0px;

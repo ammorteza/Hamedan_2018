@@ -139,7 +139,7 @@
                         <div class="grid-container">
                             <div class="grid-x">
                                 <div class="large-12 medium-12 small-12">
-                                    <div class="arrow bounce my-text-shadow-effect align-center">
+                                    <div style="margin-top: -1px;" class="arrow bounce my-text-shadow-effect align-center">
 
                                     </div>
                                 </div>
@@ -155,6 +155,78 @@
 
 
             @yield('content')
+            <div class="grid-container">
+                <div class="grid-x">
+                    <div class="large-12">
+                        <div class="orbit" role="region" aria-label="Favorite Text Ever" data-orbit data-timer-delay="8000">
+                            <ul class="orbit-container">
+                                <li class="is-active orbit-slide">
+                                    <div class="docs-example-orbit-slide">
+                                       <div class="grid-x logo-slider">
+                                           <div class="large-2 medium-6 small-12 logo-slider-padd">
+                                              <img  src="{{ asset('pic/logo-slider/Iran-miras-logo.jpg') }}" width="72px" height="72px">
+                                               <p class="element-distanse">سازمان میراث فرهنگی و گردشگری</p>
+                                           </div>
+                                           <div class="large-2 medium-6 small-12 logo-slider-padd">
+                                               <img  src="{{ asset('pic/logo-slider/5.png') }}" width="72px" height="72px">
+                                               <p class="element-distanse">سازمان میراث فرهنگی و گردشگری</p>
+                                           </div>
+                                           <div class="large-2 medium-6 small-12 logo-slider-padd">
+                                               <img  src="{{ asset('pic/logo-slider/2.jpg') }}" width="72px" height="72px">
+                                           </div>
+                                           <div class="large-2 medium-6 small-12 logo-slider-padd">
+                                               <img  src="{{ asset('pic/logo-slider/3.png') }}" width="72px" height="72px">
+                                           </div>
+                                           <div class="large-2 medium-6 small-12 logo-slider-padd">
+                                               <img  src="{{ asset('pic/logo-slider/4.jpg') }}" width="72px" height="72px">
+                                           </div>
+                                           <div class="large-2 medium-6 small-12 logo-slider-padd">
+                                               <img  src="{{ asset('pic/logo-slider/Iran-miras-logo.jpg') }}" width="72px" height="72px">
+                                           </div>
+
+                                       </div>
+                                    </div>
+                                </li>
+                                <li class="orbit-slide">
+                                    <div class="docs-example-orbit-slide">
+                                        <div class="grid-x">
+                                            <div class="large-2 medium-6 small-12 logo-slider-padd">
+                                                <img  src="{{ asset('pic/logo-slider/Iran-miras-logo.jpg') }}" width="72px" height="72px">
+                                            </div>
+                                            <div class="large-2 medium-6 small-12 logo-slider-padd">
+                                                <img  src="{{ asset('pic/logo-slider/5.png') }}" width="72px" height="72px">
+                                            </div>
+                                            <div class="large-2 medium-6 small-12 logo-slider-padd">
+                                                <img  src="{{ asset('pic/logo-slider/2.jpg') }}" width="72px" height="72px">
+                                            </div>
+                                            <div class="large-2 medium-6 small-12 logo-slider-padd">
+                                                <img  src="{{ asset('pic/logo-slider/3.png') }}" width="72px" height="72px">
+                                            </div>
+                                            <div class="large-2 medium-6 small-12 logo-slider-padd">
+                                                <img  src="{{ asset('pic/logo-slider/4.jpg') }}" width="72px" height="72px">
+                                            </div>
+                                            <div class="large-2 medium-6 small-12 logo-slider-padd">
+                                                <img  src="{{ asset('pic/logo-slider/Iran-miras-logo.jpg') }}" width="72px" height="72px">
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="orbit-slide">
+                                    <div class="docs-example-orbit-slide">
+                                        <p><strong>This is darkgoldenrod.</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                    </div>
+                                </li>
+                                <li class="orbit-slide">
+                                    <div class="docs-example-orbit-slide">
+                                        <p><strong>This is lightseagreen.</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <footer class="footer">
                 <div class="grid-x">
                     <div class="large-12 medium-12">
