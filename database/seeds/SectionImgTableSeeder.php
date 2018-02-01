@@ -283,7 +283,7 @@ class SectionImgTableSeeder extends Seeder
 
         /////////////////////////////////////////////////////////////////////
         $sImg = new \Hamedan_2018\SectionImg;
-        $sImg->siSId = 7;
+        $sImg->siSId = 8;
         $sImg->siGId = 1;
         $sImg->siOrder = 1;
         $sImg->siFaAlt = 'رویدادها و جشنواره ها در همدان';
@@ -298,7 +298,7 @@ class SectionImgTableSeeder extends Seeder
         $sImg->save();
 
         $sImg = new \Hamedan_2018\SectionImg;
-        $sImg->siSId = 7;
+        $sImg->siSId = 8;
         $sImg->siGId = 11;
         $sImg->siOrder = 2;
         $sImg->siFaAlt = 'رویدادها و جشنواره ها در همدان';
@@ -313,7 +313,7 @@ class SectionImgTableSeeder extends Seeder
         $sImg->save();
 
         $sImg = new \Hamedan_2018\SectionImg;
-        $sImg->siSId = 7;
+        $sImg->siSId = 8;
         $sImg->siGId = 3;
         $sImg->siOrder = 3;
         $sImg->siFaAlt = 'رویدادها و جشنواره ها در همدان';
@@ -328,7 +328,7 @@ class SectionImgTableSeeder extends Seeder
         $sImg->save();
 
         $sImg = new \Hamedan_2018\SectionImg;
-        $sImg->siSId = 7;
+        $sImg->siSId = 8;
         $sImg->siGId = 4;
         $sImg->siOrder = 4;
         $sImg->siFaAlt = 'رویدادها و جشنواره ها در همدان';
@@ -343,7 +343,7 @@ class SectionImgTableSeeder extends Seeder
         $sImg->save();
 
         $sImg = new \Hamedan_2018\SectionImg;
-        $sImg->siSId = 7;
+        $sImg->siSId = 8;
         $sImg->siGId = 5;
         $sImg->siOrder = 5;
         $sImg->siFaAlt = 'رویدادها و جشنواره ها در همدان';
@@ -358,7 +358,7 @@ class SectionImgTableSeeder extends Seeder
         $sImg->save();
         /////////////////////////////////////////////////////////////////
         $sImg = new \Hamedan_2018\SectionImg;
-        $sImg->siSId = 9;
+        $sImg->siSId = 10;
         $sImg->siGId = 6;
         $sImg->siOrder = 1;
         $sImg->siFaAlt = 'رویدادها و جشنواره ها در همدان';
@@ -373,7 +373,7 @@ class SectionImgTableSeeder extends Seeder
         $sImg->save();
 
         $sImg = new \Hamedan_2018\SectionImg;
-        $sImg->siSId = 9;
+        $sImg->siSId = 10;
         $sImg->siGId = 7;
         $sImg->siOrder = 2;
         $sImg->siFaAlt = 'رویدادها و جشنواره ها در همدان';
@@ -388,7 +388,7 @@ class SectionImgTableSeeder extends Seeder
         $sImg->save();
 
         $sImg = new \Hamedan_2018\SectionImg;
-        $sImg->siSId = 9;
+        $sImg->siSId = 10;
         $sImg->siGId = 8;
         $sImg->siOrder = 3;
         $sImg->siFaAlt = 'رویدادها و جشنواره ها در همدان';
@@ -403,7 +403,7 @@ class SectionImgTableSeeder extends Seeder
         $sImg->save();
 
         $sImg = new \Hamedan_2018\SectionImg;
-        $sImg->siSId = 9;
+        $sImg->siSId = 10;
         $sImg->siGId = 9;
         $sImg->siOrder = 4;
         $sImg->siFaAlt = 'رویدادها و جشنواره ها در همدان';
@@ -418,7 +418,7 @@ class SectionImgTableSeeder extends Seeder
         $sImg->save();
 
         $sImg = new \Hamedan_2018\SectionImg;
-        $sImg->siSId = 9;
+        $sImg->siSId = 10;
         $sImg->siGId = 10;
         $sImg->siOrder = 5;
         $sImg->siFaAlt = 'رویدادها و جشنواره ها در همدان';

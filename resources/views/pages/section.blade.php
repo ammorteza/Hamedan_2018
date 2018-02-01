@@ -199,6 +199,35 @@
                     </div>
                 </div>
             </div>
+        @elseif($section->sectionType->stType == 'BREAD_CRUMB')
+            <div class="grid-container">
+                <div class="grid-x">
+                    <div style="margin-top: 30px;color: #37474F;" class="large-12 medium-12">
+                        <nav aria-label="You are here:" role="navigation">
+                            <ul class="breadcrumbs">
+                                @foreach($pageInfo->breadCrumb as $breadCrumb)
+                                    @if($lan == 'fa')
+                                        <li><a href="{{ url($breadCrumb->refPage->pLinkUrl) }}">{{ $breadCrumb->refPage->pFaSubject }}</a></li>
+                                    @elseif($lan == 'en')
+                                        <li><a href="{{ url($breadCrumb->refPage->pLinkUrl) . '/en' }}">{{ $breadCrumb->refPage->pEnSubject }}</a></li>
+                                    @elseif($lan == 'ar')
+                                        <li><a href="{{ url($breadCrumb->refPage->pLinkUrl) . '/ar' }}">{{ $breadCrumb->refPage->pArSubject }}</a></li>
+                                    @endif
+                                @endforeach
+                                <li>
+                                    @if($lan == 'fa')
+                                        <span class="show-for-sr">Current: </span> {{ $pageInfo->pFaSubject }}
+                                    @elseif($lan == 'en')
+                                        <span class="show-for-sr">Current: </span> {{ $pageInfo->pEnSubject }}
+                                    @elseif($lan == 'ar')
+                                        <span class="show-for-sr">Current: </span> {{ $pageInfo->pArSubject }}
+                                    @endif
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
         @endif
     @endforeach
 @stop

@@ -35,5 +35,10 @@ class SectionTypeTableSeeder extends Seeder
         $sType->stType = 'SECTION_SPLITTER';
         $sType->stSubject = 'جدا کننده بخش ها';
         $sType->save();
+
+        $sType = new \Hamedan_2018\SectionType;
+        $sType->stType = 'BREAD_CRUMB';
+        $sType->stSubject = 'مشخص کننده وضعیت صفحه';
+        $sType->save();
     }
 }

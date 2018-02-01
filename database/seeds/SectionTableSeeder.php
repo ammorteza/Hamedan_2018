@@ -62,6 +62,12 @@ class SectionTableSeeder extends Seeder
 
         $section = new \Hamedan_2018\Section;
         $section->sPId = 2;
+        $section->sStId = 6;
+        $section->sOrder = 2;
+        $section->save();
+
+        $section = new \Hamedan_2018\Section;
+        $section->sPId = 2;
         $section->sStId = 2;
         $section->sOrder = 2;
         $section->sFaSubject = 'همدان پایتخت تاریخ و تمدن ایران';

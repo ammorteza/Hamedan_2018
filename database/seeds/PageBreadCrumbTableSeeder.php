@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class PageBreadCrumpTableSeeder extends Seeder
+class PageBreadCrumbTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,7 +11,7 @@ class PageBreadCrumpTableSeeder extends Seeder
      */
     public function run()
     {
-        $pageBC = new \Hamedan_2018\PageBreadCrump;
+        $pageBC = new \Hamedan_2018\PageBreadCrumb;
         $pageBC->pbPId = 2;
         $pageBC->pbPPId = 1;
         $pageBC->pbOrder = 1;

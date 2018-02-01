@@ -86,7 +86,7 @@
                                                     <div class="grid-x">
                                                         <div class="large-12 medium-12 small-12 my-text-shadow-effect">
                                                             @if($lan == 'fa')
-                                                                <p class="top-slider-header BTitrBold">{{ $pageImg->phiFaSubject }}</p>
+                                                                <p class="top-slider-header">{{ $pageImg->phiFaSubject }}</p>
                                                                 <p class="top-slider-description Duel-Regular">{{ $pageImg->phiFaDescription }}</p>
                                                             @elseif($lan == 'en')
                                                                 <div class="cabin">
@@ -265,7 +265,6 @@
                             <div style="text-align: center" class="large-1 medium-12 small-12">
                                 <img style=";margin-top: -50px;" src="{{ asset('pic/hamedan2018.png') }}" alt="Hamedan-2018" width="90px" height="90px">
                             </div>
-
                         </div>
                     </div>
                 </div>

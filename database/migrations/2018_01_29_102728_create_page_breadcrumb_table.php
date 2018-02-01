@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePageBreadcrumpTable extends Migration
+class CreatePageBreadcrumbTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class CreatePageBreadcrumpTable extends Migration
      */
     public function up()
     {
-        if (!Schema::hasTable('tbl_page_breadcrumps')) {
-            Schema::create('tbl_page_breadcrumps', function (Blueprint $table) {
+        if (!Schema::hasTable('tbl_page_breadcrumbs')) {
+            Schema::create('tbl_page_breadcrumbs', function (Blueprint $table) {
                 $table->increments('id');
                 $table->integer('pbPId')->length(10)->unsigned();
                 $table->integer('pbPPId')->length(10)->unsigned();
@@ -42,7 +42,7 @@ class CreatePageBreadcrumpTable extends Migration
     public function down()
     {
         DB::statement('SET FOREIGN_KEY_CHECKS = 0');
-        Schema::dropIfExists('tbl_page_breadcrumps');
+        Schema::dropIfExists('tbl_page_breadcrumbs');
         DB::statement('SET FOREIGN_KEY_CHECKS = 1');
     }
 }

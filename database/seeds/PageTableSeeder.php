@@ -19,7 +19,7 @@ class PageTableSeeder extends Seeder
         $page->pFaTitle = 'همدان ۲۰۱۸';
         $page->pEnTitle = 'Hamedan 2018';
         $page->pArTitle = 'همدان ۲۰۱۸';
-        $page->pLinkUrl = '/index';
+        $page->pLinkUrl = '/';
         $page->pFaDescription = 'همدان پایتخت تاریخ و تمدن ایران زمین';
         $page->pEnDescription = 'Hamedan is the capital of Iranian history and civilization';
         $page->pArDescription = 'همدان هي عاصمة التاريخ والحضارة الإيرانية';

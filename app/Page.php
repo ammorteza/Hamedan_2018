@@ -22,4 +22,9 @@ class Page extends Model
     {
         return $this->belongsTo(PageHeaderType::class , 'pPhtId' , 'id');
     }
+
+    public function breadCrumb()
+    {
+        return $this->hasMany(PageBreadCrumb::class , 'pbPId' , 'id');
+    }
 }
