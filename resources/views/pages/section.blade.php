@@ -33,8 +33,8 @@
                         @endif
                     </div>
                 </div>
-                <div class="grid-x grid-padding-x">
-                    <div class="large-12 medium-12" style="color: #8a8a8a;">
+                <div class="grid-x">
+                    <div class="large-12 medium-12 padding-lr" style="color: #8a8a8a;">
                         @if($lan == 'fa')
                             <p class="">{!! $section->sFaDescription !!}</p>
                         @elseif($lan == 'en')
@@ -106,7 +106,7 @@
         @elseif($section->sectionType->stType == 'CONTENT_IMAGE_SLIDER')
             <!--CONTENT_IMAGE_SLIDER SECTION-->
             <div class="grid-container">
-                <div class="grid-x grid-padding-x">
+                <div class="grid-x padding-lr">
                     <div style="margin-top: 50px;color: #37474F;" class="large-12 medium-12 center-el">
                         @if($lan == 'fa')
                             <h1 class="Mj-Flow-Reqular">{{ $section->sFaSubject }}</h1>
@@ -117,7 +117,7 @@
                         @endif
                     </div>
                 </div>
-                <div class="grid-x grid-padding-x">
+                <div class="grid-x">
                     <div class="large-12 medium-12 center-el" style="color: #8a8a8a">
                         @if($lan == 'fa')
                             <p class="">{!! $section->sFaDescription !!}</p>
@@ -159,7 +159,7 @@
             <!--Section Spliter Start-->
         @elseif($section->sectionType->stType == 'CONTENT_WIDE_SLIDER')
             <div class="grid-container">
-                <div class="grid-x grid-padding-x">
+                <div class="grid-x padding-lr">
                     <div style="margin-top: 50px;color: #37474F;" class="large-12 medium-12 center-el">
                         @if($lan == 'fa')
                             <h1 class="">{{ $section->sFaSubject }}</h1>
@@ -181,12 +181,13 @@
                                     $itemCount = count($section->sectionImg);
                                 ?>
                                 @for($i = 0 ; $i < $itemCount / 4 ; $i++)
-                                    <li style="padding: 50px" class="orbit-slide">
+                                    <li style="padding: 50px 10px 50px 10px" class="orbit-slide">
                                         <div class="docs-example-orbit-slide">
                                             <div class="grid-x">
                                                 @for( ; $item < (($i + 1) * 4);$item++)
-                                                    <div class="medium-3 style_prevu_kit">
+                                                    <div class="medium-3 style_prevu_kit element-dir">
                                                         <img class="img-size" src="{{ asset($section->sectionImg[$item]['gallery']['gPath']) }}">
+                                                        <p style="margin-top: -50px;" class="withe-color my-text-shadow-effect-blue center-el">متن تصویر</p>
                                                     </div>
                                                 @endfor
                                             </div>
