@@ -51,13 +51,13 @@
                                 </div>
                                 <div class="grid-x">
                                     <div class="large-12">
-                                        <img style="top:54px;left:85px;z-index: 16;position: absolute;direction: ltr;" src="{{ asset('pic/header-logo.png') }}" alt="Hamedan-2018" width="150px" height="100px">
+                                        <img style="top:54px;left:7rem;z-index: 16;position: absolute;direction: ltr;" src="{{ asset('pic/header-logo.png') }}" alt="Hamedan-2018" width="150px" height="100px">
                                     </div>
                                 </div>
 
                                 @foreach($pageInfo->pageHeaderImg as $pageImg)
                                     <li class="is-active orbit-slide">
-                                        <img class="orbit-image my-zoom-out one {{ $pageInfo->headerType->phtType == 'SIMPLE' ? 'top-slider-simple' : 'top-slider' }}" src="{{ asset($pageImg->image->gPath) }}" alt="Space">
+                                        <img class="orbit-image my-zoom-out {{ $pageInfo->headerType->phtType == 'SIMPLE' ? 'top-slider-simple' : 'top-slider' }}" src="{{ asset($pageImg->image->gPath) }}" alt="Space">
                                         @if ($pageInfo->headerType->phtType == 'SIMPLE')
                                             <figcaption class="orbit-caption align-center my-text-shadow-effect">
                                                 @if($lan == 'fa')

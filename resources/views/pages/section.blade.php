@@ -63,8 +63,8 @@
                                                                 <h4 class="direction-reveal__title">{{ $sectionImg->siFaSubject }}</h4>
                                                                 <p class="direction-reveal__text one-line">{{ $sectionImg->siFaDescription }}</p>
                                                             @elseif($lan == 'en')
-                                                                <h6 class="direction-reveal__title cabin">{{ $sectionImg->siEnSubject }}</h6>
-                                                                <p class="direction-reveal__text one-line">{{ $sectionImg->siEnDescription }}</p>
+                                                                <h6 class="direction-reveal__title cabin float-left">{{ $sectionImg->siEnSubject }}</h6>
+                                                                <p class="direction-reveal__text one-line float-left">{{ $sectionImg->siEnDescription }}</p>
                                                             @elseif($lan == 'ar')
                                                                 <h4 class="direction-reveal__title">{{ $sectionImg->siArSubject }}</h4>
                                                                 <p class="direction-reveal__text one-line">{{ $sectionImg->siArDescription }}</p>
@@ -86,8 +86,8 @@
                                                         <h3 class="direction-reveal__title">{{ $sectionImg->siFaSubject }}</h3>
                                                         <p class="direction-reveal__text one-line">{{ $sectionImg->siFaDescription }}</p>
                                                     @elseif($lan == 'en')
-                                                        <h3 class="direction-reveal__title">{{ $sectionImg->siEnSubject }}</h3>
-                                                        <p class="direction-reveal__text one-line">{{ $sectionImg->siEnDescription }}</p>
+                                                        <h3 class="direction-reveal__title float-left">{{ $sectionImg->siEnSubject }}</h3>
+                                                        <p class="direction-reveal__text one-line float-left">{{ $sectionImg->siEnDescription }}</p>
                                                     @elseif($lan == 'ar')
                                                         <h3 class="direction-reveal__title">{{ $sectionImg->siArSubject }}</h3>
                                                         <p class="direction-reveal__text one-line">{{ $sectionImg->siArDescription }}</p>
@@ -204,12 +204,12 @@
                 <div class="grid-x">
                     <div style="margin-top: 30px;color: #37474F;" class="large-12 medium-12">
                         <nav aria-label="You are here:" role="navigation">
-                            <ul class="breadcrumbs">
+                            <ul class="breadcrumbs {{ $lan == 'en' ? 'float-left' : '' }}">
                                 @foreach($pageInfo->breadCrumb as $breadCrumb)
                                     @if($lan == 'fa')
-                                        <li><a href="{{ url($breadCrumb->refPage->pLinkUrl) }}">{{ $breadCrumb->refPage->pFaSubject }}</a></li>
+                                        <li class="float-right"><a href="{{ url($breadCrumb->refPage->pLinkUrl) }}">{{ $breadCrumb->refPage->pFaSubject }}</a></li>
                                     @elseif($lan == 'en')
-                                        <li><a href="{{ url($breadCrumb->refPage->pLinkUrl) . '/en' }}">{{ $breadCrumb->refPage->pEnSubject }}</a></li>
+                                        <li class="float-left Roboto"><a href="{{ url($breadCrumb->refPage->pLinkUrl) . '/en' }}">{{ $breadCrumb->refPage->pEnSubject }}</a></li>
                                     @elseif($lan == 'ar')
                                         <li><a href="{{ url($breadCrumb->refPage->pLinkUrl) . '/ar' }}">{{ $breadCrumb->refPage->pArSubject }}</a></li>
                                     @endif
