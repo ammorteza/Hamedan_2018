@@ -51,7 +51,7 @@
                                 </div>
                                 <div class="grid-x">
                                     <div class="large-12">
-                                        <img style="top:105px;left:85px;z-index: 16;position: absolute;border-top:.2rem solid #2ba6cb;direction: ltr;" src="{{ asset('pic/logo2018.svg') }}" alt="Hamedan-2018" width="150px" height="100px">
+                                        <img style="top:54px;left:85px;z-index: 16;position: absolute;direction: ltr;" src="{{ asset('pic/header-logo.png') }}" alt="Hamedan-2018" width="150px" height="100px">
                                     </div>
                                 </div>
 
@@ -243,7 +243,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="large-7 medium-12 small-12">
+                            <div class="large-6 medium-12 small-12">
                                 <div class="footer-social-icons">
                                     @if($lan == 'fa')
                                         <h6 class="_14 withe-color BYekan center-el">رویداد همدان 2018 را در شبکه های اجتماعی دنبال کنید</h6>
@@ -262,8 +262,8 @@
                                     </ul>
                                 </div>
                             </div>
-                            <div style="text-align: center" class="large-1 medium-12 small-12">
-                                <img style=";margin-top: -50px;" src="{{ asset('pic/hamedan2018.png') }}" alt="Hamedan-2018" width="90px" height="90px">
+                            <div style="text-align: center" class="large-2 medium-12 small-12">
+                                <img style=";margin-top: -20px;" src="{{ asset('pic/footer/footer-logo.png') }}" alt="Hamedan-2018" width="150px" height="100px">
                             </div>
                         </div>
                     </div>
@@ -300,9 +300,22 @@
                         </div>
                     </div>
                 </div>
-                <div class="grid-x">
-                    <div class="large-12 medium-12 small-12">
-                        <img style="margin-top: 60px;" class="float-center" src="{{ asset('pic/Iran-miras-logo.jpg') }}" alt="میراث فرهنگی صنایع دستی و گردشگری" width="90px" height="90px">
+                <div style="margin-top: 60px;" class="grid-x">
+                    <div class="medium-12">
+                        <div class="grid-x align-center">
+                            <div class="large-1 medium-6 small-12">
+                                <img class="float-center"  src="{{ asset('pic/footer/miras-footer.png') }}" alt="میراث فرهنگی صنایع دستی و گردشگری" width="60px" height="60px">
+                                <p class="logo-slider withe-color my-text-shadow-effect">سازمان میراث فرهنگی، صنایع دستی و گردشگری</p>
+                            </div>
+                            <div class="large-1 medium-6 small-12">
+                                <img class="float-center"  src="{{ asset('pic/footer/ostan-footer.png') }}" alt="استانداری همدان" width="60px" height="60px">
+                                <p class="logo-slider withe-color my-text-shadow-effect">استانداری همدان</p>
+                            </div>
+                            <div class="large-1 medium-6 small-12">
+                                <img class="float-center"  src="{{ asset('pic/footer/shahrdari-footer.png') }}" alt="استانداری همدان" width="60px" height="60px">
+                                <p class="logo-slider withe-color my-text-shadow-effect">شهرداری همدان</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </footer>
