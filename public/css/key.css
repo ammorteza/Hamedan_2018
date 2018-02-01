@@ -124,8 +124,8 @@ h1,h2,h3,h4,h5,h6{
     background-color: transparent;
 }
 .top-menu .is-active{
-    border-bottom:.4rem solid #fff;
-    height: 4.7rem;
+    border-bottom:.2rem solid #fff;
+    height: 4.74rem;
     margin-right: -.5rem;
 }
 .top-menu-btm-border{
@@ -328,7 +328,7 @@ h1,h2,h3,h4,h5,h6{
     font-size: small;
 }
 .middle-menu .is-active{
-    border-bottom:.4rem solid #2ba6cb;
+    border-bottom:.2rem solid #2ba6cb;
     height: 4.4rem;
     margin-right: -.5rem;
 }
