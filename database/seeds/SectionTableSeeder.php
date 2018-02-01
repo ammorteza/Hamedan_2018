@@ -25,14 +25,14 @@ class SectionTableSeeder extends Seeder
 
         $section = new \Hamedan_2018\Section;
         $section->sPId = 1;
-        $section->sStId = 5;
-        $section->sOrder = 2;
+        $section->sStId = 5; //SPLITTER
+        $section->sOrder = 3;
         $section->save();
 
         $section = new \Hamedan_2018\Section;
         $section->sPId = 1;
         $section->sStId = 3;
-        $section->sOrder = 3;
+        $section->sOrder = 4;
         $section->sFaSubject = 'اقامت سبز در شهر تاریخی';
         $section->sEnSubject = 'Green stay in the old city';
         $section->sArSubject = 'الإقامة الخضراء في المدينة القديمة';
@@ -41,7 +41,7 @@ class SectionTableSeeder extends Seeder
         $section = new \Hamedan_2018\Section;
         $section->sPId = 1;
         $section->sStId = 4;
-        $section->sOrder = 5;
+        $section->sOrder = 6;
         $section->sFaSubject = 'سوغات همدان';
         $section->sEnSubject = 'Hamedan Souvenir';
         $section->sArSubject = 'الهدايا التذكارية همدان';
@@ -50,7 +50,7 @@ class SectionTableSeeder extends Seeder
         $section = new \Hamedan_2018\Section;
         $section->sPId = 1;
         $section->sStId = 5;
-        $section->sOrder = 4;
+        $section->sOrder = 5;
         $section->save();
         ///////////////////// hamadan page ///////////////////////////////
         $section = new \Hamedan_2018\Section;
@@ -91,6 +91,15 @@ class SectionTableSeeder extends Seeder
         $section->sFaSubject = 'اقامت سبز در شهر تاریخی';
         $section->sEnSubject = 'Green stay in the old city';
         $section->sArSubject = 'الإقامة الخضراء في المدينة القديمة';
+        $section->save();
+
+        $section = new \Hamedan_2018\Section;
+        $section->sPId = 1;
+        $section->sStId = 7;
+        $section->sOrder = 2;
+        $section->sFaSubject = 'پرواز بر فراز تاریخ';
+        $section->sEnSubject = 'Fly over the history';
+        $section->sArSubject = 'تطير فوق التاريخ';
         $section->save();
 
     }

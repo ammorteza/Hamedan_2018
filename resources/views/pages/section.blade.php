@@ -86,7 +86,7 @@
                                                         <h3 class="direction-reveal__title">{{ $sectionImg->siFaSubject }}</h3>
                                                         <p class="direction-reveal__text one-line">{{ $sectionImg->siFaDescription }}</p>
                                                     @elseif($lan == 'en')
-                                                        <h3 class="direction-reveal__title">{{ $sectionImg->siEnSubject }}</h3>
+                                                        <h3 class="direction-reveal__title cabin">{{ $sectionImg->siEnSubject }}</h3>
                                                         <p class="direction-reveal__text one-line">{{ $sectionImg->siEnDescription }}</p>
                                                     @elseif($lan == 'ar')
                                                         <h3 class="direction-reveal__title">{{ $sectionImg->siArSubject }}</h3>
@@ -187,7 +187,14 @@
                                                 @for( ; $item < (($i + 1) * 4);$item++)
                                                     <div class="medium-3 style_prevu_kit element-dir">
                                                         <img class="img-size" src="{{ asset($section->sectionImg[$item]['gallery']['gPath']) }}">
-                                                        <p style="margin-top: -50px;" class="withe-color my-text-shadow-effect-blue center-el">متن تصویر</p>
+                                                        @if($lan == 'fa')
+                                                            <p style="margin-top: -50px;" class="withe-color my-text-shadow-effect-blue center-el">{{ $section->sectionImg[$item]['siFaSubject'] }}</p>
+                                                        @elseif($lan == 'en')
+                                                            <p style="margin-top: -50px;" class="withe-color my-text-shadow-effect-blue center-el Roboto">{{ $section->sectionImg[$item]['siEnSubject'] }}</p>
+                                                        @elseif($lan == 'ar')
+                                                            <p style="margin-top: -50px;" class="withe-color my-text-shadow-effect-blue center-el Al-Jazeera-Arabic-Regular">{{ $section->sectionImg[$item]['siArSubject'] }}</p>
+                                                        @endif
+
                                                     </div>
                                                 @endfor
                                             </div>

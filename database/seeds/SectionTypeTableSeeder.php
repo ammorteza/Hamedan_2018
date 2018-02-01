@@ -40,5 +40,10 @@ class SectionTypeTableSeeder extends Seeder
         $sType->stType = 'BREAD_CRUMB';
         $sType->stSubject = 'مشخص کننده وضعیت صفحه';
         $sType->save();
+
+        $sType = new \Hamedan_2018\SectionType;
+        $sType->stType = 'CONTENT_VIDEO';
+        $sType->stSubject = 'گالری ویدیو';
+        $sType->save();
     }
 }

@@ -69,6 +69,24 @@
     src: url('../fonts/Raleway-Regular.ttf') format('truetype'); /* IE6–8 */
 }
 
+@font-face {
+    font-family: 'Entezar-Zohoor';
+    src: url('../fonts/entezar-zohoor.ttf') format('truetype'); /* IE6–8 */
+}
+
+@font-face {
+    font-family: 'Mj-Extender';
+    src: url('../fonts/mj-extender.ttf') format('truetype'); /* IE6–8 */
+}
+
+.Mj-Extender {
+    font-family: Mj-Extender, Arial, Helvetica, sans-serif;
+}
+
+.Entezar-Zohoor {
+    font-family: Entezar-Zohoor, Arial, Helvetica, sans-serif;
+}
+
 .Raleway-Regular {
     font-family: Raleway-Regular, Arial, Helvetica, sans-serif;
 }

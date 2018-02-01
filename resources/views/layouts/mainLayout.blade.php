@@ -57,11 +57,11 @@
 
                                 @foreach($pageInfo->pageHeaderImg as $pageImg)
                                     <li class="is-active orbit-slide">
-                                        <img class="orbit-image my-zoom-out one {{ $pageInfo->headerType->phtType == 'SIMPLE' ? 'top-slider-simple' : 'top-slider' }}" src="{{ asset($pageImg->image->gPath) }}" alt="Space">
+                                        <img class="orbit-image {{ $pageInfo->headerType->phtType == 'SIMPLE' ? 'top-slider-simple' : 'top-slider my-zoom-out' }}" src="{{ asset($pageImg->image->gPath) }}" alt="Space">
                                         @if ($pageInfo->headerType->phtType == 'SIMPLE')
                                             <figcaption class="orbit-caption align-center my-text-shadow-effect">
                                                 @if($lan == 'fa')
-                                                    <p style="text-align: center;" class="top-slider-header">{{ $pageInfo->pFaSubject }}</p>
+                                                    <p style="text-align: center;" class="top-slider-header Mj-Extender">{{ $pageInfo->pFaSubject }}</p>
                                                     <p style="text-align: center;" class="top-slider-description Duel-Regular">{{ $pageInfo->pFaDescription }}</p>
                                                     <center>
                                                         <button style="margin-top: 15px;" class="button primary white-color">اطلاعات بیشتر</button>
@@ -76,7 +76,7 @@
                                                     <p style="text-align: center;" class="top-slider-header">{{ $pageInfo->pArSubject }}</p>
                                                     <p style="text-align: center;" class="top-slider-description">{{ $pageInfo->pArDescription }}</p>
                                                     <center>
-                                                        <button style="margin-top: 15px;" class="button primary white-color">اطلاعات بیشتر</button>
+                                                        <button style="margin-top: 15px;" class="button primary white-color">مزيد من المعلومات</button>
                                                     </center>
                                                 @endif
                                             </figcaption>
@@ -86,7 +86,7 @@
                                                     <div class="grid-x">
                                                         <div class="large-12 medium-12 small-12 my-text-shadow-effect">
                                                             @if($lan == 'fa')
-                                                                <p class="top-slider-header">{{ $pageImg->phiFaSubject }}</p>
+                                                                <p class="top-slider-header Mj-Extender">{{ $pageImg->phiFaSubject }}</p>
                                                                 <p class="top-slider-description Duel-Regular">{{ $pageImg->phiFaDescription }}</p>
                                                             @elseif($lan == 'en')
                                                                 <div class="cabin">
