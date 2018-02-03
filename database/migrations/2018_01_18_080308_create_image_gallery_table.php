@@ -17,11 +17,11 @@ class CreateImageGalleryTable extends Migration
             Schema::create('tbl_image_gallery', function (Blueprint $table) {
                 $table->increments('id');
                 $table->string('gPath')->unique();
-                $table->string('gFaLocation');
+                $table->string('gFaLocation')->nullable();
                 $table->string('gFaPhotographer');
-                $table->string('gEnLocation');
+                $table->string('gEnLocation')->nullable();
                 $table->string('gEnPhotographer');
-                $table->string('gArLocation');
+                $table->string('gArLocation')->nullable();
                 $table->string('gArPhotographer');
                 $table->timestamps();
             });
