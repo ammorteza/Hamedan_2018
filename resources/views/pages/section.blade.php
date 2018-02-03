@@ -18,9 +18,9 @@
                     </ul>
                 </div>
             </div>
-            <!--END SUB MENU SECTION-->
+        <!--END SUB MENU SECTION-->
         @elseif($section->sectionType->stType == 'CONTENT_LEFT')
-            <!--CONTENT_LEFT SECTION-->
+        <!--CONTENT_LEFT SECTION-->
             <div id="ploop" class="grid-container">
                 <div class="grid-x grid-padding-x">
                     <div style="margin-top: 80px;color: #37474F;" class="large-12 medium-12 center-el">
@@ -158,6 +158,7 @@
             </div>
             <!--Section Spliter Start-->
         @elseif($section->sectionType->stType == 'CONTENT_WIDE_SLIDER')
+            <!--Content Wide Slider Start-->
             <div class="grid-container">
                 <div class="grid-x padding-lr">
                     <div style="margin-top: 50px;color: #37474F;" class="large-12 medium-12 center-el">
@@ -206,6 +207,7 @@
                     </div>
                 </div>
             </div>
+            <!--Content Wide Slider Start-->
         @elseif($section->sectionType->stType == 'BREAD_CRUMB')
             <div class="grid-container">
                 <div class="grid-x">
