@@ -155,7 +155,7 @@
                                     <div class="docs-example-orbit-slide">
                                        <div class="grid-x logo-slider">
                                            <div class="large-2 medium-6 small-12 logo-slider-padd">
-                                              <img  src="{{ asset('pic/logo-slider/Iran-miras-logo.jpg') }}" width="72px" height="72px">
+                                              <img  src="{{ asset('pic/logo-slider/Iran-miras-logo.jpg') }}" width="100px" height="100px">
                                                <p class="element-distanse">سازمان میراث فرهنگی و گردشگری</p>
                                            </div>
                                            <div class="large-2 medium-6 small-12 logo-slider-padd">
@@ -218,6 +218,48 @@
                     </div>
                 </div>
             </div>
+
+            <!--Content Image Right And Text Left Start-->
+            <div style="margin-top: 200px;" class="grid-container">
+                <div class="grid-x">
+                    <div class="large-6 medium-12 small-12 padding-lr">
+                        <img src="{{ asset('pic/top_slider/1.jpg')}}">
+                    </div>
+
+                    <div style="" class="large-6 medium-12 small-12 padding-lr-txt-img-r">
+
+                        <h4>سوغات همدان</h4>
+                        <p class="text-color text-al">
+                            نخستین باری که اسم این شهر برده شد، در حدود ۱۱۰۰ سال پیش از میلاد بود که نام همدان را اَمدانه ذکر شده‌است. این شهر تحت نام‌های دیگری از قبیل هگمتانه، هگمتان، اکباتان، اکباتانا، آمدانه، آنادانا نیز نوشته شده‌است. در کتیبه‌های آشوری نام آن شهر آمدانه آمده، این اسم بایستی مشتق از کلمهٔ ماد باشد چنان‌که آشوریان قوم ماد را آمادای ذکر کرده‌اند. از این رو آمادانه به معنی محل مادها و جایی‌است که مادها زندگی می‌کردند.[۱۸] در دوران مادها به زبان پارسی باستان این شهر هگمتانه یا هگمتانه به معنی «جای تجمع» خوانده می‌شد. اکباتان نیز همان تلفظ هگمتانه به زبان یونانی است.[۱]
+
+                            نام هگمتانه به مرور زمان در دوران ساسانیان به اَهمتان، اَهمدان و سپس به همدان دگرگون شده‌است.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+            <!--Content Image Right And Text Left Start-->
+
+            <!--Content Image Left And Text Right Start-->
+            <div style="margin-top: 200px;" class="grid-container">
+                <div class="grid-x">
+                     <div style="" class="large-6 medium-12 small-12 padding-lr-txt-img-l">
+
+                        <h4>سوغات همدان</h4>
+                        <p class="text-color text-al">
+                            نخستین باری که اسم این شهر برده شد، در حدود ۱۱۰۰ سال پیش از میلاد بود که نام همدان را اَمدانه ذکر شده‌است. این شهر تحت نام‌های دیگری از قبیل هگمتانه، هگمتان، اکباتان، اکباتانا، آمدانه، آنادانا نیز نوشته شده‌است. در کتیبه‌های آشوری نام آن شهر آمدانه آمده، این اسم بایستی مشتق از کلمهٔ ماد باشد چنان‌که آشوریان قوم ماد را آمادای ذکر کرده‌اند. از این رو آمادانه به معنی محل مادها و جایی‌است که مادها زندگی می‌کردند.[۱۸] در دوران مادها به زبان پارسی باستان این شهر هگمتانه یا هگمتانه به معنی «جای تجمع» خوانده می‌شد. اکباتان نیز همان تلفظ هگمتانه به زبان یونانی است.[۱]
+
+                            نام هگمتانه به مرور زمان در دوران ساسانیان به اَهمتان، اَهمدان و سپس به همدان دگرگون شده‌است.
+                        </p>
+                    </div>
+                    <div class="large-6 medium-12 small-12 padding-lr">
+                        <img src="{{ asset('pic/top_slider/1.jpg')}}">
+                    </div>
+
+                </div>
+            </div>
+            <!--Content Image Left And Text Right Start-->
+
             <footer class="footer">
                 <div class="grid-x">
                     <div class="large-12 medium-12">

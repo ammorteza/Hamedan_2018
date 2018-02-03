@@ -105,6 +105,12 @@ h1,h2,h3,h4,h5,h6{
 .white-color{
     color: #ffffff;
 }
+.text-color{
+    color: #8a8a8a;
+}
+.text-al{
+    text-align: justify;
+}
 .button.primary:hover, .button.primary:focus {
     background-color: #2285a2;
     color: #FFFFFF;
@@ -349,6 +355,13 @@ h1,h2,h3,h4,h5,h6{
     padding: 0px 5px 8px 5px;
 }
 
+.padding-lr-txt-img-r{
+    padding: 30px 60px 8px 5px;
+}
+.padding-lr-txt-img-l{
+    padding: 30px 5px 8px 60px;
+}
+
 .txt-justify{
     text-justify: auto;
 }
@@ -370,7 +383,7 @@ h1,h2,h3,h4,h5,h6{
     text-shadow:1px 1px 3px black, 5px 1px 5px  #2ba6cb;
 }
 .logo-slider{
-    font-size: xx-small;
+    font-size: small;
     text-align: center;
 }
 .logo-slider-padd{
