@@ -16,7 +16,9 @@ class CreateSponsorTable extends Migration
         if (!Schema::hasTable('tbl_sponsors')) {
             Schema::create('tbl_sponsors', function (Blueprint $table) {
                 $table->increments('id');
-                $table->string('sSubject');
+                $table->string('sFaSubject');
+                $table->string('sEnSubject');
+                $table->string('sArSubject');
                 $table->string('sPath');
                 $table->boolean('sState')->default(true);
                 $table->timestamps();

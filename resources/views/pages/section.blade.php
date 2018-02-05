@@ -10,7 +10,7 @@
                             @if($lan == 'fa')
                                 <li><a class="{{ $subMenu->id == $pageInfo->pSmId ? 'is-active' : '' }}" href="{{ url($lan . $subMenu->smPageLink) }}">{{ $subMenu->smFaSubject }}</a></li>
                             @elseif($lan == 'en')
-                                <li><a class="{{ $subMenu->id == $pageInfo->pSmId ? 'is-active' : '' }}" href="{{ url($lan . $subMenu->smPageLink) }}">{{ $subMenu->smEnSubject }}</a></li>
+                                <li><a class="{{ $subMenu->id == $pageInfo->pSmId ? 'is-active' : '' }}" href="{{ url($subMenu->smPageLink . '') }}">{{ $subMenu->smEnSubject }}</a></li>
                             @elseif($lan == 'ar')
                                 <li><a class="{{ $subMenu->id == $pageInfo->pSmId ? 'is-active' : '' }}" href="{{ url($lan . $subMenu->smPageLink) }}">{{ $subMenu->smArSubject }}</a></li>
                             @endif
@@ -34,7 +34,7 @@
                     </div>
                 </div>
                 <div class="grid-x">
-                    <div class="large-12 medium-12 padding-lr" style="color: #8a8a8a;">
+                    <div class="large-12 medium-12 padding-lr text-color">
                         @if($lan == 'fa')
                             <p class="">{!! $section->sFaDescription !!}</p>
                         @elseif($lan == 'en')
@@ -63,11 +63,11 @@
                                                                 <h4 class="direction-reveal__title">{{ $sectionImg->siFaSubject }}</h4>
                                                                 <p class="direction-reveal__text one-line">{{ $sectionImg->siFaDescription }}</p>
                                                             @elseif($lan == 'en')
-                                                                <h6 class="direction-reveal__title cabin float-left">{{ $sectionImg->siEnSubject }}</h6>
-                                                                <p class="direction-reveal__text one-line float-left">{{ $sectionImg->siEnDescription }}</p>
+                                                                <h5 class="direction-reveal__title cabin float-left Roboto">{{ $sectionImg->siEnSubject }}</h5>
+                                                                <p class="direction-reveal__text one-line float-left Raleway-Regular">{{ $sectionImg->siEnDescription }}</p>
                                                             @elseif($lan == 'ar')
-                                                                <h4 class="direction-reveal__title">{{ $sectionImg->siArSubject }}</h4>
-                                                                <p class="direction-reveal__text one-line">{{ $sectionImg->siArDescription }}</p>
+                                                                <h5 class="direction-reveal__title Al-Jazeera-Arabic-Bold">{{ $sectionImg->siArSubject }}</h5>
+                                                                <p class="direction-reveal__text one-line Al-Jazeera-Arabic-Regular">{{ $sectionImg->siArDescription }}</p>
                                                             @endif
                                                         </div>
                                                     </a>
@@ -83,14 +83,14 @@
                                                 <img src="{{ asset($sectionImg->gallery->gPath) }}" alt="Image" class="img-fluid">
                                                 <div class="direction-reveal__overlay">
                                                     @if($lan == 'fa')
-                                                        <h3 class="direction-reveal__title">{{ $sectionImg->siFaSubject }}</h3>
+                                                        <h4 class="direction-reveal__title">{{ $sectionImg->siFaSubject }}</h4>
                                                         <p class="direction-reveal__text one-line">{{ $sectionImg->siFaDescription }}</p>
                                                     @elseif($lan == 'en')
-                                                        <h3 class="direction-reveal__title float-left">{{ $sectionImg->siEnSubject }}</h3>
-                                                        <p class="direction-reveal__text one-line float-left">{{ $sectionImg->siEnDescription }}</p>
+                                                        <h5 class="direction-reveal__title float-left Roboto">{{ $sectionImg->siEnSubject }}</h5>
+                                                        <p class="direction-reveal__text one-line float-left Raleway-Regular">{{ $sectionImg->siEnDescription }}</p>
                                                     @elseif($lan == 'ar')
-                                                        <h3 class="direction-reveal__title">{{ $sectionImg->siArSubject }}</h3>
-                                                        <p class="direction-reveal__text one-line">{{ $sectionImg->siArDescription }}</p>
+                                                        <h5 class="direction-reveal__title Al-Jazeera-Arabic-Bold">{{ $sectionImg->siArSubject }}</h5>
+                                                        <p class="direction-reveal__text one-line Al-Jazeera-Arabic-Regular">{{ $sectionImg->siArDescription }}</p>
                                                     @endif
                                                 </div>
                                             </a>
@@ -118,7 +118,7 @@
                     </div>
                 </div>
                 <div class="grid-x">
-                    <div class="large-12 medium-12 center-el" style="color: #8a8a8a">
+                    <div class="large-12 medium-12 center-el text-color">
                         @if($lan == 'fa')
                             <p class="">{!! $section->sFaDescription !!}</p>
                         @elseif($lan == 'en')
@@ -138,7 +138,7 @@
                                     @if($lan == 'fa')
                                         <img src="{{ asset($sectionImg->gallery->gPath) }}" alt="{{ $sectionImg->siFaSubject }}" data-description="{{ $sectionImg->siFaDescription }}">
                                     @elseif($lan == 'en')
-                                        <img src="{{ asset($sectionImg->gallery->gPath) }}" alt="{{ $sectionImg->siEnSubject }}" data-description="{{ $sectionImg->siEnDescription }}">
+                                        <img  src="{{ asset($sectionImg->gallery->gPath) }}" alt="{{ $sectionImg->siEnSubject }}" data-description="{{ $sectionImg->siEnDescription }}">
                                     @elseif($lan == 'ar')
                                         <img src="{{ asset($sectionImg->gallery->gPath) }}" alt="{{ $sectionImg->siArSubject }}" data-description="{{ $sectionImg->siArDescription }}">
                                     @endif
@@ -216,11 +216,11 @@
                             <ul class="breadcrumbs {{ $lan == 'en' ? 'float-left' : '' }}">
                                 @foreach($pageInfo->breadCrumb as $breadCrumb)
                                     @if($lan == 'fa')
-                                        <li class="float-right"><a href="{{ url($breadCrumb->refPage->pLinkUrl) }}">{{ $breadCrumb->refPage->pFaSubject }}</a></li>
+                                        <li class="float-right"><a href="{{ url($lan . $breadCrumb->refPage->pLinkUrl) }}">{{ $breadCrumb->refPage->pFaSubject }}</a></li>
                                     @elseif($lan == 'en')
-                                        <li class="float-left Roboto"><a href="{{ url($breadCrumb->refPage->pLinkUrl) . '/en' }}">{{ $breadCrumb->refPage->pEnSubject }}</a></li>
+                                        <li class="float-left Roboto"><a href="{{ url($breadCrumb->refPage->pLinkUrl) }}">{{ $breadCrumb->refPage->pEnSubject }}</a></li>
                                     @elseif($lan == 'ar')
-                                        <li><a href="{{ url($breadCrumb->refPage->pLinkUrl) . '/ar' }}">{{ $breadCrumb->refPage->pArSubject }}</a></li>
+                                        <li><a href="{{ url($lan . $breadCrumb->refPage->pLinkUrl) }}">{{ $breadCrumb->refPage->pArSubject }}</a></li>
                                     @endif
                                 @endforeach
                                 <li>
@@ -255,7 +255,13 @@
                                                 @for( ; $item < (($i + 1) * 6) && $item < count($sponsors);$item++)
                                                     <div class="large-2 medium-6 small-12 logo-slider-padd">
                                                         <img  src="{{ asset($sponsors[$item]['sPath']) }}" width="100px" height="100px">
-                                                        <p class="element-distanse">{{ $sponsors[$item]['sSubject'] }}</p>
+                                                        @if($lan == 'fa')
+                                                            <p class="element-distanse">{{ $sponsors[$item]['sFaSubject'] }}</p>
+                                                        @elseif($lan == 'en')
+                                                            <p class="element-distanse Roboto">{{ $sponsors[$item]['sEnSubject'] }}</p>
+                                                        @elseif($lan == 'ar')
+                                                            <p class="element-distanse Al-Jazeera-Arabic-Bold">{{ $sponsors[$item]['sArSubject'] }}</p>
+                                                        @endif
                                                     </div>
                                                 @endfor
                                             </div>
@@ -273,19 +279,19 @@
                 <div class="grid-x">
                     <div class="large-6 medium-12 small-12 {{ $lan == 'en' ? 'padding-lr-txt-img-r' : 'padding-lr-txt-img-l'}}">
                         @if($lan == 'fa')
-                            <h4>{{ $section->sFaSubject }}</h4>
+                            <h2>{{ $section->sFaSubject }}</h2>
                         @elseif($lan == 'en')
-                            <h4 class="Roboto">{{ $section->sEnSubject }}</h4>
+                            <h2 class="Roboto">{{ $section->sEnSubject }}</h2>
                         @elseif($lan == 'ar')
-                            <h4>{{ $section->sArSubject }}</h4>
+                            <h2 class="Al-Jazeera-Arabic-Bold">{{ $section->sArSubject }}</h2>
                         @endif
 
                         @if($lan == 'fa')
                             <p class="text-color text-al">{{ $section->sFaDescription }}</p>
                         @elseif($lan == 'en')
-                            <p class="text-color text-al">{{ $section->sEnDescription }}</p>
+                            <p class="text-color text-al Raleway-Regular">{{ $section->sEnDescription }}</p>
                         @elseif($lan == 'ar')
-                            <p class="text-color text-al">{{ $section->sArDescription }}</p>
+                            <p class="text-color text-al Al-Jazeera-Arabic-Regular">{{ $section->sArDescription }}</p>
                         @endif
                     </div>
                     <div class="large-6 medium-12 small-12 padding-lr">
@@ -300,19 +306,25 @@
             <div style="margin-top: 200px;" class="grid-container">
                 <div class="grid-x">
                     <div class="large-6 medium-12 small-12 padding-lr">
-                        <img src="{{ asset('pic/top_slider/1.jpg')}}">
+                        <img src="{{ asset($section->sectionImg[0]['gallery']['gPath'] )}}">
                     </div>
-
                     <div style="" class="large-6 medium-12 small-12 padding-lr-txt-img-r">
+                        @if($lan == 'fa')
+                            <h4>{{ $section->sFaSubject }}</h4>
+                        @elseif($lan == 'en')
+                            <h4 class="Roboto">{{ $section->sEnSubject }}</h4>
+                        @elseif($lan == 'ar')
+                            <h4 class="Al-Jazeera-Arabic-Bold">{{ $section->sArSubject }}</h4>
+                        @endif
 
-                        <h4>سوغات همدان</h4>
-                        <p class="text-color text-al">
-                            نخستین باری که اسم این شهر برده شد، در حدود ۱۱۰۰ سال پیش از میلاد بود که نام همدان را اَمدانه ذکر شده‌است. این شهر تحت نام‌های دیگری از قبیل هگمتانه، هگمتان، اکباتان، اکباتانا، آمدانه، آنادانا نیز نوشته شده‌است. در کتیبه‌های آشوری نام آن شهر آمدانه آمده، این اسم بایستی مشتق از کلمهٔ ماد باشد چنان‌که آشوریان قوم ماد را آمادای ذکر کرده‌اند. از این رو آمادانه به معنی محل مادها و جایی‌است که مادها زندگی می‌کردند.[۱۸] در دوران مادها به زبان پارسی باستان این شهر هگمتانه یا هگمتانه به معنی «جای تجمع» خوانده می‌شد. اکباتان نیز همان تلفظ هگمتانه به زبان یونانی است.[۱]
-
-                            نام هگمتانه به مرور زمان در دوران ساسانیان به اَهمتان، اَهمدان و سپس به همدان دگرگون شده‌است.
-                        </p>
+                        @if($lan == 'fa')
+                            <p class="text-color text-al">{{ $section->sFaDescription }}</p>
+                        @elseif($lan == 'en')
+                            <p class="text-color text-al Raleway-Regular">{{ $section->sEnDescription }}</p>
+                        @elseif($lan == 'ar')
+                            <p class="text-color text-al Al-Jazeera-Arabic-Regular">{{ $section->sArDescription }}</p>
+                        @endif
                     </div>
-
                 </div>
             </div>
             <!--Content Image Left And Text Right Start-->

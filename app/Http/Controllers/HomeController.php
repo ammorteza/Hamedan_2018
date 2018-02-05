@@ -11,12 +11,12 @@ class HomeController extends Controller
 {
     public function index()
     {
-        return $this->renderPage('fa');
+        return $this->renderPage('en');
     }
 
-    public function index_en()
+    public function index_fa()
     {
-        return $this->renderPage('en');
+        return $this->renderPage('fa');
     }
 
     public function index_ar()

@@ -11,17 +11,16 @@
 |
 */
 
-Route::get('/temp/sections', 'PageController@tempSections');
 Route::get('/', 'HomeController@index');
 Route::get('/page/{slug}', [
     'uses' => 'PageController@getPage'
 ])->where('slug', '([A-Za-z0-9\-\/]+)');
 
-Route::prefix('en')->group(function () {
-    Route::get('/', 'HomeController@index_en');
+Route::prefix('fa')->group(function () {
+    Route::get('/', 'HomeController@index_fa');
 
     Route::get('page/{slug}', [
-        'uses' => 'PageController@getPage_en'
+        'uses' => 'PageController@getPage_fa'
     ])->where('slug', '([A-Za-z0-9\-\/]+)');
 });
 

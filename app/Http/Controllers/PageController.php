@@ -11,12 +11,12 @@ class PageController extends Controller
 {
     public function getPage($slug = null)
     {
-        return $this->renderPage($slug , 'fa');
+        return $this->renderPage($slug , 'en');
     }
 
-    public function getPage_en($slug = null)
+    public function getPage_fa($slug = null)
     {
-        return $this->renderPage($slug , 'en');
+        return $this->renderPage($slug , 'fa');
     }
 
     public function getPage_ar($slug = null)
@@ -28,20 +28,6 @@ class PageController extends Controller
     {
         echo $pageId . ' - ' . $slug;
     }*/
-
-    public function tempSections()
-    {
-        $pageInfo = Page::with('pageHeaderImg.image')
-            ->where('pLinkUrl' , '=' , '/index')
-            ->first();
-
-        $sections = Section::with('sectionType')
-            ->with('sectionImg.gallery')
-            ->where('sPId' , '=' , $pageInfo->id)
-            ->where('sState' , '=' , true)
-            ->get();
-        return view('pages.tempSection' , ['lan' => 'fa' , 'pageInfo' => $pageInfo , 'sections' => $sections]);
-    }
 
     private function renderPage($slug , $lan)
     {
