@@ -334,18 +334,36 @@
     </div>
     <!--Video Js End-->
 
-    <!--Just One Image Start-->
+    <!--Just One Fade Image Start-->
     <div class="grid-x">
-        <div class="large-12 medium-12 small-12 fade-image">
+        <div class="large-12 medium-12 small-12">
             <div class="grid-x">
-                <div style="position: relative;display: inline-block;top: 50%;text-align: center;" class="large-12 medium-12 small-12">
-                    <h2 class="my-text-shadow-effect white-color"> غار آبی علیصدر </h2>
+                <div style="position: relative;display: inline-block;top: 58vh;text-align: center;z-index: 50;" class="large-12 medium-12 small-12">
+                    <h1 class="my-text-shadow-effect white-color"> غار آبی علیصدر </h1>
                     <p class="white-color my-text-shadow-effect ">شگفت انگیز ترین غار آبی جهان</p>
                     <button class="button primary element-distanse">اطلاعات بیشتر</button>
                 </div>
             </div>
-            <img style="height: 100vh;width: 100%;background-size: cover;" src="{{ asset('pic/gallery/4.jpg')}}">
+            <span style="width: 100%" class="faded faded-top">
+            <img style="height: 100vh;width: 100%;" src="{{ asset('pic/gallery/2.jpg')}}">
+            </span>
+        </div>
+
+    </div>
+    <!--Just One Fade Image End-->
+
+    <!--Title and Description Section Start-->
+    <div class="grid-container element-distance-tb">
+        <div class="grid-x">
+            <div class="large-12">
+                <h3 class="center-el titr-color">همدان پایتخت گردشگری کشور های آسیایی</h3>
+                <p class="text-color text-justify element-distanse">
+                    در حدود اوایل هزارهٔ دوم پیش از میلاد رویدادهایی در آسیای مرکزی پدیدار می‌شود که موجب نقل و انتقال اقوام ایرانی‌تبار که در سرزمین پهناوری در این ناحیه ساکن بودند، می‌گردد. در این هنگام دو قبیلهٔ ایرانی مادی و پارسی که با یکدیگر تفاوت اندکی در گویش داشتند، بسوی سرزمین‌های جنوبی‌تر کوچ کردند. تیرهٔ مادی در نواحی جنوب شرقی دریاچه ارومیه بین همدان و تبریز امروزی جای گرفت و بعدها تا اصفهان نیز پیش رفت.[۲۲]
+
+                    در زمان مادها مهم‌ترین راه‌های کاروانرو در اکباتانا تلاقی می‌کردند و این شهر قلب ماد قدیم به‌شمار می‌رفت معمولاً معتقدند که هگمتانه به معنی محل تجمع یا بازار یا چیزی نظیر آن است البته احتمال دیگری نیز وجود دارد که جلسات عمومی اتحادیه قبایل در این نقطه برگزار می‌شده‌است. در یکی از جلسات عمومی اتحادیه قبایل، دیاکو به رهبری انتخاب شد. دیاکو هگمتانه را به عنوان پایتخت خود انتخاب کرد. مکان این شهر برای پایتخت شدن کاملاً مناسب بود، زیرا مشرف بر راهی بود که به بابل و آشور می‌رفت.[۲۳] بر اساس نوشته‌های هرودوت مورخ یونانی به دستور دیاکو نخستین پادشاه ماد در اکباتانا استحکامات عظیمی شامل ۷ دژ مشهور به قصر هفت حصار و کاخ‌های شاهی برپا شد.[۲۴] بیشتر پژوهندگان علوم تاریخ و باستان‌شناسی بر این باورند که تپه و بناهای امروزی هگمتانه، در دل شهر همدان، برجای‌ماندهٔ بقایای همین تأسیسات می‌باشند.[۲۵]
+                </p>
+            </div>
         </div>
     </div>
-    <!--Just One Image End-->
+    <!--Title and Description Section End-->
 @stop
