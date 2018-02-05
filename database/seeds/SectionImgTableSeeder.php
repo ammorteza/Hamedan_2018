@@ -431,5 +431,20 @@ class SectionImgTableSeeder extends Seeder
         $sImg->siEnDescription = 'Hamadan is proud to host international events throughout the year. These festivals are a tourist destination that offers guests an important opportunity.';
         $sImg->siArDescription = 'الفعاليات الدولية على مدار العام. هذه المهرجانات هي وجهة سياحية التي توفر للضيوف فرصة هامة.';
         $sImg->save();
+
+        $sImg = new \Hamedan_2018\SectionImg;
+        $sImg->siSId = 13;
+        $sImg->siGId = 12;
+        $sImg->siOrder = 1;
+        $sImg->siFaAlt = 'صنایع دستی همدان';
+        $sImg->siEnAlt = 'Hamedan Handicrafts';
+        $sImg->siArAlt = 'حميدان للحرف اليدوية';
+        $sImg->siFaSubject = 'رویدادها و جشنواره ها در همدان';
+        $sImg->siEnSubject = 'Events and festivals in Hamadan';
+        $sImg->siArSubject = 'الأحداث والمهرجانات في همدان';
+        $sImg->siFaDescription = 'افتخار دارد که میزبان رویدادهای بین المللی در طول سال باشد. این جشنواره ها یک مقصد توریستی است که فرصت مهمی برای مهمانان فراهم می کند.';
+        $sImg->siEnDescription = 'Hamadan is proud to host international events throughout the year. These festivals are a tourist destination that offers guests an important opportunity.';
+        $sImg->siArDescription = 'الفعاليات الدولية على مدار العام. هذه المهرجانات هي وجهة سياحية التي توفر للضيوف فرصة هامة.';
+        $sImg->save();
     }
 }

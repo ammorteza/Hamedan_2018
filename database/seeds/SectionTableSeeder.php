@@ -26,7 +26,7 @@ class SectionTableSeeder extends Seeder
         $section = new \Hamedan_2018\Section;
         $section->sPId = 1;
         $section->sStId = 5; //SPLITTER
-        $section->sOrder = 3;
+        $section->sOrder = 2;
         $section->save();
 
         $section = new \Hamedan_2018\Section;
@@ -96,10 +96,28 @@ class SectionTableSeeder extends Seeder
         $section = new \Hamedan_2018\Section;
         $section->sPId = 1;
         $section->sStId = 7;
-        $section->sOrder = 2;
+        $section->sOrder = 7;
         $section->sFaSubject = 'پرواز بر فراز تاریخ';
         $section->sEnSubject = 'Fly over the history';
         $section->sArSubject = 'تطير فوق التاريخ';
+        $section->save();
+
+        $section = new \Hamedan_2018\Section;
+        $section->sPId = 1;
+        $section->sStId = 8;
+        $section->sOrder = 8;
+        $section->save();
+
+        $section = new \Hamedan_2018\Section;
+        $section->sPId = 1;
+        $section->sStId = 9;
+        $section->sOrder = 3;
+        $section->sFaSubject = 'دستان هنرمند ایرانی';
+        $section->sEnSubject = 'Iranian artist hands';
+        $section->sArSubject = 'أيدي الفنان الإيراني';
+        $section->sFaDescription = 'همدان قدیمی‌ترین شهر ایران و از کهن‌ترین شهرهای جهان است.در سال ۱۳۸۵ مجلس شورای اسلامی در مصوبه‌ای همدان را «پایتخت تاریخ و تمدن ایران» اعلام کرد. همدان اولین پایتخت نخستین شاهنشاهی ایران، مادها بوده‌است.';
+        $section->sEnDescription = 'Hamedan is the oldest city in Iran and one of the oldest cities in the world. In 2006, the Islamic Consultative Assembly declared Hamedan as "the capital of Iranian history and civilization". Hamedan was the first capital of the first Iranian monarchy, the Medes.';
+        $section->sArDescription = 'هامدان هي أقدم مدينة في إيران وأحد أقدم المدن في العالم، وفي عام 2006، أعلنت الجمعية الاستشارية الإسلامية "عاصمة تاريخ وحضارة إيران" في همدان. وكان حمدان أول عاصمة للملكية الإيرانية الأولى، وهي ميديز.';
         $section->save();
 
     }

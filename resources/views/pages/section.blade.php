@@ -237,6 +237,115 @@
                     </div>
                 </div>
             </div>
+        @elseif($section->sectionType->stType == 'CONTENT_SPONSOR')
+            <div class="grid-container">
+                <div class="grid-x">
+                    <div class="large-12">
+                        <div class="orbit" role="region" aria-label="Favorite Text Ever" data-orbit data-timer-delay="8000">
+                            <ul class="orbit-container">
+                                <?php
+                                    $sponsors = \Hamedan_2018\Sponsor::getAllSponsors();
+                                    $item = 0;
+                                    $itemCount = count($sponsors);
+                                ?>
+                                @for($i = 0 ; $i < $itemCount / 6 ; $i++)
+                                    <li class="is-active orbit-slide">
+                                        <div class="docs-example-orbit-slide">
+                                            <div class="grid-x logo-slider">
+                                                @for( ; $item < (($i + 1) * 6) && $item < count($sponsors);$item++)
+                                                    <div class="large-2 medium-6 small-12 logo-slider-padd">
+                                                        <img  src="{{ asset($sponsors[$item]['sPath']) }}" width="100px" height="100px">
+                                                        <p class="element-distanse">{{ $sponsors[$item]['sSubject'] }}</p>
+                                                    </div>
+                                                @endfor
+                                            </div>
+                                        </div>
+                                    </li>
+                                @endfor
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        @elseif($section->sectionType->stType == 'CONTENT_IMAGE_RIGHT_TEXT_LEFT')
+            <!--Content Image Right And Text Left Start-->
+            <div style="margin-top: 80px;" class="grid-container">
+                <div class="grid-x">
+                    <div class="large-6 medium-12 small-12 {{ $lan == 'en' ? 'padding-lr-txt-img-r' : 'padding-lr-txt-img-l'}}">
+                        @if($lan == 'fa')
+                            <h4>{{ $section->sFaSubject }}</h4>
+                        @elseif($lan == 'en')
+                            <h4 class="Roboto">{{ $section->sEnSubject }}</h4>
+                        @elseif($lan == 'ar')
+                            <h4>{{ $section->sArSubject }}</h4>
+                        @endif
+
+                        @if($lan == 'fa')
+                            <p class="text-color text-al">{{ $section->sFaDescription }}</p>
+                        @elseif($lan == 'en')
+                            <p class="text-color text-al">{{ $section->sEnDescription }}</p>
+                        @elseif($lan == 'ar')
+                            <p class="text-color text-al">{{ $section->sArDescription }}</p>
+                        @endif
+                    </div>
+                    <div class="large-6 medium-12 small-12 padding-lr">
+                        <img src="{{ asset($section->sectionImg[0]['gallery']['gPath'] )}}">
+                    </div>
+
+                </div>
+            </div>
+            <!--Content Image Right And Text Left Start-->
+        @elseif($section->sectionType->stType == 'CONTENT_IMAGE_LEFT_TEXT_RIGHT')
+            <!--Content Image Left And Text Right Start-->
+            <div style="margin-top: 200px;" class="grid-container">
+                <div class="grid-x">
+                    <div class="large-6 medium-12 small-12 padding-lr">
+                        <img src="{{ asset('pic/top_slider/1.jpg')}}">
+                    </div>
+
+                    <div style="" class="large-6 medium-12 small-12 padding-lr-txt-img-r">
+
+                        <h4>سوغات همدان</h4>
+                        <p class="text-color text-al">
+                            نخستین باری که اسم این شهر برده شد، در حدود ۱۱۰۰ سال پیش از میلاد بود که نام همدان را اَمدانه ذکر شده‌است. این شهر تحت نام‌های دیگری از قبیل هگمتانه، هگمتان، اکباتان، اکباتانا، آمدانه، آنادانا نیز نوشته شده‌است. در کتیبه‌های آشوری نام آن شهر آمدانه آمده، این اسم بایستی مشتق از کلمهٔ ماد باشد چنان‌که آشوریان قوم ماد را آمادای ذکر کرده‌اند. از این رو آمادانه به معنی محل مادها و جایی‌است که مادها زندگی می‌کردند.[۱۸] در دوران مادها به زبان پارسی باستان این شهر هگمتانه یا هگمتانه به معنی «جای تجمع» خوانده می‌شد. اکباتان نیز همان تلفظ هگمتانه به زبان یونانی است.[۱]
+
+                            نام هگمتانه به مرور زمان در دوران ساسانیان به اَهمتان، اَهمدان و سپس به همدان دگرگون شده‌است.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+            <!--Content Image Left And Text Right Start-->
         @endif
     @endforeach
+    <!--Video Js Start-->
+    <div class="grid-container">
+        <div class="grid-x">
+            <div class="large-12">
+                <div id="instructions">
+                    <video id="my_video_1" class="video-js vjs-default-skin" width="640px" height="267px"
+                           controls preload="none" poster='http://video-js.zencoder.com/oceans-clip.jpg'
+                           data-setup='{ "aspectRatio":"640:267", "playbackRates": [1, 1.5, 2] }'>
+                        <source src="pic/video/2.mp4"/>
+                    </video>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Video Js End-->
+
+    <!--Just One Image Start-->
+    <div class="grid-x">
+        <div class="large-12 medium-12 small-12 fade-image">
+            <div class="grid-x">
+                <div style="position: relative;display: inline-block;top: 50%;text-align: center;" class="large-12 medium-12 small-12">
+                    <h2 class="my-text-shadow-effect white-color"> غار آبی علیصدر </h2>
+                    <p class="white-color my-text-shadow-effect ">شگفت انگیز ترین غار آبی جهان</p>
+                    <button class="button primary element-distanse">اطلاعات بیشتر</button>
+                </div>
+            </div>
+            <img style="height: 100vh;width: 100%;background-size: cover;" src="{{ asset('pic/gallery/4.jpg')}}">
+        </div>
+    </div>
+    <!--Just One Image End-->
 @stop

@@ -121,5 +121,12 @@ class GalleryTableSeeder extends Seeder
         $gallery->gArPhotographer = 'فردین چاردولی';
         $gallery->save();
 
+        $gallery = new \Hamedan_2018\ImageGallery;
+        $gallery->gPath = 'pic/gallery/handicraft.jpg';
+        $gallery->gFaPhotographer = 'فردین چاردولی';
+        $gallery->gEnPhotographer = 'F.Chardowli';
+        $gallery->gArPhotographer = 'فردین چاردولی';
+        $gallery->save();
+
     }
 }

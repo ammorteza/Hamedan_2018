@@ -45,5 +45,20 @@ class SectionTypeTableSeeder extends Seeder
         $sType->stType = 'CONTENT_VIDEO';
         $sType->stSubject = 'گالری ویدیو';
         $sType->save();
+
+        $sType = new \Hamedan_2018\SectionType;
+        $sType->stType = 'CONTENT_SPONSOR';
+        $sType->stSubject = 'اسلایدر معرفی اسپانسرها';
+        $sType->save();
+
+        $sType = new \Hamedan_2018\SectionType;
+        $sType->stType = 'CONTENT_IMAGE_RIGHT_TEXT_LEFT';
+        $sType->stSubject = 'تصویر در سمت راست و متن مربوطه در سمت چپ';
+        $sType->save();
+
+        $sType = new \Hamedan_2018\SectionType;
+        $sType->stType = 'CONTENT_IMAGE_LEFT_TEXT_RIGHT';
+        $sType->stSubject = 'تصویر در سمت چپ و متن در سمت راست';
+        $sType->save();
     }
 }
