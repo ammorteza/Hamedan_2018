@@ -32,7 +32,7 @@
                                 </ul>
                             </div>
                             <div class="title-bar-right">
-                                <span style="color: #000000" class="title-bar-title">Sticky Navigation</span>
+                                <img style=";margin-top: -20px;" src="{{ asset('pic/footer/footer-logo.png') }}" alt="Hamedan-2018" width="150px" height="100px">
                             </div>
                         </div>
                     </div>
@@ -41,18 +41,8 @@
             </div>
         </div>
         <!--Top Menu End-->
-        <!--News Content Start-->
-        <div class="grid-container">
-            <div class="grid-x">
-                <div class="large-8 medium-12 small-12">
+        @yield('content')
 
-                </div>
-                <div class="large-4 medium-6 small-12">
-
-                </div>
-            </div>
-        </div>
-        <!--News Content Start-->
         <script src="{{ asset('js/vendor/jquery.js') }}"  type="text/javascript"></script>
         <script src="{{ asset('js/scripts/bundle.js') }}"></script> <!--Content left-->
         <script src="{{ asset('js/jquery.immersive-slider.js') }}"></script><!--Content Image slider-->

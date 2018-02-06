@@ -34,6 +34,8 @@ Route::prefix('ar')->group(function () {
 
 Route::get('/news', 'NewsController@index');
 
+Route::get('/news/info', 'NewsController@newsInfo');
+
 
 
 /*Route::get('{pageId}/page/{slug}', [
