@@ -413,6 +413,11 @@ h1,h2,h3,h4,h5,h6{
     overflow: hidden;
     white-space: nowrap;
 }
+.two-line{
+    line-height: 1.5em;
+    height: 3em;
+    overflow: hidden;
+}
 
 /*Content Image Slider*/
 .header h1{
@@ -881,4 +886,33 @@ ul.social-icons {
     height: 6.74rem;
     background-color: #FFFFFF;
     border-bottom: .1rem solid #EEEEEE;
+}
+.news-top-menu a{
+    color: #3b444f;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+.news-top-menu a:hover{
+    color: rgba(59, 68, 79, 0.38);
+}
+.news-bottom-line{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    border-bottom: .1rem solid #EEEEEE;
+}
+.news-link a{
+    color: #3b444f;
+}
+.news-link a:hover{
+    color: rgba(59, 68, 79, 0.38);
+}
+.news-description{
+    color: #8a8a8a;
+    font-size:1em ;
+    line-height: 2.1rem;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: justify;
+
 }
