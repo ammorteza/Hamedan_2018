@@ -36,7 +36,7 @@ class PageController extends Controller
             ->first();
 
         $sections = Section::with('sectionType')
-            ->with('sectionImg.gallery')
+            ->with('sectionImg.gallery' , 'sectionVideo.gallery')
             ->where('sPId' , '=' , $pageInfo->id)
             ->where('sState' , '=' , true)
             ->orderBy('sOrder' , 'ASC')

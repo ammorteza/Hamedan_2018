@@ -23,7 +23,9 @@ class CreateSectionTable extends Migration
                 $table->boolean('sState')->default(true);
 
                 $table->string('sLink')->nullable();
-                $table->string('sLinkTitle')->nullable();
+                $table->string('sLinkFaTitle')->nullable();
+                $table->string('sLinkEnTitle')->nullable();
+                $table->string('sLinkArTitle')->nullable();
 
                 $table->string('sFaSubject')->nullable();
                 $table->string('sEnSubject')->nullable();

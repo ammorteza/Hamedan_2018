@@ -18,7 +18,7 @@
         <link rel="stylesheet" href="{{ asset('css/font.css') }}">
         <link rel="stylesheet" href="{{ asset('css/key.css') }}">
     </head>
-    <body class="BYekan">
+    <body class="Shabnam-Light">
             <div class="grid-x">
                 <!--Top Slider Start-->
                 <div class="large-12 medium-12">
@@ -37,7 +37,7 @@
                                                     <ul style="background: none;height: 4.7rem;" class="dropdown menu element-dir Roboto my-text-shadow-effect" data-dropdown-menu>
                                                         @foreach($mainMenus as $mainMenu)
                                                             @if($lan == 'fa')
-                                                                <li class="BYekan"><a class="{{ $mainMenu->id == $pageInfo->pMmId ? 'is-active' : '' }}" href="{{ url($lan . $mainMenu->mmPageLink) }}">{{ $mainMenu->mmFaSubject }}</a></li>
+                                                                <li class="Shabnam-Bold"><a class="{{ $mainMenu->id == $pageInfo->pMmId ? 'is-active' : '' }}" href="{{ url($lan . $mainMenu->mmPageLink) }}">{{ $mainMenu->mmFaSubject }}</a></li>
                                                             @elseif($lan == 'en')
                                                                 <li><a class="{{ $mainMenu->id == $pageInfo->pMmId ? 'is-active' : '' }}" href="{{ url($mainMenu->mmPageLink . '') }}">{{ $mainMenu->mmEnSubject }}</a></li>
                                                             @elseif($lan == 'ar')
@@ -62,7 +62,7 @@
                                         @if ($pageInfo->headerType->phtType == 'SIMPLE')
                                             <figcaption class="orbit-caption align-center my-text-shadow-effect">
                                                 @if($lan == 'fa')
-                                                    <p style="text-align: center;" class="top-slider-header Mj-Extender">{{ $pageInfo->pFaSubject }}</p>
+                                                    <p style="text-align: center;" class="top-slider-header Shabnam-Bold">{{ $pageInfo->pFaSubject }}</p>
                                                     <p style="text-align: center;" class="top-slider-description Duel-Regular">{{ $pageInfo->pFaDescription }}</p>
                                                     <center>
                                                         <button style="margin-top: 15px;" class="button primary white-color">اطلاعات بیشتر</button>
@@ -87,7 +87,7 @@
                                                     <div class="grid-x">
                                                         <div class="large-12 medium-12 small-12 my-text-shadow-effect">
                                                             @if($lan == 'fa')
-                                                                <p class="top-slider-header Mj-Extender">{{ $pageImg->phiFaSubject }}</p>
+                                                                <p class="top-slider-header Shabnam-Bold">{{ $pageImg->phiFaSubject }}</p>
                                                                 <p class="top-slider-description Duel-Regular">{{ $pageImg->phiFaDescription }}</p>
                                                             @elseif($lan == 'en')
                                                                 <div class="cabin">
@@ -117,7 +117,7 @@
                                             <div class="large-3 medium-6 small-12 padding-lr">
                                                 <button class="{{ $i == 0 ? 'is-active' : '' }}" data-slide="{{ $i }}">
                                                     @if($lan == 'fa')
-                                                        <p class="element-dir float-right">{{ $pageImg->phiFaSubject }}</p>
+                                                        <p class="element-dir float-right Shabnam-Bold">{{ $pageImg->phiFaSubject }}</p>
                                                     @elseif($lan == 'en')
                                                         <p class="Roboto element-dir-l float-left">{{ $pageImg->phiEnSubject }}</p>
                                                     @elseif($lan == 'ar')

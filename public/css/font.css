@@ -79,6 +79,24 @@
     src: url('../fonts/mj-extender.ttf') format('truetype'); /* IE6–8 */
 }
 
+@font-face {
+    font-family: 'Shabnam-Bold';
+    src: url('../fonts/Shabnam-Bold.ttf') format('truetype'); /* IE6–8 */
+}
+
+@font-face {
+    font-family: 'Shabnam-Light';
+    src: url('../fonts/Shabnam-Light.ttf') format('truetype'); /* IE6–8 */
+}
+
+.Shabnam-Light {
+    font-family: Shabnam-Light, Arial, Helvetica, sans-serif;
+}
+
+.Shabnam-Bold {
+    font-family: Shabnam-Bold, Arial, Helvetica, sans-serif;
+}
+
 .Mj-Extender {
     font-family: Mj-Extender, Arial, Helvetica, sans-serif;
 }

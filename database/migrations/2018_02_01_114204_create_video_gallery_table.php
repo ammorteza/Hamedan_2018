@@ -23,6 +23,7 @@ class CreateVideoGalleryTable extends Migration
                 $table->string('gEnEditor');
                 $table->string('gArLocation');
                 $table->string('gArEditor');
+                $table->string('gPosterPath')->nullable();
                 $table->timestamps();
             });
         }

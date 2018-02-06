@@ -17,4 +17,9 @@ class Section extends Model
     {
         return $this->hasMany(SectionImg::class ,'siSId' , 'id');
     }
+
+    public function sectionVideo()
+    {
+        return $this->hasMany(SectionVideo::class ,'svSId' , 'id');
+    }
 }

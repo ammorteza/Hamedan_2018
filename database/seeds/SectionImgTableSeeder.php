@@ -417,5 +417,14 @@ class SectionImgTableSeeder extends Seeder
         $sImg->siEnDescription = 'Hamadan is proud to host international events throughout the year. These festivals are a tourist destination that offers guests an important opportunity.';
         $sImg->siArDescription = 'الفعاليات الدولية على مدار العام. هذه المهرجانات هي وجهة سياحية التي توفر للضيوف فرصة هامة.';
         $sImg->save();
+
+        $sImg = new \Hamedan_2018\SectionImg;
+        $sImg->siSId = 14;
+        $sImg->siGId = 13;
+        $sImg->siOrder = 1;
+        $sImg->siFaAlt = 'پرواز بر فراز تاریخ';
+        $sImg->siEnAlt = 'Fly over the history';
+        $sImg->siArAlt = 'تطير فوق التاريخ';
+        $sImg->save();
     }
 }

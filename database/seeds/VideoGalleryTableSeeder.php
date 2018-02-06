@@ -19,6 +19,7 @@ class VideoGalleryTableSeeder extends Seeder
         $vGallery->gFaEditor = 'فردین چاردولی';
         $vGallery->gEnEditor = 'F.Chardowli';
         $vGallery->gArEditor = 'فردین چاردولی';
+        $vGallery->gPosterPath = 'pic/video/posters/1.jpg';
         $vGallery->save();
 
         $vGallery = new \Hamedan_2018\VideoGallery;
@@ -29,6 +30,7 @@ class VideoGalleryTableSeeder extends Seeder
         $vGallery->gFaEditor = 'فردین چاردولی';
         $vGallery->gEnEditor = 'F.Chardowli';
         $vGallery->gArEditor = 'فردین چاردولی';
+        $vGallery->gPosterPath = 'pic/video/posters/2.jpg';
         $vGallery->save();
     }
 }

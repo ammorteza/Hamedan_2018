@@ -60,5 +60,10 @@ class SectionTypeTableSeeder extends Seeder
         $sType->stType = 'CONTENT_IMAGE_LEFT_TEXT_RIGHT';
         $sType->stSubject = 'تصویر در سمت چپ و متن در سمت راست';
         $sType->save();
+
+        $sType = new \Hamedan_2018\SectionType;
+        $sType->stType = 'CONTENT_IMAGE_TOP_FADE';
+        $sType->stSubject = 'تصویر تمام صفحه، بالای تصویر محو شده';
+        $sType->save();
     }
 }

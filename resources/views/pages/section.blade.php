@@ -8,7 +8,7 @@
                     <ul class="menu align-center top-menu middle-menu element-dir">
                         @foreach(\Hamedan_2018\SubMenu::getAllSubMenuWithMainMenuId($section->sMmId) as $subMenu)
                             @if($lan == 'fa')
-                                <li><a class="{{ $subMenu->id == $pageInfo->pSmId ? 'is-active' : '' }}" href="{{ url($lan . $subMenu->smPageLink) }}">{{ $subMenu->smFaSubject }}</a></li>
+                                <li><a class="BYekan {{ $subMenu->id == $pageInfo->pSmId ? 'is-active' : '' }}" href="{{ url($lan . $subMenu->smPageLink) }}">{{ $subMenu->smFaSubject }}</a></li>
                             @elseif($lan == 'en')
                                 <li><a class="{{ $subMenu->id == $pageInfo->pSmId ? 'is-active' : '' }}" href="{{ url($subMenu->smPageLink . '') }}">{{ $subMenu->smEnSubject }}</a></li>
                             @elseif($lan == 'ar')
@@ -36,7 +36,7 @@
                 <div class="grid-x">
                     <div class="large-12 medium-12 padding-lr text-color">
                         @if($lan == 'fa')
-                            <p class="">{!! $section->sFaDescription !!}</p>
+                            <p>{!! $section->sFaDescription !!}</p>
                         @elseif($lan == 'en')
                             <div style="font-size: 0.9em" class="Raleway-Regular">
                                 <p>{!! $section->sEnDescription !!}</p>
@@ -120,7 +120,7 @@
                 <div class="grid-x">
                     <div class="large-12 medium-12 text-color">
                         @if($lan == 'fa')
-                            <p class="">{!! $section->sFaDescription !!}</p>
+                            <p>{!! $section->sFaDescription !!}</p>
                         @elseif($lan == 'en')
                             <div class="Raleway-Regular">
                                 {!! $section->sEnDescription !!}
@@ -216,7 +216,7 @@
                             <ul class="breadcrumbs {{ $lan == 'en' ? 'float-left' : '' }}">
                                 @foreach($pageInfo->breadCrumb as $breadCrumb)
                                     @if($lan == 'fa')
-                                        <li class="float-right"><a href="{{ url($lan . $breadCrumb->refPage->pLinkUrl) }}">{{ $breadCrumb->refPage->pFaSubject }}</a></li>
+                                        <li class="float-right Shabnam-Bold"><a href="{{ url($lan . $breadCrumb->refPage->pLinkUrl) }}">{{ $breadCrumb->refPage->pFaSubject }}</a></li>
                                     @elseif($lan == 'en')
                                         <li class="float-left Roboto"><a href="{{ url($breadCrumb->refPage->pLinkUrl) }}">{{ $breadCrumb->refPage->pEnSubject }}</a></li>
                                     @elseif($lan == 'ar')
@@ -225,7 +225,7 @@
                                 @endforeach
                                 <li>
                                     @if($lan == 'fa')
-                                        <span class="show-for-sr">Current: </span> {{ $pageInfo->pFaSubject }}
+                                        <span class="show-for-sr Shabnam-Bold">Current: </span> {{ $pageInfo->pFaSubject }}
                                     @elseif($lan == 'en')
                                         <span class="show-for-sr">Current: </span> {{ $pageInfo->pEnSubject }}
                                     @elseif($lan == 'ar')
@@ -277,9 +277,9 @@
             <!--Content Image Right And Text Left Start-->
             <div style="margin-top: 80px;" class="grid-container">
                 <div class="grid-x">
-                    <div class="large-6 medium-12 small-12 {{ $lan == 'en' ? 'padding-lr-txt-img-r' : 'padding-lr-txt-img-l'}}">
+                    <div class="large-6 medium-12 small-12 titr-color {{ $lan == 'en' ? 'padding-lr-txt-img-r' : 'padding-lr-txt-img-l'}}">
                         @if($lan == 'fa')
-                            <h2>{{ $section->sFaSubject }}</h2>
+                            <h3 class="Shabnam-Bold">{{ $section->sFaSubject }}</h3>
                         @elseif($lan == 'en')
                             <h2 class="Roboto">{{ $section->sEnSubject }}</h2>
                         @elseif($lan == 'ar')
@@ -330,41 +330,61 @@
                 </div>
             </div>
             <!--Content Image Left And Text Right Start-->
+        @elseif($section->sectionType->stType == 'CONTENT_VIDEO')
+            <!--Video Js Start-->
+            <div class="grid-container">
+                <div class="grid-x">
+                    <div class="large-12">
+                        <div id="instructions">
+                            <video id="my_video_1" class="video-js vjs-default-skin" width="640px" height="267px"
+                                   controls preload="none" poster="{{ $section->sectionVideo[0]['gallery']['gPosterPath'] }}"
+                                   data-setup='{ "aspectRatio":"640:267", "playbackRates": [1, 1.5, 2] }'>
+                                <source src="{{ $section->sectionVideo[0]['gallery']['gPath'] }}"/>
+                            </video>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Video Js End-->
+        @elseif($section->sectionType->stType == 'CONTENT_IMAGE_TOP_FADE')
+            <!--image top fade Start-->
+            <div class="grid-x">
+                <div class="large-12 medium-12 small-12">
+                    <div class="grid-x">
+                        <div style="position: relative;display: inline-block;top: 65vh;text-align: center;z-index: 50;" class="large-12 medium-12 small-12">
+                            @if($lan == 'fa')
+                                <h1 class="my-text-shadow-effect white-color Shabnam-Bold">{{ $section->sFaSubject }}</h1>
+                            @elseif($lan == 'en')
+                                <h1 class="my-text-shadow-effect white-color Roboto-Bold">{{ $section->sEnSubject }}</h1>
+                            @elseif($lan == 'ar')
+                                <h1 class="my-text-shadow-effect white-color">{{ $section->sArSubject }}</h1>
+                            @endif
+
+                            @if($lan == 'fa')
+                                <p class="white-color my-text-shadow-effect ">{{ $section->sFaDescription }}</p>
+                            @elseif($lan == 'en')
+                                <p class="white-color my-text-shadow-effect merienda">{{ $section->sEnDescription }}</p>
+                            @elseif($lan == 'ar')
+                                <p class="white-color my-text-shadow-effect">{{ $section->sArDescription }}</p>
+                            @endif
+
+                            @if($lan == 'fa')
+                                <a href="{{ url($section->sLink . '')}}" class="button primary element-distanse">{{ $section->sLinkFaTitle }}</a>
+                            @elseif($lan == 'en')
+                                <a href="{{ url($section->sLink . '')}}" class="button primary element-distanse">{{ $section->sLinkEnTitle }}</a>
+                            @elseif($lan == 'ar')
+                                <a href="{{ url($section->sLink . '')}}" class="button primary element-distanse">{{ $section->sLinkArTitle }}</a>
+                            @endif
+                        </div>
+                    </div>
+                    <span style="width: 100%" class="faded faded-top">
+                    <img style="height: 100vh;width: 100%;" src="{{ asset($section->sectionImg[0]['gallery']['gPath'])}}">
+                    </span>
+                </div>
+            </div>
+            <!--image top fade End-->
         @endif
     @endforeach
-    <!--Video Js Start-->
-    <div class="grid-container">
-        <div class="grid-x">
-            <div class="large-12">
-                <div id="instructions">
-                    <video id="my_video_1" class="video-js vjs-default-skin" width="640px" height="267px"
-                           controls preload="none" poster='http://video-js.zencoder.com/oceans-clip.jpg'
-                           data-setup='{ "aspectRatio":"640:267", "playbackRates": [1, 1.5, 2] }'>
-                        <source src="pic/video/2.mp4"/>
-                    </video>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--Video Js End-->
-
-    <!--Just One Fade Image Start-->
-    <div class="grid-x">
-        <div class="large-12 medium-12 small-12">
-            <div class="grid-x">
-                <div style="position: relative;display: inline-block;top: 58vh;text-align: center;z-index: 50;" class="large-12 medium-12 small-12">
-                    <h1 class="my-text-shadow-effect white-color"> غار آبی علیصدر </h1>
-                    <p class="white-color my-text-shadow-effect ">شگفت انگیز ترین غار آبی جهان</p>
-                    <button class="button primary element-distanse">اطلاعات بیشتر</button>
-                </div>
-            </div>
-            <span style="width: 100%" class="faded faded-top">
-            <img style="height: 100vh;width: 100%;" src="{{ asset('pic/gallery/2.jpg')}}">
-            </span>
-        </div>
-
-    </div>
-    <!--Just One Fade Image End-->
 
     <!--Title and Description Section Start-->
     <div class="grid-container element-distance-tb">
