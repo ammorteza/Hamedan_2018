@@ -32,6 +32,7 @@ Route::prefix('ar')->group(function () {
     ])->where('slug', '([A-Za-z0-9\-\/]+)');
 });
 
+Route::get('/news', 'NewsController@index');
 
 
 

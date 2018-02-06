@@ -11,6 +11,7 @@
         <link rel="stylesheet" href="{{ asset('css/direction-reveal.css') }}">
         <link rel="stylesheet" href="{{ asset('css/immersive-slider.css') }}">
         <link rel="stylesheet" href="{{ asset('css/pgwslider.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/videoJs/videoJs.css') }}">
         <link rel="stylesheet" href="{{ asset('css/foundation.css') }}">
         <link href="https://fonts.googleapis.com/css?family=Satisfy|Poiret+One|Cabin|Wire+One|Merienda|Roboto" rel="stylesheet">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/motion-ui/1.2.2/motion-ui.css" rel="stylesheet">
@@ -146,6 +147,9 @@
                 <!--Top Slider End-->
             </div>
             @yield('content')
+
+
+
             <footer class="footer">
                 <div class="grid-x">
                     <div class="large-12 medium-12">
@@ -262,6 +266,7 @@
         <script src="{{ asset('js/scripts/bundle.js') }}"></script> <!--Content left-->
         <script src="{{ asset('js/jquery.immersive-slider.js') }}"></script><!--Content Image slider-->
         <script src="{{ asset('js/pgwslider.js') }}"></script><!--Content Image slider-->
+        <script src="{{ asset('js/videojs/videoJs.js') }}"></script><!--Content Image slider-->
         <script src="{{ asset('js/vendor/foundation.js') }}"></script>
         <script src="{{ asset('js/app.js') }}"></script>
 
@@ -310,6 +315,29 @@
             });
         </script>
         <!--jump to section Script-->
+
+        <!--Video JS-->
+        <script>
+            $(function(){
+                var $refreshButton = $('#refresh');
+                var $results = $('#css_result');
+
+                function refresh(){
+                    var css = $('style.cp-pen-styles').text();
+                    $results.html(css);
+                }
+
+                refresh();
+                $refreshButton.click(refresh);
+
+                // Select all the contents when clicked
+                $results.click(function(){
+                    $(this).select();
+                });
+            });
+
+        </script>
+        <!--Video JS-->
 
     </body>
 </html>
