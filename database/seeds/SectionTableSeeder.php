@@ -52,7 +52,7 @@ class SectionTableSeeder extends Seeder
         $section->sStId = 5;
         $section->sOrder = 5;
         $section->save();
-        ///////////////////// hamadan page ///////////////////////////////
+        ///////////////////// hamedan page ///////////////////////////////
         $section = new \Hamedan_2018\Section;
         $section->sPId = 2;
         $section->sStId = 1;

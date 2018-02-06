@@ -118,12 +118,12 @@
                     </div>
                 </div>
                 <div class="grid-x">
-                    <div class="large-12 medium-12 center-el text-color">
+                    <div class="large-12 medium-12 text-color">
                         @if($lan == 'fa')
                             <p class="">{!! $section->sFaDescription !!}</p>
                         @elseif($lan == 'en')
-                            <div style="font-size: 0.9em;" class="Roboto-Regular">
-                                <p>{!! $section->sEnDescription !!}</p>
+                            <div class="Raleway-Regular">
+                                {!! $section->sEnDescription !!}
                             </div>
                         @elseif($lan == 'ar')
                             <p class="Al-Jazeera-Arabic-Regular">{!! $section->sArDescription !!}</p>

@@ -26,5 +26,7 @@ class DatabaseSeeder extends Seeder
         $this->call(VideoGalleryTableSeeder::class);
         $this->call(SectionVideoTableSeeder::class);
         $this->call(SponsorTableSeeder::class);
+        $this->call(NewsTableSeeder::class);
+        $this->call(NewsImgTableSeeder::class);
     }
 }
