@@ -11,7 +11,6 @@
 |
 */
 
-Route::get('/temp/sections', 'PageController@tempSections');
 Route::get('/', 'HomeController@index');
 Route::get('/page/{slug}', [
     'uses' => 'PageController@getPage'
@@ -33,6 +32,7 @@ Route::prefix('ar')->group(function () {
     ])->where('slug', '([A-Za-z0-9\-\/]+)');
 });
 
+Route::get('/news', 'NewsController@index');
 
 
 

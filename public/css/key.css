@@ -93,6 +93,12 @@ h1,h2,h3,h4,h5,h6{
 .font-large{
     font-size: 9em;
 }
+.font-small{
+    font-size: small;
+}
+.font-smaller{
+    font-size: smaller;
+}
 
 .top-slider-header{
     font-size: 3.5em;
@@ -107,6 +113,9 @@ h1,h2,h3,h4,h5,h6{
 }
 .text-color{
     color: #8a8a8a;
+}
+.blue-color{
+    color:#2ba6cb;
 }
 .text-al{
     text-align: justify;
@@ -864,4 +873,12 @@ ul.social-icons {
 .faded.faded-top:after {
     box-shadow: inset 0 120px 80px -45px;
 }
+.camera-margin{
+    margin:8px 5px;
+}
 
+.news-top-menu{
+    height: 6.74rem;
+    background-color: #FFFFFF;
+    border-bottom: .1rem solid #EEEEEE;
+}

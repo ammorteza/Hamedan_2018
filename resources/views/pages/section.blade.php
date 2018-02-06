@@ -290,6 +290,8 @@
                     </div>
                     <div class="large-6 medium-12 small-12 padding-lr">
                         <img src="{{ asset($section->sectionImg[0]['gallery']['gPath'] )}}">
+                        <i class="fas fa-camera text-color camera-margin"></i><span class="font-small text-color">علی جهان پاک</span>
+                        <i class="fas fa-map-marker blue-color camera-margin "></i><span class="font-small text-color">لالجین</span>
                     </div>
 
                 </div>
