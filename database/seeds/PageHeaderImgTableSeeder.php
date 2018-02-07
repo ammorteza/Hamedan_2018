@@ -79,5 +79,14 @@ class PageHeaderImgTableSeeder extends Seeder
         $pageHeaderImg->phiEnAlt = 'Attractions';
         $pageHeaderImg->phiArAlt = 'جاذبیه';
         $pageHeaderImg->save();
+
+        $pageHeaderImg = new \Hamedan_2018\PageHeaderImg;
+        $pageHeaderImg->phiPId = 3;
+        $pageHeaderImg->phiGId = 13;
+        $pageHeaderImg->phiOrder = 1;
+        $pageHeaderImg->phiFaAlt = 'جاذبه ها';
+        $pageHeaderImg->phiEnAlt = 'Attractions';
+        $pageHeaderImg->phiArAlt = 'جاذبیه';
+        $pageHeaderImg->save();
     }
 }

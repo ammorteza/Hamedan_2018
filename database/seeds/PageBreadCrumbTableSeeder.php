@@ -16,5 +16,11 @@ class PageBreadCrumbTableSeeder extends Seeder
         $pageBC->pbPPId = 1;
         $pageBC->pbOrder = 1;
         $pageBC->save();
+
+        $pageBC = new \Hamedan_2018\PageBreadCrumb;
+        $pageBC->pbPId = 3;
+        $pageBC->pbPPId = 1;
+        $pageBC->pbOrder = 1;
+        $pageBC->save();
     }
 }

@@ -40,5 +40,21 @@ class PageTableSeeder extends Seeder
         $page->pEnDescription = 'Visit the historical and tourist attractions of Hamadan';
         $page->pArDescription = 'زيارة المعالم التاريخية والسياحية في همدان';
         $page->save();
+
+        $page = new \Hamedan_2018\Page;
+        $page->pPhtId = 2;
+        $page->pMmId = 3;
+        $page->pSmId = 8;
+        $page->pFaSubject = 'پرواز بر فراز تاریخ';
+        $page->pEnSubject = 'Fly over the history';
+        $page->pArSubject = 'تطير فوق التاريخ';
+        $page->pFaTitle = 'پرواز بر فراز تاریخ';
+        $page->pEnTitle = 'Fly over the history';
+        $page->pArTitle = 'تطير فوق التاريخ';
+        $page->pLinkUrl = '/event/scientificAndSports/flyOverTheHistory';
+        $page->pFaDescription = 'پاراگلایدر در همدان با شرکت آکسایا پاراگلایدر';
+        $page->pEnDescription = 'Paraglider in Hamadan with Aksay Paraglider Company';
+        $page->pArDescription = 'المظلات في همدان مع أكسي باراجليدر الشركة';
+        $page->save();
     }
 }

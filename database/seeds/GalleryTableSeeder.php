@@ -19,7 +19,7 @@ class GalleryTableSeeder extends Seeder
         $gallery->gFaPhotographer = 'فردین چاردولی';
         $gallery->gEnPhotographer = 'F.Chardowli';
         $gallery->gArPhotographer = 'فردین چاردولی';
-        $gallery->save();
+        $gallery->save(); //1
 
         $gallery = new \Hamedan_2018\ImageGallery;
         $gallery->gPath = 'pic/gallery/2.jpg';
@@ -29,7 +29,7 @@ class GalleryTableSeeder extends Seeder
         $gallery->gFaPhotographer = 'فردین چاردولی';
         $gallery->gEnPhotographer = 'F.Chardowli';
         $gallery->gArPhotographer = 'فردین چاردولی';
-        $gallery->save();
+        $gallery->save(); //2
 
         $gallery = new \Hamedan_2018\ImageGallery;
         $gallery->gPath = 'pic/gallery/3.jpg';
@@ -39,7 +39,7 @@ class GalleryTableSeeder extends Seeder
         $gallery->gFaPhotographer = 'فردین چاردولی';
         $gallery->gEnPhotographer = 'F.Chardowli';
         $gallery->gArPhotographer = 'فردین چاردولی';
-        $gallery->save();
+        $gallery->save(); //3
 
         $gallery = new \Hamedan_2018\ImageGallery;
         $gallery->gPath = 'pic/gallery/4.jpg';
@@ -49,7 +49,7 @@ class GalleryTableSeeder extends Seeder
         $gallery->gFaPhotographer = 'فردین چاردولی';
         $gallery->gEnPhotographer = 'F.Chardowli';
         $gallery->gArPhotographer = 'فردین چاردولی';
-        $gallery->save();
+        $gallery->save(); //4
 
         $gallery = new \Hamedan_2018\ImageGallery;
         $gallery->gPath = 'pic/gallery/5.jpg';
@@ -59,7 +59,7 @@ class GalleryTableSeeder extends Seeder
         $gallery->gFaPhotographer = 'فردین چاردولی';
         $gallery->gEnPhotographer = 'F.Chardowli';
         $gallery->gArPhotographer = 'فردین چاردولی';
-        $gallery->save();
+        $gallery->save(); //5
 
         $gallery = new \Hamedan_2018\ImageGallery;
         $gallery->gPath = 'pic/gallery/6.jpg';
@@ -69,7 +69,7 @@ class GalleryTableSeeder extends Seeder
         $gallery->gFaPhotographer = 'فردین چاردولی';
         $gallery->gEnPhotographer = 'F.Chardowli';
         $gallery->gArPhotographer = 'فردین چاردولی';
-        $gallery->save();
+        $gallery->save(); //6
 
         $gallery = new \Hamedan_2018\ImageGallery;
         $gallery->gPath = 'pic/gallery/7.jpg';
@@ -79,7 +79,7 @@ class GalleryTableSeeder extends Seeder
         $gallery->gFaPhotographer = 'فردین چاردولی';
         $gallery->gEnPhotographer = 'F.Chardowli';
         $gallery->gArPhotographer = 'فردین چاردولی';
-        $gallery->save();
+        $gallery->save(); //7
 
         $gallery = new \Hamedan_2018\ImageGallery;
         $gallery->gPath = 'pic/gallery/8.jpg';
@@ -89,7 +89,7 @@ class GalleryTableSeeder extends Seeder
         $gallery->gFaPhotographer = 'فردین چاردولی';
         $gallery->gEnPhotographer = 'F.Chardowli';
         $gallery->gArPhotographer = 'فردین چاردولی';
-        $gallery->save();
+        $gallery->save(); //8
 
         $gallery = new \Hamedan_2018\ImageGallery;
         $gallery->gPath = 'pic/gallery/9.jpg';
@@ -99,7 +99,7 @@ class GalleryTableSeeder extends Seeder
         $gallery->gFaPhotographer = 'فردین چاردولی';
         $gallery->gEnPhotographer = 'F.Chardowli';
         $gallery->gArPhotographer = 'فردین چاردولی';
-        $gallery->save();
+        $gallery->save(); //9
 
         $gallery = new \Hamedan_2018\ImageGallery;
         $gallery->gPath = 'pic/gallery/10.jpg';
@@ -109,7 +109,7 @@ class GalleryTableSeeder extends Seeder
         $gallery->gFaPhotographer = 'فردین چاردولی';
         $gallery->gEnPhotographer = 'F.Chardowli';
         $gallery->gArPhotographer = 'فردین چاردولی';
-        $gallery->save();
+        $gallery->save(); //10
 
         $gallery = new \Hamedan_2018\ImageGallery;
         $gallery->gPath = 'pic/gallery/11.jpg';
@@ -119,21 +119,24 @@ class GalleryTableSeeder extends Seeder
         $gallery->gFaPhotographer = 'فردین چاردولی';
         $gallery->gEnPhotographer = 'F.Chardowli';
         $gallery->gArPhotographer = 'فردین چاردولی';
-        $gallery->save();
+        $gallery->save(); //11
 
         $gallery = new \Hamedan_2018\ImageGallery;
         $gallery->gPath = 'pic/gallery/handicraft.jpg';
         $gallery->gFaPhotographer = 'فردین چاردولی';
         $gallery->gEnPhotographer = 'F.Chardowli';
         $gallery->gArPhotographer = 'فردین چاردولی';
-        $gallery->save();
+        $gallery->gFaLocation = 'لالجین';
+        $gallery->gEnLocation = 'Lalejin';
+        $gallery->gArLocation = 'لالجین';
+        $gallery->save(); //12
 
         $gallery = new \Hamedan_2018\ImageGallery;
         $gallery->gPath = 'pic/gallery/12.jpg';
         $gallery->gFaPhotographer = 'فردین چاردولی';
         $gallery->gEnPhotographer = 'F.Chardowli';
         $gallery->gArPhotographer = 'فردین چاردولی';
-        $gallery->save();
+        $gallery->save(); //13
 
     }
 }
