@@ -141,10 +141,6 @@
                             <img class="float-center"  src="{{ asset('pic/footer/ostan-footer.png') }}" alt="استانداری همدان" width="60px" height="60px">
                             <p class="logo-slider withe-color my-text-shadow-effect">استانداری همدان</p>
                         </div>
-                        <div class="large-1 medium-6 small-12">
-                            <img class="float-center"  src="{{ asset('pic/footer/shahrdari-footer.png') }}" alt="استانداری همدان" width="60px" height="60px">
-                            <p class="logo-slider withe-color my-text-shadow-effect">شهرداری همدان</p>
-                        </div>
                     </div>
                 </div>
             </div>

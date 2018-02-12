@@ -175,8 +175,13 @@
                     <div class="large-12 element-distanse">
                         <div class="orbit" role="region" aria-label="Favorite Text Ever" data-orbit>
                             <ul class="orbit-container">
-                                <button class="orbit-previous" aria-label="previous"><span class="show-for-sr">Previous Slide</span>&#9664;</button>
-                                <button class="orbit-next" aria-label="next"><span class="show-for-sr">Next Slide</span>&#9654;</button>
+                                @if($lan == 'fa' || $lan== 'ar')
+                                <button style="margin-right: 99.5%;" class="orbit-previous" aria-label="previous"><span class="show-for-sr">Previous Slide</span>&#9664;</button>
+                                <button style="margin-right: 0.8%;" class="orbit-next" aria-label="next"><span class="show-for-sr">Next Slide</span>&#9654;</button>
+                                @elseif($lan == 'en')
+                                    <button style="margin-right: 99%;" class="orbit-previous" aria-label="previous"><span class="show-for-sr">Previous Slide</span>&#9664;</button>
+                                    <button style="margin-left: 97.5%;" class="orbit-next" aria-label="next"><span class="show-for-sr">Next Slide</span>&#9654;</button>
+                                @endif
                                 <?php
                                     $item = 0;
                                     $itemCount = count($section->sectionImg);
@@ -288,21 +293,24 @@
 
                         @if($lan == 'fa')
                             <p class="text-color text-al">{{ $section->sFaDescription }}</p>
+                            <button class="button primary">اطلاعات بیشتر</button>
                         @elseif($lan == 'en')
                             <p class="text-color text-al Raleway-Regular">{{ $section->sEnDescription }}</p>
+                            <button class="button primary">Read More</button>
                         @elseif($lan == 'ar')
                             <p class="text-color text-al Al-Jazeera-Arabic-Regular">{{ $section->sArDescription }}</p>
+                            <button class="button primary">أكثر</button>
                         @endif
                     </div>
                     <div class="large-6 medium-12 small-12 padding-lr">
                         <img src="{{ asset($section->sectionImg[0]['gallery']['gPath'] )}}">
                         @if ($section->sectionImg[0]['gallery']['gFaPhotographer'] != '')
                             @if($lan == 'fa')
-                                <i class="fas fa-camera text-color camera-margin"></i><span class="font-small text-color">{{ $section->sectionImg[0]['gallery']['gFaPhotographer'] }}</span>
+                                <i class="fas fa-camera blue-color camera-margin"></i><span class="font-small text-color">{{ $section->sectionImg[0]['gallery']['gFaPhotographer'] }}</span>
                             @elseif($lan == 'en')
-                                <i class="fas fa-camera text-color camera-margin"></i><span class="font-small text-color">{{ $section->sectionImg[0]['gallery']['gEnPhotographer'] }}</span>
+                                <i class="fas fa-camera blue-color camera-margin"></i><span class="font-small text-color">{{ $section->sectionImg[0]['gallery']['gEnPhotographer'] }}</span>
                             @elseif($lan == 'ar')
-                                <i class="fas fa-camera text-color camera-margin"></i><span class="font-small text-color">{{ $section->sectionImg[0]['gallery']['gArPhotographer'] }}</span>
+                                <i class="fas fa-camera blue-color camera-margin"></i><span class="font-small text-color">{{ $section->sectionImg[0]['gallery']['gArPhotographer'] }}</span>
                             @endif
                         @endif
                         @if ($section->sectionImg[0]['gallery']['gFaLocation'] != '')
