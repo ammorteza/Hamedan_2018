@@ -36,7 +36,7 @@
                             @endforeach
                         </div>
                         <!-- Thumbnail Navigator -->
-                        <div data-u="thumbnavigator" class="jssort101" style="position:absolute;left:0px;bottom:0px;width:983px;height:100px;background-color:#000;" data-autocenter="1" data-scale-bottom="0.75">
+                        <div data-u="thumbnavigator" class="jssort101" style="position:absolute;left:0px;bottom:0px;width:983px;height:100px;" data-autocenter="1" data-scale-bottom="0.75">
                             <div data-u="slides">
                                 <div data-u="prototype" class="p" style="width:190px;height:90px;">
                                     <div data-u="thumbnailtemplate" class="t"></div>
@@ -91,6 +91,7 @@
                                 <div class="blue-color"><i class="far fa-calendar-alt camera-margin"></i><span class="font-smaller">{{ $news->created_at->format('Y F d') }}</span></div>
                             @endif
                         </div>
+                    </div>
                 @endforeach
                 <!-Pagination Start--->
                 @if ($allNews->lastPage() > 1)

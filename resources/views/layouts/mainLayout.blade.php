@@ -46,7 +46,7 @@
                                                             @if($lan == 'fa')
                                                                 <li class="Shabnam-Bold"><a class="{{ $mainMenu->id == $pageInfo->pMmId ? 'is-active' : '' }}" href="{{ url($lan . $mainMenu->mmPageLink) }}">{{ $mainMenu->mmFaSubject }}</a></li>
                                                             @elseif($lan == 'en')
-                                                                <li><a class="{{ $mainMenu->id == $pageInfo->pMmId ? 'is-active' : '' }}" href="{{ url($mainMenu->mmPageLink . '') }}">{{ $mainMenu->mmEnSubject }}</a></li>
+                                                                <li><a class="Roboto-Bold {{ $mainMenu->id == $pageInfo->pMmId ? 'is-active' : '' }}" href="{{ url($mainMenu->mmPageLink . '') }}">{{ $mainMenu->mmEnSubject }}</a></li>
                                                             @elseif($lan == 'ar')
                                                                 <li><a class="Al-Jazeera-Arabic-Bold {{ $mainMenu->id == $pageInfo->pMmId ? 'is-active' : '' }}" href="{{ url($lan . $mainMenu->mmPageLink) }}">{{ $mainMenu->mmArSubject }}</a></li>
                                                             @endif
@@ -99,6 +99,7 @@
                                                             @if($lan == 'fa')
                                                                 <p class="top-slider-header Shabnam-Bold">{{ $pageImg->phiFaSubject }}</p>
                                                                 <p class="top-slider-description Duel-Regular">{{ $pageImg->phiFaDescription }}</p>
+                                                                <a href="#" class="top-slider-description-btn">اطلاعات بیشتر</a>
                                                             @elseif($lan == 'en')
                                                                 <div class="cabin">
                                                                     <p  class="top-slider-header Roboto-Bold">{{ $pageImg->phiEnSubject }}</p>
@@ -108,6 +109,7 @@
                                                             @elseif($lan == 'ar')
                                                                 <p class="top-slider-header Al-Jazeera-Arabic-Bold">{{ $pageImg->phiArSubject }}</p>
                                                                 <p class="top-slider-description Emad-Nora-Arabic">{{ $pageImg->phiArDescription }}</p>
+                                                                <a href="#" class="top-slider-description-btn">أكثر</a>
                                                             @endif
                                                         </div>
                                                     </div>
@@ -121,7 +123,7 @@
                         @if($pageInfo->headerType->phtType == 'ADVANCE')
                             <div style="margin-top: -19%;" class="top-slider-grid-container">
                                 <nav class="orbit-bullets">
-                                    <div style="padding-top:15vh;" class="grid-x">
+                                    <div style="margin-top:15vh;" class="grid-x">
                                         <?php $i = 0; ?>
                                         @foreach($pageInfo->pageHeaderImg as $pageImg)
                                             <div class="large-3 medium-3 small-3 padding-lr">
@@ -250,10 +252,6 @@
                             <div class="large-1 medium-6 small-12">
                                 <img class="float-center"  src="{{ asset('pic/footer/ostan-footer.png') }}" alt="استانداری همدان" width="60px" height="60px">
                                 <p class="logo-slider withe-color my-text-shadow-effect">استانداری همدان</p>
-                            </div>
-                            <div class="large-1 medium-6 small-12">
-                                <img class="float-center"  src="{{ asset('pic/footer/shahrdari-footer.png') }}" alt="استانداری همدان" width="60px" height="60px">
-                                <p class="logo-slider withe-color my-text-shadow-effect">شهرداری همدان</p>
                             </div>
                         </div>
                     </div>

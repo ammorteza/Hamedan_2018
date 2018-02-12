@@ -137,7 +137,7 @@ h1,h2,h3,h4,h5,h6{
     position: relative;
     z-index: 11;
     font-size: large;
-    font-weight: bold;
+    font-weight: normal;
     color: #FFFFFF;
     background-color: transparent;
 }
@@ -733,7 +733,6 @@ ul.social-icons {
 }
 .orbit-previous {
     position: absolute;
-    margin-right: 100%;
     top: 10%;
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
