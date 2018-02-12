@@ -32,11 +32,13 @@ Route::prefix('ar')->group(function () {
     ])->where('slug', '([A-Za-z0-9\-\/]+)');
 });
 
-Route::get('/news', 'NewsController@index');
+Route::get('/news/', 'NewsController@index');
+Route::get('/fa/news/', 'NewsController@index_fa');
+Route::get('/ar/news/', 'NewsController@index_ar');
 
 Route::get('/news/info', 'NewsController@newsInfo');
-
-
+Route::get('/fa/news/info', 'NewsController@newsInfo_fa');
+Route::get('/ar/news/info', 'NewsController@newsInfo_ar');
 
 /*Route::get('{pageId}/page/{slug}', [
     'uses' => 'PageController@getPageWithId'

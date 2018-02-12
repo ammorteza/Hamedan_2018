@@ -10,9 +10,9 @@
                             @if($lan == 'fa')
                                 <li><a class="BYekan {{ $subMenu->id == $pageInfo->pSmId ? 'is-active' : '' }}" href="{{ url($lan . $subMenu->smPageLink) }}">{{ $subMenu->smFaSubject }}</a></li>
                             @elseif($lan == 'en')
-                                <li><a class="{{ $subMenu->id == $pageInfo->pSmId ? 'is-active' : '' }}" href="{{ url($subMenu->smPageLink . '') }}">{{ $subMenu->smEnSubject }}</a></li>
+                                <li><a class="Roboto-Regular {{ $subMenu->id == $pageInfo->pSmId ? 'is-active' : '' }}" href="{{ url($subMenu->smPageLink . '') }}">{{ strtoupper($subMenu->smEnSubject) }}</a></li>
                             @elseif($lan == 'ar')
-                                <li><a class="{{ $subMenu->id == $pageInfo->pSmId ? 'is-active' : '' }}" href="{{ url($lan . $subMenu->smPageLink) }}">{{ $subMenu->smArSubject }}</a></li>
+                                <li><a class="Al-Jazeera-Arabic-Bold {{ $subMenu->id == $pageInfo->pSmId ? 'is-active' : '' }}" href="{{ url($lan . $subMenu->smPageLink) }}">{{ $subMenu->smArSubject }}</a></li>
                             @endif
                         @endforeach
                     </ul>
@@ -296,8 +296,24 @@
                     </div>
                     <div class="large-6 medium-12 small-12 padding-lr">
                         <img src="{{ asset($section->sectionImg[0]['gallery']['gPath'] )}}">
-                        <i class="fas fa-camera text-color camera-margin"></i><span class="font-small text-color">علی جهان پاک</span>
-                        <i class="fas fa-map-marker blue-color camera-margin "></i><span class="font-small text-color">لالجین</span>
+                        @if ($section->sectionImg[0]['gallery']['gFaPhotographer'] != '')
+                            @if($lan == 'fa')
+                                <i class="fas fa-camera text-color camera-margin"></i><span class="font-small text-color">{{ $section->sectionImg[0]['gallery']['gFaPhotographer'] }}</span>
+                            @elseif($lan == 'en')
+                                <i class="fas fa-camera text-color camera-margin"></i><span class="font-small text-color">{{ $section->sectionImg[0]['gallery']['gEnPhotographer'] }}</span>
+                            @elseif($lan == 'ar')
+                                <i class="fas fa-camera text-color camera-margin"></i><span class="font-small text-color">{{ $section->sectionImg[0]['gallery']['gArPhotographer'] }}</span>
+                            @endif
+                        @endif
+                        @if ($section->sectionImg[0]['gallery']['gFaLocation'] != '')
+                            @if($lan == 'fa')
+                                <i class="fas fa-map-marker blue-color camera-margin "></i><span class="font-small text-color">{{ $section->sectionImg[0]['gallery']['gFaLocation']}}</span>
+                            @elseif($lan == 'en')
+                                <i class="fas fa-map-marker blue-color camera-margin "></i><span class="font-small text-color">{{ $section->sectionImg[0]['gallery']['gEnLocation']}}</span>
+                            @elseif($lan == 'ar')
+                                <i class="fas fa-map-marker blue-color camera-margin "></i><span class="font-small text-color">{{ $section->sectionImg[0]['gallery']['gArLocation']}}</span>
+                            @endif
+                        @endif
                     </div>
 
                 </div>
@@ -383,21 +399,31 @@
                 </div>
             </div>
             <!--image top fade End-->
+        @elseif($section->sectionType->stType == 'CONTENT_TEXT')
+            <!--Text Section Start-->
+            <div class="grid-container element-distance-tb">
+                <div class="grid-x">
+                    <div class="large-12">
+                        @if($lan == 'fa')
+                            <h1 class="center-el titr-color Mj-Flow-Reqular">{{ $section->sFaSubject }}</h1>
+                        @elseif($lan == 'en')
+                            <h1 style="font-size: 4em;" class="center-el titr-color wire-one">{{ $section->sEnSubject }}</h1>
+                        @elseif($lan == 'ar')
+                            <h1 class="center-el titr-color Al-Jazeera-Arabic-Bold">{{ $section->sArSubject }}</h1>
+                        @endif
+
+                        @if($lan == 'fa')
+                            <p class="text-color text-justify element-distanse">{{ $section->sFaDescription }}</p>
+                        @elseif($lan == 'en')
+                            <p class="text-color text-justify element-distanse Raleway-Regular">{{ $section->sEnDescription }}</p>
+                        @elseif($lan == 'ar')
+                            <p class="text-color text-justify element-distanse Al-Jazeera-Arabic-Regular">{{ $section->sArDescription }}</p>
+                        @endif
+                    </div>
+                </div>
+            </div>
+            <!--Text Section End-->
         @endif
     @endforeach
 
-    <!--Title and Description Section Start-->
-    <div class="grid-container element-distance-tb">
-        <div class="grid-x">
-            <div class="large-12">
-                <h3 class="center-el titr-color">همدان پایتخت گردشگری کشور های آسیایی</h3>
-                <p class="text-color text-justify element-distanse">
-                    در حدود اوایل هزارهٔ دوم پیش از میلاد رویدادهایی در آسیای مرکزی پدیدار می‌شود که موجب نقل و انتقال اقوام ایرانی‌تبار که در سرزمین پهناوری در این ناحیه ساکن بودند، می‌گردد. در این هنگام دو قبیلهٔ ایرانی مادی و پارسی که با یکدیگر تفاوت اندکی در گویش داشتند، بسوی سرزمین‌های جنوبی‌تر کوچ کردند. تیرهٔ مادی در نواحی جنوب شرقی دریاچه ارومیه بین همدان و تبریز امروزی جای گرفت و بعدها تا اصفهان نیز پیش رفت.[۲۲]
-
-                    در زمان مادها مهم‌ترین راه‌های کاروانرو در اکباتانا تلاقی می‌کردند و این شهر قلب ماد قدیم به‌شمار می‌رفت معمولاً معتقدند که هگمتانه به معنی محل تجمع یا بازار یا چیزی نظیر آن است البته احتمال دیگری نیز وجود دارد که جلسات عمومی اتحادیه قبایل در این نقطه برگزار می‌شده‌است. در یکی از جلسات عمومی اتحادیه قبایل، دیاکو به رهبری انتخاب شد. دیاکو هگمتانه را به عنوان پایتخت خود انتخاب کرد. مکان این شهر برای پایتخت شدن کاملاً مناسب بود، زیرا مشرف بر راهی بود که به بابل و آشور می‌رفت.[۲۳] بر اساس نوشته‌های هرودوت مورخ یونانی به دستور دیاکو نخستین پادشاه ماد در اکباتانا استحکامات عظیمی شامل ۷ دژ مشهور به قصر هفت حصار و کاخ‌های شاهی برپا شد.[۲۴] بیشتر پژوهندگان علوم تاریخ و باستان‌شناسی بر این باورند که تپه و بناهای امروزی هگمتانه، در دل شهر همدان، برجای‌ماندهٔ بقایای همین تأسیسات می‌باشند.[۲۵]
-                </p>
-            </div>
-        </div>
-    </div>
-    <!--Title and Description Section End-->
 @stop

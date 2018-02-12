@@ -4,7 +4,14 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>همدان پایتخت تاریخ و تمدن ایران زمین</title>
+
+        @if($lan == 'fa')
+            <title>{{ $pageInfo->pFaTitle }}</title>
+        @elseif($lan == 'en')
+            <title>{{ $pageInfo->pEnTitle }}</title>
+        @elseif($lan == 'ar')
+            <title>{{ $pageInfo->pArTitle }}</title>
+        @endif
         <link rel="icon" type="image/png" href="{{ asset('pic/hamedan2018.jpg') }}">
         <!-- Fonts -->
         <link rel="stylesheet" href="{{ asset('fontawesome-free-5.0.0/web-fonts-with-css/css/fontawesome-all.min.css') }}">
@@ -60,6 +67,7 @@
                                     </div>
                                 </div>--}}
 
+                                </div>
                                 @foreach($pageInfo->pageHeaderImg as $pageImg)
                                     <li class="is-active orbit-slide">
                                         <img class="orbit-image {{ $pageInfo->headerType->phtType == 'SIMPLE' ? 'top-slider-simple' : 'top-slider my-zoom-out' }}" src="{{ asset($pageImg->image->gPath) }}" alt="Space">
@@ -78,7 +86,7 @@
                                                         <button style="margin-top: 15px;" class="button primary white-color">More</button>
                                                     </center>
                                                 @elseif($lan == 'ar')
-                                                    <p style="text-align: center;" class="top-slider-header">{{ $pageInfo->pArSubject }}</p>
+                                                    <p style="text-align: center;" class="top-slider-header Al-Jazeera-Arabic-Bold">{{ $pageInfo->pArSubject }}</p>
                                                     <p style="text-align: center;" class="top-slider-description">{{ $pageInfo->pArDescription }}</p>
                                                     <center>
                                                         <button style="margin-top: 15px;" class="button primary white-color">مزيد من المعلومات</button>
@@ -151,8 +159,6 @@
                 <!--Top Slider End-->
             </div>
             @yield('content')
-
-
 
             <footer class="footer">
                 <div class="grid-x">

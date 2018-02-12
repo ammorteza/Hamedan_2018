@@ -22,12 +22,14 @@ class MainMenuTableSeeder extends Seeder
         $mainMenu->mmFaSubject = 'اخبار';
         $mainMenu->mmEnSubject = 'News';
         $mainMenu->mmArSubject = 'أخبار';
+        $mainMenu->mmPageLink = '/news';
         $mainMenu->save();
 
         $mainMenu = new \Hamedan_2018\MainMenu;
         $mainMenu->mmFaSubject = 'رویدادها';
         $mainMenu->mmEnSubject = 'Events';
         $mainMenu->mmArSubject = 'أحداث';
+        $mainMenu->mmPageLink = '/page/event/scientificAndSports/flyOverTheHistory';
         $mainMenu->save();
     }
 }
