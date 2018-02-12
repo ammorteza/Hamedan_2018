@@ -125,6 +125,7 @@
                                 <div class="blue-color"><i class="far fa-calendar-alt camera-margin"></i><span class="font-smaller">{{ $news->created_at->format('Y F d') }}</span></div>
                             @endif
                         </div>
+                    </div>
                 @endforeach
                 <!-Pagination Start--->
                 @if ($allNews->lastPage() > 1)
