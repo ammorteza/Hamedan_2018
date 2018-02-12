@@ -66,8 +66,6 @@
                                         <img style="top:54px;left:7rem;z-index: 16;position: absolute;direction: ltr;" src="{{ asset('pic/header-logo.png') }}" alt="Hamedan-2018" width="150px" height="100px">
                                     </div>
                                 </div>--}}
-
-                                </div>
                                 @foreach($pageInfo->pageHeaderImg as $pageImg)
                                     <li class="is-active orbit-slide">
                                         <img class="orbit-image {{ $pageInfo->headerType->phtType == 'SIMPLE' ? 'top-slider-simple' : 'top-slider my-zoom-out' }}" src="{{ asset($pageImg->image->gPath) }}" alt="Space">
