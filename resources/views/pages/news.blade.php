@@ -28,46 +28,12 @@
                             <img style="margin-top:-19px;position:relative;top:50%;width:38px;height:38px;" src="{{ asset('pic/spin.svg') }}" />
                         </div>
                         <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:980px;height:375px;overflow:hidden;">
+                            @foreach($newsSlider as $nSlider)
                             <div data-p="170.00">
-                                <img data-u="image" src="{{ asset('pic/gallery/1.jpg') }}" />
-                                <img data-u="thumb" src="{{ asset('pic/gallery/1.jpg') }}" />
+                                <img data-u="image" src="{{ asset($nSlider->gallery->gPath) }}" />
+                                <img data-u="thumb" src="{{ asset($nSlider->gallery->gPath) }}" />
                             </div>
-                            <div data-p="170.00">
-                                <img data-u="image" src="{{ asset('pic/gallery/2.jpg') }}" />
-                                <img data-u="thumb" src="{{ asset('pic/gallery/2.jpg') }}" />
-                            </div>
-                            <div data-p="170.00">
-                                <img data-u="image" src="{{ asset('pic/gallery/3.jpg') }}" />
-                                <img data-u="thumb" src="{{ asset('pic/gallery/3.jpg') }}" />
-                            </div>
-                            <div data-p="170.00">
-                                <img data-u="image" src="{{ asset('pic/gallery/1.jpg') }}" />
-                                <img data-u="thumb" src="{{ asset('pic/gallery/1.jpg') }}" />
-                            </div>
-                            <div data-p="170.00">
-                                <img data-u="image" src="{{ asset('pic/gallery/1.jpg') }}" />
-                                <img data-u="thumb" src="{{ asset('pic/gallery/1.jpg') }}" />
-                            </div>
-                            <div data-p="170.00">
-                                <img data-u="image" src="{{ asset('pic/gallery/1.jpg') }}" />
-                                <img data-u="thumb" src="{{ asset('pic/gallery/1.jpg') }}" />
-                            </div>
-                            <div data-p="170.00">
-                                <img data-u="image" src="{{ asset('pic/gallery/1.jpg') }}" />
-                                <img data-u="thumb" src="{{ asset('pic/gallery/1.jpg') }}" />
-                            </div>
-                            <div data-p="170.00">
-                                <img data-u="image" src="{{ asset('pic/gallery/1.jpg') }}" />
-                                <img data-u="thumb" src="{{ asset('pic/gallery/1.jpg') }}" />
-                            </div>
-                            <div data-p="170.00">
-                                <img data-u="image" src="{{ asset('pic/gallery/1.jpg') }}" />
-                                <img data-u="thumb" src="{{ asset('pic/gallery/1.jpg') }}" />
-                            </div>
-                            <div data-p="170.00">
-                                <img data-u="image" src="{{ asset('pic/gallery/1.jpg') }}" />
-                                <img data-u="thumb" src="{{ asset('pic/gallery/1.jpg') }}" />
-                            </div>
+                            @endforeach
                         </div>
                         <!-- Thumbnail Navigator -->
                         <div data-u="thumbnavigator" class="jssort101" style="position:absolute;left:0px;bottom:0px;width:983px;height:100px;background-color:#000;" data-autocenter="1" data-scale-bottom="0.75">

@@ -26,7 +26,7 @@ class NewsController extends Controller
 
     private function renderNews($lan)
     {
-        $newsSlider = NewsSlider::where('nsState' , '=' , 1)->orderBy('nsOrder' , 'DESC')->get();
+        $newsSlider = NewsSlider::with('gallery')->where('nsState' , '=' , 1)->orderBy('nsOrder' , 'DESC')->get();
         $allNews = News::with('newsImg')->where('nState' , '=' , 1)->orderBy('id' , 'DESC')->paginate(6);
         return view('pages.news' , ['allNews' => $allNews , 'newsSlider' => $newsSlider , 'lan' => $lan]);
     }
