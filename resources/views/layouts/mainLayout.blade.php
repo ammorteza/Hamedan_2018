@@ -45,16 +45,20 @@
                                                             @endif
                                                         @endforeach
                                                     </ul>
+                                                    <center style="margin-bottom: -30px;">
+                                                        <img style="margin-top: -130px;" src="{{ asset('pic/footer/footer-logo.png') }}" alt="Hamedan-2018" width="150px" height="80px">
+                                                    </center>
                                                 </div>
                                             </div>
+
                                         </div>
                                     </div>
                                 </div>
-                                <div class="grid-x">
+                                {{--<div class="grid-x">
                                     <div class="large-12">
                                         <img style="top:54px;left:7rem;z-index: 16;position: absolute;direction: ltr;" src="{{ asset('pic/header-logo.png') }}" alt="Hamedan-2018" width="150px" height="100px">
                                     </div>
-                                </div>
+                                </div>--}}
 
                                 @foreach($pageInfo->pageHeaderImg as $pageImg)
                                     <li class="is-active orbit-slide">
@@ -62,7 +66,7 @@
                                         @if ($pageInfo->headerType->phtType == 'SIMPLE')
                                             <figcaption class="orbit-caption align-center my-text-shadow-effect">
                                                 @if($lan == 'fa')
-                                                    <p style="text-align: center;" class="top-slider-header Shabnam-Bold">{{ $pageInfo->pFaSubject }}</p>
+                                                    <p style="text-align: center;" class="top-slider-header Shabnam-Bold my-fadeIn-and-move">{{ $pageInfo->pFaSubject }}</p>
                                                     <p style="text-align: center;" class="top-slider-description Duel-Regular">{{ $pageInfo->pFaDescription }}</p>
                                                     <center>
                                                         <button style="margin-top: 15px;" class="button primary white-color">اطلاعات بیشتر</button>
@@ -85,7 +89,7 @@
                                             <figcaption class="orbit-caption">
                                                 <div class="top-slider-grid-container">
                                                     <div class="grid-x">
-                                                        <div class="large-12 medium-12 small-12 my-text-shadow-effect">
+                                                        <div class="large-12 medium-6 small-6 my-text-shadow-effect">
                                                             @if($lan == 'fa')
                                                                 <p class="top-slider-header Shabnam-Bold">{{ $pageImg->phiFaSubject }}</p>
                                                                 <p class="top-slider-description Duel-Regular">{{ $pageImg->phiFaDescription }}</p>
@@ -114,7 +118,7 @@
                                     <div style="padding-top:15vh;" class="grid-x">
                                         <?php $i = 0; ?>
                                         @foreach($pageInfo->pageHeaderImg as $pageImg)
-                                            <div class="large-3 medium-6 small-12 padding-lr">
+                                            <div class="large-3 medium-3 small-3 padding-lr">
                                                 <button class="{{ $i == 0 ? 'is-active' : '' }}" data-slide="{{ $i }}">
                                                     @if($lan == 'fa')
                                                         <p class="element-dir float-right Shabnam-Bold">{{ $pageImg->phiFaSubject }}</p>
