@@ -34,6 +34,10 @@ class PageController extends Controller
         $pageInfo = Page::with('pageHeaderImg.image' , 'headerType' , 'breadCrumb.refPage')
             ->where('pLinkUrl' , '=' , '/' . $slug)
             ->first();
+        if ($pageInfo == null)
+        {
+            return redirect('/');
+        }
 
         $sections = Section::with('sectionType')
             ->with('sectionImg.gallery' , 'sectionVideo.gallery')

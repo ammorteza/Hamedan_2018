@@ -138,5 +138,19 @@ class GalleryTableSeeder extends Seeder
         $gallery->gArPhotographer = 'فردین چاردولی';
         $gallery->save(); //13
 
+        $gallery = new \Hamedan_2018\ImageGallery;
+        $gallery->gPath = 'pic/gallery/advertise_banner.jpg';
+        $gallery->gFaPhotographer = 'فردین چاردولی';
+        $gallery->gEnPhotographer = 'F.Chardowli';
+        $gallery->gArPhotographer = 'فردین چاردولی';
+        $gallery->save(); //14
+
+        $gallery = new \Hamedan_2018\ImageGallery;
+        $gallery->gPath = 'pic/gallery/advertise_banner_2.jpg';
+        $gallery->gFaPhotographer = 'فردین چاردولی';
+        $gallery->gEnPhotographer = 'F.Chardowli';
+        $gallery->gArPhotographer = 'فردین چاردولی';
+        $gallery->save(); //15
+
     }
 }

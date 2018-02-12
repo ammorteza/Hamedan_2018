@@ -317,6 +317,7 @@ class ComposerStaticInit7ab108b56806f06ea52d1979b2695b72
     );
 
     public static $classMap = array (
+        'AdvertiseTableSeeder' => __DIR__ . '/../..' . '/database/seeds/AdvertiseTableSeeder.php',
         'ArithmeticError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/ArithmeticError.php',
         'AssertionError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/AssertionError.php',
         'Carbon\\Carbon' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Carbon.php',
@@ -944,6 +945,7 @@ class ComposerStaticInit7ab108b56806f06ea52d1979b2695b72
         'Hamcrest\\Type\\IsString' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Type/IsString.php',
         'Hamcrest\\Util' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Util.php',
         'Hamcrest\\Xml\\HasXPath' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Xml/HasXPath.php',
+        'Hamedan_2018\\Advertise' => __DIR__ . '/../..' . '/app/Advertise.php',
         'Hamedan_2018\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'Hamedan_2018\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'Hamedan_2018\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
