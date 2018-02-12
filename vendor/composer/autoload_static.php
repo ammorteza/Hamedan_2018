@@ -16,6 +16,7 @@ class ComposerStaticInit7ab108b56806f06ea52d1979b2695b72
         'e7223560d890eab89cda23685e711e2c' => __DIR__ . '/..' . '/psy/psysh/src/Psy/functions.php',
         'f0906e6318348a765ffb6eb24e0d0938' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
         '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
+        'e4e590a9b5afe940db71ee1662c02677' => __DIR__ . '/..' . '/morilog/jalali/src/helpers.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -68,6 +69,7 @@ class ComposerStaticInit7ab108b56806f06ea52d1979b2695b72
         ),
         'M' => 
         array (
+            'Morilog\\Jalali\\' => 15,
             'Monolog\\' => 8,
         ),
         'L' => 
@@ -212,6 +214,10 @@ class ComposerStaticInit7ab108b56806f06ea52d1979b2695b72
         'PhpParser\\' => 
         array (
             0 => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser',
+        ),
+        'Morilog\\Jalali\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/morilog/jalali/src',
         ),
         'Monolog\\' => 
         array (
@@ -946,6 +952,7 @@ class ComposerStaticInit7ab108b56806f06ea52d1979b2695b72
         'Hamedan_2018\\Http\\Controllers\\Auth\\ResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ResetPasswordController.php',
         'Hamedan_2018\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'Hamedan_2018\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
+        'Hamedan_2018\\Http\\Controllers\\NewsController' => __DIR__ . '/../..' . '/app/Http/Controllers/NewsController.php',
         'Hamedan_2018\\Http\\Controllers\\PageController' => __DIR__ . '/../..' . '/app/Http/Controllers/PageController.php',
         'Hamedan_2018\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'Hamedan_2018\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
@@ -957,6 +964,7 @@ class ComposerStaticInit7ab108b56806f06ea52d1979b2695b72
         'Hamedan_2018\\MainMenu' => __DIR__ . '/../..' . '/app/MainMenu.php',
         'Hamedan_2018\\News' => __DIR__ . '/../..' . '/app/News.php',
         'Hamedan_2018\\NewsImg' => __DIR__ . '/../..' . '/app/NewsImg.php',
+        'Hamedan_2018\\NewsSlider' => __DIR__ . '/../..' . '/app/NewsSlider.php',
         'Hamedan_2018\\Page' => __DIR__ . '/../..' . '/app/Page.php',
         'Hamedan_2018\\PageBreadCrumb' => __DIR__ . '/../..' . '/app/PageBreadCrumb.php',
         'Hamedan_2018\\PageHeaderImg' => __DIR__ . '/../..' . '/app/PageHeaderImg.php',
@@ -1962,7 +1970,13 @@ class ComposerStaticInit7ab108b56806f06ea52d1979b2695b72
         'Monolog\\Processor\\UidProcessor' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Processor/UidProcessor.php',
         'Monolog\\Processor\\WebProcessor' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Processor/WebProcessor.php',
         'Monolog\\Registry' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Registry.php',
+        'Morilog\\Jalali\\Facades\\jDate' => __DIR__ . '/..' . '/morilog/jalali/src/Facades/jDate.php',
+        'Morilog\\Jalali\\Facades\\jDateTime' => __DIR__ . '/..' . '/morilog/jalali/src/Facades/jDateTime.php',
+        'Morilog\\Jalali\\JalaliServiceProvider' => __DIR__ . '/..' . '/morilog/jalali/src/JalaliServiceProvider.php',
+        'Morilog\\Jalali\\jDate' => __DIR__ . '/..' . '/morilog/jalali/src/jDate.php',
+        'Morilog\\Jalali\\jDateTime' => __DIR__ . '/..' . '/morilog/jalali/src/jDateTime.php',
         'NewsImgTableSeeder' => __DIR__ . '/../..' . '/database/seeds/NewsImgTableSeeder.php',
+        'NewsSliderTableSeeder' => __DIR__ . '/../..' . '/database/seeds/NewsSliderTableSeeder.php',
         'NewsTableSeeder' => __DIR__ . '/../..' . '/database/seeds/NewsTableSeeder.php',
         'PHPUnit\\Exception' => __DIR__ . '/..' . '/phpunit/phpunit/src/Exception.php',
         'PHPUnit\\Framework\\Assert' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Assert.php',

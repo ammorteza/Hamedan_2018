@@ -1,63 +1,93 @@
 @extends('layouts.newsMainLayout')
 @section('content')
-
     <!--News Content Start-->
-    <div class="grid-container element-distance-tb">
+    <div class="grid-container">
+        <!-- page bread crumb -->
         <div class="grid-x">
+            <div style="margin-top: 30px;color: #37474F;" class="large-12 medium-12">
+                <nav aria-label="You are here:" role="navigation">
+                    <ul class="breadcrumbs {{ $lan == 'en' ? 'float-left' : '' }}">
+                        @if($lan == 'fa')
+                            <li class="float-right Shabnam-Bold"><a href="{{ url($lan . '/') }}">همدان - ۲۰۱۸</a></li><Li><span class="show-for-sr Shabnam-Bold">Current: </span> اخبار</Li>
+                        @elseif($lan == 'en')
+                            <li class="float-left Roboto"><a href="{{ url('/') }}">Hamedan-2018</a></li><Li><span class="show-for-sr Shabnam-Bold">Current: </span> News</Li>
+                        @elseif($lan == 'ar')
+                            <li><a href="{{ url($lan . '/') }}">همدان - ۲۰۱۸</a></li><Li><span class="show-for-sr Shabnam-Bold">Current: </span> أخبار</Li>
+                        @endif
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="grid-x  element-distance-tb">
             <div class="large-8 medium-12 small-12">
-                <div class="grid-x element-distanse news-bottom-line">
-                    <div class="large-4 medium-12 small-12 ">
-                        <a><img style=";margin-top: -20px;" src="{{ asset('pic/gallery/1.jpg') }}" alt="Hamedan-2018" width="300px" height="200px"></a>
+                @foreach($allNews as $news)
+                    <div class="grid-x element-distanse news-bottom-line">
+                        <div class="large-4 medium-12 small-12 ">
+                            @if($lan == 'fa')
+                                <a href="{{ url($lan . '/news/info/' . $news->id) }}"><img style=";margin-top: -20px;" src="{{ asset($news->newsImg[0]['gallery']['gPath']) }}" alt="{{ $news->newsImg[0]['gallery']['niFaAlt'] }}" width="300px" height="200px"></a>
+                            @elseif($lan == 'en')
+                                <a href="{{ url('news/info/' . $news->id) }}"><img style=";margin-top: -20px;" src="{{ asset($news->newsImg[0]['gallery']['gPath']) }}" alt="{{ $news->newsImg[0]['gallery']['niEnAlt'] }}" width="300px" height="200px"></a>
+                            @elseif($lan == 'ar')
+                                <a href="{{ url($lan . '/news/info/' . $news->id) }}"><img style=";margin-top: -20px;" src="{{ asset($news->newsImg[0]['gallery']['gPath']) }}" alt="{{ $news->newsImg[0]['gallery']['niArAlt'] }}" width="300px" height="200px"></a>
+                            @endif
+                        </div>
+                        <div style="padding-left: 50px;padding-right: 50px;" class="large-8 medium-12 small-12 news-link">
+                            @if($lan == 'fa')
+                                <a href="{{ url($lan . '/news/info/' . $news->id) }}"><h5 class="Shabnam-Bold">{{ $news->nFaSubject }}</h5></a>
+                                <p class="two-line text-color text-justify element-distanse font-small Shabnam-Light">{{ $news->nFaBriefDescription }}</p>
+                                <div class="blue-color"><i class="far fa-calendar-alt camera-margin"></i><span class="font-smaller">{{ \Morilog\Jalali\Facades\jDate::forge($news->created_at)->format('%B %d، %Y') }}</span></div>
+                            @elseif($lan == 'en')
+                                <a href="{{ url('news/info/' . $news->id) }}"><h5 class="Roboto-Bold">{{ $news->nEnSubject }}</h5></a>
+                                <p class="two-line text-color text-justify element-distanse font-small Raleway-Regular">{{ $news->nEnBriefDescription }}</p>
+                                <div class="blue-color"><i class="far fa-calendar-alt camera-margin"></i><span class="font-smaller">{{ $news->created_at->format('Y F d') }}</span></div>
+                            @elseif($lan == 'ar')
+                                <a href="{{ url($lan . '/news/info/' . $news->id) }}"><h5 class="Al-Jazeera-Arabic-Bold">{{ $news->nFaSubject }}</h5></a>
+                                <p class="two-line text-color text-justify element-distanse font-small Al-Jazeera-Arabic-Regular">{{ $news->nArBriefDescription }}</p>
+                                <div class="blue-color"><i class="far fa-calendar-alt camera-margin"></i><span class="font-smaller">{{ $news->created_at->format('Y F d') }}</span></div>
+                            @endif
+                        </div>
                     </div>
-                    <div style="padding-left: 50px;padding-right: 50px;" class="large-8 medium-12 small-12 news-link">
-                        <a href="#"><h5>رونمایی از لوگو همدان 2018</h5></a>
-                        <p class="two-line text-color text-justify element-distanse font-small">
-                            به گزارش خبرگزاری تسنیم از همدان، علی مالمیر شامگاه چهارشنبه در جلسه سیاست‌گذاری رویدادهای گردشگری 2018 همدان با اشاره به برگزاری جلسات متعدد توسط کمیته‌های اجرایی رویدادهای گردشگری همدان 2018 اظهار داشت: مجتمع عین القضات به عنوان دبیرخانه این رویدادها تجهیز شده و به زودی مراسم رونمایی از لوگو و افتتاحیه دبیرخانه برگزار می‌شود.
-                        </p>
-                        <div class="blue-color"><i class="far fa-calendar-alt camera-margin"></i><span class="font-smaller">1396/11/17</span></div>
-                    </div>
-                </div>
-                <div class="grid-x element-distanse news-bottom-line">
-                    <div class="large-4 medium-12 small-12 ">
-                        <a><img style=";margin-top: -20px;" src="{{ asset('pic/gallery/8.jpg') }}" alt="Hamedan-2018" width="300px" height="200px"></a>
-                    </div>
-                    <div style="padding-left: 50px;padding-right: 50px;" class="large-8 medium-12 small-12 news-link">
-                        <a href="#"><h5>رونمایی از لوگو همدان 2018</h5></a>
-                        <p class="two-line text-color text-justify element-distanse font-small">
-                            به گزارش خبرگزاری تسنیم از همدان، علی مالمیر شامگاه چهارشنبه در جلسه سیاست‌گذاری رویدادهای گردشگری 2018 همدان با اشاره به برگزاری جلسات متعدد توسط کمیته‌های اجرایی رویدادهای گردشگری همدان 2018 اظهار داشت: مجتمع عین القضات به عنوان دبیرخانه این رویدادها تجهیز شده و به زودی مراسم رونمایی از لوگو و افتتاحیه دبیرخانه برگزار می‌شود.
-                        </p>
-                        <div class="blue-color"><i class="far fa-calendar-alt camera-margin"></i><span class="font-smaller">1396/11/17</span></div>
-                    </div>
-                </div>
-                <div class="grid-x element-distanse news-bottom-line">
-                    <div class="large-4 medium-12 small-12 ">
-                        <a><img style=";margin-top: -20px;" src="{{ asset('pic/gallery/3.jpg') }}" alt="Hamedan-2018" width="300px" height="200px"></a>
-                    </div>
-                    <div style="padding-left: 50px;padding-right: 50px;" class="large-8 medium-12 small-12 news-link">
-                        <a href="#"><h5>رونمایی از لوگو همدان 2018</h5></a>
-                        <p class="two-line text-color text-justify element-distanse font-small">
-                            به گزارش خبرگزاری تسنیم از همدان، علی مالمیر شامگاه چهارشنبه در جلسه سیاست‌گذاری رویدادهای گردشگری 2018 همدان با اشاره به برگزاری جلسات متعدد توسط کمیته‌های اجرایی رویدادهای گردشگری همدان 2018 اظهار داشت: مجتمع عین القضات به عنوان دبیرخانه این رویدادها تجهیز شده و به زودی مراسم رونمایی از لوگو و افتتاحیه دبیرخانه برگزار می‌شود.
-                        </p>
-                        <div class="blue-color"><i class="far fa-calendar-alt camera-margin"></i><span class="font-smaller">1396/11/17</span></div>
-                    </div>
-                </div>
-
+                @endforeach
                 <!-Pagination Start--->
-                <div class="grid-x">
-                    <div class="large-12 medium-12 small-12 element-distanse">
-                        <ul class="pagination text-center" role="navigation" aria-label="Pagination">
-                            <li class="pagination-previous disabled">قبلی</li>
-                            <li class="current"><span class="show-for-sr">You're on page</span> 1</li>
-                            <li><a href="#" aria-label="Page 2">2</a></li>
-                            <li><a href="#" aria-label="Page 3">3</a></li>
-                            <li><a href="#" aria-label="Page 4">4</a></li>
-                            <li class="ellipsis"></li>
-                            <li><a href="#" aria-label="Page 12">12</a></li>
-                            <li><a href="#" aria-label="Page 13">13</a></li>
-                            <li class="pagination-next"><a href="#" aria-label="Next page">بعدی</a></li>
-                        </ul>
-                    </div>
-                </div>
+                @if ($allNews->lastPage() > 1)
+                    <ul class="pagination text-left medium-6 columns" style="margin-top: 0.8rem" role="navigation" aria-label="Pagination">
+                        @if($allNews->currentPage() != 1)
+                            <li class="pagination-previous">
+                                <a href="{{ $allNews->url($allNews->currentPage()-1) }}" aria-label="قبلی">
+                                    @if($lan == 'fa')
+                                        <span class="my_text_color_pg" aria-hidden="true">قبلی</span>
+                                    @elseif($lan == 'en')
+                                        <span class="my_text_color_pg" aria-hidden="true">Previous</span>
+                                    @elseif($lan == 'ar')
+                                        <span class="my_text_color_pg" aria-hidden="true">سابق</span>
+                                    @endif
+                                </a>
+                            </li>
+                        @endif
+                        @for($i = max($allNews->currentPage()-2, 1); $i <= min(max($allNews->currentPage()-2, 1)+4,$allNews->lastPage()); $i++)
+                            @if($allNews->currentPage() == $i)
+                                <li class="current"><span class="show-for-sr font-size-small">صفحه ای که در آن هستید</span>{{ $i }}
+                            @else
+                                <li>
+                                    <a class="font-size-small my_text_color" href="{{ $allNews->url($i) }}">{{ $i }}</a>
+                            @endif
+                        </li>
+                        @endfor
+                        @if ($allNews->currentPage() != $allNews->lastPage())
+                            <li class="pagination-next">
+                                <a href="{{ $allNews->url($allNews->currentPage()+1) }}" aria-label="بعدی">
+                                    @if($lan == 'fa')
+                                        <span class="my_text_color_pg" aria-hidden="true">بعدی</span>
+                                    @elseif($lan == 'en')
+                                        <span class="my_text_color_pg" aria-hidden="true">Next</span>
+                                    @elseif($lan == 'ar')
+                                        <span class="my_text_color_pg" aria-hidden="true">التالي</span>
+                                    @endif
+                                </a>
+                            </li>
+                        @endif
+                    </ul>
+                @endif
                 <!-Pagination End--->
             </div>
             <div class="large-4 medium-6 small-12">

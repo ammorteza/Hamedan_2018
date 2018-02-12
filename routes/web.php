@@ -36,9 +36,9 @@ Route::get('/news/', 'NewsController@index');
 Route::get('/fa/news/', 'NewsController@index_fa');
 Route::get('/ar/news/', 'NewsController@index_ar');
 
-Route::get('/news/info', 'NewsController@newsInfo');
-Route::get('/fa/news/info', 'NewsController@newsInfo_fa');
-Route::get('/ar/news/info', 'NewsController@newsInfo_ar');
+Route::get('/news/info/{nId}', 'NewsController@newsInfo');
+Route::get('/fa/news/info/{nId}', 'NewsController@newsInfo_fa');
+Route::get('/ar/news/info/{nId}', 'NewsController@newsInfo_ar');
 
 /*Route::get('{pageId}/page/{slug}', [
     'uses' => 'PageController@getPageWithId'

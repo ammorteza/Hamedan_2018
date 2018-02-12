@@ -20,6 +20,9 @@ class CreateNewsTable extends Migration
                 $table->string('nFaSubject');
                 $table->string('nEnSubject');
                 $table->string('nArSubject');
+                $table->longText('nFaBriefDescription');
+                $table->longText('nEnBriefDescription');
+                $table->longText('nArBriefDescription');
                 $table->longText('nFaDescription');
                 $table->longText('nEnDescription');
                 $table->longText('nArDescription');
