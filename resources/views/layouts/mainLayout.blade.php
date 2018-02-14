@@ -74,21 +74,27 @@
                                                 @if($lan == 'fa')
                                                     <p style="text-align: center;" class="top-slider-header Shabnam-Bold my-fadeIn-and-move">{{ $pageInfo->pFaSubject }}</p>
                                                     <p style="text-align: center;" class="top-slider-description Duel-Regular">{{ $pageInfo->pFaDescription }}</p>
-                                                    <center>
-                                                        <button style="margin-top: 15px;" class="button primary white-color">اطلاعات بیشتر</button>
-                                                    </center>
+                                                    @if ($pageImg->phiLink != null)
+                                                        <center>
+                                                            <a href="{{ url($pageImg->phiLink . '') }}" style="margin-top: 15px;" class="button primary white-color">{{ $pageImg->phiLinkFaTitle }}</a>
+                                                        </center>
+                                                    @endif
                                                 @elseif($lan == 'en')
                                                     <p style="text-align: center;" class="top-slider-header Roboto-Bold">{{ $pageInfo->pEnSubject }}</p>
                                                     <p style="text-align: center;" class="top-slider-description merienda">{{ $pageInfo->pEnDescription }}</p>
-                                                    <center>
-                                                        <button style="margin-top: 15px;" class="button primary white-color">More</button>
-                                                    </center>
+                                                    @if ($pageImg->phiLink != null)
+                                                        <center>
+                                                            <a href="{{ url($pageImg->phiLink . '') }}" style="margin-top: 15px;" class="button primary white-color">{{ $pageImg->phiLinkEnTitle }}</a>
+                                                        </center>
+                                                    @endif
                                                 @elseif($lan == 'ar')
                                                     <p style="text-align: center;" class="top-slider-header Al-Jazeera-Arabic-Bold">{{ $pageInfo->pArSubject }}</p>
                                                     <p style="text-align: center;" class="top-slider-description">{{ $pageInfo->pArDescription }}</p>
-                                                    <center>
-                                                        <button style="margin-top: 15px;" class="button primary white-color">مزيد من المعلومات</button>
-                                                    </center>
+                                                    @if ($pageImg->phiLink != null)
+                                                        <center>
+                                                            <a href="{{ url($pageImg->phiLink . '') }}" style="margin-top: 15px;" class="button primary white-color">{{ $pageImg->phiLinkArTitle }}</a>
+                                                        </center>
+                                                    @endif
                                                 @endif
                                             </figcaption>
                                         @elseif($pageInfo->headerType->phtType == 'ADVANCE')
@@ -99,17 +105,17 @@
                                                             @if($lan == 'fa')
                                                                 <p class="top-slider-header Shabnam-Bold">{{ $pageImg->phiFaSubject }}</p>
                                                                 <p class="top-slider-description Duel-Regular">{{ $pageImg->phiFaDescription }}</p>
-                                                                <a href="#" class="top-slider-description-btn">اطلاعات بیشتر</a>
+                                                                <a href="{{ url($lan . $pageImg->phiLink) }}" class="top-slider-description-btn">{{ $pageImg->phiLinkFaTitle }}</a>
                                                             @elseif($lan == 'en')
                                                                 <div class="cabin">
                                                                     <p  class="top-slider-header Roboto-Bold">{{ $pageImg->phiEnSubject }}</p>
                                                                     <p  class="top-slider-description merienda">{{ $pageImg->phiEnDescription }}</p>
-                                                                    <a href="#" class="top-slider-description-btn">Read More</a>
+                                                                    <a href="{{ url($pageImg->phiLink . '') }}" class="top-slider-description-btn">{{ $pageImg->phiLinkEnTitle }}</a>
                                                                 </div>
                                                             @elseif($lan == 'ar')
                                                                 <p class="top-slider-header Al-Jazeera-Arabic-Bold">{{ $pageImg->phiArSubject }}</p>
                                                                 <p class="top-slider-description Emad-Nora-Arabic">{{ $pageImg->phiArDescription }}</p>
-                                                                <a href="#" class="top-slider-description-btn">أكثر</a>
+                                                                <a href="{{ url($lan . $pageImg->phiLink) }}" class="top-slider-description-btn">{{ $pageImg->phiLinkArTitle }}</a>
                                                             @endif
                                                         </div>
                                                     </div>

@@ -421,11 +421,11 @@
                         @endif
 
                         @if($lan == 'fa')
-                            <p class="text-color text-justify element-distanse">{{ $section->sFaDescription }}</p>
+                            <div class="text-justify element-distanse">{!! $section->sFaDescription !!}</div>
                         @elseif($lan == 'en')
-                            <p class="text-color text-justify element-distanse Raleway-Regular">{{ $section->sEnDescription }}</p>
+                            <div class="text-justify element-distanse Raleway-Regular">{!! $section->sEnDescription !!}</div>
                         @elseif($lan == 'ar')
-                            <p class="text-color text-justify element-distanse Al-Jazeera-Arabic-Regular">{{ $section->sArDescription }}</p>
+                            <div class="text-justify element-distanse Al-Jazeera-Arabic-Regular">{!! $section->sArDescription !!}</div>
                         @endif
                     </div>
                 </div>
