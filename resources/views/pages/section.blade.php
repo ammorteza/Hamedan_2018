@@ -56,7 +56,7 @@
                                             @if ($sectionImg->siOrder != 5)
                                                 <div class="large-6 medium-6 padding-lr">
                                                     <a href="#" class="direction-reveal__card">
-                                                    <img style="height: 174px;width: 100vw;background-size: percentage;" src="{{ asset($sectionImg->gallery->gPath) }}" alt="Image" class="img-fluid">
+                                                    <img style="height: 174px;width: 100vw;" src="{{ asset($sectionImg->gallery->gPath) }}" alt="Image" class="img-fluid">
 
                                                         <div class="direction-reveal__overlay">
                                                             @if($lan == 'fa')
@@ -433,5 +433,24 @@
             <!--Text Section End-->
         @endif
     @endforeach
+    <!--4 Image Section Start-->
+    <div class="grid-container">
+        <div style="margin: 30px 0px 30px 0px;" class="grid-x">
+            <div class="large-3 medium-6 small-12 padding-lr">
+                <img class="image-shadow-effect" src="{{ asset('pic/gallery/1.jpg') }}">
+            </div>
+            <div class="large-3 medium-6 small-12 padding-lr">
+                <img class="image-shadow-effect" src="{{ asset('pic/gallery/2.jpg') }}">
+            </div>
+            <div class="large-3 medium-6 small-12 padding-lr">
+                <img class="image-shadow-effect" src="{{ asset('pic/gallery/3.jpg') }}">
+            </div>
+            <div class="large-3 medium-6 small-12 padding-lr">
+                <img class="image-shadow-effect" src="{{ asset('pic/gallery/4.jpg') }}">
+            </div>
+        </div>
+    </div>
+    <!--4 Image Section End-->
+
 
 @stop

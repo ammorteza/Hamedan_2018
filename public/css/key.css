@@ -967,6 +967,11 @@ ul.social-icons {
 .section-height{
     height: 100vh;
 }
+.image-shadow-effect{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    height: 200px;
+    width: 100vw;
+}
 /*///////////////////////////////////////////////////////////////////*/
 /* News Image Slider Start*/
 /*///////////////////////////////////////////////////////////////////*/
