@@ -20,6 +20,10 @@ class CreatePageHeaderImgTable extends Migration
                 $table->integer('phiGId')->length(10)->unsigned();
                 $table->unsignedTinyInteger('phiOrder')->default(1);
                 $table->boolean('phiState')->default(true);
+                $table->string('phiLink')->nullable();
+                $table->string('phiLinkFaTitle')->nullable();
+                $table->string('phiLinkEnTitle')->nullable();
+                $table->string('phiLinkArTitle')->nullable();
 
                 $table->string('phiFaAlt');
                 $table->string('phiEnAlt');

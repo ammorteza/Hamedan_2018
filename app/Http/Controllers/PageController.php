@@ -35,6 +35,11 @@ class PageController extends Controller
             ->where('pLinkUrl' , '=' , '/' . $slug)
             ->first();
 
+        if ($pageInfo == null)
+        {
+            return redirect('/');
+        }
+
         $sections = Section::with('sectionType')
             ->with('sectionImg.gallery' , 'sectionVideo.gallery')
             ->where('sPId' , '=' , $pageInfo->id)

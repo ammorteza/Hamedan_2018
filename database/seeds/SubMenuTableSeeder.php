@@ -42,39 +42,24 @@ class SubMenuTableSeeder extends Seeder
 
         /////////////////////////////////////////////////////
         $subMenu = new \Hamedan_2018\SubMenu;
-        $subMenu->smMmId = 2;
-        $subMenu->smFaSubject = 'همدان ۲۰۱۸';
-        $subMenu->smEnSubject = 'Hamadan 2018';
-        $subMenu->smArSubject = 'همدان ۲۰۱۸';
-        $subMenu->save(); //5
-
-        $subMenu = new \Hamedan_2018\SubMenu;
-        $subMenu->smMmId = 2;
-        $subMenu->smFaSubject = 'UNWTO';
-        $subMenu->smEnSubject = 'UNWTO';
-        $subMenu->smArSubject = 'UNWTO';
-        $subMenu->save(); //6
-
-        /////////////////////////////////////////////////////
-        $subMenu = new \Hamedan_2018\SubMenu;
         $subMenu->smMmId = 3;
         $subMenu->smFaSubject = 'تفریحی و گردشگری';
         $subMenu->smEnSubject = 'Recreation and tourism';
         $subMenu->smArSubject = 'الترفيه والسياحة';
-        $subMenu->save(); //7
+        $subMenu->save(); //5
 
         $subMenu = new \Hamedan_2018\SubMenu;
         $subMenu->smMmId = 3;
         $subMenu->smFaSubject = 'علمی و ورزشی';
         $subMenu->smEnSubject = 'Scientific and sports';
         $subMenu->smArSubject = 'العلمية والرياضية';
-        $subMenu->save(); //8
+        $subMenu->save(); //6
 
         $subMenu = new \Hamedan_2018\SubMenu;
         $subMenu->smMmId = 3;
         $subMenu->smFaSubject = 'جشنواره های بومی';
         $subMenu->smEnSubject = 'Native festivals';
         $subMenu->smArSubject = 'المهرجانات المحلية';
-        $subMenu->save(); //9
+        $subMenu->save(); //7
     }
 }

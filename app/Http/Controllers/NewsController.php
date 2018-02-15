@@ -2,6 +2,7 @@
 
 namespace Hamedan_2018\Http\Controllers;
 
+use Hamedan_2018\Advertise;
 use Hamedan_2018\News;
 use Hamedan_2018\NewsSlider;
 use Illuminate\Http\Request;
@@ -26,9 +27,13 @@ class NewsController extends Controller
 
     private function renderNews($lan)
     {
+        $advertise = Advertise::where('aState' , '=' , 1)->get()->random(1);
         $newsSlider = NewsSlider::with('gallery')->where('nsState' , '=' , 1)->orderBy('nsOrder' , 'DESC')->get();
         $allNews = News::with('newsImg')->where('nState' , '=' , 1)->orderBy('id' , 'DESC')->paginate(6);
-        return view('pages.news' , ['allNews' => $allNews , 'newsSlider' => $newsSlider , 'lan' => $lan]);
+        return view('pages.news' , ['allNews' => $allNews ,
+            'newsSlider' => $newsSlider ,
+            'advertise' => $advertise ,
+            'lan' => $lan]);
     }
 
     /////////////////// news info ///////////////////
@@ -49,8 +54,11 @@ class NewsController extends Controller
 
     private function renderNewsInfo($lan , $nId)
     {
+        $advertise = Advertise::where('aState' , '=' , 1)->get()->random(1);
         News::find($nId)->increment('nViewedCount');
         $news = News::with('newsImg')->where('id' , '=' , $nId)->first();
-        return view('pages.newsInfo' , ['news' => $news , 'lan' => $lan]);
+        return view('pages.newsInfo' , ['news' => $news ,
+            'advertise' => $advertise ,
+            'lan' => $lan]);
     }
 }

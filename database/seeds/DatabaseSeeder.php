@@ -11,14 +11,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call(GalleryTableSeeder::class);
+        //$this->call(GalleryTableSeeder::class);
         /////////////////// main seeder ////////////////////
         $this->call(MainMenuTableSeeder::class);
         $this->call(SubMenuTableSeeder::class);
         $this->call(SectionTypeTableSeeder::class);
         $this->call(PageHeaderTypeTableSeeder::class);
         ////////////////////////////////////////////////////
-        $this->call(PageTableSeeder::class);
+/*        $this->call(PageTableSeeder::class);
         $this->call(PageBreadCrumbTableSeeder::class);
         $this->call(PageHeaderImgTableSeeder::class);
         $this->call(SectionTableSeeder::class);
@@ -29,5 +29,6 @@ class DatabaseSeeder extends Seeder
         $this->call(NewsTableSeeder::class);
         $this->call(NewsImgTableSeeder::class);
         $this->call(NewsSliderTableSeeder::class);
+        $this->call(AdvertiseTableSeeder::class);*/
     }
 }

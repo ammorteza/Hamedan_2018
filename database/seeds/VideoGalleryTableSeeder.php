@@ -32,5 +32,16 @@ class VideoGalleryTableSeeder extends Seeder
         $vGallery->gArEditor = 'فردین چاردولی';
         $vGallery->gPosterPath = 'pic/video/posters/2.jpg';
         $vGallery->save();
+
+        $vGallery = new \Hamedan_2018\VideoGallery;
+        $vGallery->gPath = 'pic/video/3.mp4';
+        $vGallery->gFaLocation = 'پرواز در آسمان همدان';
+        $vGallery->gEnLocation = 'Fly in the sky of Hamadan';
+        $vGallery->gArLocation = 'يطير في سماء همدان';
+        $vGallery->gFaEditor = 'فردین چاردولی';
+        $vGallery->gEnEditor = 'F.Chardowli';
+        $vGallery->gArEditor = 'فردین چاردولی';
+        $vGallery->gPosterPath = 'pic/video/posters/2.jpg';
+        $vGallery->save();
     }
 }

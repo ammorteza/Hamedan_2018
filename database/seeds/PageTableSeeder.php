@@ -44,7 +44,7 @@ class PageTableSeeder extends Seeder
         $page = new \Hamedan_2018\Page;
         $page->pPhtId = 2;
         $page->pMmId = 3;
-        $page->pSmId = 8;
+        $page->pSmId = 6;
         $page->pFaSubject = 'پرواز بر فراز تاریخ';
         $page->pEnSubject = 'Fly over the history';
         $page->pArSubject = 'تطير فوق التاريخ';

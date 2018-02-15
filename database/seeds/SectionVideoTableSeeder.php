@@ -13,7 +13,7 @@ class SectionVideoTableSeeder extends Seeder
     {
         $sVideo = new \Hamedan_2018\SectionVideo;
         $sVideo->svSId = 11;
-        $sVideo->svVgId = 1;
+        $sVideo->svVgId = 3;
         $sVideo->svOrder = 1;
         $sVideo->svFaSubject = 'رویدادها و جشنواره ها در همدان';
         $sVideo->svEnSubject = 'Events and festivals in Hamadan';
