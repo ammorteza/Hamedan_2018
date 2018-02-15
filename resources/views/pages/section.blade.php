@@ -21,7 +21,7 @@
         <!--END SUB MENU SECTION-->
         @elseif($section->sectionType->stType == 'CONTENT_LEFT')
         <!--CONTENT_LEFT SECTION-->
-            <div id="ploop" class="grid-container">
+            <div id="ploop" class="grid-container section-height">
                 <div class="grid-x grid-padding-x">
                     <div style="margin-top: 80px;color: #37474F;" class="large-12 medium-12 center-el">
                         @if($lan == 'fa')
@@ -56,7 +56,7 @@
                                             @if ($sectionImg->siOrder != 5)
                                                 <div class="large-6 medium-6 padding-lr">
                                                     <a href="#" class="direction-reveal__card">
-                                                        <img src="{{ asset($sectionImg->gallery->gPath) }}" alt="Image" class="img-fluid">
+                                                    <img style="height: 174px;width: 100vw;background-size: percentage;" src="{{ asset($sectionImg->gallery->gPath) }}" alt="Image" class="img-fluid">
 
                                                         <div class="direction-reveal__overlay">
                                                             @if($lan == 'fa')
@@ -105,7 +105,7 @@
             <!--END CONTENT_LEFT SECTION-->
         @elseif($section->sectionType->stType == 'CONTENT_IMAGE_SLIDER')
             <!--CONTENT_IMAGE_SLIDER SECTION-->
-            <div class="grid-container">
+            <div class="grid-container section-height">
                 <div class="grid-x padding-lr">
                     <div style="margin-top: 50px;color: #37474F;" class="large-12 medium-12 center-el">
                         @if($lan == 'fa')
@@ -159,7 +159,7 @@
             <!--Section Spliter Start-->
         @elseif($section->sectionType->stType == 'CONTENT_WIDE_SLIDER')
             <!--Content Wide Slider Start-->
-            <div class="grid-container">
+            <div class="grid-container section-height">
                 <div class="grid-x padding-lr">
                     <div style="margin-top: 50px;color: #37474F;" class="large-12 medium-12 center-el">
                         @if($lan == 'fa')
@@ -214,7 +214,7 @@
             </div>
             <!--Content Wide Slider Start-->
         @elseif($section->sectionType->stType == 'BREAD_CRUMB')
-            <div class="grid-container">
+            <div class="grid-container section-height">
                 <div class="grid-x">
                     <div style="margin-top: 30px;color: #37474F;" class="large-12 medium-12">
                         <nav aria-label="You are here:" role="navigation">
@@ -280,7 +280,7 @@
             </div>
         @elseif($section->sectionType->stType == 'CONTENT_IMAGE_RIGHT_TEXT_LEFT')
             <!--Content Image Right And Text Left Start-->
-            <div style="margin-top: 80px;" class="grid-container">
+            <div style="margin-top: 80px;" class="grid-container section-height">
                 <div class="grid-x">
                     <div class="large-6 medium-12 small-12 titr-color {{ $lan == 'en' ? 'padding-lr-txt-img-r' : 'padding-lr-txt-img-l'}}">
                         @if($lan == 'fa')
@@ -329,7 +329,7 @@
             <!--Content Image Right And Text Left Start-->
         @elseif($section->sectionType->stType == 'CONTENT_IMAGE_LEFT_TEXT_RIGHT')
             <!--Content Image Left And Text Right Start-->
-            <div style="margin-top: 200px;" class="grid-container">
+            <div style="margin-top: 200px;" class="grid-container section-height">
                 <div class="grid-x">
                     <div class="large-6 medium-12 small-12 padding-lr">
                         <img src="{{ asset($section->sectionImg[0]['gallery']['gPath'] )}}">

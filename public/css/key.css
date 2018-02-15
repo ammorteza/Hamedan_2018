@@ -266,7 +266,7 @@ h1,h2,h3,h4,h5,h6{
         transform: scale(1.3);
     }
     to {
-        transform: scale(1);
+        transform: scale(1.1);
     }
 }
 @-moz-keyframes my-zoom-out {
@@ -274,7 +274,7 @@ h1,h2,h3,h4,h5,h6{
         transform: scale(1.3);
     }
     to {
-        transform: scale(1);
+        transform: scale(1.1);
     }
 }
 @keyframes my-zoom-out {
@@ -282,12 +282,12 @@ h1,h2,h3,h4,h5,h6{
         transform: scale(1.3);
     }
     to {
-        transform: scale(1);
+        transform: scale(1.1);
     }
 }
 
 .my-zoom-out {
-    transform: scale(1.2); /* make things invisible upon start */
+    transform: scale(1.3); /* make things invisible upon start */
     -webkit-animation: my-zoom-out ease-in 1; /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
     -moz-animation: my-zoom-out ease-in 1;
     animation: my-zoom-out ease-in 1;
@@ -964,7 +964,9 @@ ul.social-icons {
     text-align: justify;
 
 }
-
+.section-height{
+    height: 100vh;
+}
 /*///////////////////////////////////////////////////////////////////*/
 /* News Image Slider Start*/
 /*///////////////////////////////////////////////////////////////////*/
