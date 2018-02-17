@@ -8,7 +8,7 @@
                     <ul class="menu align-center top-menu middle-menu element-dir">
                         @foreach(\Hamedan_2018\SubMenu::getAllSubMenuWithMainMenuId($section->sMmId) as $subMenu)
                             @if($lan == 'fa')
-                                <li><a class="BYekan {{ $subMenu->id == $pageInfo->pSmId ? 'is-active' : '' }}" href="{{ url($lan . $subMenu->smPageLink) }}">{{ $subMenu->smFaSubject }}</a></li>
+                                <li><a class="Shabnam-Bold {{ $subMenu->id == $pageInfo->pSmId ? 'is-active' : '' }}" href="{{ url($lan . $subMenu->smPageLink) }}">{{ $subMenu->smFaSubject }}</a></li>
                             @elseif($lan == 'en')
                                 <li><a class="Roboto-Regular {{ $subMenu->id == $pageInfo->pSmId ? 'is-active' : '' }}" href="{{ url($subMenu->smPageLink . '') }}">{{ strtoupper($subMenu->smEnSubject) }}</a></li>
                             @elseif($lan == 'ar')
@@ -214,7 +214,7 @@
             </div>
             <!--Content Wide Slider Start-->
         @elseif($section->sectionType->stType == 'BREAD_CRUMB')
-            <div class="grid-container section-height">
+            <div class="grid-container">
                 <div class="grid-x">
                     <div style="margin-top: 30px;color: #37474F;" class="large-12 medium-12">
                         <nav aria-label="You are here:" role="navigation">
@@ -431,26 +431,18 @@
                 </div>
             </div>
             <!--Text Section End-->
+        @elseif($section->sectionType->stType == 'FOUR_IMAGE_GALLERY')
+            <!--4 Image Section Start-->
+            <div class="grid-container">
+                <div style="margin: 30px 0px 30px 0px;" class="grid-x">
+                    @foreach($section->sectionImg as $sectionImg)
+                        <div class="large-3 medium-6 small-12 padding-lr">
+                            <img class="image-shadow-effect" src="{{ asset($sectionImg->gallery->gPath) }}">
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+            <!--4 Image Section End-->
         @endif
     @endforeach
-    <!--4 Image Section Start-->
-    <div class="grid-container">
-        <div style="margin: 30px 0px 30px 0px;" class="grid-x">
-            <div class="large-3 medium-6 small-12 padding-lr">
-                <img class="image-shadow-effect" src="{{ asset('pic/gallery/1.jpg') }}">
-            </div>
-            <div class="large-3 medium-6 small-12 padding-lr">
-                <img class="image-shadow-effect" src="{{ asset('pic/gallery/2.jpg') }}">
-            </div>
-            <div class="large-3 medium-6 small-12 padding-lr">
-                <img class="image-shadow-effect" src="{{ asset('pic/gallery/3.jpg') }}">
-            </div>
-            <div class="large-3 medium-6 small-12 padding-lr">
-                <img class="image-shadow-effect" src="{{ asset('pic/gallery/4.jpg') }}">
-            </div>
-        </div>
-    </div>
-    <!--4 Image Section End-->
-
-
 @stop

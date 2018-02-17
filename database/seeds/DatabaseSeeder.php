@@ -13,10 +13,10 @@ class DatabaseSeeder extends Seeder
     {
         //$this->call(GalleryTableSeeder::class);
         /////////////////// main seeder ////////////////////
-        $this->call(MainMenuTableSeeder::class);
-        $this->call(SubMenuTableSeeder::class);
-        $this->call(SectionTypeTableSeeder::class);
-        $this->call(PageHeaderTypeTableSeeder::class);
+        //$this->call(MainMenuTableSeeder::class);
+        //$this->call(SubMenuTableSeeder::class);
+        //$this->call(SectionTypeTableSeeder::class);
+        //$this->call(PageHeaderTypeTableSeeder::class);
         ////////////////////////////////////////////////////
 /*        $this->call(PageTableSeeder::class);
         $this->call(PageBreadCrumbTableSeeder::class);

@@ -70,5 +70,10 @@ class SectionTypeTableSeeder extends Seeder
         $sType->stType = 'CONTENT_TEXT';
         $sType->stSubject = 'استفاده برای صفحه های info';
         $sType->save(); //12
+
+        $sType = new \Hamedan_2018\SectionType;
+        $sType->stType = 'FOUR_IMAGE_GALLERY';
+        $sType->stSubject = 'چهار تصویر در کنار هم بدون متن';
+        $sType->save(); //13
     }
 }
