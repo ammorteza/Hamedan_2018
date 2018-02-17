@@ -452,5 +452,29 @@
     </div>
     <!--4 Image Section End-->
 
+    <!--Light Box Image Start-->
+    <div class="grid-container">
+        <div class="grid-x">
+                <ul style="margin: 0;" id="lightgallery" class="list-unstyled padding-lr">
+                    <li class="large-12" data-responsive="img/1-375.jpg 375, img/1-480.jpg 480, img/1.jpg 800" data-src="pic/gallery/1.jpg" data-sub-html="<h4>Fading Light</h4><p>Classic view from Rigwood Jetty on Coniston Water an old archive shot similar to an old post but a little later on.</p>">
+                        <a href="">
+                            <img style="height: 80vh;width: 100vw;background-size: cover;" class="img-responsive" src="{{ asset('pic/gallery/1.jpg') }}">
+                        </a>
 
+                    </li>
+                    <li style="display: none;" class="large-12" data-responsive="img/1-375.jpg 375, img/1-480.jpg 480, img/1.jpg 800" data-src="pic/gallery/2.jpg" data-sub-html="<h4>Fading Light</h4><p>Classic view from Rigwood Jetty on Coniston Water an old archive shot similar to an old post but a little later on.</p>">
+                        <a href="">
+                            <img style="height: 80vh;width: 100vw;" class="img-responsive" src="{{ asset('pic/gallery/2.jpg') }}">
+                        </a>
+                    </li>
+
+                    <li style="display: none;" class="large-12" data-responsive="img/1-375.jpg 375, img/1-480.jpg 480, img/1.jpg 800" data-src="pic/gallery/1.jpg" data-sub-html="<h4>Fading Light</h4><p>Classic view from Rigwood Jetty on Coniston Water an old archive shot similar to an old post but a little later on.</p>">
+                        <a href="">
+                            <img style="height: 80vh;width: 100vw;" class="img-responsive" src="{{ asset('pic/gallery/1.jpg') }}">
+                        </a>
+                    </li>
+                </ul>
+        </div>
+    </div>
+    <!--Light Box Image End-->
 @stop
