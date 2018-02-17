@@ -292,14 +292,11 @@
                         @endif
 
                         @if($lan == 'fa')
-                            <p class="text-color text-al">{{ $section->sFaDescription }}</p>
-                            <button class="button primary">اطلاعات بیشتر</button>
+                            <p class="text-color text-al">{!! $section->sFaDescription !!}</p>
                         @elseif($lan == 'en')
-                            <p class="text-color text-al Raleway-Regular">{{ $section->sEnDescription }}</p>
-                            <button class="button primary">Read More</button>
+                            <p class="text-color text-al Raleway-Regular">{!! $section->sEnDescription !!}</p>
                         @elseif($lan == 'ar')
-                            <p class="text-color text-al Al-Jazeera-Arabic-Regular">{{ $section->sArDescription }}</p>
-                            <button class="button primary">أكثر</button>
+                            <p class="text-color text-al Al-Jazeera-Arabic-Regular">{!! $section->sArDescription !!}</p>
                         @endif
                     </div>
                     <div class="large-6 medium-12 small-12 padding-lr">

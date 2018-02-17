@@ -1,6 +1,5 @@
 @extends('layouts.newsMainLayout')
 @section('content')
-
     <!--News Content Start-->
     <div class="grid-container">
         <!-- page bread crumb -->
@@ -30,7 +29,7 @@
                         <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:980px;height:475px;overflow:hidden;">
                             @foreach($newsSlider as $nSlider)
                             <div data-p="170.00">
-                                <img data-u="image" src="{{ asset($nSlider->gallery->gPath) }}" />
+                                <img class="background-cover" data-u="image" src="{{ asset($nSlider->gallery->gPath) }}" />
                                 <img data-u="thumb" src="{{ asset($nSlider->gallery->gPath) }}" />
                             </div>
                             @endforeach
@@ -136,7 +135,11 @@
                 @endif
                 <!-Pagination End--->
             </div>
-            <div style="padding-left: 100px;margin-top:440px;" class="large-4 medium-6 small-12" data-sticky-container>
+            @if($lan == 'fa')
+                <div style="padding-right: 100px;margin-top:440px;" class="large-4 medium-6 small-12" data-sticky-container>
+            @elseif($lan == 'en')
+                <div style="padding-left: 100px;margin-top:440px;" class="large-4 medium-6 small-12" data-sticky-container>
+            @endif
                 <div class="grid-x" data-sticky data-top-anchor="advTop:top" data-btm-anchor="advBottom:bottom">
                     <div style="position: relative;display: inline-block;top:40vh;text-align: center;z-index: 50;" class="large-12">
                         <h5 class="my-text-shadow-effect white-color">Alisadr Cave</h5>

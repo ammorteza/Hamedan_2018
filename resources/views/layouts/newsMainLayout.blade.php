@@ -39,7 +39,7 @@
                                 </ul>
                             </div>
                             <div style="margin: 0 auto;">
-                                <img  src="{{ asset('pic/footer/footer-logo.png') }}" alt="Hamedan-2018" width="150px" height="100px">
+                                <img src="{{ asset('pic/footer/footer-logo.png') }}" alt="Hamedan-2018" width="150px" height="100px">
                             </div>
                         </div>
                     </div>
