@@ -19,6 +19,7 @@
         <link rel="stylesheet" href="{{ asset('css/immersive-slider.css') }}">
         <link rel="stylesheet" href="{{ asset('css/pgwslider.css') }}">
         <link rel="stylesheet" href="{{ asset('css/videoJs/videoJs.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/lightgallery.css') }}">
         <link rel="stylesheet" href="{{ asset('css/foundation.css') }}">
         <link href="https://fonts.googleapis.com/css?family=Satisfy|Poiret+One|Cabin|Wire+One|Merienda|Roboto" rel="stylesheet">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/motion-ui/1.2.2/motion-ui.css" rel="stylesheet">
@@ -279,6 +280,20 @@
         <script src="{{ asset('js/jquery.immersive-slider.js') }}"></script><!--Content Image slider-->
         <script src="{{ asset('js/pgwslider.js') }}"></script><!--Content Image slider-->
         <script src="{{ asset('js/videojs/videoJs.js') }}"></script><!--Content Image slider-->
+
+        <!--Light Box Image slider-->
+        <script src="{{ asset('js/light_box/picturefill.min.js') }}"></script><!--Content Image slider-->
+        <script src="{{ asset('js/light_box/lightgallery.js') }}"></script><!--Content Image slider-->
+        <script src="{{ asset('js/light_box/lg-pager.js') }}"></script><!--Content Image slider-->
+        <script src="{{ asset('js/light_box/lg-autoplay.js') }}"></script><!--Content Image slider-->
+        <script src="{{ asset('js/light_box/lg-fullscreen.js') }}"></script><!--Content Image slider-->
+        <script src="{{ asset('js/light_box/lg-zoom.js') }}"></script><!--Content Image slider-->
+        <script src="{{ asset('js/light_box/lg-hash.js') }}"></script><!--Content Image slider-->
+        <script src="{{ asset('js/light_box/lg-share.js') }}"></script><!--Content Image slider-->
+        <!--Light Box Image slider-->
+
+
+
         <script src="{{ asset('js/vendor/foundation.js') }}"></script>
         <script src="{{ asset('js/app.js') }}"></script>
 
@@ -350,6 +365,12 @@
 
         </script>
         <!--Video JS-->
+
+        <!--LightBox gallery Start-->
+            <script>
+                lightGallery(document.getElementById('lightgallery'));
+            </script>
+        <!--LightBox gallery End-->
 
     </body>
 </html>
