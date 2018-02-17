@@ -66,7 +66,7 @@
                     </div>
                 </div>
                 @foreach($allNews as $news)
-                    <div class="grid-x element-distanse news-bottom-line">
+                    <div class="grid-x element-distanse news-bottom-line" id="advTop">
                         <div class="large-4 medium-12 small-12 ">
                             @if($lan == 'fa')
                                 <a href="{{ url($lan . '/news/info/' . $news->id) }}"><img style=";margin-top: -20px;" src="{{ asset($news->newsImg[0]['gallery']['gPath']) }}" alt="{{ $news->newsImg[0]['gallery']['niFaAlt'] }}" width="300px" height="200px"></a>
@@ -94,6 +94,7 @@
                     </div>
                 @endforeach
                 <!-Pagination Start--->
+                <p id="advBottom"></p>
                 @if ($allNews->lastPage() > 1)
                     <ul class="pagination text-left medium-6 columns" style="margin-top: 0.8rem" role="navigation" aria-label="Pagination">
                         @if($allNews->currentPage() != 1)
@@ -135,8 +136,16 @@
                 @endif
                 <!-Pagination End--->
             </div>
-            <div class="large-4 medium-6 small-12">
-
+            <div style="padding-left: 100px;margin-top:440px;" class="large-4 medium-6 small-12" data-sticky-container>
+                <div class="grid-x" data-sticky data-top-anchor="advTop:top" data-btm-anchor="advBottom:bottom">
+                    <div style="position: relative;display: inline-block;top:40vh;text-align: center;z-index: 50;" class="large-12">
+                        <h5 class="my-text-shadow-effect white-color">Alisadr Cave</h5>
+                        <a href="" class="button primary element-distanse">Read More</a>
+                    </div>
+                    <div class="large-12">
+                        <img style="height: 75vh;" class="background-cover" src="{{ asset('pic/gallery/7.jpg') }}">
+                    </div>
+                </div>
             </div>
         </div>
     </div>

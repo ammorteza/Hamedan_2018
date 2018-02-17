@@ -677,6 +677,11 @@ ul.social-icons {
 .fa-telegram-plane:hover {
     background-color: #00aced;
 }
+
+.background-cover{
+    object-fit: cover;
+
+}
 /*Social Networks*/
 
 /*///////////////////////////////////////////////////////////////////*/
