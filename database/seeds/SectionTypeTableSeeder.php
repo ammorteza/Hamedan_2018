@@ -75,5 +75,10 @@ class SectionTypeTableSeeder extends Seeder
         $sType->stType = 'FOUR_IMAGE_GALLERY';
         $sType->stSubject = 'چهار تصویر در کنار هم بدون متن';
         $sType->save(); //13
+
+        $sType = new \Hamedan_2018\SectionType;
+        $sType->stType = 'LIGHT_BOX_IMAGE_GALLERY';
+        $sType->stSubject = 'گالری از تصاویر و امکان باز شدن تصویر تمام صفحه و تعویض تصاویر';
+        $sType->save(); //14
     }
 }

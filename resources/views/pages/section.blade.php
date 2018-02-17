@@ -443,6 +443,32 @@
                 </div>
             </div>
             <!--4 Image Section End-->
+        @elseif($section->sectionType->stType == 'LIGHT_BOX_IMAGE_GALLERY')
+            <!--Light Box Image Start-->
+            <div class="grid-container">
+                <div class="grid-x">
+                    <ul style="margin: 0;" id="lightgallery" class="list-unstyled padding-lr">
+                        <?php
+                            $counter = 0;
+                        ?>
+                        @foreach($section->sectionImg as $sectionImg)
+                            @if($lan == 'fa')
+                                <li class="large-12" style="{{ $counter != 0 ? 'display: none;' : ''}}" data-responsive="img/1-375.jpg 375, img/1-480.jpg 480, img/1.jpg 800" data-src="{{ asset($sectionImg->gallery->gPath) }}" data-sub-html="<span>مکان:{{ $sectionImg->gallery->gFaLocation }}</span><span> عکاس:{{ $sectionImg->gallery->gFaPhotographer }}</span>">
+                            @elseif($lan == 'en')
+                                <li class="large-12" style="{{ $counter != 0 ? 'display: none;' : ''}}" data-responsive="img/1-375.jpg 375, img/1-480.jpg 480, img/1.jpg 800" data-src="{{ asset($sectionImg->gallery->gPath) }}" data-sub-html="<span>Location:{{ $sectionImg->gallery->gEnLocation }}</span><span> Photographer:{{ $sectionImg->gallery->gEnPhotographer }}</span>">
+                            @elseif($lan == 'ar')
+                                <li class="large-12" style="{{ $counter != 0 ? 'display: none;' : ''}}" data-responsive="img/1-375.jpg 375, img/1-480.jpg 480, img/1.jpg 800" data-src="{{ asset($sectionImg->gallery->gPath) }}" data-sub-html="<span>موقع:{{ $sectionImg->gallery->gArLocation }}</span><span> مصور فوتوغرافي:{{ $sectionImg->gallery->gArPhotographer }}</span>">
+                            @endif
+                                <a href="">
+                                    <img style="height: 80vh;width: 100vw;background-size: cover;" class="background-cover img-responsive" src="{{ asset($sectionImg->gallery->gPath) }}">
+                                </a>
+                            </li>
+                            <?php $counter++; ?>
+                        @endforeach
+                    </ul>
+                </div>
+            </div>
+            <!--Light Box Image End-->
         @endif
     @endforeach
 @stop
