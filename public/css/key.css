@@ -467,6 +467,15 @@ h1,h2,h3,h4,h5,h6{
     height: 3em;
     overflow: hidden;
 }
+.background-cover{
+    object-fit: cover;
+
+}
+.img-circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
 
 /*Content Image Slider*/
 .header h1{
@@ -678,10 +687,6 @@ ul.social-icons {
     background-color: #00aced;
 }
 
-.background-cover{
-    object-fit: cover;
-
-}
 /*Social Networks*/
 
 /*///////////////////////////////////////////////////////////////////*/
