@@ -79,7 +79,7 @@
                                 <div class="large-6 medium-6 padding-lr">
                                     @foreach($section->sectionImg as $sectionImg)
                                         @if ($sectionImg->siOrder == 5)
-                                            <a href="#" class="direction-reveal__card">
+                                            <a href="{{ url(($lan != 'en' ? $lan : '') . $sectionImg->siLink) }}" class="direction-reveal__card">
                                                 <img style="height: 356px;width: 100vw;" src="{{ asset($sectionImg->gallery->gPath) }}" alt="Image" class="img-fluid">
                                                 <div class="direction-reveal__overlay">
                                                     @if($lan == 'fa')
@@ -500,13 +500,13 @@
                                 <li class="large-12" style="{{ $counter != 0 ? 'display: none;' : ''}}" data-responsive="img/1-375.jpg 375, img/1-480.jpg 480, img/1.jpg 800" data-src="{{ asset($sectionImg->gallery->gPath) }}" data-sub-html="<span>Location:{{ $sectionImg->gallery->gEnLocation }}</span><span> Photographer:{{ $sectionImg->gallery->gEnPhotographer }}</span>">
                             @elseif($lan == 'ar')
                                 <li class="large-12" style="{{ $counter != 0 ? 'display: none;' : ''}}" data-responsive="img/1-375.jpg 375, img/1-480.jpg 480, img/1.jpg 800" data-src="{{ asset($sectionImg->gallery->gPath) }}" data-sub-html="<span>موقع:{{ $sectionImg->gallery->gArLocation }}</span><span> مصور فوتوغرافي:{{ $sectionImg->gallery->gArPhotographer }}</span>">
-                                    @endif
+                            @endif
                                     <a href="">
                                         <img style="height: 80vh;width: 100vw;background-size: cover;" class="background-cover img-responsive" src="{{ asset($sectionImg->gallery->gPath) }}">
                                     </a>
                                 </li>
-                                <?php $counter++; ?>
-                                @endforeach
+                            <?php $counter++; ?>
+                        @endforeach
                     </ul>
                 </div>
             </div>
