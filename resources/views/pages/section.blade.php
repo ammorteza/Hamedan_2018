@@ -18,9 +18,9 @@
                     </ul>
                 </div>
             </div>
-        <!--END SUB MENU SECTION-->
+            <!--END SUB MENU SECTION-->
         @elseif($section->sectionType->stType == 'CONTENT_LEFT')
-        <!--CONTENT_LEFT SECTION-->
+            <!--CONTENT_LEFT SECTION-->
             <div id="ploop" class="grid-container {{ $section->sFullScreen == true ? 'section-height' : '' }}">
                 <div class="grid-x grid-padding-x">
                     <div style="margin-top: 80px;color: #37474F;" class="large-12 medium-12 center-el">
@@ -56,7 +56,7 @@
                                             @if ($sectionImg->siOrder != 5)
                                                 <div class="large-6 medium-6 padding-lr">
                                                     <a href="{{ url(($lan != 'en' ? $lan : '') . $sectionImg->siLink) }}" class="direction-reveal__card">
-                                                    <img style="height: 174px;width: 100vw;" src="{{ asset($sectionImg->gallery->gPath) }}" alt="Image" class="img-fluid">
+                                                        <img style="height: 174px;width: 100vw;" src="{{ asset($sectionImg->gallery->gPath) }}" alt="Image" class="img-fluid">
 
                                                         <div class="direction-reveal__overlay">
                                                             @if($lan == 'fa')
@@ -176,15 +176,15 @@
                         <div class="orbit" role="region" aria-label="Favorite Text Ever" data-orbit>
                             <ul class="orbit-container">
                                 @if($lan == 'fa' || $lan== 'ar')
-                                <button style="margin-right: 99.5%;" class="orbit-previous" aria-label="previous"><span class="show-for-sr">Previous Slide</span>&#9664;</button>
-                                <button style="margin-right: 0.8%;" class="orbit-next" aria-label="next"><span class="show-for-sr">Next Slide</span>&#9654;</button>
+                                    <button style="margin-right: 99.5%;" class="orbit-previous" aria-label="previous"><span class="show-for-sr">Previous Slide</span>&#9664;</button>
+                                    <button style="margin-right: 0.8%;" class="orbit-next" aria-label="next"><span class="show-for-sr">Next Slide</span>&#9654;</button>
                                 @elseif($lan == 'en')
                                     <button style="margin-right: 99%;" class="orbit-previous" aria-label="previous"><span class="show-for-sr">Previous Slide</span>&#9664;</button>
                                     <button style="margin-left: 97.5%;" class="orbit-next" aria-label="next"><span class="show-for-sr">Next Slide</span>&#9654;</button>
                                 @endif
                                 <?php
-                                    $item = 0;
-                                    $itemCount = count($section->sectionImg);
+                                $item = 0;
+                                $itemCount = count($section->sectionImg);
                                 ?>
                                 @for($i = 0 ; $i < $itemCount / 4 ; $i++)
                                     <li style="padding: 50px 10px 50px 10px" class="orbit-slide">
@@ -249,9 +249,9 @@
                         <div class="orbit" role="region" aria-label="Favorite Text Ever" data-orbit data-timer-delay="8000">
                             <ul class="orbit-container">
                                 <?php
-                                    $sponsors = \Hamedan_2018\Sponsor::getAllSponsors();
-                                    $item = 0;
-                                    $itemCount = count($sponsors);
+                                $sponsors = \Hamedan_2018\Sponsor::getAllSponsors();
+                                $item = 0;
+                                $itemCount = count($sponsors);
                                 ?>
                                 @for($i = 0 ; $i < $itemCount / 6 ; $i++)
                                     <li class="is-active orbit-slide">
@@ -329,7 +329,6 @@
                             @endif
                         @endif
                     </div>
-
                 </div>
             </div>
             <!--Content Image Right And Text Left Start-->
@@ -383,7 +382,6 @@
                             @endif
                         @endif
                     </div>
-
                 </div>
             </div>
             <!--Content Image Left And Text Right Start-->
@@ -493,7 +491,7 @@
                 <div class="grid-x">
                     <ul style="margin: 0;" id="lightgallery" class="list-unstyled padding-lr">
                         <?php
-                            $counter = 0;
+                        $counter = 0;
                         ?>
                         @foreach($section->sectionImg as $sectionImg)
                             @if($lan == 'fa')
@@ -502,13 +500,13 @@
                                 <li class="large-12" style="{{ $counter != 0 ? 'display: none;' : ''}}" data-responsive="img/1-375.jpg 375, img/1-480.jpg 480, img/1.jpg 800" data-src="{{ asset($sectionImg->gallery->gPath) }}" data-sub-html="<span>Location:{{ $sectionImg->gallery->gEnLocation }}</span><span> Photographer:{{ $sectionImg->gallery->gEnPhotographer }}</span>">
                             @elseif($lan == 'ar')
                                 <li class="large-12" style="{{ $counter != 0 ? 'display: none;' : ''}}" data-responsive="img/1-375.jpg 375, img/1-480.jpg 480, img/1.jpg 800" data-src="{{ asset($sectionImg->gallery->gPath) }}" data-sub-html="<span>موقع:{{ $sectionImg->gallery->gArLocation }}</span><span> مصور فوتوغرافي:{{ $sectionImg->gallery->gArPhotographer }}</span>">
-                            @endif
-                                <a href="">
-                                    <img style="height: 80vh;width: 100vw;background-size: cover;" class="background-cover img-responsive" src="{{ asset($sectionImg->gallery->gPath) }}">
-                                </a>
-                            </li>
-                            <?php $counter++; ?>
-                        @endforeach
+                                    @endif
+                                    <a href="">
+                                        <img style="height: 80vh;width: 100vw;background-size: cover;" class="background-cover img-responsive" src="{{ asset($sectionImg->gallery->gPath) }}">
+                                    </a>
+                                </li>
+                                <?php $counter++; ?>
+                                @endforeach
                     </ul>
                 </div>
             </div>
