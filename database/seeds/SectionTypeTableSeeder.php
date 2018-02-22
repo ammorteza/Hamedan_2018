@@ -80,5 +80,10 @@ class SectionTypeTableSeeder extends Seeder
         $sType->stType = 'LIGHT_BOX_IMAGE_GALLERY';
         $sType->stSubject = 'گالری از تصاویر و امکان باز شدن تصویر تمام صفحه و تعویض تصاویر';
         $sType->save(); //14
+
+        $sType = new \Hamedan_2018\SectionType;
+        $sType->stType = 'CONTENT_BRIEF_NEWS';
+        $sType->stSubject = 'نمایش تعدادی از اخبار با اولویت در صفحه نخست';
+        $sType->save(); //15
     }
 }

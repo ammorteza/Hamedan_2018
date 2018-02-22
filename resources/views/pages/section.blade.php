@@ -21,7 +21,7 @@
             <!--END SUB MENU SECTION-->
         @elseif($section->sectionType->stType == 'CONTENT_LEFT')
             <!--CONTENT_LEFT SECTION-->
-            <div id="ploop" class="grid-container {{ $section->sFullScreen == true ? 'section-height' : '' }}">
+            <div class="grid-container {{ $section->sFullScreen == true ? 'section-height' : '' }}">
                 <div class="grid-x grid-padding-x">
                     <div style="margin-top: 80px;color: #37474F;" class="large-12 medium-12 center-el">
                         @if($lan == 'fa')
@@ -495,11 +495,11 @@
                         ?>
                         @foreach($section->sectionImg as $sectionImg)
                             @if($lan == 'fa')
-                                <li class="large-12" style="{{ $counter != 0 ? 'display: none;' : ''}}" data-responsive="img/1-375.jpg 375, img/1-480.jpg 480, img/1.jpg 800" data-src="{{ asset($sectionImg->gallery->gPath) }}" data-sub-html="<span>مکان:{{ $sectionImg->gallery->gFaLocation }}</span><span> عکاس:{{ $sectionImg->gallery->gFaPhotographer }}</span>">
+                                <li class="large-12" style="{{ $counter != 0 ? 'display: none;' : ''}}" data-src="{{ asset($sectionImg->gallery->gPath) }}" data-sub-html="<span>مکان:{{ $sectionImg->gallery->gFaLocation }}</span><span> عکاس:{{ $sectionImg->gallery->gFaPhotographer }}</span>">
                             @elseif($lan == 'en')
-                                <li class="large-12" style="{{ $counter != 0 ? 'display: none;' : ''}}" data-responsive="img/1-375.jpg 375, img/1-480.jpg 480, img/1.jpg 800" data-src="{{ asset($sectionImg->gallery->gPath) }}" data-sub-html="<span>Location:{{ $sectionImg->gallery->gEnLocation }}</span><span> Photographer:{{ $sectionImg->gallery->gEnPhotographer }}</span>">
+                                <li class="large-12" style="{{ $counter != 0 ? 'display: none;' : ''}}" data-src="{{ asset($sectionImg->gallery->gPath) }}" data-sub-html="<span>Location:{{ $sectionImg->gallery->gEnLocation }}</span><span> Photographer:{{ $sectionImg->gallery->gEnPhotographer }}</span>">
                             @elseif($lan == 'ar')
-                                <li class="large-12" style="{{ $counter != 0 ? 'display: none;' : ''}}" data-responsive="img/1-375.jpg 375, img/1-480.jpg 480, img/1.jpg 800" data-src="{{ asset($sectionImg->gallery->gPath) }}" data-sub-html="<span>موقع:{{ $sectionImg->gallery->gArLocation }}</span><span> مصور فوتوغرافي:{{ $sectionImg->gallery->gArPhotographer }}</span>">
+                                <li class="large-12" style="{{ $counter != 0 ? 'display: none;' : ''}}" data-src="{{ asset($sectionImg->gallery->gPath) }}" data-sub-html="<span>موقع:{{ $sectionImg->gallery->gArLocation }}</span><span> مصور فوتوغرافي:{{ $sectionImg->gallery->gArPhotographer }}</span>">
                             @endif
                                     <a href="">
                                         <img style="height: 80vh;width: 100vw;background-size: cover;" class="background-cover img-responsive" src="{{ asset($sectionImg->gallery->gPath) }}">
@@ -511,94 +511,62 @@
                 </div>
             </div>
             <!--Light Box Image End-->
-        @endif
-    @endforeach
-    <!--News Section Start-->
-    <div class="grid-container element-distance-tb">
-        <div class="grid-x">
-            <div class="large-12 medium-12 small-12 padding-lr">
-                <div class="orbit" role="region" aria-label="Favorite Text Ever" data-orbit data-options="animInFromLeft:fade-in; animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight:fade-out;">
-                    <ul class="orbit-container">
-                        <li class="is-active orbit-slide">
-                            <div class="grid-x">
-                                <div class="large-6 medium-12 small-12 padding-lr">
-                                    <div class="docs-example-orbit-slide">
-                                        <div class="grid-x">
-                                            <div class="large-4 medium-6 small-12">
-                                                <img class="img-circle float-center img-circle-mb" src="{{ asset('pic/gallery/news/n_1.jpg') }}">
-                                            </div>
-                                            <div class="large-8 medium-6 small-12">
-                                                <h5>Hamadan logo was unveiled in 2018</h5>
-                                                <p class="two-line text-color text-justify element-distanse">
-                                                    According to the Hamedan Broadcasting Public Relations Department, the Hamadan logo of 2018 in the TV program with the presence of Haji Babayi, the representative of the people of Hamedan, Mayor of Sufi, Malmir, the head of the Iraqi Cultural Heritage and Iraqi Deputy Commander-in-Chief, Hamedan, was unveiled. In this program, Haji Babayi, a representative of the Hamedan people from the Voice and Television as a long-standing helper in promoting the culture and civilization of the province of Hamedan, added: "Hamadan, the capital of Asia's tourism in 2018, hosts two important events, thus establishing itself as a tourist destination The world introduces the national and provincial media as an important step in this international movement. In 2018 Hamedan will host the first phase of the Asian Tourism Ministers' Meeting, and this year, the UNWTO World Tourism Organization's round-table meeting is scheduled to take place in Hamadan so that these two events will be presented as an opportunity to promote the tourism capacity of the province. And it is necessary for public and private organizations to recognize the importance and value of it and to promote and introduce the tourist attractions of the province of Hamedan to the world. He continued: In this important event, the role of sound and television will be very important.
-                                                </p>
-                                                <a href="#" class="button primary">Read More</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+        @elseif($section->sectionType->stType == 'CONTENT_BRIEF_NEWS')
+            <!--News Section Start-->
+            <?php
+                    $newNews = \Hamedan_2018\News::getNewNews();
+            ?>
+            <div id="ploop" class="grid-container element-distance-tb">
+                <div class="grid-x">
+                    <div class="large-12 medium-12 small-12 padding-lr">
+                        <div class="orbit" role="region" aria-label="Favorite Text Ever" data-orbit data-options="animInFromLeft:fade-in; animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight:fade-out;">
+                            <ul class="orbit-container">
+                                @for($i = 0; $i < count($newNews) ;)
+                                    @if($i % 2 == 0)
+                                        <li class="is-active orbit-slide">
+                                            <div class="grid-x">
+                                    @endif
+                                            <div class="large-6 medium-12 small-12 padding-lr">
+                                                <div class="docs-example-orbit-slide">
+                                                    <div class="grid-x">
+                                                        <div class="large-4 medium-6 small-12">
+                                                            <img class="img-circle float-center img-circle-mb" src="{{ asset($newNews[$i]->newsImg[0]['gallery']->gPath) }}">
+                                                        </div>
+                                                        <div class="large-8 medium-6 small-12">
+                                                            @if($lan == 'fa')
+                                                                <h5 class="Shabnam-Bold">{{ $newNews[$i]->nFaSubject }}</h5>
+                                                            @elseif($lan == 'en')
+                                                                <h5 class="Roboto-Bold">{{ $newNews[$i]->nEnSubject }}</h5>
+                                                            @elseif($lan == 'ar')
+                                                                <h5 class="Al-Jazeera-Arabic-Bold">{{ $newNews[$i]->nArSubject }}</h5>
+                                                            @endif
 
-                                <div class="large-6 medium-12 small-12 padding-lr">
-                                    <div class="docs-example-orbit-slide">
-                                        <div class="grid-x">
-                                            <div class="large-4 medium-6 small-12">
-                                                <img class="img-circle float-center img-circle-mb" src="{{ asset('pic/gallery/news/n_1.jpg') }}">
+                                                            @if($lan == 'fa')
+                                                                    <p class="Shabnam-Light two-line text-color text-justify element-distanse">{{ $newNews[$i]->nFaBriefDescription }}</p>
+                                                                    <a href="{{ url($lan . '/news/info/' . $newNews[$i]->id) }}" class="button primary">بیشتر</a>
+                                                            @elseif($lan == 'en')
+                                                                    <p class="Raleway-Regular two-line text-color text-justify element-distanse">{{ $newNews[$i]->nEnBriefDescription }}</p>
+                                                                    <a href="{{ url('news/info/' . $newNews[$i]->id) }}" class="button primary">Read More</a>
+                                                            @elseif($lan == 'ar')
+                                                                    <p class="Al-Jazeera-Arabic-Regular two-line text-color text-justify element-distanse">{{ $newNews[$i]->nArBriefDescription }}</p>
+                                                                    <a href="{{ url($lan . '/news/info/' . $newNews[$i]->id) }}" class="button primary">اکثر</a>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="large-8 medium-6 small-12">
-                                                <h5>Hamadan logo was unveiled in 2018</h5>
-                                                <p class="two-line text-color text-justify element-distanse">
-                                                    According to the Hamedan Broadcasting Public Relations Department, the Hamadan logo of 2018 in the TV program with the presence of Haji Babayi, the representative of the people of Hamedan, Mayor of Sufi, Malmir, the head of the Iraqi Cultural Heritage and Iraqi Deputy Commander-in-Chief, Hamedan, was unveiled. In this program, Haji Babayi, a representative of the Hamedan people from the Voice and Television as a long-standing helper in promoting the culture and civilization of the province of Hamedan, added: "Hamadan, the capital of Asia's tourism in 2018, hosts two important events, thus establishing itself as a tourist destination The world introduces the national and provincial media as an important step in this international movement. In 2018 Hamedan will host the first phase of the Asian Tourism Ministers' Meeting, and this year, the UNWTO World Tourism Organization's round-table meeting is scheduled to take place in Hamadan so that these two events will be presented as an opportunity to promote the tourism capacity of the province. And it is necessary for public and private organizations to recognize the importance and value of it and to promote and introduce the tourist attractions of the province of Hamedan to the world. He continued: In this important event, the role of sound and television will be very important.
-                                                </p>
-                                                <a href="#" class="button primary">Read More</a>
+                                    <?php $i++; ?>
+                                    @if($i % 2 == 0)
                                             </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-
-                        <li class="is-active orbit-slide">
-                            <div class="grid-x">
-                                <div class="large-6 medium-12 small-12 padding-lr">
-                                    <div class="docs-example-orbit-slide">
-                                        <div class="grid-x">
-                                            <div class="large-4 medium-6 small-12">
-                                                <img class="img-circle float-center img-circle-mb" src="{{ asset('pic/gallery/news/n_2.jpg') }}">
-                                            </div>
-                                            <div class="large-8 medium-6 small-12">
-                                                <h5>Hamadan logo was unveiled in 2018</h5>
-                                                <p class="two-line text-color text-justify element-distanse">
-                                                    Hamadan so that these two events will be presented as an opportunity to promote the tourism capacity of the province. And it is necessary for public and private organizations to recognize the importance and value of it and to promote and introduce the tourist attractions of the province of Hamedan to the world. He continued: In this important event, the role of sound and television will be very important.
-                                                </p>
-                                                <a href="#" class="button primary">Read More</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="large-6 medium-12 small-12 padding-lr">
-                                    <div class="docs-example-orbit-slide">
-                                        <div class="grid-x">
-                                            <div class="large-4 medium-6 small-12">
-                                                <img class="img-circle float-center img-circle-mb" src="{{ asset('pic/gallery/news/n_2.jpg') }}">
-                                            </div>
-                                            <div class="large-8 medium-6 small-12">
-                                                <h5>Hamadan logo was unveiled in 2018</h5>
-                                                <p class="two-line text-color text-justify element-distanse">
-                                                    Hamadan so that these two events will be presented as an opportunity to promote the tourism capacity of the province. And it is necessary for public and private organizations to recognize the importance and value of it and to promote and introduce the tourist attractions of the province of Hamedan to the world. He continued: In this important event, the role of sound and television will be very important.
-                                                </p>
-                                                <a href="#" class="button primary">Read More</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-
-                    </ul>
+                                        </li>
+                                    @endif
+                                @endfor
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <!--News Section End-->
+            <!--News Section End-->
+        @endif
+    @endforeach
 @stop
