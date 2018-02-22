@@ -467,7 +467,19 @@ h1,h2,h3,h4,h5,h6{
     height: 3em;
     overflow: hidden;
 }
+.background-cover{
+    object-fit: cover;
 
+}
+.img-circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.3);
+}
+.img-circle-mb{
+    margin-bottom: 15px;
+}
 /*Content Image Slider*/
 .header h1{
     margin-bottom: 0;
@@ -678,10 +690,6 @@ ul.social-icons {
     background-color: #00aced;
 }
 
-.background-cover{
-    object-fit: cover;
-
-}
 /*Social Networks*/
 
 /*///////////////////////////////////////////////////////////////////*/
@@ -736,6 +744,7 @@ ul.social-icons {
     background-image: linear-gradient(-180deg, rgba(0,0,0, 0) 53%, #000 100%);
 
 }
+
 .orbit-previous {
     position: absolute;
     top: 10%;
@@ -1029,6 +1038,44 @@ ul.social-icons {
         margin-bottom: 12%;
         font-size: 0.5em;
     }
+    .section-height{
+        height: 100%;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .orbit-bullets-hide{
+        display: none;
+    }
+    .orbit-bullets-show{
+        display: block;
+    }
+    .orbit-bullets {
+        position: relative;
+        margin-top: 0.8rem;
+        margin-bottom: 0.8rem;
+        height: 02rem;
+    }
+    [data-whatinput='mouse'] .orbit-bullets {
+        outline: 0;
+    }
+    .orbit-bullets button {
+        width: 0.9rem;
+        height: 0.9rem;
+        margin: 0.1rem;
+        border-radius: 50%;
+        background-color:rgba(255, 255, 255, 0.3);
+    }
+    .orbit-bullets button:hover {
+        background-color: #8a8a8a;
+    }
+
+    .orbit-bullets button.is-active {
+        height: 0.9rem;
+        background-color: #FFFFFF;
+    }
+
+
 }
 
 /*-------------------------------Media Queries------------------------------------*/

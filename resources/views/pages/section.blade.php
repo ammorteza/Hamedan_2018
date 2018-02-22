@@ -513,4 +513,92 @@
             <!--Light Box Image End-->
         @endif
     @endforeach
+    <!--News Section Start-->
+    <div class="grid-container element-distance-tb">
+        <div class="grid-x">
+            <div class="large-12 medium-12 small-12 padding-lr">
+                <div class="orbit" role="region" aria-label="Favorite Text Ever" data-orbit data-options="animInFromLeft:fade-in; animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight:fade-out;">
+                    <ul class="orbit-container">
+                        <li class="is-active orbit-slide">
+                            <div class="grid-x">
+                                <div class="large-6 medium-12 small-12 padding-lr">
+                                    <div class="docs-example-orbit-slide">
+                                        <div class="grid-x">
+                                            <div class="large-4 medium-6 small-12">
+                                                <img class="img-circle float-center img-circle-mb" src="{{ asset('pic/gallery/news/n_1.jpg') }}">
+                                            </div>
+                                            <div class="large-8 medium-6 small-12">
+                                                <h5>Hamadan logo was unveiled in 2018</h5>
+                                                <p class="two-line text-color text-justify element-distanse">
+                                                    According to the Hamedan Broadcasting Public Relations Department, the Hamadan logo of 2018 in the TV program with the presence of Haji Babayi, the representative of the people of Hamedan, Mayor of Sufi, Malmir, the head of the Iraqi Cultural Heritage and Iraqi Deputy Commander-in-Chief, Hamedan, was unveiled. In this program, Haji Babayi, a representative of the Hamedan people from the Voice and Television as a long-standing helper in promoting the culture and civilization of the province of Hamedan, added: "Hamadan, the capital of Asia's tourism in 2018, hosts two important events, thus establishing itself as a tourist destination The world introduces the national and provincial media as an important step in this international movement. In 2018 Hamedan will host the first phase of the Asian Tourism Ministers' Meeting, and this year, the UNWTO World Tourism Organization's round-table meeting is scheduled to take place in Hamadan so that these two events will be presented as an opportunity to promote the tourism capacity of the province. And it is necessary for public and private organizations to recognize the importance and value of it and to promote and introduce the tourist attractions of the province of Hamedan to the world. He continued: In this important event, the role of sound and television will be very important.
+                                                </p>
+                                                <a href="#" class="button primary">Read More</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="large-6 medium-12 small-12 padding-lr">
+                                    <div class="docs-example-orbit-slide">
+                                        <div class="grid-x">
+                                            <div class="large-4 medium-6 small-12">
+                                                <img class="img-circle float-center img-circle-mb" src="{{ asset('pic/gallery/news/n_1.jpg') }}">
+                                            </div>
+                                            <div class="large-8 medium-6 small-12">
+                                                <h5>Hamadan logo was unveiled in 2018</h5>
+                                                <p class="two-line text-color text-justify element-distanse">
+                                                    According to the Hamedan Broadcasting Public Relations Department, the Hamadan logo of 2018 in the TV program with the presence of Haji Babayi, the representative of the people of Hamedan, Mayor of Sufi, Malmir, the head of the Iraqi Cultural Heritage and Iraqi Deputy Commander-in-Chief, Hamedan, was unveiled. In this program, Haji Babayi, a representative of the Hamedan people from the Voice and Television as a long-standing helper in promoting the culture and civilization of the province of Hamedan, added: "Hamadan, the capital of Asia's tourism in 2018, hosts two important events, thus establishing itself as a tourist destination The world introduces the national and provincial media as an important step in this international movement. In 2018 Hamedan will host the first phase of the Asian Tourism Ministers' Meeting, and this year, the UNWTO World Tourism Organization's round-table meeting is scheduled to take place in Hamadan so that these two events will be presented as an opportunity to promote the tourism capacity of the province. And it is necessary for public and private organizations to recognize the importance and value of it and to promote and introduce the tourist attractions of the province of Hamedan to the world. He continued: In this important event, the role of sound and television will be very important.
+                                                </p>
+                                                <a href="#" class="button primary">Read More</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="is-active orbit-slide">
+                            <div class="grid-x">
+                                <div class="large-6 medium-12 small-12 padding-lr">
+                                    <div class="docs-example-orbit-slide">
+                                        <div class="grid-x">
+                                            <div class="large-4 medium-6 small-12">
+                                                <img class="img-circle float-center img-circle-mb" src="{{ asset('pic/gallery/news/n_2.jpg') }}">
+                                            </div>
+                                            <div class="large-8 medium-6 small-12">
+                                                <h5>Hamadan logo was unveiled in 2018</h5>
+                                                <p class="two-line text-color text-justify element-distanse">
+                                                    Hamadan so that these two events will be presented as an opportunity to promote the tourism capacity of the province. And it is necessary for public and private organizations to recognize the importance and value of it and to promote and introduce the tourist attractions of the province of Hamedan to the world. He continued: In this important event, the role of sound and television will be very important.
+                                                </p>
+                                                <a href="#" class="button primary">Read More</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="large-6 medium-12 small-12 padding-lr">
+                                    <div class="docs-example-orbit-slide">
+                                        <div class="grid-x">
+                                            <div class="large-4 medium-6 small-12">
+                                                <img class="img-circle float-center img-circle-mb" src="{{ asset('pic/gallery/news/n_2.jpg') }}">
+                                            </div>
+                                            <div class="large-8 medium-6 small-12">
+                                                <h5>Hamadan logo was unveiled in 2018</h5>
+                                                <p class="two-line text-color text-justify element-distanse">
+                                                    Hamadan so that these two events will be presented as an opportunity to promote the tourism capacity of the province. And it is necessary for public and private organizations to recognize the importance and value of it and to promote and introduce the tourist attractions of the province of Hamedan to the world. He continued: In this important event, the role of sound and television will be very important.
+                                                </p>
+                                                <a href="#" class="button primary">Read More</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--News Section End-->
 @stop
