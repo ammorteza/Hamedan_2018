@@ -32,7 +32,7 @@
                 <div class="large-12 medium-12">
                     <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit data-options="animInFromLeft:fade-in; animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight:fade-out;" data-timer-delay="10000">
                         <ul class="orbit-container">
-                            <div class="title-bar" data-responsive-toggle="responsive-menu" data-hide-for="medium">
+                            <div style="z-index: 9999;" class="title-bar" data-responsive-toggle="responsive-menu" data-hide-for="medium">
                                 <button class="menu-icon" type="button" data-toggle="responsive-menu"></button>
                                 <div class="title-bar-title">منو</div>
                             </div>
@@ -69,7 +69,7 @@
                                 </div>--}}
                                 @foreach($pageInfo->pageHeaderImg as $pageImg)
                                     <li class="is-active orbit-slide">
-                                        <img class="background-cover orbit-image {{ $pageInfo->headerType->phtType == 'SIMPLE' ? 'top-slider-simple' : 'top-slider my-zoom-out' }}" src="{{ asset($pageImg->image->gPath) }}" alt="Space">
+                                        <img  class="background-cover orbit-image {{ $pageInfo->headerType->phtType == 'SIMPLE' ? 'top-slider-simple' : 'top-slider my-zoom-out' }}" src="{{ asset($pageImg->image->gPath) }}" alt="Space">
                                         @if ($pageInfo->headerType->phtType == 'SIMPLE')
                                             <figcaption class="orbit-caption align-center my-text-shadow-effect">
                                                 @if($lan == 'fa')
@@ -129,7 +129,7 @@
                         </ul>
                         @if($pageInfo->headerType->phtType == 'ADVANCE')
                             <div style="margin-top: -19%;" class="top-slider-grid-container">
-                                <nav class="orbit-bullets">
+                                <nav class="orbit-bullets orbit-bullets-hide">
                                     <div style="margin-top:15vh;" class="grid-x">
                                         <?php $i = 0; ?>
                                         @foreach($pageInfo->pageHeaderImg as $pageImg)
@@ -148,8 +148,14 @@
                                             <?php $i++; ?>
                                         @endforeach
                                     </div>
-                            </nav>
-                        </div>
+                                </nav>
+                                <nav style="margin: 0 auto;" class="orbit-bullets  orbit-bullets-show align-center">
+                                    <button class="is-active" data-slide="0"><span class="show-for-sr">First slide details.</span><span class="show-for-sr">Current Slide</span></button>
+                                    <button data-slide="1"><span class="show-for-sr">Second slide details.</span></button>
+                                    <button data-slide="2"><span class="show-for-sr">Third slide details.</span></button>
+                                    <button data-slide="3"><span class="show-for-sr">Fourth slide details.</span></button>
+                                </nav>
+                            </div>
                         <div class="grid-container">
                             <div class="grid-x">
                                 <div style="margin-top: 2px;"  class="large-12 medium-12 small-12">
@@ -302,6 +308,14 @@
             setTimeout(function(){
                 $('.my-zoom-out').removeClass('my-zoom-out');
             },10000);
+        </script>
+
+        <script>
+            var x = window.matchMedia("(min-width: 700px)")
+            setTimeout(function(){
+                $('.my-zoom-out').removeClass('my-zoom-out');
+            },0);
+            x.addListener(setTimeout)
         </script>
 
         <!--Remove zoom out class-->
