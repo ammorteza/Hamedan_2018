@@ -1,0 +1,182 @@
+@font-face {
+    font-family: 'BYekan';
+    src: url('../fonts/BYekan.eot?#') format('eot'), /* IE6–8 */ url('../fonts/BYekan.woff') format('woff'), /* FF3.6+, IE9, Chrome6+, Saf5.1+*/ url('../fonts/BYekan.ttf') format('truetype');  /* Saf3—5, Chrome4+, FF3.5, Opera 10+ */
+}
+@font-face {
+    font-family: 'BZar';
+    src: url('../fonts/BZar.eot?#') format('eot'), /* IE6–8 */
+    url('../fonts/BZar.woff') format('woff'), /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+    url('../fonts/BZar.ttf') format('truetype');  /* Saf3—5, Chrome4+, FF3.5, Opera 10+ */
+}
+@font-face {
+    font-family: 'BTitrBold';
+    src: url('../fonts/BTitrBold.eot?#') format('eot'),  /* IE6–8 */
+    url('../fonts/BTitrBold.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+    url('../fonts/BTitrBold.ttf') format('truetype');  /* Saf3—5, Chrome4+, FF3.5, Opera 10+ */
+}
+@font-face {
+    font-family: 'BNazanin';
+    src: url('../fonts/BNazanin.eot?#') format('eot'),  /* IE6–8 */
+    url('../fonts/BNazanin.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+    url('../fonts/BNazanin.ttf') format('truetype');  /* Saf3—5, Chrome4+, FF3.5, Opera 10+ */
+}
+
+@font-face {
+    font-family: 'Roboto-Thin';
+    src: url('../fonts/Roboto-Thin.ttf') format('truetype'); /* IE6–8 */
+}
+
+@font-face {
+    font-family: 'Roboto-Bold';
+    src: url('../fonts/Roboto-Bold.ttf') format('truetype'); /* IE6–8 */
+}
+@font-face {
+    font-family: 'Lato-Light';
+    src: url('../fonts/Lato-Light.ttf') format('truetype'); /* IE6–8 */
+}
+@font-face {
+    font-family: 'Roboto-Regular';
+    src: url('../fonts/Roboto-Regular.ttf') format('truetype'); /* IE6–8 */
+}
+
+@font-face {
+    font-family: 'Mj-Flow-Reqular';
+    src: url('../fonts/mj-flow-regular.ttf') format('truetype'); /* IE6–8 */
+}
+
+@font-face {
+    font-family: 'Duel-Regular';
+    src: url('../fonts/duel-regular.ttf') format('truetype'); /* IE6–8 */
+}
+
+@font-face {
+    font-family: 'Emad-Nora-Arabic';
+    src: url('../fonts/emad-nora-arabic.ttf') format('truetype'); /* IE6–8 */
+}
+
+@font-face {
+    font-family: 'Al-Jazeera-Arabic-Bold';
+    src: url('../fonts/Al-Jazeera-Arabic-Bold.ttf') format('truetype'); /* IE6–8 */
+}
+
+@font-face {
+    font-family: 'Al-Jazeera-Arabic-Regular';
+    src: url('../fonts/Al-Jazeera-Arabic-Regular.ttf') format('truetype'); /* IE6–8 */
+}
+
+@font-face {
+    font-family: 'Raleway-Regular';
+    src: url('../fonts/Raleway-Regular.ttf') format('truetype'); /* IE6–8 */
+}
+
+@font-face {
+    font-family: 'Entezar-Zohoor';
+    src: url('../fonts/entezar-zohoor.ttf') format('truetype'); /* IE6–8 */
+}
+
+@font-face {
+    font-family: 'Mj-Extender';
+    src: url('../fonts/mj-extender.ttf') format('truetype'); /* IE6–8 */
+}
+
+@font-face {
+    font-family: 'Shabnam-Bold';
+    src: url('../fonts/Shabnam-Bold.ttf') format('truetype'); /* IE6–8 */
+}
+
+@font-face {
+    font-family: 'Shabnam-Light';
+    src: url('../fonts/Shabnam-Light.ttf') format('truetype'); /* IE6–8 */
+}
+
+.Shabnam-Light {
+    font-family: Shabnam-Light, Arial, Helvetica, sans-serif;
+}
+
+.Shabnam-Bold {
+    font-family: Shabnam-Bold, Arial, Helvetica, sans-serif;
+}
+
+.Mj-Extender {
+    font-family: Mj-Extender, Arial, Helvetica, sans-serif;
+}
+
+.Entezar-Zohoor {
+    font-family: Entezar-Zohoor, Arial, Helvetica, sans-serif;
+}
+
+.Raleway-Regular {
+    font-family: Raleway-Regular, Arial, Helvetica, sans-serif;
+}
+
+.Al-Jazeera-Arabic-Regular {
+    font-family: Al-Jazeera-Arabic-Regular, Arial, Helvetica, sans-serif;
+}
+
+.Al-Jazeera-Arabic-Bold {
+    font-family: Al-Jazeera-Arabic-Bold, Arial, Helvetica, sans-serif;
+}
+
+.Emad-Nora-Arabic {
+    font-family: Emad-Nora-Arabic, Arial, Helvetica, sans-serif;
+}
+
+.Duel-Regular {
+    font-family: Duel-Regular, Arial, Helvetica, sans-serif;
+}
+
+.Mj-Flow-Reqular {
+    font-family: Mj-Flow-Reqular, Arial, Helvetica, sans-serif;
+}
+
+.BYekan {
+    font-family: BYekan, Arial, Helvetica, sans-serif;
+}
+
+.BNazanin {
+    font-family: BNazanin, Arial, Helvetica, sans-serif;
+}
+.BZar {
+    font-family: BZar, Arial, Helvetica, sans-serif;
+}
+.BTitrBold {
+    font-family: BTitrBold, Arial, Helvetica, sans-serif;
+}
+.BNazanin {
+    font-family: BNazanin, Arial, Helvetica, sans-serif;
+}
+.RobotoLight {
+    font-family: Roboto-Thin, Arial, Helvetica, sans-serif;
+}
+.Roboto-Bold {
+    font-family: Roboto-Bold, Arial, Helvetica, sans-serif;
+}
+
+.Lato-Light {
+    font-family: Lato-Light, Arial, Helvetica, sans-serif;
+}
+
+.Roboto-Regular {
+    font-family: Roboto-Regular, Arial, Helvetica, sans-serif;
+}
+
+
+.satisfy {
+    font-family: 'Satisfy', cursive;
+}
+.poiret-one {
+    font-family: 'Poiret One', cursive;
+}
+.cabin {
+    font-family: 'Cabin', cursive;
+}
+.wire-one {
+    font-family: 'Wire One', sans-serif;
+}
+.merienda {
+    font-family: 'Merienda', cursive;
+}
+.Roboto {
+    font-family: 'Roboto', cursive;
+}
+
