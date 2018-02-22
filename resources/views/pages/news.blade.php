@@ -135,20 +135,31 @@
                 @endif
                 <!-Pagination End--->
             </div>
-            @if($lan == 'fa')
-                <div style="padding-right: 100px;margin-top:440px;" class="large-4 medium-6 small-12" data-sticky-container>
-            @elseif($lan == 'en')
-                <div style="padding-left: 100px;margin-top:440px;" class="large-4 medium-6 small-12" data-sticky-container>
-            @endif
-                <div class="grid-x" data-sticky data-top-anchor="advTop:top" data-btm-anchor="advBottom:bottom">
-                    <div style="position: relative;display: inline-block;top:40vh;text-align: center;z-index: 50;" class="large-12">
-                        <h5 class="my-text-shadow-effect white-color">Alisadr Cave</h5>
-                        <a href="" class="button primary element-distanse">Read More</a>
-                    </div>
-                    <div class="large-12">
-                        <img style="height: 75vh;" class="background-cover" src="{{ asset('pic/gallery/7.jpg') }}">
+            @if($advertise != null)
+                @if($lan == 'fa')
+                    <div style="padding-right: 100px;margin-top:440px;" class="large-4 medium-6 small-12" data-sticky-container>
+                @elseif($lan == 'en')
+                    <div style="padding-left: 100px;margin-top:440px;" class="large-4 medium-6 small-12" data-sticky-container>
+                @endif
+                    <div class="grid-x" data-sticky data-top-anchor="advTop:top" data-btm-anchor="advBottom:bottom">
+                        <div style="position: relative;display: inline-block;top:40vh;text-align: center;z-index: 50;" class="large-12">
+                            @if($lan == 'fa')
+                                <h5 class="my-text-shadow-effect white-color">{{ $advertise->aFaSubject }}</h5>
+                                <a href="{{ $advertise->aLink }}" class="button primary element-distanse">{{ $advertise->aLinkFaTitle }}</a>
+                            @elseif($lan == 'en')
+                                <h5 class="my-text-shadow-effect white-color">{{ $advertise->aEnSubject }}</h5>
+                                <a href="{{ $advertise->aLink }}" class="button primary element-distanse">{{ $advertise->aLinkEnTitle }}</a>
+                            @elseif($lan == 'ar')
+                                <h5 class="my-text-shadow-effect white-color">{{ $advertise->aArSubject }}</h5>
+                                <a href="{{ $advertise->aLink }}" class="button primary element-distanse">{{ $advertise->aLinkArTitle }}</a>
+                            @endif
+                        </div>
+                        <div class="large-12">
+                            <img style="height: 75vh;" class="background-cover" src="{{ asset($advertise->gallery->gPath) }}">
+                        </div>
                     </div>
                 </div>
+            @endif
             </div>
         </div>
     </div>

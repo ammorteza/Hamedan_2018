@@ -24,11 +24,6 @@ class PageController extends Controller
         return $this->renderPage($slug , 'ar');
     }
 
-/*    public function getPageWithId($pageId , $slug = null)
-    {
-        echo $pageId . ' - ' . $slug;
-    }*/
-
     private function renderPage($slug , $lan)
     {
         $pageInfo = Page::with('pageHeaderImg.image' , 'headerType' , 'breadCrumb.refPage')

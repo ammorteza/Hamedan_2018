@@ -28,7 +28,7 @@ class NewsController extends Controller
     private function renderNews($lan)
     {
         if (Advertise::where('aState' , '=' , 1)->count() > 0)
-            $advertise = Advertise::where('aState' , '=' , 1)->get()->random(1);
+            $advertise = Advertise::where('aState' , '=' , 1)->with('gallery')->first();
         else
             $advertise = null;
         $newsSlider = NewsSlider::with('gallery')->where('nsState' , '=' , 1)->orderBy('nsOrder' , 'DESC')->get();
@@ -58,7 +58,7 @@ class NewsController extends Controller
     private function renderNewsInfo($lan , $nId)
     {
         if (Advertise::where('aState' , '=' , 1)->count() > 0)
-            $advertise = Advertise::where('aState' , '=' , 1)->get()->random(1);
+            $advertise = Advertise::where('aState' , '=' , 1)->with('gallery')->first();
         else
             $advertise = null;
         News::find($nId)->increment('nViewedCount');
