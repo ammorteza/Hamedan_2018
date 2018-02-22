@@ -1043,7 +1043,12 @@ ul.social-icons {
     }
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (min-width: 900px) {
+    .orbit-bullets-show {
+        display: none;
+    }
+}
+@media only screen and (max-width: 900px) {
     .orbit-bullets-hide{
         display: none;
     }
@@ -1052,7 +1057,7 @@ ul.social-icons {
     }
     .orbit-bullets {
         position: relative;
-        margin-top: 0.8rem;
+        margin-top: 1.5rem;
         margin-bottom: 0.8rem;
         height: 02rem;
     }
@@ -1075,7 +1080,46 @@ ul.social-icons {
         background-color: #FFFFFF;
     }
 
-
 }
+
+@media only screen and (max-width: 650px) {
+    .jumper{
+        display: none;
+    }
+    .top-menu {
+        font-size: small;
+        font-weight: normal;
+        color: #FFFFFF;
+    }
+}
+@media only screen and (max-width: 500px) {
+    .top-slider-header {
+        font-size: 2.1em;
+        font-weight: bold;
+        margin-bottom: 0px;
+    }
+    .top-slider-description-btn{
+        font-size: 1.5em;
+    }
+    .orbit-caption{
+        margin-bottom: 18%;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .top-slider-description{
+        display: none;
+    }
+    .top-slider-header {
+        font-size: 1.7em;
+        margin-bottom: 75%;
+        font-weight: bold;
+        margin-bottom: 0px;
+    }
+    .top-slider-description-btn{
+        font-size: 1em;
+    }
+}
+
 
 /*-------------------------------Media Queries------------------------------------*/

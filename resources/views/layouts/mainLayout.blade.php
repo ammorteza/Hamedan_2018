@@ -149,7 +149,7 @@
                                         @endforeach
                                     </div>
                                 </nav>
-                                <nav style="margin: 0 auto;" class="orbit-bullets  orbit-bullets-show align-center">
+                                <nav class="orbit-bullets  orbit-bullets-show center-el element-distanse">
                                     <button class="is-active" data-slide="0"><span class="show-for-sr">First slide details.</span><span class="show-for-sr">Current Slide</span></button>
                                     <button data-slide="1"><span class="show-for-sr">Second slide details.</span></button>
                                     <button data-slide="2"><span class="show-for-sr">Third slide details.</span></button>
