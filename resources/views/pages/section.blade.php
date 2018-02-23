@@ -516,7 +516,7 @@
             <?php
                     $newNews = \Hamedan_2018\News::getNewNews();
             ?>
-            <div id="ploop" class="grid-container element-distance-tb">
+            <div id="ploop" style="padding-top: 150px" class="grid-container">
                 <div class="grid-x">
                     <div class="large-12 medium-12 small-12 padding-lr">
                         <div class="orbit" role="region" aria-label="Favorite Text Ever" data-orbit data-options="animInFromLeft:fade-in; animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight:fade-out;">
