@@ -569,4 +569,85 @@
             <!--News Section End-->
         @endif
     @endforeach
+
+
+    <!--Video Gallery Sections End-->
+    {{--<div class="grid-container">
+        <div class="grid-x">
+            <div class="large-12 medium-12 small-12">
+                <div style="display:none;" id="video1">
+                    <video class="lg-video-object lg-html5" controls="" preload="none">
+                        <source src="{{ asset('pic/video/2.mp4') }}" type="video/mp4">
+                        Your browser does not support HTML5 video.
+                    </video>
+                </div>
+                <div style="display:none;" id="video2">
+                    <video class="lg-video-object lg-html5" controls="" preload="none">
+                        <source src="https://sachinchoolur.github.io/lightGallery/static/videos/video2.mp4" type="video/mp4">
+                        Your browser does not support HTML5 video.
+                    </video>
+                </div>
+                <div style="display:none;" id="video3">
+                    <video class="lg-video-object lg-html5" controls="" preload="none">
+                        <source src="https://sachinchoolur.github.io/lightGallery/static/videos/video3.mp4" type="video/mp4">
+                        Your browser does not support HTML5 video.
+                    </video>
+                </div>
+                <div style="display:none;" id="video4">
+                    <video class="lg-video-object lg-html5" controls="" preload="none">
+                        <source src="https://sachinchoolur.github.io/lightGallery/static/videos/video4.mp4" type="video/mp4">
+                        Your browser does not support HTML5 video.
+                    </video>
+                </div>
+
+                <div class="cont">
+                    <div class="page-head">
+                        <div class="demo-gallery">
+                            <div class="grid-x" id="lightgallery">
+                                <div class="large-3 medium-6 small-12 padding-lr video" data-html="#video2"
+                                    data-poster="https://sachinchoolur.github.io/lightGallery/static/img/videos/y-video1-cover.jpg">
+                                    <a href="">
+                                        <img class="img-responsive" src="https://sachinchoolur.github.io/lightGallery/static/img/thumb-v-y-1.jpg">
+                                        <div class="demo-gallery-poster">
+                                            <img src="https://sachinchoolur.github.io/lightGallery/static/img/play-button.png">
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="large-3 medium-6 small-12 padding-lr video" data-html="#video1"
+                                    data-poster="https://sachinchoolur.github.io/lightGallery/static/img/videos/y-video2-cover.jpg">
+                                    <a href="">
+                                        <img class="img-responsive" src="https://sachinchoolur.github.io/lightGallery/static/img/thumb-v-y-2.jpg">
+                                        <div class="demo-gallery-poster">
+                                            <img src="https://sachinchoolur.github.io/lightGallery/static/img/play-button.png">
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="large-3 medium-6 small-12 padding-lr video" data-html="#video3"
+                                    data-poster="https://sachinchoolur.github.io/lightGallery/static/img/videos/v-video1-cover.jpg">
+                                    <a href="">
+                                        <img class="img-responsive" src="https://sachinchoolur.github.io/lightGallery/static/img/thumb-v-v-1.jpg">
+                                        <div class="demo-gallery-poster">
+                                            <img src="https://sachinchoolur.github.io/lightGallery/static/img/play-button.png">
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="large-3 medium-6 small-12 padding-lr video" data-html="#video4"
+                                    data-poster="https://sachinchoolur.github.io/lightGallery/static/img/videos/v-video2-cover.jpg">
+                                    <a href="">
+                                        <img class="img-responsive" src="https://sachinchoolur.github.io/lightGallery/static/img/thumb-v-v-2.jpg">
+                                        <div class="demo-gallery-poster">
+                                            <img src="https://sachinchoolur.github.io/lightGallery/static/img/play-button.png">
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>--}}
+
+
+
+    <!--Video Gallery Sections Start-->
 @stop
