@@ -24,7 +24,7 @@
             <div class="grid-x">
                 <div style="z-index: 99;" class="large-12">
                     <div data-sticky-container>
-                        <div class="title-bar news-top-menu" data-sticky data-options="marginTop:0;">
+                        <div class="title-bar news-top-menu  element-dir" data-sticky data-options="marginTop:0;">
                             <div class="title-bar-left">
                                 <ul class="dropdown menu align-right" data-dropdown-menu>
                                     @foreach($mainMenus as $mainMenu)
@@ -317,6 +317,13 @@
         <!--News Image Slider init-->
         <script type="text/javascript">jssor_1_slider_init();</script>
         <!--News Image Slider init-->
+        <!--Video Gallery start-->
+        <script>
+            $('#video-gallery').lightGallery({
+                videojs: true
+            });
+        </script>
+        <!--Video Gallery End-->
 
     </body>
 </html>

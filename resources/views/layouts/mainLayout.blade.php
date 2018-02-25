@@ -32,7 +32,7 @@
                 <div class="large-12 medium-12">
                     <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit data-options="animInFromLeft:fade-in; animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight:fade-out;" data-timer-delay="10000">
                         <ul class="orbit-container">
-                            <div style="z-index: 9999;" class="title-bar" data-responsive-toggle="responsive-menu" data-hide-for="medium">
+                            <div style="z-index: 9999;position: absolute; background-color: #0a0a0a" class="title-bar element-dir" data-responsive-toggle="responsive-menu" data-hide-for="medium">
                                 <button class="menu-icon" type="button" data-toggle="responsive-menu"></button>
                                 <div class="title-bar-title">منو</div>
                             </div>
@@ -266,6 +266,10 @@
                                 <img class="float-center"  src="{{ asset('pic/footer/ostan-footer.png') }}" alt="استانداری همدان" width="60px" height="60px">
                                 <p class="logo-slider withe-color my-text-shadow-effect">استانداری همدان</p>
                             </div>
+                            <div class="large-1 medium-6 small-12">
+                                <img class="float-center"  src="{{ asset('pic/footer/shahrdari-footer.png') }}" alt="استانداری همدان" width="60px" height="60px">
+                                <p class="logo-slider withe-color my-text-shadow-effect">شهرداری همدان</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -296,6 +300,8 @@
         <script src="{{ asset('js/light_box/lg-zoom.js') }}"></script><!--Content Image slider-->
         <script src="{{ asset('js/light_box/lg-hash.js') }}"></script><!--Content Image slider-->
         <script src="{{ asset('js/light_box/lg-share.js') }}"></script><!--Content Image slider-->
+        <script src="{{ asset('js/light_box/lg-video.js') }}"></script><!--Content Image slider-->
+        <script src="{{ asset('js/light_box/froogaloop2.min.js') }}"></script><!--Content Image slider-->
         <!--Light Box Image slider-->
 
 
@@ -310,14 +316,14 @@
             },10000);
         </script>
 
-        <script>
+        {{--<script>
             var x = window.matchMedia("(min-width: 700px)")
             setTimeout(function(){
                 $('.my-zoom-out').removeClass('my-zoom-out');
             },0);
             x.addListener(setTimeout)
         </script>
-
+--}}
         <!--Remove zoom out class-->
         <script type="text/javascript">
             $(document).ready( function() {
@@ -382,7 +388,9 @@
 
         <!--LightBox gallery Start-->
             <script>
-                lightGallery(document.getElementById('lightgallery'));
+                $(document).ready(function() {
+                    $('#lightgallery').lightGallery();
+                });
             </script>
         <!--LightBox gallery End-->
 
