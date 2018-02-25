@@ -42,7 +42,7 @@ class NewsController extends Controller
     /////////////////// news info ///////////////////
     public function newsInfo($nId)
     {
-        return $this->renderNewsInfo('en' , $nId);
+        return $this->renderNewsInfo('fa' , $nId);
     }
 
     public function newsInfo_fa($nId)
@@ -52,7 +52,7 @@ class NewsController extends Controller
 
     public function newsInfo_ar($nId)
     {
-        return $this->renderNewsInfo('ar' , $nId);
+        return $this->renderNewsInfo('fa' , $nId);
     }
 
     private function renderNewsInfo($lan , $nId)

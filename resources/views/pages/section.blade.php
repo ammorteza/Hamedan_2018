@@ -357,7 +357,7 @@
                             @endif
                         @endif
                     </div>
-                    <div style="" class="large-6 medium-12 small-12 padding-lr-txt-img-r">
+                    <div style="padding-left: 50px" class="large-6 medium-12 small-12 padding-lr-txt-img-r">
                         @if($lan == 'fa')
                             <h3 class="Shabnam-Bold">{{ $section->sFaSubject }}</h3>
                         @elseif($lan == 'en')
@@ -479,7 +479,13 @@
                 <div style="margin: 30px 0px 30px 0px;" class="grid-x">
                     @foreach($section->sectionImg as $sectionImg)
                         <div class="large-3 medium-6 small-12 padding-lr">
-                            <img class="image-shadow-effect" src="{{ asset($sectionImg->gallery->gPath) }}">
+                            @if ($sectionImg->siLink != null)
+                                <a href="{{ url($lan != 'en' ? $lan . $sectionImg->siLink : $sectionImg->siLink) }}">
+                                    <img class="image-shadow-effect" src="{{ asset($sectionImg->gallery->gPath) }}">
+                                </a>
+                            @else
+                                <img class="image-shadow-effect" src="{{ asset($sectionImg->gallery->gPath) }}">
+                            @endif
                         </div>
                     @endforeach
                 </div>
