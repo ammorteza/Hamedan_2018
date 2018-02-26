@@ -102,30 +102,32 @@
                 <div class="large-12 medium-12 element-distanse">
                     <div class="grid-x">
                         @foreach($mainMenus as $mainMenu)
-                            <div class="large-3 medium-3 small-12 footer-menu">
-                                @if($lan == 'fa')
-                                    <a href=""><h6 class="menu-header">{{ $mainMenu->mmFaSubject }}</h6></a>
-                                    <ul>
-                                        @foreach(\Hamedan_2018\SubMenu::getAllSubMenuWithMainMenuId($mainMenu->id) as $subMenu)
-                                            <li><a href="{{ url($lan . $subMenu->smPageLink) }}">{{ $subMenu->smFaSubject }}</a></li>
-                                        @endforeach
-                                    </ul>
-                                @elseif($lan == 'en')
-                                    <a href=""><h6 class="menu-header cabin">{{ $mainMenu->mmEnSubject }}</h6></a>
-                                    <ul>
-                                        @foreach(\Hamedan_2018\SubMenu::getAllSubMenuWithMainMenuId($mainMenu->id) as $subMenu)
-                                            <li><a class="cabin" href="{{ url($subMenu->smPageLink . '') }}">{{ $subMenu->smEnSubject }}</a></li>
-                                        @endforeach
-                                    </ul>
-                                @elseif($lan == 'ar')
-                                    <a href=""><h6 class="menu-header">{{ $mainMenu->mmArSubject }}</h6></a>
-                                    <ul>
-                                        @foreach(\Hamedan_2018\SubMenu::getAllSubMenuWithMainMenuId($mainMenu->id) as $subMenu)
-                                            <li><a href="{{ url($lan . $subMenu->smPageLink) }}">{{ $subMenu->smArSubject }}</a></li>
-                                        @endforeach
-                                    </ul>
-                                @endif
-                            </div>
+                            @if(count($mainMenu->subMenu) > 0)
+                                <div class="large-3 medium-3 small-12 footer-menu">
+                                    @if($lan == 'fa')
+                                        <h6 class="menu-header">{{ $mainMenu->mmFaSubject }}</h6>
+                                        <ul>
+                                            @foreach(\Hamedan_2018\SubMenu::getAllSubMenuWithMainMenuId($mainMenu->id) as $subMenu)
+                                                <li><a href="{{ url($lan . $subMenu->smPageLink) }}">{{ $subMenu->smFaSubject }}</a></li>
+                                            @endforeach
+                                        </ul>
+                                    @elseif($lan == 'en')
+                                        <h6 class="menu-header cabin">{{ $mainMenu->mmEnSubject }}</h6>
+                                        <ul>
+                                            @foreach(\Hamedan_2018\SubMenu::getAllSubMenuWithMainMenuId($mainMenu->id) as $subMenu)
+                                                <li><a class="cabin" href="{{ url($subMenu->smPageLink . '') }}">{{ $subMenu->smEnSubject }}</a></li>
+                                            @endforeach
+                                        </ul>
+                                    @elseif($lan == 'ar')
+                                        <h6 class="menu-header">{{ $mainMenu->mmArSubject }}</h6>
+                                        <ul>
+                                            @foreach(\Hamedan_2018\SubMenu::getAllSubMenuWithMainMenuId($mainMenu->id) as $subMenu)
+                                                <li><a href="{{ url($lan . $subMenu->smPageLink) }}">{{ $subMenu->smArSubject }}</a></li>
+                                            @endforeach
+                                        </ul>
+                                    @endif
+                                </div>
+                            @endif
                         @endforeach
                     </div>
                 </div>
