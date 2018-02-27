@@ -4,8 +4,8 @@
         <!--SUB MENU SECTION-->
         @if($section->sectionType->stType == 'SUB_MENU')
             <div class="grid-x grid-padding-x" data-sticky-container>
-                <div style="border-bottom:.1rem solid hsla(0,15%,80%,.3);height: 100px;background-color: #FFFFFF;" class="large-12 medium-12" data-sticky data-top-anchor="650" data-margin-top="0">
-                    <ul class="menu align-center top-menu middle-menu element-dir">
+                <div class="large-12 medium-12 small-12 middle-menu-bottom" data-sticky data-top-anchor="650" data-margin-top="0">
+                    <ul class="menu align-center top-menu middle-menu element-dir sub-menu-none">
                         @foreach(\Hamedan_2018\SubMenu::getAllSubMenuWithMainMenuId($section->sMmId) as $subMenu)
                             @if($lan == 'fa')
                                 <li><a class="Shabnam-Bold {{ $subMenu->id == $pageInfo->pSmId ? 'is-active' : '' }}" href="{{ url($lan . $subMenu->smPageLink) }}">{{ $subMenu->smFaSubject }}</a></li>
@@ -16,6 +16,19 @@
                             @endif
                         @endforeach
                     </ul>
+                    <nav class="pn-ProductNav sub-menu-show">
+                        <div class="pn-ProductNav_Contents">
+                            @foreach(\Hamedan_2018\SubMenu::getAllSubMenuWithMainMenuId($section->sMmId) as $subMenu)
+                                @if($lan == 'fa')
+                                    <a class="Shabnam-Bold pn-ProductNav_Link {{ $subMenu->id == $pageInfo->pSmId ? 'is-active' : '' }}" href="{{ url($lan . $subMenu->smPageLink) }}">{{ $subMenu->smFaSubject }}</a>
+                                @elseif($lan == 'en')
+                                    <a class="Roboto-Regular pn-ProductNav_Link {{ $subMenu->id == $pageInfo->pSmId ? 'is-active' : '' }}" href="{{ url($subMenu->smPageLink . '') }}">{{ strtoupper($subMenu->smEnSubject) }}</a>
+                                @elseif($lan == 'ar')
+                                    <a class="Al-Jazeera-Arabic-Bold pn-ProductNav_Link {{ $subMenu->id == $pageInfo->pSmId ? 'is-active' : '' }}" href="{{ url($lan . $subMenu->smPageLink) }}">{{ $subMenu->smArSubject }}</a>
+                                @endif
+                            @endforeach
+                        </div>
+                    </nav>
                 </div>
             </div>
             <!--END SUB MENU SECTION-->

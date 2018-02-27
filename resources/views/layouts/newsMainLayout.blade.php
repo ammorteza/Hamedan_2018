@@ -52,7 +52,7 @@
             <div class="grid-x">
                 <div class="large-12 medium-12">
                     <div class="grid-x">
-                        <div class="large-4 medium-12 small-12">
+                        {{--<div class="large-4 medium-12 small-12">
                             @if($lan == 'fa')
                                 <label class="withe-color">از رویداد ها، جشنواره ها، تورها، خبر ها و... با خبر شوید!</label>
                             @elseif($lan == 'en')
@@ -72,8 +72,8 @@
                                     @endif
                                 </div>
                             </div>
-                        </div>
-                        <div class="large-6 medium-12 small-12">
+                        </div>--}}
+                        <div class="large-8 medium-12 small-12">
                             <div class="footer-social-icons">
                                 @if($lan == 'fa')
                                     <h6 class="_14 withe-color BYekan center-el">رویداد همدان 2018 را در شبکه های اجتماعی دنبال کنید</h6>
@@ -140,6 +140,10 @@
                         <div class="large-1 medium-6 small-12">
                             <img class="float-center"  src="{{ asset('pic/footer/ostan-footer.png') }}" alt="استانداری همدان" width="60px" height="60px">
                             <p class="logo-slider withe-color my-text-shadow-effect">استانداری همدان</p>
+                        </div>
+                        <div class="large-1 medium-6 small-12">
+                            <img class="float-center"  src="{{ asset('pic/footer/shahrdari-footer.png') }}" alt="استانداری همدان" width="60px" height="60px">
+                            <p class="logo-slider withe-color my-text-shadow-effect">شهرداری همدان</p>
                         </div>
                     </div>
                 </div>

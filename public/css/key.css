@@ -406,6 +406,11 @@ h1,h2,h3,h4,h5,h6{
     text-decoration: none;
     color: #297cbb;;
 }
+.middle-menu-bottom{
+    border-bottom:.1rem solid hsla(0,15%,80%,.3);
+    height: 100px;
+    background-color: #FFFFFF;
+}
 .top-padd{
     padding: 30px;
 }
@@ -1161,6 +1166,49 @@ ul.social-icons {
     height: 200px;
     width: 100vw;
 }
+
+.pn-ProductNav {
+    /* Make this scrollable when needed */
+    overflow-x: auto;
+    /* We don't want vertical scrolling */
+    overflow-y: hidden;
+    /* Make an auto-hiding scroller for the 3 people using a IE */
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    /* For WebKit implementations, provide inertia scrolling */
+    -webkit-overflow-scrolling: touch;
+    /* We don't want internal inline elements to wrap */
+    white-space: nowrap;
+    /* Remove the default scrollbar for WebKit implementations */
+    height: 40px;
+    margin-top: 20px;
+}
+.pn-ProductNav::-webkit-scrollbar {
+    display: none;
+    height: 40px;
+}
+
+.pn-ProductNav_Link {
+    text-decoration: none;
+    color: #888;
+
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 40px;
+    padding-top: 10px;
+    margin-right: 6px;
+    margin-left: 6px;
+    font-size: small;
+}
+
+.pn-ProductNav .is-active {
+    color: #3b444f;
+    height: 4.4rem;
+    border-bottom:.2rem solid #2ba6cb;
+    padding-bottom: 15px;
+
+}
+
 /*///////////////////////////////////////////////////////////////////*/
 /* News Image Slider Start*/
 /*///////////////////////////////////////////////////////////////////*/
@@ -1260,6 +1308,26 @@ ul.social-icons {
         font-size: small;
         font-weight: normal;
         color: #FFFFFF;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .sub-menu-none{
+        display: none;
+    }
+    .sub-menu-show{
+        display: block;
+    }
+    .middle-menu-bottom{
+        border-bottom:.1rem solid hsla(0,15%,80%,.3);
+        height: 60px;
+        background-color: #FFFFFF;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .sub-menu-show{
+        display: none;
     }
 }
 @media only screen and (max-width: 500px) {

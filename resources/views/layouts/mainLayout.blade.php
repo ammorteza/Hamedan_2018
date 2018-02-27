@@ -12,7 +12,7 @@
         @elseif($lan == 'ar')
             <title>{{ $pageInfo->pArTitle }}</title>
         @endif
-        <link rel="icon" type="image/png" href="{{ asset('pic/hamedan2018.jpg') }}">
+        <link rel="icon" type="image/png" href="{{ asset('pic/footer/footer-logo.png') }}">
         <!-- Fonts -->
         <link rel="stylesheet" href="{{ asset('fontawesome-free-5.0.0/web-fonts-with-css/css/fontawesome-all.min.css') }}">
         <link rel="stylesheet" href="{{ asset('css/direction-reveal.css') }}">
@@ -27,13 +27,28 @@
         <link rel="stylesheet" href="{{ asset('css/key.css') }}">
     </head>
     <body class="Shabnam-Light">
-            <div class="grid-x">
+
                 <!--Top Slider Start-->
+                <div class="off-canvas position-right" id="offCanvas" data-off-canvas>
+
+                    <!-- Close button -->
+
+
+                    <ul class="vertical menu">
+                        <li><a href="#">همدان</a></li>
+                        <li><a href="#">خبر</a></li>
+                        <li><a href="#">رویداد ها</a></li>
+                        <li><a href="#">همدان 2018</a></li>
+                    </ul>
+                </div>
+
+                <div class="off-canvas-content" data-off-canvas-content>
+                    <div class="grid-x">
                 <div class="large-12 medium-12">
                     <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit data-options="animInFromLeft:fade-in; animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight:fade-out;" data-timer-delay="10000">
                         <ul class="orbit-container">
                             <div style="z-index: 9999;position: absolute; background-color: #0a0a0a" class="title-bar element-dir" data-responsive-toggle="responsive-menu" data-hide-for="medium">
-                                <button class="menu-icon" type="button" data-toggle="responsive-menu"></button>
+                                <button class="menu-icon" type="button" data-toggle="offCanvas"></button>
                                 <div class="title-bar-title">منو</div>
                             </div>
                             <div class="grid-x">
@@ -169,6 +184,7 @@
                         </div>
                     </div>
                 </div>
+            </div>
                 <!--Top Slider End-->
             </div>
             @yield('content')
@@ -177,7 +193,7 @@
                 <div class="grid-x">
                     <div class="large-12 medium-12">
                         <div class="grid-x">
-                            <div class="large-4 medium-12 small-12">
+                            {{--<div class="large-4 medium-12 small-12">
                                 @if($lan == 'fa')
                                     <label class="withe-color">از رویداد ها، جشنواره ها، تورها، خبر ها و... با خبر شوید!</label>
                                 @elseif($lan == 'en')
@@ -197,8 +213,8 @@
                                         @endif
                                     </div>
                                 </div>
-                            </div>
-                            <div class="large-6 medium-12 small-12">
+                            </div>--}}
+                            <div class="large-8 medium-12 small-12">
                                 <div class="footer-social-icons">
                                     @if($lan == 'fa')
                                         <h6 class="_14 withe-color BYekan center-el">رویداد همدان 2018 را در شبکه های اجتماعی دنبال کنید</h6>
@@ -217,7 +233,7 @@
                                     </ul>
                                 </div>
                             </div>
-                            <div style="text-align: center" class="large-2 medium-12 small-12">
+                            <div style="text-align: center" class="large-4 medium-12 small-12">
                                 <img style=";margin-top: -20px;" src="{{ asset('pic/footer/footer-logo.png') }}" alt="Hamedan-2018" width="150px" height="100px">
                             </div>
                         </div>
