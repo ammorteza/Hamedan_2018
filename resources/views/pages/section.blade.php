@@ -133,13 +133,13 @@
                 <div class="grid-x">
                     <div class="large-12 medium-12 text-color">
                         @if($lan == 'fa')
-                            <p>{!! $section->sFaDescription !!}</p>
+                            <div>{!! $section->sFaDescription !!}</div>
                         @elseif($lan == 'en')
                             <div class="Raleway-Regular">
                                 {!! $section->sEnDescription !!}
                             </div>
                         @elseif($lan == 'ar')
-                            <p class="Al-Jazeera-Arabic-Regular">{!! $section->sArDescription !!}</p>
+                            <div class="Al-Jazeera-Arabic-Regular">{!! $section->sArDescription !!}</div>
                         @endif
                     </div>
                 </div>
