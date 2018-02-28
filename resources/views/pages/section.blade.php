@@ -36,7 +36,7 @@
             <!--CONTENT_LEFT SECTION-->
             <div class="grid-container {{ $section->sFullScreen == true ? 'section-height' : '' }}">
                 <div class="grid-x grid-padding-x">
-                    <div style="margin-top: 80px;color: #37474F;" class="large-12 medium-12 center-el">
+                    <div style="margin-top: 80px;color: #37474F;" class="large-12 medium-12 float-center center-el">
                         @if($lan == 'fa')
                             <h1 class="Mj-Flow-Reqular">{{ $section->sFaSubject }}</h1>
                         @elseif($lan == 'en')
@@ -120,7 +120,7 @@
             <!--CONTENT_IMAGE_SLIDER SECTION-->
             <div class="grid-container {{ $section->sFullScreen == true ? 'section-height' : '' }}">
                 <div class="grid-x padding-lr">
-                    <div style="margin-top: 50px;color: #37474F;" class="large-12 medium-12 center-el">
+                    <div style="margin-top: 50px;color: #37474F;" class="large-12 medium-12 float-center center-el">
                         @if($lan == 'fa')
                             <h1 class="Mj-Flow-Reqular">{{ $section->sFaSubject }}</h1>
                         @elseif($lan == 'en')
@@ -293,15 +293,15 @@
             </div>
         @elseif($section->sectionType->stType == 'CONTENT_IMAGE_RIGHT_TEXT_LEFT')
             <!--Content Image Right And Text Left Start-->
-            <div class="grid-container {{ $section->sFullScreen == true ? 'section-height content-image-text-padding-top' : '' }}">
+            <div class="grid-container  {{ $section->sFullScreen == true ? 'section-height content-image-text-padding-top' : '' }}">
                 <div class="grid-x">
                     <div class="large-6 medium-12 small-12 titr-color {{ $lan == 'en' ? 'padding-lr-txt-img-r' : 'padding-lr-txt-img-l'}}">
                         @if($lan == 'fa')
-                            <h3 class="Shabnam-Bold">{{ $section->sFaSubject }}</h3>
+                            <h3 class="Shabnam-Bold center-ele-mq">{{ $section->sFaSubject }}</h3>
                         @elseif($lan == 'en')
-                            <h3 class="Roboto">{{ $section->sEnSubject }}</h3>
+                            <h3 class="Roboto center-ele-mq">{{ $section->sEnSubject }}</h3>
                         @elseif($lan == 'ar')
-                            <h3 class="Al-Jazeera-Arabic-Bold">{{ $section->sArSubject }}</h3>
+                            <h3 class="Al-Jazeera-Arabic-Bold center-ele-mq">{{ $section->sArSubject }}</h3>
                         @endif
 
                         @if($lan == 'fa')
@@ -372,11 +372,11 @@
                     </div>
                     <div style="padding-left: 50px" class="large-6 medium-12 small-12 padding-lr-txt-img-r">
                         @if($lan == 'fa')
-                            <h3 class="Shabnam-Bold">{{ $section->sFaSubject }}</h3>
+                            <h3 class="Shabnam-Bold center-ele-mq">{{ $section->sFaSubject }}</h3>
                         @elseif($lan == 'en')
-                            <h3 class="Roboto">{{ $section->sEnSubject }}</h3>
+                            <h3 class="Roboto center-ele-mq">{{ $section->sEnSubject }}</h3>
                         @elseif($lan == 'ar')
-                            <h3 class="Al-Jazeera-Arabic-Bold">{{ $section->sArSubject }}</h3>
+                            <h3 class="Al-Jazeera-Arabic-Bold center-ele-mq">{{ $section->sArSubject }}</h3>
                         @endif
                         @if($lan == 'fa')
                             <div class="text-color text-al Shabnam-Light">{!! $section->sFaDescription !!}</div>
@@ -553,22 +553,29 @@
                                                         </div>
                                                         <div class="large-8 medium-6 small-12">
                                                             @if($lan == 'fa')
-                                                                <h5 class="Shabnam-Bold">{{ $newNews[$i]->nFaSubject }}</h5>
+                                                                <h5 class="Shabnam-Bold news-section-header">{{ $newNews[$i]->nFaSubject }}</h5>
                                                             @elseif($lan == 'en')
-                                                                <h5 class="Roboto-Bold">{{ $newNews[$i]->nEnSubject }}</h5>
+                                                                <h5 class="Roboto-Bold news-section-header">{{ $newNews[$i]->nEnSubject }}</h5>
                                                             @elseif($lan == 'ar')
-                                                                <h5 class="Al-Jazeera-Arabic-Bold">{{ $newNews[$i]->nArSubject }}</h5>
+                                                                <h5 class="Al-Jazeera-Arabic-Bold news-section-header">{{ $newNews[$i]->nArSubject }}</h5>
                                                             @endif
 
                                                             @if($lan == 'fa')
-                                                                    <p class="Shabnam-Light two-line text-color text-justify element-distanse">{{ $newNews[$i]->nFaBriefDescription }}</p>
-                                                                    <a href="{{ url($lan . '/news/info/' . $newNews[$i]->id) }}" class="button primary">بیشتر</a>
+                                                                    <p class="Shabnam-Light two-line text-color text-justify">{{ $newNews[$i]->nFaBriefDescription }}</p>
+                                                                    <div style="text-align: center;" >
+                                                                        <a href="{{ url($lan . '/news/info/' . $newNews[$i]->id) }}" class="button primary news-section-btn-center">بیشتر</a>
+                                                                    </div>
                                                             @elseif($lan == 'en')
                                                                     <p class="Raleway-Regular two-line text-color text-justify element-distanse">{{ $newNews[$i]->nEnBriefDescription }}</p>
-                                                                    <a href="{{ url('news/info/' . $newNews[$i]->id) }}" class="button primary">Read More</a>
+                                                                    <div style="text-align: center;" >
+                                                                        <a href="{{ url('news/info/' . $newNews[$i]->id) }}" class="button primary news-section-btn-center">Read More</a>
+                                                                    </div>
+
                                                             @elseif($lan == 'ar')
                                                                     <p class="Al-Jazeera-Arabic-Regular two-line text-color text-justify element-distanse">{{ $newNews[$i]->nArBriefDescription }}</p>
-                                                                    <a href="{{ url($lan . '/news/info/' . $newNews[$i]->id) }}" class="button primary">اکثر</a>
+                                                                    <div style="text-align: center;" >
+                                                                        <a href="{{ url($lan . '/news/info/' . $newNews[$i]->id) }}" class="button primary news-section-btn-center">اکثر</a>
+                                                                    </div>
                                                             @endif
                                                         </div>
                                                     </div>

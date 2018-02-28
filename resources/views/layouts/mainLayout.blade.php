@@ -22,7 +22,7 @@
         <link rel="stylesheet" href="{{ asset('css/lightgallery.css') }}">
         <link rel="stylesheet" href="{{ asset('css/foundation.css') }}">
         <link href="https://fonts.googleapis.com/css?family=Satisfy|Poiret+One|Cabin|Wire+One|Merienda|Roboto" rel="stylesheet">
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/motion-ui/1.2.2/motion-ui.css" rel="stylesheet">
+        {{--<link href="https://cdnjs.cloudflare.com/ajax/libs/motion-ui/1.2.2/motion-ui.css" rel="stylesheet">--}}
         <link rel="stylesheet" href="{{ asset('css/font.css') }}">
         <link rel="stylesheet" href="{{ asset('css/key.css') }}">
     </head>
@@ -47,9 +47,9 @@
                 <div class="large-12 medium-12">
                     <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit data-options="animInFromLeft:fade-in; animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight:fade-out;" data-timer-delay="10000">
                         <ul class="orbit-container">
-                            <div style="z-index: 9999;position: absolute; background-color: #0a0a0a" class="title-bar element-dir" data-responsive-toggle="responsive-menu" data-hide-for="medium">
+                            <div style="z-index: 9999;position: absolute; background:transparent;" class="title-bar element-dir" data-responsive-toggle="responsive-menu" data-hide-for="medium">
                                 <button class="menu-icon" type="button" data-toggle="offCanvas"></button>
-                                <div class="title-bar-title">منو</div>
+                                <div class="title-bar-title"></div>
                             </div>
                             <div class="grid-x">
                                 <div class="large-12 medium-12 top-menu-btm-border" style="position: absolute;" >
@@ -68,9 +68,12 @@
                                                             @endif
                                                         @endforeach
                                                     </ul>
-                                                    <center style="margin-bottom: -30px;">
+                                                    <center class="header-image-show1" style="margin-bottom: -30px;">
                                                         <img style="margin-top: -130px;" src="{{ asset('pic/footer/footer-logo.png') }}" alt="Hamedan-2018" width="150px" height="80px">
                                                     </center>
+                                                    <div class="element-dir-l header-image-show2"  style="margin-bottom: -30px;">
+                                                        <img style="margin-top: -130px;" src="{{ asset('pic/footer/footer-logo.png') }}" alt="Hamedan-2018" width="150px" height="80px">
+                                                    </div>
                                                 </div>
                                             </div>
 
