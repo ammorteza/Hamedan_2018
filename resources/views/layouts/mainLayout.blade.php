@@ -27,21 +27,21 @@
         <link rel="stylesheet" href="{{ asset('css/key.css') }}">
     </head>
     <body class="Shabnam-Light">
-
                 <!--Top Slider Start-->
                 <div class="off-canvas position-right" id="offCanvas" data-off-canvas>
-
                     <!-- Close button -->
-
-
                     <ul class="vertical menu">
-                        <li><a href="#">همدان</a></li>
-                        <li><a href="#">خبر</a></li>
-                        <li><a href="#">رویداد ها</a></li>
-                        <li><a href="#">همدان 2018</a></li>
+                        @foreach($mainMenus as $mainMenu)
+                            @if($lan == 'fa')
+                                <li class="Shabnam-Bold"><a class="{{ $mainMenu->id == $pageInfo->pMmId ? 'is-active' : '' }}" href="{{ url($lan . $mainMenu->mmPageLink) }}">{{ $mainMenu->mmFaSubject }}</a></li>
+                            @elseif($lan == 'en')
+                                <li><a class="Roboto-Bold {{ $mainMenu->id == $pageInfo->pMmId ? 'is-active' : '' }}" href="{{ url($mainMenu->mmPageLink . '') }}">{{ $mainMenu->mmEnSubject }}</a></li>
+                            @elseif($lan == 'ar')
+                                <li><a class="Al-Jazeera-Arabic-Bold {{ $mainMenu->id == $pageInfo->pMmId ? 'is-active' : '' }}" href="{{ url($lan . $mainMenu->mmPageLink) }}">{{ $mainMenu->mmArSubject }}</a></li>
+                            @endif
+                        @endforeach
                     </ul>
                 </div>
-
                 <div class="off-canvas-content" data-off-canvas-content>
                     <div class="grid-x">
                 <div class="large-12 medium-12">
@@ -76,7 +76,6 @@
                                                     </div>
                                                 </div>
                                             </div>
-
                                         </div>
                                     </div>
                                 </div>
