@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>اخبار همدان ۲۰۱۸</title>
-        <link rel="icon" type="image/png" href="{{ asset('pic/hamedan2018.jpg') }}">
+        <link rel="icon" type="image/png" href="{{ asset('pic/footer/footer-logo.png') }}">
         <!-- Fonts -->
         <link rel="stylesheet" href="{{ asset('fontawesome-free-5.0.0/web-fonts-with-css/css/fontawesome-all.min.css') }}">
         <link rel="stylesheet" href="{{ asset('css/direction-reveal.css') }}">
@@ -20,26 +20,48 @@
     </head>
     <body class="Shabnam-Light">
         <!--Top Menu Start-->
-        <div class="grid-container">
-            <div class="grid-x">
-                <div style="z-index: 99;" class="large-12">
-                    <div data-sticky-container>
-                        <div class="title-bar news-top-menu  element-dir" data-sticky data-options="marginTop:0;">
-                            <div class="title-bar-left">
-                                <ul class="dropdown menu align-right" data-dropdown-menu>
-                                    @foreach($mainMenus as $mainMenu)
-                                        @if($lan == 'fa')
-                                            <li class="Shabnam-Bold"><a href="{{ url($lan . $mainMenu->mmPageLink) }}">{{ $mainMenu->mmFaSubject }}</a></li>
-                                        @elseif($lan == 'en')
-                                            <li><a class="Roboto-Bold" href="{{ url($mainMenu->mmPageLink . '') }}">{{ $mainMenu->mmEnSubject }}</a></li>
-                                        @elseif($lan == 'ar')
-                                            <li><a class="Al-Jazeera-Arabic-Bold" href="{{ url($lan . $mainMenu->mmPageLink) }}">{{ $mainMenu->mmArSubject }}</a></li>
-                                        @endif
-                                    @endforeach
-                                </ul>
-                            </div>
-                            <div style="margin: 0 auto;">
-                                <img src="{{ asset('pic/footer/footer-logo.png') }}" alt="Hamedan-2018" width="150px" height="100px">
+
+        <div class="off-canvas position-right" id="offCanvas" data-off-canvas>
+
+            <!-- Close button -->
+
+            <center class="float-center">
+                <img src="{{ asset('pic/footer/footer-logo.png') }}" alt="Hamedan-2018" width="150px" height="80px">
+            </center>
+            <ul style="margin-top: 15px;" class="menu-slider">
+                <li><a href="#">همدان</a></li>
+                <li><a href="#">خبر</a></li>
+                <li><a href="#">رویداد ها</a></li>
+                <li><a href="#">همدان 2018</a></li>
+            </ul>
+        </div>
+
+        <div class="off-canvas-content" data-off-canvas-content>
+            <div class="grid-container">
+                <div class="grid-x">
+                    <div style="z-index: 99;" class="large-12">
+                        <div style="z-index: 9999;position: absolute; background:transparent;" class="title-bar element-dir" data-responsive-toggle="responsive-menu" data-hide-for="medium">
+                            <button class="menu-icon" type="button" data-toggle="offCanvas"></button>
+                            <div class="title-bar-title"></div>
+                        </div>
+                        <div data-sticky-container>
+                            <div class="title-bar news-top-menu  element-dir" data-sticky data-options="marginTop:0;">
+                                <div class="title-bar-left">
+                                    <ul class="dropdown menu align-right" data-dropdown-menu>
+                                        @foreach($mainMenus as $mainMenu)
+                                            @if($lan == 'fa')
+                                                <li class="Shabnam-Bold"><a href="{{ url($lan . $mainMenu->mmPageLink) }}">{{ $mainMenu->mmFaSubject }}</a></li>
+                                            @elseif($lan == 'en')
+                                                <li><a class="Roboto-Bold" href="{{ url($mainMenu->mmPageLink . '') }}">{{ $mainMenu->mmEnSubject }}</a></li>
+                                            @elseif($lan == 'ar')
+                                                <li><a class="Al-Jazeera-Arabic-Bold" href="{{ url($lan . $mainMenu->mmPageLink) }}">{{ $mainMenu->mmArSubject }}</a></li>
+                                            @endif
+                                        @endforeach
+                                    </ul>
+                                </div>
+                                <div style="margin: 0 auto;">
+                                    <img src="{{ asset('pic/footer/footer-logo.png') }}" alt="Hamedan-2018" width="150px" height="100px">
+                                </div>
                             </div>
                         </div>
                     </div>

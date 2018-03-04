@@ -27,167 +27,171 @@
         <link rel="stylesheet" href="{{ asset('css/key.css') }}">
     </head>
     <body class="Shabnam-Light">
-                <!--Top Slider Start-->
-                <div class="off-canvas position-right" id="offCanvas" data-off-canvas>
-                    <!-- Close button -->
-                    <ul class="vertical menu">
-                        @foreach($mainMenus as $mainMenu)
-                            @if($lan == 'fa')
-                                <li class="Shabnam-Bold"><a class="{{ $mainMenu->id == $pageInfo->pMmId ? 'is-active' : '' }}" href="{{ url($lan . $mainMenu->mmPageLink) }}">{{ $mainMenu->mmFaSubject }}</a></li>
-                            @elseif($lan == 'en')
-                                <li><a class="Roboto-Bold {{ $mainMenu->id == $pageInfo->pMmId ? 'is-active' : '' }}" href="{{ url($mainMenu->mmPageLink . '') }}">{{ $mainMenu->mmEnSubject }}</a></li>
-                            @elseif($lan == 'ar')
-                                <li><a class="Al-Jazeera-Arabic-Bold {{ $mainMenu->id == $pageInfo->pMmId ? 'is-active' : '' }}" href="{{ url($lan . $mainMenu->mmPageLink) }}">{{ $mainMenu->mmArSubject }}</a></li>
-                            @endif
-                        @endforeach
-                    </ul>
-                </div>
-                <div class="off-canvas-content" data-off-canvas-content>
-                    <div class="grid-x">
-                <div class="large-12 medium-12">
-                    <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit data-options="animInFromLeft:fade-in; animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight:fade-out;" data-timer-delay="10000">
-                        <ul class="orbit-container">
-                            <div style="z-index: 9999;position: absolute; background:transparent;" class="title-bar element-dir" data-responsive-toggle="responsive-menu" data-hide-for="medium">
-                                <button class="menu-icon" type="button" data-toggle="offCanvas"></button>
-                                <div class="title-bar-title"></div>
-                            </div>
-                            <div class="grid-x">
-                                <div class="large-12 medium-12 top-menu-btm-border" style="position: absolute;" >
-                                    <div class="grid-x">
-                                        <div class="large-12 medium-12 top-menu-border">
-                                            <div class="top-menu" id="responsive-menu">
-                                                <div class="top-bar-left">
-                                                    <ul style="background: none;height: 4.7rem;" class="dropdown menu element-dir Roboto my-text-shadow-effect" data-dropdown-menu>
-                                                        @foreach($mainMenus as $mainMenu)
-                                                            @if($lan == 'fa')
-                                                                <li class="Shabnam-Bold"><a class="{{ $mainMenu->id == $pageInfo->pMmId ? 'is-active' : '' }}" href="{{ url($lan . $mainMenu->mmPageLink) }}">{{ $mainMenu->mmFaSubject }}</a></li>
-                                                            @elseif($lan == 'en')
-                                                                <li><a class="Roboto-Bold {{ $mainMenu->id == $pageInfo->pMmId ? 'is-active' : '' }}" href="{{ url($mainMenu->mmPageLink . '') }}">{{ $mainMenu->mmEnSubject }}</a></li>
-                                                            @elseif($lan == 'ar')
-                                                                <li><a class="Al-Jazeera-Arabic-Bold {{ $mainMenu->id == $pageInfo->pMmId ? 'is-active' : '' }}" href="{{ url($lan . $mainMenu->mmPageLink) }}">{{ $mainMenu->mmArSubject }}</a></li>
-                                                            @endif
-                                                        @endforeach
-                                                    </ul>
-                                                    <center class="header-image-show1" style="margin-bottom: -30px;">
-                                                        <img style="margin-top: -130px;" src="{{ asset('pic/footer/footer-logo.png') }}" alt="Hamedan-2018" width="150px" height="80px">
-                                                    </center>
-                                                    <div class="element-dir-l header-image-show2"  style="margin-bottom: -30px;">
-                                                        <img style="margin-top: -130px;" src="{{ asset('pic/footer/footer-logo.png') }}" alt="Hamedan-2018" width="150px" height="80px">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+            <!--Top Slider Start-->
+            <div class="off-canvas position-right" id="offCanvas" data-off-canvas>
+                <!-- Close button -->
+                <center class="float-center">
+                    <img src="{{ asset('pic/footer/footer-logo.png') }}" alt="Hamedan-2018" width="150px" height="80px">
+                </center>
+                <ul style="margin-top: 15px;" class="menu-slider">
+                    @foreach($mainMenus as $mainMenu)
+                        @if($lan == 'fa')
+                            <li class="Shabnam-Bold"><a class="{{ $mainMenu->id == $pageInfo->pMmId ? 'is-active' : '' }}" href="{{ url($lan . $mainMenu->mmPageLink) }}">{{ $mainMenu->mmFaSubject }}</a></li>
+                        @elseif($lan == 'en')
+                            <li><a class="Roboto-Bold {{ $mainMenu->id == $pageInfo->pMmId ? 'is-active' : '' }}" href="{{ url($mainMenu->mmPageLink . '') }}">{{ $mainMenu->mmEnSubject }}</a></li>
+                        @elseif($lan == 'ar')
+                            <li><a class="Al-Jazeera-Arabic-Bold {{ $mainMenu->id == $pageInfo->pMmId ? 'is-active' : '' }}" href="{{ url($lan . $mainMenu->mmPageLink) }}">{{ $mainMenu->mmArSubject }}</a></li>
+                        @endif
+                    @endforeach
+                </ul>
+            </div>
+            <div class="off-canvas-content" data-off-canvas-content>
+                <div class="grid-x">
+                    <div class="large-12 medium-12">
+                        <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit data-options="animInFromLeft:fade-in; animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight:fade-out;" data-timer-delay="10000">
+                            <ul class="orbit-container">
+                                <div style="z-index: 9999;position: absolute; background:transparent;" class="title-bar element-dir" data-responsive-toggle="responsive-menu" data-hide-for="medium">
+                                    <button class="menu-icon" type="button" data-toggle="offCanvas"></button>
+                                    <div class="title-bar-title"></div>
                                 </div>
-                                {{--<div class="grid-x">
-                                    <div class="large-12">
-                                        <img style="top:54px;left:7rem;z-index: 16;position: absolute;direction: ltr;" src="{{ asset('pic/header-logo.png') }}" alt="Hamedan-2018" width="150px" height="100px">
-                                    </div>
-                                </div>--}}
-                                @foreach($pageInfo->pageHeaderImg as $pageImg)
-                                    <li class="is-active orbit-slide">
-                                        <img  class="background-cover orbit-image {{ $pageInfo->headerType->phtType == 'SIMPLE' ? 'top-slider-simple' : 'top-slider my-zoom-out' }}" src="{{ asset($pageImg->image->gPath) }}" alt="Space">
-                                        @if ($pageInfo->headerType->phtType == 'SIMPLE')
-                                            <figcaption class="orbit-caption align-center my-text-shadow-effect">
-                                                @if($lan == 'fa')
-                                                    <p style="text-align: center;" class="top-slider-header Shabnam-Bold my-fadeIn-and-move">{{ $pageInfo->pFaSubject }}</p>
-                                                    <p style="text-align: center;" class="top-slider-description Duel-Regular">{{ $pageInfo->pFaDescription }}</p>
-                                                    @if ($pageImg->phiLink != null)
-                                                        <center>
-                                                            <a href="{{ url($pageImg->phiLink . '') }}" style="margin-top: 15px;" class="button primary white-color">{{ $pageImg->phiLinkFaTitle }}</a>
+                                <div class="grid-x">
+                                    <div class="large-12 medium-12 top-menu-btm-border" style="position: absolute;" >
+                                        <div class="grid-x">
+                                            <div class="large-12 medium-12 top-menu-border">
+                                                <div class="top-menu" id="responsive-menu">
+                                                    <div class="top-bar-left">
+                                                        <ul style="background: none;height: 4.7rem;" class="dropdown menu element-dir Roboto my-text-shadow-effect" data-dropdown-menu>
+                                                            @foreach($mainMenus as $mainMenu)
+                                                                @if($lan == 'fa')
+                                                                    <li class="Shabnam-Bold"><a class="{{ $mainMenu->id == $pageInfo->pMmId ? 'is-active' : '' }}" href="{{ url($lan . $mainMenu->mmPageLink) }}">{{ $mainMenu->mmFaSubject }}</a></li>
+                                                                @elseif($lan == 'en')
+                                                                    <li><a class="Roboto-Bold {{ $mainMenu->id == $pageInfo->pMmId ? 'is-active' : '' }}" href="{{ url($mainMenu->mmPageLink . '') }}">{{ $mainMenu->mmEnSubject }}</a></li>
+                                                                @elseif($lan == 'ar')
+                                                                    <li><a class="Al-Jazeera-Arabic-Bold {{ $mainMenu->id == $pageInfo->pMmId ? 'is-active' : '' }}" href="{{ url($lan . $mainMenu->mmPageLink) }}">{{ $mainMenu->mmArSubject }}</a></li>
+                                                                @endif
+                                                            @endforeach
+                                                        </ul>
+                                                        <center class="header-image-show1" style="margin-bottom: -30px;">
+                                                            <img style="margin-top: -130px;" src="{{ asset('pic/footer/footer-logo.png') }}" alt="Hamedan-2018" width="150px" height="80px">
                                                         </center>
-                                                    @endif
-                                                @elseif($lan == 'en')
-                                                    <p style="text-align: center;" class="top-slider-header Roboto-Bold">{{ $pageInfo->pEnSubject }}</p>
-                                                    <p style="text-align: center;" class="top-slider-description merienda">{{ $pageInfo->pEnDescription }}</p>
-                                                    @if ($pageImg->phiLink != null)
-                                                        <center>
-                                                            <a href="{{ url($pageImg->phiLink . '') }}" style="margin-top: 15px;" class="button primary white-color">{{ $pageImg->phiLinkEnTitle }}</a>
-                                                        </center>
-                                                    @endif
-                                                @elseif($lan == 'ar')
-                                                    <p style="text-align: center;" class="top-slider-header Al-Jazeera-Arabic-Bold">{{ $pageInfo->pArSubject }}</p>
-                                                    <p style="text-align: center;" class="top-slider-description">{{ $pageInfo->pArDescription }}</p>
-                                                    @if ($pageImg->phiLink != null)
-                                                        <center>
-                                                            <a href="{{ url($pageImg->phiLink . '') }}" style="margin-top: 15px;" class="button primary white-color">{{ $pageImg->phiLinkArTitle }}</a>
-                                                        </center>
-                                                    @endif
-                                                @endif
-                                            </figcaption>
-                                        @elseif($pageInfo->headerType->phtType == 'ADVANCE')
-                                            <figcaption class="orbit-caption">
-                                                <div class="top-slider-grid-container">
-                                                    <div class="grid-x">
-                                                        <div class="large-12 medium-6 small-6 my-text-shadow-effect">
-                                                            @if($lan == 'fa')
-                                                                <p class="top-slider-header Shabnam-Bold">{{ $pageImg->phiFaSubject }}</p>
-                                                                <p class="top-slider-description Duel-Regular">{{ $pageImg->phiFaDescription }}</p>
-                                                                <a href="{{ url($lan . $pageImg->phiLink) }}" class="top-slider-description-btn">{{ $pageImg->phiLinkFaTitle }}</a>
-                                                            @elseif($lan == 'en')
-                                                                <div class="cabin">
-                                                                    <p  class="top-slider-header Roboto-Bold">{{ $pageImg->phiEnSubject }}</p>
-                                                                    <p  class="top-slider-description merienda">{{ $pageImg->phiEnDescription }}</p>
-                                                                    <a href="{{ url($pageImg->phiLink . '') }}" class="top-slider-description-btn">{{ $pageImg->phiLinkEnTitle }}</a>
-                                                                </div>
-                                                            @elseif($lan == 'ar')
-                                                                <p class="top-slider-header Al-Jazeera-Arabic-Bold">{{ $pageImg->phiArSubject }}</p>
-                                                                <p class="top-slider-description Emad-Nora-Arabic">{{ $pageImg->phiArDescription }}</p>
-                                                                <a href="{{ url($lan . $pageImg->phiLink) }}" class="top-slider-description-btn">{{ $pageImg->phiLinkArTitle }}</a>
-                                                            @endif
+                                                        <div class="element-dir-l header-image-show2"  style="margin-bottom: -30px;">
+                                                            <img style="margin-top: -130px;" src="{{ asset('pic/footer/footer-logo.png') }}" alt="Hamedan-2018" width="150px" height="80px">
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </figcaption>
-                                        @endif
-                                    </li>
-                                @endforeach
-                            </div>
-                        </ul>
-                        @if($pageInfo->headerType->phtType == 'ADVANCE')
-                            <div style="margin-top: -19%;" class="top-slider-grid-container">
-                                <nav class="orbit-bullets orbit-bullets-hide">
-                                    <div style="margin-top:15vh;" class="grid-x">
-                                        <?php $i = 0; ?>
-                                        @foreach($pageInfo->pageHeaderImg as $pageImg)
-                                            <div class="large-3 medium-3 small-3 padding-lr">
-                                                <button class="{{ $i == 0 ? 'is-active' : '' }}" data-slide="{{ $i }}">
-                                                    @if($lan == 'fa')
-                                                        <p class="element-dir float-right Shabnam-Bold">{{ $pageImg->phiFaSubject }}</p>
-                                                    @elseif($lan == 'en')
-                                                        <p class="Roboto element-dir-l float-left">{{ $pageImg->phiEnSubject }}</p>
-                                                    @elseif($lan == 'ar')
-                                                        <p class="Al-Jazeera-Arabic-Regular element-dir float-right">{{ $pageImg->phiArSubject }}</p>
-                                                    @endif
-                                                    <span class="show-for-sr">First slide details.</span><span class="show-for-sr">Current Slide</span>
-                                                </button>
+
                                             </div>
-                                            <?php $i++; ?>
-                                        @endforeach
-                                    </div>
-                                </nav>
-                                <nav class="orbit-bullets  orbit-bullets-show center-el element-distanse">
-                                    <button class="is-active" data-slide="0"><span class="show-for-sr">First slide details.</span><span class="show-for-sr">Current Slide</span></button>
-                                    <button data-slide="1"><span class="show-for-sr">Second slide details.</span></button>
-                                    <button data-slide="2"><span class="show-for-sr">Third slide details.</span></button>
-                                    <button data-slide="3"><span class="show-for-sr">Fourth slide details.</span></button>
-                                </nav>
-                            </div>
-                        <div class="grid-container">
-                            <div class="grid-x">
-                                <div style="margin-top: 2px;"  class="large-12 medium-12 small-12">
-                                    <a class="jumper" href="#ploop">
-                                        <div class="arrow bounce my-text-shadow-effect align-center">
                                         </div>
-                                    </a>
+                                    </div>
+                                    {{--<div class="grid-x">
+                                        <div class="large-12">
+                                            <img style="top:54px;left:7rem;z-index: 16;position: absolute;direction: ltr;" src="{{ asset('pic/header-logo.png') }}" alt="Hamedan-2018" width="150px" height="100px">
+                                        </div>
+                                    </div>--}}
+                                    @foreach($pageInfo->pageHeaderImg as $pageImg)
+                                        <li class="is-active orbit-slide">
+                                            <img  class="background-cover orbit-image {{ $pageInfo->headerType->phtType == 'SIMPLE' ? 'top-slider-simple' : 'top-slider my-zoom-out' }}" src="{{ asset($pageImg->image->gPath) }}" alt="Space">
+                                            @if ($pageInfo->headerType->phtType == 'SIMPLE')
+                                                <figcaption class="orbit-caption align-center my-text-shadow-effect">
+                                                    @if($lan == 'fa')
+                                                        <p style="text-align: center;" class="top-slider-header Shabnam-Bold my-fadeIn-and-move">{{ $pageInfo->pFaSubject }}</p>
+                                                        <p style="text-align: center;" class="top-slider-description Duel-Regular">{{ $pageInfo->pFaDescription }}</p>
+                                                        @if ($pageImg->phiLink != null)
+                                                            <center>
+                                                                <a href="{{ url($pageImg->phiLink . '') }}" style="margin-top: 15px;" class="button primary white-color">{{ $pageImg->phiLinkFaTitle }}</a>
+                                                            </center>
+                                                        @endif
+                                                    @elseif($lan == 'en')
+                                                        <p style="text-align: center;" class="top-slider-header Roboto-Bold">{{ $pageInfo->pEnSubject }}</p>
+                                                        <p style="text-align: center;" class="top-slider-description merienda">{{ $pageInfo->pEnDescription }}</p>
+                                                        @if ($pageImg->phiLink != null)
+                                                            <center>
+                                                                <a href="{{ url($pageImg->phiLink . '') }}" style="margin-top: 15px;" class="button primary white-color">{{ $pageImg->phiLinkEnTitle }}</a>
+                                                            </center>
+                                                        @endif
+                                                    @elseif($lan == 'ar')
+                                                        <p style="text-align: center;" class="top-slider-header Al-Jazeera-Arabic-Bold">{{ $pageInfo->pArSubject }}</p>
+                                                        <p style="text-align: center;" class="top-slider-description">{{ $pageInfo->pArDescription }}</p>
+                                                        @if ($pageImg->phiLink != null)
+                                                            <center>
+                                                                <a href="{{ url($pageImg->phiLink . '') }}" style="margin-top: 15px;" class="button primary white-color">{{ $pageImg->phiLinkArTitle }}</a>
+                                                            </center>
+                                                        @endif
+                                                    @endif
+                                                </figcaption>
+                                            @elseif($pageInfo->headerType->phtType == 'ADVANCE')
+                                                <figcaption class="orbit-caption">
+                                                    <div class="top-slider-grid-container">
+                                                        <div class="grid-x">
+                                                            <div class="large-12 medium-6 small-6 my-text-shadow-effect">
+                                                                @if($lan == 'fa')
+                                                                    <p class="top-slider-header Shabnam-Bold">{{ $pageImg->phiFaSubject }}</p>
+                                                                    <p class="top-slider-description Duel-Regular">{{ $pageImg->phiFaDescription }}</p>
+                                                                    <a href="{{ url($lan . $pageImg->phiLink) }}" class="top-slider-description-btn">{{ $pageImg->phiLinkFaTitle }}</a>
+                                                                @elseif($lan == 'en')
+                                                                    <div class="cabin">
+                                                                        <p  class="top-slider-header Roboto-Bold">{{ $pageImg->phiEnSubject }}</p>
+                                                                        <p  class="top-slider-description merienda">{{ $pageImg->phiEnDescription }}</p>
+                                                                        <a href="{{ url($pageImg->phiLink . '') }}" class="top-slider-description-btn">{{ $pageImg->phiLinkEnTitle }}</a>
+                                                                    </div>
+                                                                @elseif($lan == 'ar')
+                                                                    <p class="top-slider-header Al-Jazeera-Arabic-Bold">{{ $pageImg->phiArSubject }}</p>
+                                                                    <p class="top-slider-description Emad-Nora-Arabic">{{ $pageImg->phiArDescription }}</p>
+                                                                    <a href="{{ url($lan . $pageImg->phiLink) }}" class="top-slider-description-btn">{{ $pageImg->phiLinkArTitle }}</a>
+                                                                @endif
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </figcaption>
+                                            @endif
+                                        </li>
+                                    @endforeach
                                 </div>
+                            </ul>
+                            @if($pageInfo->headerType->phtType == 'ADVANCE')
+                                <div style="margin-top: -19%;" class="top-slider-grid-container">
+                                    <nav class="orbit-bullets orbit-bullets-hide">
+                                        <div style="margin-top:15vh;" class="grid-x">
+                                            <?php $i = 0; ?>
+                                            @foreach($pageInfo->pageHeaderImg as $pageImg)
+                                                <div class="large-3 medium-3 small-3 padding-lr">
+                                                    <button class="{{ $i == 0 ? 'is-active' : '' }}" data-slide="{{ $i }}">
+                                                        @if($lan == 'fa')
+                                                            <p class="element-dir float-right Shabnam-Bold">{{ $pageImg->phiFaSubject }}</p>
+                                                        @elseif($lan == 'en')
+                                                            <p class="Roboto element-dir-l float-left">{{ $pageImg->phiEnSubject }}</p>
+                                                        @elseif($lan == 'ar')
+                                                            <p class="Al-Jazeera-Arabic-Regular element-dir float-right">{{ $pageImg->phiArSubject }}</p>
+                                                        @endif
+                                                        <span class="show-for-sr">First slide details.</span><span class="show-for-sr">Current Slide</span>
+                                                    </button>
+                                                </div>
+                                                <?php $i++; ?>
+                                            @endforeach
+                                        </div>
+                                    </nav>
+                                    <nav class="orbit-bullets  orbit-bullets-show center-el element-distanse">
+                                        <button class="is-active" data-slide="0"><span class="show-for-sr">First slide details.</span><span class="show-for-sr">Current Slide</span></button>
+                                        <button data-slide="1"><span class="show-for-sr">Second slide details.</span></button>
+                                        <button data-slide="2"><span class="show-for-sr">Third slide details.</span></button>
+                                        <button data-slide="3"><span class="show-for-sr">Fourth slide details.</span></button>
+                                    </nav>
+                                </div>
+                            <div class="grid-container">
+                                <div class="grid-x">
+                                    <div style="margin-top: 2px;"  class="large-12 medium-12 small-12">
+                                        <a class="jumper" href="#ploop">
+                                            <div class="arrow bounce my-text-shadow-effect align-center">
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            @endif
                             </div>
-                        @endif
                         </div>
                     </div>
                 </div>
-            </div>
-                <!--Top Slider End-->
+            <!--Top Slider End-->
             </div>
             @yield('content')
 
