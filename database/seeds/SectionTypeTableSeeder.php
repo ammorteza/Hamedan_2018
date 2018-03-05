@@ -85,5 +85,10 @@ class SectionTypeTableSeeder extends Seeder
         $sType->stType = 'CONTENT_BRIEF_NEWS';
         $sType->stSubject = 'نمایش تعدادی از اخبار با اولویت در صفحه نخست';
         $sType->save(); //15
+
+        $sType = new \Hamedan_2018\SectionType;
+        $sType->stType = 'CONTENT_LOCATION';
+        $sType->stSubject = 'نمایش موقعیت مکانی';
+        $sType->save(); //15
     }
 }
