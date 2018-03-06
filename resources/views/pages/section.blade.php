@@ -533,7 +533,7 @@
         @elseif($section->sectionType->stType == 'CONTENT_BRIEF_NEWS')
             <!--News Section Start-->
             <?php
-                    $newNews = \Hamedan_2018\News::getNewNews();
+                $newNews = \Hamedan_2018\News::getNewNews();
             ?>
             <div id="ploop" style="padding-top: 150px" class="grid-container">
                 <div class="grid-x">
@@ -593,10 +593,16 @@
                 </div>
             </div>
             <!--News Section End-->
+        @elseif($section->sectionType->stType == 'CONTENT_LOCATION')
+            <!--Location Section End-->
+            <div class="grid-container">
+                <div class="grid-x">
+                    <div class="large-12">{!! $section->sLocation !!}</div>
+                </div>
+            </div>
+            <!--Location Section End-->
         @endif
     @endforeach
-
-
     <!--Video Gallery Sections End-->
     {{--<div class="grid-container">
         <div class="grid-x">
@@ -672,8 +678,5 @@
             </div>
         </div>
     </div>--}}
-
-
-
     <!--Video Gallery Sections Start-->
 @stop

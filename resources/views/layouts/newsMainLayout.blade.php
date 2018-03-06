@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>اخبار همدان ۲۰۱۸</title>
-        <link rel="icon" type="image/png" href="{{ asset('pic/hamedan2018.jpg') }}">
+        <link rel="icon" type="image/png" href="{{ asset('pic/footer/footer-logo.png') }}">
         <!-- Fonts -->
         <link rel="stylesheet" href="{{ asset('fontawesome-free-5.0.0/web-fonts-with-css/css/fontawesome-all.min.css') }}">
         <link rel="stylesheet" href="{{ asset('css/direction-reveal.css') }}">
