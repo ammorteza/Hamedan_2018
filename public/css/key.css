@@ -1105,6 +1105,11 @@ ul.social-icons {
     margin-top: 100px;
     margin-bottom: 100px;
 }
+.element-distance-news{
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+
 .titr-color{
     color: #37474F;
 }
@@ -1301,6 +1306,17 @@ ul.social-icons {
         height: auto;
         padding-top: 0px;
     }
+    .news-image{
+        float: inherit;
+        margin-bottom: 40px;
+    }
+    .adv-hide{
+        display: none;
+    }
+    .element-distance-news{
+        margin-top: 40px;
+        margin-bottom: 80px;
+    }
 }
 
 @media only screen and (min-width: 900px) {
@@ -1380,6 +1396,18 @@ ul.social-icons {
     .news-section-btn-center{
         display: inline-block;
     }
+}
+@media only screen and (max-width: 640px) {
+    .news-top-menu-show{
+        display: none;
+    }
+    .news-top-menu-height{
+        height: 4.7rem;
+    }
+    .margin-top-mq{
+        margin-top: 50px;
+    }
+
 }
 @media only screen and (max-width: 500px) {
     .top-slider-header {

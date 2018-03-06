@@ -46,7 +46,7 @@
                         <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit data-options="animInFromLeft:fade-in; animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight:fade-out;" data-timer-delay="10000">
                             <ul class="orbit-container">
                                 <div style="z-index: 9999;position: absolute; background:transparent;" class="title-bar element-dir" data-responsive-toggle="responsive-menu" data-hide-for="medium">
-                                    <button class="menu-icon" type="button" data-toggle="offCanvas"></button>
+                                    <button style="color: #000;" class="menu-icon" type="button" data-toggle="offCanvas"></button>
                                     <div class="title-bar-title"></div>
                                 </div>
                                 <div class="grid-x">

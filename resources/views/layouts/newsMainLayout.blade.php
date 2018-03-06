@@ -21,7 +21,7 @@
     <body class="Shabnam-Light">
         <!--Top Menu Start-->
 
-        <div class="off-canvas position-right" id="offCanvas" data-off-canvas>
+        <div class="off-canvas position-right" id="offCanvasNews" data-off-canvas>
 
             <!-- Close button -->
 
@@ -37,17 +37,16 @@
         </div>
 
         <div class="off-canvas-content" data-off-canvas-content>
-            <div class="grid-container">
                 <div class="grid-x">
-                    <div style="z-index: 99;" class="large-12">
+                    <div style="z-index: 99;" class="large-12 medium-12 small-12">
                         <div style="z-index: 9999;position: absolute; background:transparent;" class="title-bar element-dir" data-responsive-toggle="responsive-menu" data-hide-for="medium">
-                            <button class="menu-icon" type="button" data-toggle="offCanvas"></button>
+                            <button class="menu-icon dark" type="button" data-toggle="offCanvasNews"></button>
                             <div class="title-bar-title"></div>
                         </div>
-                        <div data-sticky-container>
-                            <div class="title-bar news-top-menu  element-dir" data-sticky data-options="marginTop:0;">
+                        <div class="news-top-menu-show" data-sticky-container>
+                            <div style="width: 100%;" class="title-bar news-top-menu  element-dir" data-sticky data-options="marginTop:0;">
                                 <div class="title-bar-left">
-                                    <ul class="dropdown menu align-right" data-dropdown-menu>
+                                    <ul style="margin-top: 30px;" class="dropdown menu align-right" data-dropdown-menu>
                                         @foreach($mainMenus as $mainMenu)
                                             @if($lan == 'fa')
                                                 <li class="Shabnam-Bold"><a href="{{ url($lan . $mainMenu->mmPageLink) }}">{{ $mainMenu->mmFaSubject }}</a></li>
@@ -58,15 +57,15 @@
                                             @endif
                                         @endforeach
                                     </ul>
+                                    <div style="margin-top: -70px;" class="float-left">
+                                        <img src="{{ asset('pic/footer/footer-logo.png') }}" alt="Hamedan-2018" width="150px" height="100px">
+                                    </div>
                                 </div>
-                                <div style="margin: 0 auto;">
-                                    <img src="{{ asset('pic/footer/footer-logo.png') }}" alt="Hamedan-2018" width="150px" height="100px">
-                                </div>
+
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
         </div>
         <!--Top Menu End-->
         @yield('content')

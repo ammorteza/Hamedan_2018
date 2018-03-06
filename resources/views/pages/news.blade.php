@@ -4,7 +4,7 @@
     <div class="grid-container">
         <!-- page bread crumb -->
         <div class="grid-x">
-            <div style="margin-top: 30px;color: #37474F;" class="large-12 medium-12">
+            <div style="margin-top: 50px;color: #37474F;" class="large-12 medium-12 small-12 margin-top-mq">
                 <nav aria-label="You are here:" role="navigation">
                     <ul class="breadcrumbs {{ $lan == 'en' ? 'float-left' : '' }}">
                         @if($lan == 'fa')
@@ -18,7 +18,7 @@
                 </nav>
             </div>
         </div>
-        <div class="grid-x  element-distance-tb">
+        <div class="grid-x  element-distance-news">
             <div class="large-8 medium-12 small-12">
                 <div class="grid-x">
                     <div id="jssor_1" style="position:relative;margin:0 auto;top:0px;left:0px;width:980px;height:575px;overflow:hidden;visibility:hidden;">
@@ -66,9 +66,9 @@
                 </div>
                 @foreach($allNews as $news)
                     <div class="grid-x element-distanse news-bottom-line" id="advTop">
-                        <div class="large-4 medium-12 small-12 ">
+                        <div class="large-4 medium-12 small-12">
                             @if($lan == 'fa')
-                                <a href="{{ url($lan . '/news/info/' . $news->id) }}"><img style=";margin-top: -20px;" src="{{ asset($news->newsImg[0]['gallery']['gPath']) }}" alt="{{ $news->newsImg[0]['gallery']['niFaAlt'] }}" width="300px" height="200px"></a>
+                                <a  href="{{ url($lan . '/news/info/' . $news->id) }}"><img class="news-image" style=";margin-top: -20px;" src="{{ asset($news->newsImg[0]['gallery']['gPath']) }}" alt="{{ $news->newsImg[0]['gallery']['niFaAlt'] }}" width="300px" height="200px"></a>
                             @elseif($lan == 'en')
                                 <a href="{{ url('news/info/' . $news->id) }}"><img style=";margin-top: -20px;" src="{{ asset($news->newsImg[0]['gallery']['gPath']) }}" alt="{{ $news->newsImg[0]['gallery']['niEnAlt'] }}" width="300px" height="200px"></a>
                             @elseif($lan == 'ar')
@@ -141,7 +141,7 @@
                 @elseif($lan == 'en')
                     <div style="padding-left: 100px;margin-top:440px;" class="large-4 medium-6 small-12" data-sticky-container>
                 @endif
-                    <div class="grid-x" data-sticky data-top-anchor="advTop:top" data-btm-anchor="advBottom:bottom">
+                    <div class="grid-x adv-hide" data-sticky data-top-anchor="advTop:top" data-btm-anchor="advBottom:bottom">
                         <div style="position: relative;display: inline-block;top:40vh;text-align: center;z-index: 50;" class="large-12">
                             @if($lan == 'fa')
                                 <h5 class="my-text-shadow-effect white-color">{{ $advertise->aFaSubject }}</h5>
