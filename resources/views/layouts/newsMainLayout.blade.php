@@ -29,10 +29,15 @@
                 <img src="{{ asset('pic/footer/footer-logo.png') }}" alt="Hamedan-2018" width="150px" height="80px">
             </center>
             <ul style="margin-top: 15px;" class="menu-slider">
-                <li><a href="#">همدان</a></li>
-                <li><a href="#">خبر</a></li>
-                <li><a href="#">رویداد ها</a></li>
-                <li><a href="#">همدان 2018</a></li>
+                @foreach($mainMenus as $mainMenu)
+                    @if($lan == 'fa')
+                        <li class="Shabnam-Bold"><a href="{{ url($lan . $mainMenu->mmPageLink) }}">{{ $mainMenu->mmFaSubject }}</a></li>
+                    @elseif($lan == 'en')
+                        <li><a class="Roboto-Bold" href="{{ url($mainMenu->mmPageLink . '') }}">{{ $mainMenu->mmEnSubject }}</a></li>
+                    @elseif($lan == 'ar')
+                        <li><a class="Al-Jazeera-Arabic-Bold" href="{{ url($lan . $mainMenu->mmPageLink) }}">{{ $mainMenu->mmArSubject }}</a></li>
+                    @endif
+                @endforeach
             </ul>
         </div>
 
