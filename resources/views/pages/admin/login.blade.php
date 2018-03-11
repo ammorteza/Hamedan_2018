@@ -62,7 +62,7 @@
                     <li><a class="footer-menu" href="#">ارتباط با ما</a></li>
                 </ul>
             </div>
-            <div style="margin-top: 20px;" class="large-12 medium-12 small-12">
+            <div style="margin-top: 5px;" class="large-12 medium-12 small-12">
                 <img class="float-center"  src="{{ asset('pic/login-logo.png') }}"  width="250px" height="40px">
             </div>
             <div class="large-12 medium-12 small-12">
