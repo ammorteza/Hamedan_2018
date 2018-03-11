@@ -49,5 +49,5 @@ Route::group(['middleware' => ['auth']] , function () {
     Route::get('/admin', 'NewsAdminController@index');
 });
 
-Route::get('/admin/login', 'LoginController@loginFrom');
+Route::get('/admin/login', 'AuthController@loginFrom');
 
