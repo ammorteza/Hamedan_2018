@@ -24,7 +24,7 @@
         </div>
         <div class="grid-x">
             <div class="medium-12 small-12">
-                <h5 class="BYekan text-center  login-txt">پنل مدیریت همدان 2018</h5>
+                <h5 class="BYekan text-center titr-color">پنل مدیریت همدان 2018</h5>
             </div>
         </div>
         <div style="margin-top:20px;" class="grid-x">
@@ -35,18 +35,22 @@
                     </div>
                     <div class="columns padding-lr">
                         <label>نام کاربری
-                            <input style="font-family: FontAwesome;" class="form-element-margin-btm" type="text"  autofocus name="user">
+                            <input style="font-family: FontAwesome;" type="text"  autofocus name="user" aria-describedby="userNameText" required>
+                            <span class="form-error">
+                              لطفا نام کاربری را وارد نمایید !
+                            </span>
                         </label>
-                        <span v-show="errors.has('user')" class="error-font">لطفا نام کاربری را وارد کنید!</span>
                     </div>
-                    <div style="margin-top: 20px;" class="medium-12 columns padding-lr">
+                    <div class="medium-12 columns padding-lr">
                         <label>رمز عبور
-                            <input style="font-family: FontAwesome;" class="form-element-margin-btm" type="password"  name="pass" v-model="authInfo.password"  v-validate="'required'" :class="{'input': true, 'error-border': errors.has('pass')}">
+                            <input style="font-family: FontAwesome;" type="password"  name="pass" aria-describedby="userPassText" required>
+                            <span class="form-error">
+                              لطفا رمز عبور را وارد نمایید !
+                            </span>
                         </label>
-                        <span v-show="errors.has('pass')" class="error-font">لطفا رمز عبور را وارد کنید!</span>
                     </div>
                     <div class="medium-12 padding-lr top-margin-element">
-                        <button style="margin-top: 20px;"  name="submit" class="my-button my-saipa expanded">ورود</button>
+                        <button style="margin-top: 20px;"  name="submit" class="button primary expanded">ورود</button>
                     </div>
                 </form>
             </div>
@@ -54,17 +58,17 @@
         <div class="grid-x">
             <div class="large-12 medium-12 small-12">
                 <ul class="menu small-font align-center ul-margin">
-                    <li><a class="footer-menu" href="#">دانلود اپلیکیشن</a></li>
                     <li><a class="footer-menu" href="#">درباره ما</a></li>
                     <li><a class="footer-menu" href="#">ارتباط با ما</a></li>
                 </ul>
             </div>
-            <div class="large-12 medium-12 small-12">
-                <p class="footer-txt-size">تمامی حقوق این وب سایت متعلق به نمایندگی سایپا کد ۳۱۱ می باشد.</p>
-            </div>
             <div style="margin-top: 20px;" class="large-12 medium-12 small-12">
-                <img class="float-center" :src="'pic/keylogo.png'" width="130px" height="20px">
+                <img class="float-center"  src="{{ asset('pic/login-logo.png') }}"  width="250px" height="40px">
             </div>
+            <div class="large-12 medium-12 small-12">
+                <p style="margin-top: 10px;" class="login-footer-txt-size">تمامی حقوق این وب سایت متعلق به سازمان میراث فرهنگی، صنایع دستی و گردشگری استان همدان می باشد.</p>
+            </div>
+
         </div>
     </div>
 <!--Copy Right Bar End-->
