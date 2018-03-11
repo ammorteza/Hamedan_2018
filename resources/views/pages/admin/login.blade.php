@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>ورود</title>
     <link rel="icon" type="image/png" href="{{ asset('pic/footer/footer-logo.png') }}">
     <!-- Fonts -->
@@ -17,9 +17,9 @@
 </head>
 <body class="Shabnam-Light">
     <div class="grid-container">
-        <div class="grid-x">
+        <div class="grid-x" style="margin-top: 5em">
             <div class="medium-12 small-12">
-                <img class="float-center" src="{{ asset('pic/footer/footer-logo.png') }}" width="150px" height="80px">
+                <img class="float-center" src="{{ asset('pic/footer/footer-logo.png') }}" width="100px" height="60px">
             </div>
         </div>
         <div class="grid-x">
@@ -29,13 +29,16 @@
         </div>
         <div style="margin-top:20px;" class="grid-x">
             <div style="margin:0 auto;" class="large-3 medium-6 small-10 cell callout ">
-                <form data-abide novalidate>
-                    <div data-abide-error class="alert callout" style="display: none;">
-                        <p><i class="fi-alert"></i> خطا در ورود</p>
-                    </div>
+                <form method="POST" action="{{ url('/admin/signIn') }}" data-abide novalidate>
+                    {{ csrf_field() }}
+                    @if ($errors->any())
+                        <div data-abide-error class="alert callout">
+                            <span style="color: #9e0c0f">{{ $errors->first('err') }}</span>
+                        </div>
+                    @endif
                     <div class="columns padding-lr">
                         <label>نام کاربری
-                            <input style="font-family: FontAwesome;" type="text"  autofocus name="user" aria-describedby="userNameText" required>
+                            <input style="font-family: FontAwesome;" type="text"  autofocus name="email" aria-describedby="userNameText" required>
                             <span class="form-error">
                               لطفا نام کاربری را وارد نمایید !
                             </span>
@@ -43,7 +46,7 @@
                     </div>
                     <div class="medium-12 columns padding-lr">
                         <label>رمز عبور
-                            <input style="font-family: FontAwesome;" type="password"  name="pass" aria-describedby="userPassText" required>
+                            <input style="font-family: FontAwesome;" type="password"  name="password" aria-describedby="userPassText" required>
                             <span class="form-error">
                               لطفا رمز عبور را وارد نمایید !
                             </span>
