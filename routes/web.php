@@ -41,7 +41,13 @@ Route::get('/fa/news/info/{nId}', 'NewsController@newsInfo_fa');
 Route::get('/ar/news/info/{nId}', 'NewsController@newsInfo_ar');
 
 /*Route::get('{pageId}/page/{slug}', [
+/*Route::get('{pageId}/page/{slug}', [
     'uses' => 'PageController@getPageWithId'
 ])->where('slug', '([A-Za-z0-9\-\/]+)');*/
 
+Route::group(['middleware' => ['auth']] , function () {
+    Route::get('/admin', 'NewsAdminController@index');
+});
+
+Route::get('/admin/login', 'LoginController@loginFrom');
 
