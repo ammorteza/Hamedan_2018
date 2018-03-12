@@ -29,12 +29,11 @@
         <div class="medium-12 padding-lr border-btm-line master-content" style="margin-top: 12px;">
             <div class="clearfix tool-bar">
                 <div style="margin-bottom: 10px;" class="button-group float-right">
-                    <a  class="button primary">جدید</a>
+                    <a href="{{ url('/admin/album/register') }}"  class="button primary">جدید</a>
                 </div>
                 <div class="float-left">
                     <div class="input-group float-left">
                         <div class="inner-addon right-addon">
-
                         </div>
                     </div>
                 </div>

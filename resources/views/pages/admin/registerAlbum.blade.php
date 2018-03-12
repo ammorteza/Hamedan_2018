@@ -1,6 +1,5 @@
 @extends('layouts.adminLayout')
 @section('content')
-
 <div class="off-canvas-content padding-lr" data-off-canvas-content>
     <div class="title-bar hide-for-large">
         <div class="title-bar-left">
@@ -13,7 +12,7 @@
             <div class="grid-x">
                 <nav aria-label="You are here:" role="navigation">
                     <ul class="breadcrumbs">
-                        <li><a href="#">داشبورد</a></li>
+                        <li><a href="{{ url('/admin') }}">داشبورد</a></li>
                         <li>
                             <a class="disabled">اخبار</a>
                         </li>
@@ -32,7 +31,8 @@
     <div class="grid-x padding-lr-fs my-callout-box">
 
         <div class="large-12 medium-12 small-12 element-distanse">
-            <form  data-abide novalidate>
+            <form  data-abide novalidate method="POST" action="{{ url('/admin/album/register') }}">
+                {{ csrf_field() }}
                 <div data-abide-error class="alert callout" style="display: none;">
                     <span style="color: #9e0c0f">خطا</span>
                 </div>
@@ -40,7 +40,7 @@
                     <legend class="btn-red">تصویر آلبوم</legend>
                     <div class="columns padding-lr">
                         <label for="exampleFileUpload" class="button">انتخاب تصویر</label>
-                        <input type="file" id="exampleFileUpload"  onchange="readURL(this);" class="show-for-sr">
+                        <input type="file" id="exampleFileUpload" name="imageFile"  onchange="readURL(this);" class="show-for-sr">
                         <div class="grid-x">
                             <div class="large-3 medium-6 small-12">
                                 <img id="blah">
@@ -97,7 +97,6 @@
                     <button style="margin-top: 20px;"  name="submit" class="button primary">ثبت</button>
                 </div>
             </form>
-
         </div>
     </div>
 </div>
