@@ -11,7 +11,10 @@ class AuthController extends Controller
     public function loginFrom()
     {
         //echo Hash::make('gholami@1234');
-        return view('pages.admin.login');
+        if (Auth::guest())
+            return view('pages.admin.login');
+        else
+            return redirect()->to('/admin');
     }
 
     public function signIn(Request $request)
@@ -38,6 +41,6 @@ class AuthController extends Controller
     public function signOut()
     {
         Auth::logout();
-        return redirect()->to('/');
+        return redirect()->to('/admin/login');
     }
 }

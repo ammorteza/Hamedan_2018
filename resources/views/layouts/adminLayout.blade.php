@@ -34,9 +34,11 @@
                             <li>
                                 <a href="">درج خبر</a>
                                 <a href="">اسلاید خبر</a>
-                                <a href="">آلبوم</a>
                             </li>
                         </ul>
+                    </li>
+                    <li>
+                        <a class="right-mp right-menu-btm-border" href="{{ url('/admin/album') }}"><i class="far fa- size-21 icon-pos" aria-hidden="true"></i>گالری</a>
                     </li>
                 </ul>
             </nav>
@@ -49,7 +51,7 @@
                         <span style="color: #1b6d85">علی جهان پاک</span>
                     </div>
                     <div class="title-bar-right">
-                        <a href="#" class="float-left"><i class="fas fa-sign-out-alt"></i>خروج</a>
+                        <a href="{{ url('/admin/signOut') }}" class="float-left"><i class="fas fa-sign-out-alt size-21"></i></a>
                     </div>
                 </div>
             </div>
