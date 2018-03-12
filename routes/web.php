@@ -48,8 +48,10 @@ Route::get('/ar/news/info/{nId}', 'NewsController@newsInfo_ar');
 Route::group(['middleware' => ['auth']] , function () {
     Route::get('/admin', 'NewsAdminController@index');
     Route::get('/admin/signOut', 'AuthController@signOut');
+    Route::get('/admin/album', 'NewsAdminController@album');
 });
 
 Route::get('/admin/login', 'AuthController@loginFrom');
 Route::post('/admin/signIn', 'AuthController@signIn');
+
 

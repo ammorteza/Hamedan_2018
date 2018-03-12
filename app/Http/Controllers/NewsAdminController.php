@@ -8,6 +8,10 @@ class NewsAdminController extends Controller
 {
     function index()
     {
-
+        return view('pages/admin/adminLayout');
+    }
+    function album()
+    {
+        return view('pages/admin/album');
     }
 }
