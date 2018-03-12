@@ -12,27 +12,4 @@ class NewsAdminController extends Controller
     {
 
     }
-
-    function album()
-    {
-        $gallery = ImageGallery::orderBy('id' , 'DESC')->paginate(20);
-        return view('pages/admin/album' , ['gallery' => $gallery]);
-    }
-
-    public function deleteGalleryImage($gId)
-    {
-        try {
-            ImageGallery::where('id' , '=' , $gId)->delete();
-            return Redirect::back();
-        }
-        catch (\Illuminate\Database\QueryException $e) {
-            if($e->getCode() == "23000"){ //23000 is sql code for integrity constraint violation
-                return Redirect::back()->withInput()->withErrors(array('msg' => 'با توجه به وابستگی رکورد ها حذف رکورد مورد نظر امکان پذیر نمی باشد!'));
-            }
-        }
-    }
-    function registerAlbum()
-    {
-        return view('pages/admin/registerAlbum');
-    }
 }
