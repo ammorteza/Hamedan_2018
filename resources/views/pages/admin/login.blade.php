@@ -29,33 +29,6 @@
         </div>
         <div style="margin-top:20px;" class="grid-x">
             <div style="margin:0 auto;" class="large-3 medium-6 small-10 cell callout ">
-                <form method="POST" action="{{ url('/admin/signIn') }}" data-abide novalidate>
-                    {{ csrf_field() }}
-                    @if ($errors->any())
-                        <div data-abide-error class="alert callout">
-                            <span style="color: #9e0c0f">{{ $errors->first('err') }}</span>
-                        </div>
-                    @endif
-                    <div class="columns padding-lr">
-                        <label>نام کاربری
-                            <input style="font-family: FontAwesome;" type="text"  autofocus name="email" aria-describedby="userNameText" required>
-                            <span class="form-error">
-                              لطفا نام کاربری را وارد نمایید !
-                            </span>
-                        </label>
-                    </div>
-                    <div class="medium-12 columns padding-lr">
-                        <label>رمز عبور
-                            <input style="font-family: FontAwesome;" type="password"  name="password" aria-describedby="userPassText" required>
-                            <span class="form-error">
-                              لطفا رمز عبور را وارد نمایید !
-                            </span>
-                        </label>
-                    </div>
-                    <div class="medium-12 padding-lr top-margin-element">
-                        <button style="margin-top: 20px;"  name="submit" class="button primary expanded">ورود</button>
-                    </div>
-                </form>
             </div>
         </div>
         <div class="grid-x">
