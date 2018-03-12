@@ -14,4 +14,8 @@ class NewsAdminController extends Controller
     {
         return view('pages/admin/album');
     }
+    function registerAlbum()
+    {
+        return view('pages/admin/registerAlbum');
+    }
 }
