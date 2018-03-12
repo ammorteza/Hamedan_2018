@@ -49,7 +49,8 @@ Route::group(['middleware' => ['auth']] , function () {
     Route::get('/admin', 'NewsAdminController@index');
     Route::get('/admin/signOut', 'AuthController@signOut');
     Route::get('/admin/album', 'NewsAdminController@album');
-    Route::get('/admin/registerAlbum', 'NewsAdminController@registerAlbum');
+    Route::get('/admin/album/delete/{gId}', 'NewsAdminController@deleteGalleryImage');
+    Route::get('/admin/album/register', 'NewsAdminController@registerAlbum');
 });
 
 Route::get('/admin/login', 'AuthController@loginFrom');

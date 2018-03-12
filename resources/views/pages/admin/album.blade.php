@@ -42,63 +42,51 @@
         </div>
         <div class="large-12 medium-12 small-12 element-distanse">
             <div class="grid-x">
-                <div class="large-3 medium-6 small-12 padding-lr-fs">
-                    <img class="image-shadow-effect" src="{{ asset('pic/gallery/lan_1.jpg') }}">
-                    <div class="album-menu center-el">
-                        <a href=""><i class="far fa-trash-alt btn-red size-21"></i></a>
+                @if($errors->any())
+                    <div class="medium-12 padding-lr-fs">
+                        <div data-abide-error class="alert callout">
+                            <span style="color: #9e0c0f">{{$errors->first('msg')}}</span>
+                        </div>
                     </div>
-
-                </div>
+                @endif
+                @foreach($gallery as $img)
                 <div class="large-3 medium-6 small-12 padding-lr-fs">
-                    <img class="image-shadow-effect" src="{{ asset('pic/gallery/lan_2.jpg') }}">
+                    <img class="image-shadow-effect" src="{{ asset($img->gPath) }}">
                     <div class="album-menu center-el">
-                        <a href=""><i class="far fa-trash-alt btn-red size-21"></i></a>
-                    </div>
-                </div>
-                <div class="large-3 medium-6 small-12 padding-lr-fs">
-                    <img class="image-shadow-effect" src="{{ asset('pic/gallery/lan_3.jpg') }}">
-                    <div class="album-menu center-el">
-                        <a href=""><i class="far fa-trash-alt btn-red size-21"></i></a>
+                        <a href="{{ url('/admin/album/delete/' . $img->id) }}"><i class="far fa-trash-alt btn-red size-21"></i></a>
                     </div>
                 </div>
-                <div class="large-3 medium-6 small-12 padding-lr-fs">
-                    <img class="image-shadow-effect" src="{{ asset('pic/gallery/lan_6.jpg') }}">
-                    <div class="album-menu center-el">
-                        <a href=""><i class="far fa-trash-alt btn-red size-21"></i></a>
-                    </div>
-                </div>
-                <div class="large-3 medium-6 small-12 padding-lr-fs">
-                    <img class="image-shadow-effect" src="{{ asset('pic/gallery/lan_7.jpg') }}">
-                    <div class="album-menu center-el">
-                        <a href=""><i class="far fa-trash-alt btn-red size-21"></i></a>
-                    </div>
-                </div>
-                <div class="large-3 medium-6 small-12 padding-lr-fs">
-                    <img class="image-shadow-effect" src="{{ asset('pic/gallery/lan_8.jpg') }}">
-                    <div class="album-menu center-el">
-                        <a href=""><i class="far fa-trash-alt btn-red size-21"></i></a>
-                    </div>
-                </div>
-
+                @endforeach
             </div>
             <!--Pagination Start-->
-            <div class="center-el element-distanse">
-                <nav aria-label="Pagination">
-                    <ul class="pagination">
-                        <li class="pagination-previous disabled">قبلی <span class="show-for-sr">page</span></li>
-                        <li class="current"><span class="show-for-sr">You're on page</span> 1</li>
-                        <li><a href="#" aria-label="Page 2">2</a></li>
-                        <li><a href="#" aria-label="Page 3">3</a></li>
-                        <li><a href="#" aria-label="Page 4">4</a></li>
-                        <li class="ellipsis" aria-hidden="true"></li>
-                        <li><a href="#" aria-label="Page 12">12</a></li>
-                        <li><a href="#" aria-label="Page 13">13</a></li>
-                        <li class="pagination-next"><a href="#" aria-label="Next page">بعدی <span class="show-for-sr">page</span></a></li>
-                    </ul>
-                </nav>
-            </div>
+            @if ($gallery->lastPage() > 1)
+                <ul class="pagination text-right medium-6 columns" style="margin-top: 0.8rem" role="navigation" aria-label="Pagination">
+                    @if($gallery->currentPage() != 1)
+                        <li class="pagination-previous">
+                            <a href="{{ $gallery->url($gallery->currentPage()-1) }}" aria-label="قبلی">
+                                <span class="my_text_color_pg" aria-hidden="true">قبلی</span>
+                            </a>
+                        </li>
+                    @endif
+                    @for($i = max($gallery->currentPage()-2, 1); $i <= min(max($gallery->currentPage()-2, 1)+4,$gallery->lastPage()); $i++)
+                        @if($gallery->currentPage() == $i)
+                            <li class="current"><span class="show-for-sr font-size-small">صفحه ای که در آن هستید</span>{{ $i }}
+                        @else
+                        <li>
+                            <a class="font-size-small my_text_color" href="{{ $gallery->url($i) }}">{{ $i }}</a>
+                            @endif
+                        </li>
+                    @endfor
+                    @if ($gallery->currentPage() != $gallery->lastPage())
+                        <li class="pagination-next">
+                            <a href="{{ $gallery->url($gallery->currentPage()+1) }}" aria-label="بعدی">
+                                <span class="my_text_color_pg" aria-hidden="true">بعدی</span>
+                            </a>
+                        </li>
+                    @endif
+                </ul>
+            @endif
             <!--Pagination End-->
-
         </div>
     </div>
 </div>

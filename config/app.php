@@ -164,6 +164,7 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         Morilog\Jalali\JalaliServiceProvider::class,
+        Foundation\FoundationServiceProvider::class,
 
         /*
          * Package Service Providers...
@@ -226,7 +227,8 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-        'jDate' => Morilog\Jalali\Facades\jDate::class
+        'jDate' => Morilog\Jalali\Facades\jDate::class,
+        'Foundation' => Foundation\Facades\Foundation::class,
 
     ],
 

@@ -87,6 +87,7 @@ class ComposerStaticInit7ab108b56806f06ea52d1979b2695b72
         ),
         'F' => 
         array (
+            'Foundation\\' => 11,
             'Fideloper\\Proxy\\' => 16,
             'Faker\\' => 6,
         ),
@@ -238,6 +239,10 @@ class ComposerStaticInit7ab108b56806f06ea52d1979b2695b72
         'Hamedan_2018\\' => 
         array (
             0 => __DIR__ . '/../..' . '/app',
+        ),
+        'Foundation\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/jvmartin/laravel5-foundation6-pagination/src',
         ),
         'Fideloper\\Proxy\\' => 
         array (
@@ -876,6 +881,10 @@ class ComposerStaticInit7ab108b56806f06ea52d1979b2695b72
         'File_Iterator' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Iterator.php',
         'File_Iterator_Facade' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Facade.php',
         'File_Iterator_Factory' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Factory.php',
+        'Foundation\\Facades\\Foundation' => __DIR__ . '/..' . '/jvmartin/laravel5-foundation6-pagination/src/Facades/Foundation.php',
+        'Foundation\\Factory' => __DIR__ . '/..' . '/jvmartin/laravel5-foundation6-pagination/src/Factory.php',
+        'Foundation\\FoundationServiceProvider' => __DIR__ . '/..' . '/jvmartin/laravel5-foundation6-pagination/src/FoundationServiceProvider.php',
+        'Foundation\\Pagination\\FoundationSixPresenter' => __DIR__ . '/..' . '/jvmartin/laravel5-foundation6-pagination/src/Pagination/FoundationSixPresenter.php',
         'GalleryTableSeeder' => __DIR__ . '/../..' . '/database/seeds/GalleryTableSeeder.php',
         'Hamcrest\\Arrays\\IsArray' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Arrays/IsArray.php',
         'Hamcrest\\Arrays\\IsArrayContaining' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Arrays/IsArrayContaining.php',
@@ -948,12 +957,14 @@ class ComposerStaticInit7ab108b56806f06ea52d1979b2695b72
         'Hamedan_2018\\Advertise' => __DIR__ . '/../..' . '/app/Advertise.php',
         'Hamedan_2018\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'Hamedan_2018\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
+        'Hamedan_2018\\Http\\Controllers\\AuthController' => __DIR__ . '/../..' . '/app/Http/Controllers/AuthController.php',
         'Hamedan_2018\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
         'Hamedan_2018\\Http\\Controllers\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/LoginController.php',
         'Hamedan_2018\\Http\\Controllers\\Auth\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/RegisterController.php',
         'Hamedan_2018\\Http\\Controllers\\Auth\\ResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ResetPasswordController.php',
         'Hamedan_2018\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'Hamedan_2018\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
+        'Hamedan_2018\\Http\\Controllers\\NewsAdminController' => __DIR__ . '/../..' . '/app/Http/Controllers/NewsAdminController.php',
         'Hamedan_2018\\Http\\Controllers\\NewsController' => __DIR__ . '/../..' . '/app/Http/Controllers/NewsController.php',
         'Hamedan_2018\\Http\\Controllers\\PageController' => __DIR__ . '/../..' . '/app/Http/Controllers/PageController.php',
         'Hamedan_2018\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
@@ -2668,6 +2679,7 @@ class ComposerStaticInit7ab108b56806f06ea52d1979b2695b72
         'Prophecy\\Doubler\\Generator\\Node\\ClassNode' => __DIR__ . '/..' . '/phpspec/prophecy/src/Prophecy/Doubler/Generator/Node/ClassNode.php',
         'Prophecy\\Doubler\\Generator\\Node\\MethodNode' => __DIR__ . '/..' . '/phpspec/prophecy/src/Prophecy/Doubler/Generator/Node/MethodNode.php',
         'Prophecy\\Doubler\\Generator\\ReflectionInterface' => __DIR__ . '/..' . '/phpspec/prophecy/src/Prophecy/Doubler/Generator/ReflectionInterface.php',
+        'Prophecy\\Doubler\\Generator\\TypeHintReference' => __DIR__ . '/..' . '/phpspec/prophecy/src/Prophecy/Doubler/Generator/TypeHintReference.php',
         'Prophecy\\Doubler\\LazyDouble' => __DIR__ . '/..' . '/phpspec/prophecy/src/Prophecy/Doubler/LazyDouble.php',
         'Prophecy\\Doubler\\NameGenerator' => __DIR__ . '/..' . '/phpspec/prophecy/src/Prophecy/Doubler/NameGenerator.php',
         'Prophecy\\Exception\\Call\\UnexpectedCallException' => __DIR__ . '/..' . '/phpspec/prophecy/src/Prophecy/Exception/Call/UnexpectedCallException.php',
@@ -3427,6 +3439,7 @@ class ComposerStaticInit7ab108b56806f06ea52d1979b2695b72
         'Symfony\\Component\\Routing\\Loader\\Configurator\\Traits\\RouteTrait' => __DIR__ . '/..' . '/symfony/routing/Loader/Configurator/Traits/RouteTrait.php',
         'Symfony\\Component\\Routing\\Loader\\DependencyInjection\\ServiceRouterLoader' => __DIR__ . '/..' . '/symfony/routing/Loader/DependencyInjection/ServiceRouterLoader.php',
         'Symfony\\Component\\Routing\\Loader\\DirectoryLoader' => __DIR__ . '/..' . '/symfony/routing/Loader/DirectoryLoader.php',
+        'Symfony\\Component\\Routing\\Loader\\GlobFileLoader' => __DIR__ . '/..' . '/symfony/routing/Loader/GlobFileLoader.php',
         'Symfony\\Component\\Routing\\Loader\\ObjectRouteLoader' => __DIR__ . '/..' . '/symfony/routing/Loader/ObjectRouteLoader.php',
         'Symfony\\Component\\Routing\\Loader\\PhpFileLoader' => __DIR__ . '/..' . '/symfony/routing/Loader/PhpFileLoader.php',
         'Symfony\\Component\\Routing\\Loader\\ProtectedPhpFileLoader' => __DIR__ . '/..' . '/symfony/routing/Loader/PhpFileLoader.php',
