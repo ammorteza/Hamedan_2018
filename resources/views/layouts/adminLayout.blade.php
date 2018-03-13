@@ -8,8 +8,11 @@
     <title>پنل مدیریت</title>
     <link rel="icon" type="image/png" href="{{ asset('pic/footer/footer-logo.png') }}">
     <!-- Fonts -->
+    <script src="{{ asset('css/ckeditor/ckeditor.js') }}"  type="text/javascript"></script>
+    <script src="{{ asset('css/ckeditor/samples/js/sample.js') }}"  type="text/javascript"></script>
     <link rel="stylesheet" href="{{ asset('fontawesome-free-5.0.0/web-fonts-with-css/css/fontawesome-all.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/foundation.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/ckeditor/samples/css/samples.css') }}">
     <link href="https://fonts.googleapis.com/css?family=Satisfy|Poiret+One|Cabin|Wire+One|Merienda|Roboto" rel="stylesheet">
     {{--<link href="https://cdnjs.cloudflare.com/ajax/libs/motion-ui/1.2.2/motion-ui.css" rel="stylesheet">--}}
     <link rel="stylesheet" href="{{ asset('css/font.css') }}">
@@ -26,13 +29,14 @@
                         <a class="right-mp right-menu-btm-border" href="#"><i class="far fa-newspaper size-21 icon-pos" aria-hidden="true"></i>اخبار</a>
                         <ul class="menu vertical nested">
                             <li>
+                                <a href="">مشاهده اخبار</a>
                                 <a href="">درج خبر</a>
                                 <a href="">اسلاید خبر</a>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <a class="right-mp right-menu-btm-border" href="{{ url('/admin/album') }}"><i class="far fa- size-21 icon-pos" aria-hidden="true"></i>گالری</a>
+                        <a class="right-mp right-menu-btm-border" href="{{ url('/admin/album') }}"><i class="far fa-images size-21 icon-pos" aria-hidden="true"></i>گالری</a>
                     </li>
                 </ul>
             </nav>
@@ -55,8 +59,11 @@
 </div>
 <!--Copy Right Bar End-->
 <script src="{{ asset('js/vendor/jquery.js') }}"  type="text/javascript"></script>
+
 <script src="{{ asset('js/vendor/foundation.js') }}"></script>
 <script src="{{ asset('js/app.js') }}"></script>
-
+<script>
+    initSample();
+</script>
 </body>
 </html>
