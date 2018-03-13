@@ -30,7 +30,6 @@
                         <ul class="menu vertical nested">
                             <li>
                                 <a href="">مشاهده اخبار</a>
-                                <a href="">درج خبر</a>
                                 <a href="">اسلاید خبر</a>
                             </li>
                         </ul>
