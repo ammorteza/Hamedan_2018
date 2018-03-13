@@ -31,7 +31,7 @@
     <div class="grid-x padding-lr-fs my-callout-box">
 
         <div class="large-12 medium-12 small-12 element-distanse">
-            <form  data-abide novalidate method="POST" action="{{ url('/admin/album/register') }}">
+            <form  data-abide novalidate method="POST" enctype="multipart/form-data" action="{{ url('/admin/album/register') }}">
                 {{ csrf_field() }}
                 <div data-abide-error class="alert callout" style="display: none;">
                     <span style="color: #9e0c0f">خطا</span>
@@ -86,7 +86,7 @@
                 </div>
                 <div class="medium-12 columns padding-lr">
                     <label>نام عکاس - انگلیسی
-                        <input  type="text"  name="photographer_ar" aria-describedby="photographerAa" required>
+                        <input  type="text"  name="photographer_en" aria-describedby="photographerAa" required>
                         <span class="form-error">
                               لطفا نام عکاس را به انگلیسی را وارد نمایید !
                             </span>

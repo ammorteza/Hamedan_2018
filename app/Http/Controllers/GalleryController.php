@@ -2,8 +2,11 @@
 
 namespace Hamedan_2018\Http\Controllers;
 
+use Faker\Provider\Uuid;
 use Hamedan_2018\ImageGallery;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Redirect;
 
 class GalleryController extends Controller
@@ -39,6 +42,17 @@ class GalleryController extends Controller
     {
         $gallery = new ImageGallery;
         if ($request->hasFile('imageFile'))
-            $gallery->gPath = $request->store('pic/gallery/');
+            $gallery->gPath = $request->imageFile->store('pic/gallery');
+        $gallery->gFaPhotographer = $request->photographer_fa;
+        $gallery->gEnPhotographer = $request->photographer_en;
+        $gallery->gArPhotographer = $request->photographer_ar;
+        $gallery->gFaLocation = $request->location_fa;
+        $gallery->gEnLocation = $request->location_en;
+        $gallery->gArLocation = $request->location_ar;
+        $gallery->save();
+
+        $galleries = ImageGallery::orderBy('id' , 'DESC')->paginate(20);
+        return view('pages.admin.album' , ['gallery' => $galleries]);
+
     }
 }
