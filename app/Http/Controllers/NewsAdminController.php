@@ -12,4 +12,12 @@ class NewsAdminController extends Controller
     {
 
     }
+    function news()
+    {
+        return view('pages.admin.allNews');
+    }
+    function register()
+    {
+        return view('pages.admin.registerNews');
+    }
 }

@@ -35,6 +35,15 @@ body{
 h1,h2,h3,h4,h5,h6{
     font-family:BYekan;
 }
+td {
+    color: #555555;
+    font-size: 14px;
+    /*border: solid 1.5px  #D8DEE2;
+    background-color: #FFFFFF;*/
+}
+th {
+    color: #575962;
+}
 .center-el{
     text-align: center;
 }
@@ -1280,6 +1289,16 @@ ul.social-icons {
 .album-menu{
     background-color: #F2F3F8;
     padding: 10px;
+}
+.one-line-event{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    max-width: 250px;
+}
+.icon-pos{
+    margin-left: 8px;
+    padding-top: 5px;
 }
 /*///////////////////////////////////////////////////////////////////*/
 /* News Image Slider Start*/
