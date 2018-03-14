@@ -35,6 +35,8 @@ class CreateSectionTable extends Migration
                 $table->longText('sFaDescription')->nullable();
                 $table->longText('sEnDescription')->nullable();
                 $table->longText('sArDescription')->nullable();
+
+                $table->longText('sLocation')->nullable();
                 $table->timestamps();
 
                 $table->foreign('sPId')

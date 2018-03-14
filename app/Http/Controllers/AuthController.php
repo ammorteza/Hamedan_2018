@@ -27,7 +27,7 @@ class AuthController extends Controller
 
         if (Auth::attempt($credentials, $request->has('remember')))
         { //this if validate if the user is on the database line 1
-            return redirect()->to('/admin');
+            return redirect()->to('/admin/news');
             //this redirect if user is the db line 2
         }
 

@@ -12,10 +12,7 @@
             <div class="grid-x">
                 <nav aria-label="You are here:" role="navigation">
                     <ul class="breadcrumbs">
-                        <li><a href="#">داشبورد</a></li>
-                        <li>
-                            <a class="disabled">اخبار</a>
-                        </li>
+                        <li><a href="{{ url('/admin/news') }}">اخبار</a></li>
                         <li>
                             <span class="show-for-sr">Current: </span>
                            آلبوم
@@ -52,7 +49,18 @@
                 <div class="large-3 medium-6 small-12 padding-lr-fs">
                     <img class="image-shadow-effect" src="{{ asset($img->gPath) }}">
                     <div class="album-menu center-el">
-                        <a href="{{ url('/admin/album/delete/' . $img->id) }}"><i class="far fa-trash-alt btn-red size-21"></i></a>
+                        <a  href="#" data-open="{{ 'deleteNewsModal' . $img->id }}" data-tooltip aria-haspopup="true" class="has-tip" data-disable-hover="false" tabindex="1" title="حذف" data-position="top" data-alignment="center"><i class="far fa-trash-alt btn-red size-18"></i></a>
+                        <!--Modal Start-->
+                        <div class="reveal tiny" id="{{ 'deleteNewsModal' . $img->id }}" data-reveal>
+                            <p style="margin-top: 25px;font-size: small;" class="lead">آیا برا حذف خبر اطمینان دارید؟</p>
+                            <div class="center-el">
+                                <a href="{{ url('/admin/album/delete/' . $img->id) }}" class="button alert">بله</a>
+                            </div>
+                            <button class="close-button" data-close aria-label="Close modal" type="button">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <!--Modal End-->
                     </div>
                 </div>
                 @endforeach

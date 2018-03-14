@@ -12,10 +12,7 @@
             <div class="grid-x">
                 <nav aria-label="You are here:" role="navigation">
                     <ul class="breadcrumbs">
-                        <li><a href="#">داشبورد</a></li>
-                        <li>
-                            <a class="disabled">اخبار</a>
-                        </li>
+                        <li><a href="{{ url('/admin/news') }}">اخبار</a></li>
                         <li>
                             <span class="show-for-sr">Current: </span>
                              درج خبر
@@ -29,12 +26,10 @@
         <div class="large-12 medium-12 small-12 element-distanse">
             <div class="grid-x">
                 <div class="large-12 medium-12 small-12 element-distanse">
-                    <form  data-abide novalidate>
+                    <form  data-abide novalidate method="POST" enctype="multipart/form-data" action="{{ url('/admin/news/register') }}">
+                        {{ csrf_field() }}
                         <fieldset class="fieldset padding-lr-fs">
                             <legend class="btn-red">خبر فارسی </legend>
-                            <div data-abide-error class="alert callout" style="display: none;">
-                                <span style="color: #9e0c0f">لطفا فیلد های قرمز شده را به صورت صحیح وارد نمایید</span>
-                            </div>
                             <div class="grid-x">
                                 <div class="large-8 columns padding-lr">
                                     <fieldset class="fieldset padding-lr-fs">
@@ -55,7 +50,7 @@
                             <div class="grid-x">
                                 <div class="large-8 medium-12 small-12 padding-lr">
                                     <label>عنوان
-                                        <input  type="text"  name="title" aria-describedby="newsTitle" required>
+                                        <input  type="text"  name="faSubject" aria-describedby="newsTitle" required>
                                         <span class="form-error">
                           لطفا عنوان خبر را وارد نمایید !
                                         </span>
@@ -65,7 +60,7 @@
                             <div class="grid-x">
                                 <div class="large-8 medium-12 small-12 padding-lr">
                                     <label>خلاصه خبر
-                                        <textarea  type="text" style="height: 90px;"  name="description" aria-describedby="newsDescription" required></textarea>
+                                        <textarea  type="text" style="height: 90px;"  name="faBriefDescription" aria-describedby="newsDescription" required></textarea>
                                         <span class="form-error">
                           لطفا خلاصه خبر را وارد نمایید !
                                         </span>
@@ -75,33 +70,29 @@
 
                             <div class="grid-x">
                                 <div class="large-12 medium-12 small-12">
-
                                     <label class="padding-lr">متن خبر
                                     </label>
-                                    <textarea name="editor1" class="ckeditor"></textarea>
+                                    <textarea name="faDescription" class="ckeditor"></textarea>
                                     <script type="text/javascript">
                                         CKEDITOR.replace( 'editor1' );
                                         CKEDITOR.add
                                     </script>
-
                                 </div>
                             </div>
-
                         </fieldset>
-
                         <fieldset class="fieldset padding-lr-fs">
                             <legend class="btn-red">خبر عربی </legend>
                             <div class="grid-x">
                                 <div class="large-8 medium-12 small-12 padding-lr">
                                     <label>عنوان
-                                        <input  type="text"  name="title">
+                                        <input  type="text"  name="arSubject">
                                     </label>
                                 </div>
                             </div>
                             <div class="grid-x">
                                 <div class="large-8 medium-12 small-12 padding-lr">
                                     <label>خلاصه خبر
-                                        <textarea  type="text" style="height: 90px;"  name="description"></textarea>
+                                        <textarea  type="text" style="height: 90px;"  name="arBriefDescription"></textarea>
                                     </label>
                                 </div>
                             </div>
@@ -111,7 +102,7 @@
 
                                     <label class="padding-lr">متن خبر
                                     </label>
-                                    <textarea name="editor2" class="ckeditor"></textarea>
+                                    <textarea name="arDescription" class="ckeditor"></textarea>
                                     <script type="text/javascript">
                                         CKEDITOR.replace( 'editor2' );
                                         CKEDITOR.add
@@ -126,14 +117,14 @@
                             <div class="grid-x">
                                 <div class="large-8 medium-12 small-12 padding-lr">
                                     <label>عنوان
-                                        <input  type="text"  name="title">
+                                        <input  type="text"  name="enSubject">
                                     </label>
                                 </div>
                             </div>
                             <div class="grid-x">
                                 <div class="large-8 medium-12 small-12 padding-lr">
                                     <label>خلاصه خبر
-                                        <textarea  type="text" style="height: 90px;"  name="description"></textarea>
+                                        <textarea  type="text" style="height: 90px;"  name="enBriefDescription"></textarea>
                                     </label>
                                 </div>
                             </div>
@@ -143,7 +134,7 @@
 
                                     <label class="padding-lr">متن خبر
                                     </label>
-                                    <textarea name="editor3" class="ckeditor"></textarea>
+                                    <textarea name="enDescription" class="ckeditor"></textarea>
                                     <script type="text/javascript">
                                         CKEDITOR.replace( 'editor3' );
                                         CKEDITOR.add

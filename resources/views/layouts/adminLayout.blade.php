@@ -29,8 +29,8 @@
                         <a class="right-mp right-menu-btm-border" href="#"><i class="far fa-newspaper size-21 icon-pos" aria-hidden="true"></i>اخبار</a>
                         <ul class="menu vertical nested">
                             <li>
-                                <a href="">مشاهده اخبار</a>
-                                <a href="">اسلاید خبر</a>
+                                <a href="{{ url('/admin/news') }}">لیست اخبار</a>
+                                <a href="">اسلایدر خبر</a>
                             </li>
                         </ul>
                     </li>
@@ -45,7 +45,7 @@
             <div data-sticky-container>
                 <div class="title-bar" data-sticky data-options="marginTop:0;" style="width:100%;background-color: #FFFFFF;" data-top-anchor="1" data-btm-anchor="content:bottom">
                     <div class="title-bar-left">
-                        <span style="color: #1b6d85">علی جهان پاک</span>
+                        <span style="color: #1b6d85">{{ Auth::user()->name }}</span>
                     </div>
                     <div class="title-bar-right">
                         <a href="{{ url('/admin/signOut') }}" class="float-left"><i class="fas fa-sign-out-alt size-21"></i></a>

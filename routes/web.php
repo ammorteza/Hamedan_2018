@@ -51,9 +51,11 @@ Route::group(['middleware' => ['auth']] , function () {
     Route::get('/admin/album', 'GalleryController@album');
     Route::get('/admin/album/delete/{gId}', 'GalleryController@deleteGalleryImage');
     Route::get('/admin/album/register', 'GalleryController@registerForm');
-    Route::get('/admin/allNews', 'NewsAdminController@news');
-    Route::get('/admin/registerNews', 'NewsAdminController@register');
     Route::post('/admin/album/register', 'GalleryController@register');
+    Route::get('/admin/news', 'NewsAdminController@news');
+    Route::get('/admin/news/register', 'NewsAdminController@registerForm');
+    Route::post('/admin/news/register', 'NewsAdminController@register');
+    Route::get('/admin/news/delete/{nId}', 'NewsAdminController@delete');
 });
 
 Route::get('/admin/login', 'AuthController@loginFrom');

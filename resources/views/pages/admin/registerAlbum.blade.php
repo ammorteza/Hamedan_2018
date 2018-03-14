@@ -12,16 +12,10 @@
             <div class="grid-x">
                 <nav aria-label="You are here:" role="navigation">
                     <ul class="breadcrumbs">
-                        <li><a href="{{ url('/admin') }}">داشبورد</a></li>
-                        <li>
-                            <a class="disabled">اخبار</a>
-                        </li>
-                        <li>
-                            <a class="disabled">آلبوم</a>
-                        </li>
-                        <li>
-                            <span class="show-for-sr">Current: </span>
-                          آلبوم جدید
+                        <li><a href="{{ url('/admin/news') }}">اخبار</a></li>
+                        <li><a href="{{ url('/admin/album') }}">گالری</a></li>
+                        <li><span class="show-for-sr">Current: </span>
+                          تصویر جدید
                         </li>
                     </ul>
                 </nav>
