@@ -42,22 +42,43 @@
                             <img class="news-image" style=";margin-top: -20px;" src="{{ asset($news->newsImg[0]['gallery']->gPath) }}" alt="" width="300px" height="200px">
                         </div>
                         <div style="padding-left: 50px;padding-right: 50px;" class="large-8 medium-12 small-12 news-link">
-                                <h5 class="Shabnam-Bold">{{ $news->nFaSubject }}</h5>
-                                <p style="width: 100%" class="two-line text-color text-justify element-distanse font-small Shabnam-Light">{{ $news->nFaBriefDescription }}</p>
-                            <div class="btn-group">
-                                <a  href="#" data-tooltip aria-haspopup="true" class="has-tip" data-disable-hover="false" tabindex="1" title="ویرایش" data-position="top" data-alignment="center"><i class="far fa-edit btn-green size-18 btn-group-margin"></i></a>
-                                <a data-open="{{ 'deleteNewsModal' . $news->id }}" data-tooltip aria-haspopup="true" class="has-tip" data-disable-hover="false" tabindex="1" title="حذف" data-position="top" data-alignment="center"><i class="far fa-trash-alt btn-red size-18"></i></a>
-                                <!--Modal Start-->
-                                <div class="reveal tiny" id="{{ 'deleteNewsModal' . $news->id }}" data-reveal>
-                                    <p style="margin-top: 25px;font-size: small;" class="lead">آیا برا حذف خبر اطمینان دارید؟</p>
-                                    <div class="center-el">
-                                        <a href="{{ url('/admin/news/delete/' . $news->id) }}" class="button alert">بله</a>
+                            <h5 class="Shabnam-Bold">{{ $news->nFaSubject }}</h5>
+                            <p style="width: 100%" class="two-line text-color text-justify element-distanse font-small Shabnam-Light">{{ $news->nFaBriefDescription }}</p>
+                            <div class="grid-x">
+                                <div class="large-12 medium-12 small-12">
+                                    <div class="grid-x">
+                                        <div class="large-1 medium-6 small-12">
+                                            <div class="btn-group">
+                                                <a  href="#" data-tooltip aria-haspopup="true" class="has-tip" data-disable-hover="false" tabindex="1" title="ویرایش" data-position="top" data-alignment="center"><i class="far fa-edit btn-green size-18 btn-group-margin"></i></a>
+                                                <a data-open="{{ 'deleteNewsModal' . $news->id }}" data-tooltip aria-haspopup="true" class="has-tip" data-disable-hover="false" tabindex="1" title="حذف" data-position="top" data-alignment="center"><i class="far fa-trash-alt btn-red size-18"></i></a>
+                                                <!--Modal Start-->
+                                                <div class="reveal tiny" id="{{ 'deleteNewsModal' . $news->id }}" data-reveal>
+                                                    <p style="margin-top: 25px;font-size: small;" class="lead">آیا برا حذف خبر اطمینان دارید؟</p>
+                                                    <div class="center-el">
+                                                        <a href="{{ url('/admin/news/delete/' . $news->id) }}" class="button alert">بله</a>
+                                                    </div>
+                                                    <button class="close-button" data-close aria-label="Close modal" type="button">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <!--Modal End-->
+
+                                            </div>
+                                        </div>
+                                        <div class="large-2 medium-4 small-12">
+                                            <p style="font-size: small;float: left;">نمایش خبر : </p>
+                                        </div>
+                                        <div class="large-2 medium-4 small-12">
+                                            <div style="margin-right: 5px;" class="switch small">
+                                                <input class="switch-input" id="news1" type="checkbox">
+                                                <label  class="switch-paddle" for="news1">
+                                                    <span class="switch-active" aria-hidden="true">بلی</span>
+                                                    <span class="switch-inactive" aria-hidden="true">خیر</span>
+                                                </label>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <button class="close-button" data-close aria-label="Close modal" type="button">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
                                 </div>
-                                <!--Modal End-->
                             </div>
                         </div>
                     </div>
