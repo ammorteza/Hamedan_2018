@@ -29,7 +29,7 @@
                         <a class="right-mp right-menu-btm-border" href="#"><i class="far fa-newspaper size-21 icon-pos" aria-hidden="true"></i>اخبار</a>
                         <ul class="menu vertical nested">
                             <li>
-                                <a href="{{ url('/admin/news') }}">لیست اخبار</a>
+                                <a href="{{ url('/admin/news') }}">لیست خبر</a>
                                 <a href="">اسلایدر خبر</a>
                             </li>
                         </ul>
