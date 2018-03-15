@@ -24,7 +24,8 @@ class NewsAdminController extends Controller
 
     function registerForm()
     {
-        return view('pages.admin.registerNews');
+        $gallery = ImageGallery::orderBy('id' , 'DESC')->get();
+        return view('pages.admin.registerNews' , ['gallery' => $gallery]);
     }
 
     function register(Request $request)
@@ -43,7 +44,7 @@ class NewsAdminController extends Controller
 
         $newsImg = new NewsImg;
         $newsImg->niNId = $news->id;
-        $newsImg->niGId = 1;
+        $newsImg->niGId = $request->selectedImageId;
         $newsImg->niFaAlt = $request->faSubject;
         $newsImg->niEnAlt = $request->enSubject != '' ? $request->enSubject : '--';
         $newsImg->niArAlt = $request->arSubject != '' ? $request->arSubject : '--';

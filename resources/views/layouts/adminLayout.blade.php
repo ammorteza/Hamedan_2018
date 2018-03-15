@@ -64,5 +64,13 @@
 <script>
     initSample();
 </script>
+<script>
+    $(document).ready(function(){
+        $('#selectImageModal').on("closed.zf.reveal" , function(){
+            var text = $('input[name=imageGalleryId]:checked').val();
+            $('#selectedImageId').val(text);
+        });
+    });
+</script>
 </body>
 </html>

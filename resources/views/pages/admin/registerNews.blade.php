@@ -31,12 +31,12 @@
             </ul>
 
             <div class="tabs-content" data-tabs-content="collapsing-tabs">
-                <form  data-abide novalidate method="POST" enctype="multipart/form-data" action="{{ url('/admin/news/register') }}">
+                <form id="registerNewsForm"  data-abide novalidate method="POST" action="{{ url('/admin/news/register') }}">
                     {{ csrf_field() }}
                 <div class="tabs-panel is-active" id="panel1c">
                     <div class="grid-x">
                         <div class="large-8 columns padding-lr">
-                            <button class="button primary" data-open="selectImageModal">انتخاب تصویر</button>
+                            <a class="button primary" data-open="selectImageModal">انتخاب تصویر</a>
                         </div>
                     </div>
                     <div class="grid-x">
@@ -133,47 +133,41 @@
                         </div>
                     </div>
                 </div>
+                <input type="hidden" name="selectedImageId" id="selectedImageId"/>
                 <div class="medium-12 padding-lr top-margin-element">
                     <button style="margin-top: 20px;"  name="submit" class="button primary">ثبت</button>
                 </div>
                 <!--Tab 3-->
                 </form>
+                <!--Select Image Modal Start-->
+                <div class="reveal large" id="selectImageModal" data-reveal>
+                    <form id="formModal">
+                        <div class="grid-x">
+                            @foreach($gallery as $img)
+                                <div class="large-4 medium-6 small-12 padding-lr-fs">
+                                    <div class="large-4 medium-6 small-12 padding-lr-fs">
+                                        <img class="image-shadow-effect" src="{{ asset($img->gPath) }}">
+                                        <div style="padding-bottom: 20px;" class="album-menu center-el">
+                                            <label class="container">
+                                                <input type="radio" name="imageGalleryId" value="{{ $img->id }}">
+                                                <span class="checkmark"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
+                    </form>
+                    <button class="close-button" data-close aria-label="Close modal" type="button">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <!--Select Image Modal End-->
             </div>
 
         </div>
     </div>
 </div>
-<!--Select Image Modal Start-->
-<div class="reveal large" id="selectImageModal" data-reveal>
-    <div class="grid-x">
-        <div class="large-3 medium-6 small-12 padding-lr-fs">
-            <div class="large-3 medium-6 small-12 padding-lr-fs">
-                <img class="image-shadow-effect" src="{{ asset('pic/gallery/lan_1.jpg') }}">
-                <div style="padding-bottom: 20px;" class="album-menu center-el">
-                    <label class="container">
-                        <input type="radio" checked="checked" name="radio">
-                        <span class="checkmark"></span>
-                    </label>
-                </div>
-            </div>
-        </div>
-        <div class="large-3 medium-6 small-12 padding-lr-fs">
-            <div class="large-3 medium-6 small-12 padding-lr-fs">
-                <img class="image-shadow-effect" src="{{ asset('pic/gallery/lan_1.jpg') }}">
-                <div style="padding-bottom: 20px;" class="album-menu center-el">
-                    <label class="container">
-                        <input type="radio" name="radio">
-                        <span class="checkmark"></span>
-                    </label>
-                </div>
-            </div>
-        </div>
-    </div>
-    <button class="close-button" data-close aria-label="Close modal" type="button">
-        <span aria-hidden="true">&times;</span>
-    </button>
-</div>
-<!--Select Image Modal End-->
 
     <script>
         function readURL(input) {
@@ -190,5 +184,7 @@
                 reader.readAsDataURL(input.files[0]);
             }
         }
+
+
     </script>
 @stop
