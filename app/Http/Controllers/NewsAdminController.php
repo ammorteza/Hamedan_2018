@@ -59,4 +59,9 @@ class NewsAdminController extends Controller
         News::where('id' , '=' , $nId)->delete();
         return $this->news();
     }
+
+    function update()
+    {
+        return view('pages.admin.updateNews');
+    }
 }
