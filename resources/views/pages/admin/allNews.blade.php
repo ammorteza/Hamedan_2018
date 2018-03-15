@@ -70,7 +70,7 @@
                                         </div>
                                         <div class="large-2 medium-4 small-12">
                                             <div style="margin-right: 5px;" class="switch small">
-                                                <input class="switch-input" id="news1" type="checkbox">
+                                                <input class="switch-input" id="news1" {{ $news->nState == 1 ? 'checked' : '' }} type="checkbox">
                                                 <label  class="switch-paddle" for="news1">
                                                     <span class="switch-active" aria-hidden="true">بلی</span>
                                                     <span class="switch-inactive" aria-hidden="true">خیر</span>

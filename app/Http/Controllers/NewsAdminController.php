@@ -40,6 +40,7 @@ class NewsAdminController extends Controller
         $news->nFaDescription = $request->faDescription;
         $news->nEnDescription = $request->enDescription;
         $news->nArDescription = $request->arDescription;
+        $news->nState = $request->displayState == '' ? 0 : 1;
         $news->save();
 
         $newsImg = new NewsImg;
@@ -59,5 +60,10 @@ class NewsAdminController extends Controller
         NewsImg::where('niNId' , '=' , $nId)->delete();
         News::where('id' , '=' , $nId)->delete();
         return $this->news();
+    }
+
+    function update()
+    {
+        return view('pages.admin.updateNews');
     }
 }
