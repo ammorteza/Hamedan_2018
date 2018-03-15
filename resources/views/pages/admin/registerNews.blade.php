@@ -24,134 +24,157 @@
     </div>
     <div class="grid-x padding-lr-fs my-callout-box" id="main">
         <div class="large-12 medium-12 small-12 element-distanse">
-            <div class="grid-x">
-                <div class="large-12 medium-12 small-12 element-distanse">
-                    <form  data-abide novalidate method="POST" enctype="multipart/form-data" action="{{ url('/admin/news/register') }}">
-                        {{ csrf_field() }}
-                        <fieldset class="fieldset padding-lr-fs">
-                            <legend class="btn-red">خبر فارسی </legend>
-                            <div class="grid-x">
-                                <div class="large-8 columns padding-lr">
-                                    <fieldset class="fieldset padding-lr-fs">
-                                        <legend class="btn-red">تصویر خبر</legend>
-                                    <label for="exampleFileUpload" class="button">انتخاب تصویر</label>
-                                    <input type="file" id="exampleFileUpload" name="imageFile"  onchange="readURL(this);" class="show-for-sr" required>
-                                    <span class="form-error">
-                                        لطفا تصویر خبر را انتخاب نمایید!
+            <ul class="tabs" data-active-collapse="true" data-tabs id="collapsing-tabs">
+                <li class="tabs-title is-active"><a href="#panel1c" aria-selected="true">فارسی</a></li>
+                <li class="tabs-title"><a href="#panel2c">عربی</a></li>
+                <li class="tabs-title"><a href="#panel3c">انگلیسی</a></li>
+            </ul>
+
+            <div class="tabs-content" data-tabs-content="collapsing-tabs">
+                <form  data-abide novalidate method="POST" enctype="multipart/form-data" action="{{ url('/admin/news/register') }}">
+                    {{ csrf_field() }}
+                <div class="tabs-panel is-active" id="panel1c">
+                    <div class="grid-x">
+                        <div class="large-8 columns padding-lr">
+                            <button class="button primary" data-open="selectImageModal">انتخاب تصویر</button>
+                        </div>
+                    </div>
+                    <div class="grid-x">
+                        <div class="large-8 medium-12 small-12 padding-lr">
+                            <label>عنوان
+                                <input  type="text"  name="faSubject" aria-describedby="newsTitle" required>
+                                <span class="form-error">
+                      لطفا عنوان خبر را وارد نمایید !
                                     </span>
-                                    <div class="grid-x">
-                                        <div class="large-3 medium-6 small-12">
-                                            <img id="blah">
-                                        </div>
-                                    </div>
-                                </fieldset>
-                                </div>
-                            </div>
-                            <div class="grid-x">
-                                <div class="large-8 medium-12 small-12 padding-lr">
-                                    <label>عنوان
-                                        <input  type="text"  name="faSubject" aria-describedby="newsTitle" required>
-                                        <span class="form-error">
-                          لطفا عنوان خبر را وارد نمایید !
-                                        </span>
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="grid-x">
-                                <div class="large-8 medium-12 small-12 padding-lr">
-                                    <label>خلاصه خبر
-                                        <textarea  type="text" style="height: 90px;"  name="faBriefDescription" aria-describedby="newsDescription" required></textarea>
-                                        <span class="form-error">
-                          لطفا خلاصه خبر را وارد نمایید !
-                                        </span>
-                                    </label>
-                                </div>
-                            </div>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="grid-x">
+                        <div class="large-8 medium-12 small-12 padding-lr">
+                            <label>خلاصه خبر
+                                <textarea  type="text" style="height: 90px;"  name="faBriefDescription" aria-describedby="newsDescription" required></textarea>
+                                <span class="form-error">
+                      لطفا خلاصه خبر را وارد نمایید !
+                                    </span>
+                            </label>
+                        </div>
+                    </div>
 
-                            <div class="grid-x">
-                                <div class="large-12 medium-12 small-12">
-                                    <label class="padding-lr">متن خبر
-                                    </label>
-                                    <textarea name="faDescription" class="ckeditor"></textarea>
-                                    <script type="text/javascript">
-                                        CKEDITOR.replace( 'editor1' );
-                                        CKEDITOR.add
-                                    </script>
-                                </div>
-                            </div>
-                        </fieldset>
-                        <fieldset class="fieldset padding-lr-fs">
-                            <legend class="btn-red">خبر عربی </legend>
-                            <div class="grid-x">
-                                <div class="large-8 medium-12 small-12 padding-lr">
-                                    <label>عنوان
-                                        <input  type="text"  name="arSubject">
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="grid-x">
-                                <div class="large-8 medium-12 small-12 padding-lr">
-                                    <label>خلاصه خبر
-                                        <textarea  type="text" style="height: 90px;"  name="arBriefDescription"></textarea>
-                                    </label>
-                                </div>
-                            </div>
+                    <div class="grid-x">
+                        <div class="large-12 medium-12 small-12">
+                            <label class="padding-lr">متن خبر
+                            </label>
+                            <textarea name="faDescription" class="ckeditor"></textarea>
+                            <script type="text/javascript">
+                                CKEDITOR.replace( 'editor1' );
+                                CKEDITOR.add
+                            </script>
+                        </div>
+                    </div>
+                </div>
+                <!--Tab 2-->
+                <div class="tabs-panel" id="panel2c">
+                    <div class="grid-x">
+                        <div class="large-8 medium-12 small-12 padding-lr">
+                            <label>عنوان
+                                <input  type="text"  name="arSubject">
+                            </label>
+                        </div>
+                    </div>
+                    <div class="grid-x">
+                        <div class="large-8 medium-12 small-12 padding-lr">
+                            <label>خلاصه خبر
+                                <textarea  type="text" style="height: 90px;"  name="arBriefDescription"></textarea>
+                            </label>
+                        </div>
+                    </div>
 
-                            <div class="grid-x">
-                                <div class="large-12 medium-12 small-12">
+                    <div class="grid-x">
+                        <div class="large-12 medium-12 small-12">
 
-                                    <label class="padding-lr">متن خبر
-                                    </label>
-                                    <textarea name="arDescription" class="ckeditor"></textarea>
-                                    <script type="text/javascript">
-                                        CKEDITOR.replace( 'editor2' );
-                                        CKEDITOR.add
-                                    </script>
-                                </div>
-                            </div>
+                            <label class="padding-lr">متن خبر
+                            </label>
+                            <textarea name="arDescription" class="ckeditor"></textarea>
+                            <script type="text/javascript">
+                                CKEDITOR.replace( 'editor2' );
+                                CKEDITOR.add
+                            </script>
+                        </div>
+                    </div>
+                </div>
+                <!--Tab 2-->
+                <!--Tab 3-->
+                <div class="tabs-panel" id="panel3c">
+                    <div class="grid-x">
+                        <div class="large-8 medium-12 small-12 padding-lr">
+                            <label>عنوان
+                                <input  type="text"  name="enSubject">
+                            </label>
+                        </div>
+                    </div>
+                    <div class="grid-x">
+                        <div class="large-8 medium-12 small-12 padding-lr">
+                            <label>خلاصه خبر
+                                <textarea  type="text" style="height: 90px;"  name="enBriefDescription"></textarea>
+                            </label>
+                        </div>
+                    </div>
 
-                        </fieldset>
+                    <div class="grid-x">
+                        <div class="large-12 medium-12 small-12">
 
-                        <fieldset class="fieldset padding-lr-fs">
-                            <legend class="btn-red">خبر انگلیسی </legend>
-                            <div class="grid-x">
-                                <div class="large-8 medium-12 small-12 padding-lr">
-                                    <label>عنوان
-                                        <input  type="text"  name="enSubject">
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="grid-x">
-                                <div class="large-8 medium-12 small-12 padding-lr">
-                                    <label>خلاصه خبر
-                                        <textarea  type="text" style="height: 90px;"  name="enBriefDescription"></textarea>
-                                    </label>
-                                </div>
-                            </div>
+                            <label class="padding-lr">متن خبر
+                            </label>
+                            <textarea name="enDescription" class="ckeditor"></textarea>
+                            <script type="text/javascript">
+                                CKEDITOR.replace( 'editor3' );
+                                CKEDITOR.add
+                            </script>
+                        </div>
+                    </div>
+                </div>
+                <div class="medium-12 padding-lr top-margin-element">
+                    <button style="margin-top: 20px;"  name="submit" class="button primary">ثبت</button>
+                </div>
+                <!--Tab 3-->
+                </form>
+            </div>
 
-                            <div class="grid-x">
-                                <div class="large-12 medium-12 small-12">
-
-                                    <label class="padding-lr">متن خبر
-                                    </label>
-                                    <textarea name="enDescription" class="ckeditor"></textarea>
-                                    <script type="text/javascript">
-                                        CKEDITOR.replace( 'editor3' );
-                                        CKEDITOR.add
-                                    </script>
-                                </div>
-                            </div>
-
-                            <div class="medium-12 padding-lr top-margin-element">
-                                <button style="margin-top: 20px;"  name="submit" class="button primary">ثبت</button>
-                            </div>
-                        </fieldset>
-                    </form>
+        </div>
+    </div>
+</div>
+<!--Select Image Modal Start-->
+<div class="reveal large" id="selectImageModal" data-reveal>
+    <div class="grid-x">
+        <div class="large-3 medium-6 small-12 padding-lr-fs">
+            <div class="large-3 medium-6 small-12 padding-lr-fs">
+                <img class="image-shadow-effect" src="{{ asset('pic/gallery/lan_1.jpg') }}">
+                <div style="padding-bottom: 20px;" class="album-menu center-el">
+                    <label class="container">
+                        <input type="radio" checked="checked" name="radio">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="large-3 medium-6 small-12 padding-lr-fs">
+            <div class="large-3 medium-6 small-12 padding-lr-fs">
+                <img class="image-shadow-effect" src="{{ asset('pic/gallery/lan_1.jpg') }}">
+                <div style="padding-bottom: 20px;" class="album-menu center-el">
+                    <label class="container">
+                        <input type="radio" name="radio">
+                        <span class="checkmark"></span>
+                    </label>
                 </div>
             </div>
         </div>
     </div>
+    <button class="close-button" data-close aria-label="Close modal" type="button">
+        <span aria-hidden="true">&times;</span>
+    </button>
 </div>
+<!--Select Image Modal End-->
+
     <script>
         function readURL(input) {
             if (input.files && input.files[0]) {
