@@ -35,7 +35,14 @@
                     {{ csrf_field() }}
                 <div class="tabs-panel is-active" id="panel1c">
                     <div class="grid-x">
-                        <div class="large-8 columns padding-lr">
+                        <div class="large-3 medium-6 small-12 padding-lr-fs">
+                            <div class="large-3 medium-6 small-12">
+                                <img class="image-shadow-effect" src="{{ asset('pic/gallery/lan_1.jpg') }}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid-x">
+                        <div class="large-8 columns padding-lr-fs">
                             <a class="button primary" data-open="selectImageModal">انتخاب تصویر</a>
                         </div>
                     </div>
