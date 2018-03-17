@@ -5,22 +5,22 @@
 
 
 CKEDITOR.editorConfig = function( config ) {
-	config.toolbarGroups = [
-		{ name: 'document', groups: [ 'mode', 'document', 'doctools' ] },
-		{ name: 'clipboard', groups: [ 'clipboard', 'undo' ] },
-		{ name: 'editing', groups: [ 'find', 'selection', 'spellchecker', 'editing' ] },
-		{ name: 'forms', groups: [ 'forms' ] },
-		'/',
-		{ name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ] },
-		{ name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi', 'paragraph' ] },
-		{ name: 'links', groups: [ 'links' ] },
-		{ name: 'insert', groups: [ 'insert' ] },
-		{ name: 'styles', groups: [ 'styles' ] },
-		{ name: 'colors', groups: [ 'colors' ] },
-		{ name: 'tools', groups: [ 'tools' ] },
-		{ name: 'others', groups: [ 'others' ] },
-		{ name: 'about', groups: [ 'about' ] }
-	];
+    config.toolbarGroups = [
+        { name: 'document', groups: [ 'mode', 'document', 'doctools' ] },
+        { name: 'clipboard', groups: [ 'clipboard', 'undo' ] },
+        { name: 'editing', groups: [ 'find', 'selection', 'spellchecker', 'editing' ] },
+        { name: 'forms', groups: [ 'forms' ] },
+        '/',
+        { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ] },
+        { name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi', 'paragraph' ] },
+        { name: 'links', groups: [ 'links' ] },
+        { name: 'insert', groups: [ 'insert' ] },
+        { name: 'styles', groups: [ 'styles' ] },
+        { name: 'colors', groups: [ 'colors' ] },
+        { name: 'tools', groups: [ 'tools' ] },
+        { name: 'others', groups: [ 'others' ] },
+        { name: 'about', groups: [ 'about' ] }
+    ];
 
-	config.removeButtons = 'About,Maximize,TextColor,Styles,Format,Font,FontSize,PageBreak,Iframe,SpecialChar,HorizontalRule,Smiley,Flash,Image,Link,Unlink,Anchor,Language,CreateDiv,HiddenField,Form,Checkbox,Radio,TextField,Textarea,Select,Button,ImageButton,Scayt,Replace,Find,Templates,Save,NewPage,Preview,Print,Source,ShowBlocks,BGColor';
+    config.removeButtons = 'About,Maximize,Styles,Format,Font,FontSize,PageBreak,Iframe,SpecialChar,HorizontalRule,Smiley,Flash,Image,Link,Unlink,Anchor,Language,CreateDiv,HiddenField,Form,Checkbox,Radio,TextField,Textarea,Select,Button,ImageButton,Scayt,Replace,Find,Templates,Save,NewPage,Preview,Print,Source,ShowBlocks,BGColor';
 };

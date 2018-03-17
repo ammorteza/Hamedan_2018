@@ -1,6 +1,6 @@
 @extends('layouts.adminLayout')
 @section('content')
-<div class="off-canvas-content padding-lr" data-off-canvas-content>
+<div class="off-canvas-content padding-lr-fs" data-off-canvas-content>
     <div class="title-bar hide-for-large">
         <div class="title-bar-left">
             <button class="menu-icon" type="button" data-open="my-info"></button>
@@ -184,6 +184,7 @@
             <div class="large-3 medium-6 small-12 padding-lr-fs">
                 <img class="image-shadow-effect" src="{{ asset('pic/gallery/lan_1.jpg') }}">
                 <div style="padding-bottom: 20px;" class="album-menu center-el">
+                    <input type="radio" name="radio">
                     <label class="container">
                         <input type="radio" name="radio">
                         <span class="checkmark"></span>
