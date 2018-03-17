@@ -49,7 +49,7 @@
                                     <div class="grid-x">
                                         <div class="large-1 medium-6 small-12">
                                             <div class="btn-group">
-                                                <a  href="#" data-tooltip aria-haspopup="true" class="has-tip" data-disable-hover="false" tabindex="1" title="ویرایش" data-position="top" data-alignment="center"><i class="far fa-edit btn-green size-18 btn-group-margin"></i></a>
+                                                <a  href="{{ url('/admin/news/update/' . $news->id) }}" data-tooltip aria-haspopup="true" class="has-tip" data-disable-hover="false" tabindex="1" title="ویرایش" data-position="top" data-alignment="center"><i class="far fa-edit btn-green size-18 btn-group-margin"></i></a>
                                                 <a data-open="{{ 'deleteNewsModal' . $news->id }}" data-tooltip aria-haspopup="true" class="has-tip" data-disable-hover="false" tabindex="1" title="حذف" data-position="top" data-alignment="center"><i class="far fa-trash-alt btn-red size-18"></i></a>
                                                 <!--Modal Start-->
                                                 <div class="reveal tiny" id="{{ 'deleteNewsModal' . $news->id }}" data-reveal>
@@ -70,8 +70,8 @@
                                         </div>
                                         <div class="large-2 medium-4 small-12">
                                             <div style="margin-right: 5px;" class="switch small">
-                                                <input class="switch-input" id="news1" {{ $news->nState == 1 ? 'checked' : '' }} type="checkbox">
-                                                <label  class="switch-paddle" for="news1">
+                                                <input class="switch-input" value="{{ url('/admin/news/changeState/' . $news->id) }}" id="{{ 'news' . $news->id }}" {{ $news->nState == 1 ? 'checked' : '' }} type="checkbox" onchange="location = ($(this).val() + '/' + ($(this).is(':checked') == true ? 1 : 0));">
+                                                <label  class="switch-paddle" for="{{ 'news' . $news->id }}">
                                                     <span class="switch-active" aria-hidden="true">بلی</span>
                                                     <span class="switch-inactive" aria-hidden="true">خیر</span>
                                                 </label>

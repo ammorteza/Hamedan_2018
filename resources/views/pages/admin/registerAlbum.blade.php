@@ -37,7 +37,7 @@
                         <input type="file" id="exampleFileUpload" name="imageFile"  onchange="readURL(this);" class="show-for-sr">
                         <div class="grid-x">
                             <div class="large-3 medium-6 small-12">
-                                <img id="blah">
+                                <img class="image-shadow-effect" id="blah">
                             </div>
                         </div>
                     </div>
@@ -102,7 +102,7 @@
                 reader.onload = function (e) {
                     $('#blah')
                         .attr('src', e.target.result)
-                        .width(200)
+                        .width(800)
                         .height(200);
                 };
 
