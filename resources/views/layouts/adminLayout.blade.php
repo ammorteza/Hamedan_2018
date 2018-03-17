@@ -72,8 +72,12 @@
 <script>
     $(document).ready(function(){
         $('#selectImageModal').on("closed.zf.reveal" , function(){
-            var text = $('input[name=imageGalleryId]:checked').val();
-            $('#selectedImageId').val(text);
+            var gId = $('input[name=imageGalleryId]:checked').val();
+            $('#selectedImageId').val(gId);
+            $('#newsImg')
+                .attr('src', $('#imgPath' + gId).val())
+                .width(800)
+                .height(200);
         });
     });
 </script>

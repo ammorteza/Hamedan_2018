@@ -29,7 +29,6 @@
                 <li class="tabs-title"><a href="#panel2c">عربی</a></li>
                 <li class="tabs-title"><a href="#panel3c">انگلیسی</a></li>
             </ul>
-
             <div class="tabs-content" data-tabs-content="collapsing-tabs">
                 <form id="registerNewsForm"  data-abide novalidate method="POST" action="{{ url('/admin/news/register') }}">
                     {{ csrf_field() }}
@@ -37,7 +36,12 @@
                     <div class="grid-x">
                         <div class="large-3 medium-6 small-12 padding-lr-fs">
                             <div class="large-3 medium-6 small-12">
-                                <img class="image-shadow-effect" src="{{ asset('pic/gallery/lan_1.jpg') }}">
+                                <label>
+                                    <img class="image-shadow-effect" id="newsImg">
+                                    <span class="form-error">
+                                  لطفا عنوان خبر را وارد نمایید !
+                                    </span>
+                                </label>
                             </div>
                         </div>
                     </div>
@@ -140,7 +144,7 @@
                         </div>
                     </div>
                 </div>
-                <input type="hidden" name="selectedImageId" id="selectedImageId"/>
+                    <input type="hidden" name="selectedImageId" id="selectedImageId"/>
                     <div class="grid-x">
                         <div style="padding-right: 28px;" class="large-12 medium-12 small-12">
                             <label>وضعیت مشاهده خبر
@@ -170,6 +174,7 @@
                                         <div style="padding-bottom: 20px;" class="album-menu center-el">
                                             <label class="container">
                                                 <input type="radio" name="imageGalleryId" value="{{ $img->id }}">
+                                                <input type="hidden" value="{{ asset($img->gPath) }}" id="{{ 'imgPath' . $img->id }}">
                                                 <span class="checkmark"></span>
                                             </label>
                                         </div>
@@ -188,23 +193,4 @@
         </div>
     </div>
 </div>
-
-    <script>
-        function readURL(input) {
-            if (input.files && input.files[0]) {
-                var reader = new FileReader();
-
-                reader.onload = function (e) {
-                    $('#blah')
-                        .attr('src', e.target.result)
-                        .width(400)
-                        .height(200);
-                };
-
-                reader.readAsDataURL(input.files[0]);
-            }
-        }
-
-
-    </script>
 @stop

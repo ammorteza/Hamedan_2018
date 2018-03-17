@@ -31,28 +31,25 @@
             </ul>
 
             <div class="tabs-content" data-tabs-content="collapsing-tabs">
-                <form  data-abide novalidate method="POST" enctype="multipart/form-data" action="{{ url('/admin/news/register') }}">
+                <form  data-abide novalidate method="POST" enctype="multipart/form-data" action="{{ url('/admin/news/update') }}">
                     {{ csrf_field() }}
                 <div class="tabs-panel is-active" id="panel1c">
                     <div class="grid-x">
                         <div class="large-3 medium-6 small-12 padding-lr-fs">
                             <div class="large-3 medium-6 small-12">
-                                <img class="image-shadow-effect" src="{{ asset('pic/gallery/lan_1.jpg') }}">
-                                <div class="album-menu center-el">
-                                    <a href=""><i class="far fa-trash-alt btn-red size-21"></i></a>
-                                </div>
+                                <img class="image-shadow-effect" src="{{ asset($news->newsImg[0]['gallery']->gPath) }}" id="newsImg">
                             </div>
                         </div>
                     </div>
                     <div class="grid-x">
                         <div class="large-8 columns padding-lr-fs">
-                            <button class="button primary" data-open="selectImageModal">تغییر تصویر</button>
+                            <a class="button primary" data-open="selectImageModal">تغییر تصویر</a>
                         </div>
                     </div>
                     <div class="grid-x">
                         <div class="large-8 medium-12 small-12 padding-lr-fs">
                             <label>عنوان
-                                <input  type="text"  name="faSubject" aria-describedby="newsTitle" required>
+                                <input  type="text"  name="faSubject" aria-describedby="newsTitle" value="{{ $news->nFaSubject }}" required>
                                 <span class="form-error">
                       لطفا عنوان خبر را وارد نمایید !
                                     </span>
@@ -62,7 +59,7 @@
                     <div class="grid-x">
                         <div class="large-8 medium-12 small-12 padding-lr-fs">
                             <label>خلاصه خبر
-                                <textarea  type="text" style="height: 90px;"  name="faBriefDescription" aria-describedby="newsDescription" required></textarea>
+                                <textarea  type="text" style="height: 90px;"  name="faBriefDescription" aria-describedby="newsDescription" required>{{ $news->nFaBriefDescription }}</textarea>
                                 <span class="form-error">
                       لطفا خلاصه خبر را وارد نمایید !
                                     </span>
@@ -74,7 +71,7 @@
                         <div class="large-12 medium-12 small-12 padding-lr-fs">
                             <label class="padding-lr">متن خبر
                             </label>
-                            <textarea name="faDescription" class="ckeditor"></textarea>
+                            <textarea name="faDescription" class="ckeditor">{{ $news->nFaDescription }}</textarea>
                             <script type="text/javascript">
                                 CKEDITOR.replace( 'editor1' );
                                 CKEDITOR.add
@@ -87,14 +84,14 @@
                     <div class="grid-x">
                         <div class="large-8 medium-12 small-12 padding-lr-fs">
                             <label>عنوان
-                                <input  type="text"  name="arSubject">
+                                <input  type="text" value="{{ $news->nArSubject }}"  name="arSubject">
                             </label>
                         </div>
                     </div>
                     <div class="grid-x">
                         <div class="large-8 medium-12 small-12 padding-lr-fs">
                             <label>خلاصه خبر
-                                <textarea  type="text" style="height: 90px;"  name="arBriefDescription"></textarea>
+                                <textarea  type="text" style="height: 90px;"  name="arBriefDescription">{{ $news->nArBriefDescription }}</textarea>
                             </label>
                         </div>
                     </div>
@@ -104,7 +101,7 @@
 
                             <label class="padding-lr">متن خبر
                             </label>
-                            <textarea name="arDescription" class="ckeditor"></textarea>
+                            <textarea name="arDescription" class="ckeditor">{{ $news->nArDescription }}</textarea>
                             <script type="text/javascript">
                                 CKEDITOR.replace( 'editor2' );
                                 CKEDITOR.add
@@ -118,24 +115,23 @@
                     <div class="grid-x">
                         <div class="large-8 medium-12 small-12 padding-lr-fs">
                             <label>عنوان
-                                <input  type="text"  name="enSubject">
+                                <input  type="text" value="{{ $news->nEnSubject }}" value="{{ $news->nEnSubject }}"  name="enSubject">
                             </label>
                         </div>
                     </div>
                     <div class="grid-x">
                         <div class="large-8 medium-12 small-12 padding-lr-fs">
                             <label>خلاصه خبر
-                                <textarea  type="text" style="height: 90px;"  name="enBriefDescription"></textarea>
+                                <textarea  type="text" style="height: 90px;"  name="enBriefDescription">{{ $news->nEnBriefDescription }}</textarea>
                             </label>
                         </div>
                     </div>
 
                     <div class="grid-x">
                         <div class="large-12 medium-12 small-12 padding-lr-fs">
-
                             <label class="padding-lr">متن خبر
                             </label>
-                            <textarea name="enDescription" class="ckeditor"></textarea>
+                            <textarea name="enDescription" class="ckeditor">{{ $news->nEnDescription }}</textarea>
                             <script type="text/javascript">
                                 CKEDITOR.replace( 'editor3' );
                                 CKEDITOR.add
@@ -148,7 +144,7 @@
                         <label>وضعیت مشاهده خبر
                         </label>
                         <div class="switch small">
-                            <input class="switch-input" id="news1" type="checkbox">
+                            <input class="switch-input" id="news1" {{ $news->nState == 1 ? 'checked' : '' }} type="checkbox">
                             <label  class="switch-paddle" for="news1">
                                 <span class="switch-active" aria-hidden="true">بلی</span>
                                 <span class="switch-inactive" aria-hidden="true">خیر</span>
@@ -156,6 +152,7 @@
                         </div>
                     </div>
                 </div>
+                    <input type="hidden" name="selectedImageId" id="selectedImageId" value="{{ $news->newsImg[0]['gallery']->id }}"/>
                 <div style="padding-right: 28px;" class="medium-12 padding-lr-fs top-margin-element ">
                     <button style="margin-top: 20px;"  name="submit" class="button primary">ثبت</button>
                 </div>
@@ -168,51 +165,24 @@
 </div>
 <!--Select Image Modal Start-->
 <div class="reveal large" id="selectImageModal" data-reveal>
-    <div class="grid-x">
-        <div class="large-3 medium-6 small-12 padding-lr-fs">
-            <div class="large-3 medium-6 small-12 padding-lr-fs">
-                <img class="image-shadow-effect" src="{{ asset('pic/gallery/lan_1.jpg') }}">
-                <div style="padding-bottom: 20px;" class="album-menu center-el">
-                    <label class="container">
-                        <input type="radio" checked="checked" name="radio">
-                        <span class="checkmark"></span>
-                    </label>
+    <form id="formModal">
+        <div class="grid-x">
+            @foreach($gallery as $img)
+                <div class="large-4 medium-6 small-12 padding-lr-fs">
+                    <div class="large-4 medium-6 small-12 padding-lr-fs">
+                        <img class="image-shadow-effect" src="{{ asset($img->gPath) }}">
+                        <div style="padding-bottom: 20px;" class="album-menu center-el">
+                            <input type="radio" name="imageGalleryId" value="{{ $img->id }}" {{ $news->newsImg[0]['gallery']->id == $img->id ? 'checked' : '' }}>
+                            <input type="hidden" value="{{ asset($img->gPath) }}" id="{{ 'imgPath' . $img->id }}">
+                        </div>
+                    </div>
                 </div>
-            </div>
+            @endforeach
         </div>
-        <div class="large-3 medium-6 small-12 padding-lr-fs">
-            <div class="large-3 medium-6 small-12 padding-lr-fs">
-                <img class="image-shadow-effect" src="{{ asset('pic/gallery/lan_1.jpg') }}">
-                <div style="padding-bottom: 20px;" class="album-menu center-el">
-                    <input type="radio" name="radio">
-                    <label class="container">
-                        <input type="radio" name="radio">
-                        <span class="checkmark"></span>
-                    </label>
-                </div>
-            </div>
-        </div>
-    </div>
+    </form>
     <button class="close-button" data-close aria-label="Close modal" type="button">
         <span aria-hidden="true">&times;</span>
     </button>
 </div>
 <!--Select Image Modal End-->
-
-    <script>
-        function readURL(input) {
-            if (input.files && input.files[0]) {
-                var reader = new FileReader();
-
-                reader.onload = function (e) {
-                    $('#blah')
-                        .attr('src', e.target.result)
-                        .width(400)
-                        .height(200);
-                };
-
-                reader.readAsDataURL(input.files[0]);
-            }
-        }
-    </script>
 @stop
