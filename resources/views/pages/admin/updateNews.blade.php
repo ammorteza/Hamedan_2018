@@ -31,7 +31,7 @@
             </ul>
 
             <div class="tabs-content" data-tabs-content="collapsing-tabs">
-                <form  data-abide novalidate method="POST" enctype="multipart/form-data" action="{{ url('/admin/news/update') }}">
+                <form  data-abide novalidate method="POST" action="{{ url('/admin/news/update/' . $news->id) }}">
                     {{ csrf_field() }}
                 <div class="tabs-panel is-active" id="panel1c">
                     <div class="grid-x">

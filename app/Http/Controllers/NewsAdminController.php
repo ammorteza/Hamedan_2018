@@ -56,6 +56,36 @@ class NewsAdminController extends Controller
 
     }
 
+    function update($nId , Request $request)
+    {
+        $news = News::find($nId);
+        $news->nFaSubject = $request->faSubject;
+        $news->nEnSubject = $request->enSubject;
+        $news->nArSubject = $request->arSubject;
+        $news->nFaBriefDescription = $request->faBriefDescription;
+        $news->nEnBriefDescription = $request->enBriefDescription;
+        $news->nArBriefDescription = $request->arBriefDescription;
+        $news->nFaDescription = $request->faDescription;
+        $news->nEnDescription = $request->enDescription;
+        $news->nArDescription = $request->arDescription;
+        $news->nState = $request->displayState == '' ? 0 : 1;
+        $news->save();
+
+        NewsImg::where('niNId' , '=' , $nId)->delete();
+
+        $newsImg = new NewsImg;
+        $newsImg->niNId = $news->id;
+        $newsImg->niGId = $request->selectedImageId;
+        $newsImg->niFaAlt = $request->faSubject;
+        $newsImg->niEnAlt = $request->enSubject != '' ? $request->enSubject : '--';
+        $newsImg->niArAlt = $request->arSubject != '' ? $request->arSubject : '--';
+        $newsImg->save();
+
+        $allNews = News::with('newsImg')->orderBy('id' , 'DESC')->paginate(6);
+        return Redirect::back()->with(['allNews' => $allNews]);
+
+    }
+
     public function delete($nId)
     {
         NewsImg::where('niNId' , '=' , $nId)->delete();
@@ -64,7 +94,7 @@ class NewsAdminController extends Controller
         return Redirect::back()->with(['allNews' => $allNews]);
     }
 
-    function update($nId)
+    function updateForm($nId)
     {
         $gallery = ImageGallery::orderBy('id' , 'DESC')->get();
         $news = News::where('id' , '=' , $nId)->with('newsImg.gallery')->first();
