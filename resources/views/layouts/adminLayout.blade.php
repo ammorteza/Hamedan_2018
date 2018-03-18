@@ -11,8 +11,6 @@
     <script src="{{ asset('css/ckeditor/ckeditor.js') }}"  type="text/javascript"></script>
     <script src="{{ asset('css/ckeditor/samples/js/sample.js') }}"  type="text/javascript"></script>
     <link rel="stylesheet" href="{{ asset('fontawesome-free-5.0.0/web-fonts-with-css/css/fontawesome-all.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/immersive-slider.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/pgwslider.css') }}">
     <link rel="stylesheet" href="{{ asset('css/foundation.css') }}">
     <link rel="stylesheet" href="{{ asset('css/ckeditor/samples/css/samples.css') }}">
     <link href="https://fonts.googleapis.com/css?family=Satisfy|Poiret+One|Cabin|Wire+One|Merienda|Roboto" rel="stylesheet">
@@ -32,7 +30,7 @@
                         <ul class="menu vertical nested">
                             <li>
                                 <a href="{{ url('/admin/news') }}">لیست خبر</a>
-                                <a href="">اسلایدر خبر</a>
+                                <a href="{{ url('/admin/news/slider') }}">اسلایدر خبر</a>
                             </li>
                         </ul>
                     </li>
@@ -59,10 +57,6 @@
 </div>
 <!--Copy Right Bar End-->
 <script src="{{ asset('js/vendor/jquery.js') }}"  type="text/javascript"></script>
-<script src="{{ asset('js/scripts/bundle.js') }}"></script> <!--Content left-->
-<script src="{{ asset('js/jquery.immersive-slider.js') }}"></script><!--Content Image slider-->
-<script src="{{ asset('js/pgwslider.js') }}"></script><!--Content Image slider-->
-<script src="{{ asset('js/videojs/videoJs.js') }}"></script><!--Content Image slider-->
 <script src="{{ asset('js/jssor.slider-27.0.3.min.js') }}"></script><!--News Image Slider-->
 <script src="{{ asset('js/vendor/foundation.js') }}"></script>
 <script src="{{ asset('js/app.js') }}"></script>

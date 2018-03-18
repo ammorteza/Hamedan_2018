@@ -5,6 +5,7 @@ namespace Hamedan_2018\Http\Controllers;
 use Hamedan_2018\ImageGallery;
 use Hamedan_2018\News;
 use Hamedan_2018\NewsImg;
+use Hamedan_2018\NewsSlider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Redirect;
@@ -107,6 +108,12 @@ class NewsAdminController extends Controller
 
     function newsSlider()
     {
-        return view('pages.admin.newsSlider');
+        $newsSlider = NewsSlider::with('gallery')->get();
+        return view('pages.admin.newsSlider' , ['newsSlider' => $newsSlider]);
+    }
+
+    function registerNewsSlider()
+    {
+        return Redirect::to('/admin/news/slider');
     }
 }
