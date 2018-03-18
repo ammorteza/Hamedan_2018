@@ -42,7 +42,7 @@
         </div>
         <div class="off-canvas-content large-12 medium-12 small-12">
             <div data-sticky-container>
-                <div class="title-bar" data-sticky data-options="marginTop:0;" style="width:100%;background-color: #FFFFFF;" data-top-anchor="1" data-btm-anchor="content:bottom">
+                <div class="title-bar" data-sticky data-options="marginTop:0;" style="width:100%;background-color: #FFFFFF; height: 60px" data-top-anchor="1" data-btm-anchor="content:bottom">
                     <div class="title-bar-left">
                         <span style="color: #1b6d85">{{ Auth::user()->name }}</span>
                     </div>

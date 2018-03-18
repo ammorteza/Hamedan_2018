@@ -76,8 +76,8 @@
                 </div>
             </div>
             <input type="hidden" name="selectedImageId" id="selectedImageId" value="{{ $gallery[0]['id'] }}"/>
-            <div style="padding-right: 28px;" class="medium-12 padding-lr-fs top-margin-element ">
-                <button style="margin-top: 20px;"  name="submit" class="button primary">ثبت</button>
+            <div style="padding-left: 28px;" class="medium-12 padding-lr-fs top-margin-element ">
+                <button style="margin-top: 20px;"  name="submit" class="button primary float-left">ثبت</button>
             </div>
         </form>
         <!--Select Image Modal Start-->

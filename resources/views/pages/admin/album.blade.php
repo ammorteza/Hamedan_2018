@@ -46,7 +46,7 @@
                     </div>
                 @endif
                 @foreach($gallery as $img)
-                <div class="large-3 medium-6 small-12 padding-lr-fs">
+                <div class="large-4 medium-6 small-12 padding-lr-fs">
                     <img class="image-shadow-effect" src="{{ asset($img->gPath) }}">
                     <div class="album-menu center-el">
                         <a  href="#" data-open="{{ 'deleteNewsModal' . $img->id }}" data-tooltip aria-haspopup="true" class="has-tip" data-disable-hover="false" tabindex="1" title="حذف" data-position="top" data-alignment="center"><i class="far fa-trash-alt btn-red size-18"></i></a>
