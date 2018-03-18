@@ -112,8 +112,27 @@ class NewsAdminController extends Controller
         return view('pages.admin.newsSlider' , ['newsSlider' => $newsSlider]);
     }
 
-    function registerNewsSlider()
+    function registerNewsSlider(Request $request)
     {
+        $newsSlider = new NewsSlider;
+        $newsSlider->nsFaAlt = $request->faSubject;
+        $newsSlider->nsEnAlt = $request->enSubject;
+        $newsSlider->nsArAlt = $request->arSubject;
+        $newsSlider->nsGId = $request->selectedImageId;
+        $newsSlider->save();
+
+        return Redirect::to('/admin/news/slider');
+    }
+
+    function registerNewsSliderForm()
+    {
+        $gallery = ImageGallery::orderBy('id' , 'DESC')->get();
+        return view('pages.admin.registerNewsSlider' , ['gallery' => $gallery]);
+    }
+
+    function deleteNewsSlider($nsId)
+    {
+        NewsSlider::where('id' , '=' , $nsId)->delete();
         return Redirect::to('/admin/news/slider');
     }
 }

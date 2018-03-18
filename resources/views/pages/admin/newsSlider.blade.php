@@ -34,8 +34,24 @@
                         @foreach($newsSlider as $nSlider)
                             <div data-p="170.00">
                                 <img class="background-cover" data-u="image" src="{{ asset($nSlider->gallery->gPath) }}" />
+                                <div class="grid-x">
+                                    <div style="z-index: 99;margin-top: 20px;margin-right: 20px;" class="large-12 medium-12 small-12">
+                                        <a data-open="{{ 'deleteNewsSliderModal' . $nSlider->id }}" class="button alert"><i class="far fa-trash-alt size-21"></i></a>
+                                    </div>
+                                </div>
                                 <img data-u="thumb" src="{{ asset($nSlider->gallery->gPath) }}" />
                             </div>
+                            <!--Modal Start-->
+                            <div class="reveal tiny" id="{{ 'deleteNewsSliderModal' . $nSlider->id }}" data-reveal>
+                                <p style="margin-top: 25px;font-size: small;" class="lead">آیا برای حذف تصویر اطمینان دارید؟</p>
+                                <div class="center-el">
+                                    <a href="{{ url('/admin/news/slider/delete/' . $nSlider->id) }}" class="button alert">بله</a>
+                                </div>
+                                <button class="close-button" data-close aria-label="Close modal" type="button">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <!--Modal End-->
                         @endforeach
                     </div>
                     <!-- Thumbnail Navigator -->
@@ -69,14 +85,9 @@
                 </div>
             </div>
             </div>
-            <div class="grid-x">
-                <div style="position: absolute;z-index: 99;margin-top: 40px;margin-right: -8%;" class="large-12 medium-12 small-12">
-                    <button class="button alert"><i class="far fa-trash-alt size-21"></i></button>
-                </div>
-            </div>
-            <div class="grid-x">
+            <div class="grid-x float-center" style="margin-top: 20px">
                 <div class="large-12 medium-12 small-12">
-                    <a href="{{ url('/admin/news/slider/register') }}" class="button primary">تصویر جدید</a>
+                    <a href="{{ url('/admin/news/slider/register') }}" class="button primary float-center">تصویر جدید</a>
                 </div>
             </div>
         </div>
