@@ -21,7 +21,7 @@
         </div>
     </div>
     <div class="grid-x padding-lr-fs my-callout-box">
-        <div class="medium-12 padding-lr border-btm-line master-content" style="margin-top: 12px;">
+        <div class="large-12 padding-lr border-btm-line master-content" style="margin-top: 12px;">
             <div class="clearfix tool-bar">
                 <div style="margin-bottom: 10px;" class="button-group float-right">
                     <a href="{{ url('/admin/news/register') }}"  class="button primary">جدید</a>
@@ -35,7 +35,6 @@
             </div>
         </div>
         <div class="large-12 medium-12 small-12 element-distanse">
-            <div class="grid-x">
                 @foreach($allNews as $news)
                     <div class="grid-x element-distanse news-bottom-line" id="advTop">
                         <div class="large-4 medium-12 small-12">
@@ -83,7 +82,6 @@
                         </div>
                     </div>
                 @endforeach
-            </div>
         </div>
         <!-Pagination Start--->
         @if ($allNews->lastPage() > 1)
