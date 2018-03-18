@@ -5,6 +5,7 @@ namespace Hamedan_2018\Http\Controllers;
 use Hamedan_2018\ImageGallery;
 use Hamedan_2018\News;
 use Hamedan_2018\NewsImg;
+use Hamedan_2018\NewsSlider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Redirect;
@@ -51,8 +52,35 @@ class NewsAdminController extends Controller
         $newsImg->niArAlt = $request->arSubject != '' ? $request->arSubject : '--';
         $newsImg->save();
 
-        $allNews = News::with('newsImg')->orderBy('id' , 'DESC')->paginate(6);
-        return Redirect::back()->with(['allNews' => $allNews]);
+        return Redirect::to('/admin/news');
+
+    }
+
+    function update($nId , Request $request)
+    {
+        $news = News::find($nId);
+        $news->nFaSubject = $request->faSubject;
+        $news->nEnSubject = $request->enSubject;
+        $news->nArSubject = $request->arSubject;
+        $news->nFaBriefDescription = $request->faBriefDescription;
+        $news->nEnBriefDescription = $request->enBriefDescription;
+        $news->nArBriefDescription = $request->arBriefDescription;
+        $news->nFaDescription = $request->faDescription;
+        $news->nEnDescription = $request->enDescription;
+        $news->nArDescription = $request->arDescription;
+        $news->save();
+
+        NewsImg::where('niNId' , '=' , $nId)->delete();
+
+        $newsImg = new NewsImg;
+        $newsImg->niNId = $news->id;
+        $newsImg->niGId = $request->selectedImageId;
+        $newsImg->niFaAlt = $request->faSubject;
+        $newsImg->niEnAlt = $request->enSubject != '' ? $request->enSubject : '--';
+        $newsImg->niArAlt = $request->arSubject != '' ? $request->arSubject : '--';
+        $newsImg->save();
+
+        return Redirect::to('/admin/news');
 
     }
 
@@ -64,7 +92,7 @@ class NewsAdminController extends Controller
         return Redirect::back()->with(['allNews' => $allNews]);
     }
 
-    function update($nId)
+    function updateForm($nId)
     {
         $gallery = ImageGallery::orderBy('id' , 'DESC')->get();
         $news = News::where('id' , '=' , $nId)->with('newsImg.gallery')->first();
@@ -80,11 +108,12 @@ class NewsAdminController extends Controller
 
     function newsSlider()
     {
-        return view('pages.admin.newsSlider');
+        $newsSlider = NewsSlider::with('gallery')->get();
+        return view('pages.admin.newsSlider' , ['newsSlider' => $newsSlider]);
     }
 
     function registerNewsSlider()
     {
-        return view('pages.admin.registerNewsSlider');
+        return Redirect::to('/admin/news/slider');
     }
 }

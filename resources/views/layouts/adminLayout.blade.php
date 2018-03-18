@@ -30,7 +30,7 @@
                         <ul class="menu vertical nested">
                             <li>
                                 <a href="{{ url('/admin/news') }}">لیست خبر</a>
-                                <a href="">اسلایدر خبر</a>
+                                <a href="{{ url('/admin/news/slider') }}">اسلایدر خبر</a>
                             </li>
                         </ul>
                     </li>
@@ -69,9 +69,7 @@
             var gId = $('input[name=imageGalleryId]:checked').val();
             $('#selectedImageId').val(gId);
             $('#newsImg')
-                .attr('src', $('#imgPath' + gId).val())
-                .width(800)
-                .height(200);
+                .attr('src', $('#imgPath' + gId).val());
         });
     });
 </script>
