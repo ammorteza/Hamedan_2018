@@ -82,4 +82,9 @@ class NewsAdminController extends Controller
     {
         return view('pages.admin.newsSlider');
     }
+
+    function registerNewsSlider()
+    {
+        return view('pages.admin.registerNewsSlider');
+    }
 }
