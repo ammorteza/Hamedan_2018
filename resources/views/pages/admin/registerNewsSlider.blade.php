@@ -28,8 +28,8 @@
             {{ csrf_field() }}
             <div class="tabs-panel is-active" id="panel1c">
                 <div class="grid-x">
-                    <div class="large-3 medium-6 small-12 padding-lr-fs">
-                        <div class="large-3 medium-6 small-12">
+                    <div class="large-4 medium-6 small-12 padding-lr-fs">
+                        <div class="large-4 medium-6 small-12">
                             <label>
                                 <img class="image-shadow-effect" id="newsImg" src="{{ asset($gallery[0]['gPath']) }}">
                                 <span class="form-error">

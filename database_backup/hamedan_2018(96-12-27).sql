@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Mar 18, 2018 at 07:20 AM
+-- Generation Time: Mar 18, 2018 at 10:17 AM
 -- Server version: 10.1.25-MariaDB
 -- PHP Version: 7.1.7
 
@@ -21,43 +21,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `hamedan_2018`
 --
-
--- --------------------------------------------------------
-
---
--- Table structure for table `migrations`
---
-
-CREATE TABLE `migrations` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `migration` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `batch` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `migrations`
---
-
-INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
-(96, '2014_10_12_000000_create_users_table', 1),
-(97, '2014_10_12_100000_create_password_resets_table', 1),
-(98, '2018_01_17_113917_create_main_menu_table', 1),
-(99, '2018_01_17_115933_create_sub_menu_table', 1),
-(100, '2018_01_17_122458_create_page_header_type_table', 1),
-(101, '2018_01_18_080308_create_image_gallery_table', 1),
-(102, '2018_01_18_081842_create_page_table', 1),
-(103, '2018_01_18_082643_create_page_header_img_table', 1),
-(104, '2018_01_18_083921_create_section_type_table', 1),
-(105, '2018_01_18_085641_create_section_table', 1),
-(106, '2018_01_18_091327_create_section_img_table', 1),
-(107, '2018_01_29_102728_create_page_breadcrumb_table', 1),
-(108, '2018_02_01_114204_create_video_gallery_table', 1),
-(109, '2018_02_01_115731_create_section_video_table', 1),
-(110, '2018_02_03_105043_create_sponsor_table', 1),
-(111, '2018_02_06_082131_create_news_table', 1),
-(112, '2018_02_06_082457_create_news_img_table', 1),
-(113, '2018_02_12_080227_create_news_slider_table', 1),
-(114, '2018_02_12_131535_create_advertise_table', 1);
 
 -- --------------------------------------------------------
 
@@ -861,17 +824,11 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'مرضیه غلامی', 'm.gholami', '$2y$10$Cg5w12mLQpvNQ6aZWWn36.juAZtJhhO0S47oefv5XAQQshHRtNCUa', '2CC3mW3WMGPxJE70UiWNiNoMlxGNtpOmMu6asKjaq74x4OycoW8KmwOgN2df', '2018-03-13 20:30:00', '2018-03-13 20:30:00');
+(1, 'مریم مقدم', 'm.moghaddam', '$2y$10$4eJqAPosbbpAsV0qsD4NYeEHaW8kDnc0.93Hfi1zk36a9SRPI7Rhq', 'tHNzlpg8G9Sv3FmYw0xIeJXWWuUohd2jTDXMiFSWovvHyGtZfEU0lzYOPNjK', '2018-03-13 20:30:00', '2018-03-13 20:30:00');
 
 --
 -- Indexes for dumped tables
 --
-
---
--- Indexes for table `migrations`
---
-ALTER TABLE `migrations`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `password_resets`
@@ -1018,11 +975,6 @@ ALTER TABLE `users`
 --
 
 --
--- AUTO_INCREMENT for table `migrations`
---
-ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=115;
---
 -- AUTO_INCREMENT for table `tbl_advertises`
 --
 ALTER TABLE `tbl_advertises`
@@ -1031,7 +983,7 @@ ALTER TABLE `tbl_advertises`
 -- AUTO_INCREMENT for table `tbl_image_gallery`
 --
 ALTER TABLE `tbl_image_gallery`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
 --
 -- AUTO_INCREMENT for table `tbl_main_menus`
 --
@@ -1051,7 +1003,7 @@ ALTER TABLE `tbl_news_img`
 -- AUTO_INCREMENT for table `tbl_news_slider`
 --
 ALTER TABLE `tbl_news_slider`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `tbl_pages`
 --
