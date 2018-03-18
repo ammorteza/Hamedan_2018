@@ -11,6 +11,8 @@
     <script src="{{ asset('css/ckeditor/ckeditor.js') }}"  type="text/javascript"></script>
     <script src="{{ asset('css/ckeditor/samples/js/sample.js') }}"  type="text/javascript"></script>
     <link rel="stylesheet" href="{{ asset('fontawesome-free-5.0.0/web-fonts-with-css/css/fontawesome-all.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/immersive-slider.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/pgwslider.css') }}">
     <link rel="stylesheet" href="{{ asset('css/foundation.css') }}">
     <link rel="stylesheet" href="{{ asset('css/ckeditor/samples/css/samples.css') }}">
     <link href="https://fonts.googleapis.com/css?family=Satisfy|Poiret+One|Cabin|Wire+One|Merienda|Roboto" rel="stylesheet">
@@ -39,7 +41,6 @@
                     </li>
                 </ul>
             </nav>
-
         </div>
         <div class="off-canvas-content large-12 medium-12 small-12">
             <div data-sticky-container>
@@ -48,7 +49,7 @@
                         <span style="color: #1b6d85">{{ Auth::user()->name }}</span>
                     </div>
                     <div class="title-bar-right">
-                        <a href="{{ url('/admin/signOut') }}" class="float-left"><i class="fas fa-sign-out-alt size-21"></i></a>
+                        <a href="{{ url('/admin/signOut') }}" class="float-left"><i class="fas fa-sign-out-alt size-21 btn-red"></i></a>
                     </div>
                 </div>
             </div>
@@ -58,7 +59,11 @@
 </div>
 <!--Copy Right Bar End-->
 <script src="{{ asset('js/vendor/jquery.js') }}"  type="text/javascript"></script>
-
+<script src="{{ asset('js/scripts/bundle.js') }}"></script> <!--Content left-->
+<script src="{{ asset('js/jquery.immersive-slider.js') }}"></script><!--Content Image slider-->
+<script src="{{ asset('js/pgwslider.js') }}"></script><!--Content Image slider-->
+<script src="{{ asset('js/videojs/videoJs.js') }}"></script><!--Content Image slider-->
+<script src="{{ asset('js/jssor.slider-27.0.3.min.js') }}"></script><!--News Image Slider-->
 <script src="{{ asset('js/vendor/foundation.js') }}"></script>
 <script src="{{ asset('js/app.js') }}"></script>
 <script>
@@ -70,11 +75,92 @@
             var gId = $('input[name=imageGalleryId]:checked').val();
             $('#selectedImageId').val(gId);
             $('#newsImg')
-                .attr('src', $('#imgPath' + gId).val())
-                .width(800)
-                .height(200);
+                .attr('src', $('#imgPath' + gId).val());
         });
     });
 </script>
+<!--News Image Slider -->
+<script type="text/javascript">
+    jssor_1_slider_init = function() {
+
+        var jssor_1_SlideshowTransitions = [
+            {$Duration:800,x:0.3,$During:{$Left:[0.3,0.7]},$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+            {$Duration:800,x:-0.3,$SlideOut:true,$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+            {$Duration:800,x:-0.3,$During:{$Left:[0.3,0.7]},$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+            {$Duration:800,x:0.3,$SlideOut:true,$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+            {$Duration:800,y:0.3,$During:{$Top:[0.3,0.7]},$Easing:{$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+            {$Duration:800,y:-0.3,$SlideOut:true,$Easing:{$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+            {$Duration:800,y:-0.3,$During:{$Top:[0.3,0.7]},$Easing:{$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+            {$Duration:800,y:0.3,$SlideOut:true,$Easing:{$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+            {$Duration:800,x:0.3,$Cols:2,$During:{$Left:[0.3,0.7]},$ChessMode:{$Column:3},$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+            {$Duration:800,x:0.3,$Cols:2,$SlideOut:true,$ChessMode:{$Column:3},$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+            {$Duration:800,y:0.3,$Rows:2,$During:{$Top:[0.3,0.7]},$ChessMode:{$Row:12},$Easing:{$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+            {$Duration:800,y:0.3,$Rows:2,$SlideOut:true,$ChessMode:{$Row:12},$Easing:{$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+            {$Duration:800,y:0.3,$Cols:2,$During:{$Top:[0.3,0.7]},$ChessMode:{$Column:12},$Easing:{$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+            {$Duration:800,y:-0.3,$Cols:2,$SlideOut:true,$ChessMode:{$Column:12},$Easing:{$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+            {$Duration:800,x:0.3,$Rows:2,$During:{$Left:[0.3,0.7]},$ChessMode:{$Row:3},$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+            {$Duration:800,x:-0.3,$Rows:2,$SlideOut:true,$ChessMode:{$Row:3},$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+            {$Duration:800,x:0.3,y:0.3,$Cols:2,$Rows:2,$During:{$Left:[0.3,0.7],$Top:[0.3,0.7]},$ChessMode:{$Column:3,$Row:12},$Easing:{$Left:$Jease$.$InCubic,$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+            {$Duration:800,x:0.3,y:0.3,$Cols:2,$Rows:2,$During:{$Left:[0.3,0.7],$Top:[0.3,0.7]},$SlideOut:true,$ChessMode:{$Column:3,$Row:12},$Easing:{$Left:$Jease$.$InCubic,$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+            {$Duration:800,$Delay:20,$Clip:3,$Assembly:260,$Easing:{$Clip:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+            {$Duration:800,$Delay:20,$Clip:3,$SlideOut:true,$Assembly:260,$Easing:{$Clip:$Jease$.$OutCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+            {$Duration:800,$Delay:20,$Clip:12,$Assembly:260,$Easing:{$Clip:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+            {$Duration:800,$Delay:20,$Clip:12,$SlideOut:true,$Assembly:260,$Easing:{$Clip:$Jease$.$OutCubic,$Opacity:$Jease$.$Linear},$Opacity:2}
+        ];
+
+        var jssor_1_options = {
+            $AutoPlay: 1,
+            $Cols: 1,
+            $Align: 0,
+            $SlideshowOptions: {
+                $Class: $JssorSlideshowRunner$,
+                $Transitions: jssor_1_SlideshowTransitions,
+                $TransitionsOrder: 1
+            },
+            $ArrowNavigatorOptions: {
+                $Class: $JssorArrowNavigator$
+            },
+            $ThumbnailNavigatorOptions: {
+                $Class: $JssorThumbnailNavigator$,
+                $Cols: 5,
+                $SpacingX: 5,
+                $SpacingY: 5,
+                $Align: 390
+            }
+        };
+
+        var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
+
+        /*#region responsive code begin*/
+
+        var MAX_WIDTH = 980;
+
+        function ScaleSlider() {
+            var containerElement = jssor_1_slider.$Elmt.parentNode;
+            var containerWidth = containerElement.clientWidth;
+
+            if (containerWidth) {
+
+                var expectedWidth = Math.min(MAX_WIDTH || containerWidth, containerWidth);
+
+                jssor_1_slider.$ScaleWidth(expectedWidth);
+            }
+            else {
+                window.setTimeout(ScaleSlider, 30);
+            }
+        }
+
+        ScaleSlider();
+
+        $Jssor$.$AddEvent(window, "load", ScaleSlider);
+        $Jssor$.$AddEvent(window, "resize", ScaleSlider);
+        $Jssor$.$AddEvent(window, "orientationchange", ScaleSlider);
+        /*#endregion responsive code end*/
+    };
+</script>
+<!--News Image Slider -->
+<!--News Image Slider init-->
+<script type="text/javascript">jssor_1_slider_init();</script>
+<!--News Image Slider init-->
 </body>
 </html>

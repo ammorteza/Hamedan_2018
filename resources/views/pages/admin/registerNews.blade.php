@@ -1,6 +1,6 @@
 @extends('layouts.adminLayout')
 @section('content')
-<div class="off-canvas-content padding-lr" data-off-canvas-content>
+<div class="off-canvas-content padding-lr-fs" data-off-canvas-content>
     <div class="title-bar hide-for-large">
         <div class="title-bar-left">
             <button class="menu-icon" type="button" data-open="my-info"></button>
@@ -34,10 +34,10 @@
                     {{ csrf_field() }}
                 <div class="tabs-panel is-active" id="panel1c">
                     <div class="grid-x">
-                        <div class="large-3 medium-6 small-12 padding-lr-fs">
-                            <div class="large-3 medium-6 small-12">
+                        <div class="large-4 medium-6 small-12 padding-lr-fs">
+                            <div class="large-4 medium-6 small-12">
                                 <label>
-                                    <img class="image-shadow-effect" id="newsImg">
+                                    <img class="image-shadow-effect" src="{{ asset($gallery[0]['gPath']) }}" id="newsImg" width="800">
                                     <span class="form-error">
                                   لطفا عنوان خبر را وارد نمایید !
                                     </span>
@@ -144,22 +144,22 @@
                         </div>
                     </div>
                 </div>
-                    <input type="hidden" name="selectedImageId" id="selectedImageId"/>
+                    <input type="hidden" name="selectedImageId" id="selectedImageId" value="{{ $gallery[0]['id'] }}"/>
                     <div class="grid-x">
-                        <div style="padding-right: 28px;" class="large-12 medium-12 small-12">
+                        <div style="padding-right: 28px;margin-top: 10px" class="large-6 float-right">
                             <label>وضعیت مشاهده خبر
+                                <div class="switch small" style="margin-left: 5px">
+                                    <input class="switch-input" id="news1" type="checkbox" checked name="displayState">
+                                    <label  class="switch-paddle" for="news1">
+                                        <span class="switch-active" aria-hidden="true">بلی</span>
+                                        <span class="switch-inactive" aria-hidden="true">خیر</span>
+                                    </label>
+                                </div>
                             </label>
-                            <div class="switch small">
-                                <input class="switch-input" id="news1" type="checkbox" checked name="displayState">
-                                <label  class="switch-paddle" for="news1">
-                                    <span class="switch-active" aria-hidden="true">بلی</span>
-                                    <span class="switch-inactive" aria-hidden="true">خیر</span>
-                                </label>
-                            </div>
                         </div>
-                    </div>
-                    <div style="padding-right: 28px;" class="medium-12 padding-lr-fs top-margin-element ">
-                        <button style="margin-top: 20px;"  name="submit" class="button primary">ثبت</button>
+                        <div class="large-6" style="padding-left: 28px;">
+                            <button  name="submit" class="button primary float-left">ثبت</button>
+                        </div>
                     </div>
                 <!--Tab 3-->
                 </form>
@@ -167,16 +167,19 @@
                 <div class="reveal large" id="selectImageModal" data-reveal>
                     <form id="formModal">
                         <div class="grid-x">
+                            <?php $first = false; ?>
                             @foreach($gallery as $img)
                                 <div class="large-4 medium-6 small-12 padding-lr-fs">
                                     <div class="large-4 medium-6 small-12 padding-lr-fs">
                                         <img class="image-shadow-effect" src="{{ asset($img->gPath) }}">
                                         <div style="padding-bottom: 20px;" class="album-menu center-el">
-                                            <label class="container">
+                                            @if($first == false)
+                                                <?php $first = true; ?>
+                                                <input type="radio" cheched name="imageGalleryId" value="{{ $img->id }}">
+                                            @else
                                                 <input type="radio" name="imageGalleryId" value="{{ $img->id }}">
-                                                <input type="hidden" value="{{ asset($img->gPath) }}" id="{{ 'imgPath' . $img->id }}">
-                                                <span class="checkmark"></span>
-                                            </label>
+                                            @endif
+                                            <input type="hidden" value="{{ asset($img->gPath) }}" id="{{ 'imgPath' . $img->id }}">
                                         </div>
                                     </div>
                                 </div>

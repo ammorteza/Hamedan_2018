@@ -57,6 +57,7 @@ Route::group(['middleware' => ['auth']] , function () {
     Route::post('/admin/news/register', 'NewsAdminController@register');
     Route::get('/admin/news/update/{nId}', 'NewsAdminController@updateForm');
     Route::post('/admin/news/update/{nId}', 'NewsAdminController@update');
+    Route::get('/admin/news/newsSlider', 'NewsAdminController@newsSlider');
     Route::get('/admin/news/delete/{nId}', 'NewsAdminController@delete');
     Route::get('/admin/news/changeState/{nId}/{state}', 'NewsAdminController@changeDisplayState');
 });

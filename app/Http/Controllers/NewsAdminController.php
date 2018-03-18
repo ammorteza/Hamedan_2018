@@ -51,8 +51,7 @@ class NewsAdminController extends Controller
         $newsImg->niArAlt = $request->arSubject != '' ? $request->arSubject : '--';
         $newsImg->save();
 
-        $allNews = News::with('newsImg')->orderBy('id' , 'DESC')->paginate(6);
-        return Redirect::back()->with(['allNews' => $allNews]);
+        return Redirect::to('/admin/news');
 
     }
 
@@ -68,7 +67,6 @@ class NewsAdminController extends Controller
         $news->nFaDescription = $request->faDescription;
         $news->nEnDescription = $request->enDescription;
         $news->nArDescription = $request->arDescription;
-        $news->nState = $request->displayState == '' ? 0 : 1;
         $news->save();
 
         NewsImg::where('niNId' , '=' , $nId)->delete();
@@ -81,8 +79,7 @@ class NewsAdminController extends Controller
         $newsImg->niArAlt = $request->arSubject != '' ? $request->arSubject : '--';
         $newsImg->save();
 
-        $allNews = News::with('newsImg')->orderBy('id' , 'DESC')->paginate(6);
-        return Redirect::back()->with(['allNews' => $allNews]);
+        return Redirect::to('/admin/news');
 
     }
 
@@ -106,5 +103,10 @@ class NewsAdminController extends Controller
         News::where('id' , '=' , $nId)->update(['nState' => $state]);
         $allNews = News::with('newsImg')->orderBy('id' , 'DESC')->paginate(6);
         return Redirect::back()->with(['allNews' => $allNews]);
+    }
+
+    function newsSlider()
+    {
+        return view('pages.admin.newsSlider');
     }
 }
