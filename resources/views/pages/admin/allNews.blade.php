@@ -52,7 +52,7 @@
                                                 <a data-open="{{ 'deleteNewsModal' . $news->id }}" data-tooltip aria-haspopup="true" class="has-tip" data-disable-hover="false" tabindex="1" title="حذف" data-position="top" data-alignment="center"><i class="far fa-trash-alt btn-red size-18"></i></a>
                                                 <!--Modal Start-->
                                                 <div class="reveal tiny" id="{{ 'deleteNewsModal' . $news->id }}" data-reveal>
-                                                    <p style="margin-top: 25px;font-size: small;" class="lead">آیا برا حذف خبر اطمینان دارید؟</p>
+                                                    <p style="margin-top: 25px;font-size: small;" class="lead">آیا برای حذف خبر اطمینان دارید؟</p>
                                                     <div class="center-el">
                                                         <a href="{{ url('/admin/news/delete/' . $news->id) }}" class="button alert">بله</a>
                                                     </div>

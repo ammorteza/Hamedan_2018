@@ -23,25 +23,25 @@
         </div>
     </div>
     <div class="grid-x padding-lr-fs my-callout-box">
-
         <div class="large-12 medium-12 small-12 element-distanse">
             <form  data-abide novalidate method="POST" enctype="multipart/form-data" action="{{ url('/admin/album/register') }}">
                 {{ csrf_field() }}
-                <div data-abide-error class="alert callout" style="display: none;">
-                    <span style="color: #9e0c0f">خطا</span>
-                </div>
                 <div class="grid-x">
                     <div class="large-12 medium-12 small-12 padding-lr-fs">
-                        <label for="exampleFileUpload" class="button">انتخاب تصویر</label>
-                        <input type="file" id="exampleFileUpload" name="imageFile"  onchange="readURL(this);" class="show-for-sr">
                         <div class="grid-x">
-                            <div class="large-3 medium-6 small-12">
+                            <div class="large-4 medium-6 small-12">
                                 <img class="image-shadow-effect" id="blah">
                             </div>
                         </div>
+                        <label for="exampleFileUpload" class="button" style="margin-top: 20px">انتخاب تصویر</label>
+                        <label>
+                            <input type="file" id="exampleFileUpload" name="imageFile" required pattern="^.+?\.(jpg|JPG|png|PNG)$"  onchange="readURL(this);" class="show-for-sr">
+                            <span class="form-error">
+                              لطفا تصویر را انتخاب کنید!
+                            </span>
+                        </label>
                     </div>
                 </div>
-
                 <div class="grid-x">
                     <div class="large-6 medium-12 small-12 padding-lr-fs">
                         <fieldset class="fieldset padding-lr-fs">

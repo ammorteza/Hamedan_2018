@@ -13,7 +13,7 @@ class GalleryController extends Controller
 {
     function album()
     {
-        $gallery = ImageGallery::orderBy('id' , 'DESC')->paginate(20);
+        $gallery = ImageGallery::orderBy('id' , 'DESC')->paginate(21);
         return view('pages.admin.album' , ['gallery' => $gallery]);
     }
 
@@ -24,7 +24,7 @@ class GalleryController extends Controller
             $imageGallery = ImageGallery::where('id' , '=' , $gId)->first();
             ImageGallery::where('id' , '=' , $gId)->delete();
             @unlink($storagePath . '/' . $imageGallery->gPath);
-            return Redirect::back();
+            return Redirect::to('/admin/album');
         }
         catch (\Illuminate\Database\QueryException $e) {
             if($e->getCode() == "23000"){ //23000 is sql code for integrity constraint violation
