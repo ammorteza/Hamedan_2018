@@ -42,7 +42,7 @@
         </div>
         <div class="off-canvas-content large-12 medium-12 small-12">
             <div data-sticky-container>
-                <div class="title-bar" data-sticky data-options="marginTop:0;" style="width:100%;background-color: #FFFFFF;z-index: 9999;height: 60px;">
+                <div class="title-bar" data-sticky data-options="marginTop:0;" style="width:100%;background-color: #FFFFFF;z-index: 100;height: 60px;">
                     <div class="title-bar-left">
                         <span style="color: #1b6d85">{{ Auth::user()->name }}</span>
                     </div>
@@ -72,11 +72,21 @@
                 .attr('src', $('#imgPath' + gId).val());
         });
     });
+    CKEDITOR.on('instanceCreated', function(e) {
+        if (e.editor.id === 'cke_1') {
+            e.editor.on('change', function (event) {
+                if (CKEDITOR.instances.faDescription.getData() == '') {
+                    $('#registerNewsSubmit').attr("disabled", true);
+                }else{
+                    $('#registerNewsSubmit').attr("disabled", false);
+                }
+            });
+        }
+    });
 </script>
 <!--News Image Slider -->
 <script type="text/javascript">
     jssor_1_slider_init = function() {
-
         var jssor_1_SlideshowTransitions = [
             {$Duration:800,x:0.3,$During:{$Left:[0.3,0.7]},$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
             {$Duration:800,x:-0.3,$SlideOut:true,$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},

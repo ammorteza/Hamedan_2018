@@ -75,10 +75,10 @@
                         <div class="large-12 medium-12 small-12 padding-lr-fs">
                             <label class="padding-lr">متن خبر
                             </label>
-                            <textarea name="faDescription" class="ckeditor"></textarea>
+                            <textarea name="faDescription" id="faDescription" class="ckeditor"></textarea>
                             <script type="text/javascript">
                                 CKEDITOR.replace( 'editor1' );
-                                CKEDITOR.add
+                                CKEDITOR.add;
                             </script>
                         </div>
                     </div>
@@ -147,7 +147,7 @@
                     <input type="hidden" name="selectedImageId" id="selectedImageId" value="{{ $gallery[0]['id'] }}"/>
                     <div class="grid-x">
                         <div style="padding-right: 28px;margin-top: 10px" class="large-6 float-right">
-                            <label>وضعیت مشاهده خبر
+                            <label>نمایش خبر
                                 <div class="switch small" style="margin-left: 5px">
                                     <input class="switch-input" id="news1" type="checkbox" checked name="displayState">
                                     <label  class="switch-paddle" for="news1">
@@ -158,7 +158,7 @@
                             </label>
                         </div>
                         <div class="large-6" style="padding-left: 28px;">
-                            <button  name="submit" class="button primary float-left">ثبت</button>
+                            <button  name="submit" disabled class="button primary float-left" id="registerNewsSubmit">ثبت</button>
                         </div>
                     </div>
                 <!--Tab 3-->

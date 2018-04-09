@@ -10,7 +10,7 @@ class AuthController extends Controller
 {
     public function loginFrom()
     {
-        //echo Hash::make('gholami@1234');
+        //echo Hash::make('mm@2018');
         if (Auth::guest())
             return view('pages.admin.login');
         else

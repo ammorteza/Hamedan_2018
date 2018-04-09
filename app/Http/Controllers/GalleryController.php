@@ -51,8 +51,6 @@ class GalleryController extends Controller
         $gallery->gArLocation = $request->location_ar;
         $gallery->save();
 
-        $galleries = ImageGallery::orderBy('id' , 'DESC')->paginate(20);
-        return view('pages.admin.album' , ['gallery' => $galleries]);
-
+        return Redirect::to('/admin/album');
     }
 }
