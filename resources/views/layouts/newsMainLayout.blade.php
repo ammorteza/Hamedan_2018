@@ -6,6 +6,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>اخبار همدان ۲۰۱۸</title>
         <link rel="icon" type="image/png" href="{{ asset('pic/footer/footer-logo.png') }}">
+        <!— Global site tag (gtag.js) - Google Analytics —>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116472209-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-116472209-1');
+        </script>
         <!-- Fonts -->
         <link rel="stylesheet" href="{{ asset('fontawesome-free-5.0.0/web-fonts-with-css/css/fontawesome-all.min.css') }}">
         <link rel="stylesheet" href="{{ asset('css/direction-reveal.css') }}">

@@ -1427,6 +1427,80 @@ ul.social-icons {
     text-align: center;
     margin: auto;
 }
+
+/*////////////////////////////Language Menu///////////////////////////*/
+.languagepicker {
+    background-color:rgba(0,0,0,.2);
+    display: inline-block;
+    padding: 0;
+    height: 40px;
+    overflow: hidden;
+    transition: all .3s ease;
+    margin: 0 50px 10px 0;
+    vertical-align: top;
+    float: left;
+}
+
+.languagepicker:hover {
+    /* don't forget the 1px border */
+    height: 81px;
+}
+
+.languagepicker a{
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.languagepicker li {
+    display: block;
+    padding: 0px 20px;
+    line-height: 40px;
+
+}
+
+.languagepicker li:hover{
+    background-color:rgba(0,0,0,.3);
+}
+
+.languagepicker a:first-child li {
+    border: none;
+    background-color:rgba(0,0,0,.2);!important;
+}
+
+.languagepicker li img {
+    margin-right: 5px;
+}
+
+.roundborders {
+    border-radius: 5px;
+}
+
+.large:hover {
+    /*
+    don't forget the 1px border!
+    The first language is 40px heigh,
+    the others are 41px
+    */
+    height: 135px;
+}
+.flag-icon-full{
+    display: block;
+}
+.flag-icon-1024{
+    display: none;
+}
+.flag-icon-small{
+    display: none;
+}
+.menu-icon {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+/*///////////////////////////////////////////////////////////////////*/
 /*-------------------------------Media Queries------------------------------------*/
 @media only screen and (max-width: 1024px) {
     .mq-topmenu-status{
@@ -1473,6 +1547,22 @@ ul.social-icons {
     .element-distance-news{
         margin-top: 40px;
         margin-bottom: 80px;
+    }
+    .flag-icon-full{
+        display: none;
+    }
+    .flag-icon-1024{
+        display: block;
+        z-index: 9999;
+        position: absolute;
+        margin-top: 10px;
+    }
+    .flag-icon-1024 a{
+        color: #FFFFFF;
+        margin-right: 8px;
+    }
+    .flag-icon-small{
+        display: none;
     }
 }
 
@@ -1563,6 +1653,35 @@ ul.social-icons {
     }
     .margin-top-mq{
         margin-top: 50px;
+    }
+    .flag-icon-1024{
+        display: none;
+    }
+    .flag-icon-small{
+        display: block;
+        z-index: 9999;
+        position: absolute;
+        margin-top: 1px;
+    }
+    .flag-icon-small a{
+        margin-right: 5px;
+        margin-left: 5px;
+    }
+
+}
+@media only screen and (max-width: 639px) {
+    .flag-icon-1024{
+        display: none;
+    }
+    .flag-icon-small{
+        display: block;
+        z-index: 9999;
+        position: absolute;
+        margin-top: 1px;
+    }
+    .flag-icon-small a{
+        margin-right: 5px;
+        margin-left: 5px;
     }
 
 }

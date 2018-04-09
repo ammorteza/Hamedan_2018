@@ -13,6 +13,15 @@
             <title>{{ $pageInfo->pArTitle }}</title>
         @endif
         <link rel="icon" type="image/png" href="{{ asset('pic/footer/footer-logo.png') }}">
+        <!— Global site tag (gtag.js) - Google Analytics —>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116472209-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-116472209-1');
+        </script>
         <!-- Fonts -->
         <link rel="stylesheet" href="{{ asset('fontawesome-free-5.0.0/web-fonts-with-css/css/fontawesome-all.min.css') }}">
         <link rel="stylesheet" href="{{ asset('css/direction-reveal.css') }}">
@@ -79,15 +88,33 @@
                                                         </div>
                                                     </div>
                                                 </div>
-
+                                            </div>
+                                            <div style="margin-top: 30px;" class="element-dir-l flag-icon-full">
+                                                <ul  style="position: absolute;z-index: 9999;" class="languagepicker roundborders large">
+                                                    <a href="#en"><li><img src="{{ asset('pic/flag/uk.png') }}" width="24px" height="24px"/>English</li></a>
+                                                    <a href="#pe"><li><img src="{{ asset('pic/flag/persian.png') }}" width="24px" height="24px"/>فارسی</li></a>
+                                                    <a href="#ar"><li><img src="{{ asset('pic/flag/arabic.png') }}" width="24px" height="24px"/>العربیه</li></a>
+                                                </ul>
                                             </div>
                                         </div>
-                                    </div>
-                                    {{--<div class="grid-x">
-                                        <div class="large-12">
-                                            <img style="top:54px;left:7rem;z-index: 16;position: absolute;direction: ltr;" src="{{ asset('pic/header-logo.png') }}" alt="Hamedan-2018" width="150px" height="100px">
+                                        <!--Display Tag In 1024-->
+                                        <div class=" flag-icon-1024">
+                                            <a href="#en"><img src="{{ asset('pic/flag/uk.png') }}" width="24px" height="24px"/>English</a>
+                                            <a href="#pe"><img src="{{ asset('pic/flag/persian.png') }}" width="24px" height="24px"/>فارسی</a>
+                                            <a href="#ar"><img src="{{ asset('pic/flag/arabic.png') }}" width="24px" height="24px"/>العربیه</a>
                                         </div>
-                                    </div>--}}
+                                        <!--Display Tag In 1024 End-->
+
+                                    </div>
+                                    <!--Display Tag In small-->
+                                    <div align="left" class="grid-x">
+                                        <div class="small-12 flag-icon-small element-dir-l">
+                                            <a href="#en"><img src="{{ asset('pic/flag/uk.png') }}" width="32px" height="32px"/></a>
+                                            <a href="#pe"><img src="{{ asset('pic/flag/persian.png') }}" width="32px" height="32px"/></a>
+                                            <a href="#ar"><img src="{{ asset('pic/flag/arabic.png') }}" width="32px" height="32px"/></a>
+                                        </div>
+                                    </div>
+                                    <!--Display Tag In small End-->
                                     @foreach($pageInfo->pageHeaderImg as $pageImg)
                                         <li class="is-active orbit-slide">
                                             <img  class="background-cover orbit-image {{ $pageInfo->headerType->phtType == 'SIMPLE' ? 'top-slider-simple' : 'top-slider my-zoom-out' }}" src="{{ asset($pageImg->image->gPath) }}" alt="Space">

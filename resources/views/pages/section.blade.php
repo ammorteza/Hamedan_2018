@@ -604,7 +604,7 @@
         @endif
     @endforeach
     <!--Video Gallery Sections End-->
-    {{--<div class="grid-container">
+    <div class="grid-container">
         <div class="grid-x">
             <div class="large-12 medium-12 small-12">
                 <div style="display:none;" id="video1">
@@ -677,6 +677,7 @@
                     </div>
             </div>
         </div>
-    </div>--}}
+    </div>
+    </div>
     <!--Video Gallery Sections Start-->
 @stop
