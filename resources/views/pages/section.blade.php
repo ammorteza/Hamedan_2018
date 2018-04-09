@@ -603,7 +603,7 @@
             <!--Location Section End-->
         @endif
     @endforeach
-    <!--Video Gallery Sections End-->
+{{--    <!--Video Gallery Sections End-->
     <div class="grid-container">
         <div class="grid-x">
             <div class="large-12 medium-12 small-12">
@@ -678,6 +678,6 @@
             </div>
         </div>
     </div>
-    </div>
+    </div>--}}
     <!--Video Gallery Sections Start-->
 @stop

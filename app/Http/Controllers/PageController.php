@@ -11,7 +11,7 @@ class PageController extends Controller
 {
     public function getPage($slug = null)
     {
-        return $this->renderPage($slug , 'fa');
+        return $this->renderPage($slug , 'en');
     }
 
     public function getPage_fa($slug = null)
@@ -21,7 +21,7 @@ class PageController extends Controller
 
     public function getPage_ar($slug = null)
     {
-        return $this->renderPage($slug , 'fa');
+        return $this->renderPage($slug , 'ar');
     }
 
     private function renderPage($slug , $lan)

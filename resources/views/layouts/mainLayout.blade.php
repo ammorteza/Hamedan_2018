@@ -89,29 +89,60 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div style="margin-top: 30px;" class="element-dir-l flag-icon-full">
-                                                <ul  style="position: absolute;z-index: 9999;" class="languagepicker roundborders large">
-                                                    <a href="#en"><li><img src="{{ asset('pic/flag/uk.png') }}" width="24px" height="24px"/>English</li></a>
-                                                    <a href="#pe"><li><img src="{{ asset('pic/flag/persian.png') }}" width="24px" height="24px"/>فارسی</li></a>
-                                                    <a href="#ar"><li><img src="{{ asset('pic/flag/arabic.png') }}" width="24px" height="24px"/>العربیه</li></a>
-                                                </ul>
-                                            </div>
+
+                                        </div>
+                                        <div style="margin-top: -70px;" class="element-dir-l flag-icon-full">
+                                            <ul  style="position: absolute;z-index: 9999;" class="languagepicker roundborders large">
+                                                @if($lan == 'fa')
+                                                    <a href="{{ url('/fa') }}"><li><img src="{{ asset('pic/flag/persian.png') }}" width="24px" height="24px"/>فارسی</li></a>
+                                                    <a href="{{ url('/') }}"><li><img src="{{ asset('pic/flag/uk.png') }}" width="24px" height="24px"/>English</li></a>
+                                                    <a href="{{ url('/ar') }}"><li><img src="{{ asset('pic/flag/arabic.png') }}" width="24px" height="24px"/>العربیه</li></a>
+                                                @elseif($lan == 'ar')
+                                                    <a href="{{ url('/ar') }}"><li><img src="{{ asset('pic/flag/arabic.png') }}" width="24px" height="24px"/>العربیه</li></a>
+                                                    <a href="{{ url('/fa') }}"><li><img src="{{ asset('pic/flag/persian.png') }}" width="24px" height="24px"/>فارسی</li></a>
+                                                    <a href="{{ url('/') }}"><li><img src="{{ asset('pic/flag/uk.png') }}" width="24px" height="24px"/>English</li></a>
+                                                @else
+                                                    <a href="{{ url('/') }}"><li><img src="{{ asset('pic/flag/uk.png') }}" width="24px" height="24px"/>English</li></a>
+                                                    <a href="{{ url('/fa') }}"><li><img src="{{ asset('pic/flag/persian.png') }}" width="24px" height="24px"/>فارسی</li></a>
+                                                    <a href="{{ url('/ar') }}"><li><img src="{{ asset('pic/flag/arabic.png') }}" width="24px" height="24px"/>العربیه</li></a>
+                                                @endif
+                                            </ul>
                                         </div>
                                         <!--Display Tag In 1024-->
-                                        <div class=" flag-icon-1024">
-                                            <a href="#en"><img src="{{ asset('pic/flag/uk.png') }}" width="24px" height="24px"/>English</a>
-                                            <a href="#pe"><img src="{{ asset('pic/flag/persian.png') }}" width="24px" height="24px"/>فارسی</a>
-                                            <a href="#ar"><img src="{{ asset('pic/flag/arabic.png') }}" width="24px" height="24px"/>العربیه</a>
+                                        <div class=" flag-icon-1024 element-dir">
+                                            @if($lan == 'fa')
+                                                <a href="{{ url('/fa') }}"><img src="{{ asset('pic/flag/persian.png') }}" width="24px" height="24px"/>فارسی</a>
+                                                <a href="{{ url('/') }}"><img src="{{ asset('pic/flag/uk.png') }}" width="24px" height="24px"/>English</a>
+                                                <a href="{{ url('/ar') }}"><img src="{{ asset('pic/flag/arabic.png') }}" width="24px" height="24px"/>العربیه</a>
+                                            @elseif($lan == 'ar')
+                                                <a href="{{ url('/ar') }}"><img src="{{ asset('pic/flag/arabic.png') }}" width="24px" height="24px"/>العربیه</a>
+                                                <a href="{{ url('/fa') }}"><img src="{{ asset('pic/flag/persian.png') }}" width="24px" height="24px"/>فارسی</a>
+                                                <a href="{{ url('/') }}"><img src="{{ asset('pic/flag/uk.png') }}" width="24px" height="24px"/>English</a>
+                                            @else
+                                                <a href="{{ url('/') }}"><img src="{{ asset('pic/flag/uk.png') }}" width="24px" height="24px"/>English</a>
+                                                <a href="{{ url('/fa') }}"><img src="{{ asset('pic/flag/persian.png') }}" width="24px" height="24px"/>فارسی</a>
+                                                <a href="{{ url('/ar') }}"><img src="{{ asset('pic/flag/arabic.png') }}" width="24px" height="24px"/>العربیه</a>
+                                            @endif
                                         </div>
                                         <!--Display Tag In 1024 End-->
 
                                     </div>
                                     <!--Display Tag In small-->
-                                    <div align="left" class="grid-x">
+                                    <div align="{{ $lan == 'en' ? 'right' : 'left' }}" class="grid-x">
                                         <div class="small-12 flag-icon-small element-dir-l">
-                                            <a href="#en"><img src="{{ asset('pic/flag/uk.png') }}" width="32px" height="32px"/></a>
-                                            <a href="#pe"><img src="{{ asset('pic/flag/persian.png') }}" width="32px" height="32px"/></a>
-                                            <a href="#ar"><img src="{{ asset('pic/flag/arabic.png') }}" width="32px" height="32px"/></a>
+                                            @if($lan == 'fa')
+                                                <a href="{{ url('/fa') }}"><img src="{{ asset('pic/flag/persian.png') }}" width="28px" height="28px"/></a>
+                                                <a href="{{ url('/') }}"><img src="{{ asset('pic/flag/uk.png') }}" width="28px" height="28px"/></a>
+                                                <a href="{{ url('/ar') }}"><img src="{{ asset('pic/flag/arabic.png') }}" width="28px" height="28px"/></a>
+                                            @elseif($lan == 'ar')
+                                                <a href="{{ url('/ar') }}"><img src="{{ asset('pic/flag/arabic.png') }}" width="28px" height="28px"/></a>
+                                                <a href="{{ url('/fa') }}"><img src="{{ asset('pic/flag/persian.png') }}" width="28px" height="28px"/></a>
+                                                <a href="{{ url('/') }}"><img src="{{ asset('pic/flag/uk.png') }}" width="28px" height="28px"/></a>
+                                            @else
+                                                <a href="{{ url('/') }}"><img src="{{ asset('pic/flag/uk.png') }}" width="28px" height="28px"/></a>
+                                                <a href="{{ url('/fa') }}"><img src="{{ asset('pic/flag/persian.png') }}" width="28px" height="28px"/></a>
+                                                <a href="{{ url('/ar') }}"><img src="{{ asset('pic/flag/arabic.png') }}" width="28px" height="28px"/></a>
+                                            @endif
                                         </div>
                                     </div>
                                     <!--Display Tag In small End-->
