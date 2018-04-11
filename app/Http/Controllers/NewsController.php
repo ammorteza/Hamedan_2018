@@ -12,7 +12,7 @@ class NewsController extends Controller
 {
     public function index()
     {
-        return $this->renderNews('fa');
+        return $this->renderNews('en');
     }
 
     public function index_fa()
@@ -22,7 +22,7 @@ class NewsController extends Controller
 
     public function index_ar()
     {
-        return $this->renderNews('fa');
+        return $this->renderNews('ar');
     }
 
     private function renderNews($lan)
@@ -42,7 +42,7 @@ class NewsController extends Controller
     /////////////////// news info ///////////////////
     public function newsInfo($nId)
     {
-        return $this->renderNewsInfo('fa' , $nId);
+        return $this->renderNewsInfo('en' , $nId);
     }
 
     public function newsInfo_fa($nId)
@@ -52,7 +52,7 @@ class NewsController extends Controller
 
     public function newsInfo_ar($nId)
     {
-        return $this->renderNewsInfo('fa' , $nId);
+        return $this->renderNewsInfo('ar' , $nId);
     }
 
     private function renderNewsInfo($lan , $nId)

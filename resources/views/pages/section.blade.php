@@ -164,7 +164,7 @@
             <!--END CONTENT_IMAGE_SLIDER SECTION-->
         @elseif($section->sectionType->stType == 'SECTION_SPLITTER')
             <!--Section Spliter Start-->
-            <div class="grid-x">
+            <div class="grid-x element-distanse">
                 <div class="large-12 medium-12 small-12">
                     <img class="float-center section-spliter-margin" src="{{ asset('pic/section-spliter.png') }}">
                 </div>
@@ -412,38 +412,34 @@
                         @endif
                     </div>
                 </div>
-                <div class="grid-x">
-                    <div class="large-12">
-                        <div id="instructions">
-                            <video id="my_video_1" class="video-js vjs-default-skin" width="640px" height="267px"
-                                   controls preload="none" poster="{{ $section->sectionVideo[0]['gallery']['gPosterPath'] }}"
-                                   data-setup='{ "aspectRatio":"640:267", "playbackRates": [1, 1.5, 2] }'>
-                                <source src="{{ $section->sectionVideo[0]['gallery']['gPath'] }}"/>
-                            </video>
-                        </div>
-                        <div class="grid-container">
-                            <div class="grid-x">
-                                <div class="large-12 medium-12 small-12">
-                                    <div class="text-center"  id="gallery" style="display:none;margin-top: 150px;margin-bottom: 150px;">
+                <div class="grid-container element-distance-tb">
+                    <div class="grid-x">
+                        <div class="large-12 medium-12 small-12">
+                            <div class="text-center"  id="gallery" style="display:none">
+                                @foreach($section->sectionVideo as $sectionVideo)
+                                    @if($lan == 'fa')
                                         <img alt="Html5 Video"
-                                             src="{{ asset('pic/video/posters/1.jpg') }}"
+                                             src="{{ asset($sectionVideo['gallery']['gPosterPath']) }}"
                                              data-type="html5video"
-                                             data-image="{{ asset('pic/video/posters/1.jpg') }}"
-                                             {{--data-videoogv="http://video-js.zencoder.com/oceans-clip.ogv"
-                                             data-videowebm="http://video-js.zencoder.com/oceans-clip.webm"--}}
-                                             data-videomp4="{{ asset('pic/video/1.mp4') }}"
-                                             data-description="This is html5 video demo played by mediaelement2 player">
-
-                                        <img alt="Html5 Video 2"
-                                             src="{{ asset('pic/video/posters/2.jpg') }}"
+                                             data-image="{{ asset($sectionVideo['gallery']['gPosterPath']) }}"
+                                             data-videomp4="{{ asset($sectionVideo['gallery']['gPath']) }}"
+                                             data-description="{{ $sectionVideo['svFaSubject'] }}">
+                                    @elseif($lan == 'en')
+                                        <img alt="Html5 Video"
+                                             src="{{ asset($sectionVideo['gallery']['gPosterPath']) }}"
                                              data-type="html5video"
-                                             data-image="{{ asset('pic/video/posters/2.jpg') }}"
-                                             {{--data-videoogv="http://video-js.zencoder.com/oceans-clip.ogv"
-                                             data-videowebm="http://video-js.zencoder.com/oceans-clip.webm"--}}
-                                             data-videomp4="{{ asset('pic/video/2.mp4') }}"
-                                             data-description="This is html5 video demo played by mediaelement2 player">
-                                    </div>
-                                </div>
+                                             data-image="{{ asset($sectionVideo['gallery']['gPosterPath']) }}"
+                                             data-videomp4="{{ asset($sectionVideo['gallery']['gPath']) }}"
+                                             data-description="{{ $sectionVideo['svEnSubject'] }}">
+                                    @elseif($lan == 'ar')
+                                        <img alt="Html5 Video"
+                                             src="{{ asset($sectionVideo['gallery']['gPosterPath']) }}"
+                                             data-type="html5video"
+                                             data-image="{{ asset($sectionVideo['gallery']['gPosterPath']) }}"
+                                             data-videomp4="{{ asset($sectionVideo['gallery']['gPath']) }}"
+                                             data-description="{{ $sectionVideo['svArSubject'] }}">
+                                    @endif
+                                @endforeach
                             </div>
                         </div>
                     </div>

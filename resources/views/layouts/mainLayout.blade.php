@@ -27,7 +27,6 @@
         <link rel="stylesheet" href="{{ asset('css/direction-reveal.css') }}">
         <link rel="stylesheet" href="{{ asset('css/immersive-slider.css') }}">
         <link rel="stylesheet" href="{{ asset('css/pgwslider.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/videoJs/videoJs.css') }}">
         <link rel="stylesheet" href="{{ asset('css/lightgallery.css') }}">
         <link rel="stylesheet" href="{{ asset('css/foundation.css') }}">
         <link href="https://fonts.googleapis.com/css?family=Satisfy|Poiret+One|Cabin|Wire+One|Merienda|Roboto" rel="stylesheet">
@@ -344,14 +343,14 @@
                                 <img class="float-center"  src="{{ asset('pic/footer/miras-footer.png') }}" alt="میراث فرهنگی صنایع دستی و گردشگری" width="60px" height="60px">
                                 <p class="logo-slider withe-color my-text-shadow-effect">سازمان میراث فرهنگی، صنایع دستی و گردشگری</p>
                             </div>
-                            <div class="large-1 medium-6 small-12">
+{{--                            <div class="large-1 medium-6 small-12">
                                 <img class="float-center"  src="{{ asset('pic/footer/ostan-footer.png') }}" alt="استانداری همدان" width="60px" height="60px">
                                 <p class="logo-slider withe-color my-text-shadow-effect">استانداری همدان</p>
                             </div>
                             <div class="large-1 medium-6 small-12">
                                 <img class="float-center"  src="{{ asset('pic/footer/shahrdari-footer.png') }}" alt="استانداری همدان" width="60px" height="60px">
                                 <p class="logo-slider withe-color my-text-shadow-effect">شهرداری همدان</p>
-                            </div>
+                            </div>--}}
                         </div>
                     </div>
                 </div>
@@ -371,7 +370,6 @@
         <script src="{{ asset('js/scripts/bundle.js') }}"></script> <!--Content left-->
         <script src="{{ asset('js/jquery.immersive-slider.js') }}"></script><!--Content Image slider-->
         <script src="{{ asset('js/pgwslider.js') }}"></script><!--Content Image slider-->
-        <script src="{{ asset('js/videojs/videoJs.js') }}"></script><!--Content Image slider-->
 
         <!--Light Box Image slider-->
         <script src="{{ asset('js/light_box/picturefill.min.js') }}"></script><!--Content Image slider-->
@@ -492,29 +490,6 @@
             });
         </script>
         <!--jump to section Script-->
-
-        <!--Video JS-->
-        <script>
-            $(function(){
-                var $refreshButton = $('#refresh');
-                var $results = $('#css_result');
-
-                function refresh(){
-                    var css = $('style.cp-pen-styles').text();
-                    $results.html(css);
-                }
-
-                refresh();
-                $refreshButton.click(refresh);
-
-                // Select all the contents when clicked
-                $results.click(function(){
-                    $(this).select();
-                });
-            });
-
-        </script>
-        <!--Video JS-->
 
         <!--LightBox gallery Start-->
             <script>
