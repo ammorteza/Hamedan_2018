@@ -355,7 +355,39 @@
         <script src="{{ asset('js/light_box/froogaloop2.min.js') }}"></script><!--Content Image slider-->
         <!--Light Box Image slider-->
 
+        <!--unit video gallery slider-->
+        <script src="{{ asset('js/unitegallery/js/ug-common-libraries.js') }}"></script>
+        <script src="{{ asset('js/unitegallery/js/ug-functions.js') }}"></script>
+        <script src="{{ asset('js/unitegallery/js/ug-thumbsgeneral.js') }}"></script>
+        <script src="{{ asset('js/unitegallery/js/ug-thumbsstrip.js') }}"></script>
+        <script src="{{ asset('js/unitegallery/js/ug-touchthumbs.js') }}"></script>
+        <script src="{{ asset('js/unitegallery/js/ug-panelsbase.js') }}"></script>
+        <script src="{{ asset('js/unitegallery/js/ug-strippanel.js') }}"></script>
+        <script src="{{ asset('js/unitegallery/js/ug-gridpanel.js') }}"></script>
+        <script src="{{ asset('js/unitegallery/js/ug-thumbsgrid.js') }}"></script>
+        <script src="{{ asset('js/unitegallery/js/ug-tiles.js') }}"></script>
+        <script src="{{ asset('js/unitegallery/js/ug-tiledesign.js') }}"></script>
+        <script src="{{ asset('js/unitegallery/js/ug-avia.js') }}"></script>
+        <script src="{{ asset('js/unitegallery/js/ug-slider.js') }}"></script>
+        <script src="{{ asset('js/unitegallery/js/ug-sliderassets.js') }}"></script>
+        <script src="{{ asset('js/unitegallery/js/ug-touchslider.js') }}"></script>
+        <script src="{{ asset('js/unitegallery/js/ug-zoomslider.js') }}"></script>
+        <script src="{{ asset('js/unitegallery/js/ug-video.js') }}"></script>
+        <script src="{{ asset('js/unitegallery/js/ug-gallery.js') }}"></script>
+        <script src="{{ asset('js/unitegallery/js/ug-lightbox.js') }}"></script>
+        <script src="{{ asset('js/unitegallery/js/ug-carousel.js') }}"></script>
+        <script src="{{ asset('js/unitegallery/js/ug-api.js') }}"></script>
 
+        <link rel="stylesheet" href="{{ asset('js/unitegallery/css/unite-gallery.css') }}">
+
+        <script src="{{ asset('js/unitegallery/themes/default/ug-theme-default.js') }}"></script>
+        <link rel="stylesheet" href="{{ asset('js/unitegallery/themes/default/ug-theme-default.css') }}"
+
+        {{--<script src="{{ asset('js/unitegallery/js/unitgallery.js') }}"></script>
+        <link rel="stylesheet" href="{{ asset('js/unitegallery/css/unite-gallery.css') }}">
+        <script src="{{ asset('js/unitegallery/js/ug-theme-compact.js') }}"></script>--}}
+
+        <!--unit video gallery slider-->
 
         <script src="{{ asset('js/vendor/foundation.js') }}"></script>
         <script src="{{ asset('js/app.js') }}"></script>
@@ -376,6 +408,22 @@
         </script>
 --}}
         <!--Remove zoom out class-->
+
+        <!--unit video gallery slider-->
+        <script type="text/javascript">
+
+            jQuery(document).ready(function(){
+
+                jQuery("#gallery").unitegallery({
+                    theme_panel_position: "bottom"
+                });
+                $('#gallery').css({ "max-width": "100%" });
+
+            });
+
+        </script>
+        <!--unit video gallery slider-->
+
         <script type="text/javascript">
             $(document).ready( function() {
                 $("#immersive_slider").immersive_slider({
