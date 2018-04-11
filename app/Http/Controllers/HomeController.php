@@ -11,7 +11,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-        return $this->renderPage('fa');
+        return $this->renderPage('en');
     }
 
     public function index_fa()
@@ -21,7 +21,7 @@ class HomeController extends Controller
 
     public function index_ar()
     {
-        return $this->renderPage('fa');
+        return $this->renderPage('ar');
     }
 
     private function renderPage($lan)

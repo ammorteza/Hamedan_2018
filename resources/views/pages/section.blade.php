@@ -628,7 +628,4 @@
             <!--Location Section End-->
         @endif
     @endforeach
-
-
-
 @stop
