@@ -469,11 +469,11 @@
                             @endif
 
                             @if($lan == 'fa')
-                                <a href="{{ url($section->sLink . '')}}" class="button primary element-distanse">{{ $section->sLinkFaTitle }}</a>
+                                <a href="{{ url($lan . $section->sLink)}}" class="button primary element-distanse">{{ $section->sLinkFaTitle }}</a>
                             @elseif($lan == 'en')
                                 <a href="{{ url($section->sLink . '')}}" class="button primary element-distanse">{{ $section->sLinkEnTitle }}</a>
                             @elseif($lan == 'ar')
-                                <a href="{{ url($section->sLink . '')}}" class="button primary element-distanse">{{ $section->sLinkArTitle }}</a>
+                                <a href="{{ url($lan . $section->sLink)}}" class="button primary element-distanse">{{ $section->sLinkArTitle }}</a>
                             @endif
                         </div>
                     </div>

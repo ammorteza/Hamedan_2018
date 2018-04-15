@@ -85,7 +85,7 @@
                                 <p class="two-line text-color text-justify element-distanse font-small Raleway-Regular">{{ $news->nEnBriefDescription }}</p>
                                 <div class="blue-color"><i class="far fa-calendar-alt camera-margin"></i><span class="font-smaller">{{ $news->created_at->format('Y F d') }}</span></div>
                             @elseif($lan == 'ar')
-                                <a href="{{ url($lan . '/news/info/' . $news->id) }}"><h5 class="Al-Jazeera-Arabic-Bold">{{ $news->nFaSubject }}</h5></a>
+                                <a href="{{ url($lan . '/news/info/' . $news->id) }}"><h5 class="Al-Jazeera-Arabic-Bold">{{ $news->nArSubject }}</h5></a>
                                 <p class="two-line text-color text-justify element-distanse font-small Al-Jazeera-Arabic-Regular">{{ $news->nArBriefDescription }}</p>
                                 <div class="blue-color"><i class="far fa-calendar-alt camera-margin"></i><span class="font-smaller">{{ $news->created_at->format('Y F d') }}</span></div>
                             @endif
@@ -136,10 +136,10 @@
                 <!-Pagination End--->
             </div>
             @if($advertise != null)
-                @if($lan == 'fa')
-                    <div style="padding-right: 100px;margin-top:440px;" class="large-4 medium-6 small-12" data-sticky-container>
-                @elseif($lan == 'en')
+                @if($lan == 'en')
                     <div style="padding-left: 100px;margin-top:440px;" class="large-4 medium-6 small-12" data-sticky-container>
+                @else
+                    <div style="padding-right: 100px;margin-top:440px;" class="large-4 medium-6 small-12" data-sticky-container>
                 @endif
                     <div class="grid-x adv-hide" data-sticky data-top-anchor="advTop:top" data-btm-anchor="advBottom:bottom">
                         <div style="position: relative;display: inline-block;top:40vh;text-align: center;z-index: 50;" class="large-12">

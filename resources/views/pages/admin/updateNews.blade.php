@@ -62,7 +62,7 @@
                                 <textarea  type="text" style="height: 90px;"  name="faBriefDescription" aria-describedby="newsDescription" required>{{ $news->nFaBriefDescription }}</textarea>
                                 <span class="form-error">
                       لطفا خلاصه خبر را وارد نمایید !
-                                    </span>
+                                </span>
                             </label>
                         </div>
                     </div>
@@ -71,7 +71,7 @@
                         <div class="large-12 medium-12 small-12 padding-lr-fs">
                             <label class="padding-lr">متن خبر
                             </label>
-                            <textarea name="faDescription" class="ckeditor">{{ $news->nFaDescription }}</textarea>
+                            <textarea name="faDescription" id="faDescription" class="ckeditor">{{ $news->nFaDescription }}</textarea>
                             <script type="text/javascript">
                                 CKEDITOR.replace( 'editor1' );
                                 CKEDITOR.add
@@ -84,14 +84,20 @@
                     <div class="grid-x">
                         <div class="large-8 medium-12 small-12 padding-lr-fs">
                             <label>عنوان
-                                <input  type="text" value="{{ $news->nArSubject }}"  name="arSubject">
+                                <input  type="text" value="{{ $news->nArSubject }}"  name="arSubject" required>
+                                <span class="form-error">
+                      لطفا عنوان (عربی) خبر را وارد نمایید !
+                                </span>
                             </label>
                         </div>
                     </div>
                     <div class="grid-x">
                         <div class="large-8 medium-12 small-12 padding-lr-fs">
                             <label>خلاصه خبر
-                                <textarea  type="text" style="height: 90px;"  name="arBriefDescription">{{ $news->nArBriefDescription }}</textarea>
+                                <textarea  type="text" style="height: 90px;"  name="arBriefDescription" required>{{ $news->nArBriefDescription }}</textarea>
+                                <span class="form-error">
+                      لطفا خلاصه (عربی) خبر را وارد نمایید !
+                               </span>
                             </label>
                         </div>
                     </div>
@@ -101,7 +107,7 @@
 
                             <label class="padding-lr">متن خبر
                             </label>
-                            <textarea name="arDescription" class="ckeditor">{{ $news->nArDescription }}</textarea>
+                            <textarea name="arDescription" id="arDescription" class="ckeditor">{{ $news->nArDescription }}</textarea>
                             <script type="text/javascript">
                                 CKEDITOR.replace( 'editor2' );
                                 CKEDITOR.add
@@ -115,23 +121,28 @@
                     <div class="grid-x">
                         <div class="large-8 medium-12 small-12 padding-lr-fs">
                             <label>عنوان
-                                <input  type="text" value="{{ $news->nEnSubject }}" value="{{ $news->nEnSubject }}"  name="enSubject">
+                                <input  type="text" value="{{ $news->nEnSubject }}" value="{{ $news->nEnSubject }}"  name="enSubject" required>
+                                <span class="form-error">
+                      لطفا عنوان (انگلیسی) خبر را وارد نمایید !
+                                </span>
                             </label>
                         </div>
                     </div>
                     <div class="grid-x">
                         <div class="large-8 medium-12 small-12 padding-lr-fs">
                             <label>خلاصه خبر
-                                <textarea  type="text" style="height: 90px;"  name="enBriefDescription">{{ $news->nEnBriefDescription }}</textarea>
+                                <textarea  type="text" style="height: 90px;"  name="enBriefDescription" required>{{ $news->nEnBriefDescription }}</textarea>
+                                <span class="form-error">
+                      لطفا خلاصه (انگلیسی) خبر را وارد نمایید !
+                               </span>
                             </label>
                         </div>
                     </div>
-
                     <div class="grid-x">
                         <div class="large-12 medium-12 small-12 padding-lr-fs">
                             <label class="padding-lr">متن خبر
                             </label>
-                            <textarea name="enDescription" class="ckeditor">{{ $news->nEnDescription }}</textarea>
+                            <textarea name="enDescription" id="enDescription" class="ckeditor">{{ $news->nEnDescription }}</textarea>
                             <script type="text/javascript">
                                 CKEDITOR.replace( 'editor3' );
                                 CKEDITOR.add
@@ -141,7 +152,7 @@
                 </div>
                     <input type="hidden" name="selectedImageId" id="selectedImageId" value="{{ $news->newsImg[0]['gallery']->id }}"/>
                 <div style="padding-left: 28px;" class="medium-12 padding-lr-fs top-margin-element ">
-                    <button  name="submit" class="button primary float-left">ثبت</button>
+                    <button  name="submit" disabled class="button primary float-left" id="registerNewsSubmit">ثبت</button>
                 </div>
                 <!--Tab 3-->
                 </form>

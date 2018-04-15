@@ -6,11 +6,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         @if($lan == 'fa')
-            <title>{{ $pageInfo->pFaTitle }}</title>
+            <title>{{ $pageInfo->pFaTitle . ' | همدان پایتخت گردشگری کشور های آسیایی' }}</title>
         @elseif($lan == 'en')
-            <title>{{ $pageInfo->pEnTitle }}</title>
+            <title>{{ $pageInfo->pEnTitle . ' | Hamedan Capital of Asian Tourism' }}</title>
         @elseif($lan == 'ar')
-            <title>{{ $pageInfo->pArTitle }}</title>
+            <title>{{ $pageInfo->pArTitle . ' | همدان العاصمه للسياحة قارة آسيا'}}</title>
         @endif
         <link rel="icon" type="image/png" href="{{ asset('pic/footer/footer-logo.png') }}">
         <!— Global site tag (gtag.js) - Google Analytics —>
@@ -442,7 +442,6 @@
         <script type="text/javascript">
 
             jQuery(document).ready(function(){
-
                 jQuery("#gallery").unitegallery({
                     theme_panel_position: "bottom"
                 });

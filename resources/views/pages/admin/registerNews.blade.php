@@ -39,7 +39,7 @@
                                 <label>
                                     <img class="image-shadow-effect" src="{{ asset($gallery[0]['gPath']) }}" id="newsImg" width="800">
                                     <span class="form-error">
-                                  لطفا عنوان خبر را وارد نمایید !
+                                  لطفا تصویر خبر را وارد نمایید !
                                     </span>
                                 </label>
                             </div>
@@ -56,7 +56,7 @@
                                 <input  type="text"  name="faSubject" aria-describedby="newsTitle" required>
                                 <span class="form-error">
                       لطفا عنوان خبر را وارد نمایید !
-                                    </span>
+                               </span>
                             </label>
                         </div>
                     </div>
@@ -88,14 +88,20 @@
                     <div class="grid-x">
                         <div class="large-8 medium-12 small-12 padding-lr-fs">
                             <label>عنوان
-                                <input  type="text"  name="arSubject">
+                                <input  type="text"  name="arSubject" required>
+                                <span class="form-error">
+                      لطفا عنوان (عربی) خبر را وارد نمایید !
+                                </span>
                             </label>
                         </div>
                     </div>
                     <div class="grid-x">
                         <div class="large-8 medium-12 small-12 padding-lr-fs">
                             <label>خلاصه خبر
-                                <textarea  type="text" style="height: 90px;"  name="arBriefDescription"></textarea>
+                                <textarea  type="text" style="height: 90px;"  name="arBriefDescription" required></textarea>
+                                <span class="form-error">
+                      لطفا خلاصه (عربی) خبر را وارد نمایید !
+                               </span>
                             </label>
                         </div>
                     </div>
@@ -105,7 +111,7 @@
 
                             <label class="padding-lr-fs">متن خبر
                             </label>
-                            <textarea name="arDescription" class="ckeditor"></textarea>
+                            <textarea name="arDescription" id="arDescription" class="ckeditor"></textarea>
                             <script type="text/javascript">
                                 CKEDITOR.replace( 'editor2' );
                                 CKEDITOR.add
@@ -119,14 +125,20 @@
                     <div class="grid-x">
                         <div class="large-8 medium-12 small-12 padding-lr-fs">
                             <label class="">عنوان
-                                <input  type="text"  name="enSubject">
+                                <input  type="text"  name="enSubject" required>
+                                <span class="form-error">
+                      لطفا عنوان (انگلیسی) خبر را وارد نمایید !
+                                </span>
                             </label>
                         </div>
                     </div>
                     <div class="grid-x">
                         <div class="large-8 medium-12 small-12 padding-lr-fs">
                             <label>خلاصه خبر
-                                <textarea  type="text" style="height: 90px;"  name="enBriefDescription"></textarea>
+                                <textarea  type="text" style="height: 90px;"  name="enBriefDescription" required></textarea>
+                                <span class="form-error">
+                      لطفا خلاصه (انگلیسی) خبر را وارد نمایید !
+                               </span>
                             </label>
                         </div>
                     </div>
@@ -136,7 +148,7 @@
 
                             <label class="padding-lr-fs">متن خبر
                             </label>
-                            <textarea name="enDescription" class="ckeditor"></textarea>
+                            <textarea name="enDescription" id="enDescription" class="ckeditor"></textarea>
                             <script type="text/javascript">
                                 CKEDITOR.replace( 'editor3' );
                                 CKEDITOR.add
