@@ -23,16 +23,16 @@
             gtag('config', 'UA-116472209-1');
         </script>
         <!-- Fonts -->
-        <link rel="stylesheet" href="{{ asset('fontawesome-free-5.0.0/web-fonts-with-css/css/fontawesome-all.min.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/direction-reveal.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/immersive-slider.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/pgwslider.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/lightgallery.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/foundation.css') }}">
+        <link rel="stylesheet" href="{{ asset('fontawesome-free-5.0.0/web-fonts-with-css/css/fontawesome-all.min.css?v' . config('app.version')) }}">
+        <link rel="stylesheet" href="{{ asset('css/direction-reveal.css?v' . config('app.version')) }}">
+        <link rel="stylesheet" href="{{ asset('css/immersive-slider.css?v' . config('app.version')) }}">
+        <link rel="stylesheet" href="{{ asset('css/pgwslider.css?v' . config('app.version')) }}">
+        <link rel="stylesheet" href="{{ asset('css/lightgallery.css?v' . config('app.version')) }}">
+        <link rel="stylesheet" href="{{ asset('css/foundation.css?v' . config('app.version')) }}">
         <link href="https://fonts.googleapis.com/css?family=Satisfy|Poiret+One|Cabin|Wire+One|Merienda|Roboto" rel="stylesheet">
         {{--<link href="https://cdnjs.cloudflare.com/ajax/libs/motion-ui/1.2.2/motion-ui.css" rel="stylesheet">--}}
-        <link rel="stylesheet" href="{{ asset('css/font.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/key.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/font.css?v' . config('app.version')) }}">
+        <link rel="stylesheet" href="{{ asset('css/key.css?v' . config('app.version')) }}">
     </head>
     <body class="Shabnam-Light">
             <!--Top Slider Start-->
@@ -366,51 +366,51 @@
                 </div>
             </div>
         <!--Copy Right Bar End-->
-        <script src="{{ asset('js/vendor/jquery.js') }}"  type="text/javascript"></script>
-        <script src="{{ asset('js/scripts/bundle.js') }}"></script> <!--Content left-->
-        <script src="{{ asset('js/jquery.immersive-slider.js') }}"></script><!--Content Image slider-->
-        <script src="{{ asset('js/pgwslider.js') }}"></script><!--Content Image slider-->
+        <script src="{{ asset('js/vendor/jquery.js?v' . config('app.version')) }}"  type="text/javascript"></script>
+        <script src="{{ asset('js/scripts/bundle.js?v' . config('app.version')) }}"></script> <!--Content left-->
+        <script src="{{ asset('js/jquery.immersive-slider.js?v' . config('app.version')) }}"></script><!--Content Image slider-->
+        <script src="{{ asset('js/pgwslider.js?v' . config('app.version')) }}"></script><!--Content Image slider-->
 
         <!--Light Box Image slider-->
-        <script src="{{ asset('js/light_box/picturefill.min.js') }}"></script><!--Content Image slider-->
-        <script src="{{ asset('js/light_box/lightgallery.js') }}"></script><!--Content Image slider-->
-        <script src="{{ asset('js/light_box/lg-pager.js') }}"></script><!--Content Image slider-->
-        <script src="{{ asset('js/light_box/lg-autoplay.js') }}"></script><!--Content Image slider-->
-        <script src="{{ asset('js/light_box/lg-fullscreen.js') }}"></script><!--Content Image slider-->
-        <script src="{{ asset('js/light_box/lg-zoom.js') }}"></script><!--Content Image slider-->
-        <script src="{{ asset('js/light_box/lg-hash.js') }}"></script><!--Content Image slider-->
-        <script src="{{ asset('js/light_box/lg-share.js') }}"></script><!--Content Image slider-->
-        <script src="{{ asset('js/light_box/lg-video.js') }}"></script><!--Content Image slider-->
-        <script src="{{ asset('js/light_box/froogaloop2.min.js') }}"></script><!--Content Image slider-->
+        <script src="{{ asset('js/light_box/picturefill.min.js?v' . config('app.version')) }}"></script><!--Content Image slider-->
+        <script src="{{ asset('js/light_box/lightgallery.js?v' . config('app.version')) }}"></script><!--Content Image slider-->
+        <script src="{{ asset('js/light_box/lg-pager.js?v' . config('app.version')) }}"></script><!--Content Image slider-->
+        <script src="{{ asset('js/light_box/lg-autoplay.js?v' . config('app.version')) }}"></script><!--Content Image slider-->
+        <script src="{{ asset('js/light_box/lg-fullscreen.js?v' . config('app.version')) }}"></script><!--Content Image slider-->
+        <script src="{{ asset('js/light_box/lg-zoom.js?v' . config('app.version')) }}"></script><!--Content Image slider-->
+        <script src="{{ asset('js/light_box/lg-hash.js?v' . config('app.version')) }}"></script><!--Content Image slider-->
+        <script src="{{ asset('js/light_box/lg-share.js?v' . config('app.version')) }}"></script><!--Content Image slider-->
+        <script src="{{ asset('js/light_box/lg-video.js?v' . config('app.version')) }}"></script><!--Content Image slider-->
+        <script src="{{ asset('js/light_box/froogaloop2.min.js?v' . config('app.version')) }}"></script><!--Content Image slider-->
         <!--Light Box Image slider-->
 
         <!--unit video gallery slider-->
-        <script src="{{ asset('js/unitegallery/js/ug-common-libraries.js') }}"></script>
-        <script src="{{ asset('js/unitegallery/js/ug-functions.js') }}"></script>
-        <script src="{{ asset('js/unitegallery/js/ug-thumbsgeneral.js') }}"></script>
-        <script src="{{ asset('js/unitegallery/js/ug-thumbsstrip.js') }}"></script>
-        <script src="{{ asset('js/unitegallery/js/ug-touchthumbs.js') }}"></script>
-        <script src="{{ asset('js/unitegallery/js/ug-panelsbase.js') }}"></script>
-        <script src="{{ asset('js/unitegallery/js/ug-strippanel.js') }}"></script>
-        <script src="{{ asset('js/unitegallery/js/ug-gridpanel.js') }}"></script>
-        <script src="{{ asset('js/unitegallery/js/ug-thumbsgrid.js') }}"></script>
-        <script src="{{ asset('js/unitegallery/js/ug-tiles.js') }}"></script>
-        <script src="{{ asset('js/unitegallery/js/ug-tiledesign.js') }}"></script>
-        <script src="{{ asset('js/unitegallery/js/ug-avia.js') }}"></script>
-        <script src="{{ asset('js/unitegallery/js/ug-slider.js') }}"></script>
-        <script src="{{ asset('js/unitegallery/js/ug-sliderassets.js') }}"></script>
-        <script src="{{ asset('js/unitegallery/js/ug-touchslider.js') }}"></script>
-        <script src="{{ asset('js/unitegallery/js/ug-zoomslider.js') }}"></script>
-        <script src="{{ asset('js/unitegallery/js/ug-video.js') }}"></script>
-        <script src="{{ asset('js/unitegallery/js/ug-gallery.js') }}"></script>
-        <script src="{{ asset('js/unitegallery/js/ug-lightbox.js') }}"></script>
-        <script src="{{ asset('js/unitegallery/js/ug-carousel.js') }}"></script>
-        <script src="{{ asset('js/unitegallery/js/ug-api.js') }}"></script>
+        <script src="{{ asset('js/unitegallery/js/ug-common-libraries.js?v' . config('app.version')) }}"></script>
+        <script src="{{ asset('js/unitegallery/js/ug-functions.js?v' . config('app.version')) }}"></script>
+        <script src="{{ asset('js/unitegallery/js/ug-thumbsgeneral.js?v' . config('app.version')) }}"></script>
+        <script src="{{ asset('js/unitegallery/js/ug-thumbsstrip.js?v' . config('app.version')) }}"></script>
+        <script src="{{ asset('js/unitegallery/js/ug-touchthumbs.js?v' . config('app.version')) }}"></script>
+        <script src="{{ asset('js/unitegallery/js/ug-panelsbase.js?v' . config('app.version')) }}"></script>
+        <script src="{{ asset('js/unitegallery/js/ug-strippanel.js?v' . config('app.version')) }}"></script>
+        <script src="{{ asset('js/unitegallery/js/ug-gridpanel.js?v' . config('app.version')) }}"></script>
+        <script src="{{ asset('js/unitegallery/js/ug-thumbsgrid.js?v' . config('app.version')) }}"></script>
+        <script src="{{ asset('js/unitegallery/js/ug-tiles.js?v' . config('app.version')) }}"></script>
+        <script src="{{ asset('js/unitegallery/js/ug-tiledesign.js?v' . config('app.version')) }}"></script>
+        <script src="{{ asset('js/unitegallery/js/ug-avia.js?v' . config('app.version')) }}"></script>
+        <script src="{{ asset('js/unitegallery/js/ug-slider.js?v' . config('app.version')) }}"></script>
+        <script src="{{ asset('js/unitegallery/js/ug-sliderassets.js?v' . config('app.version')) }}"></script>
+        <script src="{{ asset('js/unitegallery/js/ug-touchslider.js?v' . config('app.version')) }}"></script>
+        <script src="{{ asset('js/unitegallery/js/ug-zoomslider.js?v' . config('app.version')) }}"></script>
+        <script src="{{ asset('js/unitegallery/js/ug-video.js?v' . config('app.version')) }}"></script>
+        <script src="{{ asset('js/unitegallery/js/ug-gallery.js?v' . config('app.version')) }}"></script>
+        <script src="{{ asset('js/unitegallery/js/ug-lightbox.js?v' . config('app.version')) }}"></script>
+        <script src="{{ asset('js/unitegallery/js/ug-carousel.js?v' . config('app.version')) }}"></script>
+        <script src="{{ asset('js/unitegallery/js/ug-api.js?v' . config('app.version')) }}"></script>
 
-        <link rel="stylesheet" href="{{ asset('js/unitegallery/css/unite-gallery.css') }}">
+        <link rel="stylesheet" href="{{ asset('js/unitegallery/css/unite-gallery.css?v' . config('app.version')) }}">
 
-        <script src="{{ asset('js/unitegallery/themes/default/ug-theme-default.js') }}"></script>
-        <link rel="stylesheet" href="{{ asset('js/unitegallery/themes/default/ug-theme-default.css') }}"
+        <script src="{{ asset('js/unitegallery/themes/default/ug-theme-default.js?v' . config('app.version')) }}"></script>
+        <link rel="stylesheet" href="{{ asset('js/unitegallery/themes/default/ug-theme-default.css?v' . config('app.version')) }}"
 
         {{--<script src="{{ asset('js/unitegallery/js/unitgallery.js') }}"></script>
         <link rel="stylesheet" href="{{ asset('js/unitegallery/css/unite-gallery.css') }}">
@@ -418,8 +418,8 @@
 
         <!--unit video gallery slider-->
 
-        <script src="{{ asset('js/vendor/foundation.js') }}"></script>
-        <script src="{{ asset('js/app.js') }}"></script>
+        <script src="{{ asset('js/vendor/foundation.js?v' . config('app.version')) }}"></script>
+        <script src="{{ asset('js/app.js?v' . config('app.version')) }}"></script>
 
         <!--Remove zoom out class-->
         <script>
@@ -443,9 +443,10 @@
 
             jQuery(document).ready(function(){
                 jQuery("#gallery").unitegallery({
-                    theme_panel_position: "bottom"
+                    theme_panel_position: "bottom",
+                    gallery_width:"100%",
+                    gallery_height:"90vh",
                 });
-                $('#gallery').css({ "max-width": "100%" });
 
             });
 
