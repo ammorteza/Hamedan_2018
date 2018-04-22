@@ -93,15 +93,15 @@
                                         <div style="margin-top: -70px;" class="element-dir-l flag-icon-full">
                                             <ul  style="position: absolute;z-index: 9999;" class="languagepicker roundborders large">
                                                 @if($lan == 'fa')
-                                                    <a href="{{ url('/fa') }}"><li><img src="{{ asset('pic/flag/persian.png') }}" width="24px" height="24px"/>فارسی</li></a>
+                                                    <a href="{{ url('/fa') }}"><li><img src="{{ asset('pic/flag/persian_w.png') }}" width="24px" height="24px"/>فارسی</li></a>
                                                     <a href="{{ url('/') }}"><li><img src="{{ asset('pic/flag/uk.png') }}" width="24px" height="24px"/>English</li></a>
                                                     <a href="{{ url('/ar') }}"><li><img src="{{ asset('pic/flag/arabic.png') }}" width="24px" height="24px"/>العربیه</li></a>
                                                 @elseif($lan == 'ar')
-                                                    <a href="{{ url('/ar') }}"><li><img src="{{ asset('pic/flag/arabic.png') }}" width="24px" height="24px"/>العربیه</li></a>
+                                                    <a href="{{ url('/ar') }}"><li><img src="{{ asset('pic/flag/arabic_w.png') }}" width="24px" height="24px"/>العربیه</li></a>
                                                     <a href="{{ url('/fa') }}"><li><img src="{{ asset('pic/flag/persian.png') }}" width="24px" height="24px"/>فارسی</li></a>
                                                     <a href="{{ url('/') }}"><li><img src="{{ asset('pic/flag/uk.png') }}" width="24px" height="24px"/>English</li></a>
                                                 @else
-                                                    <a href="{{ url('/') }}"><li><img src="{{ asset('pic/flag/uk.png') }}" width="24px" height="24px"/>English</li></a>
+                                                    <a href="{{ url('/') }}"><li><img src="{{ asset('pic/flag/uk_w.png') }}" width="24px" height="24px"/>English</li></a>
                                                     <a href="{{ url('/fa') }}"><li><img src="{{ asset('pic/flag/persian.png') }}" width="24px" height="24px"/>فارسی</li></a>
                                                     <a href="{{ url('/ar') }}"><li><img src="{{ asset('pic/flag/arabic.png') }}" width="24px" height="24px"/>العربیه</li></a>
                                                 @endif
@@ -110,15 +110,15 @@
                                         <!--Display Tag In 1024-->
                                         <div class=" flag-icon-1024 element-dir">
                                             @if($lan == 'fa')
-                                                <a href="{{ url('/fa') }}"><img src="{{ asset('pic/flag/persian.png') }}" width="24px" height="24px"/>فارسی</a>
+                                                <a href="{{ url('/fa') }}"><img src="{{ asset('pic/flag/persian_w.png') }}" width="24px" height="24px"/>فارسی</a>
                                                 <a href="{{ url('/') }}"><img src="{{ asset('pic/flag/uk.png') }}" width="24px" height="24px"/>English</a>
                                                 <a href="{{ url('/ar') }}"><img src="{{ asset('pic/flag/arabic.png') }}" width="24px" height="24px"/>العربیه</a>
                                             @elseif($lan == 'ar')
-                                                <a href="{{ url('/ar') }}"><img src="{{ asset('pic/flag/arabic.png') }}" width="24px" height="24px"/>العربیه</a>
+                                                <a href="{{ url('/ar') }}"><img src="{{ asset('pic/flag/arabic_w.png') }}" width="24px" height="24px"/>العربیه</a>
                                                 <a href="{{ url('/fa') }}"><img src="{{ asset('pic/flag/persian.png') }}" width="24px" height="24px"/>فارسی</a>
                                                 <a href="{{ url('/') }}"><img src="{{ asset('pic/flag/uk.png') }}" width="24px" height="24px"/>English</a>
                                             @else
-                                                <a href="{{ url('/') }}"><img src="{{ asset('pic/flag/uk.png') }}" width="24px" height="24px"/>English</a>
+                                                <a href="{{ url('/') }}"><img src="{{ asset('pic/flag/uk_w.png') }}" width="24px" height="24px"/>English</a>
                                                 <a href="{{ url('/fa') }}"><img src="{{ asset('pic/flag/persian.png') }}" width="24px" height="24px"/>فارسی</a>
                                                 <a href="{{ url('/ar') }}"><img src="{{ asset('pic/flag/arabic.png') }}" width="24px" height="24px"/>العربیه</a>
                                             @endif
@@ -130,15 +130,15 @@
                                     <div align="{{ $lan == 'en' ? 'right' : 'left' }}" class="grid-x">
                                         <div class="small-12 flag-icon-small element-dir-l">
                                             @if($lan == 'fa')
-                                                <a href="{{ url('/fa') }}"><img src="{{ asset('pic/flag/persian.png') }}" width="28px" height="28px"/></a>
+                                                <a href="{{ url('/fa') }}"><img src="{{ asset('pic/flag/persian_w.png') }}" width="28px" height="28px"/></a>
                                                 <a href="{{ url('/') }}"><img src="{{ asset('pic/flag/uk.png') }}" width="28px" height="28px"/></a>
                                                 <a href="{{ url('/ar') }}"><img src="{{ asset('pic/flag/arabic.png') }}" width="28px" height="28px"/></a>
                                             @elseif($lan == 'ar')
-                                                <a href="{{ url('/ar') }}"><img src="{{ asset('pic/flag/arabic.png') }}" width="28px" height="28px"/></a>
+                                                <a href="{{ url('/ar') }}"><img src="{{ asset('pic/flag/arabic_w.png') }}" width="28px" height="28px"/></a>
                                                 <a href="{{ url('/fa') }}"><img src="{{ asset('pic/flag/persian.png') }}" width="28px" height="28px"/></a>
                                                 <a href="{{ url('/') }}"><img src="{{ asset('pic/flag/uk.png') }}" width="28px" height="28px"/></a>
                                             @else
-                                                <a href="{{ url('/') }}"><img src="{{ asset('pic/flag/uk.png') }}" width="28px" height="28px"/></a>
+                                                <a href="{{ url('/') }}"><img src="{{ asset('pic/flag/uk_w.png') }}" width="28px" height="28px"/></a>
                                                 <a href="{{ url('/fa') }}"><img src="{{ asset('pic/flag/persian.png') }}" width="28px" height="28px"/></a>
                                                 <a href="{{ url('/ar') }}"><img src="{{ asset('pic/flag/arabic.png') }}" width="28px" height="28px"/></a>
                                             @endif
