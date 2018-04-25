@@ -27,7 +27,7 @@
         <link rel="stylesheet" href="{{ asset('css/font.css?v' . config('app.version')) }}">
         <link rel="stylesheet" href="{{ asset('css/key.css?v' . config('app.version')) }}">
     </head>
-    <body class="Shabnam-Light">
+    <body class="Shabnam-Light" style="background-color: #F9F9F9">
         <!--Top Menu Start-->
 
         <div class="off-canvas position-right" id="offCanvasNews" data-off-canvas>
@@ -122,7 +122,7 @@
                                     <li><a href="" class="social-icon"> <i class="fab fa-twitter"></i></a></li>
                                     <li><a href="" class="social-icon"> <i class="fab fa-linkedin-in"></i></a></li>
                                     <li><a href="" class="social-icon"> <i class="fab fa-google-plus-g"></i></a></li>
-                                    <li><a href="" class="social-icon"> <i class="fab fa-instagram"></i></a></li>
+                                    <li><a href="https://www.instagram.com/hamedan2018official" target="_blank" class="social-icon"> <i class="fab fa-instagram"></i></a></li>
                                     <li><a href="" class="social-icon"> <i class="fab fa-telegram-plane"></i></a></li>
                                 </ul>
                             </div>

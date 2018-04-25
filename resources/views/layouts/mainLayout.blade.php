@@ -291,7 +291,7 @@
                                         <li><a href="" class="social-icon"> <i class="fab fa-twitter"></i></a></li>
                                         <li><a href="" class="social-icon"> <i class="fab fa-linkedin-in"></i></a></li>
                                         <li><a href="" class="social-icon"> <i class="fab fa-google-plus-g"></i></a></li>
-                                        <li><a href="" class="social-icon"> <i class="fab fa-instagram"></i></a></li>
+                                        <li><a href="https://www.instagram.com/hamedan2018official" target="_blank" class="social-icon"> <i class="fab fa-instagram"></i></a></li>
                                         <li><a href="" class="social-icon"> <i class="fab fa-telegram-plane"></i></a></li>
                                     </ul>
                                 </div>
