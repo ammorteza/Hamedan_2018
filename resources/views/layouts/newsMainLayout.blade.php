@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>اخبار همدان ۲۰۱۸</title>
-        <link rel="icon" type="image/png" href="{{ asset('pic/footer/footer-logo.png') }}">
+        <link rel="icon" type="image/png" href="{{ asset('pic/footer/footer-logo.png?v' . config('app.version')) }}">
         <!— Global site tag (gtag.js) - Google Analytics —>
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116472209-1"></script>
         <script>
@@ -16,16 +16,16 @@
             gtag('config', 'UA-116472209-1');
         </script>
         <!-- Fonts -->
-        <link rel="stylesheet" href="{{ asset('fontawesome-free-5.0.0/web-fonts-with-css/css/fontawesome-all.min.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/direction-reveal.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/immersive-slider.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/pgwslider.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/videoJs/videoJs.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/foundation.css') }}">
+        <link rel="stylesheet" href="{{ asset('fontawesome-free-5.0.0/web-fonts-with-css/css/fontawesome-all.min.css?v' . config('app.version')) }}">
+        <link rel="stylesheet" href="{{ asset('css/direction-reveal.css?v' . config('app.version')) }}">
+        <link rel="stylesheet" href="{{ asset('css/immersive-slider.css?v' . config('app.version')) }}">
+        <link rel="stylesheet" href="{{ asset('css/pgwslider.css?v' . config('app.version')) }}">
+        <link rel="stylesheet" href="{{ asset('css/videoJs/videoJs.css?v' . config('app.version')) }}">
+        <link rel="stylesheet" href="{{ asset('css/foundation.css?v' . config('app.version')) }}">
         <link href="https://fonts.googleapis.com/css?family=Satisfy|Poiret+One|Cabin|Wire+One|Merienda|Roboto" rel="stylesheet">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/motion-ui/1.2.2/motion-ui.css" rel="stylesheet">
-        <link rel="stylesheet" href="{{ asset('css/font.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/key.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/font.css?v' . config('app.version')) }}">
+        <link rel="stylesheet" href="{{ asset('css/key.css?v' . config('app.version')) }}">
     </head>
     <body class="Shabnam-Light">
         <!--Top Menu Start-->
@@ -197,14 +197,14 @@
             </div>
         </div>
         <!--Copy Right Bar End-->
-        <script src="{{ asset('js/vendor/jquery.js') }}"  type="text/javascript"></script>
-        <script src="{{ asset('js/scripts/bundle.js') }}"></script> <!--Content left-->
-        <script src="{{ asset('js/jquery.immersive-slider.js') }}"></script><!--Content Image slider-->
-        <script src="{{ asset('js/pgwslider.js') }}"></script><!--Content Image slider-->
-        <script src="{{ asset('js/videojs/videoJs.js') }}"></script><!--Content Image slider-->
-        <script src="{{ asset('js/jssor.slider-27.0.3.min.js') }}"></script><!--News Image Slider-->
-        <script src="{{ asset('js/vendor/foundation.js') }}"></script>
-        <script src="{{ asset('js/app.js') }}"></script>
+        <script src="{{ asset('js/vendor/jquery.js?v' . config('app.version')) }}"  type="text/javascript"></script>
+        <script src="{{ asset('js/scripts/bundle.js?v' . config('app.version')) }}"></script> <!--Content left-->
+        <script src="{{ asset('js/jquery.immersive-slider.js?v' . config('app.version')) }}"></script><!--Content Image slider-->
+        <script src="{{ asset('js/pgwslider.js?v' . config('app.version')) }}"></script><!--Content Image slider-->
+        <script src="{{ asset('js/videojs/videoJs.js?v' . config('app.version')) }}"></script><!--Content Image slider-->
+        <script src="{{ asset('js/jssor.slider-27.0.3.min.js?v' . config('app.version')) }}"></script><!--News Image Slider-->
+        <script src="{{ asset('js/vendor/foundation.js?v' . config('app.version')) }}"></script>
+        <script src="{{ asset('js/app.js?v' . config('app.version')) }}"></script>
 
         <!--Remove zoom out class-->
         <script>
@@ -365,6 +365,5 @@
             });
         </script>
         <!--Video Gallery End-->
-
     </body>
 </html>

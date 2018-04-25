@@ -6,17 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>پنل مدیریت</title>
-    <link rel="icon" type="image/png" href="{{ asset('pic/footer/footer-logo.png') }}">
+    <link rel="icon" type="image/png" href="{{ asset('pic/footer/footer-logo.png?v' . config('app.version')) }}">
     <!-- Fonts -->
-    <script src="{{ asset('css/ckeditor/ckeditor.js') }}"  type="text/javascript"></script>
-    <script src="{{ asset('css/ckeditor/samples/js/sample.js') }}"  type="text/javascript"></script>
-    <link rel="stylesheet" href="{{ asset('fontawesome-free-5.0.0/web-fonts-with-css/css/fontawesome-all.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/foundation.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/ckeditor/samples/css/samples.css') }}">
+    <script src="{{ asset('css/ckeditor/ckeditor.js?v' . config('app.version')) }}"  type="text/javascript"></script>
+    <script src="{{ asset('css/ckeditor/samples/js/sample.js?v' . config('app.version')) }}"  type="text/javascript"></script>
+    <link rel="stylesheet" href="{{ asset('fontawesome-free-5.0.0/web-fonts-with-css/css/fontawesome-all.min.css?v' . config('app.version')) }}">
+    <link rel="stylesheet" href="{{ asset('css/foundation.css?v' . config('app.version')) }}">
+    <link rel="stylesheet" href="{{ asset('css/ckeditor/samples/css/samples.css?v' . config('app.version')) }}">
     <link href="https://fonts.googleapis.com/css?family=Satisfy|Poiret+One|Cabin|Wire+One|Merienda|Roboto" rel="stylesheet">
     {{--<link href="https://cdnjs.cloudflare.com/ajax/libs/motion-ui/1.2.2/motion-ui.css" rel="stylesheet">--}}
-    <link rel="stylesheet" href="{{ asset('css/font.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/key.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/font.css?v' . config('app.version')) }}">
+    <link rel="stylesheet" href="{{ asset('css/key.css?v' . config('app.version')) }}">
 </head>
 <body class="Shabnam-Light body-color">
 <div class="off-canvas-wrapper">
@@ -56,10 +56,10 @@
     </div>
 </div>
 <!--Copy Right Bar End-->
-<script src="{{ asset('js/vendor/jquery.js') }}"  type="text/javascript"></script>
-<script src="{{ asset('js/jssor.slider-27.0.3.min.js') }}"></script><!--News Image Slider-->
-<script src="{{ asset('js/vendor/foundation.js') }}"></script>
-<script src="{{ asset('js/app.js') }}"></script>
+<script src="{{ asset('js/vendor/jquery.js?v' . config('app.version')) }}"  type="text/javascript"></script>
+<script src="{{ asset('js/jssor.slider-27.0.3.min.js?v' . config('app.version')) }}"></script><!--News Image Slider-->
+<script src="{{ asset('js/vendor/foundation.js?v' . config('app.version')) }}"></script>
+<script src="{{ asset('js/app.js?v' . config('app.version')) }}"></script>
 <script>
     initSample();
 </script>
@@ -75,10 +75,49 @@
     CKEDITOR.on('instanceCreated', function(e) {
         if (e.editor.id === 'cke_1') {
             e.editor.on('change', function (event) {
-                if (CKEDITOR.instances.faDescription.getData() == '') {
-                    $('#registerNewsSubmit').attr("disabled", true);
-                }else{
+                if ((CKEDITOR.instances.faDescription.getData() != '') &&
+                    (CKEDITOR.instances.arDescription.getData() != '') &&
+                    (CKEDITOR.instances.enDescription.getData() != '')) {
                     $('#registerNewsSubmit').attr("disabled", false);
+                }else{
+                    $('#registerNewsSubmit').attr("disabled", true);
+                }
+            });
+        }
+
+        if (e.editor.id === 'cke_2') {
+            e.editor.on('change', function (event) {
+                if ((CKEDITOR.instances.faDescription.getData() != '') &&
+                    (CKEDITOR.instances.arDescription.getData() != '') &&
+                    (CKEDITOR.instances.enDescription.getData() != '')) {
+                    $('#registerNewsSubmit').attr("disabled", false);
+                }else{
+                    $('#registerNewsSubmit').attr("disabled", true);
+                }
+            });
+        }
+
+        if (e.editor.id === 'cke_3') {
+            e.editor.on('change', function (event) {
+                if ((CKEDITOR.instances.faDescription.getData() != '') &&
+                    (CKEDITOR.instances.arDescription.getData() != '') &&
+                    (CKEDITOR.instances.enDescription.getData() != '')) {
+                    $('#registerNewsSubmit').attr("disabled", false);
+                }else{
+                    $('#registerNewsSubmit').attr("disabled", true);
+                }
+            });
+        }
+    });
+    CKEDITOR.on('instanceCreated', function(e) {
+        if (e.editor.id === 'cke_3') {
+            e.editor.on('configLoaded', function (event) {
+                if ((CKEDITOR.instances.faDescription.getData() != '') &&
+                    (CKEDITOR.instances.arDescription.getData() != '') &&
+                    (CKEDITOR.instances.enDescription.getData() != '')) {
+                    $('#registerNewsSubmit').attr("disabled", false);
+                }else{
+                    $('#registerNewsSubmit').attr("disabled", true);
                 }
             });
         }

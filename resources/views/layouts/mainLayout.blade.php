@@ -6,11 +6,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         @if($lan == 'fa')
-            <title>{{ $pageInfo->pFaTitle }}</title>
+            <title>{{ $pageInfo->pFaTitle . ' | همدان پایتخت گردشگری کشور های آسیایی' }}</title>
         @elseif($lan == 'en')
-            <title>{{ $pageInfo->pEnTitle }}</title>
+            <title>{{ $pageInfo->pEnTitle . ' | Hamedan Capital of Asian Tourism' }}</title>
         @elseif($lan == 'ar')
-            <title>{{ $pageInfo->pArTitle }}</title>
+            <title>{{ $pageInfo->pArTitle . ' | همدان العاصمه للسياحة قارة آسيا'}}</title>
         @endif
         <link rel="icon" type="image/png" href="{{ asset('pic/footer/footer-logo.png') }}">
         <!— Global site tag (gtag.js) - Google Analytics —>
@@ -23,6 +23,7 @@
             gtag('config', 'UA-116472209-1');
         </script>
         <!-- Fonts -->
+<<<<<<< HEAD
         <link rel="stylesheet" href="{{ asset('fontawesome-free-5.0.0/web-fonts-with-css/css/fontawesome-all.min.css') }}">
         <link rel="stylesheet" href="{{ asset('css/direction-reveal.css') }}">
         <link rel="stylesheet" href="{{ asset('css/immersive-slider.css') }}">
@@ -33,10 +34,18 @@
         <link rel="stylesheet" href="{{ asset('css/hoverEffect/demo.css') }}">
         <link rel="stylesheet" href="{{ asset('css/hoverEffect/set1.css') }}">
         <link rel="stylesheet" href="{{ asset('css/foundation.css') }}">
+=======
+        <link rel="stylesheet" href="{{ asset('fontawesome-free-5.0.0/web-fonts-with-css/css/fontawesome-all.min.css?v' . config('app.version')) }}">
+        <link rel="stylesheet" href="{{ asset('css/direction-reveal.css?v' . config('app.version')) }}">
+        <link rel="stylesheet" href="{{ asset('css/immersive-slider.css?v' . config('app.version')) }}">
+        <link rel="stylesheet" href="{{ asset('css/pgwslider.css?v' . config('app.version')) }}">
+        <link rel="stylesheet" href="{{ asset('css/lightgallery.css?v' . config('app.version')) }}">
+        <link rel="stylesheet" href="{{ asset('css/foundation.css?v' . config('app.version')) }}">
+>>>>>>> 5d763c5f8eea73ec009980d8ce3c0ff19e7d41bb
         <link href="https://fonts.googleapis.com/css?family=Satisfy|Poiret+One|Cabin|Wire+One|Merienda|Roboto" rel="stylesheet">
         {{--<link href="https://cdnjs.cloudflare.com/ajax/libs/motion-ui/1.2.2/motion-ui.css" rel="stylesheet">--}}
-        <link rel="stylesheet" href="{{ asset('css/font.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/key.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/font.css?v' . config('app.version')) }}">
+        <link rel="stylesheet" href="{{ asset('css/key.css?v' . config('app.version')) }}">
     </head>
     <body class="Shabnam-Light">
             <!--Top Slider Start-->
@@ -97,15 +106,15 @@
                                         <div style="margin-top: -70px;" class="element-dir-l flag-icon-full">
                                             <ul  style="position: absolute;z-index: 9999;" class="languagepicker roundborders large">
                                                 @if($lan == 'fa')
-                                                    <a href="{{ url('/fa') }}"><li><img src="{{ asset('pic/flag/persian.png') }}" width="24px" height="24px"/>فارسی</li></a>
+                                                    <a href="{{ url('/fa') }}"><li><img src="{{ asset('pic/flag/persian_w.png') }}" width="24px" height="24px"/>فارسی</li></a>
                                                     <a href="{{ url('/') }}"><li><img src="{{ asset('pic/flag/uk.png') }}" width="24px" height="24px"/>English</li></a>
                                                     <a href="{{ url('/ar') }}"><li><img src="{{ asset('pic/flag/arabic.png') }}" width="24px" height="24px"/>العربیه</li></a>
                                                 @elseif($lan == 'ar')
-                                                    <a href="{{ url('/ar') }}"><li><img src="{{ asset('pic/flag/arabic.png') }}" width="24px" height="24px"/>العربیه</li></a>
+                                                    <a href="{{ url('/ar') }}"><li><img src="{{ asset('pic/flag/arabic_w.png') }}" width="24px" height="24px"/>العربیه</li></a>
                                                     <a href="{{ url('/fa') }}"><li><img src="{{ asset('pic/flag/persian.png') }}" width="24px" height="24px"/>فارسی</li></a>
                                                     <a href="{{ url('/') }}"><li><img src="{{ asset('pic/flag/uk.png') }}" width="24px" height="24px"/>English</li></a>
                                                 @else
-                                                    <a href="{{ url('/') }}"><li><img src="{{ asset('pic/flag/uk.png') }}" width="24px" height="24px"/>English</li></a>
+                                                    <a href="{{ url('/') }}"><li><img src="{{ asset('pic/flag/uk_w.png') }}" width="24px" height="24px"/>English</li></a>
                                                     <a href="{{ url('/fa') }}"><li><img src="{{ asset('pic/flag/persian.png') }}" width="24px" height="24px"/>فارسی</li></a>
                                                     <a href="{{ url('/ar') }}"><li><img src="{{ asset('pic/flag/arabic.png') }}" width="24px" height="24px"/>العربیه</li></a>
                                                 @endif
@@ -114,15 +123,15 @@
                                         <!--Display Tag In 1024-->
                                         <div class=" flag-icon-1024 element-dir">
                                             @if($lan == 'fa')
-                                                <a href="{{ url('/fa') }}"><img src="{{ asset('pic/flag/persian.png') }}" width="24px" height="24px"/>فارسی</a>
+                                                <a href="{{ url('/fa') }}"><img src="{{ asset('pic/flag/persian_w.png') }}" width="24px" height="24px"/>فارسی</a>
                                                 <a href="{{ url('/') }}"><img src="{{ asset('pic/flag/uk.png') }}" width="24px" height="24px"/>English</a>
                                                 <a href="{{ url('/ar') }}"><img src="{{ asset('pic/flag/arabic.png') }}" width="24px" height="24px"/>العربیه</a>
                                             @elseif($lan == 'ar')
-                                                <a href="{{ url('/ar') }}"><img src="{{ asset('pic/flag/arabic.png') }}" width="24px" height="24px"/>العربیه</a>
+                                                <a href="{{ url('/ar') }}"><img src="{{ asset('pic/flag/arabic_w.png') }}" width="24px" height="24px"/>العربیه</a>
                                                 <a href="{{ url('/fa') }}"><img src="{{ asset('pic/flag/persian.png') }}" width="24px" height="24px"/>فارسی</a>
                                                 <a href="{{ url('/') }}"><img src="{{ asset('pic/flag/uk.png') }}" width="24px" height="24px"/>English</a>
                                             @else
-                                                <a href="{{ url('/') }}"><img src="{{ asset('pic/flag/uk.png') }}" width="24px" height="24px"/>English</a>
+                                                <a href="{{ url('/') }}"><img src="{{ asset('pic/flag/uk_w.png') }}" width="24px" height="24px"/>English</a>
                                                 <a href="{{ url('/fa') }}"><img src="{{ asset('pic/flag/persian.png') }}" width="24px" height="24px"/>فارسی</a>
                                                 <a href="{{ url('/ar') }}"><img src="{{ asset('pic/flag/arabic.png') }}" width="24px" height="24px"/>العربیه</a>
                                             @endif
@@ -134,15 +143,15 @@
                                     <div align="{{ $lan == 'en' ? 'right' : 'left' }}" class="grid-x">
                                         <div class="small-12 flag-icon-small element-dir-l">
                                             @if($lan == 'fa')
-                                                <a href="{{ url('/fa') }}"><img src="{{ asset('pic/flag/persian.png') }}" width="28px" height="28px"/></a>
+                                                <a href="{{ url('/fa') }}"><img src="{{ asset('pic/flag/persian_w.png') }}" width="28px" height="28px"/></a>
                                                 <a href="{{ url('/') }}"><img src="{{ asset('pic/flag/uk.png') }}" width="28px" height="28px"/></a>
                                                 <a href="{{ url('/ar') }}"><img src="{{ asset('pic/flag/arabic.png') }}" width="28px" height="28px"/></a>
                                             @elseif($lan == 'ar')
-                                                <a href="{{ url('/ar') }}"><img src="{{ asset('pic/flag/arabic.png') }}" width="28px" height="28px"/></a>
+                                                <a href="{{ url('/ar') }}"><img src="{{ asset('pic/flag/arabic_w.png') }}" width="28px" height="28px"/></a>
                                                 <a href="{{ url('/fa') }}"><img src="{{ asset('pic/flag/persian.png') }}" width="28px" height="28px"/></a>
                                                 <a href="{{ url('/') }}"><img src="{{ asset('pic/flag/uk.png') }}" width="28px" height="28px"/></a>
                                             @else
-                                                <a href="{{ url('/') }}"><img src="{{ asset('pic/flag/uk.png') }}" width="28px" height="28px"/></a>
+                                                <a href="{{ url('/') }}"><img src="{{ asset('pic/flag/uk_w.png') }}" width="28px" height="28px"/></a>
                                                 <a href="{{ url('/fa') }}"><img src="{{ asset('pic/flag/persian.png') }}" width="28px" height="28px"/></a>
                                                 <a href="{{ url('/ar') }}"><img src="{{ asset('pic/flag/arabic.png') }}" width="28px" height="28px"/></a>
                                             @endif
@@ -370,51 +379,51 @@
                 </div>
             </div>
         <!--Copy Right Bar End-->
-        <script src="{{ asset('js/vendor/jquery.js') }}"  type="text/javascript"></script>
-        <script src="{{ asset('js/scripts/bundle.js') }}"></script> <!--Content left-->
-        <script src="{{ asset('js/jquery.immersive-slider.js') }}"></script><!--Content Image slider-->
-        <script src="{{ asset('js/pgwslider.js') }}"></script><!--Content Image slider-->
+        <script src="{{ asset('js/vendor/jquery.js?v' . config('app.version')) }}"  type="text/javascript"></script>
+        <script src="{{ asset('js/scripts/bundle.js?v' . config('app.version')) }}"></script> <!--Content left-->
+        <script src="{{ asset('js/jquery.immersive-slider.js?v' . config('app.version')) }}"></script><!--Content Image slider-->
+        <script src="{{ asset('js/pgwslider.js?v' . config('app.version')) }}"></script><!--Content Image slider-->
 
         <!--Light Box Image slider-->
-        <script src="{{ asset('js/light_box/picturefill.min.js') }}"></script><!--Content Image slider-->
-        <script src="{{ asset('js/light_box/lightgallery.js') }}"></script><!--Content Image slider-->
-        <script src="{{ asset('js/light_box/lg-pager.js') }}"></script><!--Content Image slider-->
-        <script src="{{ asset('js/light_box/lg-autoplay.js') }}"></script><!--Content Image slider-->
-        <script src="{{ asset('js/light_box/lg-fullscreen.js') }}"></script><!--Content Image slider-->
-        <script src="{{ asset('js/light_box/lg-zoom.js') }}"></script><!--Content Image slider-->
-        <script src="{{ asset('js/light_box/lg-hash.js') }}"></script><!--Content Image slider-->
-        <script src="{{ asset('js/light_box/lg-share.js') }}"></script><!--Content Image slider-->
-        <script src="{{ asset('js/light_box/lg-video.js') }}"></script><!--Content Image slider-->
-        <script src="{{ asset('js/light_box/froogaloop2.min.js') }}"></script><!--Content Image slider-->
+        <script src="{{ asset('js/light_box/picturefill.min.js?v' . config('app.version')) }}"></script><!--Content Image slider-->
+        <script src="{{ asset('js/light_box/lightgallery.js?v' . config('app.version')) }}"></script><!--Content Image slider-->
+        <script src="{{ asset('js/light_box/lg-pager.js?v' . config('app.version')) }}"></script><!--Content Image slider-->
+        <script src="{{ asset('js/light_box/lg-autoplay.js?v' . config('app.version')) }}"></script><!--Content Image slider-->
+        <script src="{{ asset('js/light_box/lg-fullscreen.js?v' . config('app.version')) }}"></script><!--Content Image slider-->
+        <script src="{{ asset('js/light_box/lg-zoom.js?v' . config('app.version')) }}"></script><!--Content Image slider-->
+        <script src="{{ asset('js/light_box/lg-hash.js?v' . config('app.version')) }}"></script><!--Content Image slider-->
+        <script src="{{ asset('js/light_box/lg-share.js?v' . config('app.version')) }}"></script><!--Content Image slider-->
+        <script src="{{ asset('js/light_box/lg-video.js?v' . config('app.version')) }}"></script><!--Content Image slider-->
+        <script src="{{ asset('js/light_box/froogaloop2.min.js?v' . config('app.version')) }}"></script><!--Content Image slider-->
         <!--Light Box Image slider-->
 
         <!--unit video gallery slider-->
-        <script src="{{ asset('js/unitegallery/js/ug-common-libraries.js') }}"></script>
-        <script src="{{ asset('js/unitegallery/js/ug-functions.js') }}"></script>
-        <script src="{{ asset('js/unitegallery/js/ug-thumbsgeneral.js') }}"></script>
-        <script src="{{ asset('js/unitegallery/js/ug-thumbsstrip.js') }}"></script>
-        <script src="{{ asset('js/unitegallery/js/ug-touchthumbs.js') }}"></script>
-        <script src="{{ asset('js/unitegallery/js/ug-panelsbase.js') }}"></script>
-        <script src="{{ asset('js/unitegallery/js/ug-strippanel.js') }}"></script>
-        <script src="{{ asset('js/unitegallery/js/ug-gridpanel.js') }}"></script>
-        <script src="{{ asset('js/unitegallery/js/ug-thumbsgrid.js') }}"></script>
-        <script src="{{ asset('js/unitegallery/js/ug-tiles.js') }}"></script>
-        <script src="{{ asset('js/unitegallery/js/ug-tiledesign.js') }}"></script>
-        <script src="{{ asset('js/unitegallery/js/ug-avia.js') }}"></script>
-        <script src="{{ asset('js/unitegallery/js/ug-slider.js') }}"></script>
-        <script src="{{ asset('js/unitegallery/js/ug-sliderassets.js') }}"></script>
-        <script src="{{ asset('js/unitegallery/js/ug-touchslider.js') }}"></script>
-        <script src="{{ asset('js/unitegallery/js/ug-zoomslider.js') }}"></script>
-        <script src="{{ asset('js/unitegallery/js/ug-video.js') }}"></script>
-        <script src="{{ asset('js/unitegallery/js/ug-gallery.js') }}"></script>
-        <script src="{{ asset('js/unitegallery/js/ug-lightbox.js') }}"></script>
-        <script src="{{ asset('js/unitegallery/js/ug-carousel.js') }}"></script>
-        <script src="{{ asset('js/unitegallery/js/ug-api.js') }}"></script>
+        <script src="{{ asset('js/unitegallery/js/ug-common-libraries.js?v' . config('app.version')) }}"></script>
+        <script src="{{ asset('js/unitegallery/js/ug-functions.js?v' . config('app.version')) }}"></script>
+        <script src="{{ asset('js/unitegallery/js/ug-thumbsgeneral.js?v' . config('app.version')) }}"></script>
+        <script src="{{ asset('js/unitegallery/js/ug-thumbsstrip.js?v' . config('app.version')) }}"></script>
+        <script src="{{ asset('js/unitegallery/js/ug-touchthumbs.js?v' . config('app.version')) }}"></script>
+        <script src="{{ asset('js/unitegallery/js/ug-panelsbase.js?v' . config('app.version')) }}"></script>
+        <script src="{{ asset('js/unitegallery/js/ug-strippanel.js?v' . config('app.version')) }}"></script>
+        <script src="{{ asset('js/unitegallery/js/ug-gridpanel.js?v' . config('app.version')) }}"></script>
+        <script src="{{ asset('js/unitegallery/js/ug-thumbsgrid.js?v' . config('app.version')) }}"></script>
+        <script src="{{ asset('js/unitegallery/js/ug-tiles.js?v' . config('app.version')) }}"></script>
+        <script src="{{ asset('js/unitegallery/js/ug-tiledesign.js?v' . config('app.version')) }}"></script>
+        <script src="{{ asset('js/unitegallery/js/ug-avia.js?v' . config('app.version')) }}"></script>
+        <script src="{{ asset('js/unitegallery/js/ug-slider.js?v' . config('app.version')) }}"></script>
+        <script src="{{ asset('js/unitegallery/js/ug-sliderassets.js?v' . config('app.version')) }}"></script>
+        <script src="{{ asset('js/unitegallery/js/ug-touchslider.js?v' . config('app.version')) }}"></script>
+        <script src="{{ asset('js/unitegallery/js/ug-zoomslider.js?v' . config('app.version')) }}"></script>
+        <script src="{{ asset('js/unitegallery/js/ug-video.js?v' . config('app.version')) }}"></script>
+        <script src="{{ asset('js/unitegallery/js/ug-gallery.js?v' . config('app.version')) }}"></script>
+        <script src="{{ asset('js/unitegallery/js/ug-lightbox.js?v' . config('app.version')) }}"></script>
+        <script src="{{ asset('js/unitegallery/js/ug-carousel.js?v' . config('app.version')) }}"></script>
+        <script src="{{ asset('js/unitegallery/js/ug-api.js?v' . config('app.version')) }}"></script>
 
-        <link rel="stylesheet" href="{{ asset('js/unitegallery/css/unite-gallery.css') }}">
+        <link rel="stylesheet" href="{{ asset('js/unitegallery/css/unite-gallery.css?v' . config('app.version')) }}">
 
-        <script src="{{ asset('js/unitegallery/themes/default/ug-theme-default.js') }}"></script>
-        <link rel="stylesheet" href="{{ asset('js/unitegallery/themes/default/ug-theme-default.css') }}"
+        <script src="{{ asset('js/unitegallery/themes/default/ug-theme-default.js?v' . config('app.version')) }}"></script>
+        <link rel="stylesheet" href="{{ asset('js/unitegallery/themes/default/ug-theme-default.css?v' . config('app.version')) }}"
 
         {{--<script src="{{ asset('js/unitegallery/js/unitgallery.js') }}"></script>
         <link rel="stylesheet" href="{{ asset('js/unitegallery/css/unite-gallery.css') }}">
@@ -422,8 +431,8 @@
 
         <!--unit video gallery slider-->
 
-        <script src="{{ asset('js/vendor/foundation.js') }}"></script>
-        <script src="{{ asset('js/app.js') }}"></script>
+        <script src="{{ asset('js/vendor/foundation.js?v' . config('app.version')) }}"></script>
+        <script src="{{ asset('js/app.js?v' . config('app.version')) }}"></script>
 
         <!--Remove zoom out class-->
         <script>
@@ -446,12 +455,11 @@
         <script type="text/javascript">
 
             jQuery(document).ready(function(){
-
                 jQuery("#gallery").unitegallery({
-                    theme_panel_position: "bottom"
+                    theme_panel_position: "bottom",
+                    gallery_width:"100%",
+                    gallery_height:"90vh",
                 });
-
-
             });
 
         </script>

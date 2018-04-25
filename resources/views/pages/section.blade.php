@@ -469,11 +469,11 @@
                             @endif
 
                             @if($lan == 'fa')
-                                <a href="{{ url($section->sLink . '')}}" class="button primary element-distanse">{{ $section->sLinkFaTitle }}</a>
+                                <a href="{{ url($lan . $section->sLink)}}" class="button primary element-distanse">{{ $section->sLinkFaTitle }}</a>
                             @elseif($lan == 'en')
                                 <a href="{{ url($section->sLink . '')}}" class="button primary element-distanse">{{ $section->sLinkEnTitle }}</a>
                             @elseif($lan == 'ar')
-                                <a href="{{ url($section->sLink . '')}}" class="button primary element-distanse">{{ $section->sLinkArTitle }}</a>
+                                <a href="{{ url($lan . $section->sLink)}}" class="button primary element-distanse">{{ $section->sLinkArTitle }}</a>
                             @endif
                         </div>
                     </div>
@@ -610,7 +610,7 @@
                                                             @elseif($lan == 'ar')
                                                                     <p class="Al-Jazeera-Arabic-Regular two-line text-color text-justify element-distanse">{{ $newNews[$i]->nArBriefDescription }}</p>
                                                                     <div style="text-align: center;" >
-                                                                        <a href="{{ url($lan . '/news/info/' . $newNews[$i]->id) }}" class="button primary news-section-btn-center">اکثر</a>
+                                                                        <a href="{{ url($lan . '/news/info/' . $newNews[$i]->id) }}" class="button primary news-section-btn-center">اقرأ أكثر</a>
                                                                     </div>
                                                             @endif
                                                         </div>
