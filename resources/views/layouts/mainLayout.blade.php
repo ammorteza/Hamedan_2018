@@ -28,6 +28,10 @@
         <link rel="stylesheet" href="{{ asset('css/immersive-slider.css') }}">
         <link rel="stylesheet" href="{{ asset('css/pgwslider.css') }}">
         <link rel="stylesheet" href="{{ asset('css/lightgallery.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/ihover.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/hoverEffect/normalize.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/hoverEffect/demo.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/hoverEffect/set1.css') }}">
         <link rel="stylesheet" href="{{ asset('css/foundation.css') }}">
         <link href="https://fonts.googleapis.com/css?family=Satisfy|Poiret+One|Cabin|Wire+One|Merienda|Roboto" rel="stylesheet">
         {{--<link href="https://cdnjs.cloudflare.com/ajax/libs/motion-ui/1.2.2/motion-ui.css" rel="stylesheet">--}}
@@ -446,7 +450,7 @@
                 jQuery("#gallery").unitegallery({
                     theme_panel_position: "bottom"
                 });
-                $('#gallery').css({ "max-width": "100%" });
+
 
             });
 
@@ -458,6 +462,7 @@
                 $("#immersive_slider").immersive_slider({
                     container: ".main"
                 });
+                $('#gallery').css({ "max-width": "100%" });
             });
         </script>
         <script>
