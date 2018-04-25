@@ -23,12 +23,25 @@
             gtag('config', 'UA-116472209-1');
         </script>
         <!-- Fonts -->
+<<<<<<< HEAD
+        <link rel="stylesheet" href="{{ asset('fontawesome-free-5.0.0/web-fonts-with-css/css/fontawesome-all.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/direction-reveal.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/immersive-slider.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/pgwslider.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/lightgallery.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/ihover.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/hoverEffect/normalize.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/hoverEffect/demo.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/hoverEffect/set1.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/foundation.css') }}">
+=======
         <link rel="stylesheet" href="{{ asset('fontawesome-free-5.0.0/web-fonts-with-css/css/fontawesome-all.min.css?v' . config('app.version')) }}">
         <link rel="stylesheet" href="{{ asset('css/direction-reveal.css?v' . config('app.version')) }}">
         <link rel="stylesheet" href="{{ asset('css/immersive-slider.css?v' . config('app.version')) }}">
         <link rel="stylesheet" href="{{ asset('css/pgwslider.css?v' . config('app.version')) }}">
         <link rel="stylesheet" href="{{ asset('css/lightgallery.css?v' . config('app.version')) }}">
         <link rel="stylesheet" href="{{ asset('css/foundation.css?v' . config('app.version')) }}">
+>>>>>>> 5d763c5f8eea73ec009980d8ce3c0ff19e7d41bb
         <link href="https://fonts.googleapis.com/css?family=Satisfy|Poiret+One|Cabin|Wire+One|Merienda|Roboto" rel="stylesheet">
         {{--<link href="https://cdnjs.cloudflare.com/ajax/libs/motion-ui/1.2.2/motion-ui.css" rel="stylesheet">--}}
         <link rel="stylesheet" href="{{ asset('css/font.css?v' . config('app.version')) }}">
@@ -447,7 +460,6 @@
                     gallery_width:"100%",
                     gallery_height:"90vh",
                 });
-
             });
 
         </script>
@@ -458,6 +470,7 @@
                 $("#immersive_slider").immersive_slider({
                     container: ".main"
                 });
+                $('#gallery').css({ "max-width": "100%" });
             });
         </script>
         <script>

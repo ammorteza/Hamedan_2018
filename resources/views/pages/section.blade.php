@@ -510,7 +510,7 @@
         @elseif($section->sectionType->stType == 'FOUR_IMAGE_GALLERY')
             <!--4 Image Section Start-->
             <div class="grid-container">
-                <div style="margin: 30px 0px 30px 0px;" class="grid-x">
+                {{--<div style="margin: 30px 0px 30px 0px;" class="grid-x">
                     @foreach($section->sectionImg as $sectionImg)
                         <div class="large-3 medium-6 small-12 padding-lr">
                             @if ($sectionImg->siLink != null)
@@ -522,6 +522,21 @@
                             @endif
                         </div>
                     @endforeach
+                </div>--}}
+                <div style="margin: 30px 0px 30px 0px;" class="grid-x">
+                        <div class="large-3 medium-6 small-12 padding-lr">
+
+                            <!-- colored -->
+                            <div class="ih-item square colored effect4"><a href="#">
+                                    <div style="height: 200px;" class="img"><img  src="{{ asset('pic/gallery/lan_4.jpg') }}" alt="img"></div>
+                                    <div class="mask1"></div>
+                                    <div class="mask2"></div>
+                                    <div class="info">
+                                        <h3>آرامگاه باباطاهر</h3>
+                                        <p>شاعر دوبیتی های ایرانی</p>
+                                    </div></a></div>
+                            <!-- end colored -->
+                        </div>
                 </div>
             </div>
             <!--4 Image Section End-->
@@ -623,5 +638,38 @@
             </div>
             <!--Location Section End-->
         @endif
+        <!--Hover Effect Ideas Start -->
+        <div class="grid-container content element-distanse">
+            <div class="grid-x">
+                <div class="large-6 medium-6 small-12 padding-lr">
+                    <div class="grid">
+                        <figure class="effect-ruby">
+                            <img src="{{ asset('pic/gallery/lan_1.jpg') }}" alt="img06"/>
+                            <figcaption>
+                                <h2>هگمتانه</h2>
+                                <p>When Layla appears, she brings an eternal summer along.</p>
+                                <a href="#">View more</a>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+
+                <div class="large-6 medium-6 small-12 padding-lr">
+                    <div class="grid">
+                        <figure class="effect-ruby">
+                            <img src="{{ asset('pic/gallery/lan_2.jpg') }}" alt="img06"/>
+                            <figcaption>
+                                <h2>تویسرکان</h2>
+                                <p>When Layla appears, she brings an eternal summer along.</p>
+                                <a href="#">View more</a>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        <!--Hover Effect Ideas End -->
     @endforeach
 @stop
