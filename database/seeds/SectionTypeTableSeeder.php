@@ -89,6 +89,11 @@ class SectionTypeTableSeeder extends Seeder
         $sType = new \Hamedan_2018\SectionType;
         $sType->stType = 'CONTENT_LOCATION';
         $sType->stSubject = 'نمایش موقعیت مکانی';
-        $sType->save(); //15
+        $sType->save(); //16
+
+        $sType = new \Hamedan_2018\SectionType;
+        $sType->stType = 'HOVER_EFFECT_IDEAS';
+        $sType->stSubject = 'نمایش تصاویر با افکت های مختلف';
+        $sType->save(); //17
     }
 }

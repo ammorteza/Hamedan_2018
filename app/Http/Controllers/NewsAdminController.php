@@ -34,13 +34,13 @@ class NewsAdminController extends Controller
         $news = new News;
         $news->nFaSubject = $request->faSubject;
         $news->nEnSubject = $request->enSubject;
-        $news->nArSubject = $request->arSubject;
+        $news->nArSubject = $this->strReplace($request->arSubject);
         $news->nFaBriefDescription = $request->faBriefDescription;
         $news->nEnBriefDescription = $request->enBriefDescription;
-        $news->nArBriefDescription = $request->arBriefDescription;
+        $news->nArBriefDescription = $this->strReplace($request->arBriefDescription);
         $news->nFaDescription = $request->faDescription;
         $news->nEnDescription = $request->enDescription;
-        $news->nArDescription = $request->arDescription;
+        $news->nArDescription = $this->strReplace($request->arDescription);
         $news->nState = $request->displayState == '' ? 0 : 1;
         $news->save();
 
@@ -56,18 +56,25 @@ class NewsAdminController extends Controller
 
     }
 
+    private function strReplace($str)
+    {
+        $currentStr = ['یّ ' , 'یّ، ', 'ی،' , 'زی ' , 'وی ' , 'دی ' , 'ذی ' , 'ری ' , 'ذّی ' , 'ای ' , 'ی»' , 'گ' , 'پ' , 'ژ' , 'چ' , 'ک'];
+        $newStr = ['ى ' , 'ى، ' , 'ى،' , 'زى ' , 'وى ' , 'دى ' , 'ذى ' , 'رى ' , 'ذّى ' , 'اى ' , 'ى»' , 'ك' , 'ب' , 'ز' , 'ج' , 'ك'];
+        return str_replace($currentStr , $newStr , $str);
+    }
+
     function update($nId , Request $request)
     {
         $news = News::find($nId);
         $news->nFaSubject = $request->faSubject;
         $news->nEnSubject = $request->enSubject;
-        $news->nArSubject = $request->arSubject;
+        $news->nArSubject = $this->strReplace($request->arSubject);
         $news->nFaBriefDescription = $request->faBriefDescription;
         $news->nEnBriefDescription = $request->enBriefDescription;
-        $news->nArBriefDescription = $request->arBriefDescription;
+        $news->nArBriefDescription = $this->strReplace($request->arBriefDescription);
         $news->nFaDescription = $request->faDescription;
         $news->nEnDescription = $request->enDescription;
-        $news->nArDescription = $request->arDescription;
+        $news->nArDescription = $this->strReplace($request->arDescription);
         $news->save();
 
         NewsImg::where('niNId' , '=' , $nId)->delete();

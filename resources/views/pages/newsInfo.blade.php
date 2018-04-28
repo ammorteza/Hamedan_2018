@@ -15,9 +15,9 @@
                             <li class="float-left Roboto"><a href="{{ url('/news') }}">News</a></li>
                             <Li><span class="show-for-sr Shabnam-Bold">Current: </span> {{ $news->nEnSubject }}</Li>
                         @elseif($lan == 'ar')
-                            <li><a href="{{ url($lan . '/') }}">همدان - ۲۰۱۸</a></li>
-                            <li><a href="{{ url($lan . '/news') }}"></a>أخبار</li>
-                            <Li><span class="show-for-sr Shabnam-Bold">Current: </span> {{ $news->nArSubject }}</Li>
+                            <li class="Al-Jazeera-Arabic-Regular"><a href="{{ url($lan . '/') }}">همدان - ۲۰۱۸</a></li>
+                            <li class="Al-Jazeera-Arabic-Regular"><a href="{{ url($lan . '/news') }}">أخبار</a></li>
+                            <Li><span class="show-for-sr Al-Jazeera-Arabic-Regular">Current: </span> {{ $news->nArSubject }}</Li>
                         @endif
                     </ul>
                 </nav>

@@ -12,7 +12,7 @@
                         @elseif($lan == 'en')
                             <li class="float-left Roboto"><a href="{{ url('/') }}">Hamedan-2018</a></li><Li><span class="show-for-sr Shabnam-Bold">Current: </span> News</Li>
                         @elseif($lan == 'ar')
-                            <li><a href="{{ url($lan . '/') }}">همدان - ۲۰۱۸</a></li><Li><span class="show-for-sr Shabnam-Bold">Current: </span> أخبار</Li>
+                            <li class="Al-Jazeera-Arabic-Regular"><a href="{{ url($lan . '/') }}">همدان - ۲۰۱۸</a></li><Li><span class="show-for-sr Al-Jazeera-Arabic-Regular">Current: </span> أخبار</Li>
                         @endif
                     </ul>
                 </nav>

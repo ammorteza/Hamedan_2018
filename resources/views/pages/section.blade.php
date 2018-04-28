@@ -418,21 +418,21 @@
                             <div class="text-center"  id="gallery" style="display:none">
                                 @foreach($section->sectionVideo as $sectionVideo)
                                     @if($lan == 'fa')
-                                        <img alt="Html5 Video"
+                                        <img alt="{{ $sectionVideo['svFaSubject'] }}"
                                              src="{{ asset($sectionVideo['gallery']['gPosterPath']) }}"
                                              data-type="html5video"
                                              data-image="{{ asset($sectionVideo['gallery']['gPosterPath']) }}"
                                              data-videomp4="{{ asset($sectionVideo['gallery']['gPath']) }}"
                                              data-description="{{ $sectionVideo['svFaSubject'] }}">
                                     @elseif($lan == 'en')
-                                        <img alt="Html5 Video"
+                                        <img alt="{{ $sectionVideo['svEnSubject'] }}"
                                              src="{{ asset($sectionVideo['gallery']['gPosterPath']) }}"
                                              data-type="html5video"
                                              data-image="{{ asset($sectionVideo['gallery']['gPosterPath']) }}"
                                              data-videomp4="{{ asset($sectionVideo['gallery']['gPath']) }}"
                                              data-description="{{ $sectionVideo['svEnSubject'] }}">
                                     @elseif($lan == 'ar')
-                                        <img alt="Html5 Video"
+                                        <img alt="{{ $sectionVideo['svArSubject'] }}"
                                              src="{{ asset($sectionVideo['gallery']['gPosterPath']) }}"
                                              data-type="html5video"
                                              data-image="{{ asset($sectionVideo['gallery']['gPosterPath']) }}"
@@ -457,7 +457,7 @@
                             @elseif($lan == 'en')
                                 <h1 class="my-text-shadow-effect white-color Roboto-Bold">{{ $section->sEnSubject }}</h1>
                             @elseif($lan == 'ar')
-                                <h1 class="my-text-shadow-effect white-color">{{ $section->sArSubject }}</h1>
+                                <h1 class="my-text-shadow-effect white-color Al-Jazeera-Arabic-Bold">{{ $section->sArSubject }}</h1>
                             @endif
 
                             @if($lan == 'fa')
@@ -637,39 +637,49 @@
                 </div>
             </div>
             <!--Location Section End-->
-        @endif
-        <!--Hover Effect Ideas Start -->
-        <div class="grid-container content element-distanse">
-            <div class="grid-x">
-                <div class="large-6 medium-6 small-12 padding-lr">
-                    <div class="grid">
-                        <figure class="effect-ruby">
-                            <img src="{{ asset('pic/gallery/lan_1.jpg') }}" alt="img06"/>
-                            <figcaption>
-                                <h2>هگمتانه</h2>
-                                <p>When Layla appears, she brings an eternal summer along.</p>
-                                <a href="#">View more</a>
-                            </figcaption>
-                        </figure>
-                    </div>
+        @elseif($section->sectionType->stType == 'HOVER_EFFECT_IDEAS')
+            <!--Hover Effect Ideas Start -->
+            <div class="grid-container content {{ $section->sFullScreen == true ? 'section-height content-image-text-padding-top' : '' }}">
+                <div class="grid-x">
+                    @foreach($section->sectionImg as $sectionImg)
+                        <div class="large-6 medium-6 small-12 padding-lr">
+                            <div class="grid">
+                                <figure class="effect-ruby">
+                                    @if($lan == 'fa')
+                                        <img src="{{ asset($sectionImg->gallery->gPath) }}" alt="{{ $sectionImg->siFaAlt }}"/>
+                                    @elseif($lan == 'en')
+                                        <img src="{{ asset($sectionImg->gallery->gPath) }}" alt="{{ $sectionImg->siEnAlt }}"/>
+                                    @elseif($lan == 'ar')
+                                        <img src="{{ asset($sectionImg->gallery->gPath) }}" alt="{{ $sectionImg->siArAlt }}"/>
+                                    @endif
+                                    <figcaption>
+                                        @if($lan == 'fa')
+                                            <h2>{{ $sectionImg->siFaSubject }}</h2>
+                                            <p>{{ $sectionImg->siFaDescription }}</p>
+                                            @if($sectionImg->siLink != null)
+                                                <a href="{{ $sectionImg->siLink }}">بیشتر</a>
+                                            @endif
+                                        @elseif($lan == 'en')
+                                            <h2>{{ $sectionImg->siEnSubject }}</h2>
+                                            <p>{{ $sectionImg->siEnDescription }}</p>
+                                            @if($sectionImg->siLink != null)
+                                                <a href="{{ $sectionImg->siLink }}">Read More</a>
+                                            @endif
+                                        @elseif($lan == 'ar')
+                                            <h2>{{ $sectionImg->siArSubject }}</h2>
+                                            <p>{{ $sectionImg->siEnDescription }}</p>
+                                            @if($sectionImg->siLink != null)
+                                                <a href="{{ $sectionImg->siLink }}">أقرا اکثر</a>
+                                            @endif
+                                        @endif
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                    @endforeach
                 </div>
-
-                <div class="large-6 medium-6 small-12 padding-lr">
-                    <div class="grid">
-                        <figure class="effect-ruby">
-                            <img src="{{ asset('pic/gallery/lan_2.jpg') }}" alt="img06"/>
-                            <figcaption>
-                                <h2>تویسرکان</h2>
-                                <p>When Layla appears, she brings an eternal summer along.</p>
-                                <a href="#">View more</a>
-                            </figcaption>
-                        </figure>
-                    </div>
-                </div>
-
-
             </div>
-        </div>
-        <!--Hover Effect Ideas End -->
+            <!--Hover Effect Ideas End -->
+        @endif
     @endforeach
 @stop
