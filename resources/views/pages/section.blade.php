@@ -510,7 +510,7 @@
         @elseif($section->sectionType->stType == 'FOUR_IMAGE_GALLERY')
             <!--4 Image Section Start-->
             <div class="grid-container">
-                {{--<div style="margin: 30px 0px 30px 0px;" class="grid-x">
+                <div style="margin: 30px 0px 30px 0px;" class="grid-x">
                     @foreach($section->sectionImg as $sectionImg)
                         <div class="large-3 medium-6 small-12 padding-lr">
                             @if ($sectionImg->siLink != null)
@@ -522,8 +522,8 @@
                             @endif
                         </div>
                     @endforeach
-                </div>--}}
-                <div style="margin: 30px 0px 30px 0px;" class="grid-x">
+                </div>
+{{--                <div style="margin: 30px 0px 30px 0px;" class="grid-x">
                         <div class="large-3 medium-6 small-12 padding-lr">
 
                             <!-- colored -->
@@ -537,7 +537,7 @@
                                     </div></a></div>
                             <!-- end colored -->
                         </div>
-                </div>
+                </div>--}}
             </div>
             <!--4 Image Section End-->
         @elseif($section->sectionType->stType == 'LIGHT_BOX_IMAGE_GALLERY')
@@ -642,40 +642,112 @@
             <div class="grid-container content {{ $section->sFullScreen == true ? 'section-height content-image-text-padding-top' : '' }}">
                 <div class="grid-x">
                     @foreach($section->sectionImg as $sectionImg)
-                        <div class="large-6 medium-6 small-12 padding-lr">
-                            <div class="grid">
-                                <figure class="effect-ruby">
-                                    @if($lan == 'fa')
-                                        <img src="{{ asset($sectionImg->gallery->gPath) }}" alt="{{ $sectionImg->siFaAlt }}"/>
-                                    @elseif($lan == 'en')
-                                        <img src="{{ asset($sectionImg->gallery->gPath) }}" alt="{{ $sectionImg->siEnAlt }}"/>
-                                    @elseif($lan == 'ar')
-                                        <img src="{{ asset($sectionImg->gallery->gPath) }}" alt="{{ $sectionImg->siArAlt }}"/>
-                                    @endif
-                                    <figcaption>
+                        @if (count($section->sectionImg) <= 2)
+                            <div class="large-6 medium-6 small-12 padding-lr">
+                                <div class="grid">
+                                    <figure class="effect-bubba">
                                         @if($lan == 'fa')
-                                            <h2>{{ $sectionImg->siFaSubject }}</h2>
-                                            <p>{{ $sectionImg->siFaDescription }}</p>
-                                            @if($sectionImg->siLink != null)
-                                                <a href="{{ $sectionImg->siLink }}">بیشتر</a>
-                                            @endif
+                                            <img src="{{ asset($sectionImg->gallery->gPath) }}" alt="{{ $sectionImg->siFaAlt }}"/>
                                         @elseif($lan == 'en')
-                                            <h2>{{ $sectionImg->siEnSubject }}</h2>
-                                            <p>{{ $sectionImg->siEnDescription }}</p>
-                                            @if($sectionImg->siLink != null)
-                                                <a href="{{ $sectionImg->siLink }}">Read More</a>
-                                            @endif
+                                            <img src="{{ asset($sectionImg->gallery->gPath) }}" alt="{{ $sectionImg->siEnAlt }}"/>
                                         @elseif($lan == 'ar')
-                                            <h2>{{ $sectionImg->siArSubject }}</h2>
-                                            <p>{{ $sectionImg->siEnDescription }}</p>
-                                            @if($sectionImg->siLink != null)
-                                                <a href="{{ $sectionImg->siLink }}">أقرا اکثر</a>
-                                            @endif
+                                            <img src="{{ asset($sectionImg->gallery->gPath) }}" alt="{{ $sectionImg->siArAlt }}"/>
                                         @endif
-                                    </figcaption>
-                                </figure>
+                                        <figcaption>
+                                            @if($lan == 'fa')
+                                                <h3 class="Shabnam-Bold">{{ $sectionImg->siFaSubject }}</h3>
+                                                <p class="Shabnam-Light">{{ $sectionImg->siFaDescription }}</p>
+                                                @if($sectionImg->siLink != null)
+                                                    <a href="{{ $sectionImg->siLink }}">بیشتر</a>
+                                                @endif
+                                            @elseif($lan == 'en')
+                                                <h3 class="Roboto-Bold">{{ $sectionImg->siEnSubject }}</h3>
+                                                <p>{{ $sectionImg->siEnDescription }}</p>
+                                                @if($sectionImg->siLink != null)
+                                                    <a href="{{ $sectionImg->siLink }}">Read More</a>
+                                                @endif
+                                            @elseif($lan == 'ar')
+                                                <h3 class="Al-Jazeera-Arabic-Bold">{{ $sectionImg->siArSubject }}</h3>
+                                                <p class="Al-Jazeera-Arabic-Regular">{{ $sectionImg->siArDescription }}</p>
+                                                @if($sectionImg->siLink != null)
+                                                    <a href="{{ $sectionImg->siLink }}">أقرا اکثر</a>
+                                                @endif
+                                            @endif
+                                        </figcaption>
+                                    </figure>
+                                </div>
                             </div>
-                        </div>
+                        @elseif(count($section->sectionImg) == 3)
+                            <div class="large-4 medium-6 small-12 padding-lr">
+                                <div class="grid">
+                                    <figure class="effect-bubba">
+                                        @if($lan == 'fa')
+                                            <img src="{{ asset($sectionImg->gallery->gPath) }}" alt="{{ $sectionImg->siFaAlt }}"/>
+                                        @elseif($lan == 'en')
+                                            <img src="{{ asset($sectionImg->gallery->gPath) }}" alt="{{ $sectionImg->siEnAlt }}"/>
+                                        @elseif($lan == 'ar')
+                                            <img src="{{ asset($sectionImg->gallery->gPath) }}" alt="{{ $sectionImg->siArAlt }}"/>
+                                        @endif
+                                        <figcaption>
+                                            @if($lan == 'fa')
+                                                <h4 class="Shabnam-Bold">{{ $sectionImg->siFaSubject }}</h4>
+                                                <p class="Shabnam-Light">{{ $sectionImg->siFaDescription }}</p>
+                                                @if($sectionImg->siLink != null)
+                                                    <a href="{{ $sectionImg->siLink }}">بیشتر</a>
+                                                @endif
+                                            @elseif($lan == 'en')
+                                                <h4 class="Roboto-Bold">{{ $sectionImg->siEnSubject }}</h4>
+                                                <p>{{ $sectionImg->siEnDescription }}</p>
+                                                @if($sectionImg->siLink != null)
+                                                    <a href="{{ $sectionImg->siLink }}">Read More</a>
+                                                @endif
+                                            @elseif($lan == 'ar')
+                                                <h4 class="Al-Jazeera-Arabic-Bold">{{ $sectionImg->siArSubject }}</h4>
+                                                <p class="Al-Jazeera-Arabic-Regular">{{ $sectionImg->siArDescription }}</p>
+                                                @if($sectionImg->siLink != null)
+                                                    <a href="{{ $sectionImg->siLink }}">أقرا اکثر</a>
+                                                @endif
+                                            @endif
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                            </div>
+                        @else(count($section->sectionImg) == 3)
+                             <div class="large-3 medium-6 small-12 padding-lr">
+                                 <div class="grid">
+                                     <figure class="effect-bubba">
+                                         @if($lan == 'fa')
+                                             <img src="{{ asset($sectionImg->gallery->gPath) }}" alt="{{ $sectionImg->siFaAlt }}"/>
+                                         @elseif($lan == 'en')
+                                             <img src="{{ asset($sectionImg->gallery->gPath) }}" alt="{{ $sectionImg->siEnAlt }}"/>
+                                         @elseif($lan == 'ar')
+                                             <img src="{{ asset($sectionImg->gallery->gPath) }}" alt="{{ $sectionImg->siArAlt }}"/>
+                                         @endif
+                                         <figcaption>
+                                             @if($lan == 'fa')
+                                                 <h5 class="Shabnam-Bold">{{ $sectionImg->siFaSubject }}</h5>
+                                                 <p class="one-line Shabnam-Light">{{ $sectionImg->siFaDescription }}</p>
+                                                 @if($sectionImg->siLink != null)
+                                                     <a href="{{ $sectionImg->siLink }}">بیشتر</a>
+                                                 @endif
+                                             @elseif($lan == 'en')
+                                                 <h6 class="Roboto-Bold">{{ $sectionImg->siEnSubject }}</h6>
+                                                 <p class="one-line">{{ $sectionImg->siEnDescription }}</p>
+                                                 @if($sectionImg->siLink != null)
+                                                     <a href="{{ $sectionImg->siLink }}">Read More</a>
+                                                 @endif
+                                             @elseif($lan == 'ar')
+                                                 <h5 class="Al-Jazeera-Arabic-Bold">{{ $sectionImg->siArSubject }}</h5>
+                                                 <p class="one-line Al-Jazeera-Arabic-Regular">{{ $sectionImg->siArDescription }}</p>
+                                                 @if($sectionImg->siLink != null)
+                                                     <a href="{{ $sectionImg->siLink }}">أقرا اکثر</a>
+                                                 @endif
+                                             @endif
+                                         </figcaption>
+                                     </figure>
+                                 </div>
+                             </div>
+                        @endif
                     @endforeach
                 </div>
             </div>
