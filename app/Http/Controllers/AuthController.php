@@ -10,11 +10,11 @@ class AuthController extends Controller
 {
     public function loginFrom()
     {
-        echo Hash::make('arr@2018');
+        //echo Hash::make('arr@2018');
         if (Auth::guest())
             return view('pages.admin.login');
         else
-            return redirect()->to('/admin');
+            return redirect()->to('/admin/news');
     }
 
     public function signIn(Request $request)
