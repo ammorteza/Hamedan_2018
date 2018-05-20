@@ -559,8 +559,8 @@
                                         <img style="height: 80vh;width: 100vw;background-size: cover;" class="background-cover img-responsive" src="{{ asset($sectionImg->gallery->gPath .'?v' . config('app.version')) }}">
                                     </a>
                                 </li>
-                                <?php $counter++; ?>
-                                @endforeach
+                            <?php $counter++; ?>
+                        @endforeach
                     </ul>
                 </div>
             </div>
