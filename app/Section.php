@@ -15,7 +15,7 @@ class Section extends Model
 
     public function sectionImg()
     {
-        return $this->hasMany(SectionImg::class ,'siSId' , 'id')->where('siState' , '=' , true);
+        return $this->hasMany(SectionImg::class ,'siSId' , 'id')->where('siState' , '=' , true)->orderBy('siOrder' , 'ASC');
     }
 
     public function sectionVideo()
