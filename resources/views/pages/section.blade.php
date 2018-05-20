@@ -205,7 +205,7 @@
                                             <div class="grid-x">
                                                 @for( ; $item < (($i + 1) * 4);$item++)
                                                     <div class="medium-3 style_prevu_kit element-dir">
-                                                        <img class="img-size" src="{{ asset($section->sectionImg[$item]['gallery']['gPath'] .'?v' . config('app.version')) }}">
+                                                        <img style="height: 520px;" class="img-size" src="{{ asset($section->sectionImg[$item]['gallery']['gPath'] .'?v' . config('app.version')) }}">
                                                         @if($lan == 'fa')
                                                             <p style="margin-top: -50px;" class="withe-color my-text-shadow-effect-blue center-el">{{ $section->sectionImg[$item]['siFaSubject'] }}</p>
                                                         @elseif($lan == 'en')
@@ -487,7 +487,8 @@
             <!--Text Section Start-->
             <div class="grid-container element-distance-tb">
                 <div class="grid-x">
-                    <div class="large-12">
+                    <div class="large-offset-2 medium-offset-2"></div>
+                    <div class="large-8 medium-8">
                         @if($lan == 'fa')
                             <h1 class="center-el titr-color Mj-Flow-Reqular">{{ $section->sFaSubject }}</h1>
                         @elseif($lan == 'en')
@@ -497,13 +498,14 @@
                         @endif
 
                         @if($lan == 'fa')
-                            <div class="text-justify element-distanse">{!! $section->sFaDescription !!}</div>
+                            <div class="text-justify element-distanse size-18">{!! $section->sFaDescription !!}</div>
                         @elseif($lan == 'en')
-                            <div class="text-justify element-distanse Raleway-Regular">{!! $section->sEnDescription !!}</div>
+                            <div class="text-justify element-distanse Raleway-Regular size-24">{!! $section->sEnDescription !!}</div>
                         @elseif($lan == 'ar')
                             <div class="text-justify element-distanse Al-Jazeera-Arabic-Regular">{!! $section->sArDescription !!}</div>
                         @endif
                     </div>
+                    <div class="large-offset-2 medium-offset-2"></div>
                 </div>
             </div>
             <!--Text Section End-->
@@ -542,7 +544,7 @@
                                 <li class="large-12" style="{{ $counter != 0 ? 'display: none;' : ''}}" data-src="{{ asset($sectionImg->gallery->gPath .'?v' . config('app.version')) }}" data-sub-html="<span>موقع:{{ $sectionImg->gallery->gArLocation }}</span><span> مصور فوتوغرافي:{{ $sectionImg->gallery->gArPhotographer }}</span>">
                                     @endif
                                     <a href="">
-                                        <img style="height: 80vh;width: 100vw;background-size: cover;" class=" img-responsive" src="{{ asset($sectionImg->gallery->gPath .'?v' . config('app.version')) }}">
+                                        <img style="height: 80vh;width: 100vw;background-size: cover;" class=" img-responsive zoom-hover" src="{{ asset($sectionImg->gallery->gPath .'?v' . config('app.version')) }}">
                                     </a>
                                 </li>
                                 <?php $counter++; ?>
