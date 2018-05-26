@@ -748,5 +748,14 @@
             </div>
             <!--Section Spliter Start-->
         @endif
+        <!--Section pannellum-master-360 Start-->
+        <div class="grid-container">
+            <div class="grid-x">
+                <div class="large-12 medium-12 small-12">
+                    <iframe width="100%" height="600vh"  allowfullscreen style="border-style:none;" src="{{ asset('pannellum-master-360/src/standalone/pannellum.htm?config=../../examples/example-tour.json')}}"></iframe>
+                </div>
+            </div>
+        </div>
+        <!--Section pannellum-master-360 End-->
     @endforeach
 @stop
