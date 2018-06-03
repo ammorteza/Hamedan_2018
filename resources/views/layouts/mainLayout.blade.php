@@ -63,7 +63,7 @@
             <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit data-options="animInFromLeft:fade-in; animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight:fade-out;" data-timer-delay="10000">
                 <ul class="orbit-container">
                     <div style="z-index: 9999;position: absolute; background:transparent;" class="title-bar element-dir" data-responsive-toggle="responsive-menu" data-hide-for="medium">
-                        <button style="color: #000;" class="menu-icon" type="button" data-toggle="offCanvas"></button>
+                        <button style="color: #000;" class="menu-icon my-text-shadow-effect" type="button" data-toggle="offCanvas"></button>
                         <div class="title-bar-title"></div>
                     </div>
                     <div class="grid-x">
@@ -131,7 +131,7 @@
 
                         </div>
                         <!--Display Tag In small-->
-                        <div align="{{ $lan == 'en' ? 'right' : 'left' }}" class="grid-x">
+                        <div style="z-index: 996" align="{{ $lan == 'en' ? 'right' : 'left' }}" class="grid-x">
                             <div class="small-12 flag-icon-small element-dir-l">
                                 @if($lan == 'fa')
                                     <a href="{{ url('/fa') }}"><img src="{{ asset('pic/flag/persian_w.png?v' . config('app.version')) }}" width="28px" height="28px"/></a>
@@ -155,24 +155,24 @@
                                 @if ($pageInfo->headerType->phtType == 'SIMPLE')
                                     <figcaption class="orbit-caption align-center my-text-shadow-effect">
                                         @if($lan == 'fa')
-                                            <p style="text-align: center;" class="top-slider-header Shabnam-Bold my-fadeIn-and-move">{{ $pageInfo->pFaSubject }}</p>
-                                            <p style="text-align: center;" class="top-slider-description Duel-Regular">{{ $pageInfo->pFaDescription }}</p>
+                                            <p style="text-align: center;" class="top-slider-header-sample Shabnam-Bold my-fadeIn-and-move">{{ $pageInfo->pFaSubject }}</p>
+                                            <p style="text-align: center;" class="top-slider-description-sample Duel-Regular">{{ $pageInfo->pFaDescription }}</p>
                                             @if ($pageImg->phiLink != null)
                                                 <center>
                                                     <a href="{{ url($pageImg->phiLink . '') }}" style="margin-top: 15px;" class="button primary white-color">{{ $pageImg->phiLinkFaTitle }}</a>
                                                 </center>
                                             @endif
                                         @elseif($lan == 'en')
-                                            <p style="text-align: center;" class="top-slider-header Roboto-Bold">{{ $pageInfo->pEnSubject }}</p>
-                                            <p style="text-align: center;" class="top-slider-description merienda">{{ $pageInfo->pEnDescription }}</p>
+                                            <p style="text-align: center;" class="top-slider-header-sample Roboto-Bold">{{ $pageInfo->pEnSubject }}</p>
+                                            <p style="text-align: center;" class="top-slider-description-sample merienda">{{ $pageInfo->pEnDescription }}</p>
                                             @if ($pageImg->phiLink != null)
                                                 <center>
                                                     <a href="{{ url($pageImg->phiLink . '') }}" style="margin-top: 15px;" class="button primary white-color">{{ $pageImg->phiLinkEnTitle }}</a>
                                                 </center>
                                             @endif
                                         @elseif($lan == 'ar')
-                                            <p style="text-align: center;" class="top-slider-header Al-Jazeera-Arabic-Bold">{{ $pageInfo->pArSubject }}</p>
-                                            <p style="text-align: center;" class="top-slider-description">{{ $pageInfo->pArDescription }}</p>
+                                            <p style="text-align: center;" class="top-slider-header-sample Al-Jazeera-Arabic-Bold">{{ $pageInfo->pArSubject }}</p>
+                                            <p style="text-align: center;" class="top-slider-description-sample">{{ $pageInfo->pArDescription }}</p>
                                             @if ($pageImg->phiLink != null)
                                                 <center>
                                                     <a href="{{ url($pageImg->phiLink . '') }}" style="margin-top: 15px;" class="button primary white-color">{{ $pageImg->phiLinkArTitle }}</a>
@@ -239,7 +239,7 @@
                         </nav>
                     </div>
                     <div class="grid-container">
-                        <div class="grid-x">
+                        <div style="height: 50px;" class="grid-x arrow-mrg">
                             <div style="margin-top: 2px;"  class="large-12 medium-12 small-12">
                                 <a class="jumper" href="#ploop">
                                     <div class="arrow bounce my-text-shadow-effect align-center">

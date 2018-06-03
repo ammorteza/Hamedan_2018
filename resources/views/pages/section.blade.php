@@ -757,5 +757,73 @@
             </div>
         </div>
         <!--Section pannellum-master-360 End-->
+
+        <!--Section Events Start-->
+        <div class="grid-container element-distanse">
+            <div class="grid-x">
+                <div class="large-offset-2">
+
+                </div>
+                <div class="large-8 medium-12 small-12">
+                    <div class="grid-x event-border">
+                        <div class="large-3 medium-6 small-12">
+                            <img class="image-shadow-effect" style="height:260px;margin-bottom: 45px;" src="{{ asset('pic/gallery/lan_1.jpg') }}">
+                        </div>
+                        <div class="large-9 medium-6 small-12">
+                            <div class="grid-x">
+                                <div class="large-offset-2">
+
+                                </div>
+                                <div class="large-8 medium-8 small-12">
+                                    <h5 class="Roboto-Bold header-color">Sardar Hamedani International Championship Wrestling Cup – Hamedan - March 2018</h5>
+                                    <p class="text-color two-line element-distanse">Due to the targeting of the Islamic Republic of Iran in the field of tourism and the movement towards the success of this industry in </p>
+                                    <p class="Roboto-Bold"><i class="fas fa-calendar-check size-24 element-distanse btn-red"></i><span class="padding-lr size-16 btn-red">March 2018</span></p>
+                                </div>
+                                <div class="large-offset-2">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="large-offset-2">
+
+                </div>
+
+                <div class="large-offset-2">
+
+                </div>
+                <div class="large-8 medium-12 small-12">
+                    <div class="grid-x event-border">
+                        <div class="large-3 medium-6 small-12">
+                            <img class="image-shadow-effect" style="height:260px;margin-bottom: 45px;" src="{{ asset('pic/gallery/lan_1.jpg') }}">
+                        </div>
+                        <div class="large-9 medium-6 small-12">
+                            <div class="grid-x">
+                                <div class="large-offset-2">
+
+                                </div>
+                                <div class="large-8 medium-8 small-12">
+                                    <h5 class="Roboto-Bold header-color">Sardar Hamedani International Championship Wrestling Cup – Hamedan - March 2018</h5>
+                                    <p class="text-color two-line element-distanse">Due to the targeting of the Islamic Republic of Iran in the field of tourism and the movement towards the success of this industry in </p>
+                                    <p class="Roboto-Bold"><i class="fas fa-calendar-check size-24 element-distanse btn-red"></i><span class="padding-lr size-16 btn-red">March 2018</span></p>
+                                </div>
+                                <div class="large-offset-2">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="large-offset-2">
+
+                </div>
+            </div>
+        </div>
+        <!--Section Events End-->
     @endforeach
 @stop

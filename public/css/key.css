@@ -48,7 +48,7 @@ th {
     text-align: center;
 }
 .top-slider{
-    max-height:  100vh;
+    height:  100vh;
 }
 .orbit-bullets {
     position: relative;
@@ -118,6 +118,16 @@ th {
 .top-slider-description{
     font-size: 1.5em;
 }
+
+.top-slider-header-sample{
+    font-size: 3.5em;
+    margin-bottom: 0px;
+}
+
+.top-slider-description-sample{
+    font-size: 1.5em;
+}
+
 .white-color{
     color: #ffffff;
 }
@@ -493,7 +503,10 @@ th {
     line-height: 1.5em;
     height: 3em;
     overflow: hidden;
+
+
 }
+
 .background-cover{
     object-fit: cover;
 
@@ -1500,6 +1513,19 @@ ul.social-icons {
     height: 30px;
     cursor: pointer;
 }
+menu-icon::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #fefefe;
+    box-shadow: 0 7px 0 #fefefe, 0 14px 0 #fefefe;
+    content: ''; }
+.menu-icon:hover::after {
+    background: #cacaca;
+    box-shadow: 0 7px 0 #cacaca, 0 14px 0 #cacaca; }
 /*///////////////////////////////////////////////////////////////////*/
 
 .zoom-hover {
@@ -1525,6 +1551,15 @@ ul.social-icons {
     -webkit-align-content: center;
     align-content: center;
 }
+.event-border{
+    border-bottom: .1rem solid #EEEEEE;
+    margin: 25px 0px 20px 0px;
+}
+
+.header-color{
+    color: #3b444f;
+}
+
 /*-------------------------------Media Queries------------------------------------*/
 @media only screen and (max-width: 1024px) {
     .mq-topmenu-status{
@@ -1588,6 +1623,9 @@ ul.social-icons {
     .flag-icon-small{
         display: none;
     }
+
+
+
 }
 
 @media only screen and (min-width: 900px) {
@@ -1626,19 +1664,27 @@ ul.social-icons {
         height: 0.9rem;
         background-color: #FFFFFF;
     }
+    .orbit-caption{
+        margin-bottom:20%;
+    }
 
 }
 
+
 @media only screen and (max-width: 650px) {
-    .jumper{
-        display: none;
-    }
     .top-menu {
         font-size: small;
         font-weight: normal;
         color: #FFFFFF;
     }
 }
+
+@media only screen and (max-width: 640px) {
+    .orbit-caption{
+        margin-bottom: 30%;
+    }
+}
+
 
 @media only screen and (max-width: 600px) {
     .sub-menu-none{
@@ -1652,6 +1698,20 @@ ul.social-icons {
         height: 60px;
         background-color: #FFFFFF;
     }
+    .arrow-mrg{
+        margin-top: -60px;
+        margin-left: 20px;
+    }
+    .arrow {
+        width: 20px;
+        height: 20px;
+        float: left;
+        margin-bottom: 400px;
+        background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNi4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iNTEycHgiIGhlaWdodD0iNTEycHgiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1MTIgNTEyIiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik0yOTMuNzUxLDQ1NS44NjhjLTIwLjE4MSwyMC4xNzktNTMuMTY1LDE5LjkxMy03My42NzMtMC41OTVsMCwwYy0yMC41MDgtMjAuNTA4LTIwLjc3My01My40OTMtMC41OTQtNzMuNjcyICBsMTg5Ljk5OS0xOTBjMjAuMTc4LTIwLjE3OCw1My4xNjQtMTkuOTEzLDczLjY3MiwwLjU5NWwwLDBjMjAuNTA4LDIwLjUwOSwyMC43NzIsNTMuNDkyLDAuNTk1LDczLjY3MUwyOTMuNzUxLDQ1NS44Njh6Ii8+DQo8cGF0aCBmaWxsPSIjRkZGRkZGIiBkPSJNMjIwLjI0OSw0NTUuODY4YzIwLjE4LDIwLjE3OSw1My4xNjQsMTkuOTEzLDczLjY3Mi0wLjU5NWwwLDBjMjAuNTA5LTIwLjUwOCwyMC43NzQtNTMuNDkzLDAuNTk2LTczLjY3MiAgbC0xOTAtMTkwYy0yMC4xNzgtMjAuMTc4LTUzLjE2NC0xOS45MTMtNzMuNjcxLDAuNTk1bDAsMGMtMjAuNTA4LDIwLjUwOS0yMC43NzIsNTMuNDkyLTAuNTk1LDczLjY3MUwyMjAuMjQ5LDQ1NS44Njh6Ii8+DQo8L3N2Zz4=);
+        background-size: contain;
+
+    }
+
 }
 
 @media only screen and (min-width: 600px) {
@@ -1719,19 +1779,22 @@ ul.social-icons {
         font-size: 1.5em;
     }
     .orbit-caption{
-        margin-bottom: 18%;
+        margin-bottom: 40%;
+    }
+    .top-slider-description-sample {
+        margin-bottom: -150px;
     }
 }
 
 @media only screen and (max-width: 400px) {
-    .top-slider-description{
-        display: none;
-    }
+
     .top-slider-header {
         font-size: 1.7em;
-        margin-bottom: 75%;
         font-weight: bold;
-        margin-bottom: 0px;
+        margin-bottom: 20%;
+    }
+    .top-slider-header-sample {
+        font-size: 1.8em;
     }
     .top-slider-description-btn{
         font-size: 1em;
