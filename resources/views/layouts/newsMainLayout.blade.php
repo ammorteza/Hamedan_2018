@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>اخبار همدان ۲۰۱۸</title>
+        <title>Hamedan 2018 News</title>
         <link rel="icon" type="image/png" href="{{ asset('pic/footer/footer-logo.png?v' . config('app.version')) }}">
         <!— Global site tag (gtag.js) - Google Analytics —>
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116472209-1"></script>

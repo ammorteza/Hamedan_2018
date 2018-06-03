@@ -162,7 +162,7 @@
                                     @if($lan == 'fa')
                                         <img src="{{ asset($sectionImg->gallery->gPath .'?v' . config('app.version')) }}" alt="{{ $sectionImg->siFaSubject }}" data-description="{{ $sectionImg->siFaDescription }}">
                                     @elseif($lan == 'en')
-                                        <img  src="{{ asset($sectionImg->gallery->gPath .'?v' . config('app.version')) }}" alt="{{ $sectionImg->siEnSubject }}" data-description="{{ $sectionImg->siEnDescription }}">
+                                        <img src="{{ asset($sectionImg->gallery->gPath .'?v' . config('app.version')) }}" alt="{{ $sectionImg->siEnSubject }}" data-description="{{ $sectionImg->siEnDescription }}">
                                     @elseif($lan == 'ar')
                                         <img src="{{ asset($sectionImg->gallery->gPath .'?v' . config('app.version')) }}" alt="{{ $sectionImg->siArSubject }}" data-description="{{ $sectionImg->siArDescription }}">
                                     @endif
@@ -217,7 +217,7 @@
                                                 @for( ; $item < (($i + 1) * 4);$item++)
                                                     <div class="medium-3 style_prevu_kit element-dir">
                                                         <a href="{{ url(($lan != 'en' ? $lan : '') . $section->sectionImg[$item]['siLink']) }}">
-                                                            <img class="img-size" src="{{ asset($section->sectionImg[$item]['gallery']['gPath'] .'?v' . config('app.version')) }}">
+                                                            <img  style="height: 520px" class="img-size" src="{{ asset($section->sectionImg[$item]['gallery']['gPath'] .'?v' . config('app.version')) }}">
                                                             @if($lan == 'fa')
                                                                 <p style="margin-top: -50px;" class="withe-color my-text-shadow-effect-blue center-el">{{ $section->sectionImg[$item]['siFaSubject'] }}</p>
                                                             @elseif($lan == 'en')
@@ -542,7 +542,7 @@
         @elseif($section->sectionType->stType == 'LIGHT_BOX_IMAGE_GALLERY')
             <!--Light Box Image Start-->
             <div class="grid-container">
-                <div class="grid-x" style="height: 80vh">
+                <div class="grid-x align-center-middle" style="height: 80vh;">
                     <ul style="margin: 0;" id="lightgallery" class="list-unstyled padding-lr">
                         <?php
                         $counter = 0;
@@ -551,24 +551,33 @@
                             @if($lan == 'fa')
                                 <li class="large-12" style="{{ $counter != 0 ? 'display: none;' : ''}}" data-src="{{ asset($sectionImg->gallery->gPath .'?v' . config('app.version')) }}" data-sub-html="<span>مکان:{{ $sectionImg->gallery->gFaLocation }}</span><span> عکاس:{{ $sectionImg->gallery->gFaPhotographer }}</span>">
                             @elseif($lan == 'en')
-                                <li class="large-12" style="{{ $counter != 0 ? 'display: none;' : ''}}" data-src="{{ asset($sectionImg->gallery->gPath .'?v' . config('app.version')) }}" data-sub-html="<span>Location:{{ $sectionImg->gallery->gEnLocation }}</span><span> Photographer:{{ $sectionImg->gallery->gEnPhotographer }}</span>">
+                                <li class="large-12 " style="{{ $counter != 0 ? 'display: none;' : ''}}" data-src="{{ asset($sectionImg->gallery->gPath .'?v' . config('app.version')) }}" data-sub-html="<span>Location:{{ $sectionImg->gallery->gEnLocation }}</span><span> Photographer:{{ $sectionImg->gallery->gEnPhotographer }}</span>">
                             @elseif($lan == 'ar')
                                 <li class="large-12" style="{{ $counter != 0 ? 'display: none;' : ''}}" data-src="{{ asset($sectionImg->gallery->gPath .'?v' . config('app.version')) }}" data-sub-html="<span>موقع:{{ $sectionImg->gallery->gArLocation }}</span><span> مصور فوتوغرافي:{{ $sectionImg->gallery->gArPhotographer }}</span>">
                                     @endif
                                     <a href="">
-                                        <img style="height: 80vh;width: 100vw;background-size: cover;" class="background-cover img-responsive" src="{{ asset($sectionImg->gallery->gPath .'?v' . config('app.version')) }}">
+                                        <img style="height: 80vh;background-size: cover;" class=" img-responsive zoom-hover" src="{{ asset($sectionImg->gallery->gPath .'?v' . config('app.version')) }}">
                                     </a>
                                 </li>
                             <?php $counter++; ?>
                         @endforeach
                     </ul>
+                    <div class="large-12 text-center">
+                        @if($lan == 'fa')
+                            <span class="font-small text-color">{{ $section->sectionImg[0]['gallery']['gFaLocation'] . ' - عکس:' . $section->sectionImg[0]['gallery']['gFaPhotographer'] }}</span>
+                        @elseif($lan == 'en')
+                            <span class="font-small text-color">{{ $section->sectionImg[0]['gallery']['gEnLocation'] . ' - Photo:' . $section->sectionImg[0]['gallery']['gEnPhotographer'] }}</span>
+                        @elseif($lan == 'ar')
+                            <span class="font-small text-color">{{ $section->sectionImg[0]['gallery']['gArLocation'] . ' - مصور:' . $section->sectionImg[0]['gallery']['gArPhotographer'] }}</span>
+                        @endif
+                    </div>
                 </div>
             </div>
             <!--Light Box Image End-->
         @elseif($section->sectionType->stType == 'CONTENT_BRIEF_NEWS')
             <!--News Section Start-->
             <?php
-            $newNews = \Hamedan_2018\News::getNewNews();
+            $newNews = \Hamedan_2018\News::getNewNews($lan);
             ?>
             <div id="ploop" style="padding-top: 150px" class="grid-container">
                 <div class="grid-x">

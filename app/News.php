@@ -13,12 +13,57 @@ class News extends Model
         return $this->hasMany(NewsImg::class , 'niNId' , 'id');
     }
 
-    public static function getNewNews()
+    public static function getNewNews($lan)
     {
-        $newsCount = News::where('nState' , '=' , 1)->count();
-        if ($newsCount > 0)
-            return News::where('nState' , '=' , 1)->with('newsImg.gallery')->orderBy('id' , 'DESC')->get()->random($newsCount < 4 ? $newsCount : 4);
-        else
-            return null;
+        if ($lan == 'fa')
+        {
+            $newsCount = News::where('nState' , '=' , 1)
+                ->where('nFaSubject' , '<>' , '')
+                ->where('nFaBriefDescription' , '<>' , '')
+                ->where('nFaDescription' , '<>' , '')
+                ->count();
+            if ($newsCount > 0)
+                return News::where('nState' , '=' , 1)
+                    ->where('nFaSubject' , '<>' , '')
+                    ->where('nFaBriefDescription' , '<>' , '')
+                    ->where('nFaDescription' , '<>' , '')
+                    ->with('newsImg.gallery')
+                    ->orderBy('id' , 'DESC')
+                    ->get()->random($newsCount < 4 ? $newsCount : 4);
+            else
+                return null;
+        }else if ($lan == 'ar'){
+            $newsCount = News::where('nState' , '=' , 1)
+                ->where('nArSubject' , '<>' , '')
+                ->where('nArBriefDescription' , '<>' , '')
+                ->where('nArDescription' , '<>' , '')
+                ->count();
+            if ($newsCount > 0)
+                return News::where('nState' , '=' , 1)
+                    ->where('nArSubject' , '<>' , '')
+                    ->where('nArBriefDescription' , '<>' , '')
+                    ->where('nArDescription' , '<>' , '')
+                    ->with('newsImg.gallery')
+                    ->orderBy('id' , 'DESC')
+                    ->get()->random($newsCount < 4 ? $newsCount : 4);
+            else
+                return null;
+        }else if ($lan == 'en'){
+            $newsCount = News::where('nState' , '=' , 1)
+                ->where('nEnSubject' , '<>' , '')
+                ->where('nEnBriefDescription' , '<>' , '')
+                ->where('nEnDescription' , '<>' , '')
+                ->count();
+            if ($newsCount > 0)
+                return News::where('nState' , '=' , 1)
+                    ->where('nEnSubject' , '<>' , '')
+                    ->where('nEnBriefDescription' , '<>' , '')
+                    ->where('nEnDescription' , '<>' , '')
+                    ->with('newsImg.gallery')
+                    ->orderBy('id' , 'DESC')
+                    ->get()->random($newsCount < 4 ? $newsCount : 4);
+            else
+                return null;
+        }
     }
 }

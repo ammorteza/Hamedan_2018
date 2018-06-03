@@ -75,6 +75,15 @@
     CKEDITOR.on('instanceCreated', function(e) {
         if (e.editor.id === 'cke_1') {
             e.editor.on('change', function (event) {
+                if ((CKEDITOR.instances.faDescription.getData() != '')) {
+                    $('#registerNewsSubmit').attr("disabled", false);
+                }else{
+                    $('#registerNewsSubmit').attr("disabled", true);
+                }
+            });
+        }
+/*        if (e.editor.id === 'cke_1') {
+            e.editor.on('change', function (event) {
                 if ((CKEDITOR.instances.faDescription.getData() != '') &&
                     (CKEDITOR.instances.arDescription.getData() != '') &&
                     (CKEDITOR.instances.enDescription.getData() != '')) {
@@ -107,14 +116,25 @@
                     $('#registerNewsSubmit').attr("disabled", true);
                 }
             });
-        }
+        }*/
     });
-    CKEDITOR.on('instanceCreated', function(e) {
+/*    CKEDITOR.on('instanceCreated', function(e) {
         if (e.editor.id === 'cke_3') {
             e.editor.on('configLoaded', function (event) {
                 if ((CKEDITOR.instances.faDescription.getData() != '') &&
                     (CKEDITOR.instances.arDescription.getData() != '') &&
                     (CKEDITOR.instances.enDescription.getData() != '')) {
+                    $('#registerNewsSubmit').attr("disabled", false);
+                }else{
+                    $('#registerNewsSubmit').attr("disabled", true);
+                }
+            });
+        }
+    });*/
+    CKEDITOR.on('instanceCreated', function(e) {
+        if (e.editor.id === 'cke_1') {
+            e.editor.on('configLoaded', function (event) {
+                if ((CKEDITOR.instances.faDescription.getData() != '')) {
                     $('#registerNewsSubmit').attr("disabled", false);
                 }else{
                     $('#registerNewsSubmit').attr("disabled", true);

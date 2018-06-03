@@ -65,32 +65,40 @@
                     </div>
                 </div>
                 @foreach($allNews as $news)
-                    <div class="grid-x element-distanse news-bottom-line" id="advTop">
-                        <div class="large-4 medium-12 small-12">
-                            @if($lan == 'fa')
+                    @if($lan == 'fa' && $news->nFaSubject != '' && $news->nFaBriefDescription != '' && $news->nFaDescription != '')
+                        <div class="grid-x element-distanse news-bottom-line" id="advTop">
+                            <div class="large-4 medium-12 small-12">
                                 <a  href="{{ url($lan . '/news/info/' . $news->id) }}"><img class="news-image" style=";margin-top: -20px;" src="{{ asset($news->newsImg[0]['gallery']['gPath']) }}" alt="{{ $news->newsImg[0]['gallery']['niFaAlt'] }}" width="300px" height="200px"></a>
-                            @elseif($lan == 'en')
-                                <a href="{{ url('news/info/' . $news->id) }}"><img style=";margin-top: -20px;" src="{{ asset($news->newsImg[0]['gallery']['gPath']) }}" alt="{{ $news->newsImg[0]['gallery']['niEnAlt'] }}" width="300px" height="200px"></a>
-                            @elseif($lan == 'ar')
-                                <a href="{{ url($lan . '/news/info/' . $news->id) }}"><img style=";margin-top: -20px;" src="{{ asset($news->newsImg[0]['gallery']['gPath']) }}" alt="{{ $news->newsImg[0]['gallery']['niArAlt'] }}" width="300px" height="200px"></a>
-                            @endif
-                        </div>
-                        <div style="padding-left: 50px;padding-right: 50px;" class="large-8 medium-12 small-12 news-link">
-                            @if($lan == 'fa')
+                            </div>
+                            <div style="padding-left: 50px;padding-right: 50px;" class="large-8 medium-12 small-12 news-link">
                                 <a href="{{ url($lan . '/news/info/' . $news->id) }}"><h5 class="Shabnam-Bold">{{ $news->nFaSubject }}</h5></a>
                                 <p class="two-line text-color text-justify element-distanse font-small Shabnam-Light">{{ $news->nFaBriefDescription }}</p>
                                 <div class="blue-color"><i class="far fa-calendar-alt camera-margin"></i><span class="font-smaller">{{ \Morilog\Jalali\Facades\jDate::forge($news->created_at)->format('%B %d، %Y') }}</span></div>
-                            @elseif($lan == 'en')
+                            </div>
+                        </div>
+                    @elseif($lan == 'en' && $news->nEnSubject != '' && $news->nEnBriefDescription != '' && $news->nEnDescription != '')
+                        <div class="grid-x element-distanse news-bottom-line" id="advTop">
+                            <div class="large-4 medium-12 small-12">
+                                <a href="{{ url('news/info/' . $news->id) }}"><img style=";margin-top: -20px;" src="{{ asset($news->newsImg[0]['gallery']['gPath']) }}" alt="{{ $news->newsImg[0]['gallery']['niEnAlt'] }}" width="300px" height="200px"></a>
+                            </div>
+                            <div style="padding-left: 50px;padding-right: 50px;" class="large-8 medium-12 small-12 news-link">
                                 <a href="{{ url('news/info/' . $news->id) }}"><h5 class="Roboto-Bold">{{ $news->nEnSubject }}</h5></a>
                                 <p class="two-line text-color text-justify element-distanse font-small Raleway-Regular">{{ $news->nEnBriefDescription }}</p>
                                 <div class="blue-color"><i class="far fa-calendar-alt camera-margin"></i><span class="font-smaller">{{ $news->created_at->format('Y F d') }}</span></div>
-                            @elseif($lan == 'ar')
+                            </div>
+                        </div>
+                    @elseif($lan == 'ar' && $news->nArSubject != '' && $news->nArBriefDescription != '' && $news->nArDescription != '')
+                        <div class="grid-x element-distanse news-bottom-line" id="advTop">
+                            <div class="large-4 medium-12 small-12">
+                                <a href="{{ url($lan . '/news/info/' . $news->id) }}"><img style=";margin-top: -20px;" src="{{ asset($news->newsImg[0]['gallery']['gPath']) }}" alt="{{ $news->newsImg[0]['gallery']['niArAlt'] }}" width="300px" height="200px"></a>
+                            </div>
+                            <div style="padding-left: 50px;padding-right: 50px;" class="large-8 medium-12 small-12 news-link">
                                 <a href="{{ url($lan . '/news/info/' . $news->id) }}"><h5 class="Al-Jazeera-Arabic-Bold">{{ $news->nArSubject }}</h5></a>
                                 <p class="two-line text-color text-justify element-distanse font-small Al-Jazeera-Arabic-Regular">{{ $news->nArBriefDescription }}</p>
                                 <div class="blue-color"><i class="far fa-calendar-alt camera-margin"></i><span class="font-smaller">{{ $news->created_at->format('Y F d') }}</span></div>
-                            @endif
+                            </div>
                         </div>
-                    </div>
+                    @endif
                 @endforeach
                 <!-Pagination Start--->
                 <p id="advBottom"></p>

@@ -88,7 +88,7 @@
                     <div class="grid-x">
                         <div class="large-8 medium-12 small-12 padding-lr-fs">
                             <label>عنوان
-                                <input  type="text"  name="arSubject" required>
+                                <input  type="text"  name="arSubject">
                                 <span class="form-error">
                       لطفا عنوان (عربی) خبر را وارد نمایید !
                                 </span>
@@ -98,7 +98,7 @@
                     <div class="grid-x">
                         <div class="large-8 medium-12 small-12 padding-lr-fs">
                             <label>خلاصه خبر
-                                <textarea  type="text" style="height: 90px;"  name="arBriefDescription" required></textarea>
+                                <textarea  type="text" style="height: 90px;"  name="arBriefDescription"></textarea>
                                 <span class="form-error">
                       لطفا خلاصه (عربی) خبر را وارد نمایید !
                                </span>
@@ -125,7 +125,7 @@
                     <div class="grid-x">
                         <div class="large-8 medium-12 small-12 padding-lr-fs">
                             <label class="">عنوان
-                                <input  type="text"  name="enSubject" required>
+                                <input  type="text"  name="enSubject">
                                 <span class="form-error">
                       لطفا عنوان (انگلیسی) خبر را وارد نمایید !
                                 </span>
@@ -135,7 +135,7 @@
                     <div class="grid-x">
                         <div class="large-8 medium-12 small-12 padding-lr-fs">
                             <label>خلاصه خبر
-                                <textarea  type="text" style="height: 90px;"  name="enBriefDescription" required></textarea>
+                                <textarea  type="text" style="height: 90px;"  name="enBriefDescription"></textarea>
                                 <span class="form-error">
                       لطفا خلاصه (انگلیسی) خبر را وارد نمایید !
                                </span>
