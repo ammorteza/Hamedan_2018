@@ -777,7 +777,7 @@
                                 <div class="large-8 medium-8 small-12">
                                     <h5 class="Roboto-Bold header-color">Sardar Hamedani International Championship Wrestling Cup – Hamedan - March 2018</h5>
                                     <p class="text-color two-line element-distanse">Due to the targeting of the Islamic Republic of Iran in the field of tourism and the movement towards the success of this industry in </p>
-                                    <p class="Roboto-Bold"><i class="fas fa-calendar-check size-24 element-distanse btn-red"></i><span class="padding-lr size-16 btn-red">March 2018</span></p>
+                                    <p class="Roboto-Bold"><i class="fas fa-calendar-check size-24 element-distanse btn-red"></i><span class="padding-lr size-16 btn-red">23 March 2018</span></p>
                                 </div>
                                 <div class="large-offset-2">
 
@@ -808,7 +808,7 @@
                                 <div class="large-8 medium-8 small-12">
                                     <h5 class="Roboto-Bold header-color">Sardar Hamedani International Championship Wrestling Cup – Hamedan - March 2018</h5>
                                     <p class="text-color two-line element-distanse">Due to the targeting of the Islamic Republic of Iran in the field of tourism and the movement towards the success of this industry in </p>
-                                    <p class="Roboto-Bold"><i class="fas fa-calendar-check size-24 element-distanse btn-red"></i><span class="padding-lr size-16 btn-red">March 2018</span></p>
+                                    <p class="Roboto-Bold"><i class="fas fa-calendar-check size-24 element-distanse btn-red"></i><span class="padding-lr size-16 btn-red">23 March 2018</span></p>
                                 </div>
                                 <div class="large-offset-2">
 
