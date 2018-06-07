@@ -69,8 +69,13 @@
                                             @if ($sectionImg->siOrder != 5)
                                                 <div class="large-6 medium-6 padding-lr">
                                                     <a href="{{ url(($lan != 'en' ? $lan : '') . $sectionImg->siLink) }}" class="direction-reveal__card">
-                                                        <img style="height: 174px;width: 100vw;" src="{{ asset($sectionImg->gallery->gPath .'?v' . config('app.version')) }}" alt="Image" class="img-fluid">
-
+                                                        @if($lan == 'fa')
+                                                            <img style="height: 174px;width: 100vw;" src="{{ asset($sectionImg->gallery->gPath .'?v' . config('app.version')) }}" alt="{{ $sectionImg->siFaSubject }}" class="img-fluid">
+                                                        @elseif($lan == 'en')
+                                                            <img style="height: 174px;width: 100vw;" src="{{ asset($sectionImg->gallery->gPath .'?v' . config('app.version')) }}" alt="{{ $sectionImg->siEnSubject }}" class="img-fluid">
+                                                        @elseif($lan == 'ar')
+                                                            <img style="height: 174px;width: 100vw;" src="{{ asset($sectionImg->gallery->gPath .'?v' . config('app.version')) }}" alt="{{ $sectionImg->siArSubject }}" class="img-fluid">
+                                                        @endif
                                                         <div class="direction-reveal__overlay">
                                                             @if($lan == 'fa')
                                                                 <h4 class="direction-reveal__title">{{ $sectionImg->siFaSubject }}</h4>
@@ -93,7 +98,13 @@
                                     @foreach($section->sectionImg as $sectionImg)
                                         @if ($sectionImg->siOrder == 5)
                                             <a href="{{ url(($lan != 'en' ? $lan : '') . $sectionImg->siLink) }}" class="direction-reveal__card">
-                                                <img style="height: 356px;width: 100vw;" src="{{ asset($sectionImg->gallery->gPath .'?v' . config('app.version')) }}" alt="Image" class="img-fluid">
+                                                @if($lan == 'fa')
+                                                    <img style="height: 356px;width: 100vw;" src="{{ asset($sectionImg->gallery->gPath .'?v' . config('app.version')) }}" alt="{{ $sectionImg->siFaSubject }}" class="img-fluid">
+                                                @elseif($lan == 'en')
+                                                    <img style="height: 356px;width: 100vw;" src="{{ asset($sectionImg->gallery->gPath .'?v' . config('app.version')) }}" alt="{{ $sectionImg->siEnSubject }}" class="img-fluid">
+                                                @elseif($lan == 'ar')
+                                                    <img style="height: 356px;width: 100vw;" src="{{ asset($sectionImg->gallery->gPath .'?v' . config('app.version')) }}" alt="{{ $sectionImg->siArSubject }}" class="img-fluid">
+                                                @endif
                                                 <div class="direction-reveal__overlay">
                                                     @if($lan == 'fa')
                                                         <h4 class="direction-reveal__title">{{ $sectionImg->siFaSubject }}</h4>
@@ -151,7 +162,7 @@
                                     @if($lan == 'fa')
                                         <img src="{{ asset($sectionImg->gallery->gPath .'?v' . config('app.version')) }}" alt="{{ $sectionImg->siFaSubject }}" data-description="{{ $sectionImg->siFaDescription }}">
                                     @elseif($lan == 'en')
-                                        <img  src="{{ asset($sectionImg->gallery->gPath .'?v' . config('app.version')) }}" alt="{{ $sectionImg->siEnSubject }}" data-description="{{ $sectionImg->siEnDescription }}">
+                                        <img src="{{ asset($sectionImg->gallery->gPath .'?v' . config('app.version')) }}" alt="{{ $sectionImg->siEnSubject }}" data-description="{{ $sectionImg->siEnDescription }}">
                                     @elseif($lan == 'ar')
                                         <img src="{{ asset($sectionImg->gallery->gPath .'?v' . config('app.version')) }}" alt="{{ $sectionImg->siArSubject }}" data-description="{{ $sectionImg->siArDescription }}">
                                     @endif
@@ -205,15 +216,16 @@
                                             <div class="grid-x">
                                                 @for( ; $item < (($i + 1) * 4);$item++)
                                                     <div class="medium-3 style_prevu_kit element-dir">
-                                                        <img style="height: 520px;" class="img-size" src="{{ asset($section->sectionImg[$item]['gallery']['gPath'] .'?v' . config('app.version')) }}">
-                                                        @if($lan == 'fa')
-                                                            <p style="margin-top: -50px;" class="withe-color my-text-shadow-effect-blue center-el">{{ $section->sectionImg[$item]['siFaSubject'] }}</p>
-                                                        @elseif($lan == 'en')
-                                                            <p style="margin-top: -50px;" class="withe-color my-text-shadow-effect-blue center-el Roboto">{{ $section->sectionImg[$item]['siEnSubject'] }}</p>
-                                                        @elseif($lan == 'ar')
-                                                            <p style="margin-top: -50px;" class="withe-color my-text-shadow-effect-blue center-el Al-Jazeera-Arabic-Regular">{{ $section->sectionImg[$item]['siArSubject'] }}</p>
-                                                        @endif
-
+                                                        <a href="{{ url(($lan != 'en' ? $lan : '') . $section->sectionImg[$item]['siLink']) }}">
+                                                            <img  style="height: 520px" class="img-size" src="{{ asset($section->sectionImg[$item]['gallery']['gPath'] .'?v' . config('app.version')) }}">
+                                                            @if($lan == 'fa')
+                                                                <p style="margin-top: -50px;" class="withe-color my-text-shadow-effect-blue center-el">{{ $section->sectionImg[$item]['siFaSubject'] }}</p>
+                                                            @elseif($lan == 'en')
+                                                                <p style="margin-top: -50px;" class="withe-color my-text-shadow-effect-blue center-el Roboto">{{ $section->sectionImg[$item]['siEnSubject'] }}</p>
+                                                            @elseif($lan == 'ar')
+                                                                <p style="margin-top: -50px;" class="withe-color my-text-shadow-effect-blue center-el Al-Jazeera-Arabic-Regular">{{ $section->sectionImg[$item]['siArSubject'] }}</p>
+                                                            @endif
+                                                        </a>
                                                     </div>
                                                 @endfor
                                             </div>
@@ -418,21 +430,21 @@
                             <div class="text-center"  id="gallery" style="display:none">
                                 @foreach($section->sectionVideo as $sectionVideo)
                                     @if($lan == 'fa')
-                                        <img alt="Html5 Video"
+                                        <img alt="{{ $sectionVideo['svFaSubject'] }}"
                                              src="{{ asset($sectionVideo['gallery']['gPosterPath'] .'?v' . config('app.version')) }}"
                                              data-type="html5video"
                                              data-image="{{ asset($sectionVideo['gallery']['gPosterPath'] .'?v' . config('app.version')) }}"
                                              data-videomp4="{{ asset($sectionVideo['gallery']['gPath'] .'?v' . config('app.version')) }}"
                                              data-description="{{ $sectionVideo['svFaSubject'] }}">
                                     @elseif($lan == 'en')
-                                        <img alt="Html5 Video"
+                                        <img alt="{{ $sectionVideo['svEnSubject'] }}"
                                              src="{{ asset($sectionVideo['gallery']['gPosterPath'] .'?v' . config('app.version')) }}"
                                              data-type="html5video"
                                              data-image="{{ asset($sectionVideo['gallery']['gPosterPath'] .'?v' . config('app.version')) }}"
                                              data-videomp4="{{ asset($sectionVideo['gallery']['gPath'] .'?v' . config('app.version')) }}"
                                              data-description="{{ $sectionVideo['svEnSubject'] }}">
                                     @elseif($lan == 'ar')
-                                        <img alt="Html5 Video"
+                                        <img alt="{{ $sectionVideo['svArSubject'] }}"
                                              src="{{ asset($sectionVideo['gallery']['gPosterPath'] .'?v' . config('app.version')) }}"
                                              data-type="html5video"
                                              data-image="{{ asset($sectionVideo['gallery']['gPosterPath'] .'?v' . config('app.version')) }}"
@@ -500,9 +512,9 @@
                         @if($lan == 'fa')
                             <div class="text-justify element-distanse size-18">{!! $section->sFaDescription !!}</div>
                         @elseif($lan == 'en')
-                            <div class="text-justify element-distanse Raleway-Regular size-24">{!! $section->sEnDescription !!}</div>
+                            <div class="text-justify element-distanse Raleway-Regular size-21">{!! $section->sEnDescription !!}</div>
                         @elseif($lan == 'ar')
-                            <div class="text-justify element-distanse Al-Jazeera-Arabic-Regular">{!! $section->sArDescription !!}</div>
+                            <div class="text-justify element-distanse Al-Jazeera-Arabic-Regular size-18">{!! $section->sArDescription !!}</div>
                         @endif
                     </div>
                     <div class="large-offset-2 medium-offset-2"></div>
@@ -547,16 +559,25 @@
                                         <img style="height: 80vh;background-size: cover;" class=" img-responsive zoom-hover" src="{{ asset($sectionImg->gallery->gPath .'?v' . config('app.version')) }}">
                                     </a>
                                 </li>
-                                <?php $counter++; ?>
-                                @endforeach
+                            <?php $counter++; ?>
+                        @endforeach
                     </ul>
+                    <div class="large-12 text-center">
+                        @if($lan == 'fa')
+                            <span class="font-small text-color">{{ $section->sectionImg[0]['gallery']['gFaLocation'] . ' - عکس:' . $section->sectionImg[0]['gallery']['gFaPhotographer'] }}</span>
+                        @elseif($lan == 'en')
+                            <span class="font-small text-color">{{ $section->sectionImg[0]['gallery']['gEnLocation'] . ' - Photo:' . $section->sectionImg[0]['gallery']['gEnPhotographer'] }}</span>
+                        @elseif($lan == 'ar')
+                            <span class="font-small text-color">{{ $section->sectionImg[0]['gallery']['gArLocation'] . ' - مصور:' . $section->sectionImg[0]['gallery']['gArPhotographer'] }}</span>
+                        @endif
+                    </div>
                 </div>
             </div>
             <!--Light Box Image End-->
         @elseif($section->sectionType->stType == 'CONTENT_BRIEF_NEWS')
             <!--News Section Start-->
             <?php
-            $newNews = \Hamedan_2018\News::getNewNews();
+            $newNews = \Hamedan_2018\News::getNewNews($lan);
             ?>
             <div id="ploop" style="padding-top: 150px" class="grid-container">
                 <div class="grid-x">

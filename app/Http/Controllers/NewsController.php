@@ -31,8 +31,34 @@ class NewsController extends Controller
             $advertise = Advertise::where('aState' , '=' , 1)->with('gallery')->first();
         else
             $advertise = null;
+
         $newsSlider = NewsSlider::with('gallery')->where('nsState' , '=' , 1)->orderBy('nsOrder' , 'DESC')->get();
-        $allNews = News::with('newsImg')->where('nState' , '=' , 1)->orderBy('id' , 'DESC')->paginate(6);
+        if ($lan == 'en')
+        {
+            $allNews = News::with('newsImg')
+                ->where('nState' , '=' , 1)
+                ->where('nEnSubject' , '<>' , '')
+                ->where('nEnBriefDescription' , '<>' , '')
+                ->where('nEnDescription' , '<>' , '')
+                ->orderBy('id' , 'DESC')
+                ->paginate(6);
+        }else if ($lan == 'fa') {
+            $allNews = News::with('newsImg')
+                ->where('nState' , '=' , 1)
+                ->where('nFaSubject' , '<>' , '')
+                ->where('nFaBriefDescription' , '<>' , '')
+                ->where('nFaDescription' , '<>' , '')
+                ->orderBy('id' , 'DESC')
+                ->paginate(6);
+        }else if ($lan == 'ar'){
+            $allNews = News::with('newsImg')
+                ->where('nState' , '=' , 1)
+                ->where('nArSubject' , '<>' , '')
+                ->where('nArBriefDescription' , '<>' , '')
+                ->where('nArDescription' , '<>' , '')
+                ->orderBy('id' , 'DESC')
+                ->paginate(6);
+        }
         return view('pages.news' , ['allNews' => $allNews ,
             'newsSlider' => $newsSlider ,
             'advertise' => $advertise ,

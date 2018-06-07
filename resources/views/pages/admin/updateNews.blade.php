@@ -84,7 +84,7 @@
                     <div class="grid-x">
                         <div class="large-8 medium-12 small-12 padding-lr-fs">
                             <label>عنوان
-                                <input  type="text" value="{{ $news->nArSubject }}"  name="arSubject" required>
+                                <input  type="text" value="{{ $news->nArSubject }}"  name="arSubject">
                                 <span class="form-error">
                       لطفا عنوان (عربی) خبر را وارد نمایید !
                                 </span>
@@ -94,7 +94,7 @@
                     <div class="grid-x">
                         <div class="large-8 medium-12 small-12 padding-lr-fs">
                             <label>خلاصه خبر
-                                <textarea  type="text" style="height: 90px;"  name="arBriefDescription" required>{{ $news->nArBriefDescription }}</textarea>
+                                <textarea  type="text" style="height: 90px;"  name="arBriefDescription">{{ $news->nArBriefDescription }}</textarea>
                                 <span class="form-error">
                       لطفا خلاصه (عربی) خبر را وارد نمایید !
                                </span>
@@ -121,7 +121,7 @@
                     <div class="grid-x">
                         <div class="large-8 medium-12 small-12 padding-lr-fs">
                             <label>عنوان
-                                <input  type="text" value="{{ $news->nEnSubject }}" value="{{ $news->nEnSubject }}"  name="enSubject" required>
+                                <input  type="text" value="{{ $news->nEnSubject }}" value="{{ $news->nEnSubject }}"  name="enSubject">
                                 <span class="form-error">
                       لطفا عنوان (انگلیسی) خبر را وارد نمایید !
                                 </span>
@@ -131,7 +131,7 @@
                     <div class="grid-x">
                         <div class="large-8 medium-12 small-12 padding-lr-fs">
                             <label>خلاصه خبر
-                                <textarea  type="text" style="height: 90px;"  name="enBriefDescription" required>{{ $news->nEnBriefDescription }}</textarea>
+                                <textarea  type="text" style="height: 90px;"  name="enBriefDescription">{{ $news->nEnBriefDescription }}</textarea>
                                 <span class="form-error">
                       لطفا خلاصه (انگلیسی) خبر را وارد نمایید !
                                </span>
