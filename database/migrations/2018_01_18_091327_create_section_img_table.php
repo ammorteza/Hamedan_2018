@@ -20,7 +20,7 @@ class CreateSectionImgTable extends Migration
                 $table->integer('siGId')->length(10)->unsigned();
                 $table->unsignedTinyInteger('siOrder')->default(1);
                 $table->boolean('siState')->default(true);
-                $table->string('siLink')->unique()->nullable();
+                $table->string('siLink')->nullable();
 
                 $table->string('siFaAlt');
                 $table->string('siEnAlt');
