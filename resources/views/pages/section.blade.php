@@ -768,83 +768,70 @@
                 </div>
             </div>
             <!--Section Spliter Start-->
+        @elseif($section->sectionType->stType == 'CONTENT_EVENTS')
+            <!--Section Events Start-->
+            <?php
+                $events = \Hamedan_2018\Event::getAllEvents($section->sEventType);
+            ?>
+            <div class="grid-container element-distance-tb">
+                <div class="grid-x">
+                    @foreach($events as $event)
+                        <div class="large-offset-2"></div>
+                        <div class="large-8 medium-12 small-12">
+                            <div class="grid-x {{ !$loop->last ? 'event-border' : '' }}">
+                                <div class="large-3 medium-6 small-12">
+                                    <img class="image-shadow-effect" style="height:260px;margin-bottom: 45px;" src="{{ asset($event->gallery->gPath) }}">
+                                </div>
+                                <div class="large-9 medium-6 small-12">
+                                    <div class="grid-x">
+                                        <div class="large-offset-2"></div>
+                                        <div class="large-8 medium-8 small-12">
+                                            @if($lan == 'fa')
+                                                @if($event->eLink == '')
+                                                    <h4 class="Shabnam-Bold header-color">{{ $event->eFaSubject }}</h4>
+                                                @else
+                                                    <a href="{{ url($lan . $event->eLink) }}"><h4 class="Shabnam-Bold header-color">{{ $event->eFaSubject }}</h4></a>
+                                                @endif
+                                                <div class="text-color two-line element-distanse Shabnam-Light">{!! $event->eFaBriefDescription !!}</div>
+                                                <p class="Shabnam-Bold {{ $event->eExpired == 1 ? 'holding-time-expire' : '' }}"><i class="fas fa-calendar-check size-24 element-distanse btn-red"></i><span class="padding-lr size-16 btn-red">{{ $event->eFaHoldingTime }}</span></p>
+                                            @elseif($lan == 'en')
+                                                @if($event->eLink == '')
+                                                    <h4 class="Roboto-Bold header-color">{{ $event->eEnSubject }}</h4>
+                                                @else
+                                                    <a href="{{ url($event->eLink) }}"><h4 class="Roboto-Bold header-color">{{ $event->eEnSubject }}</h4></a>
+                                                @endif
+                                                <div class="text-color two-line element-distanse Raleway-Regular">{!! $event->eEnBriefDescription !!}</div>
+                                                <p class="Roboto-Bold {{ $event->eExpired == 1 ? 'holding-time-expire' : '' }}"><i class="fas fa-calendar-check size-24 element-distanse btn-red"></i><span class="padding-lr size-16 btn-red">{{ $event->eEnHoldingTime }}</span></p>
+                                            @elseif($lan == 'ar')
+                                                @if($event->eLink == '')
+                                                    <h4 class="Al-Jazeera-Arabic-Bold header-color">{{ $event->eArSubject }}</h4>
+                                                @else
+                                                    <a href="{{ url($lan . $event->eLink) }}"><h4 class="Roboto-Bold header-color">{{ $event->eArSubject }}</h4></a>
+                                                @endif
+                                                <div class="text-color two-line element-distanse Al-Jazeera-Arabic-Regular">{!! $event->eArBriefDescription !!}</div>
+                                                <p class="Al-Jazeera-Arabic-Bold {{ $event->eExpired == 1 ? 'holding-time-expire' : '' }}"><i class="fas fa-calendar-check size-24 element-distanse btn-red"></i><span class="padding-lr size-16 btn-red">{{ $event->eArHoldingTime }}</span></p>
+                                            @endif
+                                        </div>
+                                        <div class="large-offset-2"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="large-offset-2"></div>
+                    @endforeach
+                </div>
+            </div>
+            <!--Section Events End-->
         @endif
         <!--Section pannellum-master-360 Start-->
-        <div class="grid-container">
+{{--        <div class="grid-container">
             <div class="grid-x">
                 <div class="large-12 medium-12 small-12">
                     <iframe width="100%" height="600vh"  allowfullscreen style="border-style:none;" src="{{ asset('pannellum-master-360/src/standalone/pannellum.htm?config=../../examples/example-tour.json')}}"></iframe>
                 </div>
             </div>
-        </div>
+        </div>--}}
         <!--Section pannellum-master-360 End-->
 
-        <!--Section Events Start-->
-        <div class="grid-container element-distanse">
-            <div class="grid-x">
-                <div class="large-offset-2">
-
-                </div>
-                <div class="large-8 medium-12 small-12">
-                    <div class="grid-x event-border">
-                        <div class="large-3 medium-6 small-12">
-                            <img class="image-shadow-effect" style="height:260px;margin-bottom: 45px;" src="{{ asset('pic/gallery/lan_1.jpg') }}">
-                        </div>
-                        <div class="large-9 medium-6 small-12">
-                            <div class="grid-x">
-                                <div class="large-offset-2">
-
-                                </div>
-                                <div class="large-8 medium-8 small-12">
-                                    <h5 class="Roboto-Bold header-color">Sardar Hamedani International Championship Wrestling Cup – Hamedan - March 2018</h5>
-                                    <p class="text-color two-line element-distanse">Due to the targeting of the Islamic Republic of Iran in the field of tourism and the movement towards the success of this industry in </p>
-                                    <p class="Roboto-Bold"><i class="fas fa-calendar-check size-24 element-distanse btn-red"></i><span class="padding-lr size-16 btn-red">23 March 2018</span></p>
-                                </div>
-                                <div class="large-offset-2">
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="large-offset-2">
-
-                </div>
-
-                <div class="large-offset-2">
-
-                </div>
-                <div class="large-8 medium-12 small-12">
-                    <div class="grid-x event-border">
-                        <div class="large-3 medium-6 small-12">
-                            <img class="image-shadow-effect" style="height:260px;margin-bottom: 45px;" src="{{ asset('pic/gallery/lan_1.jpg') }}">
-                        </div>
-                        <div class="large-9 medium-6 small-12">
-                            <div class="grid-x">
-                                <div class="large-offset-2">
-
-                                </div>
-                                <div class="large-8 medium-8 small-12">
-                                    <h5 class="Roboto-Bold header-color">Sardar Hamedani International Championship Wrestling Cup – Hamedan - March 2018</h5>
-                                    <p class="text-color two-line element-distanse">Due to the targeting of the Islamic Republic of Iran in the field of tourism and the movement towards the success of this industry in </p>
-                                    <p class="Roboto-Bold"><i class="fas fa-calendar-check size-24 element-distanse btn-red"></i><span class="padding-lr size-16 btn-red">23 March 2018</span></p>
-                                </div>
-                                <div class="large-offset-2">
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="large-offset-2">
-
-                </div>
-            </div>
-        </div>
-        <!--Section Events End-->
     @endforeach
 @stop

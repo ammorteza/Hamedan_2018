@@ -21,6 +21,7 @@ class CreateSectionTable extends Migration
                 $table->integer('sMmId')->length(10)->unsigned()->nullable(); //use for create SUB_MENU sections
                 $table->integer('sFrId')->length(10)->unsigned()->nullable();
 
+                $table->unsignedTinyInteger('sEventType')->nullable();
                 $table->unsignedTinyInteger('sOrder')->default(1);
                 $table->boolean('sState')->default(true);
                 $table->boolean('sFullScreen')->default(true);
