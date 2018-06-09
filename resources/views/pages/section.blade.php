@@ -832,6 +832,60 @@
             </div>
         </div>--}}
         <!--Section pannellum-master-360 End-->
-
+        <form id="msform" data-abide novalidate>
+            <div data-abide-error class="alert callout" style="display: none;">
+                <p><i class="fi-alert"></i> There are some errors in your form.</p>
+            </div>
+            <!-- progressbar -->
+            <ul id="progressbar">
+                <li class="active">Account Setup</li>
+                <li>Social Profiles</li>
+                <li>Personal Details</li>
+                <li>4</li>
+            </ul>
+            <!-- fieldsets -->
+            <fieldset>
+                <h2 class="fs-title">Question 1</h2>
+                <h3 class="fs-subtitle">What do you consider your main strengths to be?</h3>
+                <!--<p class="help-block">List your strengths here.</p>-->
+                <div class="grid-x grid-padding-x">
+                    <div class="large-12 medium-12 small-12">
+                        <label>Number Required
+                            <input type="text" placeholder="1234" aria-describedby="exampleHelpText" required pattern="number">
+                        </label>
+                        <p class="help-text" id="exampleHelpText">Here's how you use this input field!</p>
+                    </div>
+                </div>
+                <div class="grid-x grid-padding-x">
+                    <div class="large-12 medium-12 small-12">
+                        <label>Input Label
+                            <input type="text" name="CAT_Custom_2" id="CAT_Custom_2" placeholder=".medium-6.cell">
+                        </label>
+                    </div>
+                </div>
+                <input type="button" name="next" class="next action-button" value="Next" />
+            </fieldset>
+            <fieldset>
+                <h2 class="fs-title">Question 2</h2>
+                <h3 class="fs-subtitle">What do your colleagues consider your main strengths to be?</h3>
+                <textarea class="form-control" name="CAT_Custom_2" id="CAT_Custom_2" rows="4" onkeydown="if(this.value.length>=4000)this.value=this.value.substring(0,3999);"></textarea>
+                <input type="button" name="previous" class="previous action-button" value="Previous" />
+                <input type="button" name="next" class="next action-button" value="Next" />
+            </fieldset>
+            <fieldset>
+                <h2 class="fs-title">Question 3</h2>
+                <h3 class="fs-subtitle">What have been your main achievements?</h3>
+                <textarea class="form-control" name="CAT_Custom_3" id="CAT_Custom_3" rows="4" onkeydown="if(this.value.length>=4000)this.value=this.value.substring(0,3999);"></textarea>
+                <input type="button" name="previous" class="previous action-button" value="Previous" />
+                <input type="button" name="next" class="next action-button" value="Next" />
+            </fieldset>
+            <fieldset>
+                <h2 class="fs-title">Question 10</h2>
+                <h3 class="fs-subtitle">What postgraduate qualifications or training do you wish to obtain?</h3>
+                <textarea class="form-control" name="CAT_Custom_10" id="CAT_Custom_10" rows="4" onkeydown="if(this.value.length>=4000)this.value=this.value.substring(0,3999);"></textarea>
+                <input type="button" name="previous" class="previous action-button" value="Previous" />
+                <input type="submit" name="submit" class="submit action-button" value="Submit" />
+            </fieldset>
+        </form>
     @endforeach
 @stop
