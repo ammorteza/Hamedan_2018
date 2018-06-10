@@ -580,13 +580,7 @@
             easing: 'easeInBack'
         });
     });
-
-
-
 </script>
 <!--Multi Step Forms-->
-
-
-
 </body>
 </html>
