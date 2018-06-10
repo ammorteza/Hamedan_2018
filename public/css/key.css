@@ -1540,13 +1540,17 @@ ul.social-icons {
 }
 .event-border{
     border-bottom: .1rem solid #EEEEEE;
-    margin: 25px 0px 20px 0px;
+    margin: 25px 0px 35px 0px;
 }
 
 .header-color{
     color: #3b444f;
 }
 
+.holding-time-expire{
+    text-decoration: line-through;
+    text-decoration-color: #d9534f;
+}
 
 /*////////////////////////////// Multi Step Form Styles ///////////////////////////*/
 /*form styles*/
@@ -1676,7 +1680,6 @@ ul.social-icons {
 
 
 /*////////////////////////////// Multi Step Form Styles ///////////////////////////*/
-
 /*-------------------------------Media Queries------------------------------------*/
 @media only screen and (max-width: 1024px) {
     .mq-topmenu-status{
