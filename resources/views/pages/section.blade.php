@@ -955,12 +955,14 @@
                 <h2 class="fs-title">Question 1</h2>
                 <h3 class="fs-subtitle">What do you consider your main strengths to be?</h3>
                 <!--<p class="help-block">List your strengths here.</p>-->
-                <div class="grid-x grid-padding-x">
+                <div class="grid-x">
                     <div class="large-12 medium-12 small-12">
                         <label>Number Required
-                            <input type="text" placeholder="1234" aria-describedby="exampleHelpText" required pattern="number">
+                            <input type="text" placeholder="1234" required pattern="number">
+                            <span class="form-error">
+                                Yo, you had better fill this out, it's required.
+                            </span>
                         </label>
-                        <p class="help-text" id="exampleHelpText">Here's how you use this input field!</p>
                     </div>
                 </div>
                 <div class="grid-x grid-padding-x">
