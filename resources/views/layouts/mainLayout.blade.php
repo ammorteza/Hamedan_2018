@@ -14,14 +14,14 @@
     @endif
     <link rel="icon" type="image/png" href="{{ asset('pic/footer/footer-logo.png') }}">
     <!— Global site tag (gtag.js) - Google Analytics —>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116472209-1"></script>
+    {{--<script async src="https://www.googletagmanager.com/gtag/js?id=UA-116472209-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
 
         gtag('config', 'UA-116472209-1');
-    </script>
+    </script>--}}
     <!-- Fonts -->
     <link rel="stylesheet" href="{{ asset('fontawesome-free-5.0.0/web-fonts-with-css/css/fontawesome-all.min.css?v' . config('app.version')) }}">
     <link rel="stylesheet" href="{{ asset('css/direction-reveal.css?v' . config('app.version')) }}">
@@ -33,7 +33,7 @@
     <link rel="stylesheet" href="{{ asset('css/hoverEffect/demo.css') }}">
     <link rel="stylesheet" href="{{ asset('css/hoverEffect/set1.css') }}">
     <link rel="stylesheet" href="{{ asset('css/foundation.css?v' . config('app.version')) }}">
-    <link href="https://fonts.googleapis.com/css?family=Satisfy|Poiret+One|Cabin|Wire+One|Merienda|Roboto" rel="stylesheet">
+    {{--<link href="https://fonts.googleapis.com/css?family=Satisfy|Poiret+One|Cabin|Wire+One|Merienda|Roboto" rel="stylesheet">--}}
     {{--<link href="https://cdnjs.cloudflare.com/ajax/libs/motion-ui/1.2.2/motion-ui.css" rel="stylesheet">--}}
     <link rel="stylesheet" href="{{ asset('css/font.css?v' . config('app.version')) }}">
     <link rel="stylesheet" href="{{ asset('css/key.css?v' . config('app.version')) }}">
@@ -536,7 +536,7 @@
                 current_fs.css({'transform': 'scale('+scale+')'});
                 next_fs.css({'left': left, 'opacity': opacity});
             },
-            duration: 500,
+            duration: 100,
             complete: function(){
                 current_fs.hide();
                 animating = false;
@@ -571,7 +571,7 @@
                 current_fs.css({'left': left});
                 previous_fs.css({'transform': 'scale('+scale+')', 'opacity': opacity});
             },
-            duration: 500,
+            duration: 100,
             complete: function(){
                 current_fs.hide();
                 animating = false;
@@ -581,9 +581,7 @@
         });
     });
 
-    $(".submit").click(function(){
-        return false;
-    })
+
 
 </script>
 <!--Multi Step Forms-->

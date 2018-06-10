@@ -776,23 +776,23 @@
             <div class="grid-container element-distance-tb">
                 <div class="grid-x">
                     @foreach($events as $event)
-                        <div class="large-offset-2"></div>
-                        <div class="large-8 medium-12 small-12">
+                        <div class="large-offset-2 medium-offset-1 small-offset-1"></div>
+                        <div class="large-8 medium-10 small-10">
                             <div class="grid-x {{ !$loop->last ? 'event-border' : '' }}">
-                                <div class="large-3 medium-6 small-12">
-                                    <img class="image-shadow-effect" style="height:260px;margin-bottom: 45px;" src="{{ asset($event->gallery->gPath) }}">
+                                <div class="large-3 medium-3 small-9">
+                                    <img class="image-shadow-effect" style="height:280px;margin-bottom: 45px;" src="{{ asset($event->gallery->gPath) }}">
                                 </div>
-                                <div class="large-9 medium-6 small-12">
+                                <div class="large-9 medium-9 small-12">
                                     <div class="grid-x">
-                                        <div class="large-offset-2"></div>
-                                        <div class="large-8 medium-8 small-12">
+                                        <div class="large-offset-2 medium-offset-1"></div>
+                                        <div class="large-8 medium-10 small-12">
                                             @if($lan == 'fa')
                                                 @if($event->eLink == '')
                                                     <h4 class="Shabnam-Bold header-color">{{ $event->eFaSubject }}</h4>
                                                 @else
                                                     <a href="{{ url($lan . $event->eLink) }}"><h4 class="Shabnam-Bold header-color">{{ $event->eFaSubject }}</h4></a>
                                                 @endif
-                                                <div class="text-color two-line element-distanse Shabnam-Light">{!! $event->eFaBriefDescription !!}</div>
+                                                <div class="text-color element-distanse Shabnam-Light">{!! $event->eFaBriefDescription !!}</div>
                                                 <p class="Shabnam-Bold {{ $event->eExpired == 1 ? 'holding-time-expire' : '' }}"><i class="fas fa-calendar-check size-24 element-distanse btn-red"></i><span class="padding-lr size-16 btn-red">{{ $event->eFaHoldingTime }}</span></p>
                                             @elseif($lan == 'en')
                                                 @if($event->eLink == '')
@@ -800,7 +800,7 @@
                                                 @else
                                                     <a href="{{ url($event->eLink) }}"><h4 class="Roboto-Bold header-color">{{ $event->eEnSubject }}</h4></a>
                                                 @endif
-                                                <div class="text-color two-line element-distanse Raleway-Regular">{!! $event->eEnBriefDescription !!}</div>
+                                                <div class="text-color element-distanse Raleway-Regular">{!! $event->eEnBriefDescription !!}</div>
                                                 <p class="Roboto-Bold {{ $event->eExpired == 1 ? 'holding-time-expire' : '' }}"><i class="fas fa-calendar-check size-24 element-distanse btn-red"></i><span class="padding-lr size-16 btn-red">{{ $event->eEnHoldingTime }}</span></p>
                                             @elseif($lan == 'ar')
                                                 @if($event->eLink == '')
@@ -808,16 +808,16 @@
                                                 @else
                                                     <a href="{{ url($lan . $event->eLink) }}"><h4 class="Roboto-Bold header-color">{{ $event->eArSubject }}</h4></a>
                                                 @endif
-                                                <div class="text-color two-line element-distanse Al-Jazeera-Arabic-Regular">{!! $event->eArBriefDescription !!}</div>
+                                                <div class="text-color element-distanse Al-Jazeera-Arabic-Regular">{!! $event->eArBriefDescription !!}</div>
                                                 <p class="Al-Jazeera-Arabic-Bold {{ $event->eExpired == 1 ? 'holding-time-expire' : '' }}"><i class="fas fa-calendar-check size-24 element-distanse btn-red"></i><span class="padding-lr size-16 btn-red">{{ $event->eArHoldingTime }}</span></p>
                                             @endif
                                         </div>
-                                        <div class="large-offset-2"></div>
+                                        <div class="large-offset-2 medium-offset-1"></div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="large-offset-2"></div>
+                        <div class="large-offset-2 medium-offset-1 small-offset-1"></div>
                     @endforeach
                 </div>
             </div>
@@ -832,62 +832,93 @@
             </div>
         </div>--}}
         <!--Section pannellum-master-360 End-->
-        <form id="msform" data-abide novalidate>
-            <div data-abide-error class="alert callout" style="display: none;">
-                <p><i class="fi-alert"></i> There are some errors in your form.</p>
-            </div>
-            <!-- progressbar -->
-            <ul id="progressbar">
-                <li class="active">Account Setup</li>
-                <li>Social Profiles</li>
-                <li>Personal Details</li>
-                <li>4</li>
-            </ul>
-            <!-- fieldsets -->
-            <fieldset>
-                <h2 class="fs-title">Question 1</h2>
-                <h3 class="fs-subtitle">What do you consider your main strengths to be?</h3>
-                <!--<p class="help-block">List your strengths here.</p>-->
-                <div class="grid-x">
-                    <div class="large-12 medium-12 small-12">
-                        <label>Number Required
-                            <input type="text" placeholder="1234" required pattern="number">
-                            <span class="form-error">
-                                Yo, you had better fill this out, it's required.
-                            </span>
-                        </label>
-                    </div>
-                </div>
-                <div class="grid-x grid-padding-x">
-                    <div class="large-12 medium-12 small-12">
-                        <label>Input Label
-                            <input type="text" name="CAT_Custom_2" id="CAT_Custom_2" placeholder=".medium-6.cell">
-                        </label>
-                    </div>
-                </div>
-                <input type="button" name="next" class="next action-button" value="Next" />
-            </fieldset>
-            <fieldset>
-                <h2 class="fs-title">Question 2</h2>
-                <h3 class="fs-subtitle">What do your colleagues consider your main strengths to be?</h3>
-                <textarea class="form-control" name="CAT_Custom_2" id="CAT_Custom_2" rows="4" onkeydown="if(this.value.length>=4000)this.value=this.value.substring(0,3999);"></textarea>
-                <input type="button" name="previous" class="previous action-button" value="Previous" />
-                <input type="button" name="next" class="next action-button" value="Next" />
-            </fieldset>
-            <fieldset>
-                <h2 class="fs-title">Question 3</h2>
-                <h3 class="fs-subtitle">What have been your main achievements?</h3>
-                <textarea class="form-control" name="CAT_Custom_3" id="CAT_Custom_3" rows="4" onkeydown="if(this.value.length>=4000)this.value=this.value.substring(0,3999);"></textarea>
-                <input type="button" name="previous" class="previous action-button" value="Previous" />
-                <input type="button" name="next" class="next action-button" value="Next" />
-            </fieldset>
-            <fieldset>
-                <h2 class="fs-title">Question 10</h2>
-                <h3 class="fs-subtitle">What postgraduate qualifications or training do you wish to obtain?</h3>
-                <textarea class="form-control" name="CAT_Custom_10" id="CAT_Custom_10" rows="4" onkeydown="if(this.value.length>=4000)this.value=this.value.substring(0,3999);"></textarea>
-                <input type="button" name="previous" class="previous action-button" value="Previous" />
-                <input type="submit" name="submit" class="submit action-button" value="Submit" />
-            </fieldset>
-        </form>
+
     @endforeach
+    <div style="min-height: 100vh" class="grid-container">
+        <div class="grid-x">
+            <form id="msform" data-abide novalidate>
+                <div class="grid-container">
+                    <div class="grid-x">
+                        <div class="large-offset-1 medium-offset-1"></div>
+                        <div class="large-10 medium-10">
+                            <div  data-abide-error class="alert callout padding-lr-fs" style="display: none;margin-bottom: 50px;">
+                                <p><i class="fi-alert"></i> There are some errors in your form.</p>
+                            </div>
+                            <!-- progressbar -->
+                            <ul class="text-center" id="progressbar">
+                                <li class="active"></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </div>
+                        <div class="large-offset-1 medium-offset-1"></div>
+                    </div>
+                </div>
+
+                <div class="element-distanse"></div>
+                <!-- fieldsets -->
+                <fieldset>
+                    <h3 class="fs-subtitle">What do you consider your main strengths to be?</h3>
+                    <!--<p class="help-block">List your strengths here.</p>-->
+                    <div class="grid-x">
+                        <div class="large-12 medium-12 small-12">
+                            <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> Number Required
+                                <input type="text" placeholder="1234" required pattern="number">
+                                <span class="form-error">
+                                        Yo, you had better fill this out, it's required.
+                                    </span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="grid-x">
+                        <div class="large-12 medium-12 small-12">
+                            <label> <span class="btn-red"><i class="fas fa-star size-12"></i></span> Input Label
+                                <input type="text" name="CAT_Custom_2" id="CAT_Custom_2" placeholder=".medium-6.cell">
+                            </label>
+                        </div>
+                    </div>
+                    <div class="grid-x">
+                        <div class="large-12 medium-12 small-12">
+                            <label>European Cars
+                                <select id="select" required>
+                                    <option value=""></option>
+                                    <option value="volvo">Volvo</option>
+                                    <option value="saab">Saab</option>
+                                    <option value="mercedes">Mercedes</option>
+                                    <option value="audi">Audi</option>
+                                </select>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="grid-x">
+                        <div class="large-12 medium-12 small-12">
+                            <input id="checkbox1" type="checkbox"><label for="checkbox1">Checkbox 1</label>
+                            <input id="checkbox2" type="checkbox"><label for="checkbox2">Checkbox 2</label>
+                            <input id="checkbox3" type="checkbox"><label for="checkbox3">Checkbox 3</label>
+                    </div>
+                    </div>
+                    <input type="button" name="next" class="next action-button float-center" value="Next" />
+                </fieldset>
+                <fieldset>
+                    <h3 class="fs-subtitle">What do your colleagues consider your main strengths to be?</h3>
+                    <textarea class="form-control" name="CAT_Custom_2" id="CAT_Custom_2" rows="4" onkeydown="if(this.value.length>=4000)this.value=this.value.substring(0,3999);"></textarea>
+                    <input type="button" name="previous" class="previous action-button" value="Previous" />
+                    <input type="button" name="next" class="next action-button" value="Next" />
+                </fieldset>
+                <fieldset>
+                    <h3 class="fs-subtitle">What have been your main achievements?</h3>
+                    <textarea class="form-control" name="CAT_Custom_3" id="CAT_Custom_3" rows="4" onkeydown="if(this.value.length>=4000)this.value=this.value.substring(0,3999);"></textarea>
+                    <input type="button" name="previous" class="previous action-button" value="Previous" />
+                    <input type="button" name="next" class="next action-button" value="Next" />
+                </fieldset>
+                <fieldset>
+                    <h3 class="fs-subtitle">What postgraduate qualifications or training do you wish to obtain?</h3>
+                    <textarea class="form-control" name="CAT_Custom_10" id="CAT_Custom_10" rows="4" onkeydown="if(this.value.length>=4000)this.value=this.value.substring(0,3999);"></textarea>
+                    <input type="button" name="previous" class="previous action-button" value="Previous" />
+                    <input type="submit" name="submit" class="submit action-button" value="Submit" />
+                </fieldset>
+            </form>
+        </div>
+    </div>
 @stop
