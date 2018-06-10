@@ -780,7 +780,13 @@
                         <div class="large-8 medium-12 small-12">
                             <div class="grid-x {{ !$loop->last ? 'event-border' : '' }}">
                                 <div class="large-3 medium-6 small-12">
-                                    <img class="image-shadow-effect" style="height:260px;margin-bottom: 45px;" src="{{ asset($event->gallery->gPath) }}">
+                                    @if($lan == 'fa')
+                                        <img alt="{{ $event->eFaSubject }}" class="image-shadow-effect" style="height:280px;margin-bottom: 45px;" src="{{ asset($event->gallery->gPath) }}">
+                                    @elseif($lan == 'en')
+                                        <img alt="{{ $event->eEnSubject }}" class="image-shadow-effect" style="height:280px;margin-bottom: 45px;" src="{{ asset($event->gallery->gPath) }}">
+                                    @elseif($lan == 'ar')
+                                        <img alt="{{ $event->eArSubject }}" class="image-shadow-effect" style="height:280px;margin-bottom: 45px;" src="{{ asset($event->gallery->gPath) }}">
+                                    @endif
                                 </div>
                                 <div class="large-9 medium-6 small-12">
                                     <div class="grid-x">

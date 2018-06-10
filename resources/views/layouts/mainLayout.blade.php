@@ -581,14 +581,7 @@
         });
     });
 
-    $(".submit").click(function(){
-        return false;
-    })
-
 </script>
 <!--Multi Step Forms-->
-
-
-
 </body>
 </html>

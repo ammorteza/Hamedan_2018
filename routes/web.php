@@ -67,5 +67,6 @@ Route::group(['middleware' => ['auth']] , function () {
 
 Route::get('/admin/login', 'AuthController@loginFrom');
 Route::post('/admin/signIn', 'AuthController@signIn');
+Route::get('/register-form' , 'RegisterController@registerForm');
 
 
