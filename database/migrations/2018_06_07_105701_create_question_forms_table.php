@@ -18,12 +18,15 @@ class CreateQuestionFormsTable extends Migration
             $table->integer('qfPId')->length(10)->unsigned();
             $table->integer('qfFrId')->length(10)->unsigned();
             $table->integer('qfQId')->length(10)->unsigned();
+            $table->integer('qfQsId')->length(10)->unsigned()->nullable();
             $table->string('qfFaErrorMsg')->nullable();
             $table->string('qfEnErrorMsg')->nullable();
             $table->string('qfArErrorMsg')->nullable();
             $table->unsignedTinyInteger('qfRequire')->default(1);
             $table->unsignedTinyInteger('qfStep')->default(1);
             $table->unsignedTinyInteger('qfGrid')->default(12);
+            $table->unsignedTinyInteger('qfUnique')->default(0);
+            $table->unsignedTinyInteger('qfOrder')->default(1);
             $table->timestamps();
 
             $table->foreign('qfPId')
@@ -38,6 +41,11 @@ class CreateQuestionFormsTable extends Migration
 
             $table->foreign('qfQId')
                 ->references('id')->on('tbl_questions')
+                ->onDelete('restrict')
+                ->onUpdate('cascade');
+
+            $table->foreign('qfQsId')
+                ->references('id')->on('tbl_question_steps')
                 ->onDelete('restrict')
                 ->onUpdate('cascade');
         });

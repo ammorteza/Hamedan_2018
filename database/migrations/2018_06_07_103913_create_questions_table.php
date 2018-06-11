@@ -19,6 +19,9 @@ class CreateQuestionsTable extends Migration
             $table->string('qFaSubject')->nullable();
             $table->string('qEnSubject')->nullable();
             $table->string('qArSubject')->nullable();
+            $table->string('qFaPlaceHolder')->nullable();
+            $table->string('qEnPlaceHolder')->nullable();
+            $table->string('qArPlaceHolder')->nullable();
             $table->string('qName')->unique();
             $table->timestamps();
 

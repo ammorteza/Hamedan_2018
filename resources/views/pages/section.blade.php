@@ -828,6 +828,167 @@
                 </div>
             </div>
             <!--Section Events End-->
+        @elseif($section->sectionType->stType == 'CONTENT_FORM')
+            <?php
+                $form = \Hamedan_2018\Form::getForm($section->sFrId);
+                //dd($form);
+                $formStepsCount = \Hamedan_2018\Form::getStepsCount($section->sFrId);
+            ?>
+            <div style="min-height: 100vh" class="grid-container">
+                <div class="grid-x">
+                    <form id="msform" method="{{ $form->fMethod }}" data-abide novalidate>
+                        <div class="grid-container">
+                            <div class="grid-x">
+                                <div class="large-offset-1 medium-offset-1"></div>
+                                <div class="large-10 medium-10">
+                                    <div  data-abide-error class="alert callout padding-lr-fs" style="display: none;margin-bottom: 50px;">
+                                        <p><i class="fi-alert"></i> There are some errors in your form.</p>
+                                    </div>
+                                    @if($form->fIsMultiStepForm)
+                                        <!-- progressbar -->
+                                        <div class="center-el">
+                                            <ul class="text-center" id="progressbar">
+                                                <li class="active"></li>
+                                                @for($i = 1 ; $i < $formStepsCount ; $i++)
+                                                    <li></li>
+                                                @endfor
+                                            </ul>
+                                        </div>
+                                    @endif
+                                </div>
+                                <div class="large-offset-1 medium-offset-1"></div>
+                            </div>
+                        </div>
+                        <div class="element-distanse"></div>
+                        @for($i = 1 ; $i <= $formStepsCount ; $i++)
+                            <!-- fieldsets -->
+                            <fieldset>
+                                @if($lan == 'fa')
+                                    <h3 class="fs-subtitle ">{!! $form->questionForm[0]->questionStep->qsFaSubject !!}</h3>
+                                @elseif($lan == 'en')
+                                    <h3 class="fs-subtitle ">{!! $form->questionForm[0]->questionStep->qsEnSubject !!}</h3>
+                                @elseif($lan == 'ar')
+                                    <h3 class="fs-subtitle ">{!! $form->questionForm[0]->questionStep->qsArSubject !!}</h3>
+                                @endif
+
+                                <div class="grid-x">
+                                <!--<p class="help-block">List your strengths here.</p>-->
+                                @foreach($form->questionForm as $questionForm)
+                                    @if ($questionForm->qfStep == $i)
+                                        <div class="{{ 'large-' . $questionForm->qfGrid . ' medium-' . $questionForm->qfGrid . ' small-' . $questionForm->qfGrid }}">
+                                            @switch($questionForm->question->fieldType->ftType)
+                                                @case("text")
+                                                    @if($questionForm->qfRequire)
+                                                        @if($lan == 'fa')
+                                                            <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {{ $questionForm->question->qFaSubject }}
+                                                                <input name="{{ $questionForm->question->qName }}" type="text" placeholder="{{ $questionForm->question->qFaPlaceHolder }}" {{ $questionForm->qfRequire == 0 ? '' : 'required' }} pattern="{{ $questionForm->pattern->pType }}">
+                                                                <span class="form-error">{{ $questionForm->qfFaErrorMsg }}</span>
+                                                            </label>
+                                                        @elseif($lan == 'en')
+                                                            <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {{ $questionForm->question->qEnSubject }}
+                                                                <input name="{{ $questionForm->question->qName }}" type="text" placeholder="{{ $questionForm->question->qEnPlaceHolder }}" {{ $questionForm->qfRequire == 0 ? '' : 'required' }} pattern="{{ $questionForm->pattern->pType }}">
+                                                                <span class="form-error">{{ $questionForm->qfEnErrorMsg }}</span>
+                                                            </label>
+                                                        @elseif($lan == 'ar')
+                                                            <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {{ $questionForm->question->qArSubject }}
+                                                                <input name="{{ $questionForm->question->qName }}" type="text" placeholder="{{ $questionForm->question->qArPlaceHolder }}" {{ $questionForm->qfRequire == 0 ? '' : 'required' }} pattern="{{ $questionForm->pattern->pType }}">
+                                                                <span class="form-error">{{ $questionForm->qfArErrorMsg }}</span>
+                                                            </label>
+                                                        @endif
+                                                    @else
+                                                        @if($lan == 'fa')
+                                                            <label> {{ $questionForm->question->qFaSubject }}
+                                                                <input name="{{ $questionForm->question->qName }}" type="text" placeholder="{{ $questionForm->question->qFaPlaceHolder }}" {{ $questionForm->qfRequire == 0 ? '' : 'required' }} pattern="{{ $questionForm->pattern->pType }}">
+                                                                <span class="form-error">{{ $questionForm->qfFrErrorMsg }}</span>
+                                                            </label>
+                                                        @elseif($lan == 'en')
+                                                            <label> {{ $questionForm->question->qEnSubject }}
+                                                                <input name="{{ $questionForm->question->qName }}" type="text" placeholder="{{ $questionForm->question->qEnPlaceHolder }}" {{ $questionForm->qfRequire == 0 ? '' : 'required' }} pattern="{{ $questionForm->pattern->pType }}">
+                                                                <span class="form-error">{{ $questionForm->qfEnErrorMsg }}</span>
+                                                            </label>
+                                                        @elseif($lan == 'ar')
+                                                            <label> {{ $questionForm->question->qArSubject }}
+                                                                <input name="{{ $questionForm->question->qName }}" type="text" placeholder="{{ $questionForm->question->qArPlaceHolder }}" {{ $questionForm->qfRequire == 0 ? '' : 'required' }} pattern="{{ $questionForm->pattern->pType }}">
+                                                                <span class="form-error">{{ $questionForm->qfArErrorMsg }}</span>
+                                                            </label>
+                                                        @endif
+                                                    @endif
+                                            @endswitch
+                                        </div>
+{{--                                        <div class="large-12 medium-12 small-12">
+                                            <label> <span class="btn-red"><i class="fas fa-star size-12"></i></span> Input Label
+                                                <input type="text" name="CAT_Custom_2" id="CAT_Custom_2" placeholder=".medium-6.cell">
+                                            </label>
+                                        </div>
+
+                                        <div class="large-12 medium-12 small-12">
+                                            <label>European Cars
+                                                <select id="select" required>
+                                                    <option value=""></option>
+                                                    <option value="volvo">Volvo</option>
+                                                    <option value="saab">Saab</option>
+                                                    <option value="mercedes">Mercedes</option>
+                                                    <option value="audi">Audi</option>
+                                                </select>
+                                            </label>
+                                        </div>
+
+                                        <div class="large-6">
+                                            <legend style="margin-top: 8px;">Check these out</legend>
+                                            <input class="float-right" id="checkbox1" type="checkbox"><label for="checkbox1">Checkbox 1</label>
+                                            <input id="checkbox2" type="checkbox"><label for="checkbox2">Checkbox 2</label>
+                                            <input id="checkbox3" type="checkbox"><label for="checkbox3">Checkbox 3</label>
+                                        </div>
+
+                                        <div class="large-6">
+                                            <legend style="margin-top: 8px;">Choose Your Favorite, and this is required, so you have to pick one.</legend>
+                                            <input type="radio" name="pokemon" value="Red" id="pokemonRed"><label for="pokemonRed">Red</label>
+                                            <input type="radio" name="pokemon" value="Blue" id="pokemonBlue" required><label for="pokemonBlue">Blue</label>
+                                            <input type="radio" name="pokemon" value="Yellow" id="pokemonYellow"><label for="pokemonYellow">Yellow</label>
+                                        </div>--}}
+                                    @endif
+                                @endforeach
+                                </div>
+                                @if($form->fIsMultiStepForm && $formStepsCount > 1)
+                                    @if($i == 1)
+                                        <input type="button" name="next" class="next action-button float-center" value="Next" />
+                                    @elseif($i < $formStepsCount)
+                                        <input type="button" name="next" class="next action-button float-center" value="Next" />
+                                        <input type="button" name="previous" class="previous action-button" value="Previous" />
+                                    @else
+                                        <input type="button" name="previous" class="previous action-button" value="Previous" />
+                                        <input type="submit" name="submit" class="submit action-button" value="Submit" />
+                                    @endif
+                                @else
+                                    <input type="submit" name="submit" class="submit action-button" value="Submit" />
+                                @endif
+                            </fieldset>
+                        @endfor
+{{--                        <fieldset>
+                            <h3 class="fs-subtitle">What do your colleagues consider your main strengths to be?</h3>
+                            <div class="grid-x">
+                                <div class="large-12">
+                                    <textarea style="height: auto;" class="form-control" name="CAT_Custom_2" id="CAT_Custom_2"></textarea>
+                                </div>
+                            </div>
+                            <input type="button" name="previous" class="previous action-button" value="Previous" />
+                            <input type="button" name="next" class="next action-button" value="Next" />
+                        </fieldset>
+                        <fieldset>
+                            <h3 class="fs-subtitle">What have been your main achievements?</h3>
+                            <textarea class="form-control" name="CAT_Custom_3" id="CAT_Custom_3" rows="4" onkeydown="if(this.value.length>=4000)this.value=this.value.substring(0,3999);"></textarea>
+                            <input type="button" name="previous" class="previous action-button" value="Previous" />
+                            <input type="button" name="next" class="next action-button" value="Next" />
+                        </fieldset>
+                        <fieldset>
+                            <h3 class="fs-subtitle">What postgraduate qualifications or training do you wish to obtain?</h3>
+                            <textarea class="form-control" name="CAT_Custom_10" id="CAT_Custom_10" rows="4" onkeydown="if(this.value.length>=4000)this.value=this.value.substring(0,3999);"></textarea>
+                            <input type="button" name="previous" class="previous action-button" value="Previous" />
+                            <input type="submit" name="submit" class="submit action-button" value="Submit" />
+                        </fieldset>--}}
+                    </form>
+                </div>
+            </div>
         @endif
         <!--Section pannellum-master-360 Start-->
 {{--        <div class="grid-container">
@@ -840,107 +1001,4 @@
         <!--Section pannellum-master-360 End-->
 
     @endforeach
-    <div style="min-height: 100vh" class="grid-container">
-        <div class="grid-x">
-            <form id="msform" data-abide novalidate>
-                <div class="grid-container">
-                    <div class="grid-x">
-                        <div class="large-offset-1 medium-offset-1"></div>
-                        <div class="large-10 medium-10">
-                            <div  data-abide-error class="alert callout padding-lr-fs" style="display: none;margin-bottom: 50px;">
-                                <p><i class="fi-alert"></i> There are some errors in your form.</p>
-                            </div>
-                            <!-- progressbar -->
-                            <div class="center-el">
-                                <ul class="text-center" id="progressbar">
-                                    <li class="active"></li>
-                                    <li></li>
-                                    <li></li>
-                                    <li></li>
-                                </ul>
-                            </div>
-
-                        </div>
-                        <div class="large-offset-1 medium-offset-1"></div>
-                    </div>
-                </div>
-
-                <div class="element-distanse"></div>
-                <!-- fieldsets -->
-                <fieldset>
-                    <h3 class="fs-subtitle">What do you consider your main strengths to be?</h3>
-                    <!--<p class="help-block">List your strengths here.</p>-->
-                    <div class="grid-x">
-                        <div class="large-12 medium-12 small-12">
-                            <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> Number Required
-                                <input type="text" placeholder="1234" required pattern="number">
-                                <span class="form-error">
-                                        Yo, you had better fill this out, it's required.
-                                    </span>
-                            </label>
-                        </div>
-                    </div>
-                    <div class="grid-x">
-                        <div class="large-12 medium-12 small-12">
-                            <label> <span class="btn-red"><i class="fas fa-star size-12"></i></span> Input Label
-                                <input type="text" name="CAT_Custom_2" id="CAT_Custom_2" placeholder=".medium-6.cell">
-                            </label>
-                        </div>
-                    </div>
-                    <div class="grid-x">
-                        <div class="large-12 medium-12 small-12">
-                            <label>European Cars
-                                <select id="select" required>
-                                    <option value=""></option>
-                                    <option value="volvo">Volvo</option>
-                                    <option value="saab">Saab</option>
-                                    <option value="mercedes">Mercedes</option>
-                                    <option value="audi">Audi</option>
-                                </select>
-                            </label>
-                        </div>
-                    </div>
-                    <div class="grid-x">
-                        <div class="large-6">
-                            <legend style="margin-top: 8px;">Check these out</legend>
-                            <input class="float-right" id="checkbox1" type="checkbox"><label for="checkbox1">Checkbox 1</label>
-                            <input id="checkbox2" type="checkbox"><label for="checkbox2">Checkbox 2</label>
-                            <input id="checkbox3" type="checkbox"><label for="checkbox3">Checkbox 3</label>
-                        </div>
-                    </div>
-                    <div class="grid-x">
-                        <div class="large-6">
-                            <legend style="margin-top: 8px;">Choose Your Favorite, and this is required, so you have to pick one.</legend>
-                            <input type="radio" name="pokemon" value="Red" id="pokemonRed"><label for="pokemonRed">Red</label>
-                            <input type="radio" name="pokemon" value="Blue" id="pokemonBlue" required><label for="pokemonBlue">Blue</label>
-                            <input type="radio" name="pokemon" value="Yellow" id="pokemonYellow"><label for="pokemonYellow">Yellow</label>
-                        </div>
-                    </div>
-                    <input type="button" name="next" class="next action-button float-center" value="Next" />
-                </fieldset>
-                <fieldset>
-                    <h3 class="fs-subtitle">What do your colleagues consider your main strengths to be?</h3>
-                    <div class="grid-x">
-                        <div class="large-12">
-                            <textarea style="height: auto;" class="form-control" name="CAT_Custom_2" id="CAT_Custom_2"></textarea>
-                        </div>
-                    </div>
-                    <input type="button" name="previous" class="previous action-button" value="Previous" />
-                    <input type="button" name="next" class="next action-button" value="Next" />
-                </fieldset>
-                <fieldset>
-                    <h3 class="fs-subtitle">What have been your main achievements?</h3>
-                    <textarea class="form-control" name="CAT_Custom_3" id="CAT_Custom_3" rows="4" onkeydown="if(this.value.length>=4000)this.value=this.value.substring(0,3999);"></textarea>
-                    <input type="button" name="previous" class="previous action-button" value="Previous" />
-                    <input type="button" name="next" class="next action-button" value="Next" />
-                </fieldset>
-                <fieldset>
-                    <h3 class="fs-subtitle">What postgraduate qualifications or training do you wish to obtain?</h3>
-                    <textarea class="form-control" name="CAT_Custom_10" id="CAT_Custom_10" rows="4" onkeydown="if(this.value.length>=4000)this.value=this.value.substring(0,3999);"></textarea>
-                    <input type="button" name="previous" class="previous action-button" value="Previous" />
-                    <input type="submit" name="submit" class="submit action-button" value="Submit" />
-                </fieldset>
-            </form>
-        </div>
-    </div>
 @stop
