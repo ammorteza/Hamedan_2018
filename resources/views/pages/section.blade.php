@@ -851,12 +851,15 @@
                                 <p><i class="fi-alert"></i> There are some errors in your form.</p>
                             </div>
                             <!-- progressbar -->
-                            <ul class="text-center" id="progressbar">
-                                <li class="active"></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                            </ul>
+                            <div class="center-el">
+                                <ul class="text-center" id="progressbar">
+                                    <li class="active"></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                </ul>
+                            </div>
+
                         </div>
                         <div class="large-offset-1 medium-offset-1"></div>
                     </div>
@@ -898,17 +901,30 @@
                         </div>
                     </div>
                     <div class="grid-x">
-                        <div class="large-12 medium-12 small-12">
-                            <input id="checkbox1" type="checkbox"><label for="checkbox1">Checkbox 1</label>
+                        <div class="large-6">
+                            <legend style="margin-top: 8px;">Check these out</legend>
+                            <input class="float-right" id="checkbox1" type="checkbox"><label for="checkbox1">Checkbox 1</label>
                             <input id="checkbox2" type="checkbox"><label for="checkbox2">Checkbox 2</label>
                             <input id="checkbox3" type="checkbox"><label for="checkbox3">Checkbox 3</label>
+                        </div>
                     </div>
+                    <div class="grid-x">
+                        <div class="large-6">
+                            <legend style="margin-top: 8px;">Choose Your Favorite, and this is required, so you have to pick one.</legend>
+                            <input type="radio" name="pokemon" value="Red" id="pokemonRed"><label for="pokemonRed">Red</label>
+                            <input type="radio" name="pokemon" value="Blue" id="pokemonBlue" required><label for="pokemonBlue">Blue</label>
+                            <input type="radio" name="pokemon" value="Yellow" id="pokemonYellow"><label for="pokemonYellow">Yellow</label>
+                        </div>
                     </div>
                     <input type="button" name="next" class="next action-button float-center" value="Next" />
                 </fieldset>
                 <fieldset>
                     <h3 class="fs-subtitle">What do your colleagues consider your main strengths to be?</h3>
-                    <textarea class="form-control" name="CAT_Custom_2" id="CAT_Custom_2" rows="4" onkeydown="if(this.value.length>=4000)this.value=this.value.substring(0,3999);"></textarea>
+                    <div class="grid-x">
+                        <div class="large-12">
+                            <textarea style="height: auto;" class="form-control" name="CAT_Custom_2" id="CAT_Custom_2"></textarea>
+                        </div>
+                    </div>
                     <input type="button" name="previous" class="previous action-button" value="Previous" />
                     <input type="button" name="next" class="next action-button" value="Next" />
                 </fieldset>

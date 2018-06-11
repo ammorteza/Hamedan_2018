@@ -1581,10 +1581,10 @@ ul.social-icons {
 #msform input,
 #msform textarea {
     padding: 15px;
+    resize: none;
     border: 1px solid #ccc;
     border-radius: 3px;
     margin-bottom: 10px;
-    width: 100%;
     box-sizing: border-box;
     font-family: montserrat;
     color: #2C3E50;
@@ -1632,7 +1632,7 @@ ul.social-icons {
     text-transform: uppercase;
     font-size: 9px;
     width: 10%;
-    float: left;
+    float:left ;
     position: relative;
 }
 #progressbar li:before {
@@ -1652,7 +1652,7 @@ ul.social-icons {
     content: '';
     width: 100%;
     height: 2px;
-    background: white;
+    background: #a6a6a6;
     position: absolute;
     left: -50%;
     top: 9px;
