@@ -15,8 +15,20 @@ class CreateFormAnswersTable extends Migration
     {
         Schema::create('tbl_form_answers', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('faQfId')->length(10)->unsigned();
+            $table->integer('faUuId')->length(10)->unsigned();
             $table->longText('faValue')->nullable();
             $table->timestamps();
+
+            $table->foreign('faQfId')
+                ->references('id')->on('tbl_question_forms')
+                ->onDelete('restrict')
+                ->onUpdate('cascade');
+
+            $table->foreign('faUuId')
+                ->references('id')->on('tbl_uuids')
+                ->onDelete('restrict')
+                ->onUpdate('cascade');
         });
     }
 

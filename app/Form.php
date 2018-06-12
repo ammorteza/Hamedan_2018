@@ -10,7 +10,7 @@ class Form extends Model
 
     public function questionForm()
     {
-        return $this->hasMany(QuestionForm::class, 'qfFrId' , 'id')->orderBy('qfOrder' , 'ASC');
+        return $this->hasMany(QuestionForm::class, 'qfFrId' , 'id')->where('qfState' , '=' , 1)->orderBy('qfOrder' , 'ASC');
     }
 
     public static function getForm($id)

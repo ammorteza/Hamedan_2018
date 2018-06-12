@@ -27,6 +27,7 @@ class CreateQuestionFormsTable extends Migration
             $table->unsignedTinyInteger('qfGrid')->default(12);
             $table->unsignedTinyInteger('qfUnique')->default(0);
             $table->unsignedTinyInteger('qfOrder')->default(1);
+            $table->unsignedTinyInteger('qfState')->default(1);
             $table->timestamps();
 
             $table->foreign('qfPId')

@@ -19,7 +19,9 @@ class CreateOptionsTable extends Migration
             $table->string('oEnSubject');
             $table->string('oArSubject');
             $table->string('oName');
-            $table->string('oValue');
+            $table->string('oFaValue');
+            $table->string('oEnValue');
+            $table->string('oArValue');
             $table->timestamps();
         });
     }
