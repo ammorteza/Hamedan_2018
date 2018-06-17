@@ -450,6 +450,10 @@
 <script src="{{ asset('jQuery-File-Upload-master/js/main.js?v' . config('app.version')) }}"></script>
 <!--JQuery File Uploader End-->
 
+<!--Single File Uploader Start-->
+<script src="{{ asset('js/single-file-uploader.js?v' . config('app.version')) }}"  type="text/javascript"></script>
+<!--Single File Uploader End-->
+
 
 
 {{--<script src="{{ asset('js/unitegallery/js/unitgallery.js') }}"></script>
