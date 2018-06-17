@@ -622,6 +622,7 @@
 </script>
 <!--Multi Step Forms-->
 
+<!-- The template to display files available for upload -->
 <script id="template-upload" type="text/x-tmpl">
 {% for (var i=0, file; file=o.files[i]; i++) { %}
     <tr class="template-upload fade">
@@ -639,13 +640,13 @@
         <td>
             {% if (!i && !o.options.autoUpload) { %}
                 <button class="button primary start" disabled>
-                    <i class="fas fa-upload"></i>
+                   <i class="fas fa-upload"></i>
                     <span>Start</span>
                 </button>
             {% } %}
             {% if (!i) { %}
-                <button class="button alert delete">
-                    <i class="far fa-trash-alt"></i>
+                <button class="button warning cancel">
+                    <i class="fas fa-ban"></i>
                     <span>Cancel</span>
                 </button>
             {% } %}
@@ -681,13 +682,13 @@
         </td>
         <td>
             {% if (file.deleteUrl) { %}
-                <button class=" btn-danger delete" data-type="{%=file.deleteType%}" data-url="{%=file.deleteUrl%}"{% if (file.deleteWithCredentials) { %} data-xhr-fields='{"withCredentials":true}'{% } %}>
+                <button class="btn btn-danger delete" data-type="{%=file.deleteType%}" data-url="{%=file.deleteUrl%}"{% if (file.deleteWithCredentials) { %} data-xhr-fields='{"withCredentials":true}'{% } %}>
                     <i class="glyphicon glyphicon-trash"></i>
                     <span>Delete</span>
                 </button>
                 <input type="checkbox" name="delete" value="1" class="toggle">
             {% } else { %}
-                <button class="button warning cancel">
+               <button class="button warning cancel">
                     <i class="fas fa-ban"></i>
                     <span>Cancel</span>
                 </button>

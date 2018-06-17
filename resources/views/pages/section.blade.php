@@ -1172,7 +1172,7 @@
 
     @endforeach
 
-    <div class="grid-container">
+    <div class="grid-container element-distance-tb">
         <div class="grid-x">
             <div class="large-12">
                 <!-- The file upload form used as target for the file upload widget -->
@@ -1221,6 +1221,4 @@
         </div>
     </div>
 
-=======
->>>>>>> 99b19aeec752c431272260f7d0596790bf8b65fb
 @stop
