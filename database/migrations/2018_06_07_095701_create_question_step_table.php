@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateOptionsTable extends Migration
+class CreateQuestionStepTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,11 @@ class CreateOptionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('tbl_options', function (Blueprint $table) {
+        Schema::create('tbl_question_steps', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('oFaSubject');
-            $table->string('oEnSubject');
-            $table->string('oArSubject');
-            $table->string('oName');
-            $table->string('oFaValue');
-            $table->string('oEnValue');
-            $table->string('oArValue');
+            $table->string('qsFaSubject');
+            $table->string('qsEnSubject');
+            $table->string('qsArSubject');
             $table->timestamps();
         });
     }
@@ -34,7 +30,7 @@ class CreateOptionsTable extends Migration
     public function down()
     {
         DB::statement('SET FOREIGN_KEY_CHECKS = 0');
-        Schema::dropIfExists('tbl_options');
+        Schema::dropIfExists('tbl_question_steps');
         DB::statement('SET FOREIGN_KEY_CHECKS = 1');
     }
 }

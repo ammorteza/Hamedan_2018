@@ -18,6 +18,7 @@ class CreateFieldOptionsTable extends Migration
             $table->integer('foOId')->length(10)->unsigned();
             $table->integer('foQId')->length(10)->unsigned();
             $table->unsignedTinyInteger('foChecked')->default(0);
+            $table->unsignedTinyInteger('foRequire')->default(0);
             $table->timestamps();
 
             $table->foreign('foOId')
