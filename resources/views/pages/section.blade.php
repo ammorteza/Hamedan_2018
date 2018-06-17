@@ -834,149 +834,105 @@
                 //dd($form);
                 $formStepsCount = \Hamedan_2018\Form::getStepsCount($section->sFrId);
             ?>
-            <div style="min-height: 100vh" class="grid-container">
-                <div class="grid-x">
-                    <form action="{{ url('/register-form/' . $form->id) }}" id="msform" method="{{ $form->fMethod }}" data-abide novalidate>
-                        {{ csrf_field() }}
-                        <div class="grid-container">
-                            <div class="grid-x">
-                                <div class="large-offset-1 medium-offset-1"></div>
-                                <div class="large-10 medium-10">
-                                    <div  data-abide-error class="alert callout padding-lr-fs" style="display: none;margin-bottom: 50px;">
-                                        <p><i class="fi-alert"></i> There are some errors in your form.</p>
-                                    </div>
-                                    @if($form->fIsMultiStepForm)
-                                        <!-- progressbar -->
-                                        <div class="center-el">
-                                            <ul class="text-center" id="progressbar">
-                                                <li class="active"></li>
-                                                @for($i = 1 ; $i < $formStepsCount ; $i++)
-                                                    <li></li>
-                                                @endfor
-                                            </ul>
-                                        </div>
-                                    @endif
-                                </div>
-                                <div class="large-offset-1 medium-offset-1"></div>
-                            </div>
-                        </div>
-                        <div class="element-distanse"></div>
-                        @for($i = 1 ; $i <= $formStepsCount ; $i++)
-                            <fieldset>
-                                @if($lan == 'fa')
-                                    <h3 class="fs-subtitle ">{!! $form->questionForm[$i]->questionStep->qsFaSubject !!}</h3>
-                                @elseif($lan == 'en')
-                                    <h3 class="fs-subtitle ">{!! $form->questionForm[$i]->questionStep->qsEnSubject !!}</h3>
-                                @elseif($lan == 'ar')
-                                    <h3 class="fs-subtitle ">{!! $form->questionForm[$i]->questionStep->qsArSubject !!}</h3>
-                                @endif
-
+            <div class="grid-container">
+                @if(!\Session::has('successPm'))
+                    <div class="grid-x">
+                        <form action="{{ url('/register-form/' . $form->id) }}" id="msform" method="{{ $form->fMethod }}" data-abide novalidate>
+                            {{ csrf_field() }}
+                            <div class="grid-container">
                                 <div class="grid-x">
-                                    <!--<p class="help-block">List your strengths here.</p>-->
-                                    @foreach($form->questionForm as $questionForm)
-                                        @if ($questionForm->qfStep == $i)
-                                            <div class="{{ 'large-' . $questionForm->qfGrid . ' medium-' . $questionForm->qfGrid . ' small-12' }} padding-lr">
-                                                @switch($questionForm->question->fieldType->ftType)
-                                                    @case("text")
-                                                    @if($questionForm->qfRequire)
-                                                        @if($lan == 'fa')
-                                                            <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {{ $questionForm->question->qFaSubject }}
-                                                                <input name="{{ $questionForm->id }}" type="text" placeholder="{{ $questionForm->question->qFaPlaceHolder }}" {{ $questionForm->qfRequire == 0 ? '' : 'required' }} pattern="{{ $questionForm->pattern->pType }}">
-                                                                <span class="form-error">{{ $questionForm->qfFaErrorMsg }}</span>
-                                                            </label>
-                                                        @elseif($lan == 'en')
-                                                            <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {{ $questionForm->question->qEnSubject }}
-                                                                <input name="{{ $questionForm->id }}" type="text" placeholder="{{ $questionForm->question->qEnPlaceHolder }}" {{ $questionForm->qfRequire == 0 ? '' : 'required' }} pattern="{{ $questionForm->pattern->pType }}">
-                                                                <span class="form-error">{{ $questionForm->qfEnErrorMsg }}</span>
-                                                            </label>
-                                                        @elseif($lan == 'ar')
-                                                            <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {{ $questionForm->question->qArSubject }}
-                                                                <input name="{{ $questionForm->id }}" type="text" placeholder="{{ $questionForm->question->qArPlaceHolder }}" {{ $questionForm->qfRequire == 0 ? '' : 'required' }} pattern="{{ $questionForm->pattern->pType }}">
-                                                                <span class="form-error">{{ $questionForm->qfArErrorMsg }}</span>
-                                                            </label>
-                                                        @endif
-                                                    @else
-                                                        @if($lan == 'fa')
-                                                            <label> {{ $questionForm->question->qFaSubject }}
-                                                                <input name="{{ $questionForm->id }}" type="text" placeholder="{{ $questionForm->question->qFaPlaceHolder }}" {{ $questionForm->qfRequire == 0 ? '' : 'required' }} pattern="{{ $questionForm->pattern->pType }}">
-                                                                <span class="form-error">{{ $questionForm->qfFrErrorMsg }}</span>
-                                                            </label>
-                                                        @elseif($lan == 'en')
-                                                            <label> {{ $questionForm->question->qEnSubject }}
-                                                                <input name="{{ $questionForm->id }}" type="text" placeholder="{{ $questionForm->question->qEnPlaceHolder }}" {{ $questionForm->qfRequire == 0 ? '' : 'required' }} pattern="{{ $questionForm->pattern->pType }}">
-                                                                <span class="form-error">{{ $questionForm->qfEnErrorMsg }}</span>
-                                                            </label>
-                                                        @elseif($lan == 'ar')
-                                                            <label> {{ $questionForm->question->qArSubject }}
-                                                                <input name="{{ $questionForm->id }}" type="text" placeholder="{{ $questionForm->question->qArPlaceHolder }}" {{ $questionForm->qfRequire == 0 ? '' : 'required' }} pattern="{{ $questionForm->pattern->pType }}">
-                                                                <span class="form-error">{{ $questionForm->qfArErrorMsg }}</span>
-                                                            </label>
-                                                        @endif
-                                                    @endif
-                                                    @break
-                                                @case("checkbox")
-                                                    </br>
-                                                    @if($lan == 'fa')
-                                                        <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qFaSubject !!}</label>
-                                                    @elseif($lan == 'en')
-                                                        <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qEnSubject !!}</label>
-                                                    @elseif($lan == 'ar')
-                                                        <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qArSubject !!}</label>
-                                                    @endif
-                                                    @foreach($questionForm->question->fieldOption as $fieldOption)
-                                                        @if($lan == 'fa')
-                                                            <div class="large-12 medium-12 small-12"><input name="{{ $questionForm->id . '[]'}}" value="{{ $fieldOption->option->oFaValue }}" id="{{ $form->id . $questionForm->question->qName . $fieldOption->option->oName }}" type="checkbox" {{ $fieldOption->foRequire != 0 ? 'required' : '' }}><label for="{{ $form->id . $questionForm->question->qName . $fieldOption->option->oName }}">{{ $fieldOption->option->oFaSubject }}</label></div>
-                                                        @elseif($lan == 'en')
-                                                            <div class="large-12 medium-12 small-12"><input name="{{ $questionForm->id . '[]' }}" value="{{ $fieldOption->option->oEnValue }}" id="{{ $form->id . $questionForm->question->qName . $fieldOption->option->oName }}" type="checkbox" {{ $fieldOption->foRequire != 0 ? 'required' : '' }}><label for="{{ $form->id . $questionForm->question->qName . $fieldOption->option->oName }}">{{ $fieldOption->option->oEnSubject }}</label></div>
-                                                        @elseif($lan == 'ar')
-                                                            <div class="large-12 medium-12 small-12"><input name="{{ $questionForm->id . '[]' }}" value="{{ $fieldOption->option->oArValue }}" id="{{ $form->id . $questionForm->question->qName . $fieldOption->option->oName }}" type="checkbox" {{ $fieldOption->foRequire != 0 ? 'required' : '' }}><label for="{{ $form->id . $questionForm->question->qName . $fieldOption->option->oName }}">{{ $fieldOption->option->oArSubject }}</label></div>
-                                                        @endif
-                                                    @endforeach
-                                                    @break
-                                                @case("radio")
-                                                    </br>
-                                                    @if($lan == 'fa')
-                                                        <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qFaSubject !!}</label>
-                                                    @elseif($lan == 'en')
-                                                        <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qEnSubject !!}</label>
-                                                    @elseif($lan == 'ar')
-                                                        <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qArSubject !!}</label>
-                                                    @endif
-                                                    @foreach($questionForm->question->fieldOption as $fieldOption)
-                                                        @if($lan == 'fa')
-                                                            <div class="large-12 medium-12 small-12"><input name="{{ $questionForm->id }}" value="{{ $fieldOption->option->oFaValue }}" id="{{ $form->id . $questionForm->question->qName . $fieldOption->option->oName }}" type="radio" {{ $questionForm->qfRequire != 0 ? 'required' : '' }}><label for="{{ $form->id . $questionForm->question->qName . $fieldOption->option->oName }}">{{ $fieldOption->option->oFaSubject }}</label></div>
-                                                        @elseif($lan == 'en')
-                                                            <div class="large-12 medium-12 small-12"><input name="{{ $questionForm->id }}" value="{{ $fieldOption->option->oEnValue }}" id="{{ $form->id . $questionForm->question->qName . $fieldOption->option->oName }}" type="radio" {{ $questionForm->qfRequire != 0 ? 'required' : '' }}><label for="{{ $form->id . $questionForm->question->qName . $fieldOption->option->oName }}">{{ $fieldOption->option->oEnSubject }}</label></div>
-                                                        @elseif($lan == 'ar')
-                                                            <div class="large-12 medium-12 small-12"><input name="{{ $questionForm->id }}" value="{{ $fieldOption->option->oArValue }}" id="{{ $form->id . $questionForm->question->qName . $fieldOption->option->oName }}" type="radio" {{ $questionForm->qfRequire != 0 ? 'required' : '' }}><label for="{{ $form->id . $questionForm->question->qName . $fieldOption->option->oName }}">{{ $fieldOption->option->oArSubject }}</label></div>
-                                                        @endif
-                                                    @endforeach
-                                                    @break
-                                                @case("select")
-                                                    </br>
-                                                    @if($lan == 'fa')
-                                                        <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qFaSubject !!}</label>
-                                                    @elseif($lan == 'en')
-                                                        <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qEnSubject !!}</label>
-                                                    @elseif($lan == 'ar')
-                                                        <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qArSubject !!}</label>
-                                                    @endif
-                                                    <select name="{{ $questionForm->id }}" {{ $questionForm->qfRequire != 0 ? 'required' : '' }}>
-                                                        @if($questionForm->qfRequire != 0)
-                                                            <option></option>
-                                                        @endif
-                                                        @foreach($questionForm->question->fieldOption as $fieldOption)
+                                    <div class="large-offset-1 medium-offset-1"></div>
+                                    <div class="large-10 medium-10">
+                                        <div  data-abide-error class="callout large" style="display: none;margin-bottom: 50px;">
+                                            @if($lan == 'fa')
+                                                <i class="fi-alert btn-red">لطفا موارد الزامی فرم را تکمیل کنید!</i>
+                                            @elseif($lan == 'en')
+                                                <i class="fi-alert btn-red">Please complete the required fields!</i>
+                                            @elseif($lan == 'ar')
+                                                <i class="fi-alert btn-red">يرجى إكمال الحقول المطلوبة!</i>
+                                            @endif
+                                        </div>
+                                        @if(\Session::has('resultError'))
+                                            <div class="callout large" style="margin-bottom: 50px;">
+                                                @if($lan == 'fa')
+                                                    <i class="fi-alert btn-red">{{ \Session::get('resultError')[0] }}</i>
+                                                @elseif($lan == 'en')
+                                                    <i class="fi-alert btn-red">{{ \Session::get('resultError')[1] }}</i>
+                                                @elseif($lan == 'ar')
+                                                    <i class="fi-alert btn-red">{{ \Session::get('resultError')[2] }}</i>
+                                                @endif
+                                            </div>
+                                        @endif
+                                        @if($form->fIsMultiStepForm)
+                                            <!-- progressbar -->
+                                            <div class="center-el">
+                                                <ul class="text-center" id="progressbar">
+                                                    <li class="active"></li>
+                                                    @for($i = 1 ; $i < $formStepsCount ; $i++)
+                                                        <li></li>
+                                                    @endfor
+                                                </ul>
+                                            </div>
+                                        @endif
+                                    </div>
+                                    <div class="large-offset-1 medium-offset-1"></div>
+                                </div>
+                            </div>
+                            <div class="element-distanse"></div>
+                            @for($i = 1 ; $i <= $formStepsCount ; $i++)
+                                <fieldset>
+                                    @if($lan == 'fa')
+                                        <h3 class="fs-subtitle">{!! $form->questionForm[$i]->questionStep->qsFaSubject !!}</h3>
+                                    @elseif($lan == 'en')
+                                        <h3 class="fs-subtitle ">{!! $form->questionForm[$i]->questionStep->qsEnSubject !!}</h3>
+                                    @elseif($lan == 'ar')
+                                        <h3 class="fs-subtitle ">{!! $form->questionForm[$i]->questionStep->qsArSubject !!}</h3>
+                                    @endif
+
+                                    <div class="grid-x">
+                                        <!--<p class="help-block">List your strengths here.</p>-->
+                                        @foreach($form->questionForm as $questionForm)
+                                            @if ($questionForm->qfStep == $i)
+                                                <div class="{{ 'large-' . $questionForm->qfGrid . ' medium-' . $questionForm->qfGrid . ' small-12' }} padding-lr">
+                                                    @switch($questionForm->question->fieldType->ftType)
+                                                        @case("text")
+                                                        @if($questionForm->qfRequire)
                                                             @if($lan == 'fa')
-                                                                <option value="{{ $fieldOption->option->oFaValue }}" {{ $fieldOption->foChecked != 0 ? 'checked' : '' }}>{{ $fieldOption->option->oFaSubject }}</option>
+                                                                <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {{ $questionForm->question->qFaSubject }}
+                                                                    <input name="{{ $questionForm->id }}" type="text" placeholder="{{ $questionForm->question->qFaPlaceHolder }}" {{ $questionForm->qfRequire == 0 ? '' : 'required' }} pattern="{{ $questionForm->pattern->pType }}">
+                                                                    <span class="form-error">{{ $questionForm->qfFaErrorMsg }}</span>
+                                                                </label>
                                                             @elseif($lan == 'en')
-                                                                <option value="{{ $fieldOption->option->oEnValue }}" {{ $fieldOption->foChecked != 0 ? 'checked' : '' }}>{{ $fieldOption->option->oEnSubject }}</option>
+                                                                <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {{ $questionForm->question->qEnSubject }}
+                                                                    <input name="{{ $questionForm->id }}" type="text" placeholder="{{ $questionForm->question->qEnPlaceHolder }}" {{ $questionForm->qfRequire == 0 ? '' : 'required' }} pattern="{{ $questionForm->pattern->pType }}">
+                                                                    <span class="form-error">{{ $questionForm->qfEnErrorMsg }}</span>
+                                                                </label>
                                                             @elseif($lan == 'ar')
-                                                                <option value="{{ $fieldOption->option->oArValue }}" {{ $fieldOption->foChecked != 0 ? 'checked' : '' }}>{{ $fieldOption->option->oArSubject }}</option>
+                                                                <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {{ $questionForm->question->qArSubject }}
+                                                                    <input name="{{ $questionForm->id }}" type="text" placeholder="{{ $questionForm->question->qArPlaceHolder }}" {{ $questionForm->qfRequire == 0 ? '' : 'required' }} pattern="{{ $questionForm->pattern->pType }}">
+                                                                    <span class="form-error">{{ $questionForm->qfArErrorMsg }}</span>
+                                                                </label>
                                                             @endif
-                                                        @endforeach
-                                                    </select>
-                                                    @break
-                                                @case("textarea")
+                                                        @else
+                                                            @if($lan == 'fa')
+                                                                <label> {{ $questionForm->question->qFaSubject }}
+                                                                    <input name="{{ $questionForm->id }}" type="text" placeholder="{{ $questionForm->question->qFaPlaceHolder }}" {{ $questionForm->qfRequire == 0 ? '' : 'required' }} pattern="{{ $questionForm->pattern->pType }}">
+                                                                    <span class="form-error">{{ $questionForm->qfFrErrorMsg }}</span>
+                                                                </label>
+                                                            @elseif($lan == 'en')
+                                                                <label> {{ $questionForm->question->qEnSubject }}
+                                                                    <input name="{{ $questionForm->id }}" type="text" placeholder="{{ $questionForm->question->qEnPlaceHolder }}" {{ $questionForm->qfRequire == 0 ? '' : 'required' }} pattern="{{ $questionForm->pattern->pType }}">
+                                                                    <span class="form-error">{{ $questionForm->qfEnErrorMsg }}</span>
+                                                                </label>
+                                                            @elseif($lan == 'ar')
+                                                                <label> {{ $questionForm->question->qArSubject }}
+                                                                    <input name="{{ $questionForm->id }}" type="text" placeholder="{{ $questionForm->question->qArPlaceHolder }}" {{ $questionForm->qfRequire == 0 ? '' : 'required' }} pattern="{{ $questionForm->pattern->pType }}">
+                                                                    <span class="form-error">{{ $questionForm->qfArErrorMsg }}</span>
+                                                                </label>
+                                                            @endif
+                                                        @endif
+                                                        @break
+                                                    @case("checkbox")
                                                         </br>
                                                         @if($lan == 'fa')
                                                             <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qFaSubject !!}</label>
@@ -985,179 +941,141 @@
                                                         @elseif($lan == 'ar')
                                                             <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qArSubject !!}</label>
                                                         @endif
-                                                        <div class="large-12">
-                                                            <textarea style="height: auto;" class="form-control" name="{{ $questionForm->id }}" {{ $questionForm->qfRequire != 0 ? 'required' : '' }}></textarea>
-                                                        </div>
-                                                    @break
-                                                @endswitch
-                                            </div>
-                                        @endif
-                                    @endforeach
-                                </div>
-                                @if($form->fIsMultiStepForm && $formStepsCount > 1)
-                                    @if($i == 1)
-                                        <input type="button" name="next" class="next action-button float-center" value="Next" />
-                                    @elseif($i < $formStepsCount)
-                                        <input type="button" name="next" class="next action-button float-center" value="Next" />
-                                        <input type="button" name="previous" class="previous action-button" value="Previous" />
-                                    @else
-                                        <input type="button" name="previous" class="previous action-button" value="Previous" />
-                                        <input type="submit" name="submit" class="submit action-button" value="Submit" />
-                                    @endif
-                                @else
-                                    <input type="submit" name="submit" class="submit action-button" value="Submit" />
-                                @endif
-                            </fieldset>
-                            <!-- fieldsets -->
-{{--                            <fieldset>
-                                @if($lan == 'fa')
-                                    <h3 class="fs-subtitle ">{!! $form->questionForm[$i]->questionStep->qsFaSubject !!}</h3>
-                                @elseif($lan == 'en')
-                                    <h3 class="fs-subtitle ">{!! $form->questionForm[$i]->questionStep->qsEnSubject !!}</h3>
-                                @elseif($lan == 'ar')
-                                    <h3 class="fs-subtitle ">{!! $form->questionForm[$i]->questionStep->qsArSubject !!}</h3>
-                                @endif
-
-                                <div class="grid-x">
-                                <!--<p class="help-block">List your strengths here.</p>-->
-                                @foreach($form->questionForm as $questionForm)
-                                    @if ($questionForm->qfStep == $i)
-                                        <div class="{{ 'large-' . $questionForm->qfGrid . ' medium-' . $questionForm->qfGrid . ' small-12' }} padding-lr">
-                                            @switch($questionForm->question->fieldType->ftType)
-                                                @case("text")
-                                                    @if($questionForm->qfRequire)
+                                                        @foreach($questionForm->question->fieldOption as $fieldOption)
+                                                            @if($lan == 'fa')
+                                                                <div class="large-12 medium-12 small-12"><input name="{{ $questionForm->id . '[]'}}" value="{{ $fieldOption->option->oFaValue }}" id="{{ $form->id . $questionForm->question->qName . $fieldOption->option->oName }}" type="checkbox" {{ $fieldOption->foRequire != 0 ? 'required' : '' }}><label for="{{ $form->id . $questionForm->question->qName . $fieldOption->option->oName }}">{{ $fieldOption->option->oFaSubject }}</label></div>
+                                                            @elseif($lan == 'en')
+                                                                <div class="large-12 medium-12 small-12"><input name="{{ $questionForm->id . '[]' }}" value="{{ $fieldOption->option->oEnValue }}" id="{{ $form->id . $questionForm->question->qName . $fieldOption->option->oName }}" type="checkbox" {{ $fieldOption->foRequire != 0 ? 'required' : '' }}><label for="{{ $form->id . $questionForm->question->qName . $fieldOption->option->oName }}">{{ $fieldOption->option->oEnSubject }}</label></div>
+                                                            @elseif($lan == 'ar')
+                                                                <div class="large-12 medium-12 small-12"><input name="{{ $questionForm->id . '[]' }}" value="{{ $fieldOption->option->oArValue }}" id="{{ $form->id . $questionForm->question->qName . $fieldOption->option->oName }}" type="checkbox" {{ $fieldOption->foRequire != 0 ? 'required' : '' }}><label for="{{ $form->id . $questionForm->question->qName . $fieldOption->option->oName }}">{{ $fieldOption->option->oArSubject }}</label></div>
+                                                            @endif
+                                                        @endforeach
+                                                        @break
+                                                    @case("radio")
+                                                        </br>
                                                         @if($lan == 'fa')
-                                                            <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {{ $questionForm->question->qFaSubject }}
-                                                                <input name="{{ $questionForm->question->qName }}" type="text" placeholder="{{ $questionForm->question->qFaPlaceHolder }}" {{ $questionForm->qfRequire == 0 ? '' : 'required' }} pattern="{{ $questionForm->pattern->pType }}">
-                                                                <span class="form-error">{{ $questionForm->qfFaErrorMsg }}</span>
-                                                            </label>
+                                                            <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qFaSubject !!}</label>
                                                         @elseif($lan == 'en')
-                                                            <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {{ $questionForm->question->qEnSubject }}
-                                                                <input name="{{ $questionForm->question->qName }}" type="text" placeholder="{{ $questionForm->question->qEnPlaceHolder }}" {{ $questionForm->qfRequire == 0 ? '' : 'required' }} pattern="{{ $questionForm->pattern->pType }}">
-                                                                <span class="form-error">{{ $questionForm->qfEnErrorMsg }}</span>
-                                                            </label>
+                                                            <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qEnSubject !!}</label>
                                                         @elseif($lan == 'ar')
-                                                            <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {{ $questionForm->question->qArSubject }}
-                                                                <input name="{{ $questionForm->question->qName }}" type="text" placeholder="{{ $questionForm->question->qArPlaceHolder }}" {{ $questionForm->qfRequire == 0 ? '' : 'required' }} pattern="{{ $questionForm->pattern->pType }}">
-                                                                <span class="form-error">{{ $questionForm->qfArErrorMsg }}</span>
-                                                            </label>
-                                                        @endif
-                                                    @else
-                                                        @if($lan == 'fa')
-                                                            <label> {{ $questionForm->question->qFaSubject }}
-                                                                <input name="{{ $questionForm->question->qName }}" type="text" placeholder="{{ $questionForm->question->qFaPlaceHolder }}" {{ $questionForm->qfRequire == 0 ? '' : 'required' }} pattern="{{ $questionForm->pattern->pType }}">
-                                                                <span class="form-error">{{ $questionForm->qfFrErrorMsg }}</span>
-                                                            </label>
-                                                        @elseif($lan == 'en')
-                                                            <label> {{ $questionForm->question->qEnSubject }}
-                                                                <input name="{{ $questionForm->question->qName }}" type="text" placeholder="{{ $questionForm->question->qEnPlaceHolder }}" {{ $questionForm->qfRequire == 0 ? '' : 'required' }} pattern="{{ $questionForm->pattern->pType }}">
-                                                                <span class="form-error">{{ $questionForm->qfEnErrorMsg }}</span>
-                                                            </label>
-                                                        @elseif($lan == 'ar')
-                                                            <label> {{ $questionForm->question->qArSubject }}
-                                                                <input name="{{ $questionForm->question->qName }}" type="text" placeholder="{{ $questionForm->question->qArPlaceHolder }}" {{ $questionForm->qfRequire == 0 ? '' : 'required' }} pattern="{{ $questionForm->pattern->pType }}">
-                                                                <span class="form-error">{{ $questionForm->qfArErrorMsg }}</span>
-                                                            </label>
-                                                        @endif
-                                                    @endif
-                                                    @break
-                                                @case("checkbox")
-                                                    </br>
-                                                    @if($lan == 'fa')
-                                                        <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qFaSubject !!}</label>
-                                                    @elseif($lan == 'en')
-                                                        <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qEnSubject !!}</label>
-                                                    @elseif($lan == 'ar')
-                                                        <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qArSubject !!}</label>
-                                                    @endif
-                                                    @foreach($questionForm->question->fieldOption as $fieldOption)
-                                                        @if($lan == 'fa')
-                                                                <div class="large-12 medium-12 small-12"><input name="{{ $fieldOption->option->oName }}" value="{{ $fieldOption->option->oFaValue }}" id="{{ $form->id . $questionForm->question->qName . $fieldOption->option->oName }}" type="checkbox" {{ $fieldOption->foRequire != 0 ? 'required' : '' }}><label for="{{ $form->id . $questionForm->question->qName . $fieldOption->option->oName }}">{{ $fieldOption->option->oFaSubject }}</label></div>
-                                                        @elseif($lan == 'en')
-                                                                <div class="large-12 medium-12 small-12"><input name="{{ $fieldOption->option->oName }}" value="{{ $fieldOption->option->oEnValue }}" id="{{ $form->id . $questionForm->question->qName . $fieldOption->option->oName }}" type="checkbox" {{ $fieldOption->foRequire != 0 ? 'required' : '' }}><label for="{{ $form->id . $questionForm->question->qName . $fieldOption->option->oName }}">{{ $fieldOption->option->oEnSubject }}</label></div>
-                                                        @elseif($lan == 'ar')
-                                                                <div class="large-12 medium-12 small-12"><input name="{{ $fieldOption->option->oName }}" value="{{ $fieldOption->option->oArValue }}" id="{{ $form->id . $questionForm->question->qName . $fieldOption->option->oName }}" type="checkbox" {{ $fieldOption->foRequire != 0 ? 'required' : '' }}><label for="{{ $form->id . $questionForm->question->qName . $fieldOption->option->oName }}">{{ $fieldOption->option->oArSubject }}</label></div>
-                                                        @endif
-                                                    @endforeach
-                                                    @break
-                                                @case("radio")
-                                                    </br>
-                                                    @if($lan == 'fa')
-                                                        <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qFaSubject !!}</label>
-                                                    @elseif($lan == 'en')
-                                                        <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qEnSubject !!}</label>
-                                                    @elseif($lan == 'ar')
-                                                        <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qArSubject !!}</label>
-                                                    @endif
-                                                    @foreach($questionForm->question->fieldOption as $fieldOption)
-                                                        @if($lan == 'fa')
-                                                            <div class="large-12 medium-12 small-12"><input name="{{ $questionForm->question->qName }}" value="{{ $fieldOption->option->oFaValue }}" id="{{ $form->id . $questionForm->question->qName . $fieldOption->option->oName }}" type="radio" {{ $questionForm->qfRequire != 0 ? 'required' : '' }}><label for="{{ $form->id . $questionForm->question->qName . $fieldOption->option->oName }}">{{ $fieldOption->option->oFaSubject }}</label></div>
-                                                        @elseif($lan == 'en')
-                                                            <div class="large-12 medium-12 small-12"><input name="{{ $questionForm->question->qName }}" value="{{ $fieldOption->option->oEnValue }}" id="{{ $form->id . $questionForm->question->qName . $fieldOption->option->oName }}" type="radio" {{ $questionForm->qfRequire != 0 ? 'required' : '' }}><label for="{{ $form->id . $questionForm->question->qName . $fieldOption->option->oName }}">{{ $fieldOption->option->oEnSubject }}</label></div>
-                                                        @elseif($lan == 'ar')
-                                                            <div class="large-12 medium-12 small-12"><input name="{{ $questionForm->question->qName }}" value="{{ $fieldOption->option->oArValue }}" id="{{ $form->id . $questionForm->question->qName . $fieldOption->option->oName }}" type="radio" {{ $questionForm->qfRequire != 0 ? 'required' : '' }}><label for="{{ $form->id . $questionForm->question->qName . $fieldOption->option->oName }}">{{ $fieldOption->option->oArSubject }}</label></div>
-                                                        @endif
-                                                    @endforeach
-                                                @break
-                                                @case("select")
-                                                    </br>
-                                                    @if($lan == 'fa')
-                                                        <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qFaSubject !!}</label>
-                                                    @elseif($lan == 'en')
-                                                        <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qEnSubject !!}</label>
-                                                    @elseif($lan == 'ar')
-                                                        <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qArSubject !!}</label>
-                                                    @endif
-                                                    <select name="{{ $questionForm->question->qName }}" {{ $questionForm->qfRequire != 0 ? 'required' : '' }}>
-                                                        @if($questionForm->qfRequire != 0)
-                                                            <option></option>
+                                                            <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qArSubject !!}</label>
                                                         @endif
                                                         @foreach($questionForm->question->fieldOption as $fieldOption)
                                                             @if($lan == 'fa')
-                                                                <option value="{{ $fieldOption->option->oFaValue }}" {{ $fieldOption->foChecked != 0 ? 'checked' : '' }}>{{ $fieldOption->option->oFaSubject }}</option>
+                                                                <div class="large-12 medium-12 small-12"><input name="{{ $questionForm->id }}" value="{{ $fieldOption->option->oFaValue }}" id="{{ $form->id . $questionForm->question->qName . $fieldOption->option->oName }}" type="radio" {{ $questionForm->qfRequire != 0 ? 'required' : '' }}><label for="{{ $form->id . $questionForm->question->qName . $fieldOption->option->oName }}">{{ $fieldOption->option->oFaSubject }}</label></div>
                                                             @elseif($lan == 'en')
-                                                                <option value="{{ $fieldOption->option->oEnValue }}" {{ $fieldOption->foChecked != 0 ? 'checked' : '' }}>{{ $fieldOption->option->oEnSubject }}</option>
+                                                                <div class="large-12 medium-12 small-12"><input name="{{ $questionForm->id }}" value="{{ $fieldOption->option->oEnValue }}" id="{{ $form->id . $questionForm->question->qName . $fieldOption->option->oName }}" type="radio" {{ $questionForm->qfRequire != 0 ? 'required' : '' }}><label for="{{ $form->id . $questionForm->question->qName . $fieldOption->option->oName }}">{{ $fieldOption->option->oEnSubject }}</label></div>
                                                             @elseif($lan == 'ar')
-                                                                <option value="{{ $fieldOption->option->oArValue }}" {{ $fieldOption->foChecked != 0 ? 'checked' : '' }}>{{ $fieldOption->option->oArSubject }}</option>
+                                                                <div class="large-12 medium-12 small-12"><input name="{{ $questionForm->id }}" value="{{ $fieldOption->option->oArValue }}" id="{{ $form->id . $questionForm->question->qName . $fieldOption->option->oName }}" type="radio" {{ $questionForm->qfRequire != 0 ? 'required' : '' }}><label for="{{ $form->id . $questionForm->question->qName . $fieldOption->option->oName }}">{{ $fieldOption->option->oArSubject }}</label></div>
                                                             @endif
                                                         @endforeach
-                                                    </select>
-                                                @break
-                                                @case("textarea")
-                                                    </br>
-                                                    @if($lan == 'fa')
-                                                        <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qFaSubject !!}</label>
-                                                    @elseif($lan == 'en')
-                                                        <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qEnSubject !!}</label>
-                                                    @elseif($lan == 'ar')
-                                                        <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qArSubject !!}</label>
-                                                    @endif
-                                                        <div class="large-12">
-                                                            <textarea style="height: auto;" class="form-control" name="{{ $questionForm->question->qName }}" {{ $questionForm->qfRequire != 0 ? 'required' : '' }}></textarea>
+                                                        @break
+                                                    @case("select")
+                                                        </br>
+                                                        @if($lan == 'fa')
+                                                            <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qFaSubject !!}</label>
+                                                        @elseif($lan == 'en')
+                                                            <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qEnSubject !!}</label>
+                                                        @elseif($lan == 'ar')
+                                                            <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qArSubject !!}</label>
+                                                        @endif
+                                                        <select name="{{ $questionForm->id }}" {{ $questionForm->qfRequire != 0 ? 'required' : '' }}>
+                                                            @if($questionForm->qfRequire != 0)
+                                                                <option></option>
+                                                            @endif
+                                                            @foreach($questionForm->question->fieldOption as $fieldOption)
+                                                                @if($lan == 'fa')
+                                                                    <option value="{{ $fieldOption->option->oFaValue }}" {{ $fieldOption->foChecked != 0 ? 'checked' : '' }}>{{ $fieldOption->option->oFaSubject }}</option>
+                                                                @elseif($lan == 'en')
+                                                                    <option value="{{ $fieldOption->option->oEnValue }}" {{ $fieldOption->foChecked != 0 ? 'checked' : '' }}>{{ $fieldOption->option->oEnSubject }}</option>
+                                                                @elseif($lan == 'ar')
+                                                                    <option value="{{ $fieldOption->option->oArValue }}" {{ $fieldOption->foChecked != 0 ? 'checked' : '' }}>{{ $fieldOption->option->oArSubject }}</option>
+                                                                @endif
+                                                            @endforeach
+                                                        </select>
+                                                        @break
+                                                    @case("textarea")
+                                                            </br>
+                                                            @if($lan == 'fa')
+                                                                <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qFaSubject !!}</label>
+                                                            @elseif($lan == 'en')
+                                                                <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qEnSubject !!}</label>
+                                                            @elseif($lan == 'ar')
+                                                                <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qArSubject !!}</label>
+                                                            @endif
+                                                            <div class="large-12">
+                                                                <textarea style="height: auto;" class="form-control" name="{{ $questionForm->id }}" {{ $questionForm->qfRequire != 0 ? 'required' : '' }}></textarea>
+                                                            </div>
+                                                        @break
+                                                    @case("captcha")
+                                                        <div class="large-12" style="margin-top: 20px;margin-bottom: 20px">
+                                                            {!! app('captcha')->display(); !!}
                                                         </div>
-                                                    @break
-                                            @endswitch
-                                        </div>
-                                    @endif
-                                @endforeach
-                                </div>
-                                @if($form->fIsMultiStepForm && $formStepsCount > 1)
-                                    @if($i == 1)
-                                        <input type="button" name="next" class="next action-button float-center" value="Next" />
-                                    @elseif($i < $formStepsCount)
-                                        <input type="button" name="next" class="next action-button float-center" value="Next" />
-                                        <input type="button" name="previous" class="previous action-button" value="Previous" />
+                                                        @break;
+                                                    @endswitch
+                                                </div>
+                                            @endif
+                                        @endforeach
+                                    </div>
+                                    @if($form->fIsMultiStepForm && $formStepsCount > 1)
+                                        @if($i == 1)
+                                            @if($lan == 'fa')
+                                                <input type="button" name="next" class="next action-button float-center" value="بعدی" />
+                                            @elseif($lan == 'en')
+                                                <input type="button" name="next" class="next action-button float-center" value="Next" />
+                                            @elseif($lan == 'ar')
+                                                <input type="button" name="next" class="next action-button float-center" value="التالى" />
+                                            @endif
+                                        @elseif($i < $formStepsCount)
+                                            @if($lan == 'fa')
+                                                <input type="button" name="next" class="next action-button float-center" value="بعدی" />
+                                                <input type="button" name="previous" class="previous action-button" value="قبلی" />
+                                            @elseif($lan == 'en')
+                                                <input type="button" name="next" class="next action-button float-center" value="Next" />
+                                                <input type="button" name="previous" class="previous action-button" value="Previous" />
+                                            @elseif($lan == 'ar')
+                                                <input type="button" name="next" class="next action-button float-center" value="التالى" />
+                                                <input type="button" name="previous" class="previous action-button" value="سابق" />
+                                            @endif
+                                        @else
+                                            @if($lan == 'fa')
+                                                <input type="button" name="previous" class="previous action-button" value="قبلی" />
+                                                <input type="submit" name="submit" class="submit action-button" value="ثبت" />
+                                            @elseif($lan == 'en')
+                                                <input type="button" name="previous" class="previous action-button" value="Previous" />
+                                                <input type="submit" name="submit" class="submit action-button" value="Register" />
+                                            @elseif($lan == 'ar')
+                                                <input type="button" name="previous" class="previous action-button" value="التالى" />
+                                                <input type="submit" name="submit" class="submit action-button" value="تسجيل" />
+                                            @endif
+                                        @endif
                                     @else
-                                        <input type="button" name="previous" class="previous action-button" value="Previous" />
-                                        <input type="submit" name="submit" class="submit action-button" value="Submit" />
+                                        @if($lan == 'fa')
+                                            <input type="submit" name="submit" class="submit action-button" value="ثبت" />
+                                        @elseif($lan == 'en')
+                                            <input type="submit" name="submit" class="submit action-button" value="ًRegister" />
+                                        @elseif($lan == 'ar')
+                                            <input type="submit" name="submit" class="submit action-button" value="تسجيل" />
+                                        @endif
                                     @endif
-                                @else
-                                    <input type="submit" name="submit" class="submit action-button" value="Submit" />
-                                @endif
-                            </fieldset>--}}
-                        @endfor
-                    </form>
-                </div>
+                                </fieldset>
+                                <!-- fieldsets -->
+                            @endfor
+                        </form>
+                    </div>
+                @else
+                    <div class="grid-x">
+                        <div class="large-12 medium-12 small-12" style="min-height: 60vh; margin-top: 20vh">
+                            @if($lan == 'fa')
+                                {!! \Session::get('successPm')[0] !!}
+                            @elseif($lan == 'en')
+                                {!! \Session::get('successPm')[1] !!}
+                            @elseif($lan == 'ar')
+                                {!! \Session::get('successPm')[2] !!}
+                            @endif
+                        </div>
+                    </div>
+                @endif
             </div>
         @endif
         <!--Section pannellum-master-360 Start-->

@@ -1618,8 +1618,9 @@ ul.social-icons {
 }
 .fs-subtitle {
     font-weight: normal;
-    font-size: 14px;
-    color: #666;
+    font-size: 20px;
+    color: #444;
+    margin-top: 20px;
     margin-bottom: 20px;
 }
 /*progressbar*/
