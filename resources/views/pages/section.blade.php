@@ -1089,4 +1089,54 @@
         <!--Section pannellum-master-360 End-->
 
     @endforeach
+
+    <div class="grid-container element-distance-tb">
+        <div class="grid-x">
+            <div class="large-12">
+                <!-- The file upload form used as target for the file upload widget -->
+                <form id="fileupload" action="https://jquery-file-upload.appspot.com/" method="POST" enctype="multipart/form-data">
+                    <!-- Redirect browsers with JavaScript disabled to the origin page -->
+                    <noscript><input type="hidden" name="redirect" value="https://blueimp.github.io/jQuery-File-Upload/"></noscript>
+                    <!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
+                    <div class="grid-x fileupload-buttonbar">
+                        <div class="large-7">
+                            <!-- The fileinput-button span is used to style the file input field as button -->
+                            <span style="max-height: 42px;min-width: 130px;" class="button success">
+
+                                <label for="exampleFileUpload"><i class="fas fa-plus"></i>Upload File</label>
+                                <input type="file" name="files[]" id="exampleFileUpload" class="show-for-sr">
+                            </span>
+                            <button type="submit" class="button primary start">
+                                <i class="fas fa-upload"></i>
+                                <span>Start upload</span>
+                            </button>
+                            <button type="reset" class="button warning cancel">
+                                <i class="fas fa-ban"></i>
+                                <span>Cancel upload</span>
+                            </button>
+                            <button type="button" class="button alert delete">
+                                <i class="far fa-trash-alt"></i>
+                                <span>Delete</span>
+                            </button>
+                            <input type="checkbox" class="toggle">
+                            <!-- The global file processing state -->
+                            <span class="fileupload-process"></span>
+                        </div>
+                        <!-- The global progress state -->
+                        <div class="large-5 fileupload-progress fade">
+                            <!-- The global progress bar -->
+                            <div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+                                <div class="progress-bar progress-bar-success" style="width:0%;"></div>
+                            </div>
+                            <!-- The extended global progress state -->
+                            <div class="progress-extended">&nbsp;</div>
+                        </div>
+                    </div>
+                    <!-- The table listing the files available for upload/download -->
+                    <table role="presentation" class="table table-striped"><tbody class="files"></tbody></table>
+                </form>
+            </div>
+        </div>
+    </div>
+
 @stop
