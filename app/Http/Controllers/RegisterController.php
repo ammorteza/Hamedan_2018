@@ -14,6 +14,11 @@ class RegisterController extends Controller
 {
     public function registerForm(Request $request , $fId)
     {
+        if ($request->hasFile('8'))
+        {
+            echo "ok";
+        }
+        dd($request);
         $validate = Validator::make(Input::all(), [
             'g-recaptcha-response' => 'required|captcha'
         ]);
@@ -25,12 +30,26 @@ class RegisterController extends Controller
         {
             return redirect()->back()->with('resultError' , ['رکوردی با این مشخصات قبلا ثبت شده است!' , 'duplicate error!' , 'خطأ مكرر!']);
         }else{
+            $formInfo = Form::find($fId);
             $uuId = $this->generateUuid();
             foreach ($questionForm as $qForm)
             {
                 if (!empty($request->get($qForm->id)))
                 {
-                    if (is_array($request->get($qForm->id)))
+                    if ($request->hasFile($qForm->id))
+                    {
+                        return "exist file";
+                        foreach ($request->file($qForm->id) as $photo)
+                        {
+                            $fileName = $photo->store('pic/form_uploaded_img/form_' . $fId . '_' . $formInfo->fEnSubject);
+                            $answer = new FormAnswer;
+                            $answer->faValue = $fileName;
+                            $answer->faQfId = $qForm->id;
+                            $answer->faUuId = $uuId;
+                            $answer->save();
+                        }
+                    }
+                    else if (is_array($request->get($qForm->id)))
                     {
                         for ($i = 0 ; $i < count($request->get($qForm->id)) ; $i++)
                         {
@@ -49,8 +68,7 @@ class RegisterController extends Controller
                     }
                 }
             }
-            $registerResult = Form::find($fId);
-            return redirect()->back()->with('successPm' , [$registerResult->fFaRegisterResult , $registerResult->fEnRegisterResult , $registerResult->fArRegisterResult]);
+            return redirect()->back()->with('successPm' , [$formInfo->fFaRegisterResult , $formInfo->fEnRegisterResult , $formInfo->fArRegisterResult]);
         }
     }
 

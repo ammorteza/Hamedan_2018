@@ -634,16 +634,6 @@
             <strong class="error text-danger"></strong>
         </td>
         <td>
-            <p class="size">Processing...</p>
-            <div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="progress-bar progress-bar-success" style="width:0%;"></div></div>
-        </td>
-        <td>
-            {% if (!i && !o.options.autoUpload) { %}
-                <button class="button primary start" disabled>
-                   <i class="fas fa-upload"></i>
-                    <span>Start</span>
-                </button>
-            {% } %}
             {% if (!i) { %}
                 <button class="button warning cancel">
                     <i class="fas fa-ban"></i>
