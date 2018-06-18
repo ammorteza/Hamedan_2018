@@ -16,7 +16,7 @@ class RegisterController extends Controller
     {
         if ($request->hasFile('8'))
         {
-            echo "ok";
+            echo "morteza";
         }
         dd($request);
         $validate = Validator::make(Input::all(), [
@@ -34,22 +34,21 @@ class RegisterController extends Controller
             $uuId = $this->generateUuid();
             foreach ($questionForm as $qForm)
             {
-                if (!empty($request->get($qForm->id)))
+                if ($request->hasFile($qForm->id))
                 {
-                    if ($request->hasFile($qForm->id))
+                    foreach ($request->file($qForm->id) as $photo)
                     {
-                        return "exist file";
-                        foreach ($request->file($qForm->id) as $photo)
-                        {
-                            $fileName = $photo->store('pic/form_uploaded_img/form_' . $fId . '_' . $formInfo->fEnSubject);
-                            $answer = new FormAnswer;
-                            $answer->faValue = $fileName;
-                            $answer->faQfId = $qForm->id;
-                            $answer->faUuId = $uuId;
-                            $answer->save();
-                        }
+                        $fileName = $photo->store('pic/form_uploaded_img/form_' . $fId . '_' . $formInfo->fEnSubject);
+                        $answer = new FormAnswer;
+                        $answer->faValue = $fileName;
+                        $answer->faQfId = $qForm->id;
+                        $answer->faUuId = $uuId;
+                        $answer->save();
                     }
-                    else if (is_array($request->get($qForm->id)))
+                }
+                else if (!empty($request->get($qForm->id)))
+                {
+                    if (is_array($request->get($qForm->id)))
                     {
                         for ($i = 0 ; $i < count($request->get($qForm->id)) ; $i++)
                         {

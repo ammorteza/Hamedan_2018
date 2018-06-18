@@ -831,35 +831,35 @@
         @elseif($section->sectionType->stType == 'CONTENT_FORM')
             <?php
                 $form = \Hamedan_2018\Form::getForm($section->sFrId);
-                //dd($form);
                 $formStepsCount = \Hamedan_2018\Form::getStepsCount($section->sFrId);
+                $formSteps = \Hamedan_2018\QuestionStep::getSteps($section->sFrId);
             ?>
             <div class="grid-container">
                 @if(!\Session::has('successPm'))
                     <div class="grid-x">
-                        <form action="{{ url('/register-form/' . $form->id) }}" id="msform" enctype="multipart/form-data" method="{{ $form->fMethod }}" data-abide novalidate>
+                        <form id="fileupload" action="{{ url('/register-form/' . $form->id) }}" class="msform" enctype="multipart/form-data" method="{{ $form->fMethod }}" data-abide novalidate>
                             {{ csrf_field() }}
                             <div class="grid-container">
                                 <div class="grid-x">
                                     <div class="large-offset-1 medium-offset-1"></div>
                                     <div class="large-10 medium-10">
-                                        <div  data-abide-error class="callout large" style="display: none;margin-bottom: 50px;">
+                                        <div  data-abide-error class="callout large" style="margin:5px; display: none;margin-bottom: 50px;">
                                             @if($lan == 'fa')
-                                                <i class="fi-alert btn-red">لطفا موارد الزامی فرم را تکمیل کنید!</i>
+                                                <i class="fi-alert btn-red Shabnam-Light">لطفا موارد الزامی فرم را تکمیل کنید!</i>
                                             @elseif($lan == 'en')
-                                                <i class="fi-alert btn-red">Please complete the required fields!</i>
+                                                <i class="fi-alert btn-red wire-one">Please complete the required fields!</i>
                                             @elseif($lan == 'ar')
-                                                <i class="fi-alert btn-red">يرجى إكمال الحقول المطلوبة!</i>
+                                                <i class="fi-alert btn-red Al-Jazeera-Arabic-Regular">يرجى إكمال الحقول المطلوبة!</i>
                                             @endif
                                         </div>
                                         @if(\Session::has('resultError'))
-                                            <div class="callout large" style="margin-bottom: 50px;">
+                                            <div class="callout large" style="margin:5px; margin-bottom: 50px;">
                                                 @if($lan == 'fa')
-                                                    <i class="fi-alert btn-red">{{ \Session::get('resultError')[0] }}</i>
+                                                    <i class="fi-alert btn-red Shabnam-Light">{{ \Session::get('resultError')[0] }}</i>
                                                 @elseif($lan == 'en')
-                                                    <i class="fi-alert btn-red">{{ \Session::get('resultError')[1] }}</i>
+                                                    <i class="fi-alert btn-red wire-one">{{ \Session::get('resultError')[1] }}</i>
                                                 @elseif($lan == 'ar')
-                                                    <i class="fi-alert btn-red">{{ \Session::get('resultError')[2] }}</i>
+                                                    <i class="fi-alert btn-red Al-Jazeera-Arabic-Regular">{{ \Session::get('resultError')[2] }}</i>
                                                 @endif
                                             </div>
                                         @endif
@@ -882,11 +882,11 @@
                             @for($i = 1 ; $i <= $formStepsCount ; $i++)
                                 <fieldset>
                                     @if($lan == 'fa')
-                                        <h3 class="fs-subtitle">{!! $form->questionForm[$i]->questionStep->qsFaSubject !!}</h3>
+                                        <h3 class="fs-subtitle Shabnam-Bold">{!! $formSteps[$i - 1]->qsFaSubject !!}</h3>
                                     @elseif($lan == 'en')
-                                        <h3 class="fs-subtitle ">{!! $form->questionForm[$i]->questionStep->qsEnSubject !!}</h3>
+                                        <h3 class="fs-subtitle Roboto-Bold">{!! $formSteps[$i - 1]->qsEnSubject !!}</h3>
                                     @elseif($lan == 'ar')
-                                        <h3 class="fs-subtitle ">{!! $form->questionForm[$i]->questionStep->qsArSubject !!}</h3>
+                                        <h3 class="fs-subtitle Al-Jazeera-Arabic-Bold">{!! $formSteps[$i - 1]->qsArSubject !!}</h3>
                                     @endif
 
                                     <div class="grid-x">
@@ -905,7 +905,7 @@
                                                             @elseif($lan == 'en')
                                                                 <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {{ $questionForm->question->qEnSubject }}
                                                                     <input name="{{ $questionForm->id }}" type="text" placeholder="{{ $questionForm->question->qEnPlaceHolder }}" {{ $questionForm->qfRequire == 0 ? '' : 'required' }} pattern="{{ $questionForm->pattern->pType }}">
-                                                                    <span class="form-error">{{ $questionForm->qfEnErrorMsg }}</span>
+                                                                    <span class="form-error wire-one">{{ $questionForm->qfEnErrorMsg }}</span>
                                                                 </label>
                                                             @elseif($lan == 'ar')
                                                                 <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {{ $questionForm->question->qArSubject }}
@@ -1023,18 +1023,47 @@
                                                         @endif
                                                         <div class="large-12">
                                                             <!-- The file upload form used as target for the file upload widget -->
-                                                            <div id="fileupload">
-                                                                <div class="grid-x fileupload-buttonbar">
-                                                                    <div class="large-7">
-                                                                        <!-- The fileinput-button span is used to style the file input field as button -->
-                                                                        <span style="max-height: 42px;min-width: 130px;" class="button success">
-                                                                            <label for="{{ 'fileUpload_' . $questionForm->id }}"><i class="fas fa-plus"></i>Upload File</label>
-                                                                            <input type="file" name="{{ $questionForm->id . '[]'}}" id="{{ 'fileUpload_' . $questionForm->id }}" class="show-for-sr" multiple>
-                                                                        </span>
-                                                                    </div>
+                                                            <div class="grid-x fileupload-buttonbar">
+                                                                <div class="large-7">
+                                                                    <!-- The fileinput-button span is used to style the file input field as button -->
+                                                                    <span style="max-height: 42px;min-width: 130px;" class="button success">
+                                                                        <label for="{{ 'fileUpload_' . $questionForm->id }}"><i class="fas fa-plus"></i>Upload File</label>
+                                                                        <input type="file" name="{{ $questionForm->id . '[]'}}" id="{{ 'fileUpload_' . $questionForm->id }}" class="show-for-sr" multiple>
+                                                                    </span>
                                                                 </div>
-                                                                <!-- The table listing the files available for upload/download -->
-                                                                <table role="presentation" class="table table-striped"><tbody class="files"></tbody></table>
+                                                            </div>
+                                                            <!-- The table listing the files available for upload/download -->
+                                                            <table role="presentation" class="table table-striped"><tbody class="files"></tbody></table>
+                                                        </div>
+                                                        @break;
+                                                    @case('single-uploader')
+                                                        </br>
+                                                        @if($lan == 'fa')
+                                                            <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qFaSubject !!}</label>
+                                                        @elseif($lan == 'en')
+                                                            <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qEnSubject !!}</label>
+                                                        @elseif($lan == 'ar')
+                                                            <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qArSubject !!}</label>
+                                                        @endif
+                                                        <div class="large-12">
+                                                            <!-- Upload  -->
+                                                            <div id="file-upload-form" class="uploader {{ $lan != 'en' ? 'float-right' : 'float-left' }}">
+                                                                <input id="file-upload" type="file" name="{{ $questionForm->id . '[]' }}" accept="image/*" {{ $questionForm->qfRequire == 0 ? '' : 'required' }}/>
+                                                                <label for="file-upload" id="file-drag">
+                                                                    <img id="file-image" src="#" alt="Preview" class="hidden">
+                                                                    <div id="start">
+                                                                        <i style="margin-bottom: 15px;" class="fas fa-camera-retro btn-red size-48" aria-hidden="true"></i>
+                                                                        <div style="margin-bottom: 15px;">Select a file or drag here</div>
+                                                                        <div id="notimage" class="hidden">Please select an image</div>
+                                                                        <span id="file-upload-btn" class="button primary">Select a file</span>
+                                                                    </div>
+                                                                    <div id="response" class="hidden">
+                                                                        <div id="messages"></div>
+                                                                        <progress class="progress" id="file-progress" value="0">
+                                                                            <span>0</span>%
+                                                                        </progress>
+                                                                    </div>
+                                                                </label>
                                                             </div>
                                                         </div>
                                                         @break;
