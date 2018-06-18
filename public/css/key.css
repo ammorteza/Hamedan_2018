@@ -26,9 +26,9 @@ select, [type="text"], [type="password"], textarea {
     color: #777777;
     font-size: small;
 }
-input[type="file"] {
+/*input[type="file"] {
     display: none;
-}
+}*/
 body{
     background-color: #FFFFFF;
 }
@@ -1557,13 +1557,13 @@ ul.social-icons {
 
 /*////////////////////////////// Multi Step Form Styles ///////////////////////////*/
 /*form styles*/
-#msform {
+.msform {
     width: 100%;
     margin: 50px  auto;
     position: relative;
 
 }
-#msform fieldset {
+.msform fieldset {
     background: white;
     border: 0 none;
     border-radius: 3px;
@@ -1577,12 +1577,12 @@ ul.social-icons {
 
 }
 /*Hide all except first fieldset*/
-#msform fieldset:not(:first-of-type) {
+.msform fieldset:not(:first-of-type) {
     display: none;
 }
 /*inputs*/
-#msform input,
-#msform textarea {
+.msform input,
+.msform textarea {
     padding: 15px;
     resize: none;
     border: 1px solid #ccc;
@@ -1594,7 +1594,7 @@ ul.social-icons {
     font-size: 13px;
 }
 /*buttons*/
-#msform .action-button {
+.msform .action-button {
     width: 100px;
     background: #67d5bf;
     font-weight: bold;
@@ -1605,8 +1605,8 @@ ul.social-icons {
     padding: 10px 5px;
     margin: 10px 5px;
 }
-#msform .action-button:hover,
-#msform .action-button:focus {
+.msform .action-button:hover,
+.msform .action-button:focus {
     box-shadow: 0 0 0 2px white, 0 0 0 3px #67d5bf;
 }
 /*headings*/
@@ -1618,8 +1618,9 @@ ul.social-icons {
 }
 .fs-subtitle {
     font-weight: normal;
-    font-size: 14px;
-    color: #666;
+    font-size: 20px;
+    color: #444;
+    margin-top: 20px;
     margin-bottom: 20px;
 }
 /*progressbar*/
@@ -1682,6 +1683,298 @@ ul.social-icons {
 
 
 /*////////////////////////////// Multi Step Form Styles ///////////////////////////*/
+
+/*////////////////////////////// File Uploader ///////////////////////////*/
+.it .btn-orange
+{
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 0 1rem 0;
+    font-family: inherit;
+    padding: 0.50em 1em;
+    -webkit-appearance: none;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    transition: background-color 0.25s ease-out, color 0.25s ease-out;
+    font-size: 0.9rem;
+    line-height: 1;
+    text-align: center;
+    cursor: pointer;
+    background-color: #2ba6cb;
+    color: #fefefe;
+    width: 100%;
+}
+.it .btn-orange:hover
+{
+    background-color: #2285a2;
+    color: #0a0a0a;
+}
+.it input.form-control
+{
+    height: 54px;
+    border:none;
+    margin-bottom:0px;
+    border-radius: 0px;
+    border-bottom: 1px solid #ddd;
+    box-shadow: none;
+}
+.it .form-control:focus
+{
+    border-color: #ff4d0d;
+    box-shadow: none;
+    outline: none;
+}
+.fileUpload {
+    position: relative;
+    overflow: hidden;
+    margin: 10px;
+}
+.fileUpload input.upload {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+.it .btn-new, .it .btn-next
+{
+    margin: 30px 0px;
+    border-radius: 0px;
+    background-color: #333;
+    color: #f5f5f5;
+    font-size: 16px;
+    width: 155px;
+}
+.it .btn-next
+{
+    background-color: #ff4d0d;
+    color: #fff;
+}
+.it .btn-check
+{
+    cursor:pointer;
+    line-height:54px;
+    color:red;
+    height: 80px;
+    width: 80px;
+}
+.it .uploadDoc
+{
+    margin-bottom: 20px;
+}
+.it .uploadDoc
+{
+    margin-bottom: 20px;
+}
+.it .btn-orange img {
+    width: 30px;
+}
+p
+{
+    font-size:16px;
+    text-align:center;
+    margin:30px 0px;
+}
+.it #uploader .docErr
+{
+    position: absolute;
+    right:auto;
+    left: 10px;
+    top: -56px;
+    padding: 10px;
+    font-size: 15px;
+    background-color: #fff;
+    color: red;
+    box-shadow: 0px 0px 7px 2px rgba(0,0,0,0.2);
+    display: none;
+}
+.it #uploader .docErr:after
+{
+    content: '\f0d7';
+    display: inline-block;
+    font-family: FontAwesome;
+    font-size: 50px;
+    color: #fff;
+    position: absolute;
+    left: 30px;
+    bottom: -40px;
+    text-shadow: 0px 3px 6px rgba(0,0,0,0.2);
+}
+/*////////////////////////////// File Uploader ///////////////////////////*/
+
+/*//////////////////////////////Single File Uploader ///////////////////////////*/
+
+.uploader {
+    display: block;
+    clear: both;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 400px;
+}
+.uploader label {
+    float: left;
+    clear: both;
+    width: 100%;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    background: #fff;
+    border-radius: 0px;
+    border: 1px solid #eee;
+    transition: all .2s ease;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.uploader label:hover {
+    border-color: #eee;
+}
+.uploader label.hover {
+    border: 3px solid #454cad;
+    box-shadow: inset 0 0 0 6px #eee;
+}
+.uploader label.hover #start i.fa {
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+    opacity: 0.3;
+}
+.uploader #start {
+    float: left;
+    clear: both;
+    width: 100%;
+}
+.uploader #start.hidden {
+    display: none;
+}
+.uploader #start i.fa {
+    font-size: 50px;
+    margin-bottom: 1rem;
+    transition: all .2s ease-in-out;
+}
+.uploader #response {
+    float: left;
+    clear: both;
+    width: 100%;
+}
+.uploader #response.hidden {
+    display: none;
+}
+.uploader #response #messages {
+    margin-bottom: .5rem;
+}
+.uploader #file-image {
+    display: inline;
+    margin: 0 auto .5rem auto;
+    width: auto;
+    height: auto;
+    max-width: 180px;
+}
+.uploader #file-image.hidden {
+    display: none;
+}
+.uploader #notimage {
+    display: block;
+    float: left;
+    clear: both;
+    width: 100%;
+}
+.uploader #notimage.hidden {
+    display: none;
+}
+.uploader progress,
+.uploader .progress {
+    display: inline;
+    clear: both;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 180px;
+    height: 12px;
+    border: 0;
+    border-radius: 0px;
+    background-color: #eee;
+    overflow: hidden;
+}
+.uploader .progress[value]::-webkit-progress-bar {
+    border-radius: 0px;
+    background-color: #eee;
+}
+.uploader .progress[value]::-webkit-progress-value {
+    background: linear-gradient(to right, #3adb76 0%, #3adb76 50%);
+    border-radius: 0px;
+}
+.uploader .progress[value]::-moz-progress-bar {
+    background: linear-gradient(to right, #3adb76 0%, #3adb76 50%);
+    border-radius: 0px;
+}
+.uploader input[type="file"] {
+    display: none;
+}
+.uploader div {
+    margin: 0 0 .5rem 0;
+    color: #5f6982;
+}
+.uploader .btn {
+    display: inline-block;
+    margin: .5rem .5rem 1rem .5rem;
+    clear: both;
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 14px;
+    text-decoration: none;
+    text-transform: initial;
+    border: none;
+    border-radius: .2rem;
+    outline: none;
+    padding: 0 1rem;
+    height: 36px;
+    line-height: 36px;
+    color: #fff;
+    transition: all 0.2s ease-in-out;
+    box-sizing: border-box;
+    background: #454cad;
+    border-color: #454cad;
+    cursor: pointer;
+}
+
+/*//////////////////////////////Single File Uploader ///////////////////////////*/
+
+.img-button {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 0 1rem 0;
+    font-family: inherit;
+    padding: 0.85em 1em;
+    -webkit-appearance: none;
+    border: 1px solid transparent;
+    border-radius: 0px;
+    vertical-align: middle;
+    background-position:30% 70%;
+    transition: background-color 0.25s ease-out, color 0.25s ease-out;
+    font-size: 0.9rem;
+    line-height: 1;
+    text-align: center;
+    cursor: pointer;
+    background-color: #d1d8e0;
+    color: #fefefe;
+    height: 300px;
+    width: 200px;
+}
+[data-whatinput='mouse'] .button {
+    outline: 0; }
+.button:hover, .button:focus {
+    background-color: #bdc3c7;
+    color: #fefefe; }
+
+.img-button .img-primary{
+    background-color: #bdc3c7;
+    color: #0a0a0a; }
+.img-button.img-primary:hover, .img-button.img-primary:focus {
+    background-color: #bdc3c7;
+    color: #0a0a0a; }
 /*-------------------------------Media Queries------------------------------------*/
 @media only screen and (max-width: 1024px) {
     .mq-topmenu-status{

@@ -32,6 +32,7 @@
     <link rel="stylesheet" href="{{ asset('css/hoverEffect/normalize.css') }}">
     <link rel="stylesheet" href="{{ asset('css/hoverEffect/demo.css') }}">
     <link rel="stylesheet" href="{{ asset('css/hoverEffect/set1.css') }}">
+
     <link rel="stylesheet" href="{{ asset('css/foundation.css?v' . config('app.version')) }}">
     {{--<link href="https://fonts.googleapis.com/css?family=Satisfy|Poiret+One|Cabin|Wire+One|Merienda|Roboto" rel="stylesheet">--}}
     {{--<link href="https://cdnjs.cloudflare.com/ajax/libs/motion-ui/1.2.2/motion-ui.css" rel="stylesheet">--}}
@@ -369,11 +370,17 @@
         </div>
     </div>
 </div>
+
+
+
+
+
 <!--Copy Right Bar End-->
 <script src="{{ asset('js/vendor/jquery.js?v' . config('app.version')) }}"  type="text/javascript"></script>
 <script src="{{ asset('js/scripts/bundle.js?v' . config('app.version')) }}"></script> <!--Content left-->
 <script src="{{ asset('js/jquery.immersive-slider.js?v' . config('app.version')) }}"></script><!--Content Image slider-->
 <script src="{{ asset('js/pgwslider.js?v' . config('app.version')) }}"></script><!--Content Image slider-->
+
 
 <!--Light Box Image slider-->
 <script src="{{ asset('js/light_box/picturefill.min.js?v' . config('app.version')) }}"></script><!--Content Image slider-->
@@ -416,6 +423,15 @@
 <script src="{{ asset('js/unitegallery/themes/default/ug-theme-default.js?v' . config('app.version')) }}"></script>
 <link rel="stylesheet" href="{{ asset('js/unitegallery/themes/default/ug-theme-default.css?v' . config('app.version')) }}"
 
+
+
+<!--Single File Uploader Start-->
+<script src="{{ asset('js/single-file-uploader.js?v' . config('app.version')) }}"  type="text/javascript"></script>
+<script src="{{ asset('js/multiple-file-uploader.js?v' . config('app.version')) }}"  type="text/javascript"></script>
+<!--Single File Uploader End-->
+
+
+
 {{--<script src="{{ asset('js/unitegallery/js/unitgallery.js') }}"></script>
 <link rel="stylesheet" href="{{ asset('js/unitegallery/css/unite-gallery.css') }}">
 <script src="{{ asset('js/unitegallery/js/ug-theme-compact.js') }}"></script>--}}
@@ -424,6 +440,9 @@
 
 <script src="{{ asset('js/vendor/foundation.js?v' . config('app.version')) }}"></script>
 <script src="{{ asset('js/app.js?v' . config('app.version')) }}"></script>
+
+
+
 
 <!--Remove zoom out class-->
 <script>

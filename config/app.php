@@ -166,6 +166,7 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         Morilog\Jalali\JalaliServiceProvider::class,
         Foundation\FoundationServiceProvider::class,
+        Buzz\LaravelGoogleCaptcha\CaptchaServiceProvider::class,
 
         /*
          * Package Service Providers...
@@ -230,6 +231,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'jDate' => Morilog\Jalali\Facades\jDate::class,
         'Foundation' => Foundation\Facades\Foundation::class,
+        'Captcha' => \Buzz\LaravelGoogleCaptcha\CaptchaFacade::class,
 
     ],
 
