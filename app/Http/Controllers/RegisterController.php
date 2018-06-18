@@ -14,16 +14,19 @@ class RegisterController extends Controller
 {
     public function registerForm(Request $request , $fId)
     {
-        if ($request->hasFile('8'))
+        $requireCaptcha = QuestionForm::where('qfFrId' , '=' , $fId)->whereHas('question.fieldType' , function ($q){
+            return $q->where('ftType' , '=' , 'captcha');
+        })->where('qfState' , '<>' , 0)->get()->count();
+
+        if ($requireCaptcha != 0)
         {
-            echo "morteza";
+            $validate = Validator::make(Input::all(), [
+                'g-recaptcha-response' => 'required|captcha'
+            ]);
+            if ($validate->fails())
+                return redirect()->back()->with('resultError' , ['لطفا فرم را کامل کنید!' , 'please complete form!' , 'يرجى ملء الاستمارة!']);
+
         }
-        dd($request);
-        $validate = Validator::make(Input::all(), [
-            'g-recaptcha-response' => 'required|captcha'
-        ]);
-        if ($validate->fails())
-            return redirect()->back()->with('resultError' , ['لطفا فرم را کامل کنید!' , 'please complete form!' , 'يرجى ملء الاستمارة!']);
 
         $questionForm = QuestionForm::where('qfState' , '=' , 1)->where('qfFrId' , '=' , $fId)->get();
         if ($this->checkExistUniqueValue($fId , $request))

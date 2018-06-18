@@ -896,50 +896,60 @@
                                                 <div class="{{ 'large-' . $questionForm->qfGrid . ' medium-' . $questionForm->qfGrid . ' small-12' }} padding-lr">
                                                     @switch($questionForm->question->fieldType->ftType)
                                                         @case("text")
-                                                        @if($questionForm->qfRequire)
-                                                            @if($lan == 'fa')
-                                                                <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {{ $questionForm->question->qFaSubject }}
-                                                                    <input name="{{ $questionForm->id }}" type="text" placeholder="{{ $questionForm->question->qFaPlaceHolder }}" {{ $questionForm->qfRequire == 0 ? '' : 'required' }} pattern="{{ $questionForm->pattern->pType }}">
-                                                                    <span class="form-error">{{ $questionForm->qfFaErrorMsg }}</span>
-                                                                </label>
-                                                            @elseif($lan == 'en')
-                                                                <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {{ $questionForm->question->qEnSubject }}
-                                                                    <input name="{{ $questionForm->id }}" type="text" placeholder="{{ $questionForm->question->qEnPlaceHolder }}" {{ $questionForm->qfRequire == 0 ? '' : 'required' }} pattern="{{ $questionForm->pattern->pType }}">
-                                                                    <span class="form-error wire-one">{{ $questionForm->qfEnErrorMsg }}</span>
-                                                                </label>
-                                                            @elseif($lan == 'ar')
-                                                                <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {{ $questionForm->question->qArSubject }}
-                                                                    <input name="{{ $questionForm->id }}" type="text" placeholder="{{ $questionForm->question->qArPlaceHolder }}" {{ $questionForm->qfRequire == 0 ? '' : 'required' }} pattern="{{ $questionForm->pattern->pType }}">
-                                                                    <span class="form-error">{{ $questionForm->qfArErrorMsg }}</span>
-                                                                </label>
+                                                            @if($questionForm->qfRequire)
+                                                                @if($lan == 'fa')
+                                                                    <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {{ $questionForm->question->qFaSubject }}
+                                                                        <input name="{{ $questionForm->id }}" type="text" placeholder="{{ $questionForm->question->qFaPlaceHolder }}" {{ $questionForm->qfRequire == 0 ? '' : 'required' }} pattern="{{ $questionForm->pattern->pType }}">
+                                                                        <span class="form-error">{{ $questionForm->qfFaErrorMsg }}</span>
+                                                                    </label>
+                                                                @elseif($lan == 'en')
+                                                                    <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {{ $questionForm->question->qEnSubject }}
+                                                                        <input name="{{ $questionForm->id }}" type="text" placeholder="{{ $questionForm->question->qEnPlaceHolder }}" {{ $questionForm->qfRequire == 0 ? '' : 'required' }} pattern="{{ $questionForm->pattern->pType }}">
+                                                                        <span class="form-error wire-one">{{ $questionForm->qfEnErrorMsg }}</span>
+                                                                    </label>
+                                                                @elseif($lan == 'ar')
+                                                                    <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {{ $questionForm->question->qArSubject }}
+                                                                        <input name="{{ $questionForm->id }}" type="text" placeholder="{{ $questionForm->question->qArPlaceHolder }}" {{ $questionForm->qfRequire == 0 ? '' : 'required' }} pattern="{{ $questionForm->pattern->pType }}">
+                                                                        <span class="form-error">{{ $questionForm->qfArErrorMsg }}</span>
+                                                                    </label>
+                                                                @endif
+                                                            @else
+                                                                @if($lan == 'fa')
+                                                                    <label> {{ $questionForm->question->qFaSubject }}
+                                                                        <input name="{{ $questionForm->id }}" type="text" placeholder="{{ $questionForm->question->qFaPlaceHolder }}" {{ $questionForm->qfRequire == 0 ? '' : 'required' }} pattern="{{ $questionForm->pattern->pType }}">
+                                                                        <span class="form-error">{{ $questionForm->qfFrErrorMsg }}</span>
+                                                                    </label>
+                                                                @elseif($lan == 'en')
+                                                                    <label> {{ $questionForm->question->qEnSubject }}
+                                                                        <input name="{{ $questionForm->id }}" type="text" placeholder="{{ $questionForm->question->qEnPlaceHolder }}" {{ $questionForm->qfRequire == 0 ? '' : 'required' }} pattern="{{ $questionForm->pattern->pType }}">
+                                                                        <span class="form-error">{{ $questionForm->qfEnErrorMsg }}</span>
+                                                                    </label>
+                                                                @elseif($lan == 'ar')
+                                                                    <label> {{ $questionForm->question->qArSubject }}
+                                                                        <input name="{{ $questionForm->id }}" type="text" placeholder="{{ $questionForm->question->qArPlaceHolder }}" {{ $questionForm->qfRequire == 0 ? '' : 'required' }} pattern="{{ $questionForm->pattern->pType }}">
+                                                                        <span class="form-error">{{ $questionForm->qfArErrorMsg }}</span>
+                                                                    </label>
+                                                                @endif
                                                             @endif
-                                                        @else
-                                                            @if($lan == 'fa')
-                                                                <label> {{ $questionForm->question->qFaSubject }}
-                                                                    <input name="{{ $questionForm->id }}" type="text" placeholder="{{ $questionForm->question->qFaPlaceHolder }}" {{ $questionForm->qfRequire == 0 ? '' : 'required' }} pattern="{{ $questionForm->pattern->pType }}">
-                                                                    <span class="form-error">{{ $questionForm->qfFrErrorMsg }}</span>
-                                                                </label>
-                                                            @elseif($lan == 'en')
-                                                                <label> {{ $questionForm->question->qEnSubject }}
-                                                                    <input name="{{ $questionForm->id }}" type="text" placeholder="{{ $questionForm->question->qEnPlaceHolder }}" {{ $questionForm->qfRequire == 0 ? '' : 'required' }} pattern="{{ $questionForm->pattern->pType }}">
-                                                                    <span class="form-error">{{ $questionForm->qfEnErrorMsg }}</span>
-                                                                </label>
-                                                            @elseif($lan == 'ar')
-                                                                <label> {{ $questionForm->question->qArSubject }}
-                                                                    <input name="{{ $questionForm->id }}" type="text" placeholder="{{ $questionForm->question->qArPlaceHolder }}" {{ $questionForm->qfRequire == 0 ? '' : 'required' }} pattern="{{ $questionForm->pattern->pType }}">
-                                                                    <span class="form-error">{{ $questionForm->qfArErrorMsg }}</span>
-                                                                </label>
-                                                            @endif
-                                                        @endif
                                                         @break
                                                     @case("checkbox")
                                                         </br>
-                                                        @if($lan == 'fa')
-                                                            <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qFaSubject !!}</label>
-                                                        @elseif($lan == 'en')
-                                                            <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qEnSubject !!}</label>
-                                                        @elseif($lan == 'ar')
-                                                            <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qArSubject !!}</label>
+                                                        @if($questionForm->qfRequire)
+                                                            @if($lan == 'fa')
+                                                                <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qFaSubject !!}</label>
+                                                            @elseif($lan == 'en')
+                                                                <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qEnSubject !!}</label>
+                                                            @elseif($lan == 'ar')
+                                                                <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qArSubject !!}</label>
+                                                            @endif
+                                                        @else
+                                                            @if($lan == 'fa')
+                                                                <label> {!! $questionForm->question->qFaSubject !!}</label>
+                                                            @elseif($lan == 'en')
+                                                                <label> {!! $questionForm->question->qEnSubject !!}</label>
+                                                            @elseif($lan == 'ar')
+                                                                <label> {!! $questionForm->question->qArSubject !!}</label>
+                                                            @endif
                                                         @endif
                                                         @foreach($questionForm->question->fieldOption as $fieldOption)
                                                             @if($lan == 'fa')
@@ -953,12 +963,22 @@
                                                         @break
                                                     @case("radio")
                                                         </br>
-                                                        @if($lan == 'fa')
-                                                            <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qFaSubject !!}</label>
-                                                        @elseif($lan == 'en')
-                                                            <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qEnSubject !!}</label>
-                                                        @elseif($lan == 'ar')
-                                                            <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qArSubject !!}</label>
+                                                        @if($questionForm->qfRequire)
+                                                            @if($lan == 'fa')
+                                                                <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qFaSubject !!}</label>
+                                                            @elseif($lan == 'en')
+                                                                <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qEnSubject !!}</label>
+                                                            @elseif($lan == 'ar')
+                                                                <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qArSubject !!}</label>
+                                                            @endif
+                                                        @else
+                                                            @if($lan == 'fa')
+                                                                <label> {!! $questionForm->question->qFaSubject !!}</label>
+                                                            @elseif($lan == 'en')
+                                                                <label> {!! $questionForm->question->qEnSubject !!}</label>
+                                                            @elseif($lan == 'ar')
+                                                                <label> {!! $questionForm->question->qArSubject !!}</label>
+                                                            @endif
                                                         @endif
                                                         @foreach($questionForm->question->fieldOption as $fieldOption)
                                                             @if($lan == 'fa')
@@ -972,12 +992,22 @@
                                                         @break
                                                     @case("select")
                                                         </br>
-                                                        @if($lan == 'fa')
-                                                            <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qFaSubject !!}</label>
-                                                        @elseif($lan == 'en')
-                                                            <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qEnSubject !!}</label>
-                                                        @elseif($lan == 'ar')
-                                                            <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qArSubject !!}</label>
+                                                        @if($questionForm->qfRequire)
+                                                            @if($lan == 'fa')
+                                                                <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qFaSubject !!}</label>
+                                                            @elseif($lan == 'en')
+                                                                <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qEnSubject !!}</label>
+                                                            @elseif($lan == 'ar')
+                                                                <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qArSubject !!}</label>
+                                                            @endif
+                                                        @else
+                                                            @if($lan == 'fa')
+                                                                <label> {!! $questionForm->question->qFaSubject !!}</label>
+                                                            @elseif($lan == 'en')
+                                                                <label> {!! $questionForm->question->qEnSubject !!}</label>
+                                                            @elseif($lan == 'ar')
+                                                                <label> {!! $questionForm->question->qArSubject !!}</label>
+                                                            @endif
                                                         @endif
                                                         <select name="{{ $questionForm->id }}" {{ $questionForm->qfRequire != 0 ? 'required' : '' }}>
                                                             @if($questionForm->qfRequire != 0)
@@ -996,12 +1026,22 @@
                                                         @break
                                                     @case("textarea")
                                                             </br>
-                                                            @if($lan == 'fa')
-                                                                <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qFaSubject !!}</label>
-                                                            @elseif($lan == 'en')
-                                                                <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qEnSubject !!}</label>
-                                                            @elseif($lan == 'ar')
-                                                                <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qArSubject !!}</label>
+                                                            @if($questionForm->qfRequire)
+                                                                @if($lan == 'fa')
+                                                                    <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qFaSubject !!}</label>
+                                                                @elseif($lan == 'en')
+                                                                    <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qEnSubject !!}</label>
+                                                                @elseif($lan == 'ar')
+                                                                    <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qArSubject !!}</label>
+                                                                @endif
+                                                            @else
+                                                                @if($lan == 'fa')
+                                                                    <label> {!! $questionForm->question->qFaSubject !!}</label>
+                                                                @elseif($lan == 'en')
+                                                                    <label> {!! $questionForm->question->qEnSubject !!}</label>
+                                                                @elseif($lan == 'ar')
+                                                                    <label> {!! $questionForm->question->qArSubject !!}</label>
+                                                                @endif
                                                             @endif
                                                             <div class="large-12">
                                                                 <textarea style="height: auto;" class="form-control" name="{{ $questionForm->id }}" {{ $questionForm->qfRequire != 0 ? 'required' : '' }}></textarea>
@@ -1014,26 +1054,53 @@
                                                         @break;
                                                     @case("multi-uploader")
                                                         </br>
-                                                        @if($lan == 'fa')
-                                                            <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qFaSubject !!}</label>
-                                                        @elseif($lan == 'en')
-                                                            <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qEnSubject !!}</label>
-                                                        @elseif($lan == 'ar')
-                                                            <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qArSubject !!}</label>
+                                                        @if($questionForm->qfRequire)
+                                                            @if($lan == 'fa')
+                                                                <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qFaSubject !!}</label>
+                                                            @elseif($lan == 'en')
+                                                                <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qEnSubject !!}</label>
+                                                            @elseif($lan == 'ar')
+                                                                <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qArSubject !!}</label>
+                                                            @endif
+                                                        @else
+                                                            @if($lan == 'fa')
+                                                                <label> {!! $questionForm->question->qFaSubject !!}</label>
+                                                            @elseif($lan == 'en')
+                                                                <label> {!! $questionForm->question->qEnSubject !!}</label>
+                                                            @elseif($lan == 'ar')
+                                                                <label> {!! $questionForm->question->qArSubject !!}</label>
+                                                            @endif
                                                         @endif
                                                         <div class="large-12">
-                                                            <!-- The file upload form used as target for the file upload widget -->
-                                                            <div class="grid-x fileupload-buttonbar">
-                                                                <div class="large-7">
-                                                                    <!-- The fileinput-button span is used to style the file input field as button -->
-                                                                    <span style="max-height: 42px;min-width: 130px;" class="button success">
-                                                                        <label for="{{ 'fileUpload_' . $questionForm->id }}"><i class="fas fa-plus"></i>Upload File</label>
-                                                                        <input type="file" name="{{ $questionForm->id . '[]'}}" id="{{ 'fileUpload_' . $questionForm->id }}" class="show-for-sr" multiple>
-                                                                    </span>
+                                                            <div class="it">
+                                                                <div class="grid-x" id="uploader">
+                                                                    @if($questionForm->qfRequire != 0)
+                                                                        <div class="large-3 uploadDoc">
+                                                                            <div class="padding-lr multi-uploader">
+                                                                                <div class="docErr">Please upload valid file</div><!--error-->
+                                                                                <div class="fileUpload btn btn-orange">
+                                                                                    <img src="https://image.flaticon.com/icons/svg/136/136549.svg" class="icon">
+                                                                                    <span class="upl" id="upload">Upload document</span>
+                                                                                    <input type="file" class="upload up" id="up" name="{{ $questionForm->id . '[]' }}" onchange="readURL(this);" {{ $questionForm->qfRequire != 0 ? 'required' : '' }}/>
+                                                                                </div><!-- btn-orange -->
+                                                                                <div class="grid-x">
+                                                                                    <div class="large-12">
+                                                                                        <img src="" class="multi-uploader-preview">
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div><!-- col-3 -->
+                                                                            <div class="large-12 padding-lr text-center">
+                                                                                <a class="btn-check" onclick="deleteUploadImgItem(this , '{{ $questionForm->qfRequire }}');"><i class="fa fa-times"></i></a>
+                                                                            </div><!-- col-1 -->
+                                                                        </div><!--row-->
+                                                                    @endif
+                                                                </div><!--uploader-->
+                                                            </div><!-- row -->
+                                                            <div class="grid-x">
+                                                                <div class="large-12 text-center">
+                                                                    <a onclick="addNewUploadFile('{{ $questionForm->id . '[]' }}' , '{{ $questionForm->qfRequire }}');" class="button primary"><i class="fa fa-plus"></i> Add new</a>
                                                                 </div>
                                                             </div>
-                                                            <!-- The table listing the files available for upload/download -->
-                                                            <table role="presentation" class="table table-striped"><tbody class="files"></tbody></table>
                                                         </div>
                                                         @break;
                                                     @case('single-uploader')
