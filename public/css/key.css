@@ -1684,18 +1684,29 @@ ul.social-icons {
 /*////////////////////////////// Multi Step Form Styles ///////////////////////////*/
 
 /*////////////////////////////// File Uploader ///////////////////////////*/
-#one
-{
-    margin-top:50px;
-    box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.2);
-}
 .it .btn-orange
 {
-    background-color: transparent;
-    border-color: #777!important;
-    color: #777;
-    text-align: left;
-    width:100%;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 0 1rem 0;
+    font-family: inherit;
+    padding: 0.50em 1em;
+    -webkit-appearance: none;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    transition: background-color 0.25s ease-out, color 0.25s ease-out;
+    font-size: 0.9rem;
+    line-height: 1;
+    text-align: center;
+    cursor: pointer;
+    background-color: #2ba6cb;
+    color: #fefefe;
+    width: 100%;
+}
+.it .btn-orange:hover
+{
+    background-color: #2285a2;
+    color: #0a0a0a;
 }
 .it input.form-control
 {
@@ -1747,6 +1758,8 @@ ul.social-icons {
     cursor:pointer;
     line-height:54px;
     color:red;
+    height: 80px;
+    width: 80px;
 }
 .it .uploadDoc
 {
@@ -1928,7 +1941,39 @@ p
 
 /*//////////////////////////////Single File Uploader ///////////////////////////*/
 
+.img-button {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 0 1rem 0;
+    font-family: inherit;
+    padding: 0.85em 1em;
+    -webkit-appearance: none;
+    border: 1px solid transparent;
+    border-radius: 0px;
+    vertical-align: middle;
+    background-position:30% 70%;
+    transition: background-color 0.25s ease-out, color 0.25s ease-out;
+    font-size: 0.9rem;
+    line-height: 1;
+    text-align: center;
+    cursor: pointer;
+    background-color: #d1d8e0;
+    color: #fefefe;
+    height: 300px;
+    width: 200px;
+}
+[data-whatinput='mouse'] .button {
+    outline: 0; }
+.button:hover, .button:focus {
+    background-color: #bdc3c7;
+    color: #fefefe; }
 
+.img-button .img-primary{
+    background-color: #bdc3c7;
+    color: #0a0a0a; }
+.img-button.img-primary:hover, .img-button.img-primary:focus {
+    background-color: #bdc3c7;
+    color: #0a0a0a; }
 /*-------------------------------Media Queries------------------------------------*/
 @media only screen and (max-width: 1024px) {
     .mq-topmenu-status{

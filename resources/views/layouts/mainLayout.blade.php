@@ -32,13 +32,6 @@
     <link rel="stylesheet" href="{{ asset('css/hoverEffect/normalize.css') }}">
     <link rel="stylesheet" href="{{ asset('css/hoverEffect/demo.css') }}">
     <link rel="stylesheet" href="{{ asset('css/hoverEffect/set1.css') }}">
-    <!-- JQuery File Uploader Stert -->
-    <link rel="stylesheet" href="{{ asset('jQuery-File-Upload-master/css/blueimp-gallery.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('jQuery-File-Upload-master/css/jquery.fileupload.css') }}">
-    <link rel="stylesheet" href="{{ asset('jQuery-File-Upload-master/css/jquery.fileupload-ui.css') }}">
-    <link rel="stylesheet" href="{{ asset('jQuery-File-Upload-master/css/jquery.fileupload-noscript.css') }}">
-    <link rel="stylesheet" href="{{ asset('jQuery-File-Upload-master/css/jquery.fileupload-ui-noscript.css') }}">
-    <!-- JQuery File Uploader Stert -->
 
     <link rel="stylesheet" href="{{ asset('css/foundation.css?v' . config('app.version')) }}">
     {{--<link href="https://fonts.googleapis.com/css?family=Satisfy|Poiret+One|Cabin|Wire+One|Merienda|Roboto" rel="stylesheet">--}}
@@ -431,27 +424,10 @@
 <link rel="stylesheet" href="{{ asset('js/unitegallery/themes/default/ug-theme-default.css?v' . config('app.version')) }}"
 
 
-<!--JQuery File Uploader Start-->
-
-
-<script src="{{ asset('jQuery-File-Upload-master/js/vendor/jquery.ui.widget.js?v' . config('app.version')) }}"></script>
-<script src="{{ asset('jQuery-File-Upload-master/js/tmpl.min.js?v' . config('app.version')) }}"></script>
-<script src="{{ asset('jQuery-File-Upload-master/js/load-image.all.min.js?v' . config('app.version')) }}"></script>
-<script src="{{ asset('jQuery-File-Upload-master/js/canvas-to-blob.min.js?v' . config('app.version')) }}"></script>
-<script src="{{ asset('jQuery-File-Upload-master/js/jquery.blueimp-gallery.min.js?v' . config('app.version')) }}"></script>
-<script src="{{ asset('jQuery-File-Upload-master/js/jquery.iframe-transport.js?v' . config('app.version')) }}"></script>
-<script src="{{ asset('jQuery-File-Upload-master/js/jquery.fileupload.js?v' . config('app.version')) }}"></script>
-<script src="{{ asset('jQuery-File-Upload-master/js/jquery.fileupload-process.js?v' . config('app.version')) }}"></script>
-<script src="{{ asset('jQuery-File-Upload-master/js/jquery.fileupload-image.js?v' . config('app.version')) }}"></script>
-<script src="{{ asset('jQuery-File-Upload-master/js/jquery.fileupload-audio.js?v' . config('app.version')) }}"></script>
-<script src="{{ asset('jQuery-File-Upload-master/js/jquery.fileupload-video.js?v' . config('app.version')) }}"></script>
-<script src="{{ asset('jQuery-File-Upload-master/js/jquery.fileupload-validate.js?v' . config('app.version')) }}"></script>
-<script src="{{ asset('jQuery-File-Upload-master/js/jquery.fileupload-ui.js?v' . config('app.version')) }}"></script>
-<script src="{{ asset('jQuery-File-Upload-master/js/main.js?v' . config('app.version')) }}"></script>
-<!--JQuery File Uploader End-->
 
 <!--Single File Uploader Start-->
 <script src="{{ asset('js/single-file-uploader.js?v' . config('app.version')) }}"  type="text/javascript"></script>
+<script src="{{ asset('js/multiple-file-uploader.js?v' . config('app.version')) }}"  type="text/javascript"></script>
 <!--Single File Uploader End-->
 
 
@@ -626,81 +602,6 @@
 </script>
 <!--Multi Step Forms-->
 
-<!-- The template to display files available for upload -->
-<script id="template-upload" type="text/x-tmpl">
-{% for (var i=0, file; file=o.files[i]; i++) { %}
-    <tr class="template-upload fade">
-        <td>
-            <span class="preview"></span>
-        </td>
-        <td>
-            <p class="name">{%=file.name%}</p>
-            <strong class="error text-danger"></strong>
-        </td>
-        <td>
-            <p class="size">Processing...</p>
-            <div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="progress-bar progress-bar-success" style="width:0%;"></div></div>
-        </td>
-        <td>
-            {% if (!i && !o.options.autoUpload) { %}
-                <button class="button primary start" disabled>
-                   <i class="fas fa-upload"></i>
-                    <span>Start</span>
-                </button>
-            {% } %}
-            {% if (!i) { %}
-                <button class="button warning cancel">
-                    <i class="fas fa-ban"></i>
-                    <span>Cancel</span>
-                </button>
-            {% } %}
-        </td>
-    </tr>
-{% } %}
-</script>
-<!-- The template to display files available for download -->
-<script id="template-download" type="text/x-tmpl">
-{% for (var i=0, file; file=o.files[i]; i++) { %}
-    <tr class="template-download fade">
-        <td>
-            <span class="preview">
-                {% if (file.thumbnailUrl) { %}
-                    <a href="{%=file.url%}" title="{%=file.name%}" download="{%=file.name%}" data-gallery><img src="{%=file.thumbnailUrl%}"></a>
-                {% } %}
-            </span>
-        </td>
-        <td>
-            <p class="name">
-                {% if (file.url) { %}
-                    <a href="{%=file.url%}" title="{%=file.name%}" download="{%=file.name%}" {%=file.thumbnailUrl?'data-gallery':''%}>{%=file.name%}</a>
-                {% } else { %}
-                    <span>{%=file.name%}</span>
-                {% } %}
-            </p>
-            {% if (file.error) { %}
-                <div><span class="label label-danger">Error</span> {%=file.error%}</div>
-            {% } %}
-        </td>
-        <td>
-            <span class="size">{%=o.formatFileSize(file.size)%}</span>
-        </td>
-        <td>
-            {% if (file.deleteUrl) { %}
-                <button class="btn btn-danger delete" data-type="{%=file.deleteType%}" data-url="{%=file.deleteUrl%}"{% if (file.deleteWithCredentials) { %} data-xhr-fields='{"withCredentials":true}'{% } %}>
-                    <i class="glyphicon glyphicon-trash"></i>
-                    <span>Delete</span>
-                </button>
-                <input type="checkbox" name="delete" value="1" class="toggle">
-            {% } else { %}
-               <button class="button warning cancel">
-                    <i class="fas fa-ban"></i>
-                    <span>Cancel</span>
-                </button>
-            {% } %}
-        </td>
-    </tr>
-{% } %}
-</script>
 
 </body>
 </html>
