@@ -16,7 +16,7 @@ class RegisterController extends Controller
     {
         $requireCaptcha = QuestionForm::where('qfFrId' , '=' , $fId)->whereHas('question.fieldType' , function ($q){
             return $q->where('ftType' , '=' , 'captcha');
-        })->where('qfState' , '<>' , 0)->get()->count();
+        })->where('qfState' , '<>' , 0)->get()->count(); //check captcha state is enable
 
         if ($requireCaptcha != 0)
         {
@@ -24,14 +24,14 @@ class RegisterController extends Controller
                 'g-recaptcha-response' => 'required|captcha'
             ]);
             if ($validate->fails())
-                return redirect()->back()->with('resultError' , ['لطفا فرم را کامل کنید!' , 'please complete form!' , 'يرجى ملء الاستمارة!']);
+                return redirect()->back()->withInput()->with('resultError' , ['لطفا فرم را کامل کنید!' , 'please complete form!' , 'يرجى ملء الاستمارة!']);
 
         }
 
         $questionForm = QuestionForm::where('qfState' , '=' , 1)->where('qfFrId' , '=' , $fId)->get();
         if ($this->checkExistUniqueValue($fId , $request))
         {
-            return redirect()->back()->with('resultError' , ['رکوردی با این مشخصات قبلا ثبت شده است!' , 'duplicate error!' , 'خطأ مكرر!']);
+            return redirect()->back()->withInput()->with('resultError' , ['رکوردی با این مشخصات قبلا ثبت شده است!' , 'duplicate error!' , 'خطأ مكرر!']);
         }else{
             $formInfo = Form::find($fId);
             $uuId = $this->generateUuid();

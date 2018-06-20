@@ -899,34 +899,34 @@
                                                             @if($questionForm->qfRequire)
                                                                 @if($lan == 'fa')
                                                                     <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {{ $questionForm->question->qFaSubject }}
-                                                                        <input name="{{ $questionForm->id }}" type="text" placeholder="{{ $questionForm->question->qFaPlaceHolder }}" {{ $questionForm->qfRequire == 0 ? '' : 'required' }} pattern="{{ $questionForm->pattern->pType }}">
+                                                                        <input name="{{ $questionForm->id }}" value="{{ old($questionForm->id) }}" type="text" placeholder="{{ $questionForm->question->qFaPlaceHolder }}" {{ $questionForm->qfRequire == 0 ? '' : 'required' }} pattern="{{ $questionForm->pattern->pType }}">
                                                                         <span class="form-error">{{ $questionForm->qfFaErrorMsg }}</span>
                                                                     </label>
                                                                 @elseif($lan == 'en')
                                                                     <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {{ $questionForm->question->qEnSubject }}
-                                                                        <input name="{{ $questionForm->id }}" type="text" placeholder="{{ $questionForm->question->qEnPlaceHolder }}" {{ $questionForm->qfRequire == 0 ? '' : 'required' }} pattern="{{ $questionForm->pattern->pType }}">
+                                                                        <input name="{{ $questionForm->id }}" value="{{ old($questionForm->id) }}" type="text" placeholder="{{ $questionForm->question->qEnPlaceHolder }}" {{ $questionForm->qfRequire == 0 ? '' : 'required' }} pattern="{{ $questionForm->pattern->pType }}">
                                                                         <span class="form-error wire-one">{{ $questionForm->qfEnErrorMsg }}</span>
                                                                     </label>
                                                                 @elseif($lan == 'ar')
                                                                     <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {{ $questionForm->question->qArSubject }}
-                                                                        <input name="{{ $questionForm->id }}" type="text" placeholder="{{ $questionForm->question->qArPlaceHolder }}" {{ $questionForm->qfRequire == 0 ? '' : 'required' }} pattern="{{ $questionForm->pattern->pType }}">
+                                                                        <input name="{{ $questionForm->id }}" value="{{ old($questionForm->id) }}" type="text" placeholder="{{ $questionForm->question->qArPlaceHolder }}" {{ $questionForm->qfRequire == 0 ? '' : 'required' }} pattern="{{ $questionForm->pattern->pType }}">
                                                                         <span class="form-error">{{ $questionForm->qfArErrorMsg }}</span>
                                                                     </label>
                                                                 @endif
                                                             @else
                                                                 @if($lan == 'fa')
                                                                     <label> {{ $questionForm->question->qFaSubject }}
-                                                                        <input name="{{ $questionForm->id }}" type="text" placeholder="{{ $questionForm->question->qFaPlaceHolder }}" {{ $questionForm->qfRequire == 0 ? '' : 'required' }} pattern="{{ $questionForm->pattern->pType }}">
+                                                                        <input name="{{ $questionForm->id }}" value="{{ old($questionForm->id) }}" type="text" placeholder="{{ $questionForm->question->qFaPlaceHolder }}" {{ $questionForm->qfRequire == 0 ? '' : 'required' }} pattern="{{ $questionForm->pattern->pType }}">
                                                                         <span class="form-error">{{ $questionForm->qfFrErrorMsg }}</span>
                                                                     </label>
                                                                 @elseif($lan == 'en')
                                                                     <label> {{ $questionForm->question->qEnSubject }}
-                                                                        <input name="{{ $questionForm->id }}" type="text" placeholder="{{ $questionForm->question->qEnPlaceHolder }}" {{ $questionForm->qfRequire == 0 ? '' : 'required' }} pattern="{{ $questionForm->pattern->pType }}">
+                                                                        <input name="{{ $questionForm->id }}" value="{{ old($questionForm->id) }}" type="text" placeholder="{{ $questionForm->question->qEnPlaceHolder }}" {{ $questionForm->qfRequire == 0 ? '' : 'required' }} pattern="{{ $questionForm->pattern->pType }}">
                                                                         <span class="form-error">{{ $questionForm->qfEnErrorMsg }}</span>
                                                                     </label>
                                                                 @elseif($lan == 'ar')
                                                                     <label> {{ $questionForm->question->qArSubject }}
-                                                                        <input name="{{ $questionForm->id }}" type="text" placeholder="{{ $questionForm->question->qArPlaceHolder }}" {{ $questionForm->qfRequire == 0 ? '' : 'required' }} pattern="{{ $questionForm->pattern->pType }}">
+                                                                        <input name="{{ $questionForm->id }}" value="{{ old($questionForm->id) }}" type="text" placeholder="{{ $questionForm->question->qArPlaceHolder }}" {{ $questionForm->qfRequire == 0 ? '' : 'required' }} pattern="{{ $questionForm->pattern->pType }}">
                                                                         <span class="form-error">{{ $questionForm->qfArErrorMsg }}</span>
                                                                     </label>
                                                                 @endif
@@ -952,12 +952,22 @@
                                                             @endif
                                                         @endif
                                                         @foreach($questionForm->question->fieldOption as $fieldOption)
+                                                            <?php $isChecked = false; ?>
+                                                            @foreach($questionForm->question->fieldOption as $fo)
+                                                                @if($lan == 'fa' && old($questionForm->id . '.' . ($loop->iteration - 1)) == $fieldOption->option->oFaValue)
+                                                                    <?php $isChecked = true; ?>
+                                                                @elseif($lan == 'en' && old($questionForm->id . '.' . ($loop->iteration - 1)) == $fieldOption->option->oEnValue)
+                                                                    <?php $isChecked = true; ?>
+                                                                @elseif($lan == 'ar' && old($questionForm->id . '.' . ($loop->iteration - 1)) == $fieldOption->option->oArValue)
+                                                                    <?php $isChecked = true; ?>
+                                                                @endif
+                                                            @endforeach
                                                             @if($lan == 'fa')
-                                                                <div class="large-12 medium-12 small-12"><input name="{{ $questionForm->id . '[]'}}" value="{{ $fieldOption->option->oFaValue }}" id="{{ $form->id . $questionForm->question->qName . $fieldOption->option->oName }}" type="checkbox" {{ $fieldOption->foRequire != 0 ? 'required' : '' }}><label for="{{ $form->id . $questionForm->question->qName . $fieldOption->option->oName }}">{{ $fieldOption->option->oFaSubject }}</label></div>
+                                                                <div class="large-12 medium-12 small-12"><input name="{{ $questionForm->id . '[]'}}" value="{{ $fieldOption->option->oFaValue }}" id="{{ $form->id . $questionForm->question->qName . $fieldOption->option->oName }}" type="checkbox" {{ $fieldOption->foRequire != 0 ? 'required' : '' }} {{ $isChecked == true ? 'checked' : '' }}><label for="{{ $form->id . $questionForm->question->qName . $fieldOption->option->oName }}">{{ $fieldOption->option->oFaSubject }}</label></div>
                                                             @elseif($lan == 'en')
-                                                                <div class="large-12 medium-12 small-12"><input name="{{ $questionForm->id . '[]' }}" value="{{ $fieldOption->option->oEnValue }}" id="{{ $form->id . $questionForm->question->qName . $fieldOption->option->oName }}" type="checkbox" {{ $fieldOption->foRequire != 0 ? 'required' : '' }}><label for="{{ $form->id . $questionForm->question->qName . $fieldOption->option->oName }}">{{ $fieldOption->option->oEnSubject }}</label></div>
+                                                                <div class="large-12 medium-12 small-12"><input name="{{ $questionForm->id . '[]' }}" value="{{ $fieldOption->option->oEnValue }}" id="{{ $form->id . $questionForm->question->qName . $fieldOption->option->oName }}" type="checkbox" {{ $fieldOption->foRequire != 0 ? 'required' : '' }} {{ $isChecked == true ? 'checked' : '' }}><label for="{{ $form->id . $questionForm->question->qName . $fieldOption->option->oName }}">{{ $fieldOption->option->oEnSubject }}</label></div>
                                                             @elseif($lan == 'ar')
-                                                                <div class="large-12 medium-12 small-12"><input name="{{ $questionForm->id . '[]' }}" value="{{ $fieldOption->option->oArValue }}" id="{{ $form->id . $questionForm->question->qName . $fieldOption->option->oName }}" type="checkbox" {{ $fieldOption->foRequire != 0 ? 'required' : '' }}><label for="{{ $form->id . $questionForm->question->qName . $fieldOption->option->oName }}">{{ $fieldOption->option->oArSubject }}</label></div>
+                                                                <div class="large-12 medium-12 small-12"><input name="{{ $questionForm->id . '[]' }}" value="{{ $fieldOption->option->oArValue }}" id="{{ $form->id . $questionForm->question->qName . $fieldOption->option->oName }}" type="checkbox" {{ $fieldOption->foRequire != 0 ? 'required' : '' }} {{ $isChecked == true ? 'checked' : '' }}><label for="{{ $form->id . $questionForm->question->qName . $fieldOption->option->oName }}">{{ $fieldOption->option->oFaSubject }}><label for="{{ $form->id . $questionForm->question->qName . $fieldOption->option->oName }}">{{ $fieldOption->option->oArSubject }}</label></div>
                                                             @endif
                                                         @endforeach
                                                         @break
@@ -982,11 +992,11 @@
                                                         @endif
                                                         @foreach($questionForm->question->fieldOption as $fieldOption)
                                                             @if($lan == 'fa')
-                                                                <div class="large-12 medium-12 small-12"><input name="{{ $questionForm->id }}" value="{{ $fieldOption->option->oFaValue }}" id="{{ $form->id . $questionForm->question->qName . $fieldOption->option->oName }}" type="radio" {{ $questionForm->qfRequire != 0 ? 'required' : '' }}><label for="{{ $form->id . $questionForm->question->qName . $fieldOption->option->oName }}">{{ $fieldOption->option->oFaSubject }}</label></div>
+                                                                <div class="large-12 medium-12 small-12"><input name="{{ $questionForm->id }}" value="{{ $fieldOption->option->oFaValue }}" id="{{ $form->id . $questionForm->question->qName . $fieldOption->option->oName }}" type="radio" {{ $questionForm->qfRequire != 0 ? 'required' : '' }} {{ old($questionForm->id) == $fieldOption->option->oFaValue ? 'checked' : '' }}><label for="{{ $form->id . $questionForm->question->qName . $fieldOption->option->oName }}">{{ $fieldOption->option->oFaSubject }}</label></div>
                                                             @elseif($lan == 'en')
-                                                                <div class="large-12 medium-12 small-12"><input name="{{ $questionForm->id }}" value="{{ $fieldOption->option->oEnValue }}" id="{{ $form->id . $questionForm->question->qName . $fieldOption->option->oName }}" type="radio" {{ $questionForm->qfRequire != 0 ? 'required' : '' }}><label for="{{ $form->id . $questionForm->question->qName . $fieldOption->option->oName }}">{{ $fieldOption->option->oEnSubject }}</label></div>
+                                                                <div class="large-12 medium-12 small-12"><input name="{{ $questionForm->id }}" value="{{ $fieldOption->option->oEnValue }}" id="{{ $form->id . $questionForm->question->qName . $fieldOption->option->oName }}" type="radio" {{ $questionForm->qfRequire != 0 ? 'required' : '' }} {{ old($questionForm->id) == $fieldOption->option->oEnValue ? 'checked' : '' }}><label for="{{ $form->id . $questionForm->question->qName . $fieldOption->option->oName }}">{{ $fieldOption->option->oEnSubject }}</label></div>
                                                             @elseif($lan == 'ar')
-                                                                <div class="large-12 medium-12 small-12"><input name="{{ $questionForm->id }}" value="{{ $fieldOption->option->oArValue }}" id="{{ $form->id . $questionForm->question->qName . $fieldOption->option->oName }}" type="radio" {{ $questionForm->qfRequire != 0 ? 'required' : '' }}><label for="{{ $form->id . $questionForm->question->qName . $fieldOption->option->oName }}">{{ $fieldOption->option->oArSubject }}</label></div>
+                                                                <div class="large-12 medium-12 small-12"><input name="{{ $questionForm->id }}" value="{{ $fieldOption->option->oArValue }}" id="{{ $form->id . $questionForm->question->qName . $fieldOption->option->oName }}" type="radio" {{ $questionForm->qfRequire != 0 ? 'required' : '' }} {{ old($questionForm->id) == $fieldOption->option->oArValue ? 'checked' : '' }}><label for="{{ $form->id . $questionForm->question->qName . $fieldOption->option->oName }}">{{ $fieldOption->option->oArSubject }}</label></div>
                                                             @endif
                                                         @endforeach
                                                         @break
@@ -1013,13 +1023,29 @@
                                                             @if($questionForm->qfRequire != 0)
                                                                 <option></option>
                                                             @endif
+                                                            <?php $setSelected = false; ?>
                                                             @foreach($questionForm->question->fieldOption as $fieldOption)
                                                                 @if($lan == 'fa')
-                                                                    <option value="{{ $fieldOption->option->oFaValue }}" {{ $fieldOption->foChecked != 0 ? 'checked' : '' }}>{{ $fieldOption->option->oFaSubject }}</option>
+                                                                    @if (old($questionForm->id) == $fieldOption->option->oFaValue)
+                                                                        <option value="{{ $fieldOption->option->oFaValue }}" selected>{{ $fieldOption->option->oFaSubject }}</option>
+                                                                        <?php $setSelected = true; ?>
+                                                                    @else
+                                                                        <option value="{{ $fieldOption->option->oFaValue }}" {{ ($fieldOption->foChecked != 0 && !$setSelected) ? 'selected' : '' }}>{{ $fieldOption->option->oFaSubject }}</option>
+                                                                    @endif
                                                                 @elseif($lan == 'en')
-                                                                    <option value="{{ $fieldOption->option->oEnValue }}" {{ $fieldOption->foChecked != 0 ? 'checked' : '' }}>{{ $fieldOption->option->oEnSubject }}</option>
+                                                                    @if (old($questionForm->id) == $fieldOption->option->oEnValue)
+                                                                        <option value="{{ $fieldOption->option->oEnValue }}" selected>{{ $fieldOption->option->oEnSubject }}</option>
+                                                                        <?php $setSelected = true; ?>
+                                                                    @else
+                                                                        <option value="{{ $fieldOption->option->oEnValue }}" {{ ($fieldOption->foChecked != 0 && !$setSelected) ? 'selected' : '' }}>{{ $fieldOption->option->oEnSubject }}</option>
+                                                                    @endif
                                                                 @elseif($lan == 'ar')
-                                                                    <option value="{{ $fieldOption->option->oArValue }}" {{ $fieldOption->foChecked != 0 ? 'checked' : '' }}>{{ $fieldOption->option->oArSubject }}</option>
+                                                                    @if (old($questionForm->id) == $fieldOption->option->oArValue)
+                                                                        <option value="{{ $fieldOption->option->oArValue }}" selected>{{ $fieldOption->option->oArSubject }}</option>
+                                                                        <?php $setSelected = true; ?>
+                                                                    @else
+                                                                        <option value="{{ $fieldOption->option->oArValue }}" {{ ($fieldOption->foChecked != 0 && !$setSelected) ? 'selected' : '' }}>{{ $fieldOption->option->oArSubject }}</option>
+                                                                    @endif
                                                                 @endif
                                                             @endforeach
                                                         </select>
@@ -1044,7 +1070,7 @@
                                                                 @endif
                                                             @endif
                                                             <div class="large-12">
-                                                                <textarea style="height: auto;" class="form-control" name="{{ $questionForm->id }}" {{ $questionForm->qfRequire != 0 ? 'required' : '' }}></textarea>
+                                                                <textarea style="height: auto;" class="form-control" name="{{ $questionForm->id }}" {{ $questionForm->qfRequire != 0 ? 'required' : '' }}>{{ old($questionForm->id) }}</textarea>
                                                             </div>
                                                         @break
                                                     @case("captcha")
@@ -1074,33 +1100,18 @@
                                                         <div class="large-12">
                                                             <div class="it">
                                                                 <div class="grid-x" id="uploader">
-                                                                    @if($questionForm->qfRequire != 0)
-                                                                        <div class="large-3 uploadDoc">
-                                                                            <div class="padding-lr multi-uploader">
-                                                                                <div class="docErr">Please upload valid file</div><!--error-->
-                                                                                <div class="fileUpload btn btn-orange">
-                                                                                    <img src="https://image.flaticon.com/icons/svg/136/136549.svg" class="icon">
-                                                                                    <span class="upl" id="upload">Upload document</span>
-                                                                                    <input type="file" class="upload up" id="up" name="{{ $questionForm->id . '[]' }}" onchange="readURL(this);" {{ $questionForm->qfRequire != 0 ? 'required' : '' }}/>
-                                                                                </div><!-- btn-orange -->
-                                                                                <div class="grid-x">
-                                                                                    <div class="large-12">
-                                                                                        <img src="" class="multi-uploader-preview">
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div><!-- col-3 -->
-                                                                            <div class="large-12 padding-lr text-center">
-                                                                                <a class="btn-check" onclick="deleteUploadImgItem(this , '{{ $questionForm->qfRequire }}');"><i class="fa fa-times"></i></a>
-                                                                            </div><!-- col-1 -->
-                                                                        </div><!--row-->
-                                                                    @endif
+                                                                    <div class="large-3 uploadDoc">
+                                                                        <div class="multi-uploader">
+                                                                            <div class="fileUpload" style="padding: 5px">
+                                                                                <label for="{{ 'up0'  }}" class="multi-uploader-preview-label">
+                                                                                    <img src="{{ asset('pic/upload_img.png') }}" class="img-border"/>
+                                                                                </label>
+                                                                                <input type="file" accept="image/*" class="upload up" id="up0" name="{{ $questionForm->id . '[]' }}" onchange="readURL(this, '{{ $questionForm->id . '[]' }}' , '{{ $questionForm->qfRequire }}' , '{{ asset('pic/upload_img.png') }}' , 1);" {{ $questionForm->qfRequire != 0 ? 'required' : '' }}/>
+                                                                            </div><!-- btn-orange -->
+                                                                        </div><!-- col-3 -->
+                                                                    </div><!--row-->
                                                                 </div><!--uploader-->
                                                             </div><!-- row -->
-                                                            <div class="grid-x">
-                                                                <div class="large-12 text-center">
-                                                                    <a onclick="addNewUploadFile('{{ $questionForm->id . '[]' }}' , '{{ $questionForm->qfRequire }}');" class="button primary"><i class="fa fa-plus"></i> Add new</a>
-                                                                </div>
-                                                            </div>
                                                         </div>
                                                         @break;
                                                     @case('single-uploader')

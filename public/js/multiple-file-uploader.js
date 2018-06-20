@@ -1,5 +1,5 @@
 ﻿var fileTypes = ['jpg', 'jpeg', 'png'];  //acceptable file types
-function readURL(input) {
+function readURL(input , inputName , isRequire , uploadIcon , counter) {
     if (input.files && input.files[0]) {
         var extension = input.files[0].name.split('.').pop().toLowerCase(),  //file extension from input file
             isSuccess = fileTypes.indexOf(extension) > -1;  //is extension in acceptable types
@@ -7,7 +7,15 @@ function readURL(input) {
         if (isSuccess) { //yes
             var reader = new FileReader();
             reader.onload = function (e) {
-                $(input).closest('.multi-uploader').find(".multi-uploader-preview").attr('src',e.target.result);
+                $(input).closest('.multi-uploader').find(".multi-uploader-preview-label").remove();
+                $(input).closest('.multi-uploader').find(".fileUpload").append(
+                    '<div class="image-preview-container">' +
+                    '<img src="' + e.target.result + '" class="multi-uploader-preview"/>' +
+                    '<div class="middle">' +
+                    '<a onclick="deleteUploadImgItem(this , ' + isRequire + ');"><span class="btn-red"><i class="fas fa-trash-alt size-36"></i></span></a>'+
+                    '</div>' +
+                    '</div>');
+                addNewUploadFile(inputName , isRequire , uploadIcon , counter)
             }
             reader.readAsDataURL(input.files[0]);
         }
@@ -22,6 +30,13 @@ function readURL(input) {
 }
 
 $(document).ready(function(){
+    $("form#fileupload :input").each(function(){
+        var input = $(this); // A jquery object of the input
+        if (input.attr('type') == 'file')
+        {
+            input.val('');
+        }
+    }); //clear all input file type
 
     $(document).on('change','.up', function(){
         var id = $(this).attr('id'); /* gets the filepath and filename from the input */
@@ -41,6 +56,13 @@ function deleteUploadImgItem(input , isRequire) {
     {
         if($(".uploadDoc").length > 1){
             $(input).closest(".uploadDoc").remove();
+            if ($(".uploadDoc").length == 1)
+            {
+                $(".uploadDoc").each(function (e) {
+                    $(this).find('.upload').attr('required', true);
+                    alert("morteza");
+                });
+            }
         }else{
             alert("You have to upload at least one document.");
         }
@@ -49,30 +71,17 @@ function deleteUploadImgItem(input , isRequire) {
     }
 }
 
-function addNewUploadFile(inputName , isRequire)
+function addNewUploadFile(inputName , isRequire , uploadIcon , counter)
 {
     $("#uploader").append(
         '<div class="large-3 uploadDoc">' +
-        '<div class="padding-lr multi-uploader">' +
-        '<div class="docErr">Please upload valid file</div>' +
-        '<!--error-->' +
-        '<div class="fileUpload btn btn-orange"> ' +
-        '<img src="https://image.flaticon.com/icons/svg/136/136549.svg" class="icon"> '+
-        '<span class="upl" id="upload">Upload document</span>' +
-        '<input type="file" class="upload up" id="up" name="' + inputName +'" onchange="readURL(this);" />' +
-        '</div>' +
-        '<div class="grid-x">'+
-        '<div class="large-12">'+
-        '<img src="" class="multi-uploader-preview">'+
-        '</div>'+
-        '</div>'+
-        '</div>' +
-        '<div class="large-12 padding-lr text-center">' +
-        '<a class="btn-check" onclick="deleteUploadImgItem(this , ' + isRequire + ');">' +
-        '<i class="fa fa-times"></i>' +
-        '</a>' +
-        '</div>' +
-        '</div>' +
+            '<div class="multi-uploader">' +
+                '<div class="fileUpload" style="padding: 5px"> ' +
+                    '<label for="up' + counter + '" class="multi-uploader-preview-label">' +
+                    '<img src="' + uploadIcon + '" class="img-border"/>' +
+                    '</label>' +
+                    '<input type="file" accept="image/*" class="upload up" id="up' + counter + '" name="' + inputName +'" onchange="readURL(this, \'' + inputName + '\' , \'' + isRequire + '\' , \'' + uploadIcon + '\' , ' + (counter + 1) + ');" />' +
+                '</div>' +
+            '</div>' +
         '</div>');
-
 }
