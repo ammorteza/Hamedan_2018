@@ -152,8 +152,8 @@
                         <!--Display Tag In small End-->
                         @foreach($pageInfo->pageHeaderImg as $pageImg)
                             <li class="is-active orbit-slide">
-                                <img  class="background-cover orbit-image {{ $pageInfo->headerType->phtType == 'SIMPLE' ? 'top-slider-simple' : 'top-slider my-zoom-out' }}" src="{{ asset($pageImg->image->gPath . '?v' . config('app.version')) }}" alt="Space">
                                 @if ($pageInfo->headerType->phtType == 'SIMPLE')
+                                    <img  class="background-cover orbit-image top-slider-simple" src="{{ asset($pageImg->image->gPath . '?v' . config('app.version')) }}" alt="Space">
                                     <figcaption class="orbit-caption align-center my-text-shadow-effect">
                                         @if($lan == 'fa')
                                             <p style="text-align: center;" class="top-slider-header-sample Shabnam-Bold my-fadeIn-and-move">{{ $pageInfo->pFaSubject }}</p>
@@ -181,7 +181,34 @@
                                             @endif
                                         @endif
                                     </figcaption>
+                                @elseif ($pageInfo->headerType->phtType == 'PUBLIC')
+                                    <img style="height: 50vh" class="background-cover orbit-image top-slider-simple image-black-overlay" src="{{ asset('pic/gallery/lan_1.jpg') }}" alt="Space">
+                                    <figcaption class="orbit-caption align-center my-text-shadow-effect">
+                                        @if($lan == 'fa')
+                                            <p style="text-align: center;" class="top-slider-header-public Shabnam-Bold my-fadeIn-and-move">{{ $pageInfo->pFaSubject }}</p>
+                                            @if ($pageImg->phiLink != null)
+                                                <center>
+                                                    <a href="{{ url($pageImg->phiLink . '') }}" style="margin-top: 15px;" class="button primary white-color">{{ $pageImg->phiLinkFaTitle }}</a>
+                                                </center>
+                                            @endif
+                                        @elseif($lan == 'en')
+                                            <p style="text-align: center;" class="top-slider-header-public Roboto-Bold">{{ $pageInfo->pEnSubject }}</p>
+                                            @if ($pageImg->phiLink != null)
+                                                <center>
+                                                    <a href="{{ url($pageImg->phiLink . '') }}" style="margin-top: 15px;" class="button primary white-color">{{ $pageImg->phiLinkEnTitle }}</a>
+                                                </center>
+                                            @endif
+                                        @elseif($lan == 'ar')
+                                            <p style="text-align: center;" class="top-slider-header-public Al-Jazeera-Arabic-Bold">{{ $pageInfo->pArSubject }}</p>
+                                            @if ($pageImg->phiLink != null)
+                                                <center>
+                                                    <a href="{{ url($pageImg->phiLink . '') }}" style="margin-top: 15px;" class="button primary white-color">{{ $pageImg->phiLinkArTitle }}</a>
+                                                </center>
+                                            @endif
+                                        @endif
+                                    </figcaption>
                                 @elseif($pageInfo->headerType->phtType == 'ADVANCE')
+                                    <img  class="background-cover orbit-image top-slider my-zoom-out" src="{{ asset($pageImg->image->gPath . '?v' . config('app.version')) }}" alt="Space">
                                     <figcaption class="orbit-caption">
                                         <div class="top-slider-grid-container">
                                             <div class="grid-x">

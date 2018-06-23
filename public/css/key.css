@@ -124,6 +124,23 @@ th {
     margin-bottom: 0px;
 }
 
+.top-slider-header-public{
+    font-size: 3.5em;
+    margin-bottom: -150px;
+}
+.image-black-overlay{
+    /*display:block;
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(2px);
+    -o-filter: blur(2px);
+    -ms-filter: blur(2px);
+    filter: blur(2px);
+    opacity: 0.95;*/
+    filter: brightness(55%);
+
+
+}
+
 .top-slider-description-sample{
     font-size: 1.5em;
 }
