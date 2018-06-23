@@ -247,8 +247,8 @@
                                     </div>
                                 </a>
                             </div>
-                        </div>
-                        @endif
+                    </div>
+                @endif
                     </div>
             </div>
         </div>
