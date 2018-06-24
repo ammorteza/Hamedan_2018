@@ -129,16 +129,16 @@ th {
     margin-bottom: -150px;
 }
 .image-black-overlay{
-    /*display:block;
+    filter: brightness(55%);
+}
+.blur-effect{
+    display:block;
     -webkit-filter: blur(5px);
     -moz-filter: blur(2px);
     -o-filter: blur(2px);
     -ms-filter: blur(2px);
     filter: blur(2px);
-    opacity: 0.95;*/
-    filter: brightness(55%);
-
-
+    opacity: 0.95;
 }
 
 .top-slider-description-sample{
@@ -725,7 +725,7 @@ ul.social-icons {
 .fa-google-plus-g:hover {
     background-color: #e25714;
 }
-.fa-instagram {
+.fa-instagram-m {
     padding:10px 13px;
     -o-transition:.5s;
     -ms-transition:.5s;
@@ -734,7 +734,7 @@ ul.social-icons {
     transition: .5s;
     background-color: #3d3c3c;
 }
-.fa-instagram:hover {
+.fa-instagram-m:hover {
     background-color: #C900B8;
 }
 .fa-telegram-plane {
@@ -2006,6 +2006,10 @@ p
 .img-button.img-primary:hover, .img-button.img-primary:focus {
     background-color: #bdc3c7;
     color: #0a0a0a; }
+
+.instagram-icon-pos{
+    margin-top: -10px;
+}
 /*-------------------------------Media Queries------------------------------------*/
 @media only screen and (max-width: 1024px) {
     .mq-topmenu-status{

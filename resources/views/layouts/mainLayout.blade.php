@@ -36,6 +36,7 @@
     <link rel="stylesheet" href="{{ asset('css/foundation.css?v' . config('app.version')) }}">
     <link href="https://fonts.googleapis.com/css?family=Satisfy|Poiret+One|Cabin|Wire+One|Merienda|Roboto" rel="stylesheet">
     {{--<link href="https://cdnjs.cloudflare.com/ajax/libs/motion-ui/1.2.2/motion-ui.css" rel="stylesheet">--}}
+    <link rel="stylesheet" href="{{ asset('css/about-me.css?v' . config('app.version')) }}">
     <link rel="stylesheet" href="{{ asset('css/font.css?v' . config('app.version')) }}">
     <link rel="stylesheet" href="{{ asset('css/key.css?v' . config('app.version')) }}">
 </head>
@@ -323,7 +324,7 @@
                             <li><a href="" class="social-icon"> <i class="fab fa-twitter"></i></a></li>
                             <li><a href="" class="social-icon"> <i class="fab fa-linkedin-in"></i></a></li>
                             <li><a href="" class="social-icon"> <i class="fab fa-google-plus-g"></i></a></li>
-                            <li><a href="https://www.instagram.com/hamedan2018official" target="_blank" class="social-icon"> <i class="fab fa-instagram"></i></a></li>
+                            <li><a href="https://www.instagram.com/hamedan2018official" target="_blank" class="social-icon"> <i class="fab fa-instagram fa-instagram-m"></i></a></li>
                             <li><a href="" class="social-icon"> <i class="fab fa-telegram-plane"></i></a></li>
                         </ul>
                     </div>
@@ -628,5 +629,38 @@
     });
 </script>
 <!--Multi Step Forms-->
+<!--About Me Section Start-->
+<script>
+    $(function() {
+        $('.material-card > .mc-btn-action').click(function () {
+            var card = $(this).parent('.material-card');
+            var icon = $(this).children('i');
+            icon.addClass('fa-spin-fast');
+
+            if (card.hasClass('mc-active')) {
+                card.removeClass('mc-active');
+
+                window.setTimeout(function() {
+                    icon
+                        .removeClass('fa-arrow-left')
+                        .removeClass('fa-spin-fast')
+                        .addClass('fa-bars');
+
+                }, 800);
+            } else {
+                card.addClass('mc-active');
+
+                window.setTimeout(function() {
+                    icon
+                        .removeClass('fa-bars')
+                        .removeClass('fa-spin-fast')
+                        .addClass('fa-arrow-left');
+
+                }, 800);
+            }
+        });
+    });
+</script>
+<!--About Me Section End-->
 </body>
 </html>
