@@ -443,6 +443,7 @@ th {
     margin-top: 30px;
     position: relative;
     font-size: small;
+
 }
 .middle-menu .is-active{
     border-bottom:.2rem solid #2ba6cb;
@@ -461,6 +462,7 @@ th {
     border-bottom:.1rem solid hsla(0,15%,80%,.3);
     height: 100px;
     background-color: #FFFFFF;
+    z-index: 50;
 }
 .top-padd{
     padding: 30px;

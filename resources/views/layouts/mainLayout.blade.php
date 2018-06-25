@@ -33,10 +33,14 @@
     <link rel="stylesheet" href="{{ asset('css/hoverEffect/demo.css') }}">
     <link rel="stylesheet" href="{{ asset('css/hoverEffect/set1.css') }}">
 
-    <link rel="stylesheet" href="{{ asset('css/foundation.css?v' . config('app.version')) }}">
+
     <link href="https://fonts.googleapis.com/css?family=Satisfy|Poiret+One|Cabin|Wire+One|Merienda|Roboto" rel="stylesheet">
     {{--<link href="https://cdnjs.cloudflare.com/ajax/libs/motion-ui/1.2.2/motion-ui.css" rel="stylesheet">--}}
     <link rel="stylesheet" href="{{ asset('css/about-me.css?v' . config('app.version')) }}">
+
+
+    <link rel="stylesheet" href="{{ asset('css/country-flags.css?v' . config('app.version')) }}">
+    <link rel="stylesheet" href="{{ asset('css/foundation.css?v' . config('app.version')) }}">
     <link rel="stylesheet" href="{{ asset('css/font.css?v' . config('app.version')) }}">
     <link rel="stylesheet" href="{{ asset('css/key.css?v' . config('app.version')) }}">
 </head>
@@ -463,7 +467,12 @@
 {{--<script src="{{ asset('js/unitegallery/js/unitgallery.js') }}"></script>
 <link rel="stylesheet" href="{{ asset('js/unitegallery/css/unite-gallery.css') }}">
 <script src="{{ asset('js/unitegallery/js/ug-theme-compact.js') }}"></script>--}}
-
+<!--Flag Country-->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/11.0.9/css/intlTelInput.css" rel="stylesheet" media="screen">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/11.0.9/js/intlTelInput.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/11.0.9/js/intlTelInput.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/11.0.9/js/utils.js"></script>
+<!--Flag Country-->
 <!--unit video gallery slider-->
 
 <script src="{{ asset('js/vendor/foundation.js?v' . config('app.version')) }}"></script>
@@ -662,5 +671,67 @@
     });
 </script>
 <!--About Me Section End-->
+
+<!--Country flage Start-->
+<script>
+
+    var telInput = $("#phone"),
+        errorMsg = $("#error-msg"),
+        validMsg = $("#valid-msg");
+
+    // initialise plugin
+    telInput.intlTelInput({
+
+        allowExtensions: true,
+        formatOnDisplay: true,
+        autoFormat: true,
+        autoHideDialCode: true,
+        autoPlaceholder: true,
+        defaultCountry: "auto",
+        ipinfoToken: "yolo",
+
+        nationalMode: false,
+        numberType: "MOBILE",
+        //onlyCountries: ['us', 'gb', 'ch', 'ca', 'do'],
+        preferredCountries: ['sa', 'ae', 'qa','om','bh','kw','ma'],
+        preventInvalidNumbers: true,
+        separateDialCode: true,
+        initialCountry: "auto",
+        geoIpLookup: function(callback) {
+            $.get("http://ipinfo.io", function() {}, "jsonp").always(function(resp) {
+                var countryCode = (resp && resp.country) ? resp.country : "";
+                callback(countryCode);
+            });
+        },
+        utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/11.0.9/js/utils.js"
+    });
+
+    var reset = function() {
+        telInput.removeClass("error");
+        errorMsg.addClass("hide");
+        validMsg.addClass("hide");
+    };
+
+    // on blur: validate
+    telInput.blur(function() {
+        reset();
+        if ($.trim(telInput.val())) {
+            if (telInput.intlTelInput("isValidNumber")) {
+                validMsg.removeClass("hide");
+            } else {
+                telInput.addClass("error");
+                errorMsg.removeClass("hide");
+            }
+        }
+    });
+
+    // on keyup / change flag: reset
+    telInput.on("keyup change", reset);
+
+
+
+</script>
+<!--Country flage End-->
+
 </body>
 </html>

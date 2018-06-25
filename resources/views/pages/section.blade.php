@@ -4,7 +4,7 @@
         <!--SUB MENU SECTION-->
         @if($section->sectionType->stType == 'SUB_MENU')
             <div class="grid-x grid-padding-x" data-sticky-container>
-                <div class="large-12 medium-12 small-12 middle-menu-bottom" data-sticky data-top-anchor="650" data-margin-top="0">
+                <div style="z-index: 998;" class="large-12 medium-12 small-12 middle-menu-bottom" data-sticky data-top-anchor="650" data-margin-top="0">
                     <ul class="menu align-center top-menu middle-menu element-dir sub-menu-none">
                         @foreach(\Hamedan_2018\SubMenu::getAllSubMenuWithMainMenuId($section->sMmId) as $subMenu)
                             @if($lan == 'fa')
@@ -1338,4 +1338,14 @@
         </div>
     </div>
     <!--Section About Me End-->
+
+    <div class="grid-container">
+        <div class="grid-x">
+            <div class="large-12">
+                <input id="phone" type="tel">
+                <span id="valid-msg" class="hide">Valid</span>
+                <span id="error-msg" class="hide">Invalid number</span>
+            </div>
+        </div>
+    </div>
 @stop
