@@ -60,7 +60,6 @@ function deleteUploadImgItem(input , isRequire) {
             {
                 $(".uploadDoc").each(function (e) {
                     $(this).find('.upload').attr('required', true);
-                    alert("morteza");
                 });
             }
         }else{
