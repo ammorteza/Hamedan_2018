@@ -38,11 +38,11 @@
     {{--<link href="https://cdnjs.cloudflare.com/ajax/libs/motion-ui/1.2.2/motion-ui.css" rel="stylesheet">--}}
     <link rel="stylesheet" href="{{ asset('css/about-me.css?v' . config('app.version')) }}">
 
-
-    <link rel="stylesheet" href="{{ asset('css/country-flags.css?v' . config('app.version')) }}">
     <link rel="stylesheet" href="{{ asset('css/foundation.css?v' . config('app.version')) }}">
     <link rel="stylesheet" href="{{ asset('css/font.css?v' . config('app.version')) }}">
     <link rel="stylesheet" href="{{ asset('css/key.css?v' . config('app.version')) }}">
+
+
 </head>
 <body class="Shabnam-Light">
 <!--Top Slider Start-->
@@ -467,14 +467,10 @@
 {{--<script src="{{ asset('js/unitegallery/js/unitgallery.js') }}"></script>
 <link rel="stylesheet" href="{{ asset('js/unitegallery/css/unite-gallery.css') }}">
 <script src="{{ asset('js/unitegallery/js/ug-theme-compact.js') }}"></script>--}}
-<!--Flag Country-->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/11.0.9/css/intlTelInput.css" rel="stylesheet" media="screen">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/11.0.9/js/intlTelInput.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/11.0.9/js/intlTelInput.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/11.0.9/js/utils.js"></script>
-<!--Flag Country-->
+
 <!--unit video gallery slider-->
 
+<script src="{{ asset('js/country-flags.js?v' . config('app.version')) }}"></script>
 <script src="{{ asset('js/vendor/foundation.js?v' . config('app.version')) }}"></script>
 <script src="{{ asset('js/app.js?v' . config('app.version')) }}"></script>
 
