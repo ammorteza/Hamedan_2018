@@ -124,10 +124,7 @@ th {
     margin-bottom: 0px;
 }
 
-.top-slider-header-public{
-    font-size: 3em;
-    margin-bottom: -150px;
-}
+
 .image-black-overlay{
     filter: brightness(55%);
 }
@@ -1574,6 +1571,10 @@ ul.social-icons {
     text-decoration-color: #d9534f;
 }
 
+.top-slider-header-public{
+    font-size: 3em;
+    margin-bottom: -150px !important;
+}
 /*////////////////////////////// Multi Step Form Styles ///////////////////////////*/
 /*form styles*/
 .msform {
@@ -1608,7 +1609,6 @@ ul.social-icons {
     border-radius: 3px;
     margin-bottom: 10px;
     box-sizing: border-box;
-    font-family: montserrat;
     color: #2C3E50;
     font-size: 13px;
 }

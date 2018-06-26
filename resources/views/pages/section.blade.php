@@ -4,7 +4,7 @@
         <!--SUB MENU SECTION-->
         @if($section->sectionType->stType == 'SUB_MENU')
             <div class="grid-x grid-padding-x" data-sticky-container>
-                <div style="z-index: 998" class="large-12 medium-12 small-12 middle-menu-bottom" data-sticky data-top-anchor="{{ $pageInfo->headerType->phtType == 'PUBLIC' ? '400' : '650' }}" data-margin-top="0">
+                <div style="z-index: 80" class="large-12 medium-12 small-12 middle-menu-bottom" data-sticky data-top-anchor="{{ $pageInfo->headerType->phtType == 'PUBLIC' ? '400' : '650' }}" data-margin-top="0">
                     <ul class="menu align-center top-menu middle-menu element-dir sub-menu-none">
                         @foreach(\Hamedan_2018\SubMenu::getAllSubMenuWithMainMenuId($section->sMmId) as $subMenu)
                             @if($lan == 'fa')
@@ -943,7 +943,7 @@
                                                             @endif
                                                             @break
                                                         @case("phone-number")
-                                                            <div class="grid-x element-dir-l">
+                                                            <div class="grid-x">
                                                                 @if($questionForm->qfRequire)
                                                                     @if($lan == 'fa')
                                                                         <label class="large-12 medium-12 small-12"><span class="btn-red"><i class="fas fa-star size-12"></i></span> {{ $questionForm->question->qFaSubject }}</label>
@@ -961,7 +961,7 @@
                                                                         <label class="large-12 medium-12 small-12"> {{ $questionForm->question->qArSubject }}</label>
                                                                     @endif
                                                                 @endif
-                                                                <div class="large-5 medium-5 small-6">
+                                                                <div class="large-5 medium-5 small-6  element-dir-l">
                                                                     <label>
                                                                         <select name="{{ $questionForm->id . '_country_code' }}" style="border-radius: 0px"  {{ $questionForm->qfRequire == 0 ? '' : 'required' }}>
                                                                             <option data-countryCode="--" value="" Selected>-- country --</option>
@@ -1186,7 +1186,7 @@
                                                                         </select>
                                                                     </label>
                                                                 </div>
-                                                                <div class="large-7 medium-7 small-6">
+                                                                <div class="large-7 medium-7 small-6  element-dir-l">
                                                                     @if($lan == 'fa')
                                                                         <input style="border-radius: 0px" name="{{ $questionForm->id }}" value="{{ old($questionForm->id) }}" type="tel" placeholder="{{ $questionForm->question->qFaPlaceHolder }}" {{ $questionForm->qfRequire == 0 ? '' : 'required' }} pattern="{{ $questionForm->pattern->pType }}">
                                                                     @elseif($lan == 'en')

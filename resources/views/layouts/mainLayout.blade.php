@@ -46,7 +46,7 @@
 </head>
 <body class="Shabnam-Light">
 <!--Top Slider Start-->
-<div class="off-canvas position-right" id="offCanvas" data-off-canvas>
+<div style="z-index: 9999;" class="off-canvas position-right" id="offCanvas" data-off-canvas>
     <!-- Close button -->
     <center class="float-center">
         <img src="{{ asset('pic/footer/footer-logo.png') }}" alt="Hamedan-2018" width="150px" height="80px">
@@ -187,24 +187,24 @@
                                         @endif
                                     </figcaption>
                                 @elseif ($pageInfo->headerType->phtType == 'PUBLIC')
-                                    <img style="height: 50vh" class="background-cover orbit-image top-slider-simple image-black-overlay" src="{{ asset('pic/gallery/lan_1.jpg') }}" alt="Space">
+                                    <img style="height: 50vh;width: 100vw;" class="background-cover orbit-image top-slider-simple image-black-overlay" src="{{ asset('pic/gallery/lan_1.jpg') }}" alt="Space">
                                     <figcaption class="orbit-caption align-center my-text-shadow-effect">
                                         @if($lan == 'fa')
-                                            <p style="text-align: center;" class="top-slider-header-public Shabnam-Bold my-fadeIn-and-move">{{ $pageInfo->pFaSubject }}</p>
+                                            <p style="text-align: center;margin-top: 10%;" class="top-slider-header-public Shabnam-Bold my-fadeIn-and-move">{{ $pageInfo->pFaSubject }}</p>
                                             @if ($pageImg->phiLink != null)
                                                 <center>
                                                     <a href="{{ url($pageImg->phiLink . '') }}" style="margin-top: 15px;" class="button primary white-color">{{ $pageImg->phiLinkFaTitle }}</a>
                                                 </center>
                                             @endif
                                         @elseif($lan == 'en')
-                                            <p style="text-align: center;" class="top-slider-header-public Roboto-Bold">{{ $pageInfo->pEnSubject }}</p>
+                                            <p style="text-align: center;margin-top: 10%;" class="top-slider-header-public Roboto-Bold">{{ $pageInfo->pEnSubject }}</p>
                                             @if ($pageImg->phiLink != null)
                                                 <center>
                                                     <a href="{{ url($pageImg->phiLink . '') }}" style="margin-top: 15px;" class="button primary white-color">{{ $pageImg->phiLinkEnTitle }}</a>
                                                 </center>
                                             @endif
                                         @elseif($lan == 'ar')
-                                            <p style="text-align: center;" class="top-slider-header-public Al-Jazeera-Arabic-Bold">{{ $pageInfo->pArSubject }}</p>
+                                            <p style="text-align: center;margin-top: 10%;" class="top-slider-header-public Al-Jazeera-Arabic-Bold">{{ $pageInfo->pArSubject }}</p>
                                             @if ($pageImg->phiLink != null)
                                                 <center>
                                                     <a href="{{ url($pageImg->phiLink . '') }}" style="margin-top: 15px;" class="button primary white-color">{{ $pageImg->phiLinkArTitle }}</a>
