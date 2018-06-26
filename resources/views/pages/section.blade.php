@@ -4,7 +4,7 @@
         <!--SUB MENU SECTION-->
         @if($section->sectionType->stType == 'SUB_MENU')
             <div class="grid-x grid-padding-x" data-sticky-container>
-                <div style="z-index: 998" class="large-12 medium-12 small-12 middle-menu-bottom" data-sticky data-top-anchor="{{ $pageInfo->headerType->phtType == 'PUBLIC' ? '400' : '650' }}" data-margin-top="0">
+                <div style="z-index: 80" class="large-12 medium-12 small-12 middle-menu-bottom" data-sticky data-top-anchor="{{ $pageInfo->headerType->phtType == 'PUBLIC' ? '400' : '650' }}" data-margin-top="0">
                     <ul class="menu align-center top-menu middle-menu element-dir sub-menu-none">
                         @foreach(\Hamedan_2018\SubMenu::getAllSubMenuWithMainMenuId($section->sMmId) as $subMenu)
                             @if($lan == 'fa')
@@ -915,7 +915,7 @@
                                                             @elseif($lan == 'en')
                                                                 <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {{ $questionForm->question->qEnSubject }}
                                                                     <input name="{{ $questionForm->id }}" value="{{ old($questionForm->id) }}" type="text" placeholder="{{ $questionForm->question->qEnPlaceHolder }}" {{ $questionForm->qfRequire == 0 ? '' : 'required' }} pattern="{{ $questionForm->pattern->pType }}">
-                                                                    <span class="form-error wire-one">{{ $questionForm->qfEnErrorMsg }}</span>
+                                                                    <span class="form-error">{{ $questionForm->qfEnErrorMsg }}</span>
                                                                 </label>
                                                             @elseif($lan == 'ar')
                                                                 <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {{ $questionForm->question->qArSubject }}
@@ -943,22 +943,22 @@
                                                             @endif
                                                             @break
                                                         @case("phone-number")
-                                                            <div class="grid-x element-dir-l">
+                                                            <div class="grid-x  element-dir-l">
                                                                 @if($questionForm->qfRequire)
                                                                     @if($lan == 'fa')
-                                                                        <label class="large-12 medium-12 small-12"><span class="btn-red"><i class="fas fa-star size-12"></i></span> {{ $questionForm->question->qFaSubject }}</label>
+                                                                        <label class="large-12 medium-12 small-12 text-right"><span class="btn-red"><i class="fas fa-star size-12"></i></span> {{ $questionForm->question->qFaSubject }}</label>
                                                                     @elseif($lan == 'en')
                                                                         <label class="large-12 medium-12 small-12"><span class="btn-red"><i class="fas fa-star size-12"></i></span> {{ $questionForm->question->qEnSubject }}</label>
                                                                     @elseif($lan == 'ar')
-                                                                        <label class="large-12 medium-12 small-12"><span class="btn-red"><i class="fas fa-star size-12"></i></span> {{ $questionForm->question->qArSubject }}</label>
+                                                                        <label class="large-12 medium-12 small-12  text-right"><span class="btn-red"><i class="fas fa-star size-12"></i></span> {{ $questionForm->question->qArSubject }}</label>
                                                                     @endif
                                                                 @else
                                                                     @if($lan == 'fa')
-                                                                        <label class="large-12 medium-12 small-12"> {{ $questionForm->question->qFaSubject }}</label>
+                                                                        <label class="large-12 medium-12 small-12 text-right"> {{ $questionForm->question->qFaSubject }}</label>
                                                                     @elseif($lan == 'en')
                                                                         <label class="large-12 medium-12 small-12"> {{ $questionForm->question->qEnSubject }}</label>
                                                                     @elseif($lan == 'ar')
-                                                                        <label class="large-12 medium-12 small-12"> {{ $questionForm->question->qArSubject }}</label>
+                                                                        <label class="large-12 medium-12 small-12 text-right"> {{ $questionForm->question->qArSubject }}</label>
                                                                     @endif
                                                                 @endif
                                                                 <div class="large-5 medium-5 small-6">
@@ -1198,491 +1198,491 @@
                                                             </div>
                                                             @break
                                                         @case("checkbox")
-                                                                </br>
-                                                                @if($questionForm->qfRequire)
-                                                                    @if($lan == 'fa')
-                                                                        <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qFaSubject !!}</label>
-                                                                    @elseif($lan == 'en')
-                                                                        <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qEnSubject !!}</label>
-                                                                    @elseif($lan == 'ar')
-                                                                        <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qArSubject !!}</label>
-                                                                    @endif
-                                                                @else
-                                                                    @if($lan == 'fa')
-                                                                        <label> {!! $questionForm->question->qFaSubject !!}</label>
-                                                                    @elseif($lan == 'en')
-                                                                        <label> {!! $questionForm->question->qEnSubject !!}</label>
-                                                                    @elseif($lan == 'ar')
-                                                                        <label> {!! $questionForm->question->qArSubject !!}</label>
-                                                                    @endif
+                                                            </br>
+                                                            @if($questionForm->qfRequire)
+                                                                @if($lan == 'fa')
+                                                                    <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qFaSubject !!}</label>
+                                                                @elseif($lan == 'en')
+                                                                    <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qEnSubject !!}</label>
+                                                                @elseif($lan == 'ar')
+                                                                    <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qArSubject !!}</label>
                                                                 @endif
+                                                            @else
+                                                                @if($lan == 'fa')
+                                                                    <label> {!! $questionForm->question->qFaSubject !!}</label>
+                                                                @elseif($lan == 'en')
+                                                                    <label> {!! $questionForm->question->qEnSubject !!}</label>
+                                                                @elseif($lan == 'ar')
+                                                                    <label> {!! $questionForm->question->qArSubject !!}</label>
+                                                                @endif
+                                                            @endif
+                                                            @foreach($questionForm->question->fieldOption as $fieldOption)
+                                                                <?php $isChecked = false; ?>
+                                                                @foreach($questionForm->question->fieldOption as $fo)
+                                                                    @if($lan == 'fa' && old($questionForm->id . '.' . ($loop->iteration - 1)) == $fieldOption->option->oFaValue)
+                                                                        <?php $isChecked = true; ?>
+                                                                    @elseif($lan == 'en' && old($questionForm->id . '.' . ($loop->iteration - 1)) == $fieldOption->option->oEnValue)
+                                                                        <?php $isChecked = true; ?>
+                                                                    @elseif($lan == 'ar' && old($questionForm->id . '.' . ($loop->iteration - 1)) == $fieldOption->option->oArValue)
+                                                                        <?php $isChecked = true; ?>
+                                                                    @endif
+                                                                @endforeach
+                                                                @if($lan == 'fa')
+                                                                    <div class="large-12 medium-12 small-12"><input name="{{ $questionForm->id . '[]'}}" value="{{ $fieldOption->option->oFaValue }}" id="{{ $form->id . $questionForm->question->qName . $fieldOption->option->oName }}" type="checkbox" {{ $fieldOption->foRequire != 0 ? 'required' : '' }} {{ $isChecked == true ? 'checked' : '' }}><label for="{{ $form->id . $questionForm->question->qName . $fieldOption->option->oName }}">{{ $fieldOption->option->oFaSubject }}</label></div>
+                                                                @elseif($lan == 'en')
+                                                                    <div class="large-12 medium-12 small-12"><input name="{{ $questionForm->id . '[]' }}" value="{{ $fieldOption->option->oEnValue }}" id="{{ $form->id . $questionForm->question->qName . $fieldOption->option->oName }}" type="checkbox" {{ $fieldOption->foRequire != 0 ? 'required' : '' }} {{ $isChecked == true ? 'checked' : '' }}><label for="{{ $form->id . $questionForm->question->qName . $fieldOption->option->oName }}">{{ $fieldOption->option->oEnSubject }}</label></div>
+                                                                @elseif($lan == 'ar')
+                                                                    <div class="large-12 medium-12 small-12"><input name="{{ $questionForm->id . '[]' }}" value="{{ $fieldOption->option->oArValue }}" id="{{ $form->id . $questionForm->question->qName . $fieldOption->option->oName }}" type="checkbox" {{ $fieldOption->foRequire != 0 ? 'required' : '' }} {{ $isChecked == true ? 'checked' : '' }}><label for="{{ $form->id . $questionForm->question->qName . $fieldOption->option->oName }}">{{ $fieldOption->option->oFaSubject }}><label for="{{ $form->id . $questionForm->question->qName . $fieldOption->option->oName }}">{{ $fieldOption->option->oArSubject }}</label></div>
+                                                                @endif
+                                                            @endforeach
+                                                            @break
+                                                        @case("radio")
+                                                            </br>
+                                                            @if($questionForm->qfRequire)
+                                                                @if($lan == 'fa')
+                                                                    <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qFaSubject !!}</label>
+                                                                @elseif($lan == 'en')
+                                                                    <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qEnSubject !!}</label>
+                                                                @elseif($lan == 'ar')
+                                                                    <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qArSubject !!}</label>
+                                                                @endif
+                                                            @else
+                                                                @if($lan == 'fa')
+                                                                    <label> {!! $questionForm->question->qFaSubject !!}</label>
+                                                                @elseif($lan == 'en')
+                                                                    <label> {!! $questionForm->question->qEnSubject !!}</label>
+                                                                @elseif($lan == 'ar')
+                                                                    <label> {!! $questionForm->question->qArSubject !!}</label>
+                                                                @endif
+                                                            @endif
+                                                            @foreach($questionForm->question->fieldOption as $fieldOption)
+                                                                @if($lan == 'fa')
+                                                                    <div class="large-12 medium-12 small-12"><input name="{{ $questionForm->id }}" value="{{ $fieldOption->option->oFaValue }}" id="{{ $form->id . $questionForm->question->qName . $fieldOption->option->oName }}" type="radio" {{ $questionForm->qfRequire != 0 ? 'required' : '' }} {{ old($questionForm->id) == $fieldOption->option->oFaValue ? 'checked' : '' }}><label for="{{ $form->id . $questionForm->question->qName . $fieldOption->option->oName }}">{{ $fieldOption->option->oFaSubject }}</label></div>
+                                                                @elseif($lan == 'en')
+                                                                    <div class="large-12 medium-12 small-12"><input name="{{ $questionForm->id }}" value="{{ $fieldOption->option->oEnValue }}" id="{{ $form->id . $questionForm->question->qName . $fieldOption->option->oName }}" type="radio" {{ $questionForm->qfRequire != 0 ? 'required' : '' }} {{ old($questionForm->id) == $fieldOption->option->oEnValue ? 'checked' : '' }}><label for="{{ $form->id . $questionForm->question->qName . $fieldOption->option->oName }}">{{ $fieldOption->option->oEnSubject }}</label></div>
+                                                                @elseif($lan == 'ar')
+                                                                    <div class="large-12 medium-12 small-12"><input name="{{ $questionForm->id }}" value="{{ $fieldOption->option->oArValue }}" id="{{ $form->id . $questionForm->question->qName . $fieldOption->option->oName }}" type="radio" {{ $questionForm->qfRequire != 0 ? 'required' : '' }} {{ old($questionForm->id) == $fieldOption->option->oArValue ? 'checked' : '' }}><label for="{{ $form->id . $questionForm->question->qName . $fieldOption->option->oName }}">{{ $fieldOption->option->oArSubject }}</label></div>
+                                                                @endif
+                                                            @endforeach
+                                                            @break
+                                                        @case("select")
+                                                            </br>
+                                                            @if($questionForm->qfRequire)
+                                                                @if($lan == 'fa')
+                                                                    <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qFaSubject !!}</label>
+                                                                @elseif($lan == 'en')
+                                                                    <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qEnSubject !!}</label>
+                                                                @elseif($lan == 'ar')
+                                                                    <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qArSubject !!}</label>
+                                                                @endif
+                                                            @else
+                                                                @if($lan == 'fa')
+                                                                    <label> {!! $questionForm->question->qFaSubject !!}</label>
+                                                                @elseif($lan == 'en')
+                                                                    <label> {!! $questionForm->question->qEnSubject !!}</label>
+                                                                @elseif($lan == 'ar')
+                                                                    <label> {!! $questionForm->question->qArSubject !!}</label>
+                                                                @endif
+                                                            @endif
+                                                            <select name="{{ $questionForm->id }}" {{ $questionForm->qfRequire != 0 ? 'required' : '' }}>
+                                                                @if($questionForm->qfRequire != 0)
+                                                                    <option></option>
+                                                                @endif
+                                                                <?php $setSelected = false; ?>
                                                                 @foreach($questionForm->question->fieldOption as $fieldOption)
-                                                                    <?php $isChecked = false; ?>
-                                                                    @foreach($questionForm->question->fieldOption as $fo)
-                                                                        @if($lan == 'fa' && old($questionForm->id . '.' . ($loop->iteration - 1)) == $fieldOption->option->oFaValue)
-                                                                            <?php $isChecked = true; ?>
-                                                                        @elseif($lan == 'en' && old($questionForm->id . '.' . ($loop->iteration - 1)) == $fieldOption->option->oEnValue)
-                                                                            <?php $isChecked = true; ?>
-                                                                        @elseif($lan == 'ar' && old($questionForm->id . '.' . ($loop->iteration - 1)) == $fieldOption->option->oArValue)
-                                                                            <?php $isChecked = true; ?>
-                                                                        @endif
-                                                                    @endforeach
                                                                     @if($lan == 'fa')
-                                                                        <div class="large-12 medium-12 small-12"><input name="{{ $questionForm->id . '[]'}}" value="{{ $fieldOption->option->oFaValue }}" id="{{ $form->id . $questionForm->question->qName . $fieldOption->option->oName }}" type="checkbox" {{ $fieldOption->foRequire != 0 ? 'required' : '' }} {{ $isChecked == true ? 'checked' : '' }}><label for="{{ $form->id . $questionForm->question->qName . $fieldOption->option->oName }}">{{ $fieldOption->option->oFaSubject }}</label></div>
-                                                                    @elseif($lan == 'en')
-                                                                        <div class="large-12 medium-12 small-12"><input name="{{ $questionForm->id . '[]' }}" value="{{ $fieldOption->option->oEnValue }}" id="{{ $form->id . $questionForm->question->qName . $fieldOption->option->oName }}" type="checkbox" {{ $fieldOption->foRequire != 0 ? 'required' : '' }} {{ $isChecked == true ? 'checked' : '' }}><label for="{{ $form->id . $questionForm->question->qName . $fieldOption->option->oName }}">{{ $fieldOption->option->oEnSubject }}</label></div>
-                                                                    @elseif($lan == 'ar')
-                                                                        <div class="large-12 medium-12 small-12"><input name="{{ $questionForm->id . '[]' }}" value="{{ $fieldOption->option->oArValue }}" id="{{ $form->id . $questionForm->question->qName . $fieldOption->option->oName }}" type="checkbox" {{ $fieldOption->foRequire != 0 ? 'required' : '' }} {{ $isChecked == true ? 'checked' : '' }}><label for="{{ $form->id . $questionForm->question->qName . $fieldOption->option->oName }}">{{ $fieldOption->option->oFaSubject }}><label for="{{ $form->id . $questionForm->question->qName . $fieldOption->option->oName }}">{{ $fieldOption->option->oArSubject }}</label></div>
-                                                                        @endif
-                                                                        @endforeach
-                                                                        @break
-                                                                        @case("radio")
-                                                                        </br>
-                                                                        @if($questionForm->qfRequire)
-                                                                            @if($lan == 'fa')
-                                                                                <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qFaSubject !!}</label>
-                                                                            @elseif($lan == 'en')
-                                                                                <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qEnSubject !!}</label>
-                                                                            @elseif($lan == 'ar')
-                                                                                <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qArSubject !!}</label>
-                                                                            @endif
+                                                                        @if (old($questionForm->id) == $fieldOption->option->oFaValue)
+                                                                            <option value="{{ $fieldOption->option->oFaValue }}" selected>{{ $fieldOption->option->oFaSubject }}</option>
+                                                                            <?php $setSelected = true; ?>
                                                                         @else
-                                                                            @if($lan == 'fa')
-                                                                                <label> {!! $questionForm->question->qFaSubject !!}</label>
-                                                                            @elseif($lan == 'en')
-                                                                                <label> {!! $questionForm->question->qEnSubject !!}</label>
-                                                                            @elseif($lan == 'ar')
-                                                                                <label> {!! $questionForm->question->qArSubject !!}</label>
-                                                                            @endif
+                                                                            <option value="{{ $fieldOption->option->oFaValue }}" {{ ($fieldOption->foChecked != 0 && !$setSelected) ? 'selected' : '' }}>{{ $fieldOption->option->oFaSubject }}</option>
                                                                         @endif
-                                                                        @foreach($questionForm->question->fieldOption as $fieldOption)
-                                                                            @if($lan == 'fa')
-                                                                                <div class="large-12 medium-12 small-12"><input name="{{ $questionForm->id }}" value="{{ $fieldOption->option->oFaValue }}" id="{{ $form->id . $questionForm->question->qName . $fieldOption->option->oName }}" type="radio" {{ $questionForm->qfRequire != 0 ? 'required' : '' }} {{ old($questionForm->id) == $fieldOption->option->oFaValue ? 'checked' : '' }}><label for="{{ $form->id . $questionForm->question->qName . $fieldOption->option->oName }}">{{ $fieldOption->option->oFaSubject }}</label></div>
-                                                                            @elseif($lan == 'en')
-                                                                                <div class="large-12 medium-12 small-12"><input name="{{ $questionForm->id }}" value="{{ $fieldOption->option->oEnValue }}" id="{{ $form->id . $questionForm->question->qName . $fieldOption->option->oName }}" type="radio" {{ $questionForm->qfRequire != 0 ? 'required' : '' }} {{ old($questionForm->id) == $fieldOption->option->oEnValue ? 'checked' : '' }}><label for="{{ $form->id . $questionForm->question->qName . $fieldOption->option->oName }}">{{ $fieldOption->option->oEnSubject }}</label></div>
-                                                                            @elseif($lan == 'ar')
-                                                                                <div class="large-12 medium-12 small-12"><input name="{{ $questionForm->id }}" value="{{ $fieldOption->option->oArValue }}" id="{{ $form->id . $questionForm->question->qName . $fieldOption->option->oName }}" type="radio" {{ $questionForm->qfRequire != 0 ? 'required' : '' }} {{ old($questionForm->id) == $fieldOption->option->oArValue ? 'checked' : '' }}><label for="{{ $form->id . $questionForm->question->qName . $fieldOption->option->oName }}">{{ $fieldOption->option->oArSubject }}</label></div>
-                                                                                @endif
-                                                                                @endforeach
-                                                                                @break
-                                                                                @case("select")
-                                                                                </br>
-                                                                                @if($questionForm->qfRequire)
-                                                                                    @if($lan == 'fa')
-                                                                                        <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qFaSubject !!}</label>
-                                                                                    @elseif($lan == 'en')
-                                                                                        <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qEnSubject !!}</label>
-                                                                                    @elseif($lan == 'ar')
-                                                                                        <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qArSubject !!}</label>
-                                                                                    @endif
-                                                                                @else
-                                                                                    @if($lan == 'fa')
-                                                                                        <label> {!! $questionForm->question->qFaSubject !!}</label>
-                                                                                    @elseif($lan == 'en')
-                                                                                        <label> {!! $questionForm->question->qEnSubject !!}</label>
-                                                                                    @elseif($lan == 'ar')
-                                                                                        <label> {!! $questionForm->question->qArSubject !!}</label>
-                                                                                    @endif
-                                                                                @endif
-                                                                                <select name="{{ $questionForm->id }}" {{ $questionForm->qfRequire != 0 ? 'required' : '' }}>
-                                                                                    @if($questionForm->qfRequire != 0)
-                                                                                        <option></option>
-                                                                                    @endif
-                                                                                    <?php $setSelected = false; ?>
-                                                                                    @foreach($questionForm->question->fieldOption as $fieldOption)
-                                                                                        @if($lan == 'fa')
-                                                                                            @if (old($questionForm->id) == $fieldOption->option->oFaValue)
-                                                                                                <option value="{{ $fieldOption->option->oFaValue }}" selected>{{ $fieldOption->option->oFaSubject }}</option>
-                                                                                                <?php $setSelected = true; ?>
-                                                                                            @else
-                                                                                                <option value="{{ $fieldOption->option->oFaValue }}" {{ ($fieldOption->foChecked != 0 && !$setSelected) ? 'selected' : '' }}>{{ $fieldOption->option->oFaSubject }}</option>
-                                                                                            @endif
-                                                                                        @elseif($lan == 'en')
-                                                                                            @if (old($questionForm->id) == $fieldOption->option->oEnValue)
-                                                                                                <option value="{{ $fieldOption->option->oEnValue }}" selected>{{ $fieldOption->option->oEnSubject }}</option>
-                                                                                                <?php $setSelected = true; ?>
-                                                                                            @else
-                                                                                                <option value="{{ $fieldOption->option->oEnValue }}" {{ ($fieldOption->foChecked != 0 && !$setSelected) ? 'selected' : '' }}>{{ $fieldOption->option->oEnSubject }}</option>
-                                                                                            @endif
-                                                                                        @elseif($lan == 'ar')
-                                                                                            @if (old($questionForm->id) == $fieldOption->option->oArValue)
-                                                                                                <option value="{{ $fieldOption->option->oArValue }}" selected>{{ $fieldOption->option->oArSubject }}</option>
-                                                                                                <?php $setSelected = true; ?>
-                                                                                            @else
-                                                                                                <option value="{{ $fieldOption->option->oArValue }}" {{ ($fieldOption->foChecked != 0 && !$setSelected) ? 'selected' : '' }}>{{ $fieldOption->option->oArSubject }}</option>
-                                                                                            @endif
-                                                                                        @endif
-                                                                                    @endforeach
-                                                                                </select>
-                                                                                @break
-                                                                                @case("textarea")
-                                                                                </br>
-                                                                                @if($questionForm->qfRequire)
-                                                                                    @if($lan == 'fa')
-                                                                                        <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qFaSubject !!}</label>
-                                                                                    @elseif($lan == 'en')
-                                                                                        <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qEnSubject !!}</label>
-                                                                                    @elseif($lan == 'ar')
-                                                                                        <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qArSubject !!}</label>
-                                                                                    @endif
-                                                                                @else
-                                                                                    @if($lan == 'fa')
-                                                                                        <label> {!! $questionForm->question->qFaSubject !!}</label>
-                                                                                    @elseif($lan == 'en')
-                                                                                        <label> {!! $questionForm->question->qEnSubject !!}</label>
-                                                                                    @elseif($lan == 'ar')
-                                                                                        <label> {!! $questionForm->question->qArSubject !!}</label>
-                                                                                    @endif
-                                                                                @endif
-                                                                                <div class="large-12">
-                                                                                    <textarea style="height: 10em;" class="form-control" name="{{ $questionForm->id }}" {{ $questionForm->qfRequire != 0 ? 'required' : '' }}>{{ old($questionForm->id) }}</textarea>
-                                                                                </div>
-                                                                                @break
-                                                                                @case("captcha")
-                                                                                <div class="large-12" style="margin-top: 20px;margin-bottom: 20px">
-                                                                                    {!! app('captcha')->display(); !!}
-                                                                                </div>
-                                                                                @break;
-                                                                                @case("country-picker")
-                                                                                </br>
-                                                                                @if($questionForm->qfRequire)
-                                                                                    @if($lan == 'fa')
-                                                                                        <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qFaSubject !!}</label>
-                                                                                    @elseif($lan == 'en')
-                                                                                        <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qEnSubject !!}</label>
-                                                                                    @elseif($lan == 'ar')
-                                                                                        <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qArSubject !!}</label>
-                                                                                    @endif
-                                                                                @else
-                                                                                    @if($lan == 'fa')
-                                                                                        <label> {!! $questionForm->question->qFaSubject !!}</label>
-                                                                                    @elseif($lan == 'en')
-                                                                                        <label> {!! $questionForm->question->qEnSubject !!}</label>
-                                                                                    @elseif($lan == 'ar')
-                                                                                        <label> {!! $questionForm->question->qArSubject !!}</label>
-                                                                                    @endif
-                                                                                @endif
-                                                                                <select name="{{ $questionForm->id }}" {{ $questionForm->qfRequire != 0 ? 'required' : '' }}>
-                                                                                    @if($questionForm->qfRequire != 0)
-                                                                                        <option></option>
-                                                                                    @endif
-                                                                                    <option value="Afganistan">Afghanistan</option>
-                                                                                    <option value="Albania">Albania</option>
-                                                                                    <option value="Algeria">Algeria</option>
-                                                                                    <option value="American Samoa">American Samoa</option>
-                                                                                    <option value="Andorra">Andorra</option>
-                                                                                    <option value="Angola">Angola</option>
-                                                                                    <option value="Anguilla">Anguilla</option>
-                                                                                    <option value="Antigua &amp; Barbuda">Antigua &amp; Barbuda</option>
-                                                                                    <option value="Argentina">Argentina</option>
-                                                                                    <option value="Armenia">Armenia</option>
-                                                                                    <option value="Aruba">Aruba</option>
-                                                                                    <option value="Australia">Australia</option>
-                                                                                    <option value="Austria">Austria</option>
-                                                                                    <option value="Azerbaijan">Azerbaijan</option>
-                                                                                    <option value="Bahamas">Bahamas</option>
-                                                                                    <option value="Bahrain">Bahrain</option>
-                                                                                    <option value="Bangladesh">Bangladesh</option>
-                                                                                    <option value="Barbados">Barbados</option>
-                                                                                    <option value="Belarus">Belarus</option>
-                                                                                    <option value="Belgium">Belgium</option>
-                                                                                    <option value="Belize">Belize</option>
-                                                                                    <option value="Benin">Benin</option>
-                                                                                    <option value="Bermuda">Bermuda</option>
-                                                                                    <option value="Bhutan">Bhutan</option>
-                                                                                    <option value="Bolivia">Bolivia</option>
-                                                                                    <option value="Bonaire">Bonaire</option>
-                                                                                    <option value="Bosnia &amp; Herzegovina">Bosnia &amp; Herzegovina</option>
-                                                                                    <option value="Botswana">Botswana</option>
-                                                                                    <option value="Brazil">Brazil</option>
-                                                                                    <option value="British Indian Ocean Ter">British Indian Ocean Ter</option>
-                                                                                    <option value="Brunei">Brunei</option>
-                                                                                    <option value="Bulgaria">Bulgaria</option>
-                                                                                    <option value="Burkina Faso">Burkina Faso</option>
-                                                                                    <option value="Burundi">Burundi</option>
-                                                                                    <option value="Cambodia">Cambodia</option>
-                                                                                    <option value="Cameroon">Cameroon</option>
-                                                                                    <option value="Canada">Canada</option>
-                                                                                    <option value="Canary Islands">Canary Islands</option>
-                                                                                    <option value="Cape Verde">Cape Verde</option>
-                                                                                    <option value="Cayman Islands">Cayman Islands</option>
-                                                                                    <option value="Central African Republic">Central African Republic</option>
-                                                                                    <option value="Chad">Chad</option>
-                                                                                    <option value="Channel Islands">Channel Islands</option>
-                                                                                    <option value="Chile">Chile</option>
-                                                                                    <option value="China">China</option>
-                                                                                    <option value="Christmas Island">Christmas Island</option>
-                                                                                    <option value="Cocos Island">Cocos Island</option>
-                                                                                    <option value="Colombia">Colombia</option>
-                                                                                    <option value="Comoros">Comoros</option>
-                                                                                    <option value="Congo">Congo</option>
-                                                                                    <option value="Cook Islands">Cook Islands</option>
-                                                                                    <option value="Costa Rica">Costa Rica</option>
-                                                                                    <option value="Cote DIvoire">Cote D'Ivoire</option>
-                                                                                    <option value="Croatia">Croatia</option>
-                                                                                    <option value="Cuba">Cuba</option>
-                                                                                    <option value="Curaco">Curacao</option>
-                                                                                    <option value="Cyprus">Cyprus</option>
-                                                                                    <option value="Czech Republic">Czech Republic</option>
-                                                                                    <option value="Denmark">Denmark</option>
-                                                                                    <option value="Djibouti">Djibouti</option>
-                                                                                    <option value="Dominica">Dominica</option>
-                                                                                    <option value="Dominican Republic">Dominican Republic</option>
-                                                                                    <option value="East Timor">East Timor</option>
-                                                                                    <option value="Ecuador">Ecuador</option>
-                                                                                    <option value="Egypt">Egypt</option>
-                                                                                    <option value="El Salvador">El Salvador</option>
-                                                                                    <option value="Equatorial Guinea">Equatorial Guinea</option>
-                                                                                    <option value="Eritrea">Eritrea</option>
-                                                                                    <option value="Estonia">Estonia</option>
-                                                                                    <option value="Ethiopia">Ethiopia</option>
-                                                                                    <option value="Falkland Islands">Falkland Islands</option>
-                                                                                    <option value="Faroe Islands">Faroe Islands</option>
-                                                                                    <option value="Fiji">Fiji</option>
-                                                                                    <option value="Finland">Finland</option>
-                                                                                    <option value="France">France</option>
-                                                                                    <option value="French Guiana">French Guiana</option>
-                                                                                    <option value="French Polynesia">French Polynesia</option>
-                                                                                    <option value="French Southern Ter">French Southern Ter</option>
-                                                                                    <option value="Gabon">Gabon</option>
-                                                                                    <option value="Gambia">Gambia</option>
-                                                                                    <option value="Georgia">Georgia</option>
-                                                                                    <option value="Germany">Germany</option>
-                                                                                    <option value="Ghana">Ghana</option>
-                                                                                    <option value="Gibraltar">Gibraltar</option>
-                                                                                    <option value="Great Britain">Great Britain</option>
-                                                                                    <option value="Greece">Greece</option>
-                                                                                    <option value="Greenland">Greenland</option>
-                                                                                    <option value="Grenada">Grenada</option>
-                                                                                    <option value="Guadeloupe">Guadeloupe</option>
-                                                                                    <option value="Guam">Guam</option>
-                                                                                    <option value="Guatemala">Guatemala</option>
-                                                                                    <option value="Guinea">Guinea</option>
-                                                                                    <option value="Guyana">Guyana</option>
-                                                                                    <option value="Haiti">Haiti</option>
-                                                                                    <option value="Hawaii">Hawaii</option>
-                                                                                    <option value="Honduras">Honduras</option>
-                                                                                    <option value="Hong Kong">Hong Kong</option>
-                                                                                    <option value="Hungary">Hungary</option>
-                                                                                    <option value="Iceland">Iceland</option>
-                                                                                    <option value="India">India</option>
-                                                                                    <option value="Indonesia">Indonesia</option>
-                                                                                    <option value="Iran">Iran</option>
-                                                                                    <option value="Iraq">Iraq</option>
-                                                                                    <option value="Ireland">Ireland</option>
-                                                                                    <option value="Isle of Man">Isle of Man</option>
-                                                                                    <option value="Israel">Israel</option>
-                                                                                    <option value="Italy">Italy</option>
-                                                                                    <option value="Jamaica">Jamaica</option>
-                                                                                    <option value="Japan">Japan</option>
-                                                                                    <option value="Jordan">Jordan</option>
-                                                                                    <option value="Kazakhstan">Kazakhstan</option>
-                                                                                    <option value="Kenya">Kenya</option>
-                                                                                    <option value="Kiribati">Kiribati</option>
-                                                                                    <option value="Korea North">Korea North</option>
-                                                                                    <option value="Korea Sout">Korea South</option>
-                                                                                    <option value="Kuwait">Kuwait</option>
-                                                                                    <option value="Kyrgyzstan">Kyrgyzstan</option>
-                                                                                    <option value="Laos">Laos</option>
-                                                                                    <option value="Latvia">Latvia</option>
-                                                                                    <option value="Lebanon">Lebanon</option>
-                                                                                    <option value="Lesotho">Lesotho</option>
-                                                                                    <option value="Liberia">Liberia</option>
-                                                                                    <option value="Libya">Libya</option>
-                                                                                    <option value="Liechtenstein">Liechtenstein</option>
-                                                                                    <option value="Lithuania">Lithuania</option>
-                                                                                    <option value="Luxembourg">Luxembourg</option>
-                                                                                    <option value="Macau">Macau</option>
-                                                                                    <option value="Macedonia">Macedonia</option>
-                                                                                    <option value="Madagascar">Madagascar</option>
-                                                                                    <option value="Malaysia">Malaysia</option>
-                                                                                    <option value="Malawi">Malawi</option>
-                                                                                    <option value="Maldives">Maldives</option>
-                                                                                    <option value="Mali">Mali</option>
-                                                                                    <option value="Malta">Malta</option>
-                                                                                    <option value="Marshall Islands">Marshall Islands</option>
-                                                                                    <option value="Martinique">Martinique</option>
-                                                                                    <option value="Mauritania">Mauritania</option>
-                                                                                    <option value="Mauritius">Mauritius</option>
-                                                                                    <option value="Mayotte">Mayotte</option>
-                                                                                    <option value="Mexico">Mexico</option>
-                                                                                    <option value="Midway Islands">Midway Islands</option>
-                                                                                    <option value="Moldova">Moldova</option>
-                                                                                    <option value="Monaco">Monaco</option>
-                                                                                    <option value="Mongolia">Mongolia</option>
-                                                                                    <option value="Montserrat">Montserrat</option>
-                                                                                    <option value="Morocco">Morocco</option>
-                                                                                    <option value="Mozambique">Mozambique</option>
-                                                                                    <option value="Myanmar">Myanmar</option>
-                                                                                    <option value="Nambia">Nambia</option>
-                                                                                    <option value="Nauru">Nauru</option>
-                                                                                    <option value="Nepal">Nepal</option>
-                                                                                    <option value="Netherland Antilles">Netherland Antilles</option>
-                                                                                    <option value="Netherlands">Netherlands (Holland, Europe)</option>
-                                                                                    <option value="Nevis">Nevis</option>
-                                                                                    <option value="New Caledonia">New Caledonia</option>
-                                                                                    <option value="New Zealand">New Zealand</option>
-                                                                                    <option value="Nicaragua">Nicaragua</option>
-                                                                                    <option value="Niger">Niger</option>
-                                                                                    <option value="Nigeria">Nigeria</option>
-                                                                                    <option value="Niue">Niue</option>
-                                                                                    <option value="Norfolk Island">Norfolk Island</option>
-                                                                                    <option value="Norway">Norway</option>
-                                                                                    <option value="Oman">Oman</option>
-                                                                                    <option value="Pakistan">Pakistan</option>
-                                                                                    <option value="Palau Island">Palau Island</option>
-                                                                                    <option value="Palestine">Palestine</option>
-                                                                                    <option value="Panama">Panama</option>
-                                                                                    <option value="Papua New Guinea">Papua New Guinea</option>
-                                                                                    <option value="Paraguay">Paraguay</option>
-                                                                                    <option value="Peru">Peru</option>
-                                                                                    <option value="Phillipines">Philippines</option>
-                                                                                    <option value="Pitcairn Island">Pitcairn Island</option>
-                                                                                    <option value="Poland">Poland</option>
-                                                                                    <option value="Portugal">Portugal</option>
-                                                                                    <option value="Puerto Rico">Puerto Rico</option>
-                                                                                    <option value="Qatar">Qatar</option>
-                                                                                    <option value="Republic of Montenegro">Republic of Montenegro</option>
-                                                                                    <option value="Republic of Serbia">Republic of Serbia</option>
-                                                                                    <option value="Reunion">Reunion</option>
-                                                                                    <option value="Romania">Romania</option>
-                                                                                    <option value="Russia">Russia</option>
-                                                                                    <option value="Rwanda">Rwanda</option>
-                                                                                    <option value="St Barthelemy">St Barthelemy</option>
-                                                                                    <option value="St Eustatius">St Eustatius</option>
-                                                                                    <option value="St Helena">St Helena</option>
-                                                                                    <option value="St Kitts-Nevis">St Kitts-Nevis</option>
-                                                                                    <option value="St Lucia">St Lucia</option>
-                                                                                    <option value="St Maarten">St Maarten</option>
-                                                                                    <option value="St Pierre &amp; Miquelon">St Pierre &amp; Miquelon</option>
-                                                                                    <option value="St Vincent &amp; Grenadines">St Vincent &amp; Grenadines</option>
-                                                                                    <option value="Saipan">Saipan</option>
-                                                                                    <option value="Samoa">Samoa</option>
-                                                                                    <option value="Samoa American">Samoa American</option>
-                                                                                    <option value="San Marino">San Marino</option>
-                                                                                    <option value="Sao Tome &amp; Principe">Sao Tome &amp; Principe</option>
-                                                                                    <option value="Saudi Arabia">Saudi Arabia</option>
-                                                                                    <option value="Senegal">Senegal</option>
-                                                                                    <option value="Serbia">Serbia</option>
-                                                                                    <option value="Seychelles">Seychelles</option>
-                                                                                    <option value="Sierra Leone">Sierra Leone</option>
-                                                                                    <option value="Singapore">Singapore</option>
-                                                                                    <option value="Slovakia">Slovakia</option>
-                                                                                    <option value="Slovenia">Slovenia</option>
-                                                                                    <option value="Solomon Islands">Solomon Islands</option>
-                                                                                    <option value="Somalia">Somalia</option>
-                                                                                    <option value="South Africa">South Africa</option>
-                                                                                    <option value="Spain">Spain</option>
-                                                                                    <option value="Sri Lanka">Sri Lanka</option>
-                                                                                    <option value="Sudan">Sudan</option>
-                                                                                    <option value="Suriname">Suriname</option>
-                                                                                    <option value="Swaziland">Swaziland</option>
-                                                                                    <option value="Sweden">Sweden</option>
-                                                                                    <option value="Switzerland">Switzerland</option>
-                                                                                    <option value="Syria">Syria</option>
-                                                                                    <option value="Tahiti">Tahiti</option>
-                                                                                    <option value="Taiwan">Taiwan</option>
-                                                                                    <option value="Tajikistan">Tajikistan</option>
-                                                                                    <option value="Tanzania">Tanzania</option>
-                                                                                    <option value="Thailand">Thailand</option>
-                                                                                    <option value="Togo">Togo</option>
-                                                                                    <option value="Tokelau">Tokelau</option>
-                                                                                    <option value="Tonga">Tonga</option>
-                                                                                    <option value="Trinidad &amp; Tobago">Trinidad &amp; Tobago</option>
-                                                                                    <option value="Tunisia">Tunisia</option>
-                                                                                    <option value="Turkey">Turkey</option>
-                                                                                    <option value="Turkmenistan">Turkmenistan</option>
-                                                                                    <option value="Turks &amp; Caicos Is">Turks &amp; Caicos Is</option>
-                                                                                    <option value="Tuvalu">Tuvalu</option>
-                                                                                    <option value="Uganda">Uganda</option>
-                                                                                    <option value="Ukraine">Ukraine</option>
-                                                                                    <option value="United Arab Erimates">United Arab Emirates</option>
-                                                                                    <option value="United Kingdom">United Kingdom</option>
-                                                                                    <option value="United States of America">United States of America</option>
-                                                                                    <option value="Uraguay">Uruguay</option>
-                                                                                    <option value="Uzbekistan">Uzbekistan</option>
-                                                                                    <option value="Vanuatu">Vanuatu</option>
-                                                                                    <option value="Vatican City State">Vatican City State</option>
-                                                                                    <option value="Venezuela">Venezuela</option>
-                                                                                    <option value="Vietnam">Vietnam</option>
-                                                                                    <option value="Virgin Islands (Brit)">Virgin Islands (Brit)</option>
-                                                                                    <option value="Virgin Islands (USA)">Virgin Islands (USA)</option>
-                                                                                    <option value="Wake Island">Wake Island</option>
-                                                                                    <option value="Wallis &amp; Futana Is">Wallis &amp; Futana Is</option>
-                                                                                    <option value="Yemen">Yemen</option>
-                                                                                    <option value="Zaire">Zaire</option>
-                                                                                    <option value="Zambia">Zambia</option>
-                                                                                    <option value="Zimbabwe">Zimbabwe</option>
-                                                                                </select>
-                                                                                @break;
-                                                                                @case("multi-uploader")
-                                                                                </br>
-                                                                                @if($questionForm->qfRequire)
-                                                                                    @if($lan == 'fa')
-                                                                                        <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qFaSubject !!}</label>
-                                                                                    @elseif($lan == 'en')
-                                                                                        <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qEnSubject !!}</label>
-                                                                                    @elseif($lan == 'ar')
-                                                                                        <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qArSubject !!}</label>
-                                                                                    @endif
-                                                                                @else
-                                                                                    @if($lan == 'fa')
-                                                                                        <label> {!! $questionForm->question->qFaSubject !!}</label>
-                                                                                    @elseif($lan == 'en')
-                                                                                        <label> {!! $questionForm->question->qEnSubject !!}</label>
-                                                                                    @elseif($lan == 'ar')
-                                                                                        <label> {!! $questionForm->question->qArSubject !!}</label>
-                                                                                    @endif
-                                                                                @endif
-                                                                                <div class="large-12">
-                                                                                    <div class="it">
-                                                                                        <div class="grid-x" id="uploader">
-                                                                                            <div class="large-3 uploadDoc">
-                                                                                                <div class="multi-uploader">
-                                                                                                    <div class="fileUpload" style="padding: 5px">
-                                                                                                        <label for="{{ 'up0'  }}" class="multi-uploader-preview-label">
-                                                                                                            <img src="{{ asset('pic/upload_img.png') }}" class="img-border"/>
-                                                                                                        </label>
-                                                                                                        <input type="file" accept="image/*" class="upload up" id="up0" name="{{ $questionForm->id . '[]' }}" onchange="readURL(this, '{{ $questionForm->id . '[]' }}' , '{{ $questionForm->qfRequire }}' , '{{ asset('pic/upload_img.png') }}' , 1);" {{ $questionForm->qfRequire != 0 ? 'required' : '' }}/>
-                                                                                                    </div><!-- btn-orange -->
-                                                                                                </div><!-- col-3 -->
-                                                                                            </div><!--row-->
-                                                                                        </div><!--uploader-->
-                                                                                    </div><!-- row -->
-                                                                                </div>
-                                                                                @break;
-                                                                                @case('single-uploader')
-                                                                                </br>
-                                                                                @if($lan == 'fa')
-                                                                                    <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qFaSubject !!}</label>
-                                                                                @elseif($lan == 'en')
-                                                                                    <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qEnSubject !!}</label>
-                                                                                @elseif($lan == 'ar')
-                                                                                    <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qArSubject !!}</label>
-                                                                                @endif
-                                                                                <div class="large-12">
-                                                                                    <!-- Upload  -->
-                                                                                    <div id="file-upload-form" class="uploader {{ $lan != 'en' ? 'float-right' : 'float-left' }}">
-                                                                                        <input id="file-upload" type="file" name="{{ $questionForm->id . '[]' }}" accept="image/*" {{ $questionForm->qfRequire == 0 ? '' : 'required' }}/>
-                                                                                        <label for="file-upload" id="file-drag">
-                                                                                            <img id="file-image" src="#" alt="Preview" class="hidden">
-                                                                                            <div id="start">
-                                                                                                <i style="margin-bottom: 15px;" class="fas fa-camera-retro btn-red size-48" aria-hidden="true"></i>
-                                                                                                <div style="margin-bottom: 15px;">Select a file or drag here</div>
-                                                                                                <div id="notimage" class="hidden">Please select an image</div>
-                                                                                                <span id="file-upload-btn" class="button primary">Select a file</span>
-                                                                                            </div>
-                                                                                            <div id="response" class="hidden">
-                                                                                                <div id="messages"></div>
-                                                                                                <progress class="progress" id="file-progress" value="0">
-                                                                                                    <span>0</span>%
-                                                                                                </progress>
-                                                                                            </div>
-                                                                                        </label>
-                                                                                    </div>
-                                                                                </div>
-                                                                                @break;
-                                                                                @endswitch
+                                                                    @elseif($lan == 'en')
+                                                                        @if (old($questionForm->id) == $fieldOption->option->oEnValue)
+                                                                            <option value="{{ $fieldOption->option->oEnValue }}" selected>{{ $fieldOption->option->oEnSubject }}</option>
+                                                                            <?php $setSelected = true; ?>
+                                                                        @else
+                                                                            <option value="{{ $fieldOption->option->oEnValue }}" {{ ($fieldOption->foChecked != 0 && !$setSelected) ? 'selected' : '' }}>{{ $fieldOption->option->oEnSubject }}</option>
+                                                                        @endif
+                                                                    @elseif($lan == 'ar')
+                                                                        @if (old($questionForm->id) == $fieldOption->option->oArValue)
+                                                                            <option value="{{ $fieldOption->option->oArValue }}" selected>{{ $fieldOption->option->oArSubject }}</option>
+                                                                            <?php $setSelected = true; ?>
+                                                                        @else
+                                                                            <option value="{{ $fieldOption->option->oArValue }}" {{ ($fieldOption->foChecked != 0 && !$setSelected) ? 'selected' : '' }}>{{ $fieldOption->option->oArSubject }}</option>
+                                                                        @endif
+                                                                    @endif
+                                                                @endforeach
+                                                            </select>
+                                                            @break
+                                                        @case("textarea")
+                                                            </br>
+                                                            @if($questionForm->qfRequire)
+                                                                @if($lan == 'fa')
+                                                                    <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qFaSubject !!}</label>
+                                                                @elseif($lan == 'en')
+                                                                    <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qEnSubject !!}</label>
+                                                                @elseif($lan == 'ar')
+                                                                    <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qArSubject !!}</label>
+                                                                @endif
+                                                            @else
+                                                                @if($lan == 'fa')
+                                                                    <label> {!! $questionForm->question->qFaSubject !!}</label>
+                                                                @elseif($lan == 'en')
+                                                                    <label> {!! $questionForm->question->qEnSubject !!}</label>
+                                                                @elseif($lan == 'ar')
+                                                                    <label> {!! $questionForm->question->qArSubject !!}</label>
+                                                                @endif
+                                                            @endif
+                                                            <div class="large-12">
+                                                                <textarea style="height: 10em;" class="form-control" name="{{ $questionForm->id }}" {{ $questionForm->qfRequire != 0 ? 'required' : '' }}>{{ old($questionForm->id) }}</textarea>
+                                                            </div>
+                                                            @break
+                                                        @case("captcha")
+                                                            <div class="large-12" style="margin-top: 20px;margin-bottom: 20px">
+                                                                {!! app('captcha')->display(); !!}
+                                                            </div>
+                                                            @break;
+                                                        @case("country-picker")
+                                                            </br>
+                                                            @if($questionForm->qfRequire)
+                                                                @if($lan == 'fa')
+                                                                    <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qFaSubject !!}</label>
+                                                                @elseif($lan == 'en')
+                                                                    <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qEnSubject !!}</label>
+                                                                @elseif($lan == 'ar')
+                                                                    <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qArSubject !!}</label>
+                                                                @endif
+                                                            @else
+                                                                @if($lan == 'fa')
+                                                                    <label> {!! $questionForm->question->qFaSubject !!}</label>
+                                                                @elseif($lan == 'en')
+                                                                    <label> {!! $questionForm->question->qEnSubject !!}</label>
+                                                                @elseif($lan == 'ar')
+                                                                    <label> {!! $questionForm->question->qArSubject !!}</label>
+                                                                @endif
+                                                            @endif
+                                                            <select name="{{ $questionForm->id }}" {{ $questionForm->qfRequire != 0 ? 'required' : '' }}>
+                                                                @if($questionForm->qfRequire != 0)
+                                                                    <option></option>
+                                                                @endif
+                                                                <option value="Afganistan">Afghanistan</option>
+                                                                <option value="Albania">Albania</option>
+                                                                <option value="Algeria">Algeria</option>
+                                                                <option value="American Samoa">American Samoa</option>
+                                                                <option value="Andorra">Andorra</option>
+                                                                <option value="Angola">Angola</option>
+                                                                <option value="Anguilla">Anguilla</option>
+                                                                <option value="Antigua &amp; Barbuda">Antigua &amp; Barbuda</option>
+                                                                <option value="Argentina">Argentina</option>
+                                                                <option value="Armenia">Armenia</option>
+                                                                <option value="Aruba">Aruba</option>
+                                                                <option value="Australia">Australia</option>
+                                                                <option value="Austria">Austria</option>
+                                                                <option value="Azerbaijan">Azerbaijan</option>
+                                                                <option value="Bahamas">Bahamas</option>
+                                                                <option value="Bahrain">Bahrain</option>
+                                                                <option value="Bangladesh">Bangladesh</option>
+                                                                <option value="Barbados">Barbados</option>
+                                                                <option value="Belarus">Belarus</option>
+                                                                <option value="Belgium">Belgium</option>
+                                                                <option value="Belize">Belize</option>
+                                                                <option value="Benin">Benin</option>
+                                                                <option value="Bermuda">Bermuda</option>
+                                                                <option value="Bhutan">Bhutan</option>
+                                                                <option value="Bolivia">Bolivia</option>
+                                                                <option value="Bonaire">Bonaire</option>
+                                                                <option value="Bosnia &amp; Herzegovina">Bosnia &amp; Herzegovina</option>
+                                                                <option value="Botswana">Botswana</option>
+                                                                <option value="Brazil">Brazil</option>
+                                                                <option value="British Indian Ocean Ter">British Indian Ocean Ter</option>
+                                                                <option value="Brunei">Brunei</option>
+                                                                <option value="Bulgaria">Bulgaria</option>
+                                                                <option value="Burkina Faso">Burkina Faso</option>
+                                                                <option value="Burundi">Burundi</option>
+                                                                <option value="Cambodia">Cambodia</option>
+                                                                <option value="Cameroon">Cameroon</option>
+                                                                <option value="Canada">Canada</option>
+                                                                <option value="Canary Islands">Canary Islands</option>
+                                                                <option value="Cape Verde">Cape Verde</option>
+                                                                <option value="Cayman Islands">Cayman Islands</option>
+                                                                <option value="Central African Republic">Central African Republic</option>
+                                                                <option value="Chad">Chad</option>
+                                                                <option value="Channel Islands">Channel Islands</option>
+                                                                <option value="Chile">Chile</option>
+                                                                <option value="China">China</option>
+                                                                <option value="Christmas Island">Christmas Island</option>
+                                                                <option value="Cocos Island">Cocos Island</option>
+                                                                <option value="Colombia">Colombia</option>
+                                                                <option value="Comoros">Comoros</option>
+                                                                <option value="Congo">Congo</option>
+                                                                <option value="Cook Islands">Cook Islands</option>
+                                                                <option value="Costa Rica">Costa Rica</option>
+                                                                <option value="Cote DIvoire">Cote D'Ivoire</option>
+                                                                <option value="Croatia">Croatia</option>
+                                                                <option value="Cuba">Cuba</option>
+                                                                <option value="Curaco">Curacao</option>
+                                                                <option value="Cyprus">Cyprus</option>
+                                                                <option value="Czech Republic">Czech Republic</option>
+                                                                <option value="Denmark">Denmark</option>
+                                                                <option value="Djibouti">Djibouti</option>
+                                                                <option value="Dominica">Dominica</option>
+                                                                <option value="Dominican Republic">Dominican Republic</option>
+                                                                <option value="East Timor">East Timor</option>
+                                                                <option value="Ecuador">Ecuador</option>
+                                                                <option value="Egypt">Egypt</option>
+                                                                <option value="El Salvador">El Salvador</option>
+                                                                <option value="Equatorial Guinea">Equatorial Guinea</option>
+                                                                <option value="Eritrea">Eritrea</option>
+                                                                <option value="Estonia">Estonia</option>
+                                                                <option value="Ethiopia">Ethiopia</option>
+                                                                <option value="Falkland Islands">Falkland Islands</option>
+                                                                <option value="Faroe Islands">Faroe Islands</option>
+                                                                <option value="Fiji">Fiji</option>
+                                                                <option value="Finland">Finland</option>
+                                                                <option value="France">France</option>
+                                                                <option value="French Guiana">French Guiana</option>
+                                                                <option value="French Polynesia">French Polynesia</option>
+                                                                <option value="French Southern Ter">French Southern Ter</option>
+                                                                <option value="Gabon">Gabon</option>
+                                                                <option value="Gambia">Gambia</option>
+                                                                <option value="Georgia">Georgia</option>
+                                                                <option value="Germany">Germany</option>
+                                                                <option value="Ghana">Ghana</option>
+                                                                <option value="Gibraltar">Gibraltar</option>
+                                                                <option value="Great Britain">Great Britain</option>
+                                                                <option value="Greece">Greece</option>
+                                                                <option value="Greenland">Greenland</option>
+                                                                <option value="Grenada">Grenada</option>
+                                                                <option value="Guadeloupe">Guadeloupe</option>
+                                                                <option value="Guam">Guam</option>
+                                                                <option value="Guatemala">Guatemala</option>
+                                                                <option value="Guinea">Guinea</option>
+                                                                <option value="Guyana">Guyana</option>
+                                                                <option value="Haiti">Haiti</option>
+                                                                <option value="Hawaii">Hawaii</option>
+                                                                <option value="Honduras">Honduras</option>
+                                                                <option value="Hong Kong">Hong Kong</option>
+                                                                <option value="Hungary">Hungary</option>
+                                                                <option value="Iceland">Iceland</option>
+                                                                <option value="India">India</option>
+                                                                <option value="Indonesia">Indonesia</option>
+                                                                <option value="Iran">Iran</option>
+                                                                <option value="Iraq">Iraq</option>
+                                                                <option value="Ireland">Ireland</option>
+                                                                <option value="Isle of Man">Isle of Man</option>
+                                                                <option value="Israel">Israel</option>
+                                                                <option value="Italy">Italy</option>
+                                                                <option value="Jamaica">Jamaica</option>
+                                                                <option value="Japan">Japan</option>
+                                                                <option value="Jordan">Jordan</option>
+                                                                <option value="Kazakhstan">Kazakhstan</option>
+                                                                <option value="Kenya">Kenya</option>
+                                                                <option value="Kiribati">Kiribati</option>
+                                                                <option value="Korea North">Korea North</option>
+                                                                <option value="Korea Sout">Korea South</option>
+                                                                <option value="Kuwait">Kuwait</option>
+                                                                <option value="Kyrgyzstan">Kyrgyzstan</option>
+                                                                <option value="Laos">Laos</option>
+                                                                <option value="Latvia">Latvia</option>
+                                                                <option value="Lebanon">Lebanon</option>
+                                                                <option value="Lesotho">Lesotho</option>
+                                                                <option value="Liberia">Liberia</option>
+                                                                <option value="Libya">Libya</option>
+                                                                <option value="Liechtenstein">Liechtenstein</option>
+                                                                <option value="Lithuania">Lithuania</option>
+                                                                <option value="Luxembourg">Luxembourg</option>
+                                                                <option value="Macau">Macau</option>
+                                                                <option value="Macedonia">Macedonia</option>
+                                                                <option value="Madagascar">Madagascar</option>
+                                                                <option value="Malaysia">Malaysia</option>
+                                                                <option value="Malawi">Malawi</option>
+                                                                <option value="Maldives">Maldives</option>
+                                                                <option value="Mali">Mali</option>
+                                                                <option value="Malta">Malta</option>
+                                                                <option value="Marshall Islands">Marshall Islands</option>
+                                                                <option value="Martinique">Martinique</option>
+                                                                <option value="Mauritania">Mauritania</option>
+                                                                <option value="Mauritius">Mauritius</option>
+                                                                <option value="Mayotte">Mayotte</option>
+                                                                <option value="Mexico">Mexico</option>
+                                                                <option value="Midway Islands">Midway Islands</option>
+                                                                <option value="Moldova">Moldova</option>
+                                                                <option value="Monaco">Monaco</option>
+                                                                <option value="Mongolia">Mongolia</option>
+                                                                <option value="Montserrat">Montserrat</option>
+                                                                <option value="Morocco">Morocco</option>
+                                                                <option value="Mozambique">Mozambique</option>
+                                                                <option value="Myanmar">Myanmar</option>
+                                                                <option value="Nambia">Nambia</option>
+                                                                <option value="Nauru">Nauru</option>
+                                                                <option value="Nepal">Nepal</option>
+                                                                <option value="Netherland Antilles">Netherland Antilles</option>
+                                                                <option value="Netherlands">Netherlands (Holland, Europe)</option>
+                                                                <option value="Nevis">Nevis</option>
+                                                                <option value="New Caledonia">New Caledonia</option>
+                                                                <option value="New Zealand">New Zealand</option>
+                                                                <option value="Nicaragua">Nicaragua</option>
+                                                                <option value="Niger">Niger</option>
+                                                                <option value="Nigeria">Nigeria</option>
+                                                                <option value="Niue">Niue</option>
+                                                                <option value="Norfolk Island">Norfolk Island</option>
+                                                                <option value="Norway">Norway</option>
+                                                                <option value="Oman">Oman</option>
+                                                                <option value="Pakistan">Pakistan</option>
+                                                                <option value="Palau Island">Palau Island</option>
+                                                                <option value="Palestine">Palestine</option>
+                                                                <option value="Panama">Panama</option>
+                                                                <option value="Papua New Guinea">Papua New Guinea</option>
+                                                                <option value="Paraguay">Paraguay</option>
+                                                                <option value="Peru">Peru</option>
+                                                                <option value="Phillipines">Philippines</option>
+                                                                <option value="Pitcairn Island">Pitcairn Island</option>
+                                                                <option value="Poland">Poland</option>
+                                                                <option value="Portugal">Portugal</option>
+                                                                <option value="Puerto Rico">Puerto Rico</option>
+                                                                <option value="Qatar">Qatar</option>
+                                                                <option value="Republic of Montenegro">Republic of Montenegro</option>
+                                                                <option value="Republic of Serbia">Republic of Serbia</option>
+                                                                <option value="Reunion">Reunion</option>
+                                                                <option value="Romania">Romania</option>
+                                                                <option value="Russia">Russia</option>
+                                                                <option value="Rwanda">Rwanda</option>
+                                                                <option value="St Barthelemy">St Barthelemy</option>
+                                                                <option value="St Eustatius">St Eustatius</option>
+                                                                <option value="St Helena">St Helena</option>
+                                                                <option value="St Kitts-Nevis">St Kitts-Nevis</option>
+                                                                <option value="St Lucia">St Lucia</option>
+                                                                <option value="St Maarten">St Maarten</option>
+                                                                <option value="St Pierre &amp; Miquelon">St Pierre &amp; Miquelon</option>
+                                                                <option value="St Vincent &amp; Grenadines">St Vincent &amp; Grenadines</option>
+                                                                <option value="Saipan">Saipan</option>
+                                                                <option value="Samoa">Samoa</option>
+                                                                <option value="Samoa American">Samoa American</option>
+                                                                <option value="San Marino">San Marino</option>
+                                                                <option value="Sao Tome &amp; Principe">Sao Tome &amp; Principe</option>
+                                                                <option value="Saudi Arabia">Saudi Arabia</option>
+                                                                <option value="Senegal">Senegal</option>
+                                                                <option value="Serbia">Serbia</option>
+                                                                <option value="Seychelles">Seychelles</option>
+                                                                <option value="Sierra Leone">Sierra Leone</option>
+                                                                <option value="Singapore">Singapore</option>
+                                                                <option value="Slovakia">Slovakia</option>
+                                                                <option value="Slovenia">Slovenia</option>
+                                                                <option value="Solomon Islands">Solomon Islands</option>
+                                                                <option value="Somalia">Somalia</option>
+                                                                <option value="South Africa">South Africa</option>
+                                                                <option value="Spain">Spain</option>
+                                                                <option value="Sri Lanka">Sri Lanka</option>
+                                                                <option value="Sudan">Sudan</option>
+                                                                <option value="Suriname">Suriname</option>
+                                                                <option value="Swaziland">Swaziland</option>
+                                                                <option value="Sweden">Sweden</option>
+                                                                <option value="Switzerland">Switzerland</option>
+                                                                <option value="Syria">Syria</option>
+                                                                <option value="Tahiti">Tahiti</option>
+                                                                <option value="Taiwan">Taiwan</option>
+                                                                <option value="Tajikistan">Tajikistan</option>
+                                                                <option value="Tanzania">Tanzania</option>
+                                                                <option value="Thailand">Thailand</option>
+                                                                <option value="Togo">Togo</option>
+                                                                <option value="Tokelau">Tokelau</option>
+                                                                <option value="Tonga">Tonga</option>
+                                                                <option value="Trinidad &amp; Tobago">Trinidad &amp; Tobago</option>
+                                                                <option value="Tunisia">Tunisia</option>
+                                                                <option value="Turkey">Turkey</option>
+                                                                <option value="Turkmenistan">Turkmenistan</option>
+                                                                <option value="Turks &amp; Caicos Is">Turks &amp; Caicos Is</option>
+                                                                <option value="Tuvalu">Tuvalu</option>
+                                                                <option value="Uganda">Uganda</option>
+                                                                <option value="Ukraine">Ukraine</option>
+                                                                <option value="United Arab Erimates">United Arab Emirates</option>
+                                                                <option value="United Kingdom">United Kingdom</option>
+                                                                <option value="United States of America">United States of America</option>
+                                                                <option value="Uraguay">Uruguay</option>
+                                                                <option value="Uzbekistan">Uzbekistan</option>
+                                                                <option value="Vanuatu">Vanuatu</option>
+                                                                <option value="Vatican City State">Vatican City State</option>
+                                                                <option value="Venezuela">Venezuela</option>
+                                                                <option value="Vietnam">Vietnam</option>
+                                                                <option value="Virgin Islands (Brit)">Virgin Islands (Brit)</option>
+                                                                <option value="Virgin Islands (USA)">Virgin Islands (USA)</option>
+                                                                <option value="Wake Island">Wake Island</option>
+                                                                <option value="Wallis &amp; Futana Is">Wallis &amp; Futana Is</option>
+                                                                <option value="Yemen">Yemen</option>
+                                                                <option value="Zaire">Zaire</option>
+                                                                <option value="Zambia">Zambia</option>
+                                                                <option value="Zimbabwe">Zimbabwe</option>
+                                                            </select>
+                                                            @break;
+                                                        @case("multi-uploader")
+                                                            </br>
+                                                            @if($questionForm->qfRequire)
+                                                                @if($lan == 'fa')
+                                                                    <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qFaSubject !!}</label>
+                                                                @elseif($lan == 'en')
+                                                                    <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qEnSubject !!}</label>
+                                                                @elseif($lan == 'ar')
+                                                                    <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qArSubject !!}</label>
+                                                                @endif
+                                                            @else
+                                                                @if($lan == 'fa')
+                                                                    <label> {!! $questionForm->question->qFaSubject !!}</label>
+                                                                @elseif($lan == 'en')
+                                                                    <label> {!! $questionForm->question->qEnSubject !!}</label>
+                                                                @elseif($lan == 'ar')
+                                                                    <label> {!! $questionForm->question->qArSubject !!}</label>
+                                                                @endif
+                                                            @endif
+                                                            <div class="large-12">
+                                                                <div class="it">
+                                                                    <div class="grid-x" id="uploader">
+                                                                        <div class="large-3 uploadDoc">
+                                                                            <div class="multi-uploader">
+                                                                                <div class="fileUpload" style="padding: 5px">
+                                                                                    <label for="{{ 'up0'  }}" class="multi-uploader-preview-label">
+                                                                                        <img src="{{ asset('pic/upload_img.png') }}" class="img-border"/>
+                                                                                    </label>
+                                                                                    <input type="file" accept="image/*" class="upload up" id="up0" name="{{ $questionForm->id . '[]' }}" onchange="readURL(this, '{{ $questionForm->id . '[]' }}' , '{{ $questionForm->qfRequire }}' , '{{ asset('pic/upload_img.png') }}' , 1);" {{ $questionForm->qfRequire != 0 ? 'required' : '' }}/>
+                                                                                </div><!-- btn-orange -->
+                                                                            </div><!-- col-3 -->
+                                                                        </div><!--row-->
+                                                                    </div><!--uploader-->
+                                                                </div><!-- row -->
+                                                            </div>
+                                                            @break;
+                                                        @case('single-uploader')
+                                                            </br>
+                                                            @if($lan == 'fa')
+                                                                <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qFaSubject !!}</label>
+                                                            @elseif($lan == 'en')
+                                                                <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qEnSubject !!}</label>
+                                                            @elseif($lan == 'ar')
+                                                                <label><span class="btn-red"><i class="fas fa-star size-12"></i></span> {!! $questionForm->question->qArSubject !!}</label>
+                                                            @endif
+                                                            <div class="large-12">
+                                                                <!-- Upload  -->
+                                                                <div id="file-upload-form" class="uploader {{ $lan != 'en' ? 'float-right' : 'float-left' }}">
+                                                                    <input id="file-upload" type="file" name="{{ $questionForm->id . '[]' }}" accept="image/*" {{ $questionForm->qfRequire == 0 ? '' : 'required' }}/>
+                                                                    <label for="file-upload" id="file-drag">
+                                                                        <img id="file-image" src="#" alt="Preview" class="hidden">
+                                                                        <div id="start">
+                                                                            <i style="margin-bottom: 15px;" class="fas fa-camera-retro btn-red size-48" aria-hidden="true"></i>
+                                                                            <div style="margin-bottom: 15px;">Select a file or drag here</div>
+                                                                            <div id="notimage" class="hidden">Please select an image</div>
+                                                                            <span id="file-upload-btn" class="button primary">Select a file</span>
+                                                                        </div>
+                                                                        <div id="response" class="hidden">
+                                                                            <div id="messages"></div>
+                                                                            <progress class="progress" id="file-progress" value="0">
+                                                                                <span>0</span>%
+                                                                            </progress>
+                                                                        </div>
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            @break;
+                                                    @endswitch
                                                 </div>
                                             @endif
                                         @endforeach
@@ -1690,42 +1690,42 @@
                                     @if($form->fIsMultiStepForm && $formStepsCount > 1)
                                         @if($i == 1)
                                             @if($lan == 'fa')
-                                                <input type="button" name="next" class="next action-button" value="بعدی" />
+                                                <input type="button" name="next" class="next button primary button-width" value="بعدی" />
                                             @elseif($lan == 'en')
-                                                <input type="button" name="next" class="next action-button" value="Next" />
+                                                <input type="button" name="next" class="next button primary button-width" value="Next" />
                                             @elseif($lan == 'ar')
-                                                <input type="button" name="next" class="next action-button" value="التالى" />
+                                                <input type="button" name="next" class="next button primary button-width" value="التالى" />
                                             @endif
                                         @elseif($i < $formStepsCount)
                                             @if($lan == 'fa')
-                                                <input type="button" name="next" class="next action-button" value="بعدی" />
-                                                <input type="button" name="previous" class="previous action-button" value="قبلی" />
+                                                <input type="button" name="next" class="next button primary button-width" value="بعدی" />
+                                                <input type="button" name="previous" class="previous button primary button-width" value="قبلی" />
                                             @elseif($lan == 'en')
-                                                <input type="button" name="previous" class="previous action-button" value="Previous" />
-                                                <input type="button" name="next" class="next action-button" value="Next" />
+                                                <input type="button" name="previous" class="previous button primary button-width" value="Previous" />
+                                                <input type="button" name="next" class="next button primary button-width" value="Next" />
                                             @elseif($lan == 'ar')
-                                                <input type="button" name="next" class="next action-button" value="التالى" />
-                                                <input type="button" name="previous" class="previous action-button" value="سابق" />
+                                                <input type="button" name="next" class="next button primary button-width" value="التالى" />
+                                                <input type="button" name="previous" class="previous button primary button-width" value="سابق" />
                                             @endif
                                         @else
                                             @if($lan == 'fa')
-                                                <input type="button" name="previous" class="previous action-button" value="قبلی" />
-                                                <input type="submit" name="submit" class="submit action-button" value="ثبت" />
+                                                <input type="button" name="previous" class="previous button primary button-width" value="قبلی" />
+                                                <input type="submit" name="submit" class="submit button primary button-width" value="ثبت" />
                                             @elseif($lan == 'en')
-                                                <input type="button" name="previous" class="previous action-button" value="Previous" />
-                                                <input type="submit" name="submit" class="submit action-button" value="Register" />
+                                                <input type="button" name="previous" class="previous button primary button-width" value="Previous" />
+                                                <input type="submit" name="submit" class="submit button primary button-width" value="Register" />
                                             @elseif($lan == 'ar')
-                                                <input type="button" name="previous" class="previous action-button" value="التالى" />
-                                                <input type="submit" name="submit" class="submit action-button" value="تسجيل" />
+                                                <input type="button" name="previous" class="previous button primary button-width" value="التالى" />
+                                                <input type="submit" name="submit" class="submit button primary button-width" value="تسجيل" />
                                             @endif
                                         @endif
                                     @else
                                         @if($lan == 'fa')
-                                            <input type="submit" name="submit" class="submit action-button" value="ثبت" />
+                                            <input type="submit" name="submit" class="submit button primary button-width" value="ثبت" />
                                         @elseif($lan == 'en')
-                                            <input type="submit" name="submit" class="submit action-button" value="ًRegister" />
+                                            <input type="submit" name="submit" class="submit button primary button-width" value="ًRegister" />
                                         @elseif($lan == 'ar')
-                                            <input type="submit" name="submit" class="submit action-button" value="تسجيل" />
+                                            <input type="submit" name="submit" class="submit button primary button-width" value="تسجيل" />
                                         @endif
                                     @endif
                                 </fieldset>
@@ -1734,15 +1734,19 @@
                         </form>
                     </div>
                 @else
-                    <div class="grid-x">
-                        <div class="large-12 medium-12 small-12" style="min-height: 60vh; margin-top: 20vh">
-                            @if($lan == 'fa')
-                                {!! \Session::get('successPm')[0] !!}
-                            @elseif($lan == 'en')
-                                {!! \Session::get('successPm')[1] !!}
-                            @elseif($lan == 'ar')
-                                {!! \Session::get('successPm')[2] !!}
-                            @endif
+                    <div class="grid-container element-distance-tb">
+                        <div class="grid-x">
+                            <div class="large-offset-2 medium-offset-2"></div>
+                            <div class="large-8 medium-8 small-12" style="min-height: 40vh; margin-top: 10vh">
+                                @if($lan == 'fa')
+                                    <div class="Shabnam-Bold">{!! \Session::get('successPm')[0] !!}</div>
+                                @elseif($lan == 'en')
+                                    <div class="Roboto-Bold">{!! \Session::get('successPm')[1] !!}</div>
+                                @elseif($lan == 'ar')
+                                    <div class="Al-Jazeera-Arabic-Bold">{!! \Session::get('successPm')[2] !!}</div>
+                                @endif
+                            </div>
+                            <div class="large-offset-2 medium-offset-2"></div>
                         </div>
                     </div>
                 @endif
@@ -1757,122 +1761,5 @@
                     </div>
                 </div>--}}
         <!--Section pannellum-master-360 End-->
-
-
-
     @endforeach
-    <!--Section Go to Register Start-->
-    <div class="grid-container element-distanse">
-        <div class="grid-x">
-            <div class="large-12 text-center">
-                <img style="height: 300px;width: 100%;" class="background-cover image-shadow-effect" src="{{ asset('pic/gallery/lan_63.jpg') }}">
-                <h3 style="margin-top: -200px;" class="my-text-shadow-effect white-color">Hamedan's handicrafts are full of art and beauty</h3>
-                <a style="margin-top: 50px;width: 150px;" href="#" class="button primary ">Register</a>
-            </div>
-        </div>
-    </div>
-    <!--Section Go to Register End-->
-
-    <!--Section About Me Start-->
-    <div class="grid-container element-distance-tb">
-        <div class="grid-x">
-            <div class="large-4 medium-6 small-12 padding-lr">
-                <article class="material-card Light-Blue">
-                    <h2>
-                        <span>Ali Jahanpak</span>
-                        <strong>
-                            <i class="fab fa-connectdevelop"></i>
-                            Web Developer
-                        </strong>
-                    </h2>
-                    <div class="mc-content">
-                        <div class="img-container">
-                            <img class="img-responsive" src="http://u.lorenzoferrara.net/marlenesco/material-card/thumb-harvey-keitel.jpg">
-                        </div>
-                        <div class="mc-description">
-                            Some of his most notable starring roles were in Martin Scorsese's Mean Streets and Taxi Driver, Ridley Scott's The Duellists and Thelma & Louise, Quentin Tarantino ...
-                        </div>
-                    </div>
-                    <a class="mc-btn-action">
-                        <i class="fa fa-bars"></i>
-                    </a>
-                    <div class="mc-footer center-el">
-                        <h4>
-                            Social
-                        </h4>
-                        <a class="fab fa-instagram"></a>
-                        <a class="fab fa-linkedin"></a>
-                        <a class="fab fa-telegram"></a>
-                        <a class="fas fa-at"></a>
-                    </div>
-                </article>
-            </div>
-
-            <div class="large-4 medium-6 small-12 padding-lr">
-                <article class="material-card Teal">
-                    <h2>
-                        <span>Morteza Amzajerdi</span>
-                        <strong>
-                            <i class="far fa-file-alt"></i>
-                            Content Manager
-                        </strong>
-                    </h2>
-                    <div class="mc-content">
-                        <div class="img-container">
-                            <img class="img-responsive" src="http://u.lorenzoferrara.net/marlenesco/material-card/thumb-sean-penn.jpg">
-                        </div>
-                        <div class="mc-description">
-                            Some of his most notable starring roles were in Martin Scorsese's Mean Streets and Taxi Driver, Ridley Scott's The Duellists and Thelma & Louise, Quentin Tarantino ...
-                        </div>
-                    </div>
-                    <a class="mc-btn-action">
-                        <i class="fa fa-bars"></i>
-                    </a>
-                    <div class="mc-footer center-el">
-                        <h4>
-                            Social
-                        </h4>
-                        <a class="fab fa-instagram"></a>
-                        <a class="fab fa-linkedin"></a>
-                        <a class="fab fa-telegram"></a>
-                        <a class="fas fa-at"></a>
-                    </div>
-                </article>
-            </div>
-
-            <div class="large-4 medium-6 small-12 padding-lr">
-                <article class="material-card Blue-Grey">
-                    <h2>
-                        <span>Mostafa Asad beygi</span>
-                        <strong>
-                            <i class="fas fa-camera"></i>
-                            Photographer
-                        </strong>
-                    </h2>
-                    <div class="mc-content">
-                        <div class="img-container">
-                            <img class="img-responsive" src="http://u.lorenzoferrara.net/marlenesco/material-card/thumb-morgan-freeman.jpg">
-                        </div>
-                        <div class="mc-description">
-                            Some of his most notable starring roles were in Martin Scorsese's Mean Streets and Taxi Driver, Ridley Scott's The Duellists and Thelma & Louise, Quentin Tarantino ...
-                        </div>
-                    </div>
-                    <a class="mc-btn-action">
-                        <i class="fa fa-bars"></i>
-                    </a>
-                    <div class="mc-footer center-el">
-                        <h4>
-                            Social
-                        </h4>
-                        <a class="fab fa-instagram"></a>
-                        <a class="fab fa-linkedin"></a>
-                        <a class="fab fa-telegram"></a>
-                        <a class="fas fa-at"></a>
-                    </div>
-                </article>
-            </div>
-
-        </div>
-    </div>
-    <!--Section About Me End-->
 @stop
