@@ -158,7 +158,7 @@
                         @foreach($pageInfo->pageHeaderImg as $pageImg)
                             <li class="is-active orbit-slide">
                                 @if ($pageInfo->headerType->phtType == 'SIMPLE')
-                                    <img  class="background-cover orbit-image top-slider-simple" src="{{ asset($pageImg->image->gPath . '?v' . config('app.version')) }}" alt="Space">
+                                    <img  class="background-cover orbit-image top-slider-simple" src="{{ asset($pageImg->image->gPath . '?v' . config('app.version')) }}" alt="{{ $pageInfo->pEnSubject }}">
                                     <figcaption class="orbit-caption align-center my-text-shadow-effect">
                                         @if($lan == 'fa')
                                             <p style="text-align: center;" class="top-slider-header-sample Shabnam-Bold my-fadeIn-and-move">{{ $pageInfo->pFaSubject }}</p>
@@ -187,7 +187,7 @@
                                         @endif
                                     </figcaption>
                                 @elseif ($pageInfo->headerType->phtType == 'PUBLIC')
-                                    <img style="height: 50vh" class="background-cover orbit-image top-slider-simple image-black-overlay" src="{{ asset('pic/gallery/lan_1.jpg') }}" alt="Space">
+                                    <img style="height: 50vh" class="background-cover orbit-image top-slider-simple image-black-overlay" src="{{ asset($pageImg->image->gPath . '?v' . config('app.version')) }}" alt="{{ $pageInfo->pEnSubject }}">
                                     <figcaption class="orbit-caption align-center my-text-shadow-effect">
                                         @if($lan == 'fa')
                                             <p style="text-align: center;" class="top-slider-header-public Shabnam-Bold my-fadeIn-and-move">{{ $pageInfo->pFaSubject }}</p>
@@ -213,7 +213,7 @@
                                         @endif
                                     </figcaption>
                                 @elseif($pageInfo->headerType->phtType == 'ADVANCE')
-                                    <img  class="background-cover orbit-image top-slider my-zoom-out" src="{{ asset($pageImg->image->gPath . '?v' . config('app.version')) }}" alt="Space">
+                                    <img  class="background-cover orbit-image top-slider my-zoom-out" src="{{ asset($pageImg->image->gPath . '?v' . config('app.version')) }}" alt="{{ $pageInfo->pEnSubject }}">
                                     <figcaption class="orbit-caption">
                                         <div class="top-slider-grid-container">
                                             <div class="grid-x">

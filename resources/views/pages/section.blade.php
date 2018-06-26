@@ -831,11 +831,11 @@
         @elseif($section->sectionType->stType == 'SINGLE_BUTTON')
             <div class="large-12 text-center" style="margin-top: -50px">
                 @if($lan == 'fa')
-                    <a style="width: 200px" class="button primary" href="{{ url($lan . $section->sLink) }}">ثبت نام</a>
+                    <a style="width: 200px" class="button primary" href="{{ url($lan . $section->sLink) }}">{{ $section->sLinkFaTitle }}</a>
                 @elseif($lan == 'en')
-                    <a style="width: 200px" class="button primary" href="{{ url($section->sLink) }}">register</a>
+                    <a style="width: 200px" class="button primary" href="{{ url($section->sLink) }}">{{ $section->sLinkEnTitle }}</a>
                 @elseif($lan == 'ar')
-                    <a style="width: 200px" class="button primary" href="{{ url($lan . $section->sLink) }}">register</a>
+                    <a style="width: 200px" class="button primary" href="{{ url($lan . $section->sLink) }}">{{ $section->sLinkArTitle }}</a>
                 @endif
             </div>
         @elseif($section->sectionType->stType == 'CONTENT_FORM')
@@ -963,7 +963,7 @@
                                                                 @endif
                                                                 <div class="large-5 medium-5 small-6">
                                                                     <label>
-                                                                        <select name="{{ $questionForm->id . '_country_code' }}" style="border-radius: 0px"  {{ $questionForm->qfRequire == 0 ? '' : 'required' }}>
+                                                                        <select name="{{ $questionForm->id . '_country_code' }}" style="border-radius: 0px;border-right: 0px;background-color: #EEEEEE"  {{ $questionForm->qfRequire == 0 ? '' : 'required' }}>
                                                                             <option data-countryCode="--" value="" Selected>-- country --</option>
                                                                             <option data-countryCode="GB" value="44">UK (+44)</option>
                                                                             <option data-countryCode="US" value="1">USA (+1)</option>
