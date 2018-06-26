@@ -1335,7 +1335,7 @@
                                                                                     @endif
                                                                                 @endif
                                                                                 <div class="large-12">
-                                                                                    <textarea style="height: auto;" class="form-control" name="{{ $questionForm->id }}" {{ $questionForm->qfRequire != 0 ? 'required' : '' }}>{{ old($questionForm->id) }}</textarea>
+                                                                                    <textarea style="height: 10em;" class="form-control" name="{{ $questionForm->id }}" {{ $questionForm->qfRequire != 0 ? 'required' : '' }}>{{ old($questionForm->id) }}</textarea>
                                                                                 </div>
                                                                                 @break
                                                                                 @case("captcha")

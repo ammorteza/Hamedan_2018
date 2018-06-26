@@ -14,7 +14,6 @@ class RegisterController extends Controller
 {
     public function registerForm(Request $request , $fId)
     {
-        dd($request);
         $requireCaptcha = QuestionForm::where('qfFrId' , '=' , $fId)->whereHas('question.fieldType' , function ($q){
             return $q->where('ftType' , '=' , 'captcha');
         })->where('qfState' , '<>' , 0)->get()->count(); //check captcha state is enable
@@ -29,7 +28,7 @@ class RegisterController extends Controller
 
         }
 
-        $questionForm = QuestionForm::where('qfState' , '=' , 1)->where('qfFrId' , '=' , $fId)->get();
+        $questionForm = QuestionForm::with('question.fieldType')->where('qfState' , '=' , 1)->where('qfFrId' , '=' , $fId)->get();
         if ($this->checkExistUniqueValue($fId , $request))
         {
             return redirect()->back()->withInput()->with('resultError' , ['رکوردی با این مشخصات قبلا ثبت شده است!' , 'duplicate error!' , 'خطأ مكرر!']);
@@ -63,11 +62,22 @@ class RegisterController extends Controller
                             $answer->save();
                         }
                     }else{
-                        $answer = new FormAnswer;
-                        $answer->faValue = $request->get($qForm->id);
-                        $answer->faQfId = $qForm->id;
-                        $answer->faUuId = $uuId;
-                        $answer->save();
+                        if ($qForm->question->fieldType->ftType == 'phone-number')
+                        {
+                            $phoneNumber = '+' . $request->get($qForm->id . '_country_code') . '-';
+                            $phoneNumber .= $request->get($qForm->id);
+                            $answer = new FormAnswer;
+                            $answer->faValue = $phoneNumber;
+                            $answer->faQfId = $qForm->id;
+                            $answer->faUuId = $uuId;
+                            $answer->save();
+                        }else{
+                            $answer = new FormAnswer;
+                            $answer->faValue = $request->get($qForm->id);
+                            $answer->faQfId = $qForm->id;
+                            $answer->faUuId = $uuId;
+                            $answer->save();
+                        }
                     }
                 }
             }
