@@ -969,7 +969,7 @@
                                                                         <select name="{{ $questionForm->id . '_country_code' }}" style="border-radius: 0px;border-right: 0px;background-color: #EEEEEE"  {{ $questionForm->qfRequire == 0 ? '' : 'required' }}>
                                                                             <option data-countryCode="--" value="" Selected>-- country --</option>
                                                                             @foreach($countries as $country)
-                                                                                <option value="{{ $country->phonecode }}" {{ old($questionForm->id . '_country_code') == $country->phonecode ? 'selected' : '' }}>{{ '(+' . $country->phonecode . ') ' . $country->name }}</option>
+                                                                                <option value="{{ $country->phonecode }}" {{ old($questionForm->id . '_country_code') == $country->phonecode ? 'selected' : '' }}>{{ $country->name . ' (+' . $country->phonecode . ')' }}</option>
                                                                             @endforeach
                                                                         </select>
                                                                     </label>
@@ -1186,10 +1186,6 @@
                                                                                 <div class="fileUpload center-el" style="padding: 5px">
                                                                                     <label for="{{ 'up0'  }}" class="multi-uploader-preview-label">
                                                                                         <img src="{{ asset('pic/upload_img.png') }}" class="img-border"/>
-                                                                                        <div style="margin-top: -60px;">
-                                                                                            <p class="gray-color" >png - jpg</p>
-                                                                                            <p style="margin-top: -10px;" class="gray-color" >Max Size : 1 MB</p>
-                                                                                        </div>
                                                                                     </label>
                                                                                     <input type="file" accept="image/*" class="upload up" id="up0" name="{{ $questionForm->id . '[]' }}" onchange="readURL(this, '{{ $questionForm->id . '[]' }}' , '{{ $questionForm->qfRequire }}' , '{{ asset('pic/upload_img.png') }}' , 1);" {{ $questionForm->qfRequire != 0 ? 'required' : '' }}/>
                                                                                 </div><!-- btn-orange -->
@@ -1238,42 +1234,48 @@
                                     @if($form->fIsMultiStepForm && $formStepsCount > 1)
                                         @if($i == 1)
                                             @if($lan == 'fa')
-                                                <input type="button" name="next" class="next button primary button-width" value="بعدی" />
+                                                <button type="button" name="next" class="next button primary button-width">بعدی</button>
                                             @elseif($lan == 'en')
-                                                <input type="button" name="next" class="next button primary button-width" value="Next" />
+                                                <button type="button" name="next" class="next button primary button-width">Next</button>
                                             @elseif($lan == 'ar')
-                                                <input type="button" name="next" class="next button primary button-width" value="التالى" />
+                                                <button type="button" name="previous" class="previous button primary button-width">التالى</button>
                                             @endif
                                         @elseif($i < $formStepsCount)
                                             @if($lan == 'fa')
-                                                <input type="button" name="next" class="next button primary button-width" value="بعدی" />
-                                                <input type="button" name="previous" class="previous button primary button-width" value="قبلی" />
+                                                <button type="button" name="next" class="next button primary button-width">بعدی</button>
+                                                <button type="button" name="previous" class="previous button primary button-width">قبلی</button>
                                             @elseif($lan == 'en')
-                                                <input type="button" name="previous" class="previous button primary button-width" value="Previous" />
-                                                <input type="button" name="next" class="next button primary button-width" value="Next" />
+                                                <button type="button" name="previous" class="previous button primary button-width">Previous</button>
+                                                <button type="button" name="next" class="next button primary button-width">Next</button>
                                             @elseif($lan == 'ar')
-                                                <input type="button" name="next" class="next button primary button-width" value="التالى" />
-                                                <input type="button" name="previous" class="previous button primary button-width" value="سابق" />
+                                                <button type="button" name="previous" class="previous button primary button-width">التالى</button>
+                                                <button type="button" name="next" class="next button primary button-width">سابق</button>
                                             @endif
                                         @else
                                             @if($lan == 'fa')
-                                                <input type="button" name="previous" class="previous button primary button-width" value="قبلی" />
-                                                <input type="submit" name="submit" class="submit button primary button-width" value="ثبت" />
+                                                <button type="button" name="previous" class="previous button primary button-width" value="Previous">قبلی</button>
+                                                <button type="submit" class="primary button" data-loading-start>ثبت</button>
+                                                <button class="primary button hide" data-loading-end><i class='fa fa-spinner fa-spin'></i> در حال پردازش</button>
                                             @elseif($lan == 'en')
-                                                <input type="button" name="previous" class="previous button primary button-width" value="Previous" />
-                                                <input type="submit" name="submit" class="submit button primary button-width" value="Register" />
+                                                <button type="button" name="previous" class="previous button primary button-width" value="Previous">Previous</button>
+                                                <button type="submit" class="primary button" data-loading-start>register</button>
+                                                <button class="primary button hide" data-loading-end><i class='fa fa-spinner fa-spin'></i> Processing Order</button>
                                             @elseif($lan == 'ar')
-                                                <input type="button" name="previous" class="previous button primary button-width" value="التالى" />
-                                                <input type="submit" name="submit" class="submit button primary button-width" value="تسجيل" />
+                                                <button type="button" name="previous" class="previous button primary button-width" value="Previous">التالى</button>
+                                                <button type="submit" class="primary button" data-loading-start>تسجيل</button>
+                                                <button class="primary button hide" data-loading-end><i class='fa fa-spinner fa-spin'></i> معالجة الطلب</button>
                                             @endif
                                         @endif
                                     @else
                                         @if($lan == 'fa')
-                                            <input type="submit" name="submit" class="submit button primary button-width" value="ثبت" />
+                                            <button type="submit" class="primary button" data-loading-start>ثبت</button>
+                                            <button class="primary button hide" data-loading-end><i class='fa fa-spinner fa-spin'></i> در حال پردازش</button>
                                         @elseif($lan == 'en')
-                                            <input type="submit" name="submit" class="submit button primary button-width" value="ًRegister" />
+                                            <button type="submit" class="primary button" data-loading-start>register</button>
+                                            <button class="primary button hide" data-loading-end><i class='fa fa-spinner fa-spin'></i> Processing Order</button>
                                         @elseif($lan == 'ar')
-                                            <input type="submit" name="submit" class="submit button primary button-width" value="تسجيل" />
+                                            <button type="submit" class="primary button" data-loading-start>تسجيل</button>
+                                            <button class="primary button hide" data-loading-end><i class='fa fa-spinner fa-spin'></i> معالجة الطلب</button>
                                         @endif
                                     @endif
                                 </fieldset>

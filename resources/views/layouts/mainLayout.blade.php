@@ -552,6 +552,11 @@
     $(document).ready(function() {
         $('#lightgallery').lightGallery();
     });
+    $(document).on("invalid.zf.abide", function(ev,elem) {
+        $('[data-loading-end]').addClass('hide');
+        $('[data-loading-end]').removeClass('disabled');
+        $('[data-loading-start]').removeClass('hide');
+    });
 </script>
 <!--LightBox gallery End-->
 
