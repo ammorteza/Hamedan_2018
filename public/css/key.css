@@ -1775,6 +1775,7 @@ ul.social-icons {
 .fileUpload .img-border {
     border: 2px dashed #DDD;
     background-color: #EFEFEF;
+    cursor: pointer;
 }
 .fileUpload input.upload {
     position: absolute;
