@@ -4,20 +4,25 @@ function readURL(input , inputName , isRequire , uploadIcon , counter) {
         var extension = input.files[0].name.split('.').pop().toLowerCase(),  //file extension from input file
             isSuccess = fileTypes.indexOf(extension) > -1;  //is extension in acceptable types
 
+        var size=input.files[0].size;
         if (isSuccess) { //yes
-            var reader = new FileReader();
-            reader.onload = function (e) {
-                $(input).closest('.multi-uploader').find(".multi-uploader-preview-label").remove();
-                $(input).closest('.multi-uploader').find(".fileUpload").append(
-                    '<div class="image-preview-container">' +
-                    '<img src="' + e.target.result + '" class="multi-uploader-preview"/>' +
-                    '<div class="middle">' +
-                    '<a onclick="deleteUploadImgItem(this , ' + isRequire + ');"><span class="btn-red"><i class="fas fa-trash-alt size-36"></i></span></a>'+
-                    '</div>' +
-                    '</div>');
-                addNewUploadFile(inputName , isRequire , uploadIcon , counter)
+            if((size / 1024) > 1024)
+                alert("Maximum file size exceeds");
+            else{
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    $(input).closest('.multi-uploader').find(".multi-uploader-preview-label").remove();
+                    $(input).closest('.multi-uploader').find(".fileUpload").append(
+                        '<div class="image-preview-container">' +
+                        '<img src="' + e.target.result + '" class="multi-uploader-preview"/>' +
+                        '<div class="middle">' +
+                        '<a onclick="deleteUploadImgItem(this , ' + isRequire + ');"><span class="btn-red"><i class="fas fa-trash-alt size-36"></i></span></a>'+
+                        '</div>' +
+                        '</div>');
+                    addNewUploadFile(inputName , isRequire , uploadIcon , counter)
+                }
+                reader.readAsDataURL(input.files[0]);
             }
-            reader.readAsDataURL(input.files[0]);
         }
         else {
             //console.log('here=>'+$(input).closest('.uploadDoc').find(".docErr").length);
@@ -75,9 +80,11 @@ function addNewUploadFile(inputName , isRequire , uploadIcon , counter)
     $("#uploader").append(
         '<div class="large-3 uploadDoc">' +
             '<div class="multi-uploader">' +
-                '<div class="fileUpload" style="padding: 5px"> ' +
+                '<div class="fileUpload center-el" style="padding: 5px"> ' +
                     '<label for="up' + counter + '" class="multi-uploader-preview-label">' +
                     '<img src="' + uploadIcon + '" class="img-border"/>' +
+                    '<p class="gray-color" style="margin-top: -70px;">png - jpg</p>'+
+                    '<p class="gray-color" style="margin-top: -20px;">Max Size : 1 MB</p>'+
                     '</label>' +
                     '<input type="file" accept="image/*" class="upload up" id="up' + counter + '" name="' + inputName +'" onchange="readURL(this, \'' + inputName + '\' , \'' + isRequire + '\' , \'' + uploadIcon + '\' , ' + (counter + 1) + ');" />' +
                 '</div>' +

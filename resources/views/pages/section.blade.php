@@ -1639,9 +1639,11 @@
                                                                     <div class="grid-x" id="uploader">
                                                                         <div class="large-3 uploadDoc">
                                                                             <div class="multi-uploader">
-                                                                                <div class="fileUpload" style="padding: 5px">
+                                                                                <div class="fileUpload center-el" style="padding: 5px">
                                                                                     <label for="{{ 'up0'  }}" class="multi-uploader-preview-label">
                                                                                         <img src="{{ asset('pic/upload_img.png') }}" class="img-border"/>
+                                                                                        <p class="gray-color" style="margin-top: -70px;">png - jpg</p>
+                                                                                        <p class="gray-color" style="margin-top: -20px;">Max Size : 1 MB</p>
                                                                                     </label>
                                                                                     <input type="file" accept="image/*" class="upload up" id="up0" name="{{ $questionForm->id . '[]' }}" onchange="readURL(this, '{{ $questionForm->id . '[]' }}' , '{{ $questionForm->qfRequire }}' , '{{ asset('pic/upload_img.png') }}' , 1);" {{ $questionForm->qfRequire != 0 ? 'required' : '' }}/>
                                                                                 </div><!-- btn-orange -->
