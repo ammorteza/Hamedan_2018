@@ -1766,4 +1766,128 @@
                 </div>--}}
         <!--Section pannellum-master-360 End-->
     @endforeach
+    <!--Section Go to Register Start-->
+    <div class="grid-container element-distanse">
+        <div class="grid-x">
+            <div class="large-12 text-center">
+                <img style="height: 300px;width: 100%;" class="background-cover image-shadow-effect" src="{{ asset('pic/gallery/lan_63.jpg') }}">
+                <h3 style="margin-top: -200px;" class="my-text-shadow-effect white-color">Hamedan's handicrafts are full of art and beauty</h3>
+                <a style="margin-top: 50px;width: 150px;" href="#" class="button primary ">Register</a>
+            </div>
+        </div>
+    </div>
+    <!--Section Go to Register End-->
+
+    <!--Section About Me Start-->
+    <div class="grid-container element-distance-tb">
+        <div class="grid-x">
+            <div class="large-4 medium-6 small-12 padding-lr">
+                <article class="material-card Light-Blue">
+                    <h2>
+                        <span>Ali Jahanpak</span>
+                        <strong>
+                            <i class="fab fa-connectdevelop"></i>
+                            Web Developer
+                        </strong>
+                    </h2>
+                    <div class="mc-content">
+                        <div class="img-container">
+                            <img class="img-responsive" src="http://u.lorenzoferrara.net/marlenesco/material-card/thumb-harvey-keitel.jpg">
+                        </div>
+                        <div class="mc-description">
+                            Some of his most notable starring roles were in Martin Scorsese's Mean Streets and Taxi Driver, Ridley Scott's The Duellists and Thelma & Louise, Quentin Tarantino ...
+                        </div>
+                    </div>
+                    <a class="mc-btn-action">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                    <div class="mc-footer center-el">
+                        <h4>
+                            Social
+                        </h4>
+                        <a class="fab fa-instagram"></a>
+                        <a class="fab fa-linkedin"></a>
+                        <a class="fab fa-telegram"></a>
+                        <a class="fas fa-at"></a>
+                    </div>
+                </article>
+            </div>
+
+            <div class="large-4 medium-6 small-12 padding-lr">
+                <article class="material-card Teal">
+                    <h2>
+                        <span>Morteza Amzajerdi</span>
+                        <strong>
+                            <i class="far fa-file-alt"></i>
+                            Content Manager
+                        </strong>
+                    </h2>
+                    <div class="mc-content">
+                        <div class="img-container">
+                            <img class="img-responsive" src="http://u.lorenzoferrara.net/marlenesco/material-card/thumb-sean-penn.jpg">
+                        </div>
+                        <div class="mc-description">
+                            Some of his most notable starring roles were in Martin Scorsese's Mean Streets and Taxi Driver, Ridley Scott's The Duellists and Thelma & Louise, Quentin Tarantino ...
+                        </div>
+                    </div>
+                    <a class="mc-btn-action">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                    <div class="mc-footer center-el">
+                        <h4>
+                            Social
+                        </h4>
+                        <a class="fab fa-instagram"></a>
+                        <a class="fab fa-linkedin"></a>
+                        <a class="fab fa-telegram"></a>
+                        <a class="fas fa-at"></a>
+                    </div>
+                </article>
+            </div>
+
+            <div class="large-4 medium-6 small-12 padding-lr">
+                <article class="material-card Blue-Grey">
+                    <h2>
+                        <span>Mostafa Asad beygi</span>
+                        <strong>
+                            <i class="fas fa-camera"></i>
+                            Photographer
+                        </strong>
+                    </h2>
+                    <div class="mc-content">
+                        <div class="img-container">
+                            <img class="img-responsive" src="http://u.lorenzoferrara.net/marlenesco/material-card/thumb-morgan-freeman.jpg">
+                        </div>
+                        <div class="mc-description">
+                            Some of his most notable starring roles were in Martin Scorsese's Mean Streets and Taxi Driver, Ridley Scott's The Duellists and Thelma & Louise, Quentin Tarantino ...
+                        </div>
+                    </div>
+                    <a class="mc-btn-action">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                    <div class="mc-footer center-el">
+                        <h4>
+                            Social
+                        </h4>
+                        <a class="fab fa-instagram"></a>
+                        <a class="fab fa-linkedin"></a>
+                        <a class="fab fa-telegram"></a>
+                        <a class="fas fa-at"></a>
+                    </div>
+                </article>
+            </div>
+
+        </div>
+    </div>
+    <!--Section About Me End-->
+
+    <div class="grid-container">
+        <div class="grid-x">
+            <div class="large-12">
+                <input id="phone" type="tel">
+                <span id="valid-msg" class="hide">Valid</span>
+                <span id="error-msg" class="hide">Invalid number</span>
+            </div>
+        </div>
+    </div>
 @stop
