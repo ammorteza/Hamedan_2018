@@ -1639,13 +1639,14 @@ ul.social-icons {
     overflow: hidden;
     /*CSS counters to number the steps*/
     counter-reset: step;
+    width: 100%;
 }
 #progressbar li {
     list-style-type: none;
     color: #0a0a0a;
     text-transform: uppercase;
     font-size: 9px;
-    width: 10%;
+    width: 15%;
     float:left ;
     position: relative;
 }
@@ -2105,6 +2106,19 @@ ul.social-icons {
     .orbit-caption{
         margin-bottom:20%;
     }
+    .msform fieldset {
+        background: white;
+        border: 0 none;
+        border-radius: 3px;
+        box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+        padding: 20px 30px;
+        box-sizing: border-box;
+        width: 100%;
+        margin: 0 0;
+        /*stacking fieldsets above each other*/
+
+
+    }
 
 }
 
@@ -2205,7 +2219,6 @@ ul.social-icons {
         margin-right: 5px;
         margin-left: 5px;
     }
-
 }
 @media only screen and (max-width: 500px) {
     .top-slider-header {
@@ -2236,6 +2249,15 @@ ul.social-icons {
     }
     .top-slider-description-btn{
         font-size: 1em;
+    }
+    #progressbar li {
+        list-style-type: none;
+        color: #0a0a0a;
+        text-transform: uppercase;
+        font-size: 9px;
+        width: 25%;
+        float:left ;
+        position: relative;
     }
 }
 

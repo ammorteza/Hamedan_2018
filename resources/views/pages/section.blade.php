@@ -851,8 +851,8 @@
                             {{ csrf_field() }}
                             <div class="grid-container">
                                 <div class="grid-x">
-                                    <div class="large-offset-1 medium-offset-1"></div>
-                                    <div class="large-10 medium-10">
+                                    <div class="large-offset-1 medium-offset-1 large-offset-1"></div>
+                                    <div class="large-10 medium-10 small-10">
                                         <div  data-abide-error class="callout large" style="margin:5px; display: none;margin-bottom: 50px;">
                                             @if($lan == 'fa')
                                                 <i class="fi-alert btn-red Shabnam-Light">لطفا موارد الزامی فرم را تکمیل کنید!</i>
@@ -875,17 +875,19 @@
                                         @endif
                                         @if($form->fIsMultiStepForm)
                                         <!-- progressbar -->
-                                            <div class="center-el">
-                                                <ul class="text-center" id="progressbar">
-                                                    <li class="active"></li>
-                                                    @for($i = 1 ; $i < $formStepsCount ; $i++)
-                                                        <li></li>
-                                                    @endfor
-                                                </ul>
+                                            <div class="grid-x center-el">
+                                                <div class="large-12 medium-12 small-12">
+                                                    <ul class="text-center" id="progressbar">
+                                                        <li class="active"></li>
+                                                        @for($i = 1 ; $i < $formStepsCount ; $i++)
+                                                            <li></li>
+                                                        @endfor
+                                                    </ul>
+                                                </div>
                                             </div>
                                         @endif
                                     </div>
-                                    <div class="large-offset-1 medium-offset-1"></div>
+                                    <div class="large-offset-1 medium-offset-1 small-10"></div>
                                 </div>
                             </div>
                             <div class="element-distanse"></div>
