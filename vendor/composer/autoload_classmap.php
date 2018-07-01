@@ -644,6 +644,7 @@ return array(
     'Hamcrest\\Xml\\HasXPath' => $vendorDir . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Xml/HasXPath.php',
     'Hamedan_2018\\Advertise' => $baseDir . '/app/Advertise.php',
     'Hamedan_2018\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
+    'Hamedan_2018\\Country' => $baseDir . '/app/Country.php',
     'Hamedan_2018\\Event' => $baseDir . '/app/Event.php',
     'Hamedan_2018\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
     'Hamedan_2018\\FieldOption' => $baseDir . '/app/FieldOption.php',

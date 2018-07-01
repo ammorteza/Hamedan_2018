@@ -7,3 +7,7 @@ $('[data-loading-start]').click(function() {
     $('[data-loading-end]').removeClass('hide');
     $('[data-loading-end]').addClass('disabled');
 });
+
+function goToLocation(locationId) {
+    location.hash = locationId;
+}

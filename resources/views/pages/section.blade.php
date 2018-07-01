@@ -239,7 +239,7 @@
             </div>
             <!--Content Wide Slider Start-->
         @elseif($section->sectionType->stType == 'BREAD_CRUMB')
-            <div class="grid-container">
+            <div class="grid-container" id="breadCrumbContainer">
                 <div class="grid-x">
                     <div style="margin-top: 30px;color: #37474F;" class="large-12 medium-12">
                         <nav aria-label="You are here:" role="navigation">
@@ -1234,34 +1234,34 @@
                                     @if($form->fIsMultiStepForm && $formStepsCount > 1)
                                         @if($i == 1)
                                             @if($lan == 'fa')
-                                                <button type="button" name="next" class="next button primary button-width">بعدی</button>
+                                                <button type="button" name="next" class="next button primary button-width" onclick="goToLocation('breadCrumbContainer')">بعدی</button>
                                             @elseif($lan == 'en')
-                                                <button type="button" name="next" class="next button primary button-width">Next</button>
+                                                <button type="button" name="next" class="next button primary button-width" onclick="goToLocation('breadCrumbContainer')">Next</button>
                                             @elseif($lan == 'ar')
-                                                <button type="button" name="previous" class="previous button primary button-width">التالى</button>
+                                                <button type="button" name="previous" class="previous button primary button-width" onclick="goToLocation('breadCrumbContainer')">التالى</button>
                                             @endif
                                         @elseif($i < $formStepsCount)
                                             @if($lan == 'fa')
-                                                <button type="button" name="next" class="next button primary button-width">بعدی</button>
-                                                <button type="button" name="previous" class="previous button primary button-width">قبلی</button>
+                                                <button type="button" name="next" class="next button primary button-width" onclick="goToLocation('breadCrumbContainer')">بعدی</button>
+                                                <button type="button" name="previous" class="previous button primary button-width" onclick="goToLocation('breadCrumbContainer')">قبلی</button>
                                             @elseif($lan == 'en')
-                                                <button type="button" name="previous" class="previous button primary button-width">Previous</button>
-                                                <button type="button" name="next" class="next button primary button-width">Next</button>
+                                                <button type="button" name="previous" class="previous button primary button-width" onclick="goToLocation('breadCrumbContainer')">Previous</button>
+                                                <button type="button" name="next" class="next button primary button-width" onclick="goToLocation('breadCrumbContainer')">Next</button>
                                             @elseif($lan == 'ar')
-                                                <button type="button" name="previous" class="previous button primary button-width">التالى</button>
-                                                <button type="button" name="next" class="next button primary button-width">سابق</button>
+                                                <button type="button" name="previous" class="previous button primary button-width" onclick="goToLocation('breadCrumbContainer')">التالى</button>
+                                                <button type="button" name="next" class="next button primary button-width" onclick="goToLocation('breadCrumbContainer')">سابق</button>
                                             @endif
                                         @else
                                             @if($lan == 'fa')
-                                                <button type="button" name="previous" class="previous button primary button-width" value="Previous">قبلی</button>
+                                                <button type="button" name="previous" class="previous button primary button-width" value="Previous" onclick="goToLocation('breadCrumbContainer')">قبلی</button>
                                                 <button type="submit" class="primary button" data-loading-start>ثبت</button>
                                                 <button class="primary button hide" data-loading-end><i class='fa fa-spinner fa-spin'></i> در حال پردازش</button>
                                             @elseif($lan == 'en')
-                                                <button type="button" name="previous" class="previous button primary button-width" value="Previous">Previous</button>
+                                                <button type="button" name="previous" class="previous button primary button-width" value="Previous" onclick="goToLocation('breadCrumbContainer')">Previous</button>
                                                 <button type="submit" class="primary button" data-loading-start>register</button>
                                                 <button class="primary button hide" data-loading-end><i class='fa fa-spinner fa-spin'></i> Processing Order</button>
                                             @elseif($lan == 'ar')
-                                                <button type="button" name="previous" class="previous button primary button-width" value="Previous">التالى</button>
+                                                <button type="button" name="previous" class="previous button primary button-width" value="Previous" onclick="goToLocation('breadCrumbContainer')">التالى</button>
                                                 <button type="submit" class="primary button" data-loading-start>تسجيل</button>
                                                 <button class="primary button hide" data-loading-end><i class='fa fa-spinner fa-spin'></i> معالجة الطلب</button>
                                             @endif

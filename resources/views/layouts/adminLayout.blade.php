@@ -21,22 +21,45 @@
 <body class="Shabnam-Light body-color">
 <div class="off-canvas-wrapper">
     <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+        <?php
+            $forms = \Hamedan_2018\Form::getAllFormsThatHasPermission(Auth::user()->id);
+        ?>
         <!--Right sidebar start-->
         <div style="background-color: #FFFFFF;" class="off-canvas position-right reveal-for-large" id="my-info" data-off-canvas data-position="right">
             <nav style="width: 100%;margin-top: 40px;z-index: 999;position: absolute;" class="accordion">
                 <ul style="background-color:#FFFFFF;padding: 10px;line-height: 2;" class="vertical menu sub-menu accordion-menu" data-accordion-menu data-multi-open="false" >
-                    <li>
-                        <a class="right-mp right-menu-btm-border" href="#"><i class="far fa-newspaper size-21 icon-pos" aria-hidden="true"></i>اخبار</a>
-                        <ul class="menu vertical nested">
-                            <li>
-                                <a href="{{ url('/admin/news') }}">لیست خبر</a>
-                                <a href="{{ url('/admin/news/slider') }}">اسلایدر خبر</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a class="right-mp right-menu-btm-border" href="{{ url('/admin/album') }}"><i class="far fa-images size-21 icon-pos" aria-hidden="true"></i>گالری</a>
-                    </li>
+                    @if(\Hamedan_2018\Permission::checkPermission(['ADMIN_NEWS' , 'ADMIN_NEWS_SLIDER']))
+                        <li>
+                            <a class="right-mp right-menu-btm-border" href="#"><i class="far fa-newspaper size-21 icon-pos" aria-hidden="true"></i>اخبار</a>
+                            <ul class="menu vertical nested">
+                                <li>
+                                    @if(\Hamedan_2018\Permission::checkPermission('ADMIN_NEWS'))
+                                        <a href="{{ url('/admin/news') }}">لیست خبر</a>
+                                    @endif
+                                    @if(\Hamedan_2018\Permission::checkPermission('ADMIN_NEWS_SLIDER'))
+                                        <a href="{{ url('/admin/news/slider') }}">اسلایدر خبر</a>
+                                    @endif
+                                </li>
+                            </ul>
+                        </li>
+                    @endif
+                    @if(\Hamedan_2018\Permission::checkPermission('ADMIN_GALLERY'))
+                        <li>
+                            <a class="right-mp right-menu-btm-border" href="{{ url('/admin/album') }}"><i class="far fa-images size-21 icon-pos" aria-hidden="true"></i>گالری</a>
+                        </li>
+                    @endif
+                    @if (count($forms) > 0)
+                        <li>
+                            <a class="right-mp right-menu-btm-border" href="#"><i class="far fa-newspaper size-21 icon-pos" aria-hidden="true"></i>فرم ها</a>
+                            <ul class="menu vertical nested">
+                                @foreach($forms as $form)
+                                    <li>
+                                        <a href="{{ url('/admin/form/' . $form->id) }}">{{ $form->fFaSubject }}</a>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </li>
+                    @endif
                 </ul>
             </nav>
         </div>

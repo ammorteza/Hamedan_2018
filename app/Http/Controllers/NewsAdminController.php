@@ -6,15 +6,22 @@ use Hamedan_2018\ImageGallery;
 use Hamedan_2018\News;
 use Hamedan_2018\NewsImg;
 use Hamedan_2018\NewsSlider;
+use Hamedan_2018\User;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Router;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Route;
 
 class NewsAdminController extends Controller
 {
-    function index()
-    {
+    protected $router;
+    private $newsAcions = [];
 
+    public function __construct(User $user, Router $router)
+    {
+        $actionName = explode('@', Route::getCurrentRoute()->getActionName())[1];
+        //return abort(404);
     }
 
     function news()
