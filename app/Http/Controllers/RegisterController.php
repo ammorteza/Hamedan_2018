@@ -14,6 +14,11 @@ class RegisterController extends Controller
 {
     public function registerForm(Request $request , $fId)
     {
+        for ($i=0;$i<2000000000;$i++)
+        {
+
+        }
+        dd($request);
         $requireCaptcha = QuestionForm::where('qfFrId' , '=' , $fId)->whereHas('question.fieldType' , function ($q){
             return $q->where('ftType' , '=' , 'captcha');
         })->where('qfState' , '<>' , 0)->get()->count(); //check captcha state is enable

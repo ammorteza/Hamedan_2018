@@ -19,7 +19,6 @@
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-
         gtag('config', 'UA-116472209-1');
     </script>
     <!-- Fonts -->
@@ -101,7 +100,7 @@
 
                             </div>
                             <div style="margin-top: -70px;" class="element-dir-l flag-icon-full">
-                                <ul  style="position: absolute;z-index: 9999;" class="languagepicker roundborders large">
+                                <ul  style="position: absolute;z-index: 9999;" class="languagepicker roundborders largee">
                                     @if($lan == 'fa')
                                         <a href="{{ url('/fa') }}"><li><img src="{{ asset('pic/flag/persian_w.png?v' . config('app.version')) }}" width="24px" height="24px"/>فارسی</li></a>
                                         <a href="{{ url('/') }}"><li><img src="{{ asset('pic/flag/uk.png?v' . config('app.version')) }}" width="24px" height="24px"/>English</li></a>
@@ -377,8 +376,16 @@
         <div class="medium-12">
             <div class="grid-x align-center">
                 <div class="large-1 medium-6 small-12">
-                    <img class="float-center"  src="{{ asset('pic/footer/miras-footer.png') }}" alt="میراث فرهنگی صنایع دستی و گردشگری" width="60px" height="60px">
-                    <p class="logo-slider withe-color my-text-shadow-effect">سازمان میراث فرهنگی، صنایع دستی و گردشگری</p>
+                    @if($lan == 'fa')
+                        <img class="float-center"  src="{{ asset('pic/footer/miras-footer.png') }}" alt="میراث فرهنگی صنایع دستی و گردشگری" width="60px" height="60px">
+                        <p class="logo-slider withe-color my-text-shadow-effect">سازمان میراث فرهنگی، صنایع دستی و گردشگری</p>
+                    @elseif($lan == 'en')
+                        <img class="float-center"  src="{{ asset('pic/footer/miras-footer.png') }}" alt="Cultural Heritage, Handicrafts and Tourism Organization" width="60px" height="60px">
+                        <p class="logo-slider withe-color my-text-shadow-effect">Cultural Heritage, Handicrafts and Tourism Organization</p>
+                    @elseif($lan == 'ar')
+                        <img class="float-center"  src="{{ asset('pic/footer/miras-footer.png') }}" alt="التراث الثقافي والصناعات اليدوية والسياحة الايرانية" width="60px" height="60px">
+                        <p class="logo-slider withe-color my-text-shadow-effect">التراث الثقافي والصناعات اليدوية والسياحة الايرانية</p>
+                    @endif
                 </div>
                 {{--                            <div class="large-1 medium-6 small-12">
                                                 <img class="float-center"  src="{{ asset('pic/footer/ostan-footer.png') }}" alt="استانداری همدان" width="60px" height="60px">
@@ -551,6 +558,12 @@
 <script>
     $(document).ready(function() {
         $('#lightgallery').lightGallery();
+    });
+    $(document).on("invalid.zf.abide", function(ev,elem) {
+        $('[data-loading-end]').addClass('hide');
+        $('[data-loading-end]').removeClass('disabled');
+        $('[data-loading-start]').removeClass('hide');
+        goToLocation('breadCrumbContainer');
     });
 </script>
 <!--LightBox gallery End-->

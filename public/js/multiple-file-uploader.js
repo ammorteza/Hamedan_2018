@@ -83,10 +83,6 @@ function addNewUploadFile(inputName , isRequire , uploadIcon , counter)
                 '<div class="fileUpload center-el" style="padding: 5px"> ' +
                     '<label for="up' + counter + '" class="multi-uploader-preview-label">' +
                     '<img src="' + uploadIcon + '" class="img-border"/>' +
-                    '<div style="margin-top: -60px;">'+
-                    '<p class="gray-color">png - jpg</p>'+
-                    '<p class="gray-color" style="margin-top: -10px;">Max Size : 1 MB</p>'+
-                    '</div>'+
                     '</label>' +
                     '<input type="file" accept="image/*" class="upload up" id="up' + counter + '" name="' + inputName +'" onchange="readURL(this, \'' + inputName + '\' , \'' + isRequire + '\' , \'' + uploadIcon + '\' , ' + (counter + 1) + ');" />' +
                 '</div>' +

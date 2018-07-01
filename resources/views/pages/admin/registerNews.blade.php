@@ -1,4 +1,4 @@
-@extends('layouts.adminLayout')
+@extends('layouts.adminLayout')tyrtyrtyrt
 @section('content')
 <div class="off-canvas-content padding-lr-fs" data-off-canvas-content>
     <div class="title-bar hide-for-large">

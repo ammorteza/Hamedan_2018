@@ -3,10 +3,14 @@ Foundation.Abide.defaults.patterns['alpha_unicode'] = /^[\u0600-\u06FF-a-zA-Z- ]
 $(document).foundation();
 
 $('[data-loading-start]').click(function() {
-    $(this).addClass('hide')
-    $('[data-loading-end]').removeClass('hide')
+    $(this).addClass('hide');
+    $('[data-loading-end]').removeClass('hide');
+    $('[data-loading-end]').addClass('disabled');
 });
+
+function goToLocation(locationId) {
+    location.hash = locationId;
+}
 
 $('[show-element-tag]').addClass('show-display-tag')
 $('[hide-element-tag]').addClass('hide-display-tag')
-

@@ -973,6 +973,7 @@ class ComposerStaticInit7ab108b56806f06ea52d1979b2695b72
         'Hamcrest\\Xml\\HasXPath' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Xml/HasXPath.php',
         'Hamedan_2018\\Advertise' => __DIR__ . '/../..' . '/app/Advertise.php',
         'Hamedan_2018\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
+        'Hamedan_2018\\Country' => __DIR__ . '/../..' . '/app/Country.php',
         'Hamedan_2018\\Event' => __DIR__ . '/../..' . '/app/Event.php',
         'Hamedan_2018\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'Hamedan_2018\\FieldOption' => __DIR__ . '/../..' . '/app/FieldOption.php',

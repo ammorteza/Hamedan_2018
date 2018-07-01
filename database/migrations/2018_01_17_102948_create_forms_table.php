@@ -16,6 +16,7 @@ class CreateFormsTable extends Migration
         Schema::create('tbl_forms', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedTinyInteger('fIsMultiStepForm')->default(0);
+            $table->integer('fPrId')->length(10)->unsigned();
             $table->longText('fFaSubject')->nullable();
             $table->longText('fEnSubject')->nullable();
             $table->longText('fArSubject')->nullable();
@@ -24,6 +25,11 @@ class CreateFormsTable extends Migration
             $table->longText('fArRegisterResult')->nullable();
             $table->string('fMethod')->default('POST');
             $table->timestamps();
+
+            $table->foreign('fPrId')
+                ->references('id')->on('tbl_permission')
+                ->onDelete('restrict')
+                ->onUpdate('cascade');
         });
     }
 
