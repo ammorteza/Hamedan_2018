@@ -1999,6 +1999,14 @@ ul.social-icons {
 .instagram-icon-pos{
     margin-top: -10px;
 }
+
+.show-display-tag{
+    display: block;
+}
+
+.hide-display-tag{
+    display: none;
+}
 /*-------------------------------Media Queries------------------------------------*/
 @media only screen and (max-width: 1024px) {
     .mq-topmenu-status{

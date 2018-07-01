@@ -1676,7 +1676,7 @@
                                                                             <i style="margin-bottom: 15px;" class="fas fa-camera-retro btn-red size-48" aria-hidden="true"></i>
                                                                             <div style="margin-bottom: 15px;">Select a file or drag here</div>
                                                                             <div id="notimage" class="hidden">Please select an image</div>
-                                                                            <span id="file-upload-btn" class="button primary">Select a file</span>
+                                                                            <span id="file-upload-btn" class="button primary">Select a file </span>
                                                                         </div>
                                                                         <div id="response" class="hidden">
                                                                             <div id="messages"></div>
@@ -1727,9 +1727,9 @@
                                         @endif
                                     @else
                                         @if($lan == 'fa')
-                                            <input type="submit" name="submit" class="submit button primary button-width" value="ثبت" />
+                                            <input type="submit" name="submit" class="submit button primary button-width" value="ثبت"  />
                                         @elseif($lan == 'en')
-                                            <input type="submit" name="submit" class="submit button primary button-width" value="ًRegister" />
+                                                <input type="submit" name="submit" class="submit button primary button-width" value="ًRegister" />
                                         @elseif($lan == 'ar')
                                             <input type="submit" name="submit" class="submit button primary button-width" value="تسجيل" />
                                         @endif
@@ -1889,6 +1889,16 @@
                 <input id="phone" type="tel">
                 <span id="valid-msg" class="hide">Valid</span>
                 <span id="error-msg" class="hide">Invalid number</span>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="grid-container">
+        <div class="grid-x">
+            <div class="large-12">
+                <a href="#" show-element-tag>Link 1</a>
+                <a href="#" show-element-tag>Link 2</a>
             </div>
         </div>
     </div>
