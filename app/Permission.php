@@ -11,7 +11,7 @@ class Permission extends Model
 
     public function userPermission()
     {
-        return $this->hasMany(UserPermission::class, 'upUId' , 'id');
+        return $this->hasMany(UserPermission::class, 'upPId' , 'id');
     }
 
     public static function checkPermission($p)

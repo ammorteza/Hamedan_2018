@@ -14,7 +14,7 @@ class AuthController extends Controller
         if (Auth::guest())
             return view('pages.admin.login');
         else
-            return redirect()->to('/admin/news');
+            return redirect()->to('/admin');
     }
 
     public function signIn(Request $request)
@@ -27,7 +27,7 @@ class AuthController extends Controller
 
         if (Auth::attempt($credentials, $request->has('remember')))
         { //this if validate if the user is on the database line 1
-            return redirect()->to('/admin/news');
+            return redirect()->to('/admin');
             //this redirect if user is the db line 2
         }
 

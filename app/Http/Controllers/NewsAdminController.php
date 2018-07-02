@@ -6,6 +6,7 @@ use Hamedan_2018\ImageGallery;
 use Hamedan_2018\News;
 use Hamedan_2018\NewsImg;
 use Hamedan_2018\NewsSlider;
+use Hamedan_2018\Permission;
 use Hamedan_2018\User;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Router;
@@ -15,13 +16,37 @@ use Illuminate\Support\Facades\Route;
 
 class NewsAdminController extends Controller
 {
-    protected $router;
-    private $newsAcions = [];
-
     public function __construct(User $user, Router $router)
     {
-        $actionName = explode('@', Route::getCurrentRoute()->getActionName())[1];
-        //return abort(404);
+        $this->middleware(function ($request, $next) {
+            $newsAcions = ['news' ,
+                'registerForm' ,
+                'register' ,
+                'update' ,
+                'delete' ,
+                'updateForm' ,
+                'changeDisplayState'];
+            $sliderAcions = ['newsSlider' ,
+                'registerNewsSlider' ,
+                'registerNewsSliderForm' ,
+                'deleteNewsSlider'];
+
+            $actionName = explode('@', Route::getCurrentRoute()->getActionName())[1];
+            if (in_array($actionName , $newsAcions))
+            {
+                if (!Permission::checkPermission('ADMIN_NEWS'))
+                    return abort(404);
+            }else if (in_array($actionName , $sliderAcions)){
+                if (!Permission::checkPermission('ADMIN_NEWS_SLIDER'))
+                    return abort(404);
+            }
+            return $next($request);
+        });
+    }
+
+    function index()
+    {
+        return view('pages.admin.index');
     }
 
     function news()

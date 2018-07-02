@@ -2,13 +2,34 @@
 
 namespace Hamedan_2018\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Hamedan_2018\Form;
+use Hamedan_2018\UserPermission;
+use Hamedan_2018\UuId;
+use Illuminate\Support\Facades\Auth;
 
 class FormAdminController extends Controller
 {
+    private function checkUserPermission($fId)
+    {
+        $pId = Form::where('id' , $fId)->first();
+        if ($pId)
+            return UserPermission::where('upPId' , $pId->fPrId)->where('upUId' , Auth::user()->id)->exists();
+        else
+            return false;
+    }
+
     function form($fId)
     {
-        $allNews = News::with('newsImg')->orderBy('id' , 'DESC')->paginate(6);
-        return view('pages.admin.allForms' , ['allNews' => $allNews]);
+        if ($this->checkUserPermission($fId))
+        {
+            $rows = UuId::whereHas('formAnswer.questionForm' , function ($q) use($fId){
+                return $q->where('qfFrId' , $fId);
+            })->with('formAnswer.questionForm.question.fieldType')
+              ->with('formAnswer.questionForm.question.fieldOption.option')->get();
+
+            return view('pages.admin.allForms' , ['rows' => $rows]);
+        }else{
+            return abort(404);
+        }
     }
 }

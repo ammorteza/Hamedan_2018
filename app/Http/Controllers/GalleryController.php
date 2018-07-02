@@ -4,13 +4,35 @@ namespace Hamedan_2018\Http\Controllers;
 
 use Faker\Provider\Uuid;
 use Hamedan_2018\ImageGallery;
+use Hamedan_2018\Permission;
+use Hamedan_2018\User;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Router;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Route;
 
 class GalleryController extends Controller
 {
+    public function __construct(User $user, Router $router)
+    {
+        $this->middleware(function ($request, $next) {
+            $acions = ['album' ,
+                'deleteGalleryImage' ,
+                'registerForm' ,
+                'register'];
+
+            $actionName = explode('@', Route::getCurrentRoute()->getActionName())[1];
+            if (in_array($actionName , $acions))
+            {
+                if (!Permission::checkPermission('ADMIN_GALLERY'))
+                    return abort(404);
+            }
+            return $next($request);
+        });
+    }
+
     function album()
     {
         $gallery = ImageGallery::orderBy('id' , 'DESC')->paginate(21);

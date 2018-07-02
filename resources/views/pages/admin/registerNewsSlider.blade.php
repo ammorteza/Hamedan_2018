@@ -7,7 +7,7 @@
             <span class="title-bar-title">پنل مدیریت همدان 2018</span>
         </div>
     </div>
-    <div style="margin-top: 30px;" class="grid-x padding-lr breadcrumbs-pos">
+    <div style="margin-top: 10px;" class="grid-x padding-lr breadcrumbs-pos">
         <div class="medium-12">
             <div class="grid-x">
                 <nav aria-label="You are here:" role="navigation">
