@@ -1,5 +1,6 @@
 @extends('layouts.mainLayout')
 @section('content')
+    <div id="ploop"></div>
     @foreach($sections as $section)
         <!--SUB MENU SECTION-->
         @if($section->sectionType->stType == 'SUB_MENU')
@@ -319,17 +320,17 @@
                         @if($lan == 'fa')
                             <div class="text-color text-al Shabnam-Light">{!! $section->sFaDescription !!}</div>
                             @if ($section->sLinkFaTitle != null)
-                                <a href="{{ url($lan . $section->sLink) }}" style="margin-top: 15px;">{{ $section->sLinkFaTitle }}</a>
+                                <a href="{{ url($lan . $section->sLink) }}" style="margin-top: 15px;" class="{{ $section->sButtonStyle == 1 ? 'button primary' : '' }}">{{ $section->sLinkFaTitle }}</a>
                             @endif
                         @elseif($lan == 'en')
                             <div class="text-color text-al Raleway-Regular">{!! $section->sEnDescription !!}</div>
                             @if ($section->sLinkEnTitle != null)
-                                <a href="{{ url($section->sLink) }}" style="margin-top: 15px;">{{ $section->sLinkEnTitle }}</a>
+                                <a href="{{ url($section->sLink) }}" style="margin-top: 15px;" class="{{ $section->sButtonStyle == 1 ? 'button primary' : '' }}">{{ $section->sLinkEnTitle }}</a>
                             @endif
                         @elseif($lan == 'ar')
                             <div class="text-color text-al Al-Jazeera-Arabic-Regular">{!! $section->sArDescription !!}</div>
                             @if ($section->sLinkArTitle != null)
-                                <a href="{{ url($lan . $section->sLink) }}" style="margin-top: 15px;">{{ $section->sLinkArTitle }}</a>
+                                <a href="{{ url($lan . $section->sLink) }}" style="margin-top: 15px;" class="{{ $section->sButtonStyle == 1 ? 'button primary' : '' }}">{{ $section->sLinkArTitle }}</a>
                             @endif
                         @endif
                     </div>
@@ -393,17 +394,17 @@
                         @if($lan == 'fa')
                             <div class="text-color text-al Shabnam-Light">{!! $section->sFaDescription !!}</div>
                             @if ($section->sLinkFaTitle != null)
-                                <a href="{{ url($lan . $section->sLink) }}" style="margin-top: 15px;">{{ $section->sLinkFaTitle }}</a>
+                                <a href="{{ url($lan . $section->sLink) }}" class="{{ $section->sButtonStyle == 1 ? 'button primary' : '' }}" style="margin-top: 15px;">{{ $section->sLinkFaTitle }}</a>
                             @endif
                         @elseif($lan == 'en')
                             <div class="text-color text-al Raleway-Regular">{!! $section->sEnDescription !!}</div>
                             @if ($section->sLinkEnTitle != null)
-                                <a href="{{ url($section->sLink) }}" style="margin-top: 15px;">{{ $section->sLinkEnTitle }}</a>
+                                <a href="{{ url($section->sLink) }}" style="margin-top: 15px;" class="{{ $section->sButtonStyle == 1 ? 'button primary' : '' }}">{{ $section->sLinkEnTitle }}</a>
                             @endif
                         @elseif($lan == 'ar')
                             <div class="text-color text-al Al-Jazeera-Arabic-Regular">{!! $section->sArDescription !!}</div>
                             @if ($section->sLinkArTitle != null)
-                                <a href="{{ url($lan . $section->sLink) }}" style="margin-top: 15px;">{{ $section->sLinkArTitle }}</a>
+                                <a href="{{ url($lan . $section->sLink) }}" style="margin-top: 15px;" class="{{ $section->sButtonStyle == 1 ? 'button primary' : '' }}">{{ $section->sLinkArTitle }}</a>
                             @endif
                         @endif
                     </div>
@@ -579,7 +580,7 @@
             <?php
             $newNews = \Hamedan_2018\News::getNewNews($lan);
             ?>
-            <div id="ploop" style="padding-top: 150px" class="grid-container">
+            <div style="padding-top: 150px" class="grid-container">
                 <div class="grid-x">
                     <div class="large-12 medium-12 small-12 padding-lr">
                         <div class="orbit" role="region" aria-label="Favorite Text Ever" data-orbit data-options="animInFromLeft:fade-in; animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight:fade-out;">
@@ -1214,7 +1215,7 @@
                                                                             <i style="margin-bottom: 15px;" class="fas fa-camera-retro btn-red size-48" aria-hidden="true"></i>
                                                                             <div style="margin-bottom: 15px;">Select a file or drag here</div>
                                                                             <div id="notimage" class="hidden">Please select an image</div>
-                                                                            <span id="file-upload-btn" class="button primary">Select a file</span>
+                                                                            <span id="file-upload-btn" class="button primary">Select a file </span>
                                                                         </div>
                                                                         <div id="response" class="hidden">
                                                                             <div id="messages"></div>
@@ -1312,7 +1313,7 @@
                 </div>--}}
         <!--Section pannellum-master-360 End-->
     @endforeach
-    <!--Section Go to Register Start-->
+{{--    <!--Section Go to Register Start-->
     <div class="grid-container element-distanse">
         <div class="grid-x">
             <div class="large-12 text-center">
@@ -1436,4 +1437,14 @@
             </div>
         </div>
     </div>
+
+
+    <div class="grid-container">
+        <div class="grid-x">
+            <div class="large-12">
+                <a href="#" show-element-tag>Link 1</a>
+                <a href="#" show-element-tag>Link 2</a>
+            </div>
+        </div>
+    </div>--}}
 @stop

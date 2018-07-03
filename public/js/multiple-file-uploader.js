@@ -6,7 +6,7 @@ function readURL(input , inputName , isRequire , uploadIcon , counter) {
 
         var size=input.files[0].size;
         if (isSuccess) { //yes
-            if((size / 1024) > 1024)
+            if((size / 1024) > 2048)
                 alert("Maximum file size exceeds");
             else{
                 var reader = new FileReader();

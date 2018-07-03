@@ -19,7 +19,6 @@
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-
         gtag('config', 'UA-116472209-1');
     </script>
     <!-- Fonts -->
@@ -101,7 +100,7 @@
 
                             </div>
                             <div style="margin-top: -70px;" class="element-dir-l flag-icon-full">
-                                <ul  style="position: absolute;z-index: 9999;" class="languagepicker roundborders large">
+                                <ul  style="position: absolute;z-index: 9999;" class="languagepicker roundborders largee">
                                     @if($lan == 'fa')
                                         <a href="{{ url('/fa') }}"><li><img src="{{ asset('pic/flag/persian_w.png?v' . config('app.version')) }}" width="24px" height="24px"/>فارسی</li></a>
                                         <a href="{{ url('/') }}"><li><img src="{{ asset('pic/flag/uk.png?v' . config('app.version')) }}" width="24px" height="24px"/>English</li></a>

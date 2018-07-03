@@ -29,7 +29,8 @@ class News extends Model
                     ->where('nFaDescription' , '<>' , '')
                     ->with('newsImg.gallery')
                     ->orderBy('id' , 'DESC')
-                    ->get()->random($newsCount < 4 ? $newsCount : 4);
+                    ->take(4)
+                    ->get();
             else
                 return null;
         }else if ($lan == 'ar'){
@@ -45,7 +46,8 @@ class News extends Model
                     ->where('nArDescription' , '<>' , '')
                     ->with('newsImg.gallery')
                     ->orderBy('id' , 'DESC')
-                    ->get()->random($newsCount < 4 ? $newsCount : 4);
+                    ->take(4)
+                    ->get();
             else
                 return null;
         }else if ($lan == 'en'){
@@ -61,7 +63,8 @@ class News extends Model
                     ->where('nEnDescription' , '<>' , '')
                     ->with('newsImg.gallery')
                     ->orderBy('id' , 'DESC')
-                    ->get()->random($newsCount < 4 ? $newsCount : 4);
+                    ->take(4)
+                    ->get();
             else
                 return null;
         }

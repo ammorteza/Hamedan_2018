@@ -44,6 +44,16 @@ td {
 th {
     color: #575962;
 }
+.has-tip {
+    position: relative;
+    display: inline-block;
+    border-bottom: none;
+    font-weight: bold;
+    cursor: help;
+}
+.table-scroll table {
+    width: 100%;
+}
 .center-el{
     text-align: center;
 }
@@ -146,7 +156,7 @@ th {
     color: #ffffff;
 }
 .gray-color{
-    color: #D5D5D5;
+    color: #575757;
 }
 .text-color{
     color: #8a8a8a;
@@ -1291,6 +1301,11 @@ ul.social-icons {
 .body-color{
     background-color: #F2F3F8;
 }
+
+.row-back-color{
+    background-color: #EFEFEF;
+}
+
 .border-btm-line{
     border-bottom:solid 1px #D8DEE2;
 }
@@ -1510,7 +1525,7 @@ ul.social-icons {
     border-radius: 5px;
 }
 
-.large:hover {
+.largee:hover {
     /*
     don't forget the 1px border!
     The first language is 40px heigh,
@@ -1998,6 +2013,21 @@ ul.social-icons {
 
 .instagram-icon-pos{
     margin-top: -10px;
+}
+
+.show-display-tag{
+    display: block;
+}
+
+.hide-display-tag{
+    display: none;
+}
+.detail-element-cell{
+    padding: 8px;
+    margin: 4px 0 4px 0;
+}
+.p-margin{
+    margin: 0;
 }
 /*-------------------------------Media Queries------------------------------------*/
 @media only screen and (max-width: 1024px) {

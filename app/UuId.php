@@ -12,4 +12,12 @@ class UuId extends Model
     {
         return $this->hasMany(FormAnswer::class, 'faUuId' , 'id');
     }
+
+    public static function getFormRecords($fId)
+    {
+        $records = UuId::whereHas('formAnswer.questionForm' , function ($q) use($fId){
+            return $q->where('qfFrId' , $fId);
+        })->paginate(20);
+        return $records;
+    }
 }

@@ -22,12 +22,13 @@ class FormAdminController extends Controller
     {
         if ($this->checkUserPermission($fId))
         {
-            $rows = UuId::whereHas('formAnswer.questionForm' , function ($q) use($fId){
+/*            $rows = UuId::whereHas('formAnswer.questionForm' , function ($q) use($fId){
                 return $q->where('qfFrId' , $fId);
             })->with('formAnswer.questionForm.question.fieldType')
-              ->with('formAnswer.questionForm.question.fieldOption.option')->get();
+              ->with('formAnswer.questionForm.question.fieldOption.option')->get();*/
 
-            return view('pages.admin.allForms' , ['rows' => $rows]);
+            $formSubject = Form::find($fId)->fFaSubject;
+            return view('pages.admin.allForms' , ['formSubject' => $formSubject , 'fId' => $fId]);
         }else{
             return abort(404);
         }

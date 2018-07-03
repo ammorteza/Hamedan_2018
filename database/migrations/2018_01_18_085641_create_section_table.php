@@ -23,6 +23,7 @@ class CreateSectionTable extends Migration
 
                 $table->unsignedTinyInteger('sEventType')->nullable();
                 $table->unsignedTinyInteger('sOrder')->default(1);
+                $table->unsignedTinyInteger('sButtonStyle')->default(0);
                 $table->boolean('sState')->default(true);
                 $table->boolean('sFullScreen')->default(true);
 

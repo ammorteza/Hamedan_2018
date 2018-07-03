@@ -11,3 +11,6 @@ $('[data-loading-start]').click(function() {
 function goToLocation(locationId) {
     location.hash = locationId;
 }
+
+$('[show-element-tag]').addClass('show-display-tag')
+$('[hide-element-tag]').addClass('hide-display-tag')
