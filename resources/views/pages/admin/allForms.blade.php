@@ -19,7 +19,7 @@
         $rows = \Hamedan_2018\UuId::getFormRecords($fId);
     ?>
     <div class="grid-x">
-        <div class="large-12 medium-12 small-12 padding-lr">
+        <div class="large-12 medium-12 small-12 padding-lr-fs">
             <div class="stack table-scroll">
                 <table>
                     <thead>
@@ -40,12 +40,12 @@
                             @for($i = 0 ; $i < count($answers) && $i < 6 ; $i++)
                                 @if(count($answers[$i]->questionForm[0]->formAnswer) > 0)
                                     @if ($answers[$i]->fieldType->ftType == 'phone-number')
-                                        <td dir="ltr">{{ $answers[$i]->questionForm[0]->formAnswer[0]->faValue }}</td>
+                                        <td dir="ltr" class="text-right">{{ $answers[$i]->questionForm[0]->formAnswer[0]->faValue }}</td>
                                     @else
-                                        <td>{{ $answers[$i]->questionForm[0]->formAnswer[0]->faValue }}</td>
+                                        <td class="text-right">{{ $answers[$i]->questionForm[0]->formAnswer[0]->faValue }}</td>
                                     @endif
                                 @else
-                                    <td></td>
+                                    <td> ... </td>
                                 @endif
                             @endfor
                             <td><a data-open="{{ 'viewDetail' . $row->id }}" data-tooltip tabindex="1" title="مشاهده جزییات" data-position="top" data-alignment="center"><i class="fas fa-info-circle btn-red size-21"></i></a></td>
@@ -56,16 +56,16 @@
                                     @if($questionForm->question->fieldType->ftType == 'single-uploader')
                                         <div class="grid-x">
                                             <div class="large-12 medium-12 small-12 element-dir-l">
-                                                <img class="image-shadow-effect" style="max-width: 200px" src="{{ asset($questionForm->formAnswer[0]->faValue) }}">
+                                                <img class="image-shadow-effect-without-height" style="max-width: 200px" src="{{ asset($questionForm->formAnswer[0]->faValue) }}">
                                             </div>
                                         </div>
                                         <br>
                                     @elseif($questionForm->question->fieldType->ftType == 'multi-uploader')
-                                        <div class="grid-x">
+                                        <div class="grid-x" style="margin-top: 10px;margin-bottom: 20px">
                                             <div class="large-12 medium-12 small-12 padding-lr">{{ $questionForm->question->qFaSubject . ': ' }}</div>
                                             @foreach($questionForm->formAnswer as $formAnswer)
                                                 <div class="large-3 medium-6 small-12 padding-lr">
-                                                    <img class="image-shadow-effect" src="{{ asset($formAnswer->faValue) }}">
+                                                    <img class="image-shadow-effect-without-height" src="{{ asset($formAnswer->faValue) }}">
                                                 </div>
                                             @endforeach
                                         </div>
@@ -75,8 +75,8 @@
                                                 <div class="large-4 medium-4 small-4  padding-lr">
                                                     <p class="p-margin detail-element-cell black-color">{{ $questionForm->question->qFaSubject }}</p>
                                                 </div>
-                                                <div class="large-8 medium-8 small-8  padding-lr">
-                                                    <span class="padding-lr gray-color" dir="ltr">{{ $questionForm->formAnswer[0]->faValue }}</span>
+                                                <div class="large-8 medium-8 small-8  span-padding">
+                                                    <span class="gray-color" dir="ltr">{{ $questionForm->formAnswer[0]->faValue }}</span>
                                                 </div>
                                             </div>
                                         @else
@@ -84,8 +84,8 @@
                                                 <div class="large-4 medium-4 small-4  padding-lr">
                                                     <p class="p-margin detail-element-cell black-color">{{ $questionForm->question->qFaSubject }}</p>
                                                 </div>
-                                                <div class="large-8 medium-8 small-8  padding-lr">
-                                                    <span class="padding-lr gray-color">...</span>
+                                                <div class="large-8 medium-8 small-8 span-padding">
+                                                    <span class="gray-color">...</span>
                                                 </div>
                                             </div>
                                         @endif
@@ -96,8 +96,8 @@
                                                 <div class="large-4 medium-4 small-4  padding-lr">
                                                     <p class="p-margin detail-element-cell black-color">{{ $questionForm->question->qFaSubject }}</p>
                                                 </div>
-                                                <div class="large-8 medium-8 small-8  padding-lr">
-                                                    <span class="padding-lr gray-color">{{ $questionForm->formAnswer[0]->faValue }}</span>
+                                                <div class="large-8 medium-8 small-8 span-padding">
+                                                    <span class="gray-color">{{ $questionForm->formAnswer[0]->faValue }}</span>
                                                 </div>
                                             </div>
                                         @else
@@ -105,8 +105,8 @@
                                                 <div class="large-4 medium-4 small-4  padding-lr">
                                                     <p class="p-margin detail-element-cell black-color">{{ $questionForm->question->qFaSubject }}</p>
                                                 </div>
-                                                <div class="large-8 medium-8 small-8  padding-lr">
-                                                    <span class="padding-lr gray-color">...</span>
+                                                <div class="large-8 medium-8 small-8 span-padding">
+                                                    <span class="gray-color">...</span>
                                                 </div>
                                             </div>
                                         @endif

@@ -27,7 +27,13 @@ class Question extends Model
     {
         $fields = Question::whereHas('questionForm' , function ($q) use($fId){
             return $q->where('qfFrId' , $fId);
-        })->with('fieldType')->take(6)->get();
+        })->whereHas('fieldType' , function($q){
+            return $q->where('ftType' , '<>' , 'checkbox')
+                ->where('ftType' , '<>' , 'captcha')
+                ->where('ftType' , '<>' , 'multi-uploader')
+                ->where('ftType' , '<>' , 'single-uploader');
+        })
+            ->take(6)->get();
         return $fields;
     }
 
@@ -37,7 +43,12 @@ class Question extends Model
             return $q->where('qfFrId' , $fId);
         })->with(['questionForm.formAnswer' => function ($q) use($uuId){
             return $q->where('faUuId' , $uuId);
-        }])->with('fieldType')
+        }])->whereHas('fieldType' , function($q){
+            return $q->where('ftType' , '<>' , 'checkbox')
+                ->where('ftType' , '<>' , 'captcha')
+                ->where('ftType' , '<>' , 'multi-uploader')
+                ->where('ftType' , '<>' , 'single-uploader');
+        })
         ->get();
         return $answers;
     }

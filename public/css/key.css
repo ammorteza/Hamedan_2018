@@ -1239,6 +1239,11 @@ ul.social-icons {
     width: 100vw;
 }
 
+.image-shadow-effect-without-height{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 100vw;
+}
+
 .pn-ProductNav {
     /* Make this scrollable when needed */
     overflow-x: auto;
@@ -2028,6 +2033,9 @@ ul.social-icons {
 }
 .p-margin{
     margin: 0;
+}
+.span-padding{
+    padding-top: 10px;
 }
 /*-------------------------------Media Queries------------------------------------*/
 @media only screen and (max-width: 1024px) {
