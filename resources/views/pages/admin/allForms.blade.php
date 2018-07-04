@@ -1,5 +1,12 @@
 @extends('layouts.adminLayout')
 @section('content')
+    <div class="off-canvas-content padding-lr-fs" data-off-canvas-content>
+        <div class="title-bar hide-for-large">
+            <div class="title-bar-left">
+                <button class="menu-icon" type="button" data-open="my-info"></button>
+                <span class="title-bar-title">پنل مدیریت همدان 2018</span>
+            </div>
+        </div>
     <!--Form Content Start-->
     <div class="grid-container">
         <!-- page bread crumb -->
@@ -161,5 +168,6 @@
         </div>
     </div>
     <!-Pagination End--->
+    </div>
     <!--Form Content Start-->
 @stop
