@@ -17,6 +17,9 @@ class CreateEventsTable extends Migration
             $table->increments('id');
             $table->integer('eGId')->length(10)->unsigned();
             $table->string('eLink')->nullable();
+            $table->string('eFaLinkTitle')->nullable();
+            $table->string('eEnLinkTitle')->nullable();
+            $table->string('eArLinkTitle')->nullable();
             $table->string('eFaSubject');
             $table->string('eEnSubject');
             $table->string('eArSubject');

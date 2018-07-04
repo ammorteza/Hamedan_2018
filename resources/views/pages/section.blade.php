@@ -580,7 +580,7 @@
             <?php
             $newNews = \Hamedan_2018\News::getNewNews($lan);
             ?>
-            <div style="padding-top: 150px" class="grid-container">
+            <div class="grid-container {{ $section->sFullScreen == true ? 'section-height content-image-text-padding-top' : '' }}">
                 <div class="grid-x">
                     <div class="large-12 medium-12 small-12 padding-lr">
                         <div class="orbit" role="region" aria-label="Favorite Text Ever" data-orbit data-options="animInFromLeft:fade-in; animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight:fade-out;">
@@ -782,11 +782,11 @@
                             <div class="grid-x {{ !$loop->last ? 'event-border' : '' }}">
                                 <div class="large-3 medium-3 small-9">
                                     @if($lan == 'fa')
-                                        <img alt="{{ $event->eFaSubject }}" class="image-shadow-effect" style="height:280px;margin-bottom: 45px;" src="{{ asset($event->gallery->gPath) }}">
+                                        <img alt="{{ $event->eFaSubject }}" class="image-shadow-effect-without-height" style="margin-bottom: 45px;" src="{{ asset($event->gallery->gPath) }}">
                                     @elseif($lan == 'en')
-                                        <img alt="{{ $event->eEnSubject }}" class="image-shadow-effect" style="height:280px;margin-bottom: 45px;" src="{{ asset($event->gallery->gPath) }}">
+                                        <img alt="{{ $event->eEnSubject }}" class="image-shadow-effect-without-height" style="margin-bottom: 45px;" src="{{ asset($event->gallery->gPath) }}">
                                     @elseif($lan == 'ar')
-                                        <img alt="{{ $event->eArSubject }}" class="image-shadow-effect" style="height:280px;margin-bottom: 45px;" src="{{ asset($event->gallery->gPath) }}">
+                                        <img alt="{{ $event->eArSubject }}" class="image-shadow-effect-without-height" style="margin-bottom: 45px;" src="{{ asset($event->gallery->gPath) }}">
                                     @endif
                                 </div>
                                 <div class="large-9 medium-9 small-12">
@@ -800,6 +800,11 @@
                                                     <a href="{{ url($lan . $event->eLink) }}"><h4 class="Shabnam-Bold header-color">{{ $event->eFaSubject }}</h4></a>
                                                 @endif
                                                 <div class="text-color element-distanse Shabnam-Light">{!! $event->eFaBriefDescription !!}</div>
+                                                <div class="large-12 medium-12 small-12" style="margin-top: 10px">
+                                                    @if($event->eLink != '')
+                                                        <a href="{{ url($lan . $event->eLink) }}">{{ $event->eFaLinkTitle }}</a>
+                                                    @endif
+                                                </div>
                                                 <p class="Shabnam-Bold {{ $event->eExpired == 1 ? 'holding-time-expire' : '' }}"><i class="fas fa-calendar-check size-24 element-distanse btn-red"></i><span class="padding-lr size-16 btn-red">{{ $event->eFaHoldingTime }}</span></p>
                                             @elseif($lan == 'en')
                                                 @if($event->eLink == '')
@@ -808,6 +813,11 @@
                                                     <a href="{{ url($event->eLink) }}"><h4 class="Roboto-Bold header-color">{{ $event->eEnSubject }}</h4></a>
                                                 @endif
                                                 <div class="text-color element-distanse Raleway-Regular">{!! $event->eEnBriefDescription !!}</div>
+                                                <div class="large-12 medium-12 small-12" style="margin-top: 10px">
+                                                    @if($event->eLink != '')
+                                                        <a href="{{ url($event->eLink) }}">{{ $event->eEnLinkTitle }}</a>
+                                                    @endif
+                                                </div>
                                                 <p class="Roboto-Bold {{ $event->eExpired == 1 ? 'holding-time-expire' : '' }}"><i class="fas fa-calendar-check size-24 element-distanse btn-red"></i><span class="padding-lr size-16 btn-red">{{ $event->eEnHoldingTime }}</span></p>
                                             @elseif($lan == 'ar')
                                                 @if($event->eLink == '')
@@ -816,6 +826,11 @@
                                                     <a href="{{ url($lan . $event->eLink) }}"><h4 class="Roboto-Bold header-color">{{ $event->eArSubject }}</h4></a>
                                                 @endif
                                                 <div class="text-color element-distanse Al-Jazeera-Arabic-Regular">{!! $event->eArBriefDescription !!}</div>
+                                                <div class="large-12 medium-12 small-12" style="margin-top: 10px">
+                                                    @if($event->eLink != '')
+                                                        <a href="{{ url($lan . $event->eLink) }}">{{ $event->eArLinkTitle }}</a>
+                                                    @endif
+                                                </div>
                                                 <p class="Al-Jazeera-Arabic-Bold {{ $event->eExpired == 1 ? 'holding-time-expire' : '' }}"><i class="fas fa-calendar-check size-24 element-distanse btn-red"></i><span class="padding-lr size-16 btn-red">{{ $event->eArHoldingTime }}</span></p>
                                             @endif
                                         </div>
