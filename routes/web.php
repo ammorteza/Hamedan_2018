@@ -65,6 +65,7 @@ Route::group(['middleware' => ['auth']] , function () {
     Route::get('/admin/news/changeState/{nId}/{state}', 'NewsAdminController@changeDisplayState');
     /////////////////////////////////////////////////
     Route::get('/admin/form/{fId}', 'FormAdminController@form');
+    Route::get('/admin/form/{fId}/report/{uuId}', 'FormAdminController@report');
 });
 
 Route::get('/admin/login', 'AuthController@loginFrom');

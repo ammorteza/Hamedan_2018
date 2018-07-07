@@ -7,6 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'phpDocumentor\\Reflection\\' => array($vendorDir . '/phpdocumentor/reflection-common/src', $vendorDir . '/phpdocumentor/reflection-docblock/src', $vendorDir . '/phpdocumentor/type-resolver/src'),
+    'h4cc\\WKHTMLToPDF\\' => array($vendorDir . '/h4cc/wkhtmltopdf-amd64'),
     'XdgBaseDir\\' => array($vendorDir . '/dnoegel/php-xdg-base-dir/src'),
     'Whoops\\' => array($vendorDir . '/filp/whoops/src/Whoops'),
     'Webmozart\\Assert\\' => array($vendorDir . '/webmozart/assert/src'),
@@ -37,6 +38,7 @@ return array(
     'Monolog\\' => array($vendorDir . '/monolog/monolog/src/Monolog'),
     'League\\Flysystem\\' => array($vendorDir . '/league/flysystem/src'),
     'Laravel\\Tinker\\' => array($vendorDir . '/laravel/tinker/src'),
+    'Knp\\Snappy\\' => array($vendorDir . '/knplabs/knp-snappy/src/Knp/Snappy'),
     'Illuminate\\' => array($vendorDir . '/laravel/framework/src/Illuminate'),
     'Hamedan_2018\\' => array($baseDir . '/app'),
     'Foundation\\' => array($vendorDir . '/jvmartin/laravel5-foundation6-pagination/src'),
@@ -50,4 +52,5 @@ return array(
     'Cron\\' => array($vendorDir . '/mtdowling/cron-expression/src/Cron'),
     'Carbon\\' => array($vendorDir . '/nesbot/carbon/src/Carbon'),
     'Buzz\\LaravelGoogleCaptcha\\' => array($vendorDir . '/buzz/laravel-google-captcha/src'),
+    'Barryvdh\\Snappy\\' => array($vendorDir . '/barryvdh/laravel-snappy/src'),
 );

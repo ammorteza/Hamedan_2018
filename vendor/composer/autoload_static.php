@@ -24,6 +24,10 @@ class ComposerStaticInit7ab108b56806f06ea52d1979b2695b72
         array (
             'phpDocumentor\\Reflection\\' => 25,
         ),
+        'h' => 
+        array (
+            'h4cc\\WKHTMLToPDF\\' => 17,
+        ),
         'X' => 
         array (
             'XdgBaseDir\\' => 11,
@@ -78,6 +82,10 @@ class ComposerStaticInit7ab108b56806f06ea52d1979b2695b72
             'League\\Flysystem\\' => 17,
             'Laravel\\Tinker\\' => 15,
         ),
+        'K' => 
+        array (
+            'Knp\\Snappy\\' => 11,
+        ),
         'I' => 
         array (
             'Illuminate\\' => 11,
@@ -111,6 +119,7 @@ class ComposerStaticInit7ab108b56806f06ea52d1979b2695b72
         'B' => 
         array (
             'Buzz\\LaravelGoogleCaptcha\\' => 26,
+            'Barryvdh\\Snappy\\' => 16,
         ),
     );
 
@@ -120,6 +129,10 @@ class ComposerStaticInit7ab108b56806f06ea52d1979b2695b72
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
             1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
             2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
+        ),
+        'h4cc\\WKHTMLToPDF\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/h4cc/wkhtmltopdf-amd64',
         ),
         'XdgBaseDir\\' => 
         array (
@@ -241,6 +254,10 @@ class ComposerStaticInit7ab108b56806f06ea52d1979b2695b72
         array (
             0 => __DIR__ . '/..' . '/laravel/tinker/src',
         ),
+        'Knp\\Snappy\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/knplabs/knp-snappy/src/Knp/Snappy',
+        ),
         'Illuminate\\' => 
         array (
             0 => __DIR__ . '/..' . '/laravel/framework/src/Illuminate',
@@ -293,6 +310,10 @@ class ComposerStaticInit7ab108b56806f06ea52d1979b2695b72
         array (
             0 => __DIR__ . '/..' . '/buzz/laravel-google-captcha/src',
         ),
+        'Barryvdh\\Snappy\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/barryvdh/laravel-snappy/src',
+        ),
     );
 
     public static $prefixesPsr0 = array (
@@ -338,6 +359,14 @@ class ComposerStaticInit7ab108b56806f06ea52d1979b2695b72
         'AdvertiseTableSeeder' => __DIR__ . '/../..' . '/database/seeds/AdvertiseTableSeeder.php',
         'ArithmeticError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/ArithmeticError.php',
         'AssertionError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/AssertionError.php',
+        'Barryvdh\\Snappy\\Facades\\SnappyImage' => __DIR__ . '/..' . '/barryvdh/laravel-snappy/src/Facades/SnappyImage.php',
+        'Barryvdh\\Snappy\\Facades\\SnappyPdf' => __DIR__ . '/..' . '/barryvdh/laravel-snappy/src/Facades/SnappyPdf.php',
+        'Barryvdh\\Snappy\\IlluminateSnappyImage' => __DIR__ . '/..' . '/barryvdh/laravel-snappy/src/IlluminateSnappyImage.php',
+        'Barryvdh\\Snappy\\IlluminateSnappyPdf' => __DIR__ . '/..' . '/barryvdh/laravel-snappy/src/IlluminateSnappyPdf.php',
+        'Barryvdh\\Snappy\\ImageWrapper' => __DIR__ . '/..' . '/barryvdh/laravel-snappy/src/ImageWrapper.php',
+        'Barryvdh\\Snappy\\LumenServiceProvider' => __DIR__ . '/..' . '/barryvdh/laravel-snappy/src/LumenServiceProvider.php',
+        'Barryvdh\\Snappy\\PdfWrapper' => __DIR__ . '/..' . '/barryvdh/laravel-snappy/src/PdfWrapper.php',
+        'Barryvdh\\Snappy\\ServiceProvider' => __DIR__ . '/..' . '/barryvdh/laravel-snappy/src/ServiceProvider.php',
         'Buzz\\LaravelGoogleCaptcha\\Captcha' => __DIR__ . '/..' . '/buzz/laravel-google-captcha/src/Captcha.php',
         'Buzz\\LaravelGoogleCaptcha\\CaptchaFacade' => __DIR__ . '/..' . '/buzz/laravel-google-captcha/src/CaptchaFacade.php',
         'Buzz\\LaravelGoogleCaptcha\\CaptchaServiceProvider' => __DIR__ . '/..' . '/buzz/laravel-google-captcha/src/CaptchaServiceProvider.php',
@@ -986,6 +1015,7 @@ class ComposerStaticInit7ab108b56806f06ea52d1979b2695b72
         'Hamedan_2018\\Http\\Controllers\\Auth\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/RegisterController.php',
         'Hamedan_2018\\Http\\Controllers\\Auth\\ResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ResetPasswordController.php',
         'Hamedan_2018\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+        'Hamedan_2018\\Http\\Controllers\\FormAdminController' => __DIR__ . '/../..' . '/app/Http/Controllers/FormAdminController.php',
         'Hamedan_2018\\Http\\Controllers\\GalleryController' => __DIR__ . '/../..' . '/app/Http/Controllers/GalleryController.php',
         'Hamedan_2018\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'Hamedan_2018\\Http\\Controllers\\NewsAdminController' => __DIR__ . '/../..' . '/app/Http/Controllers/NewsAdminController.php',
@@ -1009,6 +1039,7 @@ class ComposerStaticInit7ab108b56806f06ea52d1979b2695b72
         'Hamedan_2018\\PageHeaderImg' => __DIR__ . '/../..' . '/app/PageHeaderImg.php',
         'Hamedan_2018\\PageHeaderType' => __DIR__ . '/../..' . '/app/PageHeaderType.php',
         'Hamedan_2018\\Pattern' => __DIR__ . '/../..' . '/app/Pattern.php',
+        'Hamedan_2018\\Permission' => __DIR__ . '/../..' . '/app/Permission.php',
         'Hamedan_2018\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'Hamedan_2018\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'Hamedan_2018\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
@@ -1024,6 +1055,7 @@ class ComposerStaticInit7ab108b56806f06ea52d1979b2695b72
         'Hamedan_2018\\Sponsor' => __DIR__ . '/../..' . '/app/Sponsor.php',
         'Hamedan_2018\\SubMenu' => __DIR__ . '/../..' . '/app/SubMenu.php',
         'Hamedan_2018\\User' => __DIR__ . '/../..' . '/app/User.php',
+        'Hamedan_2018\\UserPermission' => __DIR__ . '/../..' . '/app/UserPermission.php',
         'Hamedan_2018\\UuId' => __DIR__ . '/../..' . '/app/UuId.php',
         'Hamedan_2018\\VideoGallery' => __DIR__ . '/../..' . '/app/VideoGallery.php',
         'Illuminate\\Auth\\Access\\AuthorizationException' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Auth/Access/AuthorizationException.php',
@@ -1798,6 +1830,11 @@ class ComposerStaticInit7ab108b56806f06ea52d1979b2695b72
         'JakubOnderka\\PhpConsoleColor\\ConsoleColor' => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src/JakubOnderka/PhpConsoleColor/ConsoleColor.php',
         'JakubOnderka\\PhpConsoleColor\\InvalidStyleException' => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src/JakubOnderka/PhpConsoleColor/InvalidStyleException.php',
         'JakubOnderka\\PhpConsoleHighlighter\\Highlighter' => __DIR__ . '/..' . '/jakub-onderka/php-console-highlighter/src/JakubOnderka/PhpConsoleHighlighter/Highlighter.php',
+        'Knp\\Snappy\\AbstractGenerator' => __DIR__ . '/..' . '/knplabs/knp-snappy/src/Knp/Snappy/AbstractGenerator.php',
+        'Knp\\Snappy\\Exception\\FileAlreadyExistsException' => __DIR__ . '/..' . '/knplabs/knp-snappy/src/Knp/Snappy/Exception/FileAlreadyExistsException.php',
+        'Knp\\Snappy\\GeneratorInterface' => __DIR__ . '/..' . '/knplabs/knp-snappy/src/Knp/Snappy/GeneratorInterface.php',
+        'Knp\\Snappy\\Image' => __DIR__ . '/..' . '/knplabs/knp-snappy/src/Knp/Snappy/Image.php',
+        'Knp\\Snappy\\Pdf' => __DIR__ . '/..' . '/knplabs/knp-snappy/src/Knp/Snappy/Pdf.php',
         'Laravel\\Tinker\\ClassAliasAutoloader' => __DIR__ . '/..' . '/laravel/tinker/src/ClassAliasAutoloader.php',
         'Laravel\\Tinker\\Console\\TinkerCommand' => __DIR__ . '/..' . '/laravel/tinker/src/Console/TinkerCommand.php',
         'Laravel\\Tinker\\TinkerCaster' => __DIR__ . '/..' . '/laravel/tinker/src/TinkerCaster.php',
@@ -3657,6 +3694,7 @@ class ComposerStaticInit7ab108b56806f06ea52d1979b2695b72
         'Whoops\\Util\\SystemFacade' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Util/SystemFacade.php',
         'Whoops\\Util\\TemplateHelper' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Util/TemplateHelper.php',
         'XdgBaseDir\\Xdg' => __DIR__ . '/..' . '/dnoegel/php-xdg-base-dir/src/Xdg.php',
+        'h4cc\\WKHTMLToPDF\\WKHTMLToPDF' => __DIR__ . '/..' . '/h4cc/wkhtmltopdf-amd64/WKHTMLToPDF.php',
         'phpDocumentor\\Reflection\\DocBlock' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlock.php',
         'phpDocumentor\\Reflection\\DocBlockFactory' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlockFactory.php',
         'phpDocumentor\\Reflection\\DocBlockFactoryInterface' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlockFactoryInterface.php',

@@ -167,6 +167,7 @@ return [
         Morilog\Jalali\JalaliServiceProvider::class,
         Foundation\FoundationServiceProvider::class,
         Buzz\LaravelGoogleCaptcha\CaptchaServiceProvider::class,
+        Barryvdh\Snappy\ServiceProvider::class,
 
         /*
          * Package Service Providers...
@@ -232,6 +233,7 @@ return [
         'jDate' => Morilog\Jalali\Facades\jDate::class,
         'Foundation' => Foundation\Facades\Foundation::class,
         'Captcha' => \Buzz\LaravelGoogleCaptcha\CaptchaFacade::class,
+        'PDF' => Barryvdh\Snappy\Facades\SnappyPdf::class,
 
     ],
 

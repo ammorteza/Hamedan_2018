@@ -5,6 +5,7 @@ namespace Hamedan_2018\Http\Controllers;
 use Hamedan_2018\Form;
 use Hamedan_2018\UserPermission;
 use Hamedan_2018\UuId;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
 
 class FormAdminController extends Controller
@@ -32,5 +33,27 @@ class FormAdminController extends Controller
         }else{
             return abort(404);
         }
+    }
+
+    private function initPdf()
+    {
+        $pdf = App::make('snappy.pdf.wrapper');
+        $pdf->setOption('encoding', 'UTF-8');
+        $pdf->setOption('page-size', 'a4');
+        $pdf->setOption('title', 'report');
+        $pdf->setOption('footer-center', '[page]/[topage]');
+        $pdf->setOption('margin-bottom', 25);
+        $pdf->setOrientation('portrait');
+        $pdf->setOption('margin-top', 20);
+        $pdf->setOption('lowquality', true);
+        $pdf->setOption('zoom', 1.2);
+        return $pdf;
+    }
+
+    function report($fId , $uuId)
+    {
+        $pdf = $this->initPdf();
+        $pdf->loadHTML('<p>morteza</p>');
+        return $pdf->inline();
     }
 }
