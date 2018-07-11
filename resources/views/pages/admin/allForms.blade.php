@@ -55,7 +55,10 @@
                                     <td> ... </td>
                                 @endif
                             @endfor
-                            <td><a data-open="{{ 'viewDetail' . $row->id }}" data-tooltip tabindex="1" title="مشاهده جزییات" data-position="top" data-alignment="center"><i class="fas fa-info-circle btn-red size-21"></i></a></td>
+                            <td>
+                                <a data-open="{{ 'viewDetail' . $row->id }}" data-tooltip tabindex="1" title="مشاهده جزییات" data-position="top" data-alignment="center"><i class="fas fa-info-circle btn-red size-21"></i></a>
+                                <a style="margin-right: 8px;" data-open="{{ 'viewDetail' . $row->id }}" data-tooltip tabindex="1" title="چاپ اطلاعات" data-position="top" data-alignment="center"><i class="fas fa-file-pdf blue-color size-21"></i></a>
+                            </td>
                             <!--View Detail Modal Start-->
                             <div class="reveal large" id="{{ 'viewDetail' . $row->id }}" data-reveal data-animation-in="scale-in-up">
                                 <br>
