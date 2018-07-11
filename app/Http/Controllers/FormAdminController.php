@@ -53,7 +53,7 @@ class FormAdminController extends Controller
     function report($fId , $uuId)
     {
         $pdf = $this->initPdf();
-        $pdf->loadHTML('<p>morteza</p>');
+        $pdf->loadHTML(view('pages.admin.reports.icf_report'));
         return $pdf->inline();
     }
 }
