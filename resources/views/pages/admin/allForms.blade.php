@@ -59,6 +59,12 @@
                             <!--View Detail Modal Start-->
                             <div class="reveal large" id="{{ 'viewDetail' . $row->id }}" data-reveal data-animation-in="scale-in-up">
                                 <br>
+                                <div class="grid-x">
+                                    <div class="large-12 medium-12 small-12">
+                                        <button style="width: 200px" class="button primary float-left"><i class="fas fa-file-pdf size-21"></i>  چاپ اطلاعات</button>
+                                    </div>
+                                </div>
+
                                 @foreach(\Hamedan_2018\QuestionForm::getAllQuestionForm($fId , $row->id) as $questionForm)
                                     @if($questionForm->question->fieldType->ftType == 'single-uploader')
                                         <div class="grid-x">
