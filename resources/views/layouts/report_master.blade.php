@@ -28,3 +28,20 @@
 <script src="{{ asset('js/vendor/foundation.js') }}"></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
