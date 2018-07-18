@@ -1462,4 +1462,104 @@
             </div>
         </div>
     </div>--}}
+
+    <!--Section Hotels Start-->
+    <div class="grid-container">
+        <div class="grid-x" id="advTop">
+            <div class="large-8 medium-8 small-12 element-distance-tb">
+                <div onclick="location.href='http://www.example.com';" style="cursor:pointer;" class="grid-x hotel-border">
+                    <div class="large-9 medium-7 small-12">
+                        <h4>Hotel Amiran</h4>
+                        <i class="fas fa-star yellow-color"></i><i class="fas fa-star yellow-color"></i><i class="fas fa-star yellow-color"></i><i class="fas fa-star yellow-color"></i>
+                        <p style="margin-top: 15px">Comfort and tranquility is provided for you in the traditional and modern accommodations of Hamedan</p>
+                    </div>
+                    <div class="large-offset-1 medium-offset-1"></div>
+                    <div class="large-2 medium-4 small-12 element-dir-l">
+                        <img class="background-cover hotel-pic" src="{{ asset('pic/gallery/hotels/h_1.jpg') }}">
+                    </div>
+                </div>
+                <div  class="grid-x hotel-border">
+                    <div class="large-9 medium-7 small-12">
+                        <h4>Hotel Amiran</h4>
+                        <i class="fas fa-star yellow-color"></i><i class="fas fa-star yellow-color"></i><i class="fas fa-star yellow-color"></i><i class="fas fa-star yellow-color"></i>
+                        <p style="margin-top: 15px">Comfort and tranquility is provided for you in the traditional and modern accommodations of Hamedan</p>
+                    </div>
+                    <div class="large-offset-1 medium-offset-1"></div>
+                    <div class="large-2 medium-4 small-12 element-dir-l">
+                        <img style="margin-bottom: 35px;height: 200px;" class="background-cover" src="{{ asset('pic/gallery/hotels/h_1.jpg') }}">
+                    </div>
+                </div>
+                <div  class="grid-x hotel-border">
+                    <div class="large-9 medium-7 small-12">
+                        <h4>Hotel Amiran</h4>
+                        <i class="fas fa-star yellow-color"></i><i class="fas fa-star yellow-color"></i><i class="fas fa-star yellow-color"></i><i class="fas fa-star yellow-color"></i>
+                        <p style="margin-top: 15px">Comfort and tranquility is provided for you in the traditional and modern accommodations of Hamedan</p>
+                    </div>
+                    <div class="large-offset-1 medium-offset-1"></div>
+                    <div class="large-2 medium-4 small-12 element-dir-l">
+                        <img style="margin-bottom: 35px;height: 200px;" class="background-cover" src="{{ asset('pic/gallery/hotels/h_1.jpg') }}">
+                    </div>
+                </div>
+                <div  class="grid-x hotel-border">
+                    <div class="large-9 medium-7 small-12">
+                        <h4>Hotel Amiran</h4>
+                        <i class="fas fa-star yellow-color"></i><i class="fas fa-star yellow-color"></i><i class="fas fa-star yellow-color"></i><i class="fas fa-star yellow-color"></i>
+                        <p style="margin-top: 15px">Comfort and tranquility is provided for you in the traditional and modern accommodations of Hamedan</p>
+                    </div>
+                    <div class="large-offset-1 medium-offset-1"></div>
+                    <div class="large-2 medium-4 small-12 element-dir-l">
+                        <img style="margin-bottom: 35px;height: 200px;" class="background-cover" src="{{ asset('pic/gallery/hotels/h_1.jpg') }}">
+                    </div>
+                </div>
+                <div  class="grid-x hotel-border">
+                    <div class="large-9 medium-7 small-12">
+                        <h4>Hotel Amiran</h4>
+                        <i class="fas fa-star yellow-color"></i><i class="fas fa-star yellow-color"></i><i class="fas fa-star yellow-color"></i><i class="fas fa-star yellow-color"></i>
+                        <p style="margin-top: 15px">Comfort and tranquility is provided for you in the traditional and modern accommodations of Hamedan</p>
+                    </div>
+                    <div class="large-offset-1 medium-offset-1"></div>
+                    <div class="large-2 medium-4 small-12 element-dir-l">
+                        <img style="margin-bottom: 35px;height: 200px;" class="background-cover" src="{{ asset('pic/gallery/hotels/h_1.jpg') }}">
+                    </div>
+                </div>
+                <div  class="grid-x hotel-border">
+                    <div class="large-9 medium-7 small-12">
+                        <h4>Hotel Amiran</h4>
+                        <i class="fas fa-star yellow-color"></i><i class="fas fa-star yellow-color"></i><i class="fas fa-star yellow-color"></i><i class="fas fa-star yellow-color"></i>
+                        <p style="margin-top: 15px">Comfort and tranquility is provided for you in the traditional and modern accommodations of Hamedan</p>
+                    </div>
+                    <div class="large-offset-1 medium-offset-1"></div>
+                    <div class="large-2 medium-4 small-12 element-dir-l">
+                        <img style="margin-bottom: 35px;height: 200px;" class="background-cover" src="{{ asset('pic/gallery/hotels/h_1.jpg') }}">
+                    </div>
+                </div>
+                <div  class="grid-x hotel-border" id="advBottom">
+                    <div class="large-9 medium-7 small-12">
+                        <h4>Hotel Amiran</h4>
+                        <i class="fas fa-star yellow-color"></i><i class="fas fa-star yellow-color"></i><i class="fas fa-star yellow-color"></i><i class="fas fa-star yellow-color"></i>
+                        <p style="margin-top: 15px">Comfort and tranquility is provided for you in the traditional and modern accommodations of Hamedan</p>
+                    </div>
+                    <div class="large-offset-1 medium-offset-1"></div>
+                    <div class="large-2 medium-4 small-12 element-dir-l">
+                        <img style="margin-bottom: 35px;height: 200px;" class="background-cover" src="{{ asset('pic/gallery/hotels/h_1.jpg') }}">
+                    </div>
+                </div>
+            </div>
+            <div class="large-offset-1 medium-offset-1"></div>
+            <div class="large-3 medium-3 small-12" data-sticky-container>
+                <div class="grid-x adv-hide" data-sticky data-top-anchor="advTop:top" data-btm-anchor="advBottom:bottom">
+                    <div style="position: relative;display: inline-block;top:40vh;text-align: center;z-index: 50;" class="large-12">
+                        <h5 class="my-text-shadow-effect white-color">Hotel Amiran</h5>
+                        <a href="#" class="button primary element-distanse">Read More</a>
+                    </div>
+                    <div class="large-12">
+                        <img style="height: 70vh;" class="background-cover" src="{{ asset('pic/gallery/hotels/h_1.jpg') }}">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Section Hotels End-->
+
+
 @stop

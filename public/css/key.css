@@ -2037,6 +2037,18 @@ ul.social-icons {
 .span-padding{
     padding-top: 10px;
 }
+
+.yellow-color{
+    color:#fdd835;
+}
+.hotel-border{
+    border-bottom: .1rem solid #EEEEEE;
+    margin: 25px 0px 35px 0px;
+}
+.hotel-pic{
+    margin-bottom: 35px;
+    height: 200px;
+}
 /*-------------------------------Media Queries------------------------------------*/
 @media only screen and (max-width: 1024px) {
     .mq-topmenu-status{
