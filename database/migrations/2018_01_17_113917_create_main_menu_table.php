@@ -15,7 +15,7 @@ class CreateMainMenuTable extends Migration
     {
         if (!Schema::hasTable('tbl_main_menus')) {
             Schema::create('tbl_main_menus', function (Blueprint $table) {
-                $table->increments('id');
+                $table->bigIncrements('id');
                 $table->unsignedTinyInteger('mmOrder')->default(1);
                 $table->string('mmFaSubject');
                 $table->string('mmEnSubject');

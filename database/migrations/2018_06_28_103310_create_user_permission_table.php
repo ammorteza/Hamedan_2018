@@ -13,22 +13,24 @@ class CreateUserPermissionTable extends Migration
      */
     public function up()
     {
-        Schema::create('tbl_user_permission', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('upUId')->length(10)->unsigned();
-            $table->integer('upPId')->length(10)->unsigned();
-            $table->timestamps();
+        if (!Schema::hasTable('tbl_user_permission')) {
+            Schema::create('tbl_user_permission', function (Blueprint $table) {
+                $table->bigIncrements('id');
+                $table->bigInteger('upUId')->length(20)->unsigned();
+                $table->bigInteger('upPId')->length(20)->unsigned();
+                $table->timestamps();
 
-            $table->foreign('upUId')
-                ->references('id')->on('users')
-                ->onDelete('restrict')
-                ->onUpdate('cascade');
+                $table->foreign('upUId')
+                    ->references('id')->on('users')
+                    ->onDelete('restrict')
+                    ->onUpdate('cascade');
 
-            $table->foreign('upPId')
-                ->references('id')->on('tbl_permission')
-                ->onDelete('restrict')
-                ->onUpdate('cascade');
-        });
+                $table->foreign('upPId')
+                    ->references('id')->on('tbl_permission')
+                    ->onDelete('restrict')
+                    ->onUpdate('cascade');
+            });
+        }
     }
 
     /**

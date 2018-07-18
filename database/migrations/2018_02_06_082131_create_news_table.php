@@ -15,7 +15,7 @@ class CreateNewsTable extends Migration
     {
         if (!Schema::hasTable('tbl_news')) {
             Schema::create('tbl_news', function (Blueprint $table) {
-                $table->increments('id');
+                $table->bigIncrements('id');
                 $table->bigInteger('nViewedCount')->default(0);
                 $table->string('nFaSubject');
                 $table->string('nEnSubject')->nullable();

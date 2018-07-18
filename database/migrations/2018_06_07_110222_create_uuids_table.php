@@ -13,11 +13,13 @@ class CreateUuidsTable extends Migration
      */
     public function up()
     {
-        Schema::create('tbl_uuids', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('uuUuId')->unique();
-            $table->timestamps();
-        });
+        if (!Schema::hasTable('tbl_uuids')) {
+            Schema::create('tbl_uuids', function (Blueprint $table) {
+                $table->bigIncrements('id');
+                $table->string('uuUuId')->unique();
+                $table->timestamps();
+            });
+        }
     }
 
     /**

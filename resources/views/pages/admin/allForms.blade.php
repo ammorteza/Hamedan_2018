@@ -57,14 +57,14 @@
                             @endfor
                             <td>
                                 <a data-open="{{ 'viewDetail' . $row->id }}" data-tooltip tabindex="1" title="مشاهده جزییات" data-position="top" data-alignment="center"><i class="fas fa-info-circle btn-red size-21"></i></a>
-                                <a style="margin-right: 8px;" data-open="{{ 'viewDetail' . $row->id }}" data-tooltip tabindex="1" title="چاپ اطلاعات" data-position="top" data-alignment="center"><i class="fas fa-file-pdf blue-color size-21"></i></a>
+                                <a href="{{ url('admin/form/' . $fId . '/report/' . $row->id) }}" target="_blank" style="margin-right: 8px;" data-tooltip tabindex="1" title="چاپ اطلاعات" data-position="top" data-alignment="center"><i class="fas fa-file-pdf blue-color size-21"></i></a>
                             </td>
                             <!--View Detail Modal Start-->
                             <div class="reveal large" id="{{ 'viewDetail' . $row->id }}" data-reveal data-animation-in="scale-in-up">
                                 <br>
                                 <div class="grid-x">
                                     <div class="large-12 medium-12 small-12">
-                                        <button style="width: 200px" class="button primary float-left"><i class="fas fa-file-pdf size-21"></i>  چاپ اطلاعات</button>
+                                        <a href="{{ url('admin/form/' . $fId . '/report/' . $row->id) }}" target="_blank" style="width: 200px" class="button primary float-left"><i class="fas fa-file-pdf size-21"></i>  چاپ اطلاعات</a>
                                     </div>
                                 </div>
 

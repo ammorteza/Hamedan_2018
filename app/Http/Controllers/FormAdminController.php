@@ -2,10 +2,10 @@
 
 namespace Hamedan_2018\Http\Controllers;
 
+use Elibyy\TCPDF\Facades\TCPDF;
 use Hamedan_2018\Form;
+use Hamedan_2018\QuestionForm;
 use Hamedan_2018\UserPermission;
-use Hamedan_2018\UuId;
-use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
 
 class FormAdminController extends Controller
@@ -37,7 +37,7 @@ class FormAdminController extends Controller
 
     private function initPdf()
     {
-        $pdf = App::make('snappy.pdf.wrapper');
+/*        $pdf = App::make('snappy.pdf.wrapper');
         $pdf->setOption('encoding', 'UTF-8');
         $pdf->setOption('page-size', 'a4');
         $pdf->setOption('title', 'report');
@@ -46,14 +46,39 @@ class FormAdminController extends Controller
         $pdf->setOrientation('portrait');
         $pdf->setOption('margin-top', 20);
         $pdf->setOption('lowquality', true);
-        $pdf->setOption('zoom', 1.2);
-        return $pdf;
+        $pdf->setOption('zoom', 1.5);
+        return $pdf;*/
+
+        return [
+            'mode'                 => '',
+            'format'               => 'A5',
+            'default_font_size'    => '20',
+            'default_font'         => 'BYekan',
+            'margin_left'          => 10,
+            'margin_right'         => 10,
+            'margin_top'           => 10,
+            'margin_bottom'        => 10,
+            'margin_header'        => 0,
+            'margin_footer'        => 0,
+            'orientation'          => 'P',
+            'title'                => 'report',
+            'author'               => '',
+            'watermark'            => '',
+            'show_watermark'       => false,
+            'watermark_font'       => 'sans-serif',
+            'display_mode'         => 'fullpage',
+            'watermark_text_alpha' => 0.1
+        ];
     }
 
     function report($fId , $uuId)
     {
-        $pdf = $this->initPdf();
-        $pdf->loadHTML(view('pages.admin.reports.icf_report'));
-        return $pdf->inline();
+        $info = QuestionForm::getAllQuestionForm($fId , $uuId);
+/*        \PDF::AddPage();
+        \PDF::writeHTML(view('pages.admin.reports.icf_report' , ['info' => $info]));
+        \PDF::Output('hello_world.pdf');*/
+        \PDF::loadView('pages.admin.reports.icf_report' , ['info' => $info])->output();
+        //$pdf = new \Elibyy\TCPDF\TCPDF();
+        //$pdf->writeHTML(view('pages.admin.reports.icf_report' , ['info' => $info]) , );
     }
 }

@@ -15,7 +15,7 @@ class CreateImageGalleryTable extends Migration
     {
         if (!Schema::hasTable('tbl_image_gallery')) {
             Schema::create('tbl_image_gallery', function (Blueprint $table) {
-                $table->increments('id');
+                $table->bigIncrements('id');
                 $table->string('gPath')->unique();
                 $table->string('gFaLocation')->nullable();
                 $table->string('gFaPhotographer');

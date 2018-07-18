@@ -15,8 +15,8 @@ class CreateAdvertiseTable extends Migration
     {
         if (!Schema::hasTable('tbl_advertises')) {
             Schema::create('tbl_advertises', function (Blueprint $table) {
-                $table->increments('id');
-                $table->integer('aGId')->length(10)->unsigned();
+                $table->bigIncrements('id');
+                $table->bigInteger('aGId')->length(20)->unsigned();
                 $table->boolean('aState')->default(true);
 
                 $table->string('aLink')->nullable();

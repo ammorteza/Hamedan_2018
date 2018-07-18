@@ -15,9 +15,9 @@ class CreatePageBreadcrumbTable extends Migration
     {
         if (!Schema::hasTable('tbl_page_breadcrumbs')) {
             Schema::create('tbl_page_breadcrumbs', function (Blueprint $table) {
-                $table->increments('id');
-                $table->integer('pbPId')->length(10)->unsigned();
-                $table->integer('pbPPId')->length(10)->unsigned();
+                $table->bigIncrements('id');
+                $table->bigInteger('pbPId')->length(20)->unsigned();
+                $table->bigInteger('pbPPId')->length(20)->unsigned();
                 $table->unsignedTinyInteger('pbOrder')->default(1);
                 $table->timestamps();
 

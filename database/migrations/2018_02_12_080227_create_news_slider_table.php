@@ -15,8 +15,8 @@ class CreateNewsSliderTable extends Migration
     {
         if (!Schema::hasTable('tbl_news_slider')) {
             Schema::create('tbl_news_slider', function (Blueprint $table) {
-                $table->increments('id');
-                $table->integer('nsGId')->length(10)->unsigned();
+                $table->bigIncrements('id');
+                $table->bigInteger('nsGId')->length(20)->unsigned();
                 $table->unsignedTinyInteger('nsOrder')->default(1);
                 $table->boolean('nsState')->default(true);
 

@@ -13,12 +13,14 @@ class CreatePatternsTable extends Migration
      */
     public function up()
     {
-        Schema::create('tbl_patterns', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('pSubject')->nullable();
-            $table->string('pType')->unique();
-            $table->timestamps();
-        });
+        if (!Schema::hasTable('tbl_patterns')) {
+            Schema::create('tbl_patterns', function (Blueprint $table) {
+                $table->bigIncrements('id');
+                $table->string('pSubject')->nullable();
+                $table->string('pType')->unique();
+                $table->timestamps();
+            });
+        }
     }
 
     /**

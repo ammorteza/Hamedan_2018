@@ -13,24 +13,26 @@ class CreateFieldOptionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('tbl_field_options', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('foOId')->length(10)->unsigned();
-            $table->integer('foQId')->length(10)->unsigned();
-            $table->unsignedTinyInteger('foChecked')->default(0);
-            $table->unsignedTinyInteger('foRequire')->default(0);
-            $table->timestamps();
+        if (!Schema::hasTable('tbl_field_options')) {
+            Schema::create('tbl_field_options', function (Blueprint $table) {
+                $table->bigIncrements('id');
+                $table->bigInteger('foOId')->length(20)->unsigned();
+                $table->bigInteger('foQId')->length(20)->unsigned();
+                $table->unsignedTinyInteger('foChecked')->default(0);
+                $table->unsignedTinyInteger('foRequire')->default(0);
+                $table->timestamps();
 
-            $table->foreign('foOId')
-                ->references('id')->on('tbl_options')
-                ->onDelete('restrict')
-                ->onUpdate('cascade');
+                $table->foreign('foOId')
+                    ->references('id')->on('tbl_options')
+                    ->onDelete('restrict')
+                    ->onUpdate('cascade');
 
-            $table->foreign('foQId')
-                ->references('id')->on('tbl_questions')
-                ->onDelete('restrict')
-                ->onUpdate('cascade');
-        });
+                $table->foreign('foQId')
+                    ->references('id')->on('tbl_questions')
+                    ->onDelete('restrict')
+                    ->onUpdate('cascade');
+            });
+        }
     }
 
     /**

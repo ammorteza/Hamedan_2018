@@ -13,24 +13,26 @@ class CreateFormsTable extends Migration
      */
     public function up()
     {
-        Schema::create('tbl_forms', function (Blueprint $table) {
-            $table->increments('id');
-            $table->unsignedTinyInteger('fIsMultiStepForm')->default(0);
-            $table->integer('fPrId')->length(10)->unsigned();
-            $table->longText('fFaSubject')->nullable();
-            $table->longText('fEnSubject')->nullable();
-            $table->longText('fArSubject')->nullable();
-            $table->longText('fFaRegisterResult')->nullable();
-            $table->longText('fEnRegisterResult')->nullable();
-            $table->longText('fArRegisterResult')->nullable();
-            $table->string('fMethod')->default('POST');
-            $table->timestamps();
+        if (!Schema::hasTable('tbl_forms')) {
+            Schema::create('tbl_forms', function (Blueprint $table) {
+                $table->bigIncrements('id');
+                $table->unsignedTinyInteger('fIsMultiStepForm')->default(0);
+                $table->bigInteger('fPrId')->length(20)->unsigned();
+                $table->longText('fFaSubject')->nullable();
+                $table->longText('fEnSubject')->nullable();
+                $table->longText('fArSubject')->nullable();
+                $table->longText('fFaRegisterResult')->nullable();
+                $table->longText('fEnRegisterResult')->nullable();
+                $table->longText('fArRegisterResult')->nullable();
+                $table->string('fMethod')->default('POST');
+                $table->timestamps();
 
-            $table->foreign('fPrId')
-                ->references('id')->on('tbl_permission')
-                ->onDelete('restrict')
-                ->onUpdate('cascade');
-        });
+                $table->foreign('fPrId')
+                    ->references('id')->on('tbl_permission')
+                    ->onDelete('restrict')
+                    ->onUpdate('cascade');
+            });
+        }
     }
 
     /**

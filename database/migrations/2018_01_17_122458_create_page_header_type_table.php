@@ -15,7 +15,7 @@ class CreatePageHeaderTypeTable extends Migration
     {
         if (!Schema::hasTable('tbl_page_header_types')) {
             Schema::create('tbl_page_header_types', function (Blueprint $table) {
-                $table->increments('id');
+                $table->bigIncrements('id');
                 $table->string('phtType')->unique();
                 $table->string('phtSubject');
                 $table->timestamps();

@@ -15,7 +15,7 @@ class CreateSectionTypeTable extends Migration
     {
         if (!Schema::hasTable('tbl_section_types')) {
             Schema::create('tbl_section_types', function (Blueprint $table) {
-                $table->increments('id');
+                $table->bigIncrements('id');
                 $table->string('stType')->unique();
                 $table->string('stSubject');
                 $table->timestamps();

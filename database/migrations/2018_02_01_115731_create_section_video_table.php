@@ -15,9 +15,9 @@ class CreateSectionVideoTable extends Migration
     {
         if (!Schema::hasTable('tbl_section_videos')) {
             Schema::create('tbl_section_videos', function (Blueprint $table) {
-                $table->increments('id');
-                $table->integer('svSId')->length(10)->unsigned();
-                $table->integer('svVgId')->length(10)->unsigned();
+                $table->bigIncrements('id');
+                $table->bigInteger('svSId')->length(20)->unsigned();
+                $table->bigInteger('svVgId')->length(20)->unsigned();
                 $table->unsignedTinyInteger('svOrder')->default(1);
                 $table->boolean('svState')->default(true);
 

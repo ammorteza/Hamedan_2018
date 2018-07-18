@@ -15,9 +15,9 @@ class CreatePageHeaderImgTable extends Migration
     {
         if (!Schema::hasTable('tbl_page_header_img')) {
             Schema::create('tbl_page_header_img', function (Blueprint $table) {
-                $table->increments('id');
-                $table->integer('phiPId')->length(10)->unsigned();
-                $table->integer('phiGId')->length(10)->unsigned();
+                $table->bigIncrements('id');
+                $table->bigInteger('phiPId')->length(20)->unsigned();
+                $table->bigInteger('phiGId')->length(20)->unsigned();
                 $table->unsignedTinyInteger('phiOrder')->default(1);
                 $table->boolean('phiState')->default(true);
                 $table->string('phiLink')->nullable();

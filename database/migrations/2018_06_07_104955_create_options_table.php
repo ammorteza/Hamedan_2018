@@ -13,17 +13,19 @@ class CreateOptionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('tbl_options', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('oFaSubject');
-            $table->string('oEnSubject');
-            $table->string('oArSubject');
-            $table->string('oName');
-            $table->string('oFaValue');
-            $table->string('oEnValue');
-            $table->string('oArValue');
-            $table->timestamps();
-        });
+        if (!Schema::hasTable('tbl_options')) {
+            Schema::create('tbl_options', function (Blueprint $table) {
+                $table->bigIncrements('id');
+                $table->string('oFaSubject');
+                $table->string('oEnSubject');
+                $table->string('oArSubject');
+                $table->string('oName');
+                $table->string('oFaValue');
+                $table->string('oEnValue');
+                $table->string('oArValue');
+                $table->timestamps();
+            });
+        }
     }
 
     /**

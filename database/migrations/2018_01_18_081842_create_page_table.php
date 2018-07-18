@@ -15,10 +15,10 @@ class CreatePageTable extends Migration
     {
         if (!Schema::hasTable('tbl_pages')) {
             Schema::create('tbl_pages', function (Blueprint $table) {
-                $table->increments('id');
-                $table->integer('pMmId')->length(10)->unsigned()->nullable();
-                $table->integer('pSmId')->length(10)->unsigned()->nullable();
-                $table->integer('pPhtId')->length(10)->unsigned();
+                $table->bigIncrements('id');
+                $table->bigInteger('pMmId')->length(20)->unsigned()->nullable();
+                $table->bigInteger('pSmId')->length(20)->unsigned()->nullable();
+                $table->bigInteger('pPhtId')->length(20)->unsigned();
                 $table->string('pFaSubject');
                 $table->string('pEnSubject');
                 $table->string('pArSubject');

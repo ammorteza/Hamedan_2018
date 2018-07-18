@@ -13,13 +13,15 @@ class CreateQuestionStepTable extends Migration
      */
     public function up()
     {
-        Schema::create('tbl_question_steps', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('qsFaSubject');
-            $table->string('qsEnSubject');
-            $table->string('qsArSubject');
-            $table->timestamps();
-        });
+        if (!Schema::hasTable('tbl_question_steps')) {
+            Schema::create('tbl_question_steps', function (Blueprint $table) {
+                $table->bigIncrements('id');
+                $table->string('qsFaSubject');
+                $table->string('qsEnSubject');
+                $table->string('qsArSubject');
+                $table->timestamps();
+            });
+        }
     }
 
     /**

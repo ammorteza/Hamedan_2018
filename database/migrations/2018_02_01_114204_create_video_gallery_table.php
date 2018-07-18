@@ -15,7 +15,7 @@ class CreateVideoGalleryTable extends Migration
     {
         if (!Schema::hasTable('tbl_video_gallery')) {
             Schema::create('tbl_video_gallery', function (Blueprint $table) {
-                $table->increments('id');
+                $table->bigIncrements('id');
                 $table->string('gPath')->unique();
                 $table->string('gFaLocation');
                 $table->string('gFaEditor');

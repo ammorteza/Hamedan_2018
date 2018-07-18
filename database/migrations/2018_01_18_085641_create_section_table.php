@@ -15,11 +15,11 @@ class CreateSectionTable extends Migration
     {
         if (!Schema::hasTable('tbl_sections')) {
             Schema::create('tbl_sections', function (Blueprint $table) {
-                $table->increments('id');
-                $table->integer('sPId')->length(10)->unsigned();
-                $table->integer('sStId')->length(10)->unsigned();
-                $table->integer('sMmId')->length(10)->unsigned()->nullable(); //use for create SUB_MENU sections
-                $table->integer('sFrId')->length(10)->unsigned()->nullable();
+                $table->bigIncrements('id');
+                $table->bigInteger('sPId')->length(20)->unsigned();
+                $table->bigInteger('sStId')->length(20)->unsigned();
+                $table->bigInteger('sMmId')->length(20)->unsigned()->nullable(); //use for create SUB_MENU sections
+                $table->bigInteger('sFrId')->length(20)->unsigned()->nullable();
 
                 $table->unsignedTinyInteger('sEventType')->nullable();
                 $table->unsignedTinyInteger('sOrder')->default(1);

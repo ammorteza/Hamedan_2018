@@ -13,12 +13,14 @@ class CreateFieldTypeTable extends Migration
      */
     public function up()
     {
-        Schema::create('tbl_field_types', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('ftSubject')->nullable();
-            $table->string('ftType')->unique();
-            $table->timestamps();
-        });
+        if (!Schema::hasTable('tbl_field_types')) {
+            Schema::create('tbl_field_types', function (Blueprint $table) {
+                $table->bigIncrements('id');
+                $table->string('ftSubject')->nullable();
+                $table->string('ftType')->unique();
+                $table->timestamps();
+            });
+        }
     }
 
     /**

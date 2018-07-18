@@ -13,23 +13,25 @@ class CreateFormAnswersTable extends Migration
      */
     public function up()
     {
-        Schema::create('tbl_form_answers', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('faQfId')->length(10)->unsigned();
-            $table->integer('faUuId')->length(10)->unsigned();
-            $table->longText('faValue')->nullable();
-            $table->timestamps();
+        if (!Schema::hasTable('tbl_form_answers')) {
+            Schema::create('tbl_form_answers', function (Blueprint $table) {
+                $table->bigIncrements('id');
+                $table->bigInteger('faQfId')->length(20)->unsigned();
+                $table->bigInteger('faUuId')->length(20)->unsigned();
+                $table->longText('faValue')->nullable();
+                $table->timestamps();
 
-            $table->foreign('faQfId')
-                ->references('id')->on('tbl_question_forms')
-                ->onDelete('restrict')
-                ->onUpdate('cascade');
+                $table->foreign('faQfId')
+                    ->references('id')->on('tbl_question_forms')
+                    ->onDelete('restrict')
+                    ->onUpdate('cascade');
 
-            $table->foreign('faUuId')
-                ->references('id')->on('tbl_uuids')
-                ->onDelete('restrict')
-                ->onUpdate('cascade');
-        });
+                $table->foreign('faUuId')
+                    ->references('id')->on('tbl_uuids')
+                    ->onDelete('restrict')
+                    ->onUpdate('cascade');
+            });
+        }
     }
 
     /**

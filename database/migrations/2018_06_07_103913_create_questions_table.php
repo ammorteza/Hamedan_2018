@@ -13,23 +13,25 @@ class CreateQuestionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('tbl_questions', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('qFtId')->length(10)->unsigned();
-            $table->string('qFaSubject')->nullable();
-            $table->string('qEnSubject')->nullable();
-            $table->string('qArSubject')->nullable();
-            $table->string('qFaPlaceHolder')->nullable();
-            $table->string('qEnPlaceHolder')->nullable();
-            $table->string('qArPlaceHolder')->nullable();
-            $table->string('qName')->unique();
-            $table->timestamps();
+        if (!Schema::hasTable('tbl_questions')) {
+            Schema::create('tbl_questions', function (Blueprint $table) {
+                $table->bigIncrements('id');
+                $table->bigInteger('qFtId')->length(20)->unsigned();
+                $table->string('qFaSubject')->nullable();
+                $table->string('qEnSubject')->nullable();
+                $table->string('qArSubject')->nullable();
+                $table->string('qFaPlaceHolder')->nullable();
+                $table->string('qEnPlaceHolder')->nullable();
+                $table->string('qArPlaceHolder')->nullable();
+                $table->string('qName')->unique();
+                $table->timestamps();
 
-            $table->foreign('qFtId')
-                ->references('id')->on('tbl_field_types')
-                ->onDelete('restrict')
-                ->onUpdate('cascade');
-        });
+                $table->foreign('qFtId')
+                    ->references('id')->on('tbl_field_types')
+                    ->onDelete('restrict')
+                    ->onUpdate('cascade');
+            });
+        }
     }
 
     /**

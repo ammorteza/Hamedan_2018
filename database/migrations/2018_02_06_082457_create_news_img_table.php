@@ -15,9 +15,9 @@ class CreateNewsImgTable extends Migration
     {
         if (!Schema::hasTable('tbl_news_img')) {
             Schema::create('tbl_news_img', function (Blueprint $table) {
-                $table->increments('id');
-                $table->integer('niNId')->length(10)->unsigned();
-                $table->integer('niGId')->length(10)->unsigned();
+                $table->bigIncrements('id');
+                $table->bigInteger('niNId')->length(20)->unsigned();
+                $table->bigInteger('niGId')->length(20)->unsigned();
                 $table->unsignedTinyInteger('niOrder')->default(1);
                 $table->boolean('niState')->default(true);
 

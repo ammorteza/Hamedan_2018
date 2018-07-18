@@ -13,12 +13,14 @@ class CreatePermissionTable extends Migration
      */
     public function up()
     {
-        Schema::create('tbl_permission', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('pSubject');
-            $table->string('pPermission')->unique();
-            $table->timestamps();
-        });
+        if (!Schema::hasTable('tbl_permission')) {
+            Schema::create('tbl_permission', function (Blueprint $table) {
+                $table->bigIncrements('id');
+                $table->string('pSubject');
+                $table->string('pPermission')->unique();
+                $table->timestamps();
+            });
+        }
     }
 
     /**

@@ -15,9 +15,9 @@ class CreateSubMenuTable extends Migration
     {
         if (!Schema::hasTable('tbl_sub_menus')) {
             Schema::create('tbl_sub_menus', function (Blueprint $table) {
-                $table->increments('id');
+                $table->bigIncrements('id');
                 $table->unsignedTinyInteger('smOrder')->default(1);
-                $table->integer('smMmId')->length(10)->unsigned();
+                $table->bigInteger('smMmId')->length(20)->unsigned();
                 $table->string('smFaSubject');
                 $table->string('smEnSubject');
                 $table->string('smArSubject');

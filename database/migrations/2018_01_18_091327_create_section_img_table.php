@@ -15,9 +15,9 @@ class CreateSectionImgTable extends Migration
     {
         if (!Schema::hasTable('tbl_section_imgs')) {
             Schema::create('tbl_section_imgs', function (Blueprint $table) {
-                $table->increments('id');
-                $table->integer('siSId')->length(10)->unsigned();
-                $table->integer('siGId')->length(10)->unsigned();
+                $table->bigIncrements('id');
+                $table->bigInteger('siSId')->length(20)->unsigned();
+                $table->bigInteger('siGId')->length(20)->unsigned();
                 $table->unsignedTinyInteger('siOrder')->default(1);
                 $table->boolean('siState')->default(true);
                 $table->string('siLink')->nullable();
