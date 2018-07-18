@@ -1465,16 +1465,16 @@
 
     <!--Section Hotels Start-->
     <div class="grid-container">
-        <div class="grid-x" id="advTop">
+        <div class="grid-x element-dir-l" id="advTop">
             <div class="large-8 medium-8 small-12 element-distance-tb">
                 <div onclick="location.href='http://www.example.com';" style="cursor:pointer;" class="grid-x hotel-border">
-                    <div class="large-9 medium-7 small-12">
+                    <div class="large-9 medium-7 small-12 element-dir">
                         <h4>Hotel Amiran</h4>
                         <i class="fas fa-star yellow-color"></i><i class="fas fa-star yellow-color"></i><i class="fas fa-star yellow-color"></i><i class="fas fa-star yellow-color"></i>
                         <p style="margin-top: 15px">Comfort and tranquility is provided for you in the traditional and modern accommodations of Hamedan</p>
                     </div>
                     <div class="large-offset-1 medium-offset-1"></div>
-                    <div class="large-2 medium-4 small-12 element-dir-l">
+                    <div class="large-2 medium-4 small-12">
                         <img class="background-cover hotel-pic" src="{{ asset('pic/gallery/hotels/h_1.jpg') }}">
                     </div>
                 </div>
@@ -1485,7 +1485,7 @@
                         <p style="margin-top: 15px">Comfort and tranquility is provided for you in the traditional and modern accommodations of Hamedan</p>
                     </div>
                     <div class="large-offset-1 medium-offset-1"></div>
-                    <div class="large-2 medium-4 small-12 element-dir-l">
+                    <div class="large-2 medium-4 small-12">
                         <img style="margin-bottom: 35px;height: 200px;" class="background-cover" src="{{ asset('pic/gallery/hotels/h_1.jpg') }}">
                     </div>
                 </div>
