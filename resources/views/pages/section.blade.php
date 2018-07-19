@@ -946,7 +946,7 @@
                                                             @if($lan == 'fa')
                                                                 <label> {{ $questionForm->question->qFaSubject }}
                                                                     <input name="{{ $questionForm->id }}" value="{{ old($questionForm->id) }}" type="text" placeholder="{{ $questionForm->question->qFaPlaceHolder }}" {{ $questionForm->qfRequire == 0 ? '' : 'required' }} pattern="{{ $questionForm->pattern->pType }}">
-                                                                    <span class="form-error">{{ $questionForm->qfFrErrorMsg }}</span>
+                                                                    <span class="form-error">{{ $questionForm->qfFaErrorMsg }}</span>
                                                                 </label>
                                                             @elseif($lan == 'en')
                                                                 <label> {{ $questionForm->question->qEnSubject }}
@@ -1317,6 +1317,133 @@
                     </div>
                 @endif
             </div>
+        @elseif($section->sectionType->stType == 'HOTEL_LIST')
+            <?php
+                    $hotels = \Hamedan_2018\Hotel::getAllHotel(0);
+                    $specialHotels = \Hamedan_2018\Hotel::getAllHotel(1);
+            ?>
+            <!--Section Hotels Start-->
+            <div class="grid-container">
+                <div class="grid-x padding-lr">
+                    <div style="margin-top: 50px;color: #37474F;" class="large-12 medium-12 float-center center-el">
+                        @if($lan == 'fa')
+                            <h1 class="Mj-Flow-Reqular">{{ $section->sFaSubject }}</h1>
+                        @elseif($lan == 'en')
+                            <h1 style="font-size: 4em" class="wire-one">{{ $section->sEnSubject }}</h1>
+                        @elseif($lan == 'ar')
+                            <h2 class="Al-Jazeera-Arabic-Regular">{{ $section->sArSubject }}</h2>
+                        @endif
+                    </div>
+                </div>
+                <div class="grid-x">
+                    <div class="large-12 medium-12 text-color">
+                        @if($lan == 'fa')
+                            <div>{!! $section->sFaDescription !!}</div>
+                        @elseif($lan == 'en')
+                            <div class="Raleway-Regular">
+                                {!! $section->sEnDescription !!}
+                            </div>
+                        @elseif($lan == 'ar')
+                            <div class="Al-Jazeera-Arabic-Regular">{!! $section->sArDescription !!}</div>
+                        @endif
+                    </div>
+                </div>
+                <div class="grid-x element-dir-l" id="advTop">
+                    <div class="large-offset-1 medium-offset-1"></div>
+                    <div class="large-6 medium-6 small-12 element-distance-tb">
+                        @foreach($hotels as $hotel)
+                            @if($lan == 'fa')
+                                @if($hotel->hFaLinkUrl != '')
+                                    <a style="color: inherit;cursor:pointer;" target="_blank" href="{{ url($hotel->hFaLinkUrl)}}">
+                                @endif
+                                    <div class="grid-x {{ $loop->last ? '' : 'hotel-border' }}" id="{{ $loop->last ? 'advBottom' : '' }}">
+                                        <div class="large-8 medium-7 small-12 element-dir">
+                                            <h4 class="Shabnam-Bold">{{ $hotel->hFaSubject }}</h4>
+                                            @for($i = 0 ; ($i <5 && $i <$hotel->hStar) ; $i++)
+                                                <i class="fas fa-star yellow-color size-12"></i>
+                                            @endfor
+                                            <p style="margin-top: 15px" class="Shabnam-Light gray-color text-justify">{{ $hotel->hFaDescription }}</p>
+                                        </div>
+                                        <div class="large-offset-1 medium-offset-1"></div>
+                                        <div class="large-3 medium-4 small-12">
+                                            <img class="background-cover hotel-pic float-right" src="{{ asset($hotel->gallery->gPath .'?v' . config('app.version')) }}" alt="{{ $hotel->hFaSubject }}">
+                                        </div>
+                                    </div>
+                                @if($hotel->hFaLinkUrl != '')
+                                    </a>
+                                @endif
+                            @elseif($lan == 'en')
+                                @if($hotel->hEnLinkUrl != '')
+                                    <a style="color: inherit;cursor:pointer;" target="_blank"  href="{{ url($hotel->hEnLinkUrl)}}">
+                                @endif
+                                    <div class="grid-x {{ $loop->last ? '' : 'hotel-border' }}" id="{{ $loop->last ? 'advBottom' : '' }}">
+                                        <div class="large-8 medium-7 small-12">
+                                            <h4 class="Shabnam-Bold">{{ $hotel->hEnSubject }}</h4>
+                                            @for($i = 0 ; ($i <5 && $i <$hotel->hStar) ; $i++)
+                                                <i class="fas fa-star yellow-color size-12"></i>
+                                            @endfor
+                                            <p style="margin-top: 15px" class="Raleway-Regular text-color text-justify">{{ $hotel->hEnDescription }}</p>
+                                        </div>
+                                        <div class="large-offset-1 medium-offset-1"></div>
+                                        <div class="large-3 medium-4 small-12">
+                                            <img class="background-cover hotel-pic float-right" src="{{ asset($hotel->gallery->gPath .'?v' . config('app.version')) }}" alt="{{ $hotel->hEnSubject }}">
+                                        </div>
+                                    </div>
+                                @if($hotel->hEnLinkUrl != '')
+                                    </a>
+                                @endif
+                            @elseif($lan == 'ar')
+                                @if($hotel->hArLinkUrl != '')
+                                    <a style="color: inherit;cursor:pointer;" target="_blank"  href="{{ url($hotel->hArLinkUrl)}}">
+                                @endif
+                                    <div class="grid-x {{ $loop->last ? '' : 'hotel-border' }}" id="{{ $loop->last ? 'advBottom' : '' }}">
+                                        <div class="large-8 medium-7 small-12 element-dir">
+                                            <h4 class="Shabnam-Bold">{{ $hotel->hArSubject }}</h4>
+                                            @for($i = 0 ; ($i <5 && $i <$hotel->hStar) ; $i++)
+                                                <i class="fas fa-star yellow-color size-12"></i>
+                                            @endfor
+                                            <p style="margin-top: 15px" class="Shabnam-Light gray-color text-justify">{{ $hotel->hArDescription }}</p>
+                                        </div>
+                                        <div class="large-offset-1 medium-offset-1"></div>
+                                        <div class="large-3 medium-4 small-12">
+                                            <img class="background-cover hotel-pic float-right" src="{{ asset($hotel->gallery->gPath .'?v' . config('app.version')) }}" alt="{{ $hotel->hArSubject }}">
+                                        </div>
+                                    </div>
+                                @if($hotel->hArLinkUrl != '')
+                                    </a>
+                                @endif
+                            @endif
+                        @endforeach
+                    </div>
+                    <div class="large-offset-1 medium-offset-1"></div>
+                    <div class="large-3 medium-3 small-12" data-sticky-container>
+                        @if(count($specialHotels) > 0)
+                            <?php
+                                $spHotel = $specialHotels->first();
+                            ?>
+                            <div class="grid-x adv-hide" data-sticky data-top-anchor="advTop:top" data-btm-anchor="advBottom:bottom">
+                                <div style="position: relative;display: inline-block;top:40vh;text-align: center;z-index: 50;" class="large-12">
+                                    @if($lan == 'fa')
+                                        <h5 class="my-text-shadow-effect white-color">{{ $spHotel->hFaSubject }}</h5>
+                                        <a href="{{ url($spHotel->hFaLinkUrl != '' ? $spHotel->hFaLinkUrl : '') }}" class="button primary element-distanse">بیشتر</a>
+                                    @elseif($lan == 'en')
+                                        <h5 class="my-text-shadow-effect white-color Roboto-Regular">{{ $spHotel->hEnSubject }}</h5>
+                                        <a href="{{ url($spHotel->hEnLinkUrl != '' ? $spHotel->hEnLinkUrl : '') }}" class="button primary element-distanse">Read More</a>
+                                    @elseif($lan == 'ar')
+                                        <h5 class="my-text-shadow-effect white-color">{{ $spHotel->hArSubject }}</h5>
+                                        <a href="{{ url($spHotel->hArLinkUrl != '' ? $spHotel->hArLinkUrl : '') }}" class="button primary element-distanse">اقرأ أكثر</a>
+                                    @endif
+                                </div>
+                                <div class="large-12">
+                                    <img style="height: 70vh;" class="background-cover" src="{{ asset($spHotel->gallery->gPath .'?v' . config('app.version')) }}">
+                                </div>
+                            </div>
+                        @endif
+                    </div>
+                    <div class="large-offset-2 medium-offset-2"></div>
+                </div>
+            </div>
+            <!--Section Hotels End-->
         @endif
         <!--Section pannellum-master-360 Start-->
         {{--        <div class="grid-container">
@@ -1462,104 +1589,4 @@
             </div>
         </div>
     </div>--}}
-
-    <!--Section Hotels Start-->
-    <div class="grid-container">
-        <div class="grid-x element-dir-l" id="advTop">
-            <div class="large-8 medium-8 small-12 element-distance-tb">
-                <div onclick="location.href='http://www.example.com';" style="cursor:pointer;" class="grid-x hotel-border">
-                    <div class="large-9 medium-7 small-12 element-dir">
-                        <h4>Hotel Amiran</h4>
-                        <i class="fas fa-star yellow-color"></i><i class="fas fa-star yellow-color"></i><i class="fas fa-star yellow-color"></i><i class="fas fa-star yellow-color"></i>
-                        <p style="margin-top: 15px">Comfort and tranquility is provided for you in the traditional and modern accommodations of Hamedan</p>
-                    </div>
-                    <div class="large-offset-1 medium-offset-1"></div>
-                    <div class="large-2 medium-4 small-12">
-                        <img class="background-cover hotel-pic" src="{{ asset('pic/gallery/hotels/h_1.jpg') }}">
-                    </div>
-                </div>
-                <div  class="grid-x hotel-border">
-                    <div class="large-9 medium-7 small-12">
-                        <h4>Hotel Amiran</h4>
-                        <i class="fas fa-star yellow-color"></i><i class="fas fa-star yellow-color"></i><i class="fas fa-star yellow-color"></i><i class="fas fa-star yellow-color"></i>
-                        <p style="margin-top: 15px">Comfort and tranquility is provided for you in the traditional and modern accommodations of Hamedan</p>
-                    </div>
-                    <div class="large-offset-1 medium-offset-1"></div>
-                    <div class="large-2 medium-4 small-12">
-                        <img style="margin-bottom: 35px;height: 200px;" class="background-cover" src="{{ asset('pic/gallery/hotels/h_1.jpg') }}">
-                    </div>
-                </div>
-                <div  class="grid-x hotel-border">
-                    <div class="large-9 medium-7 small-12">
-                        <h4>Hotel Amiran</h4>
-                        <i class="fas fa-star yellow-color"></i><i class="fas fa-star yellow-color"></i><i class="fas fa-star yellow-color"></i><i class="fas fa-star yellow-color"></i>
-                        <p style="margin-top: 15px">Comfort and tranquility is provided for you in the traditional and modern accommodations of Hamedan</p>
-                    </div>
-                    <div class="large-offset-1 medium-offset-1"></div>
-                    <div class="large-2 medium-4 small-12 element-dir-l">
-                        <img style="margin-bottom: 35px;height: 200px;" class="background-cover" src="{{ asset('pic/gallery/hotels/h_1.jpg') }}">
-                    </div>
-                </div>
-                <div  class="grid-x hotel-border">
-                    <div class="large-9 medium-7 small-12">
-                        <h4>Hotel Amiran</h4>
-                        <i class="fas fa-star yellow-color"></i><i class="fas fa-star yellow-color"></i><i class="fas fa-star yellow-color"></i><i class="fas fa-star yellow-color"></i>
-                        <p style="margin-top: 15px">Comfort and tranquility is provided for you in the traditional and modern accommodations of Hamedan</p>
-                    </div>
-                    <div class="large-offset-1 medium-offset-1"></div>
-                    <div class="large-2 medium-4 small-12 element-dir-l">
-                        <img style="margin-bottom: 35px;height: 200px;" class="background-cover" src="{{ asset('pic/gallery/hotels/h_1.jpg') }}">
-                    </div>
-                </div>
-                <div  class="grid-x hotel-border">
-                    <div class="large-9 medium-7 small-12">
-                        <h4>Hotel Amiran</h4>
-                        <i class="fas fa-star yellow-color"></i><i class="fas fa-star yellow-color"></i><i class="fas fa-star yellow-color"></i><i class="fas fa-star yellow-color"></i>
-                        <p style="margin-top: 15px">Comfort and tranquility is provided for you in the traditional and modern accommodations of Hamedan</p>
-                    </div>
-                    <div class="large-offset-1 medium-offset-1"></div>
-                    <div class="large-2 medium-4 small-12 element-dir-l">
-                        <img style="margin-bottom: 35px;height: 200px;" class="background-cover" src="{{ asset('pic/gallery/hotels/h_1.jpg') }}">
-                    </div>
-                </div>
-                <div  class="grid-x hotel-border">
-                    <div class="large-9 medium-7 small-12">
-                        <h4>Hotel Amiran</h4>
-                        <i class="fas fa-star yellow-color"></i><i class="fas fa-star yellow-color"></i><i class="fas fa-star yellow-color"></i><i class="fas fa-star yellow-color"></i>
-                        <p style="margin-top: 15px">Comfort and tranquility is provided for you in the traditional and modern accommodations of Hamedan</p>
-                    </div>
-                    <div class="large-offset-1 medium-offset-1"></div>
-                    <div class="large-2 medium-4 small-12 element-dir-l">
-                        <img style="margin-bottom: 35px;height: 200px;" class="background-cover" src="{{ asset('pic/gallery/hotels/h_1.jpg') }}">
-                    </div>
-                </div>
-                <div  class="grid-x hotel-border" id="advBottom">
-                    <div class="large-9 medium-7 small-12">
-                        <h4>Hotel Amiran</h4>
-                        <i class="fas fa-star yellow-color"></i><i class="fas fa-star yellow-color"></i><i class="fas fa-star yellow-color"></i><i class="fas fa-star yellow-color"></i>
-                        <p style="margin-top: 15px">Comfort and tranquility is provided for you in the traditional and modern accommodations of Hamedan</p>
-                    </div>
-                    <div class="large-offset-1 medium-offset-1"></div>
-                    <div class="large-2 medium-4 small-12 element-dir-l">
-                        <img style="margin-bottom: 35px;height: 200px;" class="background-cover" src="{{ asset('pic/gallery/hotels/h_1.jpg') }}">
-                    </div>
-                </div>
-            </div>
-            <div class="large-offset-1 medium-offset-1"></div>
-            <div class="large-3 medium-3 small-12" data-sticky-container>
-                <div class="grid-x adv-hide" data-sticky data-top-anchor="advTop:top" data-btm-anchor="advBottom:bottom">
-                    <div style="position: relative;display: inline-block;top:40vh;text-align: center;z-index: 50;" class="large-12">
-                        <h5 class="my-text-shadow-effect white-color">Hotel Amiran</h5>
-                        <a href="#" class="button primary element-distanse">Read More</a>
-                    </div>
-                    <div class="large-12">
-                        <img style="height: 70vh;" class="background-cover" src="{{ asset('pic/gallery/hotels/h_1.jpg') }}">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--Section Hotels End-->
-
-
 @stop

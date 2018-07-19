@@ -17,9 +17,9 @@ class CreateHotelTable extends Migration
             Schema::create('tbl_hotels', function (Blueprint $table) {
                 $table->bigIncrements('id');
                 $table->bigInteger('hGId')->length(20)->unsigned();
-                $table->string('hFaLinkUrl');
-                $table->string('hEnLinkUrl');
-                $table->string('hArLinkUrl');
+                $table->string('hFaLinkUrl')->nullable();
+                $table->string('hEnLinkUrl')->nullable();
+                $table->string('hArLinkUrl')->nullable();
 
                 $table->string('hFaSubject');
                 $table->string('hEnSubject');
